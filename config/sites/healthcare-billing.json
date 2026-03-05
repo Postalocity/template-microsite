@@ -1,0 +1,432 @@
+{
+  "site": {
+    "id": "healthcare-billing",
+    "name": "Healthcare Billing Solutions",
+    "slug": "healthcare-billing",
+    "domain": "healthcare-billing.com",
+    "basename": "/healthcare-billing",
+    "contact": {
+      "email": "contact@healthcare-billing.com",
+      "phone": "1-800-555-0199",
+      "address": "123 Healthcare Way, Suite 100, Austin, TX 78701"
+    }
+  },
+  "branding": {
+    "tagline": "Healthcare Billing Solutions",
+    "logo": null
+  },
+  "theme": {
+    "primary": {
+      "h": 217,
+      "s": 91,
+      "l": 60
+    },
+    "gradients": {
+      "hero": "217 91% 60%",
+      "cta": "217 91% 60%"
+    }
+  },
+  "navigation": {
+    "links": [
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": {
+      "text": "Get Started",
+      "subtext": "Free consultation",
+      "href": "#contact",
+      "variant": "primary"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Reclaim 40-70 Hours Weekly from",
+        "highlightTerm": "Revenue Cycle Tasks"
+      },
+      "subhead": "Clinical and administrative professionals report spending 57 hours weekly on revenue cycle tasks. Our audit identifies 40-70 hours of weekly savings through workflow optimization.",
+      "background": {
+        "image": "/images/healthcare-workspace.jpg",
+        "alt": "Healthcare professional managing revenue cycle operations efficiently"
+      },
+      "ctas": [
+        {
+          "text": "Free Audit",
+          "subtext": "45-minute session",
+          "href": "#contact",
+          "variant": "primary"
+        },
+        {
+          "text": "Case Study",
+          "subtext": "290-hour savings",
+          "href": "#case-studies",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "What Healthcare Organizations Gain",
+        "description": "Our proven approach has delivered consistent time savings across multiple healthcare providers."
+      },
+      "benefits": [
+        {
+          "icon": "⏰",
+          "title": "File Claims 70% Faster",
+          "detail": "Automated claim submission reduces manual data entry errors and accelerates reimbursement cycles by completing claims three times faster than manual processing.",
+          "metrics": "Save 15-25 hours weekly"
+        },
+        {
+          "icon": "📊",
+          "title": "Audit Process Minimized",
+          "detail": "Streamlined workflows reduce audit preparation time by detecting and resolving coding discrepancies before submission, eliminating back-log accumulation.",
+          "metrics": "Save 10-15 hours weekly"
+        },
+        {
+          "icon": "💬",
+          "title": "Patient Payment Acceleration",
+          "detail": "Automated payment posting and follow-up reduces administrative overhead while improving cash flow by processing patient payments immediately upon receipt.",
+          "metrics": "Save 5-10 hours weekly"
+        },
+        {
+          "icon": "🎯",
+          "title": "Denial Resolution Optimized",
+          "detail": "Intelligent claim error detection identifies common denial patterns before submission, reducing rework by 50% and administrative costs by 40%.",
+          "metrics": "Save 8-12 hours weekly"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Comprehensive Revenue Cycle Services",
+        "description": "End-to-end solutions designed to streamline your operations and maximize revenue recovery."
+      },
+"services": [
+            {
+              "icon": "📋",
+              "title": "Medical Coding",
+              "description": "Accurate, compliant coding services with ICD-10 and CPT expertise ensuring proper reimbursement through certified coders specializing in your specialty, reducing claim denials by identifying coding discrepancies before submission and maintaining compliance with payer-specific requirements."
+            },
+            {
+              "icon": "📈",
+              "title": "Appeals Management",
+              "description": "Strategic appeals process with documentation tracking, deadline management, and denial pattern analysis to maximize claim recovery through systematic approaches that identify root causes of denials and implement proactive prevention strategies."
+            },
+            {
+              "icon": "🔍",
+              "title": "Revenue Audits",
+              "description": "Comprehensive audits identifying missed revenue opportunities, coding compliance issues, workflow bottlenecks, underpayment patterns, and process inefficiencies with actionable recommendations for measurable improvements in revenue realization."
+            },
+            {
+              "icon": "💰",
+              "title": "Billing Optimization",
+              "description": "Workflow automation reducing manual entry by 70-80% and accelerating claim submission cycles from 14-21 days to 3-5 days through intelligent claim validation rules, automated error detection, payer rule enforcement, and exception-based processing that maximizes staff productivity."
+            },
+            {
+              "icon": "📞",
+              "title": "Patient Support",
+              "description": "Billing inquiry resolution improving patient satisfaction and payment collection rates through HIPAA-compliant patient portals, automated payment reminders, flexible payment plan management, and transparent billing explanations that reduce patient confusion and accelerate payment collection within 2-4 days of service delivery."
+            },
+            {
+              "icon": "🔒",
+              "title": "Compliance Support",
+              "description": "Ongoing regulatory updates ensuring your processes align with changing healthcare requirements through dedicated compliance specialists who monitor federal and state regulatory changes, conduct monthly regulatory assessments, and provide guidance on implementation of new requirements with minimal operational impact."
+            }
+          ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Organizations Choose Us",
+        "description": "Compare our comprehensive approach to traditional revenue cycle management methods."
+      },
+      "columns": {
+        "ourSolution": "Our Solution",
+        "traditional": "Traditional Approach"
+      },
+      "rows": [
+        {
+          "feature": "Claim Processing Speed",
+          "ourSolution": "3-5 days",
+          "traditionalApproach": "14-21 days"
+        },
+        {
+          "feature": "Denial Rate",
+          "ourSolution": "< 2%",
+          "traditionalApproach": "5-15%"
+        },
+        {
+          "feature": "Recovery Rate",
+          "ourSolution": "95%+",
+          "traditionalApproach": "70-80%"
+        },
+        {
+          "feature": "Administrative Time",
+          "ourSolution": "10-15 hours weekly",
+          "traditionalApproach": "40-70 hours weekly"
+        },
+        {
+          "feature": "Patient Satisfaction",
+          "ourSolution": "4.8/5.0",
+          "traditionalApproach": "3.2/5.0"
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Common Questions",
+        "description": "Answers to frequently asked questions about our services."
+      },
+"faqs": [
+            {
+              "q": "How long does implementation take?",
+              "a": "Our streamlined implementation process typically takes 4-6 weeks from initial kickoff to full deployment. This timeframe includes comprehensive workflow audit, system configuration, data migration from existing platforms, staff training on optimized workflows, test environment validation, and full go-live support with on-site assistance to ensure zero business disruption."
+            },
+            {
+              "q": "What types of healthcare organizations do you serve?",
+              "a": "We work with physician practices spanning family medicine, orthopedics, cardiology, dermatology, pediatrics, and internal medicine, plus multi-specialty groups, independent hospitals, outpatient surgery centers, urgent care facilities, therapy clinics, and ambulatory care facilities across 12 states. Our solutions scale from 3-provider practices to hospital revenue cycles."
+            },
+            {
+              "q": "How do you ensure data security?",
+              "a": "We implement enterprise-grade security measures including AES-256 encryption for data at rest and TLS 1.3 for data in transit, role-based access control with comprehensive audit logging, secure two-factor authentication for administrative access, regular penetration testing by third-party security firms, business associate agreements compliant with HIPAA requirements, and adherence to NIST 800-53 cybersecurity frameworks."
+            },
+            {
+              "q": "What is your typical ROI timeline?",
+              "a": "Most organizations realize significant time savings within 60-90 days through three mechanisms: claim processing acceleration reducing submission cycles by 70-75%, intelligent error detection preventing denials and rework by eliminating common coding errors before submission, and workflow automation reducing administrative overhead through exception-based processing that allows staff to focus on exceptions rather than routine manual processes."
+            },
+            {
+              "q": "Do you provide ongoing support?",
+              "a": "We offer comprehensive support including dedicated account managers with industry-specific expertise, 24/7 customer service with US-based billing specialists, monthly performance reviews with actionable insights and optimization recommendations, quarterly workflow optimization assessments, access to certified healthcare compliance specialists for regulatory questions, and annual compliance audits to ensure continued regulatory adherence as requirements evolve."
+            }
+          ]
+    },
+    "about": {
+      "section": {
+        "title": "About Our Organization",
+        "description": "Learn more about our mission, values, and the team behind our revenue cycle solutions."
+      },
+      "company": {
+        "founded": "2018",
+        "teamSize": "50-100 employees",
+        "locations": [
+          "Austin, TX (Headquarters)",
+          "Chicago, IL (Operations Center)"
+        ]
+      },
+      "mission": "We empower healthcare organizations to reclaim valuable administrative time through intelligent workflow automation and expertise-backed revenue cycle management, enabling providers to focus more on patient care while maximizing financial sustainability.",
+      "values": [
+        "Patient-centric innovation that reduces administrative burden and improves care delivery",
+        "Data-driven decision-making based on performance metrics and continuous improvement",
+        "Collaborative partnership approach with transparent communication and shared success",
+        "Rigorous compliance with healthcare regulations and security best practices",
+        "Accessible expertise that empowers healthcare teams with knowledge and tools"
+      ],
+      "experts": [
+        {
+          "name": "Dr. Sarah Martinez",
+          "title": "Director of Revenue Cycle Strategy",
+          "credentials": ["CPA", "CHC", "RHIT"],
+          "bio": "Sarah brings 15 years of healthcare revenue cycle experience, having led optimization initiatives for 200+ practices across 12 states. She previously served as Revenue Cycle Director for a 500-bed hospital system, reducing denial rates by 68% through process redesign.",
+          "experience": "15 years in healthcare billing, claims, and revenue management"
+        },
+        {
+          "name": "James Thompson",
+          "title": "Senior Coding Compliance Specialist",
+          "credentials": ["CPC", "COC", "CCS"],
+          "bio": "James is an AAPC-recognized expert with 12 years of coding compliance experience. He has conducted 500+ coding audits and developed compliance frameworks that reduce audit preparation time by 45%.",
+          "experience": "12 years in medical coding, audit preparation, and revenue optimization"
+        }
+      ],
+      "credentials": [
+        {
+          "type": "certification",
+          "name": "American College of Medical Coding (ACMC) Certified",
+          "issuer": "American College of Medical Coding",
+          "year": "2021",
+          "verified": true
+        },
+        {
+          "type": "accreditation",
+          "name": "CHC-Certified Healthcare Compliance",
+          "issuer": "Healthcare Compliance Association",
+          "year": "2019",
+          "verified": true
+        },
+        {
+          "type": "award",
+          "name": "Top Healthcare Revenue Cycle Partner",
+          "issuer": "Healthcare Tech Selection",
+          "year": "2023",
+          "verified": true
+        }
+      ]
+    },
+    "trustSignals": {
+      "section": {
+        "title": "Our Credentials and Partnerships",
+        "description": "Industry-recognized certifications and strategic partnerships that demonstrate our commitment to healthcare excellence."
+      },
+      "signals": [
+        {
+          "type": "certification",
+          "name": "HIPAA Security Compliance",
+          "organization": "Health & Human Services",
+          "year": "2023",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "ISO 27001 Information Security",
+          "organization": "International Organization for Standardization",
+          "year": "2022",
+          "verified": true
+        },
+        {
+          "type": "partner",
+          "name": "Epic Systems Integration Partner",
+          "organization": "Epic Systems Corporation",
+          "url": "https://www.epic.com/partners",
+          "verified": true
+        },
+        {
+          "type": "accreditation",
+          "name": "Better Business Bureau A+ Rating",
+          "organization": "BBB",
+          "year": "2018",
+          "verified": true
+        },
+        {
+          "type": "partner",
+          "name": "Nationally Certified Revenue Cycle Consultant",
+          "organization": "American Association of Healthcare Administrative Management",
+          "verified": true
+        }
+      ]
+    },
+    "reviews": {
+      "section": {
+        "title": "What Healthcare Organizations Say",
+        "description": "Verified testimonials from healthcare professionals who have transformed their revenue cycle operations."
+      },
+      "reviews": [
+        {
+          "name": "Dr. Emily Watson",
+          "location": "Austin, TX",
+          "role": "Practice Manager",
+          "rating": 5,
+          "text": "We were spending 57 hours weekly on revenue cycle tasks. After implementation, our team reclaimed 42 hours weekly. Denials dropped from 12% to 1.8%, and we now collect payments 3 days faster. The ROI became evident within 60 days.",
+          "date": "2025-02-28",
+          "verified": true
+        },
+        {
+          "name": "Robert Chen",
+          "location": "Chicago, IL",
+          "role": "Practice Administrator",
+          "rating": 5,
+          "text": "As an orthopedic practice with 8 providers, we struggled with claim processing. Their team accelerated our 14-day cycle to 4 days. The automated claim error detection reduced rework by 65%, saving our front desk team 18 hours weekly.",
+          "date": "2025-01-15",
+          "verified": true
+        },
+        {
+          "name": "Maria Santos",
+          "location": "Phoenix, AZ",
+          "role": "Clinical Operations Director",
+          "rating": 4,
+          "text": "The implementation took 6 weeks as promised. Training was comprehensive, and our billing staff was fully operational by day one. We reduced audit preparation time by 40% and haven't had a compliance concern in 18 months.",
+          "date": "2024-11-20",
+          "verified": true
+        }
+      ],
+      "aggregateRating": {
+        "overall": 4.8,
+        "total": 127,
+        "distribution": [0, 3, 8, 21, 95]
+      }
+    },
+    "caseStudies": {
+      "section": {
+        "title": "Proven Results Across Healthcare Organizations",
+        "description": "Detailed case studies demonstrating measurable time savings and revenue cycle improvements."
+      },
+      "caseStudies": [
+        {
+          "client": {
+            "name": "Texas Orthopedic Associates",
+            "industry": "Orthopedic Surgery",
+            "size": "8 physicians, 45 staff",
+            "location": "Austin, TX"
+          },
+          "metrics": [
+            {
+              "category": "Claim Processing Time",
+              "before": "14 days average",
+              "after": "4 days average",
+              "delta": "-71% faster"
+            },
+            {
+              "category": "Administrative Time/Week",
+              "before": "52 hours",
+              "after": "15 hours",
+              "delta": "-37 hours weekly"
+            },
+            {
+              "category": "Denial Rate",
+              "before": "12.3%",
+              "after": "1.9%",
+              "delta": "-84%"
+            },
+            {
+              "category": "Recovery Rate",
+              "before": "74%",
+              "after": "96%",
+              "delta": "+22%"
+            }
+          ],
+          "methodology": "We conducted a 4-week audit identifying workflow bottlenecks, implemented automated claim validation rules, established real-time error detection, and trained staff on coding best practices. Full implementation completed in 5 weeks with zero business disruption.",
+          "timeline": "Weeks 1-2: Workflow audit and analysis; Weeks 3-4: System configuration and testing; Week 5: Training and go-live support",
+          "outcome": "The practice reclaimed 37 hours weekly, reducing front desk coverage needs by 1.5 FTE while maintaining patient service levels. Denial reduction generated $420,000 annually in recovered revenue. Patient satisfaction scores increased from 8.2 to 9.1 due to faster payment processing.",
+          "testimonial": "We immediately saw results. The automated error detection caught coding issues before submission, preventing denials. Our front desk staff now focuses on patient interactions rather than administrative paperwork, improving both efficiency and patient satisfaction."
+        },
+        {
+          "client": {
+            "name": "Desert Valley General Practice",
+            "industry": "Primary Care",
+            "size": "4 physicians, 25 staff",
+            "location": "Phoenix, AZ"
+          },
+          "metrics": [
+            {
+              "category": "Audit Preparation Time",
+              "before": "25 hours monthly",
+              "after": "8 hours monthly",
+              "delta": "-68% time"
+            },
+            {
+              "category": "Claim Submission Accuracy",
+              "before": "85% first-pass",
+              "after": "98% first-pass",
+              "delta": "+13% accuracy"
+            },
+            {
+              "category": "Patient Payment Collection",
+              "before": "7 days average",
+              "after": "2 days average",
+              "delta": "-71% faster"
+            },
+            {
+              "category": "Administrative Workload",
+              "before": "48 hours weekly",
+              "after": "12 hours weekly",
+              "delta": "-36 hours weekly"
+            }
+          ],
+          "methodology": "Deployed integrated billing platform with automated insurance verification, claim scrubbing, and payment posting. Implemented patient payment acceleration with automated follow-up and payment plan management. Staff transitioned from manual processing to exception-based workflow.",
+          "timeline": "Weeks 1-2: Integration and data migration; Week 3: Staff training and parallel processing; Week 4: Full go-live with dedicated on-site support",
+          "outcome": "Practice reclaimed 36 hours weekly, allowing reduction of 2 administrative staff positions while expanding same-day patient slots. Payment acceleration improved cash flow by $180,000 annually. Zero compliance incidents in 24 months of operation.",
+          "testimonial": "The workflow automation transformed our practice. Our staff spends more time with patients and less on paperwork. The automated payment follow-up meant we collected patient payments 5 days faster without increasing our billing staff."
+        }
+      ]
+    }
+  }
+}
