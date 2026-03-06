@@ -408,7 +408,7 @@ function generateIndexHtml(config: any): string {
     <meta name="robots" content="index, follow" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="${site.basename}/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
