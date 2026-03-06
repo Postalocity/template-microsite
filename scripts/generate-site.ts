@@ -33,9 +33,9 @@ async function generateSite(configPath: string) {
       fs.mkdirSync(siteDir, { recursive: true });
     }
 
-    // Generate index.tsx
+    // Generate main.tsx
     const indexContent = generateIndexFile(config);
-    fs.writeFileSync(path.join(siteDir, 'index.tsx'), indexContent);
+    fs.writeFileSync(path.join(siteDir, 'main.tsx'), indexContent);
 
     // Copy config.json
     fs.writeFileSync(path.join(siteDir, 'config.json'), configContent);
@@ -44,6 +44,14 @@ async function generateSite(configPath: string) {
     const viteConfigContent = generateViteConfig(site.basename);
     fs.writeFileSync(path.join(siteDir, 'vite.config.ts'), viteConfigContent);
 
+    // Copy postcss.config.js
+    const postcssConfig = fs.readFileSync(path.join(TEMPLATE_DIR, 'postcss.config.js'), 'utf-8');
+    fs.writeFileSync(path.join(siteDir, 'postcss.config.js'), postcssConfig);
+
+    // Generate tailwind.config.ts for the site
+    const tailwindConfig = generateTailwindConfig();
+    fs.writeFileSync(path.join(siteDir, 'tailwind.config.ts'), tailwindConfig);
+
     // Copy package.json with site-specific config
     const packageJson = generatePackageJson(site);
     fs.writeFileSync(path.join(siteDir, 'package.json'), packageJson);
@@ -51,13 +59,6 @@ async function generateSite(configPath: string) {
     // Create index.html
     const indexHtml = generateIndexHtml(config);
     fs.writeFileSync(path.join(siteDir, 'index.html'), indexHtml);
-
-    // Generate shared globals.css
-    const globalsCss = generateGlobalsCss(config);
-    if (!fs.existsSync(path.join(TEMPLATE_DIR, 'common'))) {
-      fs.mkdirSync(path.join(TEMPLATE_DIR, 'common'), { recursive: true });
-    }
-    fs.writeFileSync(path.join(TEMPLATE_DIR, 'common/globals.css'), globalsCss);
 
     // Generate robots.txt and sitemap.xml (FIX #3 - SEO indexing)
     const robotsTxt = generateRobotsTxt(site);
@@ -68,8 +69,10 @@ async function generateSite(configPath: string) {
 
     console.log(`✅ ${site.name} generated successfully!`);
     console.log(`📁 Generated files:`);
-    console.log(`   - index.tsx`);
+    console.log(`   - main.tsx`);
     console.log(`   - vite.config.ts`);
+    console.log(`   - postcss.config.js`);
+    console.log(`   - tailwind.config.ts`);
     console.log(`   - package.json`);
     console.log(`   - index.html`);
     console.log(`   - globals.css`);
@@ -88,12 +91,12 @@ async function generateSite(configPath: string) {
 
 function generateIndexFile(config: any): string {
   const { site, content } = config;
-
   return `/**
  * ${site.name} - Generated from template-microsite
  * Generated at: ${new Date().toISOString()}
  */
 
+import { createRoot } from 'react-dom/client';
 import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonSection } from '../common/components/shared';
 import SiteNavigation from '../common/components/shared/SiteNavigation';
 import SiteFooter from '../common/components/shared/SiteFooter';
@@ -102,7 +105,6 @@ import config from './config.json';
 
 function App() {
   const { content } = config;
-
   return (
     <>
       <SiteNavigation config={config} />
@@ -116,22 +118,27 @@ function App() {
   );
 }
 
-export default App;
+// Initialize React
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
 `;
 }
 
 function generateViteConfig(basename: string): string {
   return `import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import path from 'path';
+  import react from '@vitejs/plugin-react-swc';
+  import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  root: __dirname,
   base: '${basename}',
   resolve: {
     alias: {
+      '@': path.resolve(__dirname, '../../common'),
       '../common': path.resolve(__dirname, '../../common'),
     },
+    dedupe: ['react', 'react-dom'],
   },
   server: {
     host: true,
@@ -148,26 +155,182 @@ export default defineConfig({
 `;
 }
 
+function generateTailwindConfig(): string {
+  return `import type { Config } from "tailwindcss";
+
+export default {
+  darkMode: ["class"],
+  content: [
+    "./index.html",
+    "./main.tsx",
+    "../../common/components/**/*.{js,ts,jsx,tsx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+      },
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        hero: {
+          DEFAULT: "hsl(var(--hero-bg))",
+          foreground: "hsl(var(--hero-foreground))",
+          subtitle: "hsl(var(--hero-subtitle))",
+        },
+        "section-alt": "hsl(var(--section-alt))",
+        sidebar: {
+          DEFAULT: "hsl(var(--sidebar-background))",
+          foreground: "hsl(var(--sidebar-foreground))",
+          primary: "hsl(var(--sidebar-primary))",
+          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
+          accent: "hsl(var(--sidebar-accent))",
+          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
+          border: "hsl(var(--sidebar-border))",
+          ring: "hsl(var(--sidebar-ring))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        card: "var(--shadow-card)",
+        "card-hover": "var(--shadow-card-hover)",
+        cta: "var(--shadow-cta)",
+        "cta-green": "var(--shadow-cta-green)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(30px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.5s ease-out forwards",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+`;
+}
+
 function generatePackageJson(site: any): string {
   return JSON.stringify({
     name: site.slug,
     version: '1.0.0',
     private: true,
+    type: 'module',
     scripts: {
       dev: 'vite',
       build: 'vite build',
       preview: 'vite preview',
     },
     dependencies: {
-      'react': '^18.3.1',
-      'react-dom': '^18.3.1',
+      '@radix-ui/react-accordion': '^1.2.11',
+      '@radix-ui/react-alert-dialog': '^1.1.14',
+      '@radix-ui/react-aspect-ratio': '^1.1.7',
+      '@radix-ui/react-avatar': '^1.1.10',
+      '@radix-ui/react-checkbox': '^1.3.2',
+      '@radix-ui/react-collapsible': '^1.1.11',
+      '@radix-ui/react-context-menu': '^2.2.15',
+      '@radix-ui/react-dialog': '^1.1.14',
+      '@radix-ui/react-dropdown-menu': '^2.1.15',
+      '@radix-ui/react-hover-card': '^1.1.14',
+      '@radix-ui/react-label': '^2.1.7',
+      '@radix-ui/react-menubar': '^1.1.15',
+      '@radix-ui/react-navigation-menu': '^1.2.13',
+      '@radix-ui/react-popover': '^1.1.14',
+      '@radix-ui/react-progress': '^1.1.7',
+      '@radix-ui/react-radio-group': '^1.3.7',
+      '@radix-ui/react-scroll-area': '^1.2.9',
+      '@radix-ui/react-select': '^2.2.5',
+      '@radix-ui/react-separator': '^1.1.7',
+      '@radix-ui/react-slider': '^1.3.5',
+      '@radix-ui/react-slot': '^1.2.3',
+      '@radix-ui/react-switch': '^1.2.5',
+      '@radix-ui/react-tabs': '^1.1.12',
+      '@radix-ui/react-toast': '^1.2.14',
+      '@radix-ui/react-toggle': '^1.1.9',
+      '@radix-ui/react-toggle-group': '^1.1.10',
+      '@radix-ui/react-tooltip': '^1.2.7',
+      'class-variance-authority': '^0.7.1',
+      'clsx': '^2.1.1',
+      'date-fns': '^4.1.0',
       'framer-motion': '^11.11.17',
       'lucide-react': '^0.460.0',
+      'react': '^18.3.1',
+      'react-dom': '^18.3.1',
+      'tailwind-merge': '^2.6.0',
     },
     devDependencies: {
       '@types/react': '^18.3.17',
       '@types/react-dom': '^18.3.0',
       '@vitejs/plugin-react-swc': '^3.8.0',
+      'autoprefixer': '^10.4.21',
+      'postcss': '^8.5.6',
+      'tailwindcss': '^3.4.17',
+      'tailwindcss-animate': '^1.0.7',
       'typescript': '^5.6.3',
       'vite': '6.1.0',
     },
@@ -188,8 +351,8 @@ function parseAddress(address: string) {
 
 function generateIndexHtml(config: any): string {
   const { site } = config;
-  const canonicalUrl = `https://${site.domain}`;
-  const ogImage = `${canonicalUrl}/og-image.png`;
+  const canonicalUrl = `https://${site.domain}${site.basename}`;
+  const ogImage = `https://${site.domain}${site.basename}/og-image.png`;
 
   // Parse address once for schema
   const addressParts = parseAddress(site.contact.address || '');
@@ -319,7 +482,7 @@ function generateIndexHtml(config: any): string {
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="module" src="/main.tsx"></script>
   </body>
 </html>
 `;
@@ -329,19 +492,19 @@ function generateIndexHtml(config: any): string {
 function generateRobotsTxt(site: any): string {
   return `User-agent: *
 Allow: /
-Sitemap: https://${site.domain}/sitemap.xml
+Sitemap: https://${site.domain}${site.basename}/sitemap.xml
 `;
 }
 
 // FIX #3 - Generate sitemap.xml for SEO discovery
 function generateSitemapXml(site: any): string {
   const currentDate = new Date().toISOString().split('T')[0];
-  const canonicalUrl = `https://${site.domain}`;
+  const canonicalUrl = `https://${site.domain}${site.basename}`.replace(/\/$/, '');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>${canonicalUrl}/</loc>
+    <loc>${canonicalUrl}</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -354,202 +517,199 @@ function generateGlobalsCss(config: any): string {
   const { theme } = config;
   const { primary } = theme;
 
-  return `:root {
-  --foreground: 222.2 84% 4.9%;
-  --background: 210 40% 98%;
-  --card: 0 0% 100%;
-  --primary: ${primary.h} ${primary.s}% ${primary.l}%;
-  --primary-foreground: 0 0% 100%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --hero: ${theme.gradients.hero};
-  --hero-foreground: 0 0% 100%;
-  --hero-subtitle: 210 40% 90%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: ${primary.h} ${primary.s}% ${primary.l}%;
-  --radius: 0.5rem;
-}
+  return `@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Mobile-First Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@layer base {
+  :root {
+    --foreground: 222.2 84% 4.9%;
+    --background: 210 40% 98%;
+    --card: 0 0% 100%;
+    --primary: ${primary.h} ${primary.s}% ${primary.l}%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --hero: ${theme.gradients.hero};
+    --hero-foreground: 0 0% 100%;
+    --hero-subtitle: 210 40% 90%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: ${primary.h} ${primary.s}% ${primary.l}%;
+    --radius: 0.5rem;
 
-/* Selectable text - prevents accidental selection on mobile */
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-size: clamp(1rem, 2vw, 1.125rem);
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* Mobile-optimized readability */
-@media (max-width: 768px) {
-  body {
-    font-size: clamp(1rem, 4vw, 1rem);
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  word-break: break-word;
-  overflow-wrap: break-word;
-}
-
-#root {
-  min-height: 100vh;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg,
-    hsl(var(--primary)),
-    hsl(260 90% 65%),
-    hsl(var(--primary))
-  );
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-
-  @media (min-width: 640px) {
-    padding: 0 1.5rem;
+    /* Custom tokens */
+    --hero-bg: ${theme.gradients.hero};
+    --hero-foreground: 0 0% 100%;
+    --hero-subtitle: 210 40% 90%;
+  
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(${primary.h} ${primary.s}% 45%),
+      hsl(260 90% 65%),
+      hsl(${primary.h} ${primary.s}% 60%)
+    );
   }
 
-  @media (min-width: 768px) {
-    padding: 0 2rem;
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 4rem;
-}
-
-/* Mobile-Optimized Images */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Mobile-Friendly Links */
-a {
-  text-decoration: none;
-  color: inherit;
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* Touch targets minimum 44x44px (WCAG 2.4.5) */
-button, a, input, label {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
-}
-
-/* Mobile viewing optimization */
-@media (max-width: 768px) {
-  /* Prevent horizontal scrolling */
-  body {
-    overflow-x: hidden;
-  }
-
-  /* Improve tap target spacing */
-  .grid {
-    gap: 1.5rem;
-  }
-
-  /* Stack content vertically on mobile */
-  .flex {
-    flex-direction: column;
-  }
-
-  /* Hide decorative elements on mobile */
-  .hide-mobile {
-    display: none;
-  }
-}
-
-/* Desktop-optimized */
-@media (min-width: 769px) {
-  /* Restore horizontal layouts */
-  .grid {
-    gap: 2rem;
-  }
-
-  .flex {
-    flex-direction: row;
-  }
-
-  .hide-desktop {
-    display: none;
-  }
-}
-
-/* Print styles */
-@media print {
-  body {
-    font-size: 12pt;
-    color: black;
-    background: white;
-  }
-
-  .no-print {
-    display: none;
-  }
-}
-
-/* Screen reader only content */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-/* Focus styles for keyboard navigation */
-*:focus-visible {
-  outline: 2px solid hsl(var(--primary));
-  outline-offset: 2px;
-}
-
-/* Reduced motion for accessibility */
-@media (prefers-reduced-motion: reduce) {
   * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: clamp(1rem, 4vw, 1rem);
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @media (min-width: 640px) {
+      padding: 0 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      padding: 0 2rem;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button, a, input, label {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+
+    .grid {
+      gap: 1.5rem;
+    }
+
+    .flex {
+      flex-direction: column;
+    }
+
+    .hide-mobile {
+      display: none;
+    }
+  }
+
+  @media (min-width: 769px) {
+    .grid {
+      gap: 2rem;
+    }
+
+    .flex {
+      flex-direction: row;
+    }
+
+    .hide-desktop {
+      display: none;
+    }
+  }
+
+  @media print {
+    body {
+      font-size: 12pt;
+      color: black;
+      background: white;
+    }
+
+    .no-print {
+      display: none;
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  *:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 `;

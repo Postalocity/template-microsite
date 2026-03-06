@@ -1,63 +1,88 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
-import { FAQContent } from '../../types/content';
+import { useRef, useState } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
-interface FAQSectionProps {
-  faq: FAQContent;
-}
+const faqs = [
+  {
+    q: "How fast can I get patient statements mailed?",
+    a: "Same-day or next-day delivery. We process 5,000+ statements with same-day or next-day delivery. Same-day printing and mailing. Track every statement with real-time USPS.",
+  },
+  {
+    q: "Does Postalocity integrate with my EMR system?",
+    a: "Yes. EMR integration is available for Epic, Cerner, Athenahealth, Allscripts, eClinicalWorks, and other systems. We offer RESTful API endpoints or no-code connectors. Export statements directly from your EMR to our platform with zero manual upload.",
+  },
+  {
+    q: "How much does patient statement mailing cost?",
+    a: "Our price is <strong>$1.31 per 1-page statement</strong>. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail.",
+  },
+  {
+    q: "Can I track patient statements through the mail?",
+    a: "Tracking is available for Priority Mail and Certified Mail. First-Class Mail (standard for patient statements) does not include tracking. For Certified Mail, signature tracking is available for an additional fee.",
+  },
+  {
+    q: "Are patient statements secure with encrypted processing?",
+    a: "Yes. Secure patient statements use encrypted connections for all file uploads and downloads. Your files are processed in secure facilities and deleted after mailing is complete. We do not share your data with anyone, and we do not keep copies of your patient statements after they are mailed. ISO 9001 documented processes.",
+  },
+  {
+    q: "Do I need technical expertise to use Postalocity?",
+    a: "No. If you can save a PDF and upload it to a website, you can use Postalocity. Upload your PDF, review the preview, and click approve. We handle the rest. Our support team can walk you through your first mailing if needed.",
+  },
+];
 
-const FAQSection = ({ faq }: FAQSectionProps) => {
+const FAQSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-background/50 border-t border-border">
+    <section id="faq" className="section-padding bg-background" ref={ref}>
       <div className="section-container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            {faq.section.title}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+            Frequently Asked Questions
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {faq.section.description}
-          </p>
-        </div>
+        </motion.div>
 
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faq.faqs.map((item, idx) => (
+        <div className="max-w-3xl mx-auto space-y-3">
+          {faqs.map((faq, i) => (
             <motion.div
-              key={idx}
+              key={i}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.05 }}
-              className="bg-card/50 border-2 border-border rounded-xl overflow-hidden"
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="bg-card rounded-xl shadow-card overflow-hidden"
             >
               <button
-                onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-card/70 transition-colors"
+                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-accent/50 transition-colors"
+                aria-expanded={openIndex === i}
               >
-                <span className="font-semibold text-foreground text-lg">
-                  {item.q}
+                <span className="text-foreground font-semibold pr-4">
+                  {faq.q}
                 </span>
                 <ChevronDown
-                  className={`w-5 h-5 text-muted-foreground transition-transform ${
-                    openIndex === idx ? 'rotate-180' : ''
+                  className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform ${
+                    openIndex === i ? "rotate-180" : ""
                   }`}
                 />
               </button>
-
               <AnimatePresence>
-                {openIndex === idx && (
+                {openIndex === i && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
+                    animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
                   >
-                    <div className="px-6 pb-5 text-muted-foreground leading-relaxed">
-                      {item.a}
-                    </div>
+                    <p
+                      className="px-6 pb-6 text-muted-foreground leading-relaxed"
+                      dangerouslySetInnerHTML={{ __html: faq.a }}
+                    />
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120" fill="none" role="img" aria-labelledby="envelope-title envelope-desc">
+  <title id="envelope-title">Professional Mail Service</title>
+  <desc id="envelope-desc">Envelope with letter lines and price badge showing included mailing service</desc>
+  <!-- Envelope Graphic Only -->
+  <g transform="translate(0, 15)">
+    <!-- Yellow envelope icon with white paper inside -->
+    <g transform="translate(160, 50)">
+      <!-- White paper inside envelope -->
+      <rect x="-95" y="-45" width="190" height="90" rx="2" fill="#ffffff"/>
+      
+      <!-- Yellow envelope outline (on top of paper) -->
+      <rect x="-100" y="-50" width="200" height="100" rx="4" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="2"/>
+      
+      <!-- Top flap -->
+      <polyline points="-100,-50 0,10 100,-50" fill="none" stroke="#FCB900" stroke-width="2" stroke-linejoin="round"/>
+      
+      <!-- Bottom flap -->
+      <polyline points="-100,50 0,-10 100,50" fill="none" stroke="#FCB900" stroke-width="2" stroke-linejoin="round"/>
+      
+      <!-- Letter lines (gray) -->
+      <line x1="-80" y1="-25" x2="80" y2="-25" stroke="#4a4a4a" stroke-width="1.5"/>
+      <line x1="-80" y1="-15" x2="60" y2="-15" stroke="#4a4a4a" stroke-width="1.5"/>
+      <line x1="-80" y1="-5" x2="70" y2="-5" stroke="#4a4a4a" stroke-width="1.5"/>
+      
+      <!-- Stamp (gray) -->
+      <rect x="75" y="-45" width="20" height="25" rx="2" fill="#4a4a4a" opacity="0.9"/>
+      
+      <!-- Price badge - yellow background with black text -->
+      <g transform="translate(60, -55)">
+        <rect x="0" y="0" width="70" height="28" rx="14" fill="#FCB900"/>
+        <text x="35" y="19" text-anchor="middle" fill="#000000" font-family="system-ui" font-size="11" font-weight="normal">INCLUDED</text>
+      </g>
+    </g>
+  </g>
+</svg>

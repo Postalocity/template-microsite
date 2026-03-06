@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 110" fill="none" role="img" aria-labelledby="workflow-title workflow-desc">
+  <title id="workflow-title">4-Step Mail Processing Workflow</title>
+  <desc id="workflow-desc">Four-step process showing Upload, Process, Print, and Mail stages connected by yellow arrows</desc>
+  <!-- Step 1: Upload -->
+  <g transform="translate(30, 5)">
+    <!-- Box -->
+    <!-- Yellow shaded box -->
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="1.5"/>
+    
+    <!-- Icon: Upload (document with arrow) -->
+    <g transform="translate(80, 50)">
+      <!-- White background -->
+      <rect x="-24" y="-28" width="48" height="56" rx="4" fill="#ffffff"/>
+      <!-- Yellow shaded overlay -->
+      <rect x="-24" y="-28" width="48" height="56" rx="4" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="2"/>
+      <!-- Document lines (gray text lines) -->
+      <line x1="-14" y1="-16" x2="14" y2="-16" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-14" y1="-8" x2="14" y2="-8" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-14" y1="0" x2="14" y2="0" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-14" y1="8" x2="6" y2="8" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Arrow up (yellow emblem) -->
+      <polyline points="-6,20 0,14 6,20" fill="none" stroke="#FCB900" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <!-- Text -->
+    <text x="80" y="90" text-anchor="middle" fill="#4a4a4a" font-family="system-ui" font-size="11" font-weight="normal">UPLOAD</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(200, 55)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#FCB900" stroke-width="2" stroke-dasharray="4 2"/>
+    <polygon points="30,0 22,-5 22,5" fill="#FCB900"/>
+  </g>
+
+  <!-- Step 2: Process -->
+  <g transform="translate(240, 5)">
+    <!-- Box -->
+    <!-- Yellow shaded box -->
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="1.5"/>
+    
+    <!-- Icon: Process (gear/settings) -->
+    <g transform="translate(80, 50)">
+      <!-- White background -->
+      <circle cx="0" cy="0" r="22" fill="#ffffff"/>
+      <!-- Yellow shaded overlay -->
+      <circle cx="0" cy="0" r="22" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="2"/>
+      <!-- Gear teeth -->
+      <circle cx="0" cy="0" r="14" fill="none" stroke="#FCB900" stroke-width="2"/>
+      <circle cx="0" cy="0" r="6" fill="none" stroke="#FCB900" stroke-width="2"/>
+    </g>
+    <!-- Text -->
+    <text x="80" y="90" text-anchor="middle" fill="#4a4a4a" font-family="system-ui" font-size="11" font-weight="normal">PROCESS</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(410, 55)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#FCB900" stroke-width="2" stroke-dasharray="4 2"/>
+    <polygon points="30,0 22,-5 22,5" fill="#FCB900"/>
+  </g>
+
+  <!-- Step 3: Print -->
+  <g transform="translate(450, 5)">
+    <!-- Box -->
+    <!-- Yellow shaded box -->
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="1.5"/>
+    
+    <!-- Icon: Print (printer) -->
+    <g transform="translate(80, 50)">
+      <!-- White background -->
+      <rect x="-24" y="-22" width="48" height="44" rx="4" fill="#ffffff"/>
+      <!-- Yellow shaded overlay -->
+      <rect x="-24" y="-22" width="48" height="44" rx="4" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="2"/>
+      <!-- Printer body -->
+      <rect x="-16" y="-12" width="32" height="14" rx="2" fill="none" stroke="#FCB900" stroke-width="2"/>
+      <rect x="-20" y="4" width="40" height="10" rx="2" fill="none" stroke="#FCB900" stroke-width="2"/>
+    </g>
+    <!-- Text -->
+    <text x="80" y="90" text-anchor="middle" fill="#4a4a4a" font-family="system-ui" font-size="11" font-weight="normal">PRINT</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g transform="translate(620, 55)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#FCB900" stroke-width="2" stroke-dasharray="4 2"/>
+    <polygon points="30,0 22,-5 22,5" fill="#FCB900"/>
+  </g>
+
+  <!-- Step 4: Mail -->
+  <g transform="translate(660, 5)">
+    <!-- Box -->
+    <!-- Yellow shaded box -->
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="1.5"/>
+    
+    <!-- Icon: Mail (envelope) -->
+    <g transform="translate(80, 50)">
+      <!-- White background -->
+      <rect x="-24" y="-18" width="48" height="40" rx="4" fill="#ffffff"/>
+      <!-- Yellow shaded overlay -->
+      <rect x="-24" y="-18" width="48" height="40" rx="4" fill="#FCB900" fill-opacity="0.15" stroke="#FCB900" stroke-width="2"/>
+      <!-- Address lines (gray text lines) -->
+      <line x1="-14" y1="2" x2="6" y2="2" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="-14" y1="7" x2="10" y2="7" stroke="#4a4a4a" stroke-width="1.5" stroke-linecap="round"/>
+      <!-- Envelope flap (yellow emblem) -->
+      <polyline points="-24,-18 0,-4 24,-18" fill="none" stroke="#FCB900" stroke-width="2" stroke-linejoin="round"/>
+    </g>
+    <!-- Text -->
+    <text x="80" y="90" text-anchor="middle" fill="#4a4a4a" font-family="system-ui" font-size="11" font-weight="normal">MAIL</text>
+  </g>
+</svg>

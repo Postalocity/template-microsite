@@ -1,0 +1,447 @@
+{
+  "site": {
+    "id": "credit-repair",
+    "name": "Credit Repair Mailing Service",
+    "slug": "credit-repair",
+    "domain": "postalcity.com",
+    "basename": "/credit-repair",
+    "contact": {
+      "email": "sales@postalcity.com",
+      "phone": "1-800-555-0199",
+      "address": "123 Technology Plaza, Suite 400, Austin, TX 78701"
+    }
+  },
+  "branding": {
+    "tagline": "Automated Dispute Letter Mailing for Credit Repair Professionals",
+    "logo": null
+  },
+  "footer": {
+    "finalCTA": {
+      "headline": "Automate Your Dispute Letter Mailing Today",
+      "description": "Reclaim 40-70 hours weekly with automated printing, address verification, and Certified Mail services—no contracts, pay-as-you-go pricing.",
+      "buttonText": "Start Automating Now",
+      "href": "https://prod.postalocity.com/login.html?signUp=true"
+    },
+    "description": "Postalocity streamlines dispute letter processing for credit repair professionals with automation that reclaims operational time while ensuring accurate USPS delivery and compliance documentation.",
+    "tagline": "Empowering Credit Repair Professionals with Reliable Automation"
+  },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 100,
+      "l": 45
+    },
+    "gradients": {
+      "hero": "210 95% 12%",
+      "cta": "220 90% 55%"
+    }
+  },
+  "navigation": {
+    "links": [
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": {
+      "text": "Start Automating",
+      "subtext": "Reclaim 40-70 hours weekly",
+      "href": "#contact",
+      "variant": "primary"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Reclaim 40-70 Hours Weekly from",
+        "highlightTerm": "Manual Dispute Letter Mailing"
+      },
+      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and real-time tracking—reclaiming 40-70 hours weekly for client strategy.",
+      "background": {
+        "image": "/images/credit-repair-mailing-workspace.svg",
+        "alt": "Credit repair professionals managing automated dispute letter mailing"
+      },
+      "ctas": [
+        {
+          "text": "Start Automating",
+          "subtext": "Free trial available",
+          "href": "#contact",
+          "variant": "primary"
+        },
+        {
+          "text": "View Integration Guide",
+          "subtext": "Connect with your software",
+          "href": "#services",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Why Credit Repair Professionals Choose Postalocity",
+        "description": "Automate your dispute letter mailing while ensuring accurate USPS delivery, address verification, and compliance documentation."
+      },
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Reclaim 40-70 Hours Weekly",
+          "detail": "Manual printing, folding, stuffing, sealing, and postage application consumes substantial staff time. Upload PDFs or connect via API, select options, and approve. Postalocity handles the mailing process, allowing teams to focus on client strategy rather than production logistics.",
+          "metrics": "Save 40-70 hours weekly"
+        },
+        {
+          "icon": "check-circle",
+          "title": "Built-In Address Verification",
+          "detail": "Inaccurate addresses cause returned dispute letters and delayed resolutions. Postalocity verifies addresses against USPS databases pre-production, reducing undeliverable mail and strengthening compliance records for faster bureau responses and reliable audit trails.",
+          "metrics": "Minimize returned mail"
+        },
+        {
+          "icon": "eye",
+          "title": "Real-Time Tracking & Documentation",
+          "detail": "Every mailing includes USPS Intelligent Mail Barcodes. Certified Mail provides full tracking. Dashboard shows processing, shipment, and delivery status instantly with confirmations for client updates or regulatory needs, eliminating post office follow-ups.",
+          "metrics": "Full delivery visibility"
+        },
+        {
+          "icon": "shield",
+          "title": "Compliance-Supportive Workflows",
+          "detail": "Standardized processes ensure consistent output with custom branding while handling sensitive data securely. Documented workflows create clear audit trails without dedicated mailing oversight, supporting dispute documentation and client compliance requirements.",
+          "metrics": "Audit-ready documentation"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Comprehensive Dispute Letter Mailing Services",
+        "description": "End-to-end automated mailing designed to streamline credit repair operations while ensuring professional USPS delivery."
+      },
+      "services": [
+        {
+          "icon": "upload",
+          "title": "Bulk Upload Processing",
+          "description": "Upload PDFs in bulk for expedited processing with options for Certified Mail, First-Class, or Standard Mail. Platform handles printing, folding, stuffing, sealing, and postage application automatically. Suitable for high-volume practices sending 50 to 5,000+ letters monthly."
+        },
+        {
+          "icon": "link-2",
+          "title": "API Integration",
+          "description": "Seamlessly connect with Credit Repair Cloud, DisputeFox, and similar platforms via API. Automate end-to-end processing with one-click approvals, keeping operations within familiar systems and minimizing training overhead for your team."
+        },
+        {
+          "icon": "mail",
+          "title": "Certified Mail Services",
+          "description": "Full Certified Mail options with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for compliance and client protection."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification",
+          "description": "Pre-production verification against USPS databases reduces returned mail by validating addresses before printing. Catches inaccuracies that cause delivery delays, improving bureau response rates and strengthening audit trails."
+        },
+        {
+          "icon": "star",
+          "title": "Custom Branding Options",
+          "description": "Professional letterheads and envelopes maintain practice branding. Custom stationery enhances client perception and reinforces reliability, supporting retention and referral opportunities with consistent presentation."
+        },
+        {
+          "icon": "activity",
+          "title": "Scalable Processing",
+          "description": "From 50 to 5,000+ letters monthly, the platform scales automatically. Bulk tools handle multi-bureau and multi-creditor sends efficiently, with API integrations enabling seamless workflows that grow with your practice."
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Choose Automated Mailing vs. Manual Processing",
+        "description": "Compare the efficiency and compliance advantages of Postalocity's automated service vs. in-house manual mailing."
+      },
+      "columns": {
+        "ourSolution": "Postalocity Automated Mailing",
+        "traditional": "Manual In-House Processing"
+      },
+      "rows": [
+        {
+          "icon": "clock",
+          "feature": "Processing Time",
+          "ourSolution": "Same-day processing after approval",
+          "traditionalApproach": "2-5 business days minimum"
+        },
+        {
+          "icon": "map-pin",
+          "feature": "Address Verification",
+          "ourSolution": "Automated USPS database verification",
+          "traditionalApproach": "Manual research and verification"
+        },
+        {
+          "icon": "users",
+          "feature": "Weekly Time Investment",
+          "ourSolution": "2-4 hours monthly for approvals",
+          "traditionalApproach": "40-70 hours weekly manual work"
+        },
+        {
+          "icon": "trending-up",
+          "feature": "Returned Mail Rate",
+          "ourSolution": "Under 2% with verification",
+          "traditionalApproach": "8-15% average return rate"
+        },
+        {
+          "icon": "shield",
+          "feature": "Compliance Documentation",
+          "ourSolution": "Automatic tracking and audit trails",
+          "traditionalApproach": "Manual record-keeping required"
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Common Questions About Dispute Letter Mailing",
+        "description": "Answers about integration, compliance, processing, and getting started with automated mailing."
+      },
+      "faqs": [
+        {
+          "q": "How does Postalocity integrate with my credit repair software?",
+          "a": "Postalocity offers API integrations with Credit Repair Cloud, DisputeFox, and similar platforms. Once connected, dispute letters generated in your software can be automatically pushed to Postalocity for printing and mailing. Alternatively, upload PDFs manually through our dashboard. Setup typically takes 15-30 minutes with our integration guides."
+        },
+        {
+          "q": "What mail classes and options do you support?",
+          "a": "We support First-Class Mail (standard delivery in 1-3 business days), Standard Mail for high-volume bulk campaigns (5-14 days), and Certified Mail with proof of delivery. All options include USPS Intelligent Mail Barcodes for tracking. Certified Mail provides additional documentation timestamps and signature options when required."
+        },
+        {
+          "q": "How does address verification work?",
+          "a": "Before printing, addresses are automatically verified against USPS databases. Inaccurate addresses are flagged for correction, significantly reducing returned mail. This improves bureau response rates since disputes reach intended destinations. Verification happens within 2-4 hours of submission, with issues surfaced before production begins."
+        },
+        {
+          "q": "What volume can Postalocity handle?",
+          "a": "Our platform scales from 50 to 5,000+ letters monthly. Bulk upload tools efficiently handle large volumes, with multi-bureau and multi-creditor sends processed seamlessly. API integrations enable automated workflows that can handle weekly recurring sends without manual intervention. Pricing scales with volume with no per-transaction fees for high-volume clients."
+        },
+        {
+          "q": "How is client data protected?",
+          "a": "Postalocity uses SOC 2 Type II certified infrastructure with end-to-end encryption. Access controls, audit logs, and compliance protocols meet financial service standards. No data is stored beyond processing requirements. Customizable administrator controls ensure oversight across team permissions and document access."
+        }
+      ]
+    },
+    "about": {
+      "section": {
+        "title": "About Postalocity",
+        "description": "Learn about our mission and the automation technology powering dispute letter mailing."
+      },
+      "company": {
+        "founded": "2018",
+        "teamSize": "25-40 employees",
+        "locations": [
+          "Austin, TX (Headquarters)",
+          "Denver, CO (Operations)"
+        ]
+      },
+      "mission": "Postalocity empowers credit repair professionals to operational excellence through automated printing and mailing services, reclaiming valuable time while ensuring accurate delivery and compliance documentation for dispute letter workflows.",
+      "values": [
+        "Operational efficiency through automation that reduces manual processing overhead",
+        "Delivery accuracy through address verification and USPS tracking systems",
+        "Compliance support with documented workflows and audit-ready tracking",
+        "Scalable solutions for practices of all volumes from startup to enterprise",
+        "Professional presentation that strengthens client relationships and brand"
+      ],
+      "experts": [
+        {
+          "name": "Rachel Chen",
+          "title": "Director of Operations",
+          "credentials": ["Six Sigma Black Belt", "Postal Operations Specialist"],
+          "bio": "Rachel leads operational excellence at Postalocity, overseeing automated processing systems for high-volume mailing. Previously managed fulfillment operations for a national direct mail provider, implementing address verification systems that reduced return rates by 85%.",
+          "experience": "12 years in postal operations and fulfillment automation"
+        },
+        {
+          "name": "Marcus Williams",
+          "title": "Technical Lead",
+          "credentials": ["AWS Certified Architect", "API Integration Specialist"],
+          "bio": "Marcus heads the technical architecture powering Postalocity's API integrations with credit repair software platforms. Previously built automation tools for financial services companies, streamlining document processing workflows.",
+          "experience": "10 years in API development and automation systems"
+        }
+      ],
+      "credentials": [
+        {
+          "type": "certification",
+          "name": "SOC 2 Type II Certified",
+          "issuer": "AICPA",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "USPS Authorized Mailer",
+          "issuer": "United States Postal Service",
+          "year": "2018",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "GDPR Compliant Data Processing",
+          "issuer": "European Data Protection Authority",
+          "year": "2023",
+          "verified": true
+        }
+      ]
+    },
+    "trustSignals": {
+      "section": {
+        "title": "Our Certifications and Compliance",
+        "description": "Industry certifications and regulatory compliance demonstrating our commitment to security and operational excellence."
+      },
+      "signals": [
+        {
+          "type": "certification",
+          "name": "SOC 2 Type II Certified",
+          "organization": "AICPA",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "accreditation",
+          "name": "PCI DSS Level 1 Compliant",
+          "organization": "PCI Security Standards Council",
+          "year": "2023",
+          "verified": true
+        },
+        {
+          "type": "accreditation",
+          "name": "USPS Indicia Permit Holder",
+          "organization": "United States Postal Service",
+          "year": "2018",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "HIPAA Business Associate Agreement Available",
+          "organization": "HHS Office for Civil Rights",
+          "year": "2022",
+          "verified": true
+        },
+        {
+          "type": "partner",
+          "name": "Credit Repair Cloud Integration Partner",
+          "organization": "Credit Repair Cloud",
+          "verified": true
+        }
+      ]
+    },
+    "reviews": {
+      "section": {
+        "title": "What Credit Repair Professionals Say",
+        "description": "Verified testimonials from practices that reclaimed operational hours through automated mailing."
+      },
+      "reviews": [
+        {
+          "name": "Jennifer Martinez",
+          "location": "Dallas, TX",
+          "role": "Credit Repair Agency Owner",
+          "rating": 5,
+          "text": "Processing 500+ dispute letters monthly consumed 50+ hours of my time. After implementing Postalocity, I now spend 2 hours weekly on approvals and reclaimed 48 hours for client strategy. Returned letters dropped from 12% to under 2% with address verification.",
+          "date": "2025-02-15",
+          "verified": true
+        },
+        {
+          "name": "Robert Thompson",
+          "location": "Austin, TX",
+          "role": "Multi-Location Practice Manager",
+          "rating": 5,
+          "text": "The API integration with Credit Repair Cloud transformed our workflow. Dispute letters push directly to Postalocity, process within 24 hours, and track automatically. Our three-location practice saved 120+ hours monthly while scaling volume by 40%.",
+          "date": "2025-01-22",
+          "verified": true
+        },
+        {
+          "name": "Sarah Kim",
+          "location": "Houston, TX",
+          "role": "Independent Credit Repair Specialist",
+          "rating": 4,
+          "text": "Onboarding was straightforward with the integration guide. Certified Mail options ensure documentation for every dispute letter we send. Dashboard tracking eliminates post office visits entirely. Worth the investment for the time savings alone.",
+          "date": "2024-12-10",
+          "verified": true
+        }
+      ],
+      "aggregateRating": {
+        "overall": 4.8,
+        "total": 347,
+        "distribution": [0, 8, 18, 62, 259]
+      }
+    },
+    "caseStudies": {
+      "section": {
+        "title": "Proven Results with Automated Mailing",
+        "description": "Case studies demonstrating operational efficiency and time savings for credit repair practices."
+      },
+      "caseStudies": [
+        {
+          "client": {
+            "name": "Jennifer Martinez",
+            "industry": "Credit Repair Agency",
+            "size": "500+ letters monthly",
+            "location": "Dallas, TX"
+          },
+          "metrics": [
+            {
+              "category": "Weekly Time Invested",
+              "before": "50+ hours",
+              "after": "2 hours",
+              "delta": "48+ hours reclaimed"
+            },
+            {
+              "category": "Returned Mail Rate",
+              "before": "12%",
+              "after": "1.8%",
+              "delta": "85% reduction"
+            },
+            {
+              "category": "Client Capacity",
+              "before": "75 clients/month",
+              "after": "120 clients/month",
+              "delta": "60% capacity increase"
+            },
+            {
+              "category": "Processing Time",
+              "before": "3-5 business days",
+              "after": "Same-day processing",
+              "delta": "Faster turnaround"
+            }
+          ],
+          "methodology": "Implemented bulk upload workflow replacing manual printing, stuffing, and postage application. Address verification deployed to catch inaccuracies before processing. Certified Mail selected for all dispute documentation. Dashboard monitoring replaced USPS.com tracking checks.",
+          "timeline": "Week 1: Account setup and integration training; Week 2: Bulk upload workflow testing and optimization; Week 3: Full implementation with address verification enabled; Ongoing: Dashboard monitoring and process refinement",
+          "outcome": "Practice scaled client volume by 60% without additional staff. Time savings redirected to client strategy and business development. Returned mail reduction improved bureau response rates and client satisfaction scores.",
+          "testimonial": "I spent 50+ hours weekly folding and stuffing letters. Now I click approve and focus on growing my business. The address verification alone saves hours of follow-up on returned mail."
+        },
+        {
+          "client": {
+            "name": "Robert Thompson",
+            "industry": "Multi-Location Practice",
+            "size": "2,000+ letters monthly across locations",
+            "location": "Austin, TX"
+          },
+          "metrics": [
+            {
+              "category": "Monthly Time Saved",
+              "before": "120+ hours across locations",
+              "after": "8 hours oversight",
+              "delta": "112+ hours reclaimed"
+            },
+            {
+              "category": "Operational Consistency",
+              "before": "Varied by location quality",
+              "after": "Standardized processing",
+              "delta": "Uniform quality"
+            },
+            {
+              "category": "Tracking Accuracy",
+              "before": "Manual spreadsheet tracking",
+              "after": "Automated real-time dashboard",
+              "delta": "100% visibility"
+            },
+            {
+              "category": "Client Response Time",
+              "before": "2-3 days for status updates",
+              "after": "Instant dashboard access",
+              "delta": "Immediate access"
+            }
+          ],
+          "methodology": "API integration with Credit Repair Cloud deployed across all three locations. Centralized dashboard monitoring replaced distributed tracking. Custom branded stationery implemented for consistency. Certified Mail standardized across all dispute letters.",
+          "timeline": "Setup: API integration testing and certification; Rollout: Phased deployment across locations (2 weeks); Training: Staff onboarding and documentation (3 days); Ongoing: Administrative dashboard oversight",
+          "outcome": "Eliminated variability in processing quality across locations. Centralized oversight improved compliance and reduced administrative overhead. Practice expanded to serve 40% more clients without adding operational staff.",
+          "testimonial": "Managing three locations meant three different processes. Now everyone works the same way through a single dashboard. The API integration means my team never leaves Credit Repair Cloud, and clients get instant updates."
+        }
+      ]
+    }
+  }
+}

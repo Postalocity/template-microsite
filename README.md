@@ -263,7 +263,7 @@ Reference in config:
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run generate <config-name>` - Generate site from config
-- `npm run validate-configs` - Validate all site configs
+- `npm run verify <config-name>` - Verify generated site
 
 ## License
 

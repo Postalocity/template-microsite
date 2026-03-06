@@ -1,14 +1,17 @@
 import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
-import path from 'path';
+  import react from '@vitejs/plugin-react-swc';
+  import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
+  root: __dirname,
   base: '/healthcare-billing',
   resolve: {
     alias: {
+      '@': path.resolve(__dirname, '../../common'),
       '../common': path.resolve(__dirname, '../../common'),
     },
+    dedupe: ['react', 'react-dom'],
   },
   server: {
     host: true,

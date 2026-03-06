@@ -12,8 +12,18 @@
     }
   },
   "branding": {
-    "tagline": "Healthcare Billing Solutions",
+    "tagline": "Automated Claims Processing for Healthcare",
     "logo": null
+  },
+  "footer": {
+    "finalCTA": {
+      "headline": "Optimize Your Revenue Cycle Today",
+      "description": "Streamline claims processing, reduce denials, and accelerate reimbursement—no contracts, pay-as-you-go pricing.",
+      "buttonText": "Get Started Now",
+      "href": "https://prod.postalocity.com/login.html?signUp=true"
+    },
+    "description": "Postalocity helps healthcare organizations reclaim 40-70 hours weekly through automated revenue cycle management and claims processing services.",
+    "tagline": "Empowering Healthcare Providers with Reliable Revenue Cycle Solutions"
   },
   "theme": {
     "primary": {
@@ -48,7 +58,7 @@
       },
       "subhead": "Clinical and administrative professionals report spending 57 hours weekly on revenue cycle tasks. Our audit identifies 40-70 hours of weekly savings through workflow optimization.",
       "background": {
-        "image": "/images/healthcare-workspace.jpg",
+        "image": "/images/healthcare-workspace.svg",
         "alt": "Healthcare professional managing revenue cycle operations efficiently"
       },
       "ctas": [
@@ -73,25 +83,25 @@
       },
       "benefits": [
         {
-          "icon": "⏰",
+          "icon": "clock",
           "title": "File Claims 70% Faster",
           "detail": "Automated claim submission reduces manual data entry errors and accelerates reimbursement cycles by completing claims three times faster than manual processing.",
           "metrics": "Save 15-25 hours weekly"
         },
         {
-          "icon": "📊",
+          "icon": "activity",
           "title": "Audit Process Minimized",
           "detail": "Streamlined workflows reduce audit preparation time by detecting and resolving coding discrepancies before submission, eliminating back-log accumulation.",
           "metrics": "Save 10-15 hours weekly"
         },
         {
-          "icon": "💬",
+          "icon": "message-circle",
           "title": "Patient Payment Acceleration",
           "detail": "Automated payment posting and follow-up reduces administrative overhead while improving cash flow by processing patient payments immediately upon receipt.",
           "metrics": "Save 5-10 hours weekly"
         },
         {
-          "icon": "🎯",
+          "icon": "target",
           "title": "Denial Resolution Optimized",
           "detail": "Intelligent claim error detection identifies common denial patterns before submission, reducing rework by 50% and administrative costs by 40%.",
           "metrics": "Save 8-12 hours weekly"
@@ -105,32 +115,32 @@
       },
 "services": [
             {
-              "icon": "📋",
+              "icon": "file-text",
               "title": "Medical Coding",
               "description": "Accurate, compliant coding services with ICD-10 and CPT expertise ensuring proper reimbursement through certified coders specializing in your specialty, reducing claim denials by identifying coding discrepancies before submission and maintaining compliance with payer-specific requirements."
             },
             {
-              "icon": "📈",
+              "icon": "trending-up",
               "title": "Appeals Management",
               "description": "Strategic appeals process with documentation tracking, deadline management, and denial pattern analysis to maximize claim recovery through systematic approaches that identify root causes of denials and implement proactive prevention strategies."
             },
             {
-              "icon": "🔍",
+              "icon": "search",
               "title": "Revenue Audits",
               "description": "Comprehensive audits identifying missed revenue opportunities, coding compliance issues, workflow bottlenecks, underpayment patterns, and process inefficiencies with actionable recommendations for measurable improvements in revenue realization."
             },
             {
-              "icon": "💰",
+              "icon": "dollar-sign",
               "title": "Billing Optimization",
               "description": "Workflow automation reducing manual entry by 70-80% and accelerating claim submission cycles from 14-21 days to 3-5 days through intelligent claim validation rules, automated error detection, payer rule enforcement, and exception-based processing that maximizes staff productivity."
             },
             {
-              "icon": "📞",
+              "icon": "phone",
               "title": "Patient Support",
               "description": "Billing inquiry resolution improving patient satisfaction and payment collection rates through HIPAA-compliant patient portals, automated payment reminders, flexible payment plan management, and transparent billing explanations that reduce patient confusion and accelerate payment collection within 2-4 days of service delivery."
             },
             {
-              "icon": "🔒",
+              "icon": "shield",
               "title": "Compliance Support",
               "description": "Ongoing regulatory updates ensuring your processes align with changing healthcare requirements through dedicated compliance specialists who monitor federal and state regulatory changes, conduct monthly regulatory assessments, and provide guidance on implementation of new requirements with minimal operational impact."
             }
@@ -147,26 +157,31 @@
       },
       "rows": [
         {
+          "icon": "zap",
           "feature": "Claim Processing Speed",
           "ourSolution": "3-5 days",
           "traditionalApproach": "14-21 days"
         },
         {
+          "icon": "trending-down",
           "feature": "Denial Rate",
           "ourSolution": "< 2%",
           "traditionalApproach": "5-15%"
         },
         {
+          "icon": "check-circle",
           "feature": "Recovery Rate",
           "ourSolution": "95%+",
           "traditionalApproach": "70-80%"
         },
         {
+          "icon": "clock",
           "feature": "Administrative Time",
           "ourSolution": "10-15 hours weekly",
           "traditionalApproach": "40-70 hours weekly"
         },
         {
+          "icon": "star",
           "feature": "Patient Satisfaction",
           "ourSolution": "4.8/5.0",
           "traditionalApproach": "3.2/5.0"

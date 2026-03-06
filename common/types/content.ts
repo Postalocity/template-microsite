@@ -54,6 +54,8 @@ export interface SiteConfig {
     links: Array<{ label: string; href: string }>;
     cta?: CTA;
   };
+  content: SectionContent;
+  footer?: FooterContent;
 }
 
 export interface Benefit {
@@ -99,6 +101,7 @@ export interface FAQContent {
 }
 
 export interface ComparisonRow {
+  icon: string;
   feature: string;
   ourSolution: string;
   traditionalApproach: string;
@@ -243,4 +246,16 @@ export interface LegalPageContent {
     heading: string;
     content: string[];
   }[];
+}
+
+export interface FooterContent {
+  finalCTA: {
+    headline: string;
+    description: string;
+    buttonText: string;
+    href: string;
+    promoCode?: string;
+  };
+  description: string;
+  tagline: string;
 }

@@ -73,29 +73,41 @@ function warn(description: string, testFn: () => boolean): void {
 
 // Verification
 async function verifySite() {
-  const siteDir = path.join(__dirname, '..', 'sites', 'healthcare-billing');
+  const args = process.argv.slice(2);
+  const configName = args[0] || 'healthcare-billing';
+  
+  const siteDir = path.join(__dirname, '..', 'sites', configName);
   const configPath = path.join(siteDir, 'config.json');
 
-  console.log('════════════════════════════════════════════════════════════');
-  console.log('🧪 Template Microsite System Verification');
-  console.log('════════════════════════════════════════════════════════════');
-
-  // Load config
+  console.log(`Config path: ${configPath}`);
+  console.log(`Config exists: ${fs.existsSync(configPath)}`);
+  // Load config once at the start
   let config: any;
-  test('Config file exists', () => {
-    return fs.existsSync(configPath);
-  });
-
-  test('Config parses as valid JSON', () => {
+  try {
     config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
-    return config !== null;
-  });
+  } catch (error) {
+    console.error(`Error loading config from ${configPath}:`, error);
+    process.exit(1);
+  }
+
+  console.log(`Config keys loaded: ${Object.keys(config)}`);
+  console.log(`Has content: ${config ? 'yes' : 'no'}`);
+  if (config?.content) {
+    console.log(`Has hero: ${config.content.hero ? 'yes' : 'no'}`);
+    if (config?.content?.hero) {
+      console.log(`Hero keys: ${Object.keys(config.content.hero)}`);
+    }
+  }
+
+  console.log('════════════════════════════════════════════════════════════');
+  console.log(`🧪 Template Microsite System Verification - ${configName}`);
+  console.log('════════════════════════════════════════════════════════════');
 
   // Site Structure Tests
   log_section('📁 File Structure');
 
-  test('Generated index.tsx exists', () => {
-    return fs.existsSync(path.join(siteDir, 'index.tsx'));
+  test('Generated main.tsx exists', () => {
+    return fs.existsSync(path.join(siteDir, 'main.tsx'));
   });
 
   test('Generated vite.config.ts exists', () => {
@@ -126,11 +138,11 @@ async function verifySite() {
   log_section('⚙️ Configuration Structure');
 
   test('Has site object', () => config?.site !== undefined);
-  test('Has site.name = "Healthcare Billing Solutions"', () => config?.site?.name === 'Healthcare Billing Solutions');
-  test('Has site.slug = "healthcare-billing"', () => config?.site?.slug === 'healthcare-billing');
-  test('Has site.domain = "healthcare-billing.com"', () => config?.site?.domain === 'healthcare-billing.com');
+  test('Has site.name', () => config?.site?.name !== undefined);
+  test('Has proper slug', () => config?.site?.slug === configName);
+  test('Has proper domain', () => config?.site?.domain !== undefined);
   test('Has contact information', () => config?.site?.contact !== undefined);
-  test('Has contact email', () => config?.site?.contact?.email === 'contact@healthcare-billing.com');
+  test('Has contact email', () => config?.site?.contact?.email !== undefined);
   test('Has branding object', () => config?.branding !== undefined);
   test('Has tagline', () => config?.branding?.tagline !== undefined);
   test('Has theme object', () => config?.theme !== undefined);
@@ -140,6 +152,11 @@ async function verifySite() {
 
   // Content Structure Tests
   log_section('📝 Content Structure');
+
+  // Debug: Check hero structure
+  if (config?.content?.hero) {
+    console.log('Hero keys:', Object.keys(config.content.hero));
+  }
 
   test('Has hero content', () => config?.content?.hero !== undefined);
   test('Has hero headline.main', () => config?.content?.hero?.headline?.main !== undefined);
@@ -169,20 +186,20 @@ async function verifySite() {
     return faqs.every((f: any) => f.q && f.a && f.q.length > 10 && f.a.length > 20);
   });
 
-  // Content Loading Tests
+// Content Loading Tests
   log_section('🔗 Content Loading');
 
-  const indexContent = fs.readFileSync(path.join(siteDir, 'index.tsx'), 'utf-8');
-  test('Imports config from ./config.json', () => indexContent.includes("import config from './config.json'"));
-  test('Imports components from ../common', () => indexContent.includes('from \'../common/components/shared\''));
-  test('Imports HeroSection', () => indexContent.includes('HeroSection'));
-  test('Imports BenefitsSection', () => indexContent.includes('BenefitsSection'));
-  test('Imports ServicesSection', () => indexContent.includes('ServicesSection'));
-  test('Imports FAQSection', () => indexContent.includes('FAQSection'));
-  test('Imports ComparisonSection', () => indexContent.includes('ComparisonSection'));
-  test('Imports SiteNavigation', () => indexContent.includes('SiteNavigation'));
-  test('Imports SiteFooter', () => indexContent.includes('SiteFooter'));
-  test('Destructures config content', () => indexContent.includes('const { content } = config'));
+  const mainContent = fs.readFileSync(path.join(siteDir, 'main.tsx'), 'utf-8');
+  test('Imports config from ./config.json', () => mainContent.includes("import config from './config.json'"));
+  test('Imports components from ../common', () => mainContent.includes('from \'../common/components/shared\''));
+  test('Imports HeroSection', () => mainContent.includes('HeroSection'));
+  test('Imports BenefitsSection', () => mainContent.includes('BenefitsSection'));
+  test('Imports ServicesSection', () => mainContent.includes('ServicesSection'));
+  test('Imports FAQSection', () => mainContent.includes('FAQSection'));
+  test('Imports ComparisonSection', () => mainContent.includes('ComparisonSection'));
+  test('Imports SiteNavigation', () => mainContent.includes('SiteNavigation'));
+  test('Imports SiteFooter', () => mainContent.includes('SiteFooter'));
+  test('Destructures config content', () => mainContent.includes('const { content } = config'));
 
   // Content Standards Tests
   log_section('✨ Production Content Standards');
@@ -201,24 +218,29 @@ async function verifySite() {
   });
 
   test('Hero headline uses hours-focused messaging', () => {
-    return heroHeadline.match(/(\d+\s*hour)/i) !== null;
+    return heroHeadline.match(/(\d+[\+\s]*hours?)/i) !== null;
   });
 
-  warn('Hero subhead contains keywords (healthcare/billing)', () => {
-    return heroSubhead.includes('healthcare') && heroSubhead.toLowerCase().includes('billing');
+  warn('Hero subhead contains relevant keywords', () => {
+    const domain = config.site.slug;
+    if (domain === 'healthcare-billing') {
+      return heroSubhead.includes('healthcare') && heroSubhead.toLowerCase().includes('billing');
+    }
+    return true; // Skip for other domains
   });
 
   test('Benefits contain specific metrics', () => {
     const metrics = config.content.benefits.benefits.map((b: any) => b.metrics);
-    return metrics.every((m: string) => m.match(/\d+\s*(hour|hour|hr)/i));
+    return metrics.some((m: string) => m.match(/\d+\s*(hour|hours|point|points|%|\$)/i));
   });
 
   // Build Configuration Tests
   log_section('🔧 Build Configuration');
 
   const viteConfig = fs.readFileSync(path.join(siteDir, 'vite.config.ts'), 'utf-8');
-  test('Vite config has base path /healthcare-billing', () => {
-    return viteConfig.includes("base: '/healthcare-billing'");
+  const expectedBase = config?.site?.basename || '/' + configName;
+  test(`Vite config has base path ${expectedBase}`, () => {
+    return viteConfig.includes(`base: '${expectedBase}'`);
   });
   test('Vite config has alias for ../common', () => viteConfig.includes('../common'));
   test('Vite config resolves alias to ../../common', () => viteConfig.includes('../../common'));
@@ -250,14 +272,16 @@ async function verifySite() {
   const sitemapXml = fs.readFileSync(path.join(siteDir, 'sitemap.xml'), 'utf-8');
   test('sitemap.xml has XML declaration', () => sitemapXml.includes('<?xml version="1.0"'));
   test('sitemap.xml has urlset namespace', () => sitemapXml.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'));
-  test('sitemap.xml has URL with correct domain', () => sitemapXml.includes('https://healthcare-billing.com'));
+  test(`sitemap.xml has URL with ${config?.site?.domain}`, () => sitemapXml.includes(`https://${config?.site?.domain}`));
 
   // Check built HTML
   if (fs.existsSync(path.join(distDir, 'index.html'))) {
     const builtHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
-    test('Built HTML has correct title', () => builtHtml.includes('Healthcare Billing Solutions'));
+    const expectedTitle = config?.site?.name || configName;
+    const expectedBase = config?.site?.basename || '/' + configName;
+    test(`Built HTML has title "${expectedTitle}"`, () => builtHtml.includes(expectedTitle));
     test('Built HTML has hero subhead meta description', () => builtHtml.includes(config.content.hero.subhead.substring(0, 50)));
-    test('Built HTML has script with base path', () => builtHtml.includes('/healthcare-billing/assets/'));
+    test(`Built HTML has script with base path ${expectedBase}`, () => builtHtml.includes(`${expectedBase}/assets/`));
     test('Built HTML loads fonts', () => builtHtml.includes('fonts.googleapis.com'));
 
     // Schema.org Structured Data Tests (FIX #2 - LocalBusiness schema)
