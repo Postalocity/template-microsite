@@ -16,6 +16,22 @@ const CONFIGS_DIR = path.join(__dirname, '../config/sites');
 const SITES_DIR = path.join(__dirname, '../sites');
 const TEMPLATE_DIR = path.join(__dirname, '..');
 
+// Copy favicons from common/assets to all sites
+function copyFavicons(siteDir: string): void {
+  const publicDir = path.join(siteDir, 'public');
+  const commonAssetsFavicon = path.join(TEMPLATE_DIR, 'common/assets/favicon.ico');
+  
+  if (fs.existsSync(commonAssetsFavicon)) {
+    // Create public dir if it doesn't exist
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+    
+    // Copy favicon.ico
+    fs.copyFileSync(commonAssetsFavicon, path.join(publicDir, 'favicon.ico'));
+  }
+}
+
 async function generateSite(configPath: string) {
   try {
     // Read configuration
@@ -67,6 +83,9 @@ async function generateSite(configPath: string) {
     const sitemapXml = generateSitemapXml(site);
     fs.writeFileSync(path.join(siteDir, 'sitemap.xml'), sitemapXml);
 
+    // Copy common assets (favicon, etc.)
+    copyFavicons(siteDir);
+
     console.log(`✅ ${site.name} generated successfully!`);
     console.log(`📁 Generated files:`);
     console.log(`   - main.tsx`);
@@ -76,8 +95,9 @@ async function generateSite(configPath: string) {
     console.log(`   - package.json`);
     console.log(`   - index.html`);
     console.log(`   - globals.css`);
-    console.log(`   - robots.txt (NEW - enables indexing)`);
-    console.log(`   - sitemap.xml (NEW - SEO discovery)`);
+    console.log(`   - robots.txt`);
+    console.log(`   - sitemap.xml`);
+    console.log(`   - favicon.ico (copied from common/assets)`);
     console.log(`\n🚀 Next steps:`);
     console.log(`   cd ${siteDir}`);
     console.log(`   npm install`);
@@ -388,8 +408,7 @@ function generateIndexHtml(config: any): string {
     <meta name="robots" content="index, follow" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/x-icon" href="${site.basename}/favicon.ico" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
