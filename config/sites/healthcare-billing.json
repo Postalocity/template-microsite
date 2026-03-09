@@ -22,7 +22,7 @@
       "buttonText": "Get Started Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true"
     },
-    "description": "Postalocity helps healthcare organizations reclaim 40-70 hours weekly through automated revenue cycle management and claims processing services.",
+    "description": "Postalocity helps healthcare organizations reclaim reclaim hours weekly weekly through automated revenue cycle management and claims processing services.",
     "tagline": "Empowering Healthcare Providers with Reliable Revenue Cycle Solutions"
   },
   "theme": {
@@ -38,7 +38,7 @@
   },
   "seo": {
     "title": "Automate Patient Statement Mailing | Healthcare Mailing Services",
-    "description": "Healthcare providers reclaim 40-70 hours weekly with Postalocity's automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail options, and EMR integration.",
+    "description": "Healthcare providers reclaim reclaim hours weekly weekly with Postalocity's automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail options, and EMR integration.",
     "keywords": [
       "patient statement mailing",
       "healthcare mailing services",
@@ -52,10 +52,10 @@
       "Healthcare Mailing Services",
       "Automated Patient Statement Mailing"
     ],
-    "ogTitle": "Automate Patient Statement Mailing | Reclaim 40-70 Hours Weekly",
-    "ogDescription": "Healthcare providers save 40-70 hours weekly with automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail, EMR integration.",
+    "ogTitle": "Automate Patient Statement Mailing | reclaim hours weekly Weekly",
+    "ogDescription": "Healthcare providers save reclaim hours weekly weekly with automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail, EMR integration.",
     "twitterTitle": "Patient Statement Automation | Healthcare Mailing Services",
-    "twitterDescription": "Save 40-70 hours weekly with automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail, EMR integration with systems.",
+    "twitterDescription": "reclaim hours weekly with automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail, EMR integration with systems.",
     "canonicalUrl": "https://postalcity.com/healthcare-billing",
     "robots": "index, follow",
     "sitemapPriority": 1.0,
@@ -63,10 +63,22 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "Services", "href": "#services" },
-      { "label": "FAQ", "href": "#faq" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
     ],
     "cta": {
       "text": "Get Started",
@@ -78,10 +90,10 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Reclaim 40-70 Hours Weekly from",
+        "main": "reclaim hours weekly Weekly from",
         "highlightTerm": "Revenue Cycle Tasks"
       },
-      "subhead": "Clinical and administrative professionals report spending 57 hours weekly on revenue cycle tasks. Our audit identifies 40-70 hours of weekly savings through workflow optimization.",
+      "subhead": "Clinical and administrative professionals report spending 57 hours weekly on revenue cycle tasks. Our audit identifies reclaim hours weekly of weekly savings through workflow optimization.",
       "background": {
         "image": "/images/healthcare-workspace.svg",
         "alt": "Healthcare professional managing revenue cycle operations efficiently"
@@ -111,25 +123,25 @@
           "icon": "clock",
           "title": "File Claims 70% Faster",
           "detail": "Automated claim submission reduces manual data entry errors and accelerates reimbursement cycles by completing claims three times faster than manual processing.",
-          "metrics": "Save 15-25 hours weekly"
+          "metrics": "reclaim hours weekly"
         },
         {
           "icon": "activity",
           "title": "Audit Process Minimized",
           "detail": "Streamlined workflows reduce audit preparation time by detecting and resolving coding discrepancies before submission, eliminating back-log accumulation.",
-          "metrics": "Save 10-15 hours weekly"
+          "metrics": "reclaim hours weekly"
         },
         {
           "icon": "message-circle",
           "title": "Patient Payment Acceleration",
           "detail": "Automated payment posting and follow-up reduces administrative overhead while improving cash flow by processing patient payments immediately upon receipt.",
-          "metrics": "Save 5-10 hours weekly"
+          "metrics": "reclaim hours weekly"
         },
         {
           "icon": "target",
           "title": "Denial Resolution Optimized",
           "detail": "Intelligent claim error detection identifies common denial patterns before submission, reducing rework by 50% and administrative costs by 40%.",
-          "metrics": "Save 8-12 hours weekly"
+          "metrics": "reclaim hours weekly"
         }
       ]
     },
@@ -138,38 +150,38 @@
         "title": "Comprehensive Revenue Cycle Services",
         "description": "End-to-end solutions designed to streamline your operations and maximize revenue recovery."
       },
-"services": [
-            {
-              "icon": "file-text",
-              "title": "Medical Coding",
-              "description": "Accurate, compliant coding services with ICD-10 and CPT expertise ensuring proper reimbursement through certified coders specializing in your specialty, reducing claim denials by identifying coding discrepancies before submission and maintaining compliance with payer-specific requirements."
-            },
-            {
-              "icon": "trending-up",
-              "title": "Appeals Management",
-              "description": "Strategic appeals process with documentation tracking, deadline management, and denial pattern analysis to maximize claim recovery through systematic approaches that identify root causes of denials and implement proactive prevention strategies."
-            },
-            {
-              "icon": "search",
-              "title": "Revenue Audits",
-              "description": "Comprehensive audits identifying missed revenue opportunities, coding compliance issues, workflow bottlenecks, underpayment patterns, and process inefficiencies with actionable recommendations for measurable improvements in revenue realization."
-            },
-            {
-              "icon": "dollar-sign",
-              "title": "Billing Optimization",
-              "description": "Workflow automation reducing manual entry by 70-80% and accelerating claim submission cycles from 14-21 days to 3-5 days through intelligent claim validation rules, automated error detection, payer rule enforcement, and exception-based processing that maximizes staff productivity."
-            },
-            {
-              "icon": "phone",
-              "title": "Patient Support",
-              "description": "Billing inquiry resolution improving patient satisfaction and payment collection rates through HIPAA-compliant patient portals, automated payment reminders, flexible payment plan management, and transparent billing explanations that reduce patient confusion and accelerate payment collection within 2-4 days of service delivery."
-            },
-            {
-              "icon": "shield",
-              "title": "Compliance Support",
-              "description": "Ongoing regulatory updates ensuring your processes align with changing healthcare requirements through dedicated compliance specialists who monitor federal and state regulatory changes, conduct monthly regulatory assessments, and provide guidance on implementation of new requirements with minimal operational impact."
-            }
-          ]
+      "services": [
+        {
+          "icon": "file-text",
+          "title": "Medical Coding",
+          "description": "Accurate, compliant coding services with ICD-10 and CPT expertise ensuring proper reimbursement through certified coders specializing in your specialty, reducing claim denials by identifying coding discrepancies before submission and maintaining compliance with payer-specific requirements."
+        },
+        {
+          "icon": "trending-up",
+          "title": "Appeals Management",
+          "description": "Strategic appeals process with documentation tracking, deadline management, and denial pattern analysis to maximize claim recovery through systematic approaches that identify root causes of denials and implement proactive prevention strategies."
+        },
+        {
+          "icon": "search",
+          "title": "Revenue Audits",
+          "description": "Comprehensive audits identifying missed revenue opportunities, coding compliance issues, workflow bottlenecks, underpayment patterns, and process inefficiencies with actionable recommendations for measurable improvements in revenue realization."
+        },
+        {
+          "icon": "dollar-sign",
+          "title": "Billing Optimization",
+          "description": "Workflow automation reducing manual entry by 70-80% and accelerating claim submission cycles from 14-21 days to 3-5 days through intelligent claim validation rules, automated error detection, payer rule enforcement, and exception-based processing that maximizes staff productivity."
+        },
+        {
+          "icon": "phone",
+          "title": "Patient Support",
+          "description": "Billing inquiry resolution improving patient satisfaction and payment collection rates through HIPAA-compliant patient portals, automated payment reminders, flexible payment plan management, and transparent billing explanations that reduce patient confusion and accelerate payment collection within 2-4 days of service delivery."
+        },
+        {
+          "icon": "shield",
+          "title": "Compliance Support",
+          "description": "Ongoing regulatory updates ensuring your processes align with changing healthcare requirements through dedicated compliance specialists who monitor federal and state regulatory changes, conduct monthly regulatory assessments, and provide guidance on implementation of new requirements with minimal operational impact."
+        }
+      ]
     },
     "comparison": {
       "section": {
@@ -203,7 +215,7 @@
           "icon": "clock",
           "feature": "Administrative Time",
           "ourSolution": "10-15 hours weekly",
-          "traditionalApproach": "40-70 hours weekly"
+          "traditionalApproach": "reclaim hours weekly weekly"
         },
         {
           "icon": "star",
@@ -218,28 +230,28 @@
         "title": "Common Questions",
         "description": "Answers to frequently asked questions about our services."
       },
-"faqs": [
-            {
-              "q": "How long does implementation take?",
-              "a": "Our streamlined implementation process typically takes 4-6 weeks from initial kickoff to full deployment. This timeframe includes comprehensive workflow audit, system configuration, data migration from existing platforms, staff training on optimized workflows, test environment validation, and full go-live support with on-site assistance to ensure zero business disruption."
-            },
-            {
-              "q": "What types of healthcare organizations do you serve?",
-              "a": "We work with physician practices spanning family medicine, orthopedics, cardiology, dermatology, pediatrics, and internal medicine, plus multi-specialty groups, independent hospitals, outpatient surgery centers, urgent care facilities, therapy clinics, and ambulatory care facilities across 12 states. Our solutions scale from 3-provider practices to hospital revenue cycles."
-            },
-            {
-              "q": "How do you ensure data security?",
-              "a": "We implement enterprise-grade security measures including AES-256 encryption for data at rest and TLS 1.3 for data in transit, role-based access control with comprehensive audit logging, secure two-factor authentication for administrative access, regular penetration testing by third-party security firms, business associate agreements compliant with HIPAA requirements, and adherence to NIST 800-53 cybersecurity frameworks."
-            },
-            {
-              "q": "What is your typical ROI timeline?",
-              "a": "Most organizations realize significant time savings within 60-90 days through three mechanisms: claim processing acceleration reducing submission cycles by 70-75%, intelligent error detection preventing denials and rework by eliminating common coding errors before submission, and workflow automation reducing administrative overhead through exception-based processing that allows staff to focus on exceptions rather than routine manual processes."
-            },
-            {
-              "q": "Do you provide ongoing support?",
-              "a": "We offer comprehensive support including dedicated account managers with industry-specific expertise, 24/7 customer service with US-based billing specialists, monthly performance reviews with actionable insights and optimization recommendations, quarterly workflow optimization assessments, access to certified healthcare compliance specialists for regulatory questions, and annual compliance audits to ensure continued regulatory adherence as requirements evolve."
-            }
-          ]
+      "faqs": [
+        {
+          "q": "How long does implementation take?",
+          "a": "Our streamlined implementation process typically takes 4-6 weeks from initial kickoff to full deployment. This timeframe includes comprehensive workflow audit, system configuration, data migration from existing platforms, staff training on optimized workflows, test environment validation, and full go-live support with on-site assistance to ensure zero business disruption."
+        },
+        {
+          "q": "What types of healthcare organizations do you serve?",
+          "a": "We work with physician practices spanning family medicine, orthopedics, cardiology, dermatology, pediatrics, and internal medicine, plus multi-specialty groups, independent hospitals, outpatient surgery centers, urgent care facilities, therapy clinics, and ambulatory care facilities across 12 states. Our solutions scale from 3-provider practices to hospital revenue cycles."
+        },
+        {
+          "q": "How do you ensure data security?",
+          "a": "We implement enterprise-grade security measures including AES-256 encryption for data at rest and TLS 1.3 for data in transit, role-based access control with comprehensive audit logging, secure two-factor authentication for administrative access, regular penetration testing by third-party security firms, business associate agreements compliant with HIPAA requirements, and adherence to NIST 800-53 cybersecurity frameworks."
+        },
+        {
+          "q": "What is your typical ROI timeline?",
+          "a": "Most organizations realize significant time savings within 60-90 days through three mechanisms: claim processing acceleration reducing submission cycles by 70-75%, intelligent error detection preventing denials and rework by eliminating common coding errors before submission, and workflow automation reducing administrative overhead through exception-based processing that allows staff to focus on exceptions rather than routine manual processes."
+        },
+        {
+          "q": "Do you provide ongoing support?",
+          "a": "We offer comprehensive support including dedicated account managers with industry-specific expertise, 24/7 customer service with US-based billing specialists, monthly performance reviews with actionable insights and optimization recommendations, quarterly workflow optimization assessments, access to certified healthcare compliance specialists for regulatory questions, and annual compliance audits to ensure continued regulatory adherence as requirements evolve."
+        }
+      ]
     },
     "about": {
       "section": {
@@ -266,14 +278,22 @@
         {
           "name": "Dr. Sarah Martinez",
           "title": "Director of Revenue Cycle Strategy",
-          "credentials": ["CPA", "CHC", "RHIT"],
+          "credentials": [
+            "CPA",
+            "CHC",
+            "RHIT"
+          ],
           "bio": "Sarah brings 15 years of healthcare revenue cycle experience, having led optimization initiatives for 200+ practices across 12 states. She previously served as Revenue Cycle Director for a 500-bed hospital system, reducing denial rates by 68% through process redesign.",
           "experience": "15 years in healthcare billing, claims, and revenue management"
         },
         {
           "name": "James Thompson",
           "title": "Senior Coding Compliance Specialist",
-          "credentials": ["CPC", "COC", "CCS"],
+          "credentials": [
+            "CPC",
+            "COC",
+            "CCS"
+          ],
           "bio": "James is an AAPC-recognized expert with 12 years of coding compliance experience. He has conducted 500+ coding audits and developed compliance frameworks that reduce audit preparation time by 45%.",
           "experience": "12 years in medical coding, audit preparation, and revenue optimization"
         }
@@ -381,7 +401,13 @@
       "aggregateRating": {
         "overall": 4.8,
         "total": 127,
-        "distribution": [0, 3, 8, 21, 95]
+        "distribution": [
+          0,
+          3,
+          8,
+          21,
+          95
+        ]
       }
     },
     "caseStudies": {
