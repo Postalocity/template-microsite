@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 @theme {
+  /* Base colors */
   --color-background: 210 25% 97%;
   --color-foreground: 215 25% 12%;
   --color-card: 0 0% 100%;
@@ -28,12 +29,31 @@
   --color-hero-bg: 215 30% 10%;
   --color-hero-foreground: 0 0% 100%;
   --color-hero-subtitle: 210 20% 80%;
+  
+  /* Additional custom tokens */
+  --color-section-alt: 210 25% 95%;
+  --color-success: 145 63% 42%;
+  --color-success-foreground: 0 0% 100%;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 80% 42%));
+  --gradient-hero: linear-gradient(160deg, hsl(30 20% 8%) 0%, hsl(35 25% 15%) 50%, hsl(40 40% 18%) 100%);
+  --gradient-cta: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 85% 45%));
+  --gradient-section: linear-gradient(180deg, hsl(40 10% 97%) 0%, hsl(40 10% 95%) 100%);
+  
+  /* Shadows */
+  --shadow-card: 0 4px 24px -4px hsl(30 20% 12% / 0.08);
+  --shadow-card-hover: 0 12px 40px -8px hsl(30 20% 12% / 0.15);
+  --shadow-cta: 0 8px 32px -8px hsl(40 80% 52% / 0.4);
+  --shadow-cta-green: 0 8px 32px -8px hsl(40 85% 45% / 0.4);
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
+/* Section containers */
 .section-container {
   max-width: 80rem;
   margin: 0 auto;
@@ -52,9 +72,55 @@ html {
   }
 }
 
+.section-padding {
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-padding {
+    padding: 5rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Typography */
 .gradient-text {
   background: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 90% 40%));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* CTA Button Styles */
+.btn-cta-gold {
+  background-color: hsl(45, 100%, 50%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+  border: 2px solid hsl(45, 100%, 50%);
+  border-radius: 9999px;
+  box-shadow: var(--shadow-cta);
+  transition: all 0.2s ease;
+}
+
+.btn-cta-gold:hover {
+  transform: scale(1.02);
+  background-color: #333;
+}
+
+.btn-cta-outline {
+  background: transparent;
+  border: 2px solid hsl(210, 20%, 80%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: all 0.2s ease;
+}
+
+.btn-cta-outline:hover {
+  background-color: rgba(0, 0%, 100%, 0.1);
 }
