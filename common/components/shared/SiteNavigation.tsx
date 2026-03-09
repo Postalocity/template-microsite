@@ -19,11 +19,8 @@ type NavConfig = {
 };
 
 const defaultNavLinks = [
-  { label: 'Why Automate', href: '#why-automate' },
-  { label: 'Challenges', href: '#challenges' },
-  { label: 'How It Works', href: '#how-it-works' },
   { label: 'Benefits', href: '#benefits' },
-  { label: 'Get Started', href: '#get-started' },
+  { label: 'Services', href: '#services' },
   { label: 'FAQ', href: '#faq' },
 ];
 

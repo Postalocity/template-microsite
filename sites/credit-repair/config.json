@@ -177,6 +177,11 @@
           "icon": "activity",
           "title": "Scalable Processing",
           "description": "From 50 to 5,000+ letters monthly, the platform scales automatically. Bulk tools handle multi-bureau and multi-creditor sends efficiently, with API integrations enabling seamless workflows that grow with your practice."
+        },
+        {
+          "icon": "file-text",
+          "title": "Document Variety",
+          "description": "Mail all credit repair document types including dispute letters for Equifax, Experian, and TransUnion, validation request letters, credit inquiry disputes, medical collection responses, and affidavits. Single platform for your entire document volume."
         }
       ]
     },
