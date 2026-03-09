@@ -56,7 +56,7 @@
         "main": "Reclaim 40-70 Hours Weekly from",
         "highlightTerm": "Manual Dispute Letter Mailing"
       },
-      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and real-time tracking—reclaiming 40-70 hours weekly for client strategy.",
+      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning—reclaiming 40-70 hours weekly for client strategy.",
       "background": {
         "image": "/credit-repair/images/credit-repair-hero.jpg",
         "alt": "Credit repair professionals managing automated dispute letter mailing"
@@ -96,8 +96,8 @@
         },
         {
           "icon": "eye",
-          "title": "Real-Time Tracking & Documentation",
-          "detail": "Every mailing includes USPS Intelligent Mail Barcodes. Certified Mail provides full tracking. Dashboard shows processing, shipment, and delivery status instantly with confirmations for client updates or regulatory needs, eliminating post office follow-ups.",
+          "title": "Real-Time Scanning & Documentation",
+          "detail": "Every mailing includes USPS Intelligent Mail Barcodes for scanning. Certified Mail provides full tracking with delivery confirmation. Dashboard shows processing, shipment, and delivery status instantly with confirmations for client updates or regulatory needs, eliminating post office follow-ups.",
           "metrics": "Full delivery visibility"
         },
         {
@@ -183,7 +183,7 @@
         {
           "icon": "shield",
           "feature": "Compliance Documentation",
-          "ourSolution": "Automatic tracking and audit trails",
+          "ourSolution": "USPS scanning and documented audit trails",
           "traditionalApproach": "Manual record-keeping required"
         }
       ]
@@ -200,7 +200,7 @@
         },
         {
           "q": "What mail classes and options do you support?",
-          "a": "We support First-Class Mail (standard delivery in 1-3 business days), Standard Mail for high-volume bulk campaigns (5-14 days), and Certified Mail with proof of delivery. All options include USPS Intelligent Mail Barcodes for tracking. Certified Mail provides additional documentation timestamps and signature options when required."
+          "a": "We support First-Class Mail (standard delivery in 1-3 business days), Standard Mail for high-volume bulk campaigns (5-14 days), and Certified Mail with proof of delivery. All options include USPS Intelligent Mail Barcodes for scanning. Certified Mail provides additional documentation timestamps and signature options when required."
         },
         {
           "q": "How does address verification work?",
@@ -232,8 +232,8 @@
       "mission": "Postalocity empowers credit repair professionals to operational excellence through automated printing and mailing services, reclaiming valuable time while ensuring accurate delivery and compliance documentation for dispute letter workflows.",
       "values": [
         "Operational efficiency through automation that reduces manual processing overhead",
-        "Delivery accuracy through address verification and USPS tracking systems",
-        "Compliance support with documented workflows and audit-ready tracking",
+        "Delivery accuracy through address verification and USPS scanning systems",
+        "Compliance support with documented workflows and audit-ready reports",
         "Scalable solutions for practices of all volumes from startup to enterprise",
         "Professional presentation that strengthens client relationships and brand"
       ],
@@ -348,7 +348,7 @@
           "location": "Houston, TX",
           "role": "Independent Credit Repair Specialist",
           "rating": 4,
-          "text": "Onboarding was straightforward with the integration guide. Certified Mail options ensure documentation for every dispute letter we send. Dashboard tracking eliminates post office visits entirely. Worth the investment for the time savings alone.",
+          "text": "Onboarding was straightforward with the integration guide. Certified Mail options ensure documentation for every dispute letter we send. Dashboard monitoring eliminates post office visits entirely. Worth the investment for the time savings alone.",
           "date": "2024-12-10",
           "verified": true
         }
@@ -398,7 +398,7 @@
               "delta": "Faster turnaround"
             }
           ],
-          "methodology": "Implemented bulk upload workflow replacing manual printing, stuffing, and postage application. Address verification deployed to catch inaccuracies before processing. Certified Mail selected for all dispute documentation. Dashboard monitoring replaced USPS.com tracking checks.",
+          "methodology": "Implemented bulk upload workflow replacing manual printing, stuffing, and postage application. Address verification deployed to catch inaccuracies before processing. Certified Mail selected for all dispute documentation. Dashboard monitoring replaced USPS.com scanning checks.",
           "timeline": "Week 1: Account setup and integration training; Week 2: Bulk upload workflow testing and optimization; Week 3: Full implementation with address verification enabled; Ongoing: Dashboard monitoring and process refinement",
           "outcome": "Practice scaled client volume by 60% without additional staff. Time savings redirected to client strategy and business development. Returned mail reduction improved bureau response rates and client satisfaction scores.",
           "testimonial": "I spent 50+ hours weekly folding and stuffing letters. Now I click approve and focus on growing my business. The address verification alone saves hours of follow-up on returned mail."
@@ -424,9 +424,9 @@
               "delta": "Uniform quality"
             },
             {
-              "category": "Tracking Accuracy",
+              "category": "Scanning Accuracy",
               "before": "Manual spreadsheet tracking",
-              "after": "Automated real-time dashboard",
+              "after": "Automated dashboard monitoring",
               "delta": "100% visibility"
             },
             {
@@ -436,7 +436,7 @@
               "delta": "Immediate access"
             }
           ],
-          "methodology": "API integration with Credit Repair Cloud deployed across all three locations. Centralized dashboard monitoring replaced distributed tracking. Custom branded stationery implemented for consistency. Certified Mail standardized across all dispute letters.",
+          "methodology": "API integration with Credit Repair Cloud deployed across all three locations. Centralized dashboard monitoring replaced distributed scanning. Custom branded stationery implemented for consistency. Certified Mail standardized across all dispute letters.",
           "timeline": "Setup: API integration testing and certification; Rollout: Phased deployment across locations (2 weeks); Training: Staff onboarding and documentation (3 days); Ongoing: Administrative dashboard oversight",
           "outcome": "Eliminated variability in processing quality across locations. Centralized oversight improved compliance and reduced administrative overhead. Practice expanded to serve 40% more clients without adding operational staff.",
           "testimonial": "Managing three locations meant three different processes. Now everyone works the same way through a single dashboard. The API integration means my team never leaves Credit Repair Cloud, and clients get instant updates."
