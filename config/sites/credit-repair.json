@@ -91,12 +91,12 @@
         {
           "text": "Starting at $1.31 per page",
           "subtext": "single sided page B&W envelope and postage included",
-          "href": "#contact",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026",
           "variant": "primary"
         },
         {
-          "text": "View Integration Guide",
-          "subtext": "Connect with your software",
+          "text": "See How It Works",
+          "subtext": "Explore our comprehensive services",
           "href": "#services",
           "variant": "outline"
         }
