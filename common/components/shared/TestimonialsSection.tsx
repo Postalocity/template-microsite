@@ -5,26 +5,26 @@ import { Quote } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Postalocity eliminated two full days of manual mailing work per month from our administrative workflow. Staff can now focus on calling patients and resolving billing issues.",
+      "Postalocity eliminated two full days of manual mailing work per month from our administrative workflow. Staff can now focus on calling clients and resolving disputes.",
     name: "Sarah Mitchell",
     title: "Practice Manager",
-    institution: "Midwest Orthopedic Group, Chicago IL",
+    institution: "Midwest Credit Solutions, Chicago IL",
     metrics: "40+ hours reclaimed monthly",
   },
   {
     quote:
-      "Our returned mail rate dropped from 12% to under 4% after adding NCOA verification. Patient collection rates improved 22% in the first quarter.",
+      "Our returned mail rate dropped from 12% to under 4% after adding NCOA verification. Dispute resolution rates improved 22% in the first quarter.",
     name: "James Chen",
-    title: "Billing Director",
-    institution: "Valley Family Health, Salem OR",
-    metrics: "22% improvement in collections",
+    title: "Director of Operations",
+    institution: "Valley Credit Repair, Salem OR",
+    metrics: "22% improvement in dispute resolution",
   },
   {
     quote:
-      "Implementation was effortless— uploaded our first patient statement file on Monday, received confirmation by end of day, and statements mailed the next morning.",
+      "Implementation was effortless—uploaded our first dispute letter file on Monday, received confirmation by end of day, and letters mailed the next morning.",
     name: "Maria Rodriguez",
     title: "Office Manager",
-    institution: "Phoenix Dental Associates, Phoenix AZ",
+    institution: "Phoenix Credit Solutions, Phoenix AZ",
     metrics: "Setup in 3 business days",
   },
 ];

@@ -31,34 +31,34 @@ const GetStartedSection = () => {
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
               Getting Started with Postalocity
             </h2>
-            <p className="text-foreground text-lg leading-relaxed mb-6">
-              Sign up, upload your patient statements or connect your EMR, and
-              stop stuffing envelopes. Process 5,000+ statements overnight. Our
-              support team is available to help when you need it.
-            </p>
+<p className="text-foreground text-lg leading-relaxed mb-6">
+               Sign up, upload your dispute letters or connect your credit repair software, and
+               stop stuffing envelopes. Process 5,000+ letters overnight. Our
+               support team is available to help when you need it.
+             </p>
 
             <div className="space-y-6 mb-8">
               <p className="text-foreground text-lg font-semibold leading-relaxed">
                 Ready to stop doing mailing by hand?
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-cta-gold shadow-cta text-lg"
-                >
-                  Get Started Now
-                  <ArrowRight size={20} />
-                </a>
-                <a
-                  href="https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-primary text-primary hover:bg-primary/10 transition-colors text-lg"
-                >
-                  Integrate Your EMR
-                </a>
+<div className="flex flex-col sm:flex-row gap-4">
+                 <a
+                   href="https://prod.postalocity.com/login.html?signUp=true&promo=credit2026"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-cta-gold shadow-cta text-lg"
+                 >
+                   Get Started Now
+                   <ArrowRight size={20} />
+                 </a>
+                 <a
+                   href="https://prod.postalocity.com/login.html?signUp=true&promo=credit2026"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-primary text-primary hover:bg-primary/10 transition-colors text-lg"
+                 >
+                   Integrate Your EMR
+                 </a>
               </div>
             </div>
           </motion.div>

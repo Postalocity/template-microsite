@@ -5,15 +5,15 @@ import { Clock, MailX, TrendingUp } from "lucide-react";
 const challenges = [
   {
     icon: Clock,
-    text: "Manual entry causes address errors and costly returns. Peak periods overload staff, leading to delays in patient statement mailing.",
+    text: "Manual entry causes address errors and costly returns. Peak periods overload staff, leading to delays in dispute letter mailing.",
   },
   {
     icon: MailX,
-    text: "Rising USPS rates erode budgets without optimization. Returned statements due to address errors delay care coordination and revenue cycles while wasting postage.",
+    text: "Rising USPS rates erode budgets without optimization. Returned letters due to address errors delay credit repair cycles while wasting postage.",
   },
   {
     icon: TrendingUp,
-    text: "High-risk, high-value patient data demands secure handling. Deadline pressures for urgent notices and statement mailing create operational challenges.",
+    text: "High-risk, high-value client data demands secure handling. Deadline pressures for urgent notices and dispute letter mailing create operational challenges.",
   },
 ];
 
@@ -35,7 +35,7 @@ const ChallengesSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Common Challenges with In-House Patient Statement Mailing
+            Common Challenges with In-House Dispute Letter Mailing
           </h2>
         </motion.div>
 

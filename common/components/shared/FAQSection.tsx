@@ -4,24 +4,24 @@ import { ChevronDown } from "lucide-react";
 
 const defaultFaqs = [
   {
-    q: "How fast can I get patient statements mailed?",
-    a: "Same-day or next-day delivery. We deliver 5,000+ statements with same-day or next-day delivery. Same-day printing and mailing. Track every statement with real-time USPS tracking.",
+    q: "How fast can I get dispute letters mailed?",
+    a: "Same-day or next-day delivery. We deliver 5,000+ letters with same-day or next-day delivery. Same-day printing and mailing. Track every letter with real-time USPS tracking.",
   },
   {
-    q: "Does Postalocity integrate with my EMR system?",
-    a: "Yes. EMR integration is available for Epic, Cerner, Athenahealth, Allscripts, eClinicalWorks, and other systems. We offer RESTful API endpoints or no-code connectors. Export statements directly from your EMR to our platform with zero manual upload.",
+    q: "Does Postalocity integrate with my credit repair software?",
+    a: "Yes. Integration is available for credit repair platforms like DisputeSuite, Credit Repair Cloud, Credit Repair CRM, and other systems. We offer RESTful API endpoints or no-code connectors. Export dispute letters directly from your software to our platform with zero manual upload.",
   },
   {
-    q: "How much does patient statement mailing cost?",
-    a: "Our price is <strong>$1.31 per 1-page statement</strong>. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail.",
+    q: "How much does dispute letter mailing cost?",
+    a: "Our price is <strong>$1.31 per 1-page letter</strong>. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail.",
   },
   {
-    q: "Can I track patient statements through the mail?",
-    a: "Tracking is available for Priority Mail and Certified Mail. First-Class Mail (standard for patient statements) does not include tracking. For Certified Mail, signature tracking is available for an additional fee.",
+    q: "Can I track dispute letters through the mail?",
+    a: "Tracking is available for Priority Mail and Certified Mail. First-Class Mail (standard for dispute letters) does not include tracking. For Certified Mail, signature tracking is available for an additional fee.",
   },
   {
-    q: "Are patient statements secure with encrypted processing?",
-    a: "Yes. Secure patient statements use encrypted connections for all file uploads and downloads. Your files are processed in secure facilities and deleted after mailing is complete. We do not share your data with anyone, and we do not keep copies of your patient statements after they are mailed. ISO 9001 documented processes.",
+    q: "Are dispute letters secure with encrypted processing?",
+    a: "Yes. Secure dispute letters use encrypted connections for all file uploads and downloads. Your files are processed in secure facilities and deleted after mailing is complete. We do not share your data with anyone, and we do not keep copies of your dispute letters after they are mailed. ISO 9001 documented processes.",
   },
   {
     q: "Do I need technical expertise to use Postalocity?",

@@ -17,7 +17,7 @@ const ConversionSection = () => {
     },
     {
       icon: Lock,
-      text: "HIPAA-compliant",
+      text: "Data-secure",
     },
     {
       icon: Shield,
@@ -34,17 +34,17 @@ const ConversionSection = () => {
           transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-            Start Automating Patient Statement Mailing
+<h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
+            Start Automating Dispute Letter Mailing
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
-            Automate secure patient statements, medical billing, and notices
+            Automate secure dispute letters, follow-up reminders, and client notices
             online. Reduce returns up to 40% with address verification, track
             deliveries, pay-as-you-go—no monthly fees.
           </p>
 
           <a
-            href="https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
+            href="https://prod.postalocity.com/login.html?signUp=true&promo=credit2026"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl btn-cta-gold shadow-cta text-lg mb-8"
@@ -72,25 +72,25 @@ const ConversionSection = () => {
 
           <div className="bg-card rounded-2xl p-8 shadow-card max-w-2xl mx-auto">
             <h3 className="text-xl font-bold text-foreground mb-4">
-              Why Healthcare Providers Choose Postalocity
+              Why Credit Repair Companies Choose Postalocity
             </h3>
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
                 <span className="text-foreground">
-                  Reduce returned patient mail 40% with address verification
+                  Reduce returned mail 40% with address verification
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
                 <span className="text-foreground">
-                  Track patient statements delivery with real-time updates
+                  Track dispute letter delivery with real-time updates
                 </span>
               </div>
               <div className="flex items-start gap-3">
                 <Check className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
                 <span className="text-foreground">
-                  Process 5,000+ statements overnight with zero staff
+                   Process 5,000+ letters overnight with zero staff
                 </span>
               </div>
               <div className="flex items-start gap-3">

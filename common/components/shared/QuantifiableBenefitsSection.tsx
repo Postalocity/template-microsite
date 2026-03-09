@@ -7,13 +7,13 @@ const benefits = [
     icon: TrendingDown,
     metric: "Reduce Returned Mail Up to 40%",
     detail:
-      "Automated address verification catches bad addresses before printing, minimizing re-sends and patient frustration.",
+      "Automated address verification catches bad addresses before printing, minimizing re-sends and client frustration.",
   },
   {
     icon: Clock,
     metric: "Cut Processing Time from Days to Hours",
     detail:
-      "Streamline patient statement mailing. Same-day or next-day delivery. Free your team from printing and mailing tasks.",
+      "Streamline dispute letter mailing. Same-day or next-day delivery. Free your team from printing and mailing tasks.",
   },
   {
     icon: DollarSign,
@@ -23,9 +23,9 @@ const benefits = [
   },
   {
     icon: Users,
-    metric: "Free Staff for Patient Care",
+    metric: "Free Staff for Client Service",
     detail:
-      "Automate printing, folding, stuffing, and mailing. Your clinical and administrative teams focus on patients, not paperwork.",
+      "Automate printing, folding, stuffing, and mailing. Your teams focus on clients, not paperwork.",
   },
 ];
 
@@ -47,11 +47,11 @@ const QuantifiableBenefitsSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Quantifiable Benefits: What Healthcare Practices Gain
+            Quantifiable Benefits: What Credit Repair Companies Gain
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Faster payments, better patient engagement, and operational
-            efficiency. Automate patient statement mailing with measurable
+            Faster dispute resolution, better client engagement, and operational
+            efficiency. Automate dispute letter mailing with measurable
             outcomes.
           </p>
         </motion.div>
@@ -89,9 +89,9 @@ const QuantifiableBenefitsSection = () => {
           className="max-w-3xl mx-auto"
         >
           <div className="bg-primary/10 rounded-2xl p-8 border border-primary/20">
-            <h3 className="text-xl font-bold text-foreground mb-4 text-center">
-              Pay-as-You-Go Healthcare Mailing Service
-            </h3>
+<h3 className="text-xl font-bold text-foreground mb-4 text-center">
+               Pay-as-You-Go Credit Repair Mailing Service
+             </h3>
             <div className="grid sm:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-primary" />

@@ -6,7 +6,7 @@ const steps = [
   {
     icon: Upload,
     title: "Upload Your PDFs",
-    desc: "Drag-and-drop your patient statements into our secure dashboard. Same-day or next-day mailing available.",
+    desc: "Drag-and-drop your dispute letters into our secure dashboard. Same-day or next-day mailing available.",
   },
   {
     icon: Printer,
@@ -16,12 +16,12 @@ const steps = [
   {
     icon: Mail,
     title: "Address Verification",
-    desc: "NCOA/CASS verification updates addresses before mailing, reducing returned statements by 40%.",
+    desc: "NCOA/CASS verification updates addresses before mailing, reducing returned letters by 40%.",
   },
   {
     icon: Truck,
     title: "USPS Mailing & Tracking",
-    desc: "Same-day or next-day mailing. Track Priority and Certified statements—see when it was mailed and when it arrived. First-Class Mail delivers with standard USPS confirmation.",
+    desc: "Same-day or next-day mailing. Track Priority and Certified letters—see when it was mailed and when it arrived. First-Class Mail delivers with standard USPS confirmation.",
   },
 ];
 

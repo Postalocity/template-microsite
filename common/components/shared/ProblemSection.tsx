@@ -9,15 +9,15 @@ const ProblemSection = () => {
   const problems = [
     {
       icon: TrendingUp,
-      text: "Regional hospitals and practices spend 2+ hours every week printing, folding, and stuffing 5,000+ patient statements—staff should focus on patient care, not envelopes.",
+      text: "Credit repair companies spend 2+ hours every week printing, folding, and stuffing 5,000+ dispute letters—staff should focus on clients, not envelopes.",
     },
     {
       icon: MailX,
-      text: "Statements come back every month due to bad addresses. That is wasted postage, delayed payments, and lost revenue for your practice.",
+      text: "Letters come back every month due to bad addresses. That is wasted postage, delayed dispute resolution, and lost time for your practice.",
     },
     {
       icon: Clock,
-      text: "Revenue cycles take 5+ days because of manual processing. Your patients are waiting. Their payments are too.",
+      text: "Dispute cycles take 5+ days because of manual processing. Your clients are waiting. Their disputes are too.",
     },
   ];
 
@@ -31,12 +31,12 @@ const ProblemSection = () => {
           className="max-w-4xl mx-auto text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Healthcare Revenue Cycles Are Complex
+            Credit Repair Dispute Cycles Are Complex
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-            Revenue cycles take 5+ days because of manual processing. Your
-            patients are waiting. Their payments are too. Here is what
-            healthcare providers face every day.
+            Dispute cycles take 5+ days because of manual processing. Your
+            clients are waiting. Their disputes are too. Here is what
+            credit repair companies face every day.
           </p>
         </motion.div>
 
