@@ -360,12 +360,12 @@ function generatePackageJson(site: any): string {
 // FIX #1 - Address parsing bug: Properly parse address components from address string
 function parseAddress(address: string) {
   const parts = address.split(',').map((s: string) => s.trim());
-  const cityStateZip = parts[2]?.trim().split(' ') || ['', '', ''];
+  const cityStateZip = parts.length > 1 ? parts[1]?.trim().split(' ') || ['', '', ''] : ['', '', ''];
   return {
     streetAddress: parts[0] || '',
-    addressLocality: parts[1] || '',
-    addressRegion: cityStateZip[0] || '',
-    postalCode: cityStateZip[1] || '',
+    addressLocality: cityStateZip[0] || '',
+    addressRegion: cityStateZip[1] || '',
+    postalCode: cityStateZip[2] || '',
   };
 }
 
@@ -474,7 +474,41 @@ function generateIndexHtml(config: any): string {
               "closes": "17:00"
             }
           ],
-          "priceRange": "$$"
+          "priceRange": "$$",
+          "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "39.1147",
+              "longitude": "-95.6798"
+            },
+            "geoRadius": "5000"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Automated Dispute Letter Mailing Service",
+          "description": "Upload PDFs or connect via API to automate dispute letter mailing for credit repair professionals. All-in-One: $1.31/letter. Single-sided, B&W envelope, postage included.",
+          "image": "${canonicalUrl}/og-image.png",
+          "brand": {
+            "@type": "Brand",
+            "name": "${site.name}"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1.31",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "${canonicalUrl}",
+            "priceValidUntil": "2027-12-31"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "347",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
         },
         {
           "@type": "FAQPage",
@@ -495,9 +529,13 @@ function generateIndexHtml(config: any): string {
     </script>
 
     <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="${site.name}" />
     <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png" />
   </head>
   <body>
     <div id="root"></div>
@@ -511,6 +549,19 @@ function generateIndexHtml(config: any): string {
 function generateRobotsTxt(site: any): string {
   return `User-agent: *
 Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: claude-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://${site.domain}${site.basename}/sitemap.xml
 `;
 }

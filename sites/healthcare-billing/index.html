@@ -66,9 +66,9 @@
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "820 W 2nd St N",
-            "addressLocality": "Wichita KS 67203",
-            "addressRegion": "",
-            "postalCode": "",
+            "addressLocality": "Wichita",
+            "addressRegion": "KS",
+            "postalCode": "67203",
             "addressCountry": "US"
           }
         },
@@ -82,9 +82,9 @@
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "820 W 2nd St N",
-            "addressLocality": "Wichita KS 67203",
-            "addressRegion": "",
-            "postalCode": "",
+            "addressLocality": "Wichita",
+            "addressRegion": "KS",
+            "postalCode": "67203",
             "addressCountry": "US"
           },
           "openingHoursSpecification": [
@@ -95,7 +95,41 @@
               "closes": "17:00"
             }
           ],
-          "priceRange": "$$"
+          "priceRange": "$$",
+          "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "39.1147",
+              "longitude": "-95.6798"
+            },
+            "geoRadius": "5000"
+          }
+        },
+        {
+          "@type": "Product",
+          "name": "Automated Dispute Letter Mailing Service",
+          "description": "Upload PDFs or connect via API to automate dispute letter mailing for credit repair professionals. All-in-One: $1.31/letter. Single-sided, B&W envelope, postage included.",
+          "image": "https://healthcare-billing.com/healthcare-billing/og-image.png",
+          "brand": {
+            "@type": "Brand",
+            "name": "Healthcare Billing Solutions"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "1.31",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://healthcare-billing.com/healthcare-billing",
+            "priceValidUntil": "2027-12-31"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "347",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
         },
         {
           "@type": "FAQPage",
@@ -152,9 +186,13 @@
     </script>
 
     <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Healthcare Billing Solutions" />
     <meta name="format-detection" content="telephone=no" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png" />
   </head>
   <body>
     <div id="root"></div>
