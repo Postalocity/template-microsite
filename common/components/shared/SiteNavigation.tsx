@@ -34,6 +34,24 @@ const SiteNavigation = (config?: NavConfig) => {
   const navLinks = config?.navigation?.links ?? defaultNavLinks;
   const cta = config?.navigation?.cta;
 
+  // Handle smooth scroll to section when link is clicked
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        const navHeight = 80; // Account for fixed navbar
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - navHeight;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', onScroll);
@@ -67,6 +85,7 @@ const SiteNavigation = (config?: NavConfig) => {
             <a
               key={link.href}
               href={link.href}
+              onClick={(e) => handleLinkClick(e, link.href)}
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 scrolled ? 'text-foreground' : 'text-hero-subtitle hover:text-hero-foreground'
               }`}
@@ -117,7 +136,10 @@ const SiteNavigation = (config?: NavConfig) => {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    handleLinkClick(e, link.href);
+                    setMobileOpen(false);
+                  }}
                   className="text-foreground text-sm font-medium py-2 hover:text-primary transition-colors"
                 >
                   {link.label}

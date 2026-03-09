@@ -18,7 +18,7 @@
   "footer": {
     "finalCTA": {
       "headline": "Automate Your Dispute Letter Mailing Today",
-      "description": "Reclaim hours weekly with automated printing, address verification, and Certified Mail services—no contracts, pay-as-you-go pricing.",
+      "description": "Reclaim hours weekly with automated printing, address verification, and Certified Mail services\u2014no contracts, pay-as-you-go pricing.",
       "buttonText": "Start Automating Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true"
     },
@@ -64,10 +64,18 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "Services", "href": "#services" },
-      { "label": "FAQ", "href": "#faq" },
-      { "label": "Contact", "href": "#contact" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "cta": {
       "text": "Start Automating",
@@ -82,7 +90,7 @@
         "main": "Reclaim Hours Weekly from",
         "highlightTerm": "Manual Dispute Letter Mailing"
       },
-      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning—reclaiming hours weekly for client strategy.",
+      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning\u2014reclaiming hours weekly for client strategy.",
       "background": {
         "image": "/credit-repair/images/credit-repair-hero.jpg",
         "alt": "Credit repair professionals managing automated dispute letter mailing"
@@ -267,14 +275,20 @@
         {
           "name": "Rachel Chen",
           "title": "Director of Operations",
-          "credentials": ["Six Sigma Black Belt", "Postal Operations Specialist"],
+          "credentials": [
+            "Six Sigma Black Belt",
+            "Postal Operations Specialist"
+          ],
           "bio": "Rachel leads operational excellence at Postalocity, overseeing automated processing systems for high-volume mailing. Previously managed fulfillment operations for a national direct mail provider, implementing address verification systems that reduced return rates by 85%.",
           "experience": "12 years in postal operations and fulfillment automation"
         },
         {
           "name": "Marcus Williams",
           "title": "Technical Lead",
-          "credentials": ["AWS Certified Architect", "API Integration Specialist"],
+          "credentials": [
+            "AWS Certified Architect",
+            "API Integration Specialist"
+          ],
           "bio": "Marcus heads the technical architecture powering Postalocity's API integrations with credit repair software platforms. Previously built automation tools for financial services companies, streamlining document processing workflows.",
           "experience": "10 years in API development and automation systems"
         }
@@ -382,7 +396,13 @@
       "aggregateRating": {
         "overall": 4.8,
         "total": 347,
-        "distribution": [0, 8, 18, 62, 259]
+        "distribution": [
+          0,
+          8,
+          18,
+          62,
+          259
+        ]
       }
     },
     "caseStudies": {
