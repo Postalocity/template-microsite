@@ -21,7 +21,7 @@ const defaultFaqs = [
   },
   {
     q: "Are dispute letters secure with encrypted processing?",
-    a: "Yes. Secure dispute letters use encrypted connections for all file uploads and downloads. Your files are processed in secure facilities and deleted after mailing is complete. We do not share your data with anyone, and we do not keep copies of your dispute letters after they are mailed. ISO 9001 documented processes.",
+    a: "Yes. Secure dispute letters use encrypted connections for all file uploads and downloads. Your files are processed in secure facilities with data retention options you control. We do not share your data with anyone. Your files are retained according to your configured data retention settings with full control over when they are deleted from our system. ISO 9001 documented processes.",
   },
   {
     q: "Do I need technical expertise to use Postalocity?",
