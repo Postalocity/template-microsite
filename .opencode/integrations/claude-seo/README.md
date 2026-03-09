@@ -63,15 +63,14 @@ This integration works alongside StringRay's built-in SEO tools:
 ## Commands
 
 ```bash
-# Install core skills
-node scripts/integrations/install-claude-seo.js
+# Install SEO skills
+npm run install:seo-skills
 
-# Install everything
-node scripts/integrations/install-claude-seo.js --full
-
-# Re-install
-node scripts/integrations/install-claude-seo.js --full
+# Alternative manual installation
+node scripts/install-seo-skills.js
 ```
 
 ---
+
 *Integrated into StringRay v1.7.5*
+*Installation script added 2026-03-09*
