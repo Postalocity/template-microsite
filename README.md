@@ -265,6 +265,44 @@ Reference in config:
 - `npm run generate <config-name>` - Generate site from config
 - `npm run verify <config-name>` - Verify generated site
 
+## SEO Capabilities
+
+The platform includes **built-in SEO automation** plus **12 advanced SEO skills**:
+
+### Built-in SEO (Automatic)
+- ✅ robots.txt generation
+- ✅ sitemap.xml generation
+- ✅ Open Graph & Twitter Card tags
+- ✅ Schema.org structured data (WebSite, Organization, LocalBusiness, FAQPage)
+- ✅ Mobile optimization tags
+- ✅ Canonical URLs
+
+### Advanced SEO Skills (StringRay)
+- 📊 Full SEO audits with health scores
+- 🔍 Technical SEO (8 categories: crawl, index, security, URL, mobile, CWV, JS, AI crawlers)
+- 📝 E-E-A-T content quality analysis
+- 🤖 AI Search / GEO optimization (ChatGPT, Perplexity, AI Overviews)
+- 📈 Competitor comparison generators
+- 🗂️ Programmatic SEO strategies
+- 🌐 Multi-language SEO validation
+- 🖼️ Image optimization analysis
+
+**Usage**: Simply use natural language requests:
+```bash
+"Can you perform a full SEO audit on our credit-repair site?"
+"Analyze the technical SEO of healthcare-billing.com"
+"What's the E-E-A-T score of my homepage?"
+"Optimize our content for AI search engines"
+```
+
+See [SEO-INTEGRATION.md](SEO-INTEGRATION.md) for complete documentation.
+
+## Documentation
+
+- **[SEO Integration Guide](SEO-INTEGRATION.md)** - Advanced SEO capabilities with StringRay SEO skills
+- **[Agents Reference](AGENTS.md)** - All available StringRay agents and SEO skills
+- [Full Documentation](https://github.com/htafolla/stringray)
+
 ## License
 
 MIT
