@@ -6,6 +6,16 @@ This guide explains how to use the 12 SEO skills integrated into the microsite p
 
 The microsite platform includes **basic SEO automation** (robots.txt, sitemap.xml, schema.org, meta tags) built into the site generation process. For advanced SEO capabilities, the project integrates **12 StringRay SEO skills** via the `@seo-consultant` agent.
 
+## Installation
+
+The SEO skills require a one-time installation step to register them with the StringRay framework:
+
+```bash
+npm run install:seo-skills
+```
+
+This creates symbolic links in `.opencode/skills/` pointing to the SEO skill files in `.opencode/integrations/claude-seo/`.
+
 ## Current Platform SEO Features
 
 ### Automated SEO Generation (Built-in)

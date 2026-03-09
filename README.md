@@ -264,6 +264,7 @@ Reference in config:
 - `npm run preview` - Preview production build
 - `npm run generate <config-name>` - Generate site from config
 - `npm run verify <config-name>` - Verify generated site
+- `npm run install:seo-skills` - Install StringRay SEO skills
 
 ## SEO Capabilities
 
