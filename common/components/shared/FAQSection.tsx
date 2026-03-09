@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 const defaultFaqs = [
   {
     q: "How fast can I get dispute letters mailed?",
-    a: "Same-day or next-day delivery. We process 5,000+ letters for same-day or next-day delivery. Same-day printing and mailing. Track every letter with real-time USPS tracking.",
+    a: "Same-day or next-day processing. We process 5,000+ letters for same-day or next-day delivery. Same-day printing and mailing. Track every letter with real-time USPS tracking.",
   },
   {
     q: "Does Postalocity integrate with my credit repair software?",
