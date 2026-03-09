@@ -6,9 +6,9 @@
     "domain": "postalcity.com",
     "basename": "/credit-repair",
     "contact": {
-      "email": "sales@postalcity.com",
+      "email": "helpdesk@postalcity.com",
       "phone": "1-800-555-0199",
-      "address": "123 Technology Plaza, Suite 400, Austin, TX 78701"
+      "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
   "branding": {
@@ -18,7 +18,7 @@
   "footer": {
     "finalCTA": {
       "headline": "Automate Your Dispute Letter Mailing Today",
-      "description": "Reclaim 40-70 hours weekly with automated printing, address verification, and Certified Mail services—no contracts, pay-as-you-go pricing.",
+      "description": "Reclaim hours weekly with automated printing, address verification, and Certified Mail services—no contracts, pay-as-you-go pricing.",
       "buttonText": "Start Automating Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true"
     },
@@ -36,6 +36,32 @@
       "cta": "220 90% 55%"
     }
   },
+  "seo": {
+    "title": "Automate Dispute Letter Mailing Service | Credit Repair Mailing Service",
+    "description": "Credit repair professionals reclaim hours weekly with Postalocity's automated dispute letter mailing service. Includes address verification, Certified Mail, USPS tracking, and API integration with credit repair software.",
+    "keywords": [
+      "dispute letter mailing service",
+      "credit repair mailing service",
+      "automated mailing credit repair",
+      "print and mail dispute letters",
+      "credit repair automated mailing",
+      "mailing dispute letters credit repair",
+      "credit repair print and mail",
+      "certified mail credit repair disputes",
+      "bulk dispute letters mailing",
+      "automate credit repair mailings",
+      "Credit Repair Mailing Service",
+      "Automated Dispute Letter Mailing"
+    ],
+    "ogTitle": "Automate Dispute Letter Mailing | Reclaim Hours Weekly",
+    "ogDescription": "Credit repair professionals save hours weekly with automated dispute letter mailing. Includes address verification, Certified Mail, USPS tracking, and software integration.",
+    "twitterTitle": "Dispute Letter Mailing Automation | Credit Repair Mailing Service",
+    "twitterDescription": "Save hours weekly with automated dispute letter mailing. Address verification, Certified Mail, USPS tracking, API integration with credit repair software.",
+    "canonicalUrl": "https://postalcity.com/credit-repair",
+    "robots": "index, follow",
+    "sitemapPriority": 1.0,
+    "sitemapChangeFrequency": "weekly"
+  },
   "navigation": {
     "links": [
       { "label": "Benefits", "href": "#benefits" },
@@ -45,7 +71,7 @@
     ],
     "cta": {
       "text": "Start Automating",
-      "subtext": "Reclaim 40-70 hours weekly",
+      "subtext": "Reclaim hours weekly",
       "href": "#contact",
       "variant": "primary"
     }
@@ -53,18 +79,18 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Reclaim 40-70 Hours Weekly from",
+        "main": "Reclaim Hours Weekly from",
         "highlightTerm": "Manual Dispute Letter Mailing"
       },
-      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning—reclaiming 40-70 hours weekly for client strategy.",
+      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning—reclaiming hours weekly for client strategy.",
       "background": {
         "image": "/credit-repair/images/credit-repair-hero.jpg",
         "alt": "Credit repair professionals managing automated dispute letter mailing"
       },
       "ctas": [
         {
-          "text": "Start Automating",
-          "subtext": "Free trial available",
+          "text": "Starting at $1.31 per page",
+          "subtext": "single sided page B&W envelope and postage included",
           "href": "#contact",
           "variant": "primary"
         },
@@ -84,9 +110,9 @@
       "benefits": [
         {
           "icon": "clock",
-          "title": "Reclaim 40-70 Hours Weekly",
+          "title": "Reclaim Hours Weekly",
           "detail": "Manual printing, folding, stuffing, sealing, and postage application consumes substantial staff time. Upload PDFs or connect via API, select options, and approve. Postalocity handles the mailing process, allowing teams to focus on client strategy rather than production logistics.",
-          "metrics": "Save 40-70 hours weekly"
+          "metrics": "Save hours weekly"
         },
         {
           "icon": "check-circle",
@@ -172,7 +198,7 @@
           "icon": "users",
           "feature": "Weekly Time Investment",
           "ourSolution": "2-4 hours monthly for approvals",
-          "traditionalApproach": "40-70 hours weekly manual work"
+          "traditionalApproach": "hours weekly manual work"
         },
         {
           "icon": "trending-up",
