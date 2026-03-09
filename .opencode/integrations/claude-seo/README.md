@@ -63,14 +63,14 @@ This integration works alongside StringRay's built-in SEO tools:
 ## Commands
 
 ```bash
-# Install SEO skills
-npm run install:seo-skills
+# Install SEO skills using StringRay CLI
+npx strray-ai install
 
-# Alternative manual installation
-node scripts/install-seo-skills.js
+# Or use the installation script directly
+node node_modules/strray-ai/scripts/integrations/install-claude-seo.js
 ```
 
 ---
 
 *Integrated into StringRay v1.7.5*
-*Installation script added 2026-03-09*
+*Installation script included in strray-ai npm package*

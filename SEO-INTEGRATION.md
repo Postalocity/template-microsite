@@ -8,13 +8,27 @@ The microsite platform includes **basic SEO automation** (robots.txt, sitemap.xm
 
 ## Installation
 
-The SEO skills require a one-time installation step to register them with the StringRay framework:
+The 12 SEO skills are included in the `strray-ai` npm package and require installation:
 
 ```bash
-npm run install:seo-skills
+npx strray-ai install
+# or
+node node_modules/strray-ai/scripts/integrations/install-claude-seo.js
 ```
 
-This creates symbolic links in `.opencode/skills/` pointing to the SEO skill files in `.opencode/integrations/claude-seo/`.
+This installs all 12 SEO skills:
+- seo-audit
+- seo-page
+- seo-sitemap
+- seo-schema
+- seo-technical
+- seo-content
+- seo-geo
+- seo-plan
+- seo-programmatic
+- seo-competitor-pages
+- seo-hreflang
+- seo-images
 
 ## Current Platform SEO Features
 

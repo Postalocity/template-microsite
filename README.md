@@ -264,7 +264,18 @@ Reference in config:
 - `npm run preview` - Preview production build
 - `npm run generate <config-name>` - Generate site from config
 - `npm run verify <config-name>` - Verify generated site
-- `npm run install:seo-skills` - Install StringRay SEO skills
+
+## SEO Skills Installation
+
+The 12 SEO skills are included in the `strray-ai` npm package:
+
+```bash
+npx strray-ai install
+# or
+node node_modules/strray-ai/scripts/integrations/install-claude-seo.js
+```
+
+See [SEO Integration Guide](SEO-INTEGRATION.md) for complete documentation.
 
 ## SEO Capabilities
 

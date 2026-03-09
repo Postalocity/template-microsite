@@ -9,8 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "generate": "tsx scripts/generate-site.ts",
-    "verify": "tsx scripts/verify-site.ts",
-    "install:seo-skills": "node scripts/install-seo-skills.js"
+    "verify": "tsx scripts/verify-site.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
