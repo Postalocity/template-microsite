@@ -36,6 +36,32 @@
       "cta": "220 90% 55%"
     }
   },
+  "seo": {
+    "title": "Automate Dispute Letter Mailing Service | Credit Repair Mailing Service",
+    "description": "Credit repair professionals reclaim 40-70 hours weekly with Postalocity's automated dispute letter mailing service. Includes address verification, Certified Mail, USPS tracking, and API integration with credit repair software.",
+    "keywords": [
+      "dispute letter mailing service",
+      "credit repair mailing service",
+      "automated mailing credit repair",
+      "print and mail dispute letters",
+      "credit repair automated mailing",
+      "mailing dispute letters credit repair",
+      "credit repair print and mail",
+      "certified mail credit repair disputes",
+      "bulk dispute letters mailing",
+      "automate credit repair mailings",
+      "Credit Repair Mailing Service",
+      "Automated Dispute Letter Mailing"
+    ],
+    "ogTitle": "Automate Dispute Letter Mailing | Reclaim 40-70 Hours Weekly",
+    "ogDescription": "Credit repair professionals save 40-70 hours weekly with automated dispute letter mailing. Includes address verification, Certified Mail, USPS tracking, and software integration.",
+    "twitterTitle": "Dispute Letter Mailing Automation | Credit Repair Mailing Service",
+    "twitterDescription": "Save 40-70 hours weekly with automated dispute letter mailing. Address verification, Certified Mail, USPS tracking, API integration with credit repair software.",
+    "canonicalUrl": "https://postalcity.com/credit-repair",
+    "robots": "index, follow",
+    "sitemapPriority": 1.0,
+    "sitemapChangeFrequency": "weekly"
+  },
   "navigation": {
     "links": [
       { "label": "Benefits", "href": "#benefits" },

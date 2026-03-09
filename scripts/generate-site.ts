@@ -382,30 +382,30 @@ function generateIndexHtml(config: any): string {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${site.name} | ${config.branding.tagline}</title>
-    <meta name="description" content="${config.content.hero.subhead}" />
+    <title>${config.seo?.title || `${site.name} | ${config.branding.tagline}`}</title>
+    <meta name="description" content="${config.seo?.description || config.content.hero.subhead}" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="${canonicalUrl}" />
+    <link rel="canonical" href="${config.seo?.canonicalUrl || canonicalUrl}" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:title" content="${site.name} | ${config.branding.tagline}" />
-    <meta property="og:description" content="${config.content.hero.subhead}" />
+    <meta property="og:title" content="${config.seo?.ogTitle || `${site.name} | ${config.branding.tagline}`}" />
+    <meta property="og:description" content="${config.seo?.ogDescription || config.content.hero.subhead}" />
     <meta property="og:image" content="${ogImage}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="${canonicalUrl}" />
-    <meta property="twitter:title" content="${site.name} | ${config.branding.tagline}" />
-    <meta property="twitter:description" content="${config.content.hero.subhead}" />
+    <meta property="twitter:title" content="${config.seo?.twitterTitle || `${site.name} | ${config.branding.tagline}`}" />
+    <meta property="twitter:description" content="${config.seo?.twitterDescription || config.content.hero.subhead}" />
     <meta property="twitter:image" content="${ogImage}" />
 
     <!-- SEO Meta Tags -->
-    <meta name="keywords" content="${site.name}, ${config.branding.tagline}" />
+    <meta name="keywords" content="${(config.seo?.keywords || [site.name, config.branding.tagline]).join(', ')}" />
     <meta name="author" content="${site.name}" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="${config.seo?.robots || 'index, follow'}" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />

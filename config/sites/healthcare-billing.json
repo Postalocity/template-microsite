@@ -36,6 +36,31 @@
       "cta": "217 91% 60%"
     }
   },
+  "seo": {
+    "title": "Automate Patient Statement Mailing | Healthcare Mailing Services",
+    "description": "Healthcare providers reclaim 40-70 hours weekly with Postalocity's automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail options, and EMR integration.",
+    "keywords": [
+      "patient statement mailing",
+      "healthcare mailing services",
+      "automated patient statements",
+      "print and mail patient statements",
+      "healthcare statement processing",
+      "medical billing mailing",
+      "patient statements HIPAA compliant",
+      "bulk patient statement mailing",
+      "automate patient statements",
+      "Healthcare Mailing Services",
+      "Automated Patient Statement Mailing"
+    ],
+    "ogTitle": "Automate Patient Statement Mailing | Reclaim 40-70 Hours Weekly",
+    "ogDescription": "Healthcare providers save 40-70 hours weekly with automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail, EMR integration.",
+    "twitterTitle": "Patient Statement Automation | Healthcare Mailing Services",
+    "twitterDescription": "Save 40-70 hours weekly with automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail, EMR integration with systems.",
+    "canonicalUrl": "https://postalcity.com/healthcare-billing",
+    "robots": "index, follow",
+    "sitemapPriority": 1.0,
+    "sitemapChangeFrequency": "weekly"
+  },
   "navigation": {
     "links": [
       { "label": "Benefits", "href": "#benefits" },
