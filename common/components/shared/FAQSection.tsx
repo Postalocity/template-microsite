@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 const defaultFaqs = [
   {
     q: "How fast can I get patient statements mailed?",
-    a: "Same-day or next-day delivery. We process 5,000+ statements with same-day or next-day delivery. Same-day printing and mailing. Track every statement with real-time USPS.",
+    a: "Same-day or next-day delivery. We deliver 5,000+ statements with same-day or next-day delivery. Same-day printing and mailing. Track every statement with real-time USPS tracking.",
   },
   {
     q: "Does Postalocity integrate with my EMR system?",
