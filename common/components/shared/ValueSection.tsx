@@ -3,8 +3,6 @@ import { motion, useInView } from "framer-motion";
 import {
   TrendingUp,
   Clock,
-  ShieldCheck,
-  FileText,
   Mail,
   Eye,
   Check,

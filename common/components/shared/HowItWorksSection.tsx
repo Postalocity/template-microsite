@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Upload, Printer, Mail, Truck, ArrowRight, Check } from "lucide-react";
+import { Upload, Printer, Mail, Truck, Check } from "lucide-react";
 
 const steps = [
   {

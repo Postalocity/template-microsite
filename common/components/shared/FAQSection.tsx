@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-const faqs = [
+const defaultFaqs = [
   {
     q: "How fast can I get patient statements mailed?",
     a: "Same-day or next-day delivery. We process 5,000+ statements with same-day or next-day delivery. Same-day printing and mailing. Track every statement with real-time USPS.",
@@ -29,10 +29,12 @@ const faqs = [
   },
 ];
 
-const FAQSection = () => {
+const FAQSection = (faqContent?: { faqs?: Array<{ q: string; a: string }> }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const faqs = faqContent?.faqs ?? defaultFaqs;
 
   return (
     <section id="faq" className="section-padding bg-background" ref={ref}>

@@ -7,8 +7,7 @@ export function basePathPlugin(basePath: string): Plugin {
   return {
     name: 'base-path-plugin',
     configureServer(server) {
-      server.middlewares.use((req, anyRes, next) => {
-        const res = anyRes as any;
+      server.middlewares.use((req, _res, next) => {
         if (req.url && req.url.startsWith(basePath)) {
           // Rewrite the URL to remove the base path
           if (req.url === baseWithoutTrailing || req.url === baseWithoutTrailing + '/') {

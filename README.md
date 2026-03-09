@@ -1,6 +1,6 @@
-# Template Microsite
+# Microsite Platform
 
-A configuration-driven microsite template system that enables rapid creation of vertical-specific microsites (10-15 minutes per site) while maintaining professional quality and design consistency.
+A configuration-driven microsite generator platform that enables rapid creation of vertical-specific microsites (10-15 minutes per site) while maintaining professional quality and design consistency.
 
 ## Architecture
 
@@ -22,7 +22,7 @@ Configuration-Driven Component Architecture allows:
 ## Project Structure
 
 ```
-template-microsite/
+microsite-platform/
 ├── common/
 │   ├── components/
 │   │   └── shared/              # Reusable components (props-driven)
@@ -174,9 +174,9 @@ See `common/types/content.ts` for complete type definitions including:
 - `ComparisonContent` - Comparison table rows
 - `SiteConfig` - Site metadata and navigation
 
-## Production Lessons Learned
+## Platform Lessons Learned
 
-This template incorporates lessons from the healthcare-billing site production:
+This platform incorporates lessons from the healthcare-billing site production:
 
 ### Professional Tone Guidelines
 

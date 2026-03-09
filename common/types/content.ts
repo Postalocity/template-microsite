@@ -6,7 +6,7 @@ export interface CTA {
   text: string;
   subtext?: string;
   href: string;
-  variant?: 'primary' | 'outline';
+  variant?: 'primary' | 'outline' | string; // Allow string for JSON compatibility
 }
 
 export interface HeroContent {
@@ -37,22 +37,26 @@ export interface SiteConfig {
   };
   branding: {
     tagline: string;
-    logo?: string;
+    logo?: string | null; // Allow null for JSON compatibility
   };
-  theme: {
-    primary: {
-      h: number;
-      s: number;
-      l: number;
+  theme?: {
+    primary?: {
+      h?: number;
+      s?: number;
+      l?: number;
     };
-    gradients: {
-      hero: string;
-      cta: string;
+    gradients?: {
+      hero?: string;
+      cta?: string;
     };
   };
-  navigation: {
-    links: Array<{ label: string; href: string }>;
-    cta?: CTA;
+  navigation?: {
+    links?: Array<{ label: string; href: string }>;
+    cta?: CTA | {
+      text?: string;
+      href?: string;
+      variant?: string;
+    };
   };
   content: SectionContent;
   footer?: FooterContent;

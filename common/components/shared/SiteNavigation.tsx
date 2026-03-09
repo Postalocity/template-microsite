@@ -3,7 +3,22 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import postalocityLogo from '@/assets/postalocity-logo.png';
 
-const navLinks = [
+type NavConfig = {
+  navigation?: {
+    links?: Array<{ label: string; href: string }>;
+    cta?: {
+      text: string;
+      href: string;
+      variant?: string;
+    };
+  };
+  branding?: {
+    tagline?: string;
+    logo?: string;
+  };
+};
+
+const defaultNavLinks = [
   { label: 'Why Automate', href: '#why-automate' },
   { label: 'Challenges', href: '#challenges' },
   { label: 'How It Works', href: '#how-it-works' },
@@ -12,9 +27,12 @@ const navLinks = [
   { label: 'FAQ', href: '#faq' },
 ];
 
-const SiteNavigation = () => {
+const SiteNavigation = (config?: NavConfig) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navLinks = config?.navigation?.links ?? defaultNavLinks;
+  const cta = config?.navigation?.cta;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -56,13 +74,23 @@ const SiteNavigation = () => {
               {link.label}
             </a>
           ))}
-          <a
-            href="https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
-            rel="noopener noreferrer"
-            className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
-          >
-            Sign Up Now
-          </a>
+          {cta ? (
+            <a
+              href={cta.href}
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
+            >
+              {cta.text}
+            </a>
+          ) : (
+            <a
+              href="https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
+            >
+              Sign Up Now
+            </a>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -95,13 +123,23 @@ const SiteNavigation = () => {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
-              >
-                Sign Up Now
-              </a>
+              {cta ? (
+                <a
+                  href={cta.href}
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
+                >
+                  {cta.text}
+                </a>
+              ) : (
+                <a
+                  href="https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
+                >
+                  Sign Up Now
+                </a>
+              )}
             </div>
           </motion.div>
         )}

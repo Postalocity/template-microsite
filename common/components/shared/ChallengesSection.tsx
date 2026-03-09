@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Clock, MailX, EyeOff, Users, TrendingUp } from "lucide-react";
+import { Clock, MailX, TrendingUp } from "lucide-react";
 
 const challenges = [
   {

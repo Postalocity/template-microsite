@@ -1,6 +1,4 @@
 import { Plugin } from 'vite';
-import fs from 'fs';
-import path from 'path';
 
 export function addBasePathPlugin(basePath: string): Plugin {
   const baseClean = basePath.replace(/\/$/, '');
@@ -8,7 +6,7 @@ export function addBasePathPlugin(basePath: string): Plugin {
   return {
     name: 'add-base-path-plugin',
     enforce: 'post',
-    generateBundle(options, bundle) {
+    generateBundle(_options, bundle) {
       for (const [fileName, chunk] of Object.entries(bundle)) {
         if (chunk.type === 'asset' && fileName.endsWith('.html')) {
           const html = chunk.source.toString();
