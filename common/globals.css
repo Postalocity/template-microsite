@@ -1,130 +1,148 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-@theme {
-  /* Base colors */
-  --color-background: 210 25% 97%;
-  --color-foreground: 215 25% 12%;
-  --color-card: 0 0% 100%;
-  --color-card-foreground: 215 25% 12%;
-  --color-popover: 0 0% 100%;
-  --color-popover-foreground: 215 25% 12%;
-  --color-primary: 45 100% 50%;
-  --color-primary-foreground: 0 0% 100%;
-  --color-secondary: 40 85% 45%;
-  --color-secondary-foreground: 0 0% 100%;
-  --color-muted: 40 10% 93%;
-  --color-muted-foreground: 40 10% 47%;
-  --color-accent: 40 80% 95%;
-  --color-accent-foreground: 40 80% 30%;
-  --color-destructive: 0 84% 60%;
-  --color-destructive-foreground: 0 0% 100%;
-  --color-border: 40 15% 88%;
-  --color-input: 40 15% 88%;
-  --color-ring: 45 100% 50%;
-  --border-radius: 0.75rem;
-  --font-family-sans: 'Inter', system-ui, sans-serif;
-  
-  /* Hero theme */
-  --color-hero-bg: 215 30% 10%;
-  --color-hero-foreground: 0 0% 100%;
-  --color-hero-subtitle: 210 20% 80%;
-  
-  /* Additional custom tokens */
-  --color-section-alt: 210 25% 95%;
-  --color-success: 145 63% 42%;
-  --color-success-foreground: 0 0% 100%;
-  
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 80% 42%));
-  --gradient-hero: linear-gradient(160deg, hsl(30 20% 8%) 0%, hsl(35 25% 15%) 50%, hsl(40 40% 18%) 100%);
-  --gradient-cta: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 85% 45%));
-  --gradient-section: linear-gradient(180deg, hsl(40 10% 97%) 0%, hsl(40 10% 95%) 100%);
-  
-  /* Shadows */
-  --shadow-card: 0 4px 24px -4px hsl(30 20% 12% / 0.08);
-  --shadow-card-hover: 0 12px 40px -8px hsl(30 20% 12% / 0.15);
-  --shadow-cta: 0 8px 32px -8px hsl(40 80% 52% / 0.4);
-  --shadow-cta-green: 0 8px 32px -8px hsl(40 85% 45% / 0.4);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 25% 97%;
+    --foreground: 215 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 12%;
+
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 85% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 10% 93%;
+    --muted-foreground: 40 10% 47%;
+
+    --accent: 40 80% 95%;
+    --accent-foreground: 40 80% 30%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 45 100% 50%;
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --hero-bg: 215 30% 10%;
+    --hero-foreground: 0 0% 100%;
+    --hero-subtitle: 210 20% 80%;
+
+    --section-alt: 210 25% 95%;
+
+    --success: 145 63% 42%;
+    --success-foreground: 0 0% 100%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 80% 42%));
+    --gradient-hero: linear-gradient(160deg, hsl(30 20% 8%) 0%, hsl(35 25% 15%) 50%, hsl(40 40% 18%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 85% 45%));
+    --gradient-section: linear-gradient(180deg, hsl(40 10% 97%) 0%, hsl(40 10% 95%) 100%);
+
+    --shadow-card: 0 4px 24px -4px hsl(30 20% 12% / 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsl(30 20% 12% / 0.15);
+    --shadow-cta: 0 8px 32px -8px hsl(40 80% 52% / 0.4);
+    --shadow-cta-green: 0 8px 32px -8px hsl(40 85% 45% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 20% 95%;
+    --card: 215 30% 12%;
+    --card-foreground: 210 20% 95%;
+    --popover: 215 30% 12%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 40 80% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 85% 50%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 30 20% 18%;
+    --muted-foreground: 30 15% 65%;
+    --accent: 40 50% 20%;
+    --accent-foreground: 40 80% 70%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 30 20% 20%;
+    --input: 30 20% 20%;
+    --ring: 40 80% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
 }
 
 @layer base {
+  * {
+    @apply border-border;
+  }
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', system-ui, sans-serif;
   }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  strong {
+    @apply font-bold;
+  }
 }
 
 @layer components {
-  /* Section containers */
   .section-container {
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 1rem;
-  }
-
-  @media (min-width: 640px) {
-    .section-container {
-      padding: 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-container {
-      padding: 2rem 1rem;
-    }
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
   .section-padding {
-    padding: 4rem 1rem;
+    @apply py-16 sm:py-20 lg:py-24;
   }
 
-  @media (min-width: 640px) {
-    .section-padding {
-      padding: 5rem 1.5rem;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .section-padding {
-      padding: 6rem 2rem;
-    }
-  }
-
-  /* Typography */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 90% 40%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(40 80% 52%), hsl(40 90% 40%));
   }
 
-  /* CTA Button Styles */
   .btn-cta-gold {
-    background-color: hsl(45, 100%, 50%);
-    color: hsl(0, 0%, 100%);
-    font-weight: 700;
+    @apply bg-primary text-primary-foreground font-bold shadow-cta transition-all;
     border: 2px solid hsl(45, 100%, 50%);
     border-radius: 9999px;
-    box-shadow: var(--shadow-cta);
-    transition: all 0.2s ease;
   }
 
   .btn-cta-gold:hover {
-    transform: scale(1.02);
+    @apply scale-[1.02];
     background-color: #333;
   }
 
   .btn-cta-outline {
-    background: transparent;
-    border: 2px solid hsl(210, 20%, 80%);
-    color: hsl(0, 0%, 100%);
-    font-weight: 600;
+    @apply border-2 border-hero-subtitle/30 text-hero-foreground font-semibold transition-all;
     border-radius: 9999px;
-    transition: all 0.2s ease;
   }
 
   .btn-cta-outline:hover {
-    background-color: rgba(0, 0%, 100%, 0.1);
+    @apply bg-hero-foreground/10;
   }
 }
