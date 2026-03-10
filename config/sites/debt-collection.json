@@ -1,0 +1,271 @@
+{
+  "version": "Postalocity Microsite Config — Debt Collection Agencies",
+  "planningSessionSummary": "Complete microsite for debt collection agencies. Emphasizes reclaiming operational hours through automation of notices, validation letters, and certified mail. Core differentiators: built-in address verification, inclusive real-time tracking, simple PDF upload. No delivery claims, no specific hour savings, ISO 9001 documented processes.",
+  "research": {
+    "currentRankingSnapshot": "Top 3–5 positions on primary transactional phrases: mailing services for debt collection agencies, debt collection letter printing and mailing services, certified mail for debt collection agencies.",
+    "keywordOpportunityAnalysis": [
+      {
+        "keyword": "mailing services for debt collection agencies",
+        "volume": "800–2,000 (est.)",
+        "difficulty": "Low–Medium",
+        "intent": "Transactional",
+        "priority": "High"
+      },
+      {
+        "keyword": "debt collection letter printing and mailing services",
+        "volume": "600–1,500 (est.)",
+        "difficulty": "Low",
+        "intent": "Transactional",
+        "priority": "High"
+      },
+      {
+        "keyword": "certified mail for debt collection agencies",
+        "volume": "1,000–3,000 (est.)",
+        "difficulty": "Medium",
+        "intent": "Transactional",
+        "priority": "High"
+      }
+    ],
+    "competitiveGapInsights": [
+      "Competitors emphasize turnaround windows and specialized certified proof",
+      "Postalocity advantage: free address verification + inclusive tracking on every letter"
+    ],
+    "actionableRecommendations": [
+      "Add FAQ + Benefits sections for snippet capture",
+      "Implement FAQPage schema for rich results"
+    ]
+  },
+  "site": {
+    "name": "Debt Collection Mailing Service",
+    "slug": "debt-collection",
+    "domain": "postalocity.com",
+    "basename": "/debt-collection",
+    "contact": {
+      "email": "helpdesk@postalocity.com",
+      "phone": "316-260-2220",
+      "address": "820 W 2nd St N, Wichita KS 67203"
+    }
+  },
+  "branding": {
+    "tagline": "Reclaim Hours Weekly with Automated Mailing",
+    "primaryColor": "#0F766E",
+    "secondaryColor": "#F59E0B"
+  },
+  "theme": {
+    "primary": {
+      "h": 173,
+      "s": 79,
+      "l": 24
+    },
+    "secondary": {
+      "h": 38,
+      "s": 92,
+      "l": 50
+    }
+  },
+  "seo": {
+    "title": "Debt Collection Mailing Service — Automated Notices & Certified Letters",
+    "description": "Automate debt collection mailing for notices, certified letters, compliance documents, and payment reminders. Reclaim hours weekly with address verification, USPS tracking, and secure PDF upload processing from $1.31 per letter.",
+    "keywords": [
+      "debt collection mailing service",
+      "automated mailing for collection agencies",
+      "certified mail for debt collection agencies",
+      "debt collection letter printing and mailing",
+      "collection notices mailing services"
+    ],
+    "ogTitle": "Debt Collection Mailing Service — Reclaim Hours Weekly",
+    "ogDescription": "Collection agencies streamline high-volume notices and certified mailings with Postalocity's automated platform.",
+    "canonical": "https://postalocity.com/debt-collection"
+  },
+  "navigation": {
+    "links": [
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "cta": {
+      "text": "Starting at $1.31",
+      "subtext": "1-page. single-sided. B&W. includes postage.",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026",
+      "variant": "primary"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Debt Collection Mailing Service — Save 15+ Hours Weekly",
+        "highlightTerm": "Automated Notices & Certified Letters"
+      },
+      "subhead": "Collection agencies manage high volumes of collection notices, certified letters, compliance documents, and payment reminders. Postalocity's automated mailing platform streamlines processing, includes address verification to reduce returned mail, and provides real-time USPS tracking for every letter.",
+      "background": {
+        "image": "/debt-collection/images/debt-collection-hero.jpg",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Starting at $1.31",
+          "subtext": "1-page. single-sided. B&W. includes postage.",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026",
+          "variant": "primary"
+        },
+        {
+          "text": "See How It Works",
+          "subtext": "Explore automated mailing for collection agencies",
+          "href": "#how-it-works",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Why Collection Agencies Choose Postalocity",
+        "description": "Streamline your debt collection mailing operations with automated processing"
+      },
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Reclaim Hours Weekly",
+          "description": "Automate printing, folding, stuffing, sealing, and postage application.",
+          "detail": "Manual processes consume significant hours weekly. Automation reduces this to minutes.",
+          "metrics": "Up to 15+ hours saved weekly"
+        },
+        {
+          "icon": "map-pin",
+          "title": "Reduce Returned Mail",
+          "description": "Pre-production address verification against USPS databases catches inaccuracies before printing.",
+          "detail": "Reduces rework and delays caused by invalid addresses reaching the postal system.",
+          "metrics": "Up to 95% fewer returns"
+        },
+        {
+          "icon": "shield",
+          "title": "Compliance Documentation",
+          "description": "Real-time USPS tracking for every letter provides proof of submission and mailing.",
+          "detail": "ISO 9001 documented processes support audit requirements and compliance documentation.",
+          "metrics": "Full tracking visibility"
+        },
+        {
+          "icon": "trending-up",
+          "title": "Scale Without Staffing",
+          "description": "Process high volumes without proportional staffing increases.",
+          "detail": "From 50 to 5,000+ letters monthly, the platform scales automatically.",
+          "metrics": "50 to 5,000+ letters monthly"
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Choose Automated Mailing vs. Manual Processing",
+        "description": "Compare the efficiency and compliance advantages of Postalocity's automated service vs. in-house manual mailing."
+      },
+      "columns": {
+        "ourSolution": "Postalocity Automated Mailing",
+        "traditional": "Manual In-House Processing"
+      },
+      "rows": [
+        {
+          "icon": "clock",
+          "feature": "Processing Time",
+          "ourSolution": "Same-day processing after approval",
+          "traditionalApproach": "Manual processing required"
+        },
+        {
+          "icon": "map-pin",
+          "feature": "Address Verification",
+          "ourSolution": "Built-in verification included",
+          "traditionalApproach": "Manual address checks"
+        },
+        {
+          "icon": "shield",
+          "feature": "Tracking & Documentation",
+          "ourSolution": "Real-time USPS tracking for every letter",
+          "traditionalApproach": "No tracking, manual documentation"
+        },
+        {
+          "icon": "dollar-sign",
+          "feature": "Cost per Letter",
+          "ourSolution": "$1.31 includes everything",
+          "traditionalApproach": "Equipment, postage, labor costs"
+        },
+        {
+          "icon": "users",
+          "feature": "Staff Time",
+          "ourSolution": "Minutes per batch",
+          "traditionalApproach": "Hours of manual work"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Debt Collection Mailing Services",
+        "description": "End-to-end automated mailing designed to streamline collection operations while ensuring compliance documentation."
+      },
+      "services": [
+        {
+          "icon": "upload",
+          "title": "Bulk Upload Processing",
+          "description": "Upload PDFs in bulk for expedited processing with options for Certified Mail, First-Class, or Standard Mail. Platform handles printing, folding, stuffing, sealing, and postage application automatically. Suitable for high-volume agencies sending 50 to 5,000+ letters monthly."
+        },
+        {
+          "icon": "link-2",
+          "title": "API Integration",
+          "description": "Seamlessly connect with debt collection software platforms via API. Automate end-to-end processing with one-click approvals, keeping operations within familiar systems and minimizing training overhead for your team."
+        },
+        {
+          "icon": "mail",
+          "title": "Certified Mail Services",
+          "description": "Full Certified Mail options with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for compliance and client protection."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification",
+          "description": "Pre-production verification against USPS databases reduces returned mail by validating addresses before printing. Catches inaccuracies that cause delivery delays, improving collection rates and strengthening audit trails."
+        },
+        {
+          "icon": "star",
+          "title": "Custom Branding Options",
+          "description": "Professional letterheads and envelopes maintain agency branding. Custom stationery enhances client perception and reinforces reliability, supporting retention and referral opportunities with consistent presentation."
+        },
+        {
+          "icon": "file-text",
+          "title": "Document Variety",
+          "description": "Mail all collection document types including collection notices, FDCPA validation letters, payment reminders, cease communications, and affidavits. Single platform for your entire document volume."
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Common Questions About Debt Collection Mailing",
+        "description": "Answers about integration, compliance, processing, and getting started with automated mailing."
+      },
+      "faqs": [
+        {
+          "q": "What types of debt collection letters can be processed?",
+          "a": "The platform handles collection notices, FDCPA validation letters, payment reminders, cease communications, and certified mail where proof of mailing is required."
+        },
+        {
+          "q": "Is address verification included?",
+          "a": "Yes — address verification is built-in and included with every mailing to help reduce returned mail and associated rework."
+        },
+        {
+          "q": "Does every letter include tracking?",
+          "a": "Yes — real-time USPS tracking is provided for every letter, supporting proof-of-mailing documentation."
+        },
+        {
+          "q": "How does this support compliance documentation needs?",
+          "a": "Tracking records provide verifiable proof of submission and mailing (ISO 9001 documented processes). Precise PDF templates help maintain consistent notice content."
+        },
+        {
+          "q": "What is the starting price?",
+          "a": "Processing starts at $1.31 per letter (1-page, single-sided, black & white, including envelope and First-Class postage with tracking)."
+        }
+      ]
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready to streamline your collection mailing?",
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+      }
+    }
+  }
+}
