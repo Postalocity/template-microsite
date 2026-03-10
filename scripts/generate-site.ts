@@ -20,15 +20,131 @@ const TEMPLATE_DIR = path.join(__dirname, '..');
 function copyFavicons(siteDir: string): void {
   const publicDir = path.join(siteDir, 'public');
   const commonAssetsFavicon = path.join(TEMPLATE_DIR, 'common/assets/favicon.ico');
-  
+
   if (fs.existsSync(commonAssetsFavicon)) {
     // Create public dir if it doesn't exist
     if (!fs.existsSync(publicDir)) {
       fs.mkdirSync(publicDir, { recursive: true });
     }
-    
+
     // Copy favicon.ico
     fs.copyFileSync(commonAssetsFavicon, path.join(publicDir, 'favicon.ico'));
+  }
+}
+
+// Generate Open Graph images from hero banner
+async function generateOgImages(siteDir: string, config: any): Promise<void> {
+  const { exec } = await import('child_process');
+  const publicDir = path.join(siteDir, 'public');
+
+  // Create public dir if it doesn't exist
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+
+  const ogImageDest = path.join(publicDir, 'og-image.png');
+  const logoDest = path.join(publicDir, 'logo.png');
+  const commonLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
+
+  // Check if sips is available (macOS)
+  const sipsCheck = await new Promise<{ stdout: string, stderr: string }>((resolve) => {
+    exec('which sips', (error, stdout, stderr) => {
+      if (error) {
+        resolve({ stdout: '', stderr: String(error) });
+      } else {
+        resolve({ stdout, stderr });
+      }
+    });
+  });
+
+  // Copy and resize logo from common assets
+  if (fs.existsSync(commonLogoPath) && sipsCheck.stdout) {
+    await new Promise<void>((resolve) => {
+      exec(`sips -z 500 500 "${commonLogoPath}" --out "${logoDest}"`, (error) => {
+        if (!error) {
+          console.log('✓ Resized logo image from common assets (500x500px)');
+        } else {
+          console.log('⚠ Failed to resize logo, copying instead');
+          fs.copyFileSync(commonLogoPath, logoDest);
+        }
+        resolve();
+      });
+    });
+  } else if (fs.existsSync(commonLogoPath)) {
+    fs.copyFileSync(commonLogoPath, logoDest);
+  }
+
+  // Get hero image path from config with fallback locations
+  let heroImagePath = config.content?.hero?.background?.image;
+
+  if (!heroImagePath) {
+    console.log('⚠ No hero image specified in config - OG image not generated');
+    return;
+  }
+
+  // Try to find the hero image in multiple locations
+  let heroFullPath: string | null = null;
+
+  // 1. Check if it's an absolute path from root
+  if (heroImagePath.startsWith('/')) {
+    // Try config-relative path first
+    const relativePath = heroImagePath.substring(1); // remove leading /
+    const configPath1 = path.join(TEMPLATE_DIR, relativePath);
+    const configPath2 = path.join(__dirname, '..', relativePath);
+
+    // 2. Try generated site directory
+    const generatedPath = path.join(siteDir, relativePath);
+
+    // 3. Try public/images directory
+    const publicPath = path.join(publicDir, 'images', path.basename(heroImagePath));
+
+    if (fs.existsSync(configPath1)) {
+      heroFullPath = configPath1;
+    } else if (fs.existsSync(configPath2)) {
+      heroFullPath = configPath2;
+    } else if (fs.existsSync(generatedPath)) {
+      heroFullPath = generatedPath;
+    } else if (fs.existsSync(publicPath)) {
+      heroFullPath = publicPath;
+    } else {
+      console.log(`⚠ Hero image not found at: ${heroImagePath}`);
+      return;
+    }
+  } else {
+    // Relative path from config
+    heroFullPath = heroImagePath;
+  }
+
+  // If sips is available, resize hero to OG image dimensions
+  if (heroFullPath && sipsCheck.stdout) {
+    // Check if hero image is a supported format (PNG/JPEG)
+    const heroExt = heroFullPath.toLowerCase();
+    const isSupportedFormat = heroExt.endsWith('.png') || heroExt.endsWith('.jpg') || heroExt.endsWith('.jpeg');
+
+    if (isSupportedFormat) {
+      // Resize hero to 1200x630 for Open Graph
+      await new Promise<void>((resolve) => {
+        exec(`sips -z 630 1200 "${heroFullPath}" --out "${ogImageDest}"`, (error) => {
+          if (!error) {
+            console.log('✓ Generated OG image from hero banner (1200x630px)');
+          } else {
+            console.log('⚠ Failed to resize hero image, copying instead');
+            fs.copyFileSync(heroFullPath, ogImageDest);
+          }
+          resolve();
+        });
+      });
+    } else {
+      if (heroExt.endsWith('.svg')) {
+        console.log('⚠ Hero image is SVG format - OG image generation not supported');
+      } else {
+        console.log(`⚠ Unsupported hero image format: ${path.extname(heroFullPath)} - OG image not generated`);
+      }
+    }
+  } else if (heroFullPath) {
+    // Fallback: Just copy hero image as OG image without resizing
+    fs.copyFileSync(heroFullPath, ogImageDest);
+    console.log('✓ Copied hero image as OG image (resizing not available)');
   }
 }
 
@@ -86,6 +202,9 @@ async function generateSite(configPath: string) {
     // Copy common assets (favicon, etc.)
     copyFavicons(siteDir);
 
+    // Generate Open Graph images from hero banner (SEO optimization)
+    await generateOgImages(siteDir, config);
+
     console.log(`✅ ${site.name} generated successfully!`);
     console.log(`📁 Generated files:`);
     console.log(`   - main.tsx`);
@@ -98,6 +217,8 @@ async function generateSite(configPath: string) {
     console.log(`   - robots.txt`);
     console.log(`   - sitemap.xml`);
     console.log(`   - favicon.ico (copied from common/assets)`);
+    console.log(`   - og-image.png (generated from hero banner)`);
+    console.log(`   - logo.png (copied from common assets)`);
     console.log(`\n🚀 Next steps:`);
     console.log(`   cd ${siteDir}`);
     console.log(`   npm install`);
