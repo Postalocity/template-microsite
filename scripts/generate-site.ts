@@ -78,7 +78,8 @@ async function generateOgImages(siteDir: string, config: any): Promise<void> {
   let heroImagePath = config.content?.hero?.background?.image;
 
   if (!heroImagePath) {
-    console.log('⚠ No hero image specified in config - OG image not generated');
+    console.log('⚠ No hero image specified in config - generating fallback OG image');
+    await generateFallbackOgImage(ogImageDest, config);
     return;
   }
 
@@ -107,7 +108,8 @@ async function generateOgImages(siteDir: string, config: any): Promise<void> {
     } else if (fs.existsSync(publicPath)) {
       heroFullPath = publicPath;
     } else {
-      console.log(`⚠ Hero image not found at: ${heroImagePath}`);
+      console.log(`⚠ Hero image not found at: ${heroImagePath} - generating fallback OG image`);
+      await generateFallbackOgImage(ogImageDest, config);
       return;
     }
   } else {
@@ -174,6 +176,41 @@ async function generateOgImages(siteDir: string, config: any): Promise<void> {
   }
 }
 
+// Generate fallback OG image when hero image is not available
+async function generateFallbackOgImage(ogImageDest: string, config: any): Promise<void> {
+  const sharp = (await import('sharp')).default;
+  
+  // Get primary color from theme or branding, fallback to teal
+  const primaryColor = config.theme?.primary || { h: 173, s: 79, l: 24 };
+  const siteName = config.site?.name || 'Postalocity';
+  const tagline = config.branding?.tagline || 'Automated Mailing Service';
+  
+  // Create a simple gradient background with text
+  const svgContent = `
+    <svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:hsl(${primaryColor.h}, ${primaryColor.s}%, ${primaryColor.l}%)"/>
+          <stop offset="100%" style="stop-color:hsl(${primaryColor.h}, ${primaryColor.s}%, ${primaryColor.l - 15}%)"/>
+        </linearGradient>
+      </defs>
+      <rect width="1200" height="630" fill="url(#bg)"/>
+      <text x="600" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle">${siteName}</text>
+      <text x="600" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="rgba(255,255,255,0.9)" text-anchor="middle">${tagline}</text>
+      <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="rgba(255,255,255,0.7)" text-anchor="middle">postalocity.com</text>
+    </svg>
+  `;
+
+  try {
+    await sharp(Buffer.from(svgContent))
+      .png()
+      .toFile(ogImageDest);
+    console.log('✓ Generated fallback OG image with site branding');
+  } catch (error) {
+    console.log('⚠ Failed to generate fallback OG image');
+  }
+}
+
 async function generateSite(configPath: string) {
   try {
     // Read configuration
@@ -218,12 +255,18 @@ async function generateSite(configPath: string) {
     const indexHtml = generateIndexHtml(config);
     fs.writeFileSync(path.join(siteDir, 'index.html'), indexHtml);
 
-    // Generate robots.txt and sitemap.xml (FIX #3 - SEO indexing)
+    // Ensure public directory exists for static assets
+    const publicDir = path.join(siteDir, 'public');
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+
+    // Generate robots.txt and sitemap.xml to public folder (FIX #3 - SEO indexing)
     const robotsTxt = generateRobotsTxt(site);
-    fs.writeFileSync(path.join(siteDir, 'robots.txt'), robotsTxt);
+    fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt);
 
     const sitemapXml = generateSitemapXml(site);
-    fs.writeFileSync(path.join(siteDir, 'sitemap.xml'), sitemapXml);
+    fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
 
     // Copy common assets (favicon, etc.)
     copyFavicons(siteDir);
