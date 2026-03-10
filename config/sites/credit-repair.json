@@ -37,8 +37,8 @@
     }
   },
   "seo": {
-"title": "Automate Dispute Letter Mailing Service | Credit Repair Mailing Service",
-        "description": "Automated dispute letter mailing from $1.31/letter. Reclaim hours weekly. Free signup, address verification, Certified Mail, USPS tracking, API integration.",
+    "title": "Automate Dispute Letter Mailing Service | Credit Repair Mailing Service",
+    "description": "Automated dispute letter mailing from $1.31/letter. Reclaim hours weekly. Free signup, address verification, Certified Mail, USPS tracking, API integration.",
     "keywords": [
       "dispute letter mailing service",
       "credit repair mailing service",
@@ -87,7 +87,7 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Dispute Letter Mailing Service —",
+        "main": "Dispute Letter Mailing Service \u2014",
         "highlightTerm": "Automated Credit Repair Mailing"
       },
       "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning\u2014reclaiming hours weekly for client strategy.",
@@ -161,12 +161,12 @@
         {
           "icon": "mail",
           "title": "Certified Mail Services",
-          "description": "Full Certified Mail options with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for compliance and client protection. <a href=\"https://www.usps.com/manage/certified-mail.htm\" rel=\"noopener noreferrer\" target=\"_blank\" class=\"text-primary hover:underline\">USPS Certified MailServices</a> →"
+          "description": "Full Certified Mail options with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for compliance and client protection."
         },
         {
           "icon": "map-pin",
           "title": "Address Verification",
-          "description": "Pre-production verification against USPS databases reduces returned mail by validating addresses before printing. Catches inaccuracies that cause delivery delays, improving bureau response rates and strengthening audit trails. <a href=\"https://tools.usps.com/go/ZipLookupAction!input.action\" rel=\"noopener noreferrer\" target=\"_blank\" class=\"text-primary hover:underline\">USPS Address Lookup</a> →"
+          "description": "Pre-production verification against USPS databases reduces returned mail by validating addresses before printing. Catches inaccuracies that cause delivery delays, improving bureau response rates and strengthening audit trails."
         },
         {
           "icon": "star",
