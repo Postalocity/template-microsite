@@ -28,7 +28,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
           {benefits.benefits.map((benefit, idx) => {
             const Icon = getIcon(benefit.icon);
             return (
@@ -37,19 +37,19 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-card rounded-xl p-6 border-2 border-border hover:border-primary/50 transition-colors"
+                className="bg-card rounded-xl p-8 border-2 border-border hover:border-primary/50 transition-colors"
               >
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-primary" />
+                <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
+                  <Icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold mb-2 text-foreground">
+                <h3 className="text-xl font-semibold mb-3 text-foreground">
                   {benefit.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-muted-foreground mb-5 leading-relaxed">
                   {benefit.detail}
                 </p>
                 {benefit.metrics && (
-                  <div className="text-sm font-semibold text-primary">
+                  <div className="text-base font-semibold text-primary">
                     {benefit.metrics}
                   </div>
                 )}
