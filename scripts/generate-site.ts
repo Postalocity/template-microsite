@@ -115,32 +115,58 @@ async function generateOgImages(siteDir: string, config: any): Promise<void> {
     heroFullPath = heroImagePath;
   }
 
-  // If sips is available, resize hero to OG image dimensions
-  if (heroFullPath && sipsCheck.stdout) {
-    // Check if hero image is a supported format (PNG/JPEG)
-    const heroExt = heroFullPath.toLowerCase();
-    const isSupportedFormat = heroExt.endsWith('.png') || heroExt.endsWith('.jpg') || heroExt.endsWith('.jpeg');
+  if (!heroFullPath) {
+    return;
+  }
 
-    if (isSupportedFormat) {
-      // Resize hero to 1200x630 for Open Graph
-      await new Promise<void>((resolve) => {
-        exec(`sips -z 630 1200 "${heroFullPath}" --out "${ogImageDest}"`, (error) => {
-          if (!error) {
-            console.log('✓ Generated OG image from hero banner (1200x630px)');
-          } else {
-            console.log('⚠ Failed to resize hero image, copying instead');
-            fs.copyFileSync(heroFullPath, ogImageDest);
-          }
-          resolve();
-        });
-      });
-    } else {
-      if (heroExt.endsWith('.svg')) {
-        console.log('⚠ Hero image is SVG format - OG image generation not supported');
-      } else {
-        console.log(`⚠ Unsupported hero image format: ${path.extname(heroFullPath)} - OG image not generated`);
-      }
+  // Try to convert SVG to PNG using sharp, then resize with sips
+  const heroExt = heroFullPath.toLowerCase();
+  const isSvg = heroExt.endsWith('.svg');
+
+  if (isSvg) {
+    // Convert SVG to PNG first using sharp
+    try {
+      const sharp = (await import('sharp')).default;
+      await sharp(heroFullPath)
+        .resize(1200, 630, { fit: 'inside', withoutEnlargement: true })
+        .png()
+        .toFile(ogImageDest);
+      console.log('✓ Converted SVG to PNG for OG image (1200x630px)');
+    } catch (error) {
+      // Fallback if sharp not available or fails
+      console.log('⚠ Sharp unavailable or failed - SVG cannot be converted');
+      console.log('⚠ OG image not generated for SVG hero image');
     }
+    return;
+  }
+
+  // Check if hero image is a supported raster format (PNG, JPEG, WEBP)
+  const isSupportedFormat =
+    heroExt.endsWith('.png') ||
+    heroExt.endsWith('.jpg') ||
+    heroExt.endsWith('.jpeg') ||
+    heroExt.endsWith('.webp');
+
+  if (!isSupportedFormat) {
+    console.log(`⚠ Unsupported hero image format: ${path.extname(heroFullPath)}`);
+    console.log('. Supported formats: PNG, JPEG, WEBP');
+    return;
+  }
+
+  // If sips is available, resize hero image
+  if (heroFullPath && sipsCheck.stdout) {
+    // Resize hero to 1200x630 for Open Graph
+    await new Promise<void>((resolve) => {
+      exec(`sips -z 630 1200 "${heroFullPath}" --out "${ogImageDest}"`, (error) => {
+        if (!error) {
+          console.log('✓ Generated OG image from hero banner (1200x630px)');
+        } else {
+          console.log('⚠ Failed to resize hero image, copying instead');
+          fs.copyFileSync(heroFullPath, ogImageDest);
+        }
+        resolve();
+      });
+    });
   } else if (heroFullPath) {
     // Fallback: Just copy hero image as OG image without resizing
     fs.copyFileSync(heroFullPath, ogImageDest);
