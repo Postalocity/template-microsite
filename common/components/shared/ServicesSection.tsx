@@ -45,9 +45,10 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                <p 
+                  className="text-muted-foreground text-sm leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: service.description }}
+                />
               </motion.div>
             );
           })}
