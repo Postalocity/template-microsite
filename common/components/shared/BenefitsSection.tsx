@@ -11,6 +11,11 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
+  // Guard clause for missing data - prevents runtime errors (Codex #7)
+  if (!benefits?.section || !benefits?.benefits) {
+    return null;
+  }
+
   return (
     <section id="benefits" className="section-padding bg-background" ref={ref}>
       <div className="section-container">
@@ -39,7 +44,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
                 className="bg-card rounded-xl p-8 border-2 border-border hover:border-primary/50 transition-colors"
               >
-                <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
+                <div aria-hidden="true" className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
                   <Icon className="w-7 h-7 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-foreground">
