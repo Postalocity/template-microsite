@@ -185,6 +185,8 @@ async function verifySite() {
     'real-estate': 're2026',
     'healthcare-billing': 'health2026',
     'healthcare-mailing-services': 'health2026',
+    'international': 'int2026',
+    'international-mail': 'int2026',
   };
   const expectedPromo = promoCodeMap[configName] || 'bank2026';
   
