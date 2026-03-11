@@ -87,7 +87,7 @@
     "cta": {
       "text": "Starting at $1.31",
       "subtext": "1-page. single-sided. B&W. includes postage.",
-      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
       "variant": "primary"
     }
   },
@@ -106,7 +106,7 @@
         {
           "text": "Starting at $1.31",
           "subtext": "1-page. single-sided. B&W. includes postage.",
-          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
           "variant": "primary"
         },
         {
@@ -264,7 +264,7 @@
     "footer": {
       "finalCTA": {
         "headline": "Ready to streamline your collection mailing?",
-        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026"
       }
     }
   }

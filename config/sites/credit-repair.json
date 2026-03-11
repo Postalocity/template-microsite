@@ -20,7 +20,7 @@
       "headline": "Automate Your Dispute Letter Mailing Today",
       "description": "Reclaim hours weekly with automated printing, address verification, and Certified Mail services\u2014no contracts, pay-as-you-go pricing.",
       "buttonText": "Start Automating Now",
-      "href": "https://prod.postalocity.com/login.html?signUp=true"
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026"
     },
     "description": "Postalocity streamlines dispute letter processing for credit repair professionals with automation that reclaims operational time while ensuring accurate USPS delivery and compliance documentation.",
     "tagline": "Empowering Credit Repair Professionals with Reliable Automation"
@@ -99,7 +99,7 @@
         {
           "text": "Starting at $1.31",
           "subtext": "1-page. single-sided. B&W. includes postage.",
-          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026",
           "variant": "primary"
         },
         {

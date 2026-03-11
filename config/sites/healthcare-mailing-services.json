@@ -20,7 +20,7 @@
       "headline": "Optimize Your Healthcare Mailing Today",
       "description": "Streamline patient statements and billing mail, reduce manual processing, and accelerate delivery—no contracts, pay-as-you-go pricing.",
       "buttonText": "Get Started Now",
-      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
     "description": "Postalocity helps healthcare organizations reclaim hours weekly through automated patient statement mailing and billing communication services.",
     "tagline": "Empowering Healthcare Providers with Reliable Mailing Solutions"
@@ -321,7 +321,7 @@
       },
       "cta": {
         "text": "Get Started Now",
-        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
       }
     },
     "businessContinuity": {

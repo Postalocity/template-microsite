@@ -16,6 +16,32 @@ const CONFIGS_DIR = path.join(__dirname, '../config/sites');
 const SITES_DIR = path.join(__dirname, '../sites');
 const TEMPLATE_DIR = path.join(__dirname, '..');
 
+// Promo code tracking table - maps site slugs to tracking codes
+// Used for analytics and conversion tracking
+const PROMO_CODE_MAP: Record<string, string> = {
+  'utility': 'util2026',
+  'banking': 'bank2026',
+  'healthcare': 'health2026',
+  'credit-repair': 'cr2026',
+  'debt-collection': 'debt2026',
+  'property-management': 'pm2026',
+  'software': 'software2026',
+  'real-estate': 're2026',
+  'healthcare-billing': 'health2026',
+  'healthcare-mailing-services': 'health2026',
+};
+
+// Get promo code for a site based on its slug
+function getPromoCode(slug: string): string {
+  return PROMO_CODE_MAP[slug] || 'bank2026'; // default fallback
+}
+
+// Validate promo code in CTA URLs
+function validatePromoCode(slug: string, url: string): boolean {
+  const expectedPromo = getPromoCode(slug);
+  return url.includes(`promo=${expectedPromo}`);
+}
+
 // Copy favicons from common/assets to all sites
 function copyFavicons(siteDir: string): void {
   const publicDir = path.join(siteDir, 'public');

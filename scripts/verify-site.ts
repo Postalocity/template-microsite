@@ -172,6 +172,33 @@ async function verifySite() {
   });
   test('Has services section', () => config?.content?.services !== undefined);
   test('Has 6 services', () => config?.content?.services?.services?.length === 6);
+
+  // Promo code validation - verify correct tracking code based on site slug
+  const promoCodeMap: Record<string, string> = {
+    'utility': 'util2026',
+    'banking': 'bank2026',
+    'healthcare': 'health2026',
+    'credit-repair': 'cr2026',
+    'debt-collection': 'debt2026',
+    'property-management': 'pm2026',
+    'software': 'software2026',
+    'real-estate': 're2026',
+    'healthcare-billing': 'health2026',
+    'healthcare-mailing-services': 'health2026',
+  };
+  const expectedPromo = promoCodeMap[configName] || 'bank2026';
+  
+  test(`CTA uses correct promo code (${expectedPromo})`, () => {
+    const heroCtas = config?.content?.hero?.ctas || [];
+    const footerCta = config?.footer?.finalCTA?.href || '';
+    const allUrls = [...heroCtas.map((c: any) => c.href), footerCta].filter(Boolean);
+    
+    // Check if signup URLs have correct promo code
+    const signupUrls = allUrls.filter((url: string) => url.includes('signUp=true'));
+    if (signupUrls.length === 0) return true; // Skip if no signup URLs
+    
+    return signupUrls.every((url: string) => url.includes(`promo=${expectedPromo}`));
+  });
   test('Each service has icon, title, description', () => {
     const services = config.content.services.services;
     return services.every((s: any) => s.icon && s.title && s.description);
