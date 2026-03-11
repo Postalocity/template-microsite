@@ -264,15 +264,31 @@ async function verifySite() {
   // SEO Files Tests (FIX #3)
   log_section('🔍 SEO Files');
 
-  const robotsTxt = fs.readFileSync(path.join(siteDir, 'robots.txt'), 'utf-8');
-  test('robots.txt has User-agent directive', () => robotsTxt.includes('User-agent: *'));
-  test('robots.txt allows indexing', () => robotsTxt.includes('Allow: /'));
-  test('robots.txt references sitemap', () => robotsTxt.includes('Sitemap:'));
+  const publicDir = path.join(siteDir, 'public');
+  const robotsPath = path.join(publicDir, 'robots.txt');
+  const sitemapPath = path.join(publicDir, 'sitemap.xml');
 
-  const sitemapXml = fs.readFileSync(path.join(siteDir, 'sitemap.xml'), 'utf-8');
-  test('sitemap.xml has XML declaration', () => sitemapXml.includes('<?xml version="1.0"'));
-  test('sitemap.xml has urlset namespace', () => sitemapXml.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'));
-  test(`sitemap.xml has URL with ${config?.site?.domain}`, () => sitemapXml.includes(`https://${config?.site?.domain}`));
+  test('public directory exists', () => fs.existsSync(publicDir));
+  
+  if (fs.existsSync(robotsPath)) {
+    const robotsTxt = fs.readFileSync(robotsPath, 'utf-8');
+    test('robots.txt has User-agent directive', () => robotsTxt.includes('User-agent: *'));
+    test('robots.txt allows indexing', () => robotsTxt.includes('Allow: /'));
+    test('robots.txt references sitemap', () => robotsTxt.includes('Sitemap:'));
+  } else {
+    test('robots.txt exists', () => false); // Will show failure
+    log_fail('robots.txt not found - may be generated elsewhere');
+  }
+
+  if (fs.existsSync(sitemapPath)) {
+    const sitemapXml = fs.readFileSync(sitemapPath, 'utf-8');
+    test('sitemap.xml has XML declaration', () => sitemapXml.includes('<?xml version="1.0"'));
+    test('sitemap.xml has urlset namespace', () => sitemapXml.includes('xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"'));
+    test(`sitemap.xml has URL with ${config?.site?.domain}`, () => sitemapXml.includes(`https://${config?.site?.domain}`));
+  } else {
+    test('sitemap.xml exists', () => false); // Will show failure
+    log_fail('sitemap.xml not found - may be generated elsewhere');
+  }
 
   // Check built HTML
   if (fs.existsSync(path.join(distDir, 'index.html'))) {
@@ -300,6 +316,30 @@ async function verifySite() {
     test('Address has addressLocality field', () => builtHtml.includes('"addressLocality": '));
     test('Address has addressRegion field', () => builtHtml.includes('"addressRegion": '));
     test('Address has postalCode field', () => builtHtml.includes('"postalCode": '));
+
+    // HTML Rendering Validation - Links and Bold Text
+    // Check if config has HTML that needs to render properly
+    const configStr = JSON.stringify(config);
+    
+    // Check for links in config content
+    const hasLinksInConfig = /<a\s+href=/i.test(configStr);
+    if (hasLinksInConfig) {
+      test('Config links render as <a> tags (not escaped)', () => {
+        // Should have actual <a tags, not escaped &lt;a href=
+        return builtHtml.includes('<a ') && !builtHtml.includes('&lt;a href=');
+      });
+    }
+    
+    // Check for bold text in config content
+    const hasBoldInConfig = /<[sb]>|<\/?strong>/i.test(configStr);
+    if (hasBoldInConfig) {
+      test('Config bold text renders as <strong>/<b> tags (not escaped)', () => {
+        // Should have actual <strong> or <b> tags, not escaped
+        const hasStrong = builtHtml.includes('<strong>') || builtHtml.includes('<b>');
+        const isEscaped = builtHtml.includes('&lt;strong&gt;') || builtHtml.includes('&lt;b&gt;');
+        return hasStrong && !isEscaped;
+      });
+    }
   }
 
   // Summary
