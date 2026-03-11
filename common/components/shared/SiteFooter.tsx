@@ -1,4 +1,4 @@
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 import { SiteConfig } from '../../types/content';
 
 interface SiteFooterProps {
@@ -38,8 +38,8 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
       </div>
 
       <div className="section-container py-12">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-          <div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
+          <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-3">Postalocity</h3>
             <p className="text-background/60 text-sm leading-relaxed">
               {footer.description}
@@ -62,6 +62,23 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
               <li><a href="https://www.postalocity.com/resources/blog/" rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Blog</a></li>
               <li><a href="https://www.postalocity.com/resources/faq/" rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">FAQ</a></li>
               <li><a href="https://www.postalocity.com/contact/" rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Contact</h3>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center gap-2 text-background/70">
+                <Phone className="w-4 h-4" />
+                <a href="tel:3162602220" className="hover:text-background transition-colors">316-260-2220</a>
+              </li>
+              <li className="flex items-center gap-2 text-background/70">
+                <Mail className="w-4 h-4" />
+                <a href="mailto:helpdesk@postalocity.com" className="hover:text-background transition-colors">helpdesk@postalocity.com</a>
+              </li>
+              <li className="text-background/70 mt-2">
+                820 W 2nd St N<br />
+                Wichita, KS 67203
+              </li>
             </ul>
           </div>
           <div>
