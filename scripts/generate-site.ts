@@ -664,21 +664,21 @@ function generateIndexHtml(config: any): string {
               "closes": "17:00"
             }
           ],
-          "priceRange": "$$",
+          "priceRange": "${config.seo?.priceRange || '$$'}",
           "areaServed": {
             "@type": "GeoCircle",
             "geoMidpoint": {
               "@type": "GeoCoordinates",
-              "latitude": "39.1147",
-              "longitude": "-95.6798"
+              "latitude": "${config.seo?.latitude || '39.1147'}",
+              "longitude": "${config.seo?.longitude || '-95.6798'}"
             },
             "geoRadius": "5000"
           }
         },
         {
           "@type": "Product",
-          "name": "Automated Dispute Letter Mailing Service",
-          "description": "Upload PDFs or connect via API to automate dispute letter mailing for credit repair professionals. All-in-One: $1.31/letter. Single-sided, B&W envelope, postage included.",
+          "name": "Automated Mailing Service",
+          "description": "Upload PDFs or connect via API to automate mailing. Starting at $1.31/letter. Single-sided, B&W envelope, postage included.",
           "image": "${canonicalUrl}/og-image.png",
           "brand": {
             "@type": "Brand",

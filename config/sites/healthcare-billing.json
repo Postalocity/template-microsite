@@ -7,7 +7,7 @@
     "basename": "/healthcare-billing",
     "contact": {
       "email": "helpdesk@postalcity.com",
-      "phone": "1-800-555-0199",
+      "phone": "316.260.2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
@@ -20,9 +20,9 @@
       "headline": "Optimize Your Revenue Cycle Today",
       "description": "Streamline claims processing, reduce denials, and accelerate reimbursement—no contracts, pay-as-you-go pricing.",
       "buttonText": "Get Started Now",
-      "href": "https://prod.postalocity.com/login.html?signUp=true"
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
     },
-    "description": "Postalocity helps healthcare organizations reclaim reclaim hours weekly weekly through automated revenue cycle management and claims processing services.",
+    "description": "Postalocity helps healthcare organizations reclaim hours weekly through automated revenue cycle management and claims processing services.",
     "tagline": "Empowering Healthcare Providers with Reliable Revenue Cycle Solutions"
   },
   "theme": {
@@ -38,7 +38,7 @@
   },
   "seo": {
     "title": "Automate Patient Statement Mailing | Healthcare Mailing Services",
-    "description": "Healthcare providers reclaim reclaim hours weekly weekly with Postalocity's automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail options, and EMR integration.",
+    "description": "Healthcare providers reclaim hours weekly with Postalocity's automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail options, and EMR integration.",
     "keywords": [
       "patient statement mailing",
       "healthcare mailing services",
