@@ -6,11 +6,12 @@
     "domain": "postalcity.com",
     "basename": "/healthcare-mailing-services",
     "contact": {
-      "email": "helpdesk@postalcity.com",
-      "phone": "316.260.2220",
+      "email": "helpdesk@postalocity.com",
+      "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
+  "canonicalDomain": "https://healthcare-mailing-services.postalocity.com",
   "branding": {
     "tagline": "Automated Healthcare Mailing Services",
     "logo": null
@@ -55,7 +56,6 @@
     "ogDescription": "Healthcare providers save reclaim hours weekly with automated patient statement mailing. Address verification, Certified Mail, EMR integration with systems.",
     "twitterTitle": "Healthcare Mailing Automation | Patient Statement Services",
     "twitterDescription": "reclaim hours weekly with automated patient statement mailing. Address verification, Certified Mail, EMR integration with systems.",
-    "canonicalUrl": "https://postalcity.com/healthcare-mailing-services",
     "robots": "index, follow",
     "sitemapPriority": 1.0,
     "sitemapChangeFrequency": "weekly"

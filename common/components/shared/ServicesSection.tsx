@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ServicesContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 
 interface ServicesSectionProps {
   services: ServicesContent;
@@ -45,9 +46,9 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   {service.title}
                 </h3>
-                <p 
+                <div
                   className="text-muted-foreground text-sm leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: service.description }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(service.description) }}
                 />
               </motion.div>
             );

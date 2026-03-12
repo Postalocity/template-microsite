@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 
 const defaultFaqs = [
   {
@@ -83,7 +84,7 @@ const FAQSection = (faqContent?: { faqs?: Array<{ q: string; a: string }> }) => 
                   >
                     <p
                       className="px-6 pb-6 text-muted-foreground leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: faq.a }}
+                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(faq.a) }}
                     />
                   </motion.div>
                 )}

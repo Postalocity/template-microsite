@@ -7,6 +7,7 @@ import {
   Eye,
   Check,
 } from "lucide-react";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 
 const ValueSection = () => {
   const ref = useRef(null);
@@ -79,7 +80,7 @@ const ValueSection = () => {
               </h3>
               <p
                 className="text-muted-foreground leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: item.description }}
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.description) }}
               />
             </motion.div>
           ))}
@@ -109,7 +110,7 @@ const ValueSection = () => {
                 </div>
                 <p
                   className="text-foreground font-medium leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: b }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(b) }}
                 />
               </motion.div>
             ))}

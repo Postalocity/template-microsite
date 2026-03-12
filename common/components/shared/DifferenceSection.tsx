@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Eye, Zap, Sparkles } from "lucide-react";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 
 const differentials = [
   {
@@ -94,7 +95,7 @@ const DifferenceSection = () => {
                   </h3>
                   <p
                     className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300"
-                    dangerouslySetInnerHTML={{ __html: item.description }}
+                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.description) }}
                   />
                 </div>
 

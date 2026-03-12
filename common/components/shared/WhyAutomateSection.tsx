@@ -8,6 +8,7 @@ import {
   Users,
   TrendingUp,
 } from "lucide-react";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 
 const reasons = [
   {
@@ -92,7 +93,7 @@ const WhyAutomateSection = () => {
               </h3>
               <p
                 className="text-muted-foreground leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: item.description }}
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.description) }}
               />
             </motion.div>
           ))}

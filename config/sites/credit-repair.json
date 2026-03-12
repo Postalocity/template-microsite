@@ -6,11 +6,12 @@
     "domain": "postalcity.com",
     "basename": "/credit-repair",
     "contact": {
-      "email": "helpdesk@postalcity.com",
-      "phone": "316.260.2220",
+      "email": "helpdesk@postalocity.com",
+      "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
+  "canonicalDomain": "https://credit-repair.postalocity.com",
   "branding": {
     "tagline": "Automated Dispute Letter Mailing for Credit Repair Professionals",
     "logo": null
@@ -57,7 +58,6 @@
     "ogDescription": "Credit repair professionals save hours weekly with automated dispute letter mailing. Includes address verification, Certified Mail, USPS tracking, and software integration.",
     "twitterTitle": "Dispute Letter Mailing Automation | Credit Repair Mailing Service",
     "twitterDescription": "Save hours weekly with automated dispute letter mailing. Address verification, Certified Mail, USPS tracking, API integration with credit repair software.",
-    "canonicalUrl": "https://postalcity.com/credit-repair",
     "robots": "index, follow",
     "sitemapPriority": 1.0,
     "sitemapChangeFrequency": "weekly"

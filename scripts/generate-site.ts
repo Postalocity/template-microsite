@@ -12,37 +12,151 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/**
+ * TypeScript interfaces for type safety (Codex #11)
+ */
+interface SiteInfo {
+  id: string;
+  name: string;
+  slug: string;
+  domain: string;
+  basename: string;
+  contact: {
+    email: string;
+    phone: string;
+    address: string;
+  };
+}
+
+interface FAQ {
+  q: string;
+  a: string;
+}
+
+interface SiteConfig {
+  canonicalDomain?: string;
+  site: SiteInfo;
+  branding: {
+    tagline: string;
+    logo: string | null;
+    primaryColor?: string;
+    secondaryColor?: string;
+  };
+  seo: {
+    title: string;
+    description: string;
+    keywords?: string[];
+    ogTitle?: string;
+    ogDescription?: string;
+    twitterTitle?: string;
+    twitterDescription?: string;
+    canonicalUrl?: string;
+    robots?: string;
+    sitemapPriority?: number;
+    sitemapChangeFrequency?: string;
+    priceRange?: string;
+    latitude?: number;
+    longitude?: number;
+  };
+  navigation?: {
+    links?: Array<{ label: string; href: string; }>;
+    cta?: {
+      text: string;
+      subtext?: string;
+      href: string;
+      variant?: string;
+    };
+  };
+  content?: {
+    hero?: {
+      headline?: {
+        main: string;
+        highlightTerm?: string;
+      };
+      subhead: string;
+      background?: {
+        image: string;
+        alt: string;
+      };
+      ctas?: Array<{
+        text: string;
+        subtext?: string;
+        href: string;
+        variant?: string;
+      }>;
+    };
+    benefits?: {
+      section: {
+        title: string;
+        description: string;
+      };
+      benefits: Array<{
+        icon: string;
+        title: string;
+        detail: string;
+        metrics?: string;
+      }>;
+    };
+    services?: {
+      section: {
+        title: string;
+        description: string;
+      };
+      services: Array<{
+        icon: string;
+        title: string;
+        description: string;
+      }>;
+    };
+    comparison?: {
+      section: {
+        title: string;
+        description: string;
+      };
+      columns: {
+        ourSolution: string;
+        traditional: string;
+      };
+      rows: Array<{
+        icon: string;
+        feature: string;
+        ourSolution: string;
+        traditionalApproach: string;
+      }>;
+    };
+    faq?: {
+      section: {
+        title: string;
+        description: string;
+      };
+      faqs: Array<{
+        q: string;
+        a: string;
+      }>;
+    };
+  };
+  theme?: {
+    primary: { h: number; s: number; l: number };
+    gradients?: {
+      hero?: string;
+      cta?: string;
+    };
+  };
+  footer?: {
+    finalCTA?: {
+      headline: string;
+      description: string;
+      buttonText: string;
+      href: string;
+    };
+    description?: string;
+    tagline?: string;
+  };
+}
+
 const CONFIGS_DIR = path.join(__dirname, '../config/sites');
 const SITES_DIR = path.join(__dirname, '../sites');
 const TEMPLATE_DIR = path.join(__dirname, '..');
-
-// Promo code tracking table - maps site slugs to tracking codes
-// Used for analytics and conversion tracking
-const PROMO_CODE_MAP: Record<string, string> = {
-  'utility': 'util2026',
-  'banking': 'bank2026',
-  'healthcare': 'health2026',
-  'credit-repair': 'cr2026',
-  'debt-collection': 'debt2026',
-  'property-management': 'pm2026',
-  'software': 'software2026',
-  'real-estate': 're2026',
-  'healthcare-billing': 'health2026',
-  'healthcare-mailing-services': 'health2026',
-  'international': 'int2026',
-  'international-mail': 'int2026',
-};
-
-// Get promo code for a site based on its slug
-function getPromoCode(slug: string): string {
-  return PROMO_CODE_MAP[slug] || 'bank2026'; // default fallback
-}
-
-// Validate promo code in CTA URLs
-function validatePromoCode(slug: string, url: string): boolean {
-  const expectedPromo = getPromoCode(slug);
-  return url.includes(`promo=${expectedPromo}`);
-}
 
 // Copy favicons from common/assets to all sites
 function copyFavicons(siteDir: string): void {
@@ -61,7 +175,7 @@ function copyFavicons(siteDir: string): void {
 }
 
 // Generate Open Graph images from hero banner
-async function generateOgImages(siteDir: string, config: any): Promise<void> {
+async function generateOgImages(siteDir: string, config: SiteConfig): Promise<void> {
   const { exec } = await import('child_process');
   const publicDir = path.join(siteDir, 'public');
 
@@ -205,7 +319,7 @@ async function generateOgImages(siteDir: string, config: any): Promise<void> {
 }
 
 // Generate fallback OG image when hero image is not available
-async function generateFallbackOgImage(ogImageDest: string, config: any): Promise<void> {
+async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig): Promise<void> {
   const sharp = (await import('sharp')).default;
   
   // Get primary color from theme or branding, fallback to teal
@@ -293,7 +407,7 @@ async function generateSite(configPath: string) {
     const robotsTxt = generateRobotsTxt(site);
     fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt);
 
-    const sitemapXml = generateSitemapXml(site);
+    const sitemapXml = generateSitemapXml(config);
     fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
 
     // Copy common assets (favicon, etc.)
@@ -327,7 +441,7 @@ async function generateSite(configPath: string) {
   }
 }
 
-function generateIndexFile(config: any): string {
+function generateIndexFile(config: SiteConfig): string {
   const { site } = config;
   return `/**
  * ${site.name} - Generated from template-microsite
@@ -513,7 +627,7 @@ export default {
 `;
 }
 
-function generatePackageJson(site: any): string {
+function generatePackageJson(site: SiteInfo): string {
   return JSON.stringify({
     name: site.slug,
     version: '1.0.0',
@@ -587,10 +701,11 @@ function parseAddress(address: string) {
   };
 }
 
-function generateIndexHtml(config: any): string {
+function generateIndexHtml(config: SiteConfig): string {
   const { site } = config;
-  const canonicalUrl = `https://${site.domain}${site.basename}`;
-  const ogImage = `https://${site.domain}${site.basename}/og-image.png`;
+  // Use canonicalDomain, seo.canonicalUrl, or fall back to slug-based subdomain pattern
+  const canonicalUrl = config.canonicalDomain || config.seo?.canonicalUrl || `https://${site.slug}.postalocity.com`;
+  const ogImage = `${canonicalUrl}/og-image.png`;
 
   // Parse address once for schema
   const addressParts = parseAddress(site.contact.address || '');
@@ -601,7 +716,7 @@ function generateIndexHtml(config: any): string {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${config.seo?.title || `${site.name} | ${config.branding.tagline}`}</title>
-    <meta name="description" content="${config.seo?.description || config.content.hero.subhead}" />
+    <meta name="description" content="${config.seo?.description || config.content?.hero?.subhead}" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="${config.seo?.canonicalUrl || canonicalUrl}" />
@@ -610,14 +725,14 @@ function generateIndexHtml(config: any): string {
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:title" content="${config.seo?.ogTitle || `${site.name} | ${config.branding.tagline}`}" />
-    <meta property="og:description" content="${config.seo?.ogDescription || config.content.hero.subhead}" />
+    <meta property="og:description" content="${config.seo?.ogDescription || config.content?.hero?.subhead}" />
     <meta property="og:image" content="${ogImage}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="${canonicalUrl}" />
     <meta property="twitter:title" content="${config.seo?.twitterTitle || `${site.name} | ${config.branding.tagline}`}" />
-    <meta property="twitter:description" content="${config.seo?.twitterDescription || config.content.hero.subhead}" />
+    <meta property="twitter:description" content="${config.seo?.twitterDescription || config.content?.hero?.subhead}" />
     <meta property="twitter:image" content="${ogImage}" />
 
     <!-- SEO Meta Tags -->
@@ -642,7 +757,7 @@ function generateIndexHtml(config: any): string {
           "@type": "WebSite",
           "name": "${site.name}",
           "url": "${canonicalUrl}",
-          "description": "${config.content.hero.subhead}",
+          "description": "${config.content?.hero?.subhead}",
           "publisher": {
             "@type": "Organization",
             "name": "${site.name}",
@@ -672,7 +787,7 @@ function generateIndexHtml(config: any): string {
         {
           "@type": "LocalBusiness",
           "name": "${site.name}",
-          "description": "${config.content.hero.subhead}",
+          "description": "${config.content?.hero?.subhead}",
           "url": "${canonicalUrl}",
           "telephone": "${site.contact.phone || ''}",
           "email": "${site.contact.email}",
@@ -731,7 +846,7 @@ function generateIndexHtml(config: any): string {
         {
           "@type": "FAQPage",
           "mainEntity": [
-            ${(config.content.faq?.faqs || []).map((faq: any) => `
+            ${(config.content?.faq?.faqs || []).map((faq: FAQ) => `
               {
                 "@type": "Question",
                 "name": "${faq.q.replace(/"/g, '\\"')}",
@@ -764,7 +879,7 @@ function generateIndexHtml(config: any): string {
 }
 
 // FIX #3 - Generate robots.txt for SEO indexing
-function generateRobotsTxt(site: any): string {
+function generateRobotsTxt(site: SiteInfo): string {
   return `User-agent: *
 Allow: /
 
@@ -785,9 +900,10 @@ Sitemap: https://${site.domain}${site.basename}/sitemap.xml
 }
 
 // FIX #3 - Generate sitemap.xml for SEO discovery
-function generateSitemapXml(site: any): string {
+function generateSitemapXml(config: SiteConfig): string {
+  const { site } = config;
   const currentDate = new Date().toISOString().split('T')[0];
-  const canonicalUrl = `https://${site.domain}${site.basename}`.replace(/\/$/, '');
+  const canonicalUrl = config.canonicalDomain || config.seo?.canonicalUrl || `https://${site.slug}.postalocity.com`.replace(/\/$/, '');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
