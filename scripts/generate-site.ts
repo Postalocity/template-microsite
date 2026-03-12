@@ -468,7 +468,7 @@ function generateIndexFile(config: SiteConfig): string {
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonSection } from '../common/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable } from '../common/components/shared';
 import SiteNavigation from '../common/components/shared/SiteNavigation';
 import SiteFooter from '../common/components/shared/SiteFooter';
 import '../common/globals.css';
@@ -481,7 +481,7 @@ function App() {
       <SiteNavigation config={config} />
       <HeroSection hero={content.hero} />
       <BenefitsSection benefits={content.benefits} />
-      <ComparisonSection comparison={content.comparison} />
+      {content.comparison && <ComparisonTable comparison={content.comparison} promoCode="${site.slug}2026" />}
       <ServicesSection services={content.services} />
       <FAQSection faq={content.faq} />
       <SiteFooter config={config} />

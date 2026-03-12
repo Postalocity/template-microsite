@@ -187,45 +187,73 @@
     },
     "comparison": {
       "section": {
-        "title": "Why Organizations Choose Us",
-        "description": "Compare the efficiency and compliance advantages of Postalocity's automated service vs. traditional manual mailing."
+        "title": "Why Choose Automated Mailing vs. Manual Processing",
+        "description": "Compare the efficiency and compliance advantages of Postalocity's automated service vs. in-house manual mailing."
       },
       "columns": {
-        "ourSolution": "Our Solution",
-        "traditional": "Traditional Approach"
+        "ourSolution": "Postalocity Automated Mailing",
+        "traditional": "Manual In-House Processing"
       },
       "rows": [
         {
           "icon": "clock",
           "feature": "Processing Time",
-          "ourSolution": "Same-day processing after approval",
+          "ourSolution": { "text": "Same-day", "highlight": "Upload by 3 PM, mailed by 5 PM" },
           "traditionalApproach": "2-5 business days minimum"
         },
         {
           "icon": "map-pin",
           "feature": "Address Verification",
-          "ourSolution": "Automated USPS database verification",
+          "ourSolution": { "text": "Automated USPS database verification", "highlight": "99%+ accuracy with NCOA/CASS" },
           "traditionalApproach": "Manual research and verification"
         },
         {
           "icon": "users",
           "feature": "Weekly Time Investment",
-          "ourSolution": "2-4 hours monthly for approvals",
-          "traditionalApproach": "hours weekly manual work"
+          "ourSolution": { "text": "2-4 hours monthly", "highlight": "Zero – upload and done" },
+          "traditionalApproach": "Hours weekly manual work"
         },
         {
           "icon": "trending-up",
           "feature": "Returned Mail Rate",
-          "ourSolution": "Under 2% with verification",
+          "ourSolution": { "text": "Under 2%", "highlight": "Minimize returned mail" },
           "traditionalApproach": "8-15% average return rate"
         },
         {
           "icon": "shield",
           "feature": "Compliance Documentation",
-          "ourSolution": "USPS scanning and documented audit trails",
+          "ourSolution": { "text": "USPS scanning", "details": ["Documented audit trails", "Delivery confirmations"] },
           "traditionalApproach": "Manual record-keeping required"
+        },
+        {
+          "icon": "star",
+          "feature": "Mail Volume",
+          "ourSolution": { "text": "5,000+ letters", "details": ["Scales automatically", "No per-transaction fees"] },
+          "traditionalApproach": "Limited by staff"
+        },
+        {
+          "icon": "zap",
+          "feature": "Certified Mail",
+          "ourSolution": { "text": "Yes", "highlight": "Full tracking available" },
+          "traditionalApproach": "No"
+        },
+        {
+          "icon": "checkCircle",
+          "feature": "Real-Time Tracking",
+          "ourSolution": { "text": "Yes", "highlight": "API + dashboard visibility" },
+          "traditionalApproach": "No"
+        },
+        {
+          "icon": "trendingDown",
+          "feature": "Pricing",
+          "ourSolution": { "text": "$1.31/letter", "highlight": ["No setup fees", "No monthly fees", "Pay-as-you-go"] },
+          "traditionalApproach": "$2-4/letter + hidden fees"
         }
-      ]
+      ],
+      "cta": {
+        "text": "Start Free Trial",
+        "href": "https://prod.postalocity.com/login.html?signUp=true"
+      }
     },
     "faq": {
       "section": {

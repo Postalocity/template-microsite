@@ -3,6 +3,7 @@ export { default as BenefitsSection } from './BenefitsSection';
 export { default as ServicesSection } from './ServicesSection';
 export { default as FAQSection } from './FAQSection';
 export { default as ComparisonSection } from './ComparisonSection';
+export { default as ComparisonTable } from './ComparisonTable';
 export { default as SiteNavigation } from './SiteNavigation';
 export { default as SiteFooter } from './SiteFooter';
 export { default as TrustBadgesSection } from './TrustBadgesSection';
