@@ -75,9 +75,12 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
                 <Mail className="w-4 h-4" />
                 <a href="mailto:helpdesk@postalocity.com" className="hover:text-background transition-colors">helpdesk@postalocity.com</a>
               </li>
-              <li className="text-background/70 mt-2">
-                820 W 2nd St N<br />
-                Wichita, KS 67203
+              <li className="flex items-start gap-2 text-background/70 mt-2">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <span>
+                  820 W 2nd St N<br />
+                  Wichita, KS 67203
+                </span>
               </li>
             </ul>
           </div>
