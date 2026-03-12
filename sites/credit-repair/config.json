@@ -187,12 +187,12 @@
     },
     "comparison": {
       "section": {
-        "title": "Why Choose Automated Mailing vs. Manual Processing",
-        "description": "Compare the efficiency and compliance advantages of Postalocity's automated service vs. in-house manual mailing."
+        "title": "Why Organizations Choose Us",
+        "description": "Compare the efficiency and compliance advantages of Postalocity's automated service vs. traditional manual mailing."
       },
       "columns": {
-        "ourSolution": "Postalocity Automated Mailing",
-        "traditional": "Manual In-House Processing"
+        "ourSolution": "Our Solution",
+        "traditional": "Traditional Approach"
       },
       "rows": [
         {
