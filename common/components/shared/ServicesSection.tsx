@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { ServicesContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
 import { sanitizeHtml } from "../../utils/sanitize-html";
-import { getGridLayoutClasses } from "../../utils/grid-layout";
+import { getGridLayoutClasses, getColumnClass } from "../../utils/grid-layout";
 
 interface ServicesSectionProps {
   services: ServicesContent;
@@ -35,6 +35,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
         <div className={gridClasses}>
           {services.services.map((service, i) => {
             const Icon = getIcon(service.icon);
+            const colClass = getColumnClass(i, itemCount);
 
             return (
               <motion.div
@@ -42,7 +43,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow"
+                className={`bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow ${colClass}`}
               >
                 <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <Icon className="w-8 h-8 text-primary" />

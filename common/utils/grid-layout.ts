@@ -1,113 +1,82 @@
 /**
- * Grid Layout Utilities for Flexible Box Layouts
+ * Grid Layout Utilities for 3-2-2 Pattern
  *
- * Provides standardized grid layouts for sections with varying item counts
- * - All boxes always centered using mx-auto container
- * - Supports specific patterns: 2x2 (4 items), 3-2-2 (7 items)
- * - Dynamic centering with margin helpers
+ * Provides proper row centering for 3-2-2 pattern using CSS Grid cell placement.
+ * For 2-item rows: position items in columns 2 and 3 instead of 1 and 2 to center them.
  */
-
-export type GridColumns = {
-  small: number;
-  medium: number;
-  large: number;
-};
-
-export interface GridLayoutParams {
-  cols: GridColumns;
-  hasMarginHelper?: boolean;
-  marginWidth: string;
-}
 
 /**
- * Get grid column configuration based on item count
- * @param count - Number of items to display
- * @returns Grid columns configuration
+ * Get grid column configuration
  */
-export const getGridColumns = (count: number): GridColumns => {
-  // Standardize on 3-column layout for better centering control
+export const getGridColumns = (count: number): { small: number; medium: number; large: number } => {
   return {
-    small: 2,    // Mobile: 2 columns
-    medium: 2,   // Tablet: 2 columns
-    large: 3    // Desktop: 3 columns (for centering patterns)
+    small: 2,
+    medium: 2,
+    large: 3
   };
 };
 
 /**
- * Check if grid needs margin helper for centering
- * @param count - Number of items
- * @returns Whether margin helper is needed
+ * Get grid column for a specific item based on its row position
+ * @param index - Current item index (0-based)
+ * @param count - Total item count
+ * @returns CSS grid column value
  */
-export const needsMarginHelper = (count: number): boolean => {
-  // Grid is 3 columns on desktop
-  const cols = 3;
-  const fullRows = Math.floor(count / cols);
-  const incompleteRows = count % cols;
+export const getGridColumn = (index: number, count: number): string => {
+  // For 7 items (3-2-2 pattern):
+  // Row 1 (items 0-2): cols 1, 2, 3 (natural)
+  // Row 2 (items 3-4): cols 2, 3 (shifted right to center)
+  // Row 3 (items 5-6): cols 2, 3 (shifted right to center)
 
-  // Need margin helper if there's a partial row (items don't fill complete rows)
-  return incompleteRows > 0 && incompleteRows < cols && fullRows > 0;
-};
+  if (count === 7) {
+    const row = Math.floor(index / 3);
+    const colInRow = index % 3;
 
-/**
- * Get margin helper percentage based on item count
- * @param count - Number of items
- * @param cols - Number of columns in grid
- * @returns Margin percentage as Tailwind class prefix
- */
-export const getMarginHelper = (count: number, cols: number = 3): string => {
-  // Calculate which row is incomplete
-  const fullRows = Math.floor(count / cols);
-  const incompleteRowItems = count % cols;
-
-  // For 7 items in 3-column grid: 1st row (3 items), 2nd row (2 items), 3rd row (2 items)
-  // Pattern: 3-2-2
-
-  // Determine margin based on row position (for 3-2-2 pattern):
-  if (count === 5) {
-    // 3-2 pattern: Last row needs 66.666% margin to center
-    return 'max-w-[66.667%]';
-  } else if (count === 7) {
-    // 3-2-2 pattern: Last 2 rows each need 66.667% margin
-    return 'max-w-[66.667%]';
+    if (row === 1) {
+      // Second row (items 3,4): shift right
+      return colInRow === 0 ? '2' : colInRow === 1 ? '3' : '';
+    } else if (row === 2) {
+      // Third row (items 5,6): shift right
+      return colInRow === 0 ? '2' : colInRow === 1 ? '3' : '';
+    }
+    // First row: natural (1, 2, 3)
   }
 
-  // Default: Calculate dynamically
-  // Row with less than cols items needs margin of: (items/cols) * 100%
-  const marginPercent = (incompleteRowItems / cols) * 100;
-  const marginClass = `max-w-[${marginPercent.toFixed(3)}%]`;
+  // For 5 items (3-2 pattern):
+  // Row 1 (items 0-2): cols 1, 2, 3 (natural)
+  // Row 2 (items 3-4): cols 2, 3 (shifted right)
+  if (count === 5) {
+    const row = Math.floor(index / 3);
+    const colInRow = index % 3;
 
-  return marginClass;
+    if (row === 1) {
+      return colInRow === 0 ? '2' : colInRow === 1 ? '3' : '';
+    }
+  }
+
+  // Default: no special column shifting
+  return '';
 };
 
 /**
- * Get complete grid classes including margin helper
- * @param count - Number of items
- * @returns Complete CSS classes string
+ * Get CSS class for specific grid column
+ * @param index - Item index
+ * @param count - Total count
+ * @returns CSS class like 'md:col-start-2' or empty string
+ */
+export const getColumnClass = (index: number, count: number): string => {
+  const col = getGridColumn(index, count);
+  if (col) {
+    return `md:col-start-${col}`;
+  }
+  return '';
+};
+
+/**
+ * Get complete grid layout classes
  */
 export const getGridLayoutClasses = (count: number): string => {
   const cols = getGridColumns(count);
-  const useMarginHelper = needsMarginHelper(count);
-  const marginClass = useMarginHelper ? getMarginHelper(count, cols.large) : '';
 
-  return `grid grid-cols-${cols.small} md:grid-cols-${cols.medium} lg:grid-cols-${cols.large} gap-6 ${marginClass} mx-auto container`;
-};
-
-/**
- * Get specific row breakdown for layouts
- * @param count - Total item count
- * @returns Array of row sizes (for PHP/section generation logic)
- */
-export const getRowBreakdown = (count: number): number[] => {
-  // For 7 items: [3, 2, 2]
-  if (count === 7) {
-    return [3, 2, 2];
-  }
-
-  // For 5 items: [3, 2]
-  if (count === 5) {
-    return [3, 2];
-  }
-
-  // Default: Just return count (no special breakdown needed)
-  return [count];
+  return `grid grid-cols-${cols.small} md:grid-cols-${cols.medium} lg:grid-cols-${cols.large} gap-6`;
 };
