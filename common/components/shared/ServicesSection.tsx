@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { ServicesContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
 import { sanitizeHtml } from "../../utils/sanitize-html";
+import { getGridClasses, getItemClasses } from "../../utils/grid-layout";
 
 interface ServicesSectionProps {
   services: ServicesContent;
@@ -11,6 +12,7 @@ interface ServicesSectionProps {
 const ServicesSection = ({ services }: ServicesSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const itemCount = services.services.length;
 
   return (
     <section id="services" className="section-padding bg-section-alt" ref={ref}>
@@ -29,16 +31,18 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className={`${getGridClasses(itemCount)} gap-6`}>
           {services.services.map((service, i) => {
             const Icon = getIcon(service.icon);
+            const itemClasses = getItemClasses(i, itemCount);
+
             return (
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow"
+                className={`bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow ${itemClasses}`}
               >
                 <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <Icon className="w-8 h-8 text-primary" />
