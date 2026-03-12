@@ -1,8 +1,7 @@
 /**
  * Grid Layout Utilities for 3-2-2 Pattern
  *
- * Provides proper row centering for 3-2-2 pattern using CSS Grid cell placement.
- * For 2-item rows: position items in columns 2 and 3 instead of 1 and 2 to center them.
+ * Provides proper row centering for 3-2-2 pattern and 2x2 patterns
  */
 
 /**
@@ -17,14 +16,14 @@ export const getGridColumns = (count: number): { small: number; medium: number; 
 };
 
 /**
- * Get grid column for a specific item based on its row position
+ * Get grid column for a specific item based on row position
  * @param index - Current item index (0-based)
  * @param count - Total item count
  * @returns CSS grid column value
  */
 export const getGridColumn = (index: number, count: number): string => {
   // For 7 items (3-2-2 pattern):
-  // Row 1 (items 0-2): cols 1, 2, 3 (natural)
+  // Row 1 (items 0-2): cols 1, 2, 3 (natural placement)
   // Row 2 (items 3-4): cols 2, 3 (shifted right to center)
   // Row 3 (items 5-6): cols 2, 3 (shifted right to center)
 
@@ -43,8 +42,8 @@ export const getGridColumn = (index: number, count: number): string => {
   }
 
   // For 5 items (3-2 pattern):
-  // Row 1 (items 0-2): cols 1, 2, 3 (natural)
-  // Row 2 (items 3-4): cols 2, 3 (shifted right)
+  // Row 1 (items 0-2): cols 1, 2, 3 (natural placement)
+  // Row 2 (items 3-4): cols 2, 3 (shifted right to center)
   if (count === 5) {
     const row = Math.floor(index / 3);
     const colInRow = index % 3;
