@@ -1,9 +1,39 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Eye, Zap, Sparkles } from "lucide-react";
+import { Mail, Eye, Zap, Sparkles, Shield, CheckCircle, TrendingUp, Clock } from "lucide-react";
 import { sanitizeHtml } from "../../utils/sanitize-html";
 
-const differentials = [
+// Map icon names to components
+const iconMap: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+  mail: Mail,
+  eye: Eye,
+  zap: Zap,
+  sparkles: Sparkles,
+  shield: Shield,
+  "check-circle": CheckCircle,
+  "trending-up": TrendingUp,
+  clock: Clock,
+};
+
+interface DifferenceItem {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+interface DifferenceSectionProps {
+  difference?: {
+    section?: {
+      title?: string;
+      description?: string;
+    };
+    background?: string;
+    differences?: DifferenceItem[];
+  };
+}
+
+// Default differentials for healthcare (backward compatibility)
+const defaultDifferentials = [
   {
     icon: Mail,
     title: "Every Mailer Includes an Envelope",
@@ -24,9 +54,22 @@ const differentials = [
   },
 ];
 
-const DifferenceSection = () => {
+const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  
+  // Use config data if available, otherwise fall back to defaults
+  const hasConfigData = difference?.differences && difference.differences.length > 0;
+  const differentials = hasConfigData 
+    ? difference!.differences!.map(item => ({
+        icon: iconMap[item.icon || ''] || Mail,
+        title: item.title,
+        description: item.description,
+      }))
+    : defaultDifferentials;
+    
+  const sectionTitle = difference?.section?.title || "The Postalocity Difference";
+  const sectionDescription = difference?.section?.description || "Discover why businesses trust our mailing service";
 
   return (
     <section
@@ -53,13 +96,12 @@ const DifferenceSection = () => {
             The <span className="text-primary">Postalocity</span> Difference
           </h2>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Discover why 500+ healthcare providers trust our mailing service for
-            patient communications
+            {sectionDescription}
           </p>
         </motion.div>
 
         {/* Cards with dramatic effects */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className={`grid md:grid-cols-2 ${differentials.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-8`}>
           {differentials.map((item, i) => (
             <motion.div
               key={item.title}
@@ -114,7 +156,7 @@ const DifferenceSection = () => {
           className="mt-16 text-center"
         >
           <p className="text-white/60 text-sm">
-            Trusted by 500+ healthcare providers nationwide
+            Trusted by businesses nationwide
           </p>
         </motion.div>
       </div>

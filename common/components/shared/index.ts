@@ -9,3 +9,4 @@ export { default as SiteFooter } from './SiteFooter';
 export { default as TrustBadgesSection } from './TrustBadgesSection';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as QuantifiableBenefitsSection } from './QuantifiableBenefitsSection';
+export { default as DifferenceSection } from './DifferenceSection';

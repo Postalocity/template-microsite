@@ -6,27 +6,31 @@ import { sanitizeHtml } from "../../utils/sanitize-html";
 const defaultFaqs = [
   {
     q: "How fast can I get dispute letters mailed?",
-    a: "Same-day or next-day processing. We process 5,000+ letters with prompt submission to USPS. Same-day printing and mailing. Track every letter with real-time USPS tracking.",
+    a: "Same-day or next-day processing. We process 5,000+ letters with prompt submission to USPS. Same-day printing and mailing.",
   },
   {
-    q: "Does Postalocity integrate with my credit repair software?",
-    a: "Yes. Integration is available for credit repair platforms like DisputeSuite, Credit Repair Cloud, Credit Repair CRM, and other systems. We offer RESTful API endpoints or no-code connectors. Export dispute letters directly from your software to our platform with zero manual upload.",
+    q: "How much does a dispute letter mailing cost?",
+    a: "Our price is $1.31 per a 1-page letter. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail.",
   },
   {
-    q: "How much does dispute letter mailing cost?",
-    a: "Our price is <strong>$1.31 per 1-page letter</strong>. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail.",
+    q: "How does Postalocity integrate with my credit repair software?",
+    a: "Postalocity offers API integrations with Credit Repair Cloud, DisputeFox, and similar platforms. Once connected, dispute letters generated in your software can be automatically pushed to Postalocity for printing and mailing. Alternatively, upload PDFs manually through our dashboard. Setup typically takes 15-30 minutes with our integration guides.",
   },
   {
-    q: "Can I track dispute letters through the mail?",
-    a: "Tracking is available for Priority Mail and Certified Mail. First-Class Mail (standard for dispute letters) does not include tracking. For Certified Mail, signature tracking is available for an additional fee.",
+    q: "What mail classes and options do you support?",
+    a: "We support First-Class Mail, Standard Mail for high-volume bulk campaigns, and Certified Mail with proof of delivery. All options include USPS Intelligent Mail Barcodes for scanning. First-Class Mail (standard for dispute letters) does not include tracking but does include tracing that will show mail status up through being out for delivery. Certified Mail provides additional documentation timestamps and signature options when required.",
   },
   {
-    q: "Are dispute letters secure with encrypted processing?",
-    a: "Yes. Secure dispute letters use encrypted connections for all file uploads and downloads. Your files are processed in secure facilities with data retention options you control. We do not share your data with anyone. Your files are retained according to your configured data retention settings with full control over when they are deleted from our system. ISO 9001 documented processes.",
+    q: "How does address verification work?",
+    a: "Before printing, addresses are automatically verified against USPS databases. Inaccurate addresses are flagged for correction, significantly reducing returned mail. This improves bureau response rates since disputes reach intended destinations. Verification happens within 2-4 hours of submission, with issues surfaced before production begins.",
   },
   {
-    q: "Do I need technical expertise to use Postalocity?",
-    a: "No. If you can save a PDF and upload it to a website, you can use Postalocity. Upload your PDF, review the preview, and click approve. We handle the rest. Our support team can walk you through your first mailing if needed.",
+    q: "What volume can Postalocity handle?",
+    a: "Our platform scales from 50 to 5,000+ letters monthly. Bulk upload tools efficiently handle large volumes, with multi-bureau and multi-creditor sends processed seamlessly. API integrations enable automated workflows that can handle weekly recurring sends without manual intervention. Pricing scales with volume with no per-transaction fees for high-volume clients.",
+  },
+  {
+    q: "Is the mailing process for dispute letters secure?",
+    a: "Postalocity uses end-to-end encryption with certified infrastructure. All dispute letter uploads and downloads are completed securely using encrypted connections. Access controls, audit logs, and compliance protocols meet financial service standards. No data is stored beyond processing requirements. Customizable administrator controls ensure oversight across team permissions and document access.",
   },
 ];
 

@@ -20,13 +20,6 @@ const TrustBadgesSection = () => {
           <div className="flex flex-wrap items-center justify-center gap-6">
             <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border">
               <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span className="text-sm font-bold text-foreground">SOC 2</span>
-              <span className="text-xs text-muted-foreground">
-                Type II Certified
-              </span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-card border border-border">
-              <div className="w-2 h-2 rounded-full bg-green-500" />
               <span className="text-sm font-bold text-foreground">HIPAA</span>
               <span className="text-xs text-muted-foreground">Compliant</span>
             </div>

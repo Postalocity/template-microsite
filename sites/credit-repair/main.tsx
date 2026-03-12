@@ -1,10 +1,10 @@
 /**
  * Credit Repair Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-12T15:28:58.025Z
+ * Generated at: 2026-03-12T18:56:29.459Z
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable } from '../common/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection } from '../common/components/shared';
 import SiteNavigation from '../common/components/shared/SiteNavigation';
 import SiteFooter from '../common/components/shared/SiteFooter';
 import '../common/globals.css';
@@ -19,6 +19,7 @@ function App() {
       <BenefitsSection benefits={content.benefits} />
       {content.comparison && <ComparisonTable comparison={content.comparison} promoCode="credit-repair2026" />}
       <ServicesSection services={content.services} />
+      {content.difference && <DifferenceSection difference={content.difference} />}
       <FAQSection faq={content.faq} />
       <SiteFooter config={config} />
     </>
