@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "generate": "tsx scripts/generate-site.ts",
+    "post-process": "tsx scripts/post-process.ts",
     "verify": "tsx scripts/verify-site.ts"
   },
   "dependencies": {

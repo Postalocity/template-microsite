@@ -64,24 +64,64 @@ npm run dev
 ### Generating a Site
 
 1. Create your configuration file in `config/sites/`:
-   ```bash
-   config/sites/your-vertical.json
-   ```
+    ```bash
+    config/sites/your-vertical.json
+    ```
 
 2. Use the generation script:
-   ```bash
-   npm run generate your-vertical
+    ```bash
+    npm run generate your-vertical
 
-   # Example:
-   npm run generate healthcare-billing
-   ```
+    # Example:
+    npm run generate healthcare-billing
+    ```
 
 3. Navigate to your generated site:
-   ```bash
-   cd sites/your-vertical
-   npm install
-   npm run dev
-   ```
+    ```bash
+    cd sites/your-vertical
+    npm install
+    npm run dev
+    ```
+
+### Post-Processing with StringRay Agents
+
+After site generation, you can automatically invoke StringRay agents for quality assurance and optimization:
+
+```bash
+# Run post-processing on a generated site
+npx tsx scripts/post-process.ts healthcare-billing
+
+# Or with the generation script (includes --post-processing flag)
+npx tsx scripts/generate-site.ts healthcare-billing --post-process
+```
+
+**Agents Invoked:**
+- `@enforcer`: Codex v1.7.5 compliance validation (60 error prevention terms)
+- `@seo-consultant`: Canonical tags, meta tags, sitemap, schema optimization
+- `@growth-strategist`: Promo code consistency, messaging optimization, market positioning
+
+**Agent Reports:**
+Generated reports are saved to `agent-reports/{site-name}/`:
+- `enforcer-report.md` - Codex compliance findings
+- `seo-consultant-report.md` - SEO analysis and recommendations
+- `growth-strategist-report.md` - Growth strategy recommendations
+- `summary.md` - Aggregated executive summary with priority levels
+
+**Example Report Content:**
+```
+Total Priority P0 Issues: 2
+Total Priority P1 Issues: 1
+Total Priority P2 Issues: 1
+```
+
+**Optional Flags:**
+```bash
+# Run specific agents only
+npx tsx scripts/post-process.ts healthcare-billing --agents enforcer,seo
+
+# Skip specific agents
+npx tsx scripts/post-process.ts healthcare-billing --skip growth-strategist
+```
 
 ## Component Architecture
 

@@ -416,6 +416,25 @@ async function generateSite(configPath: string) {
     // Generate Open Graph images from hero banner (SEO optimization)
     await generateOgImages(siteDir, config);
 
+    // Post-processing with StringRay agents (if --post-process flag)
+    const postProcessFlag = process.argv.includes('--post-process');
+    if (postProcessFlag) {
+      console.log(`\n🤖 Running post-processing with StringRay agents...\n`);
+      const { spawn } = await import('child_process');
+      const postProcess = spawn('npx', ['tsx', path.join(__dirname, 'post-process.ts'), site.slug], {
+        stdio: 'inherit',
+      });
+      await new Promise((resolve, reject) => {
+        postProcess.on('close', (code) => {
+          if (code === 0) {
+            resolve(null);
+          } else {
+            reject(new Error(`Post-processing exited with code ${code}`));
+          }
+        });
+      });
+    }
+
     console.log(`✅ ${site.name} generated successfully!`);
     console.log(`📁 Generated files:`);
     console.log(`   - main.tsx`);
