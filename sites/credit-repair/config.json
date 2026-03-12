@@ -6,11 +6,12 @@
     "domain": "postalcity.com",
     "basename": "/credit-repair",
     "contact": {
-      "email": "helpdesk@postalcity.com",
-      "phone": "1-800-555-0199",
+      "email": "helpdesk@postalocity.com",
+      "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
+  "canonicalDomain": "https://credit-repair.postalocity.com",
   "branding": {
     "tagline": "Automated Dispute Letter Mailing for Credit Repair Professionals",
     "logo": null
@@ -20,7 +21,7 @@
       "headline": "Automate Your Dispute Letter Mailing Today",
       "description": "Reclaim hours weekly with automated printing, address verification, and Certified Mail services\u2014no contracts, pay-as-you-go pricing.",
       "buttonText": "Start Automating Now",
-      "href": "https://prod.postalocity.com/login.html?signUp=true"
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026"
     },
     "description": "Postalocity streamlines dispute letter processing for credit repair professionals with automation that reclaims operational time while ensuring accurate USPS delivery and compliance documentation.",
     "tagline": "Empowering Credit Repair Professionals with Reliable Automation"
@@ -57,7 +58,6 @@
     "ogDescription": "Credit repair professionals save hours weekly with automated dispute letter mailing. Includes address verification, Certified Mail, USPS tracking, and software integration.",
     "twitterTitle": "Dispute Letter Mailing Automation | Credit Repair Mailing Service",
     "twitterDescription": "Save hours weekly with automated dispute letter mailing. Address verification, Certified Mail, USPS tracking, API integration with credit repair software.",
-    "canonicalUrl": "https://postalcity.com/credit-repair",
     "robots": "index, follow",
     "sitemapPriority": 1.0,
     "sitemapChangeFrequency": "weekly"
@@ -99,7 +99,7 @@
         {
           "text": "Starting at $1.31",
           "subtext": "1-page. single-sided. B&W. includes postage.",
-          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=bank2026",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026",
           "variant": "primary"
         },
         {
@@ -131,7 +131,7 @@
         {
           "icon": "eye",
           "title": "Real-Time Scanning & Documentation",
-          "detail": "Every mailing includes USPS Intelligent Mail Barcodes for scanning. Certified Mail provides full tracking with delivery confirmation. Dashboard shows processing, shipment, and delivery status instantly with confirmations for client updates or regulatory needs, eliminating post office follow-ups.",
+          "detail": "Every mailing includes USPS Intelligent Mail Barcodes for scanning. Certified Mail provides full tracking with delivery confirmation. Dashboard shows processing, shipment, and delivery status through your account dashboard, eliminating post office follow-ups for client updates or regulatory needs.",
           "metrics": "Full delivery visibility"
         },
         {
@@ -151,7 +151,7 @@
         {
           "icon": "upload",
           "title": "Bulk Upload Processing",
-          "description": "Upload PDFs in bulk for expedited processing with options for Certified Mail, First-Class, or Standard Mail. Platform handles printing, folding, stuffing, sealing, and postage application automatically. Suitable for high-volume practices sending 50 to 5,000+ letters monthly."
+          "description": "Upload PDFs in bulk for expedited processing with options for Certified Mail, First-Class, or Standard Mail. Printing, folding, stuffing, sealing, and postage application are handled automatically within the platform. Suitable for high-volume practices sending 50 to 5,000+ letters monthly."
         },
         {
           "icon": "link-2",
@@ -161,27 +161,27 @@
         {
           "icon": "mail",
           "title": "Certified Mail Services",
-          "description": "Full Certified Mail options with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for compliance and client protection."
+          "description": "Full Certified Mail options are available with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for compliance and client protection."
         },
         {
           "icon": "map-pin",
           "title": "Address Verification",
-          "description": "Pre-production verification against USPS databases reduces returned mail by validating addresses before printing. Catches inaccuracies that cause delivery delays, improving bureau response rates and strengthening audit trails."
+          "description": "Pre-production verification against USPS databases reduces returned mail by validating addresses before printing. Bureau response rates are improved and audit trails are strengthened by catching inaccuracies that could cause delivery delays."
         },
         {
           "icon": "star",
           "title": "Custom Branding Options",
-          "description": "Professional letterheads and envelopes maintain practice branding. Custom stationery enhances client perception and reinforces reliability, supporting retention and referral opportunities with consistent presentation."
+          "description": "Professional letterhead and envelopes maintain brand standards. Custom stationery enhances client perception and reinforces reliability, supporting retention and referral opportunities with consistent presentation."
         },
         {
           "icon": "activity",
           "title": "Scalable Processing",
           "description": "From 50 to 5,000+ letters monthly, the platform scales automatically. Bulk tools handle multi-bureau and multi-creditor sends efficiently, with API integrations enabling seamless workflows that grow with your practice."
-        },
+},
         {
           "icon": "file-text",
-          "title": "Document Variety",
-          "description": "Mail all credit repair document types including dispute letters for Equifax, Experian, and TransUnion, validation request letters, credit inquiry disputes, medical collection responses, and affidavits. Single platform for your entire document volume."
+          "title": "Send Multiple Document Types",
+          "description": "Credit repair documents including dispute letters for Equifax, Experian, and Transunion, validation request letters, credit inquiry disputes, medical collection responses, and affidavits can all be mailed through a single platform."
         }
       ]
     },
@@ -234,12 +234,20 @@
       },
       "faqs": [
         {
+          "q": "How fast can I get dispute letters mailed?",
+          "a": "Same-day or next-day processing. We process 5,000+ letters with prompt submission to USPS. Same-day printing and mailing. Track every letter with real-time USPS tracking."
+        },
+        {
+          "q": "How much does a dispute letter mailing cost?",
+          "a": "Our price is $1.31 per 1-page letter. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail."
+        },
+        {
           "q": "How does Postalocity integrate with my credit repair software?",
           "a": "Postalocity offers API integrations with Credit Repair Cloud, DisputeFox, and similar platforms. Once connected, dispute letters generated in your software can be automatically pushed to Postalocity for printing and mailing. Alternatively, upload PDFs manually through our dashboard. Setup typically takes 15-30 minutes with our integration guides."
         },
         {
           "q": "What mail classes and options do you support?",
-          "a": "We support First-Class Mail, Standard Mail for high-volume bulk campaigns, and Certified Mail with proof of delivery. All options include USPS Intelligent Mail Barcodes for scanning. Certified Mail provides additional documentation timestamps and signature options when required."
+          "a": "We support First-Class Mail, Standard Mail for high-volume bulk campaigns, and Certified Mail with proof of delivery. All options include USPS Intelligent Mail Barcodes for scanning. First-Class Mail (standard for dispute letters) does not include tracking but does include tracing that will show mail status up through being out for delivery. Certified Mail provides additional documentation timestamps and signature options when required."
         },
         {
           "q": "How does address verification work?",
@@ -250,8 +258,8 @@
           "a": "Our platform scales from 50 to 5,000+ letters monthly. Bulk upload tools efficiently handle large volumes, with multi-bureau and multi-creditor sends processed seamlessly. API integrations enable automated workflows that can handle weekly recurring sends without manual intervention. Pricing scales with volume with no per-transaction fees for high-volume clients."
         },
         {
-          "q": "How is client data protected?",
-          "a": "Postalocity uses SOC 2 Type II certified infrastructure with end-to-end encryption. Access controls, audit logs, and compliance protocols meet financial service standards. No data is stored beyond processing requirements. Customizable administrator controls ensure oversight across team permissions and document access."
+          "q": "Is the mailing process for dispute letters secure?",
+          "a": "Postalocity uses SOC 2 Type II certified infrastructure with end-to-end encryption. All dispute letter uploads and downloads are completed securely using encrypted connections. Access controls, audit logs, and compliance protocols meet financial service standards. No data is stored beyond processing requirements. Customizable administrator controls ensure oversight across team permissions and document access."
         }
       ]
     },
