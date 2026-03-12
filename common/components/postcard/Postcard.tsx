@@ -38,7 +38,7 @@ interface PostcardProps {
 }
 
 const defaultProps = {
-  logoUrl: '/logo.png',
+  logoUrl: '/postcard/logo.png',
   companyName: 'Postalocity',
   tagline: 'Professional Mailing Services',
   website: 'postalocity.com',
@@ -68,9 +68,8 @@ export const PostcardFront: React.FC<Partial<PostcardProps>> = ({
         <div className="safe-area">
           {/* Header with logo */}
           <div className="header">
-            <img src={logoUrl} alt={companyName} className="logo" />
-            <div className="brand">
-              <span className="company-name">{companyName}</span>
+            <div className="logo-container">
+              <img src={logoUrl} alt={companyName} className="logo" />
               <span className="tagline">{tagline}</span>
             </div>
           </div>

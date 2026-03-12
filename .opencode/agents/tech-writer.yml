@@ -3,6 +3,17 @@ description: "Documentation writer agent for technical docs"
 version: "1.0.0"
 mode: subagent
 
+# =============================================================================
+# CODEX COMPLIANCE
+# =============================================================================
+# Technical writing must follow these Codex rules:
+# - Term 34: Documentation Updates - update README when adding features
+# - Term 18: Meaningful Naming - clear API endpoint names
+# - Term 20: Consistent Code Style - consistent formatting in docs
+# - Term 42: Code Review Standards - at least one reviewer for docs
+# - Term 3: Do Not Over-Engineer - simple, clear documentation
+# - Term 35: Version Control Best Practices - track doc changes
+
 # Logging Configuration
 logging:
   level: warn

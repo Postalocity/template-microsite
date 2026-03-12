@@ -1,8 +1,11 @@
 /**
- * Grid Layout Utilities for 3-2-2 Pattern
+ * Grid Layout Utilities for Various Patterns
  *
- * Provides proper row centering for 3-2-2 pattern and 2x2 patterns
- * Uses 6-column grid with col-span-2 for true centering
+ * Provides proper row layouts for:
+ * - 3x3 pattern (6 items)
+ * - 3-2-2 pattern (7 items)
+ * - 3-2 pattern (5 items)
+ * - 2x2 pattern (4 items)
  */
 
 /**
@@ -10,6 +13,7 @@
  * 
  * For centered layouts:
  * - 4 items (2x2): use 2 columns so items naturally fill 2x2
+ * - 6 items (3x3): use 3 columns, natural 3x3 grid
  * - 7 items (3-2-2): use 6 columns with each item spanning 2 columns
  *   This allows true centering: 3 items fill row (6 cols), 2 items centered (4 cols)
  * - 5 items (3-2): use 6 columns with each item spanning 2 columns
@@ -18,6 +22,10 @@ export const getGridColumns = (count: number): { small: number; medium: number; 
   if (count === 4) {
     // 2x2 centered pattern - use 2 columns
     return { small: 2, medium: 2, large: 2 };
+  }
+  if (count === 6) {
+    // 3x3 pattern - use 3 columns, natural placement
+    return { small: 2, medium: 3, large: 3 };
   }
   if (count === 7) {
     // 3-2-2 pattern - use 6 columns with col-span-2 for each item
@@ -43,6 +51,9 @@ export const getColumnSpanClass = (count: number): string => {
   if (count === 4) {
     return "md:col-span-1"; // Make 4 items narrower in 2x2 grid
   }
+  if (count === 6) {
+    return "md:col-span-1"; // 6 items in 3x3, natural span
+  }
   return "";
 };
 
@@ -54,6 +65,10 @@ export const getColumnSpanClass = (count: number): string => {
  * @param count - total number of items
  */
 export const getColumnClass = (index: number, count: number): string => {
+  if (count === 6) {
+    // 3x3 pattern - natural flow, no special positioning needed
+    return "";
+  }
   if (count === 7) {
     // 3-2-2 pattern with 6-column grid + col-span-2
     // Row 1 (indices 0-2): default auto-placement, fills 6 cols (1-2, 3-4, 5-6)

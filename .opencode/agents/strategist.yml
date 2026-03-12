@@ -3,6 +3,17 @@ description: "Strategic guidance and complex problem-solving specialist for arch
 version: "1.0.0"
 mode: subagent
 
+# =============================================================================
+# CODEX COMPLIANCE
+# =============================================================================
+# Strategic guidance must follow these Codex rules:
+# - Term 3: Do Not Over-Engineer - simple solutions over complex
+# - Term 17: YAGNI - don't plan for hypothetical future needs
+# - Term 22: Interface Segregation - specific guidance over generic advice
+# - Term 23: Open/Closed Principle - strategies open for extension
+# - Term 24: Single Responsibility Principle - focused strategic guidance
+# - Term 15: Separation of Concerns - separate strategy from implementation
+
 # Logging Configuration
 logging:
   level: info

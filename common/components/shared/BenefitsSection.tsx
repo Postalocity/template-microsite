@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { BenefitsContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
 import { getGridLayoutClasses, getColumnSpanClass, getColumnClass } from "../../utils/grid-layout";
+import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 
 interface BenefitsSectionProps {
   benefits: BenefitsContent;
@@ -49,22 +50,24 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`bg-card rounded-xl p-8 border-2 border-border hover:border-primary/50 transition-colors ${colSpanClass} ${colClass}`}
+                className={`${colSpanClass} ${colClass}`}
               >
-                <div aria-hidden="true" className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
-                  <Icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">
-                  {benefit.title}
-                </h3>
-                <p className="text-muted-foreground mb-5 leading-relaxed">
-                  {benefit.detail}
-                </p>
-                {benefit.metrics && (
-                  <div className="text-base font-semibold text-primary">
-                    {benefit.metrics}
-                  </div>
-                )}
+                <Card className="h-full border-2 hover:border-primary/50 transition-colors">
+                  <CardHeader>
+                    <div aria-hidden="true" className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                    <CardDescription className="text-base mt-2">
+                      {benefit.detail}
+                    </CardDescription>
+                    {benefit.metrics && (
+                      <div className="text-base font-semibold text-primary mt-4">
+                        {benefit.metrics}
+                      </div>
+                    )}
+                  </CardHeader>
+                </Card>
               </motion.div>
             );
           })}

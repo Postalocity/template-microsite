@@ -59,7 +59,7 @@
   flex-direction: column;
 }
 
-/* Crop marks */
+/* Crop marks - positioned at the bleed line (0.125in from edge) */
 .postcard .crop-mark {
   position: absolute;
   width: 0.25in;
@@ -68,27 +68,28 @@
   border-style: solid;
 }
 
+/* Position crop marks at the 1/8" bleed line */
 .postcard .crop-mark.top-left {
-  top: 0;
-  left: 0;
+  top: 0.125in;
+  left: 0.125in;
   border-width: 1px 0 0 1px;
 }
 
 .postcard .crop-mark.top-right {
-  top: 0;
-  right: 0;
+  top: 0.125in;
+  right: 0.125in;
   border-width: 1px 1px 0 0;
 }
 
 .postcard .crop-mark.bottom-left {
-  bottom: 0;
-  left: 0;
+  bottom: 0.125in;
+  left: 0.125in;
   border-width: 0 0 1px 1px;
 }
 
 .postcard .crop-mark.bottom-right {
-  bottom: 0;
-  right: 0;
+  bottom: 0.125in;
+  right: 0.125in;
   border-width: 0 1px 1px 0;
 }
 
@@ -96,34 +97,34 @@
 
 .postcard-front .header {
   display: flex;
-  align-items: center;
-  gap: 0.25in;
+  justify-content: flex-start;
   padding-bottom: 0.25in;
   border-bottom: 2px solid #f59e0b;
 }
 
-.postcard-front .logo {
-  height: 0.5in;
-  width: auto;
-}
-
-.postcard-front .brand {
+.postcard-front .logo-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 0.05in;
+  margin-left: 0.125in;
+  margin-top: 0.125in;
 }
 
-.postcard-front .company-name {
-  font-size: 18pt;
-  font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.1;
+.postcard-front .logo {
+  max-height: 0.5in;
+  max-width: 1.8in;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .postcard-front .tagline {
-  font-size: 8pt;
+  font-size: 7pt;
   color: #666;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-align: left;
 }
 
 .postcard-front .content {
@@ -204,8 +205,11 @@
 }
 
 .postcard-back .logo-small {
-  height: 0.35in;
+  max-height: 0.35in;
+  max-width: 1.5in;
   width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .postcard-back .address {

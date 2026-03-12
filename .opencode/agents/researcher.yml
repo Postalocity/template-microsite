@@ -3,6 +3,17 @@ description: "Codebase and documentation search specialist"
 version: "1.0.0"
 mode: subagent
 
+# =============================================================================
+# CODEX COMPLIANCE
+# =============================================================================
+# Research must follow these Codex rules:
+# - Term 3: Do Not Over-Engineer - simple, focused searches
+# - Term 17: YAGNI - research only what's needed now
+# - Term 18: Meaningful Naming - clear search terms and results
+# - Term 6: Batched Introspection Cycles - group research into batches
+# - Term 9: Use Shared Global State - prefer shared knowledge over duplication
+# - Term 10: Single Source of Truth - one authoritative source for each fact
+
 # Logging Configuration
 logging:
   level: warn

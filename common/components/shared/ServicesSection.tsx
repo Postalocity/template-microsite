@@ -4,6 +4,7 @@ import { ServicesContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
 import { sanitizeHtml } from "../../utils/sanitize-html";
 import { getGridLayoutClasses, getColumnClass, getColumnSpanClass } from "../../utils/grid-layout";
+import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 
 interface ServicesSectionProps {
   services: ServicesContent;
@@ -57,19 +58,21 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow ${colStartClass} ${colSpanClass}`}
+                className={`${colStartClass} ${colSpanClass}`}
                 style={forceItemStyle}
               >
-                <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <Icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-lg font-bold text-foreground mb-2">
-                  {service.title}
-                </h3>
-                <div
-                  className="text-muted-foreground text-sm leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(service.description) }}
-                />
+                <Card className="h-full hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon className="w-8 h-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-lg">{service.title}</CardTitle>
+                    <CardDescription 
+                      className="text-sm mt-2"
+                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(service.description) }}
+                    />
+                  </CardHeader>
+                </Card>
               </motion.div>
             );
           })}

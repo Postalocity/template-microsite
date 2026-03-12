@@ -185,6 +185,30 @@
         }
       ]
     },
+    "difference": {
+      "section": {
+        "title": "The Postalocity Difference",
+        "description": "What sets our mailing services apart from traditional in-house operations."
+      },
+      "background": "dark",
+      "differences": [
+        {
+          "icon": "mail",
+          "title": "Every Mailer Includes an Envelope",
+          "description": "We use real envelopes—not loose paper sealed with a sticker. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
+        },
+        {
+          "icon": "eye",
+          "title": "Mail Visibility",
+          "description": "Tracking available on Priority Mail and Certified Mail. First-Class Mail (standard) does not include tracking. Signature tracking on Certified Mail available for additional fee."
+        },
+        {
+          "icon": "zap",
+          "title": "Skip USPS Drop Boxes & Cutoffs",
+          "description": "Bypass post office drop-off times and waiting in line. We automate the process—eliminating missed cutoffs and potentially days in delivery time."
+        }
+      ]
+    },
     "comparison": {
       "section": {
         "title": "Why Choose Automated Mailing vs. Manual Processing",
@@ -235,11 +259,11 @@
       "faqs": [
         {
           "q": "How fast can I get dispute letters mailed?",
-          "a": "Same-day or next-day processing. We process 5,000+ letters with prompt submission to USPS. Same-day printing and mailing. Track every letter with real-time USPS tracking."
+          "a": "Same-day or next-day processing. We process 5,000+ letters with prompt submission to USPS. Same-day printing and mailing."
         },
         {
           "q": "How much does a dispute letter mailing cost?",
-          "a": "Our price is $1.31 per 1-page letter. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail."
+          "a": "Our price is $1.31 per a 1-page letter. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail."
         },
         {
           "q": "How does Postalocity integrate with my credit repair software?",
@@ -259,7 +283,7 @@
         },
         {
           "q": "Is the mailing process for dispute letters secure?",
-          "a": "Postalocity uses SOC 2 Type II certified infrastructure with end-to-end encryption. All dispute letter uploads and downloads are completed securely using encrypted connections. Access controls, audit logs, and compliance protocols meet financial service standards. No data is stored beyond processing requirements. Customizable administrator controls ensure oversight across team permissions and document access."
+          "a": "Postalocity uses end-to-end encryption with certified infrastructure. All dispute letter uploads and downloads are completed securely using encrypted connections. Access controls, audit logs, and compliance protocols meet financial service standards. No data is stored beyond processing requirements. Customizable administrator controls ensure oversight across team permissions and document access."
         }
       ]
     },
@@ -309,13 +333,6 @@
       "credentials": [
         {
           "type": "certification",
-          "name": "SOC 2 Type II Certified",
-          "issuer": "AICPA",
-          "year": "2024",
-          "verified": true
-        },
-        {
-          "type": "certification",
           "name": "USPS Authorized Mailer",
           "issuer": "United States Postal Service",
           "year": "2018",
@@ -336,13 +353,6 @@
         "description": "Industry certifications and regulatory compliance demonstrating our commitment to security and operational excellence."
       },
       "signals": [
-        {
-          "type": "certification",
-          "name": "SOC 2 Type II Certified",
-          "organization": "AICPA",
-          "year": "2024",
-          "verified": true
-        },
         {
           "type": "accreditation",
           "name": "PCI DSS Level 1 Compliant",

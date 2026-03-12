@@ -6,11 +6,12 @@
     "domain": "postalcity.com",
     "basename": "/healthcare-mailing-services",
     "contact": {
-      "email": "helpdesk@postalcity.com",
-      "phone": "1-800-555-0199",
+      "email": "helpdesk@postalocity.com",
+      "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
+  "canonicalDomain": "https://healthcare-mailing-services.postalocity.com",
   "branding": {
     "tagline": "Automated Healthcare Mailing Services",
     "logo": null
@@ -20,7 +21,7 @@
       "headline": "Optimize Your Healthcare Mailing Today",
       "description": "Streamline patient statements and billing mail, reduce manual processing, and accelerate delivery—no contracts, pay-as-you-go pricing.",
       "buttonText": "Get Started Now",
-      "href": "https://prod.postalocity.com/login.html?signUp=true"
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
     "description": "Postalocity helps healthcare organizations reclaim hours weekly through automated patient statement mailing and billing communication services.",
     "tagline": "Empowering Healthcare Providers with Reliable Mailing Solutions"
@@ -55,7 +56,6 @@
     "ogDescription": "Healthcare providers save reclaim hours weekly with automated patient statement mailing. Address verification, Certified Mail, EMR integration with systems.",
     "twitterTitle": "Healthcare Mailing Automation | Patient Statement Services",
     "twitterDescription": "reclaim hours weekly with automated patient statement mailing. Address verification, Certified Mail, EMR integration with systems.",
-    "canonicalUrl": "https://postalcity.com/healthcare-mailing-services",
     "robots": "index, follow",
     "sitemapPriority": 1.0,
     "sitemapChangeFrequency": "weekly"
@@ -321,7 +321,7 @@
       },
       "cta": {
         "text": "Get Started Now",
-        "href": "https://prod.postalocity.com/login.html?signUp=true"
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
       }
     },
     "businessContinuity": {

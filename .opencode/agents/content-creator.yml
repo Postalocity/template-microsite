@@ -3,6 +3,17 @@ description: "SEO copywriter agent for content optimization"
 version: "1.0.0"
 mode: subagent
 
+# =============================================================================
+# CODEX COMPLIANCE
+# =============================================================================
+# Content creation must follow these Codex rules:
+# - Term 18: Meaningful Naming - clear, descriptive content titles
+# - Term 34: Documentation Updates - content is living documentation
+# - Term 20: Consistent Code Style - consistent voice and formatting
+# - Term 3: Do Not Over-Engineer - clear, simple content over jargon
+# - Term 17: YAGNI - create content for current needs
+# - Term 35: Version Control Best Practices - track content revisions
+
 # Logging Configuration
 logging:
   level: warn
