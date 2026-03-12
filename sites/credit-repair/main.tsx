@@ -1,6 +1,6 @@
 /**
  * Credit Repair Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-12T15:01:13.369Z
+ * Generated at: 2026-03-12T15:06:25.468Z
  */
 
 import { createRoot } from 'react-dom/client';

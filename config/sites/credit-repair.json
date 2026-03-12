@@ -198,62 +198,34 @@
         {
           "icon": "clock",
           "feature": "Processing Time",
-          "ourSolution": { "text": "Same-day", "highlight": "Upload by 3 PM, mailed by 5 PM" },
+          "ourSolution": "Same-day processing after approval",
           "traditionalApproach": "2-5 business days minimum"
         },
         {
           "icon": "map-pin",
           "feature": "Address Verification",
-          "ourSolution": { "text": "Automated USPS database verification", "highlight": "99%+ accuracy with NCOA/CASS" },
+          "ourSolution": "Automated USPS database verification",
           "traditionalApproach": "Manual research and verification"
         },
         {
           "icon": "users",
           "feature": "Weekly Time Investment",
-          "ourSolution": { "text": "2-4 hours monthly", "highlight": "Zero – upload and done" },
-          "traditionalApproach": "Hours weekly manual work"
+          "ourSolution": "2-4 hours monthly for approvals",
+          "traditionalApproach": "hours weekly manual work"
         },
         {
           "icon": "trending-up",
           "feature": "Returned Mail Rate",
-          "ourSolution": { "text": "Under 2%", "highlight": "Minimize returned mail" },
+          "ourSolution": "Under 2% with verification",
           "traditionalApproach": "8-15% average return rate"
         },
         {
           "icon": "shield",
           "feature": "Compliance Documentation",
-          "ourSolution": { "text": "USPS scanning", "details": ["Documented audit trails", "Delivery confirmations"] },
+          "ourSolution": "USPS scanning and documented audit trails",
           "traditionalApproach": "Manual record-keeping required"
-        },
-        {
-          "icon": "star",
-          "feature": "Mail Volume",
-          "ourSolution": { "text": "5,000+ letters", "details": ["Scales automatically", "No per-transaction fees"] },
-          "traditionalApproach": "Limited by staff"
-        },
-        {
-          "icon": "zap",
-          "feature": "Certified Mail",
-          "ourSolution": { "text": "Yes", "highlight": "Full tracking available" },
-          "traditionalApproach": "No"
-        },
-        {
-          "icon": "checkCircle",
-          "feature": "Real-Time Tracking",
-          "ourSolution": { "text": "Yes", "highlight": "API + dashboard visibility" },
-          "traditionalApproach": "No"
-        },
-        {
-          "icon": "trendingDown",
-          "feature": "Pricing",
-          "ourSolution": { "text": "$1.31/letter", "highlight": ["No setup fees", "No monthly fees", "Pay-as-you-go"] },
-          "traditionalApproach": "$2-4/letter + hidden fees"
         }
-      ],
-      "cta": {
-        "text": "Start Free Trial",
-        "href": "https://prod.postalocity.com/login.html?signUp=true"
-      }
+      ]
     },
     "faq": {
       "section": {

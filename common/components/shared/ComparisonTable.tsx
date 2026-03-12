@@ -17,10 +17,6 @@ interface ComparisonData {
     ourSolution: string | { text: string; details?: string[]; highlight?: string };
     traditionalApproach: string;
   }>;
-  cta?: {
-    text: string;
-    href: string;
-  };
 }
 
 interface ComparisonTableProps {
@@ -28,7 +24,7 @@ interface ComparisonTableProps {
   promoCode?: string;
 }
 
-const ComparisonTable = ({ comparison, promoCode = "health2026" }: ComparisonTableProps) => {
+const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -127,28 +123,11 @@ const ComparisonTable = ({ comparison, promoCode = "health2026" }: ComparisonTab
                         )}
                       </td>
                     </tr>
-                  );
-                })}
+);
+        })}
               </tbody>
             </table>
           </div>
-
-          {comparison.cta && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-center mt-10"
-            >
-              <a
-                href={`${comparison.cta.href}&promo=${promoCode}`}
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-full btn-cta-gold text-lg"
-              >
-                {comparison.cta.text}
-              </a>
-            </motion.div>
-          )}
         </div>
       </div>
     </section>
