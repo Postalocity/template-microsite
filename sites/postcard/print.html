@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Print Postcard | Postalocity</title>
+  <link rel="stylesheet" href="/postcard/print.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f3f4f6;
+      min-height: 100vh;
+      padding: 0.5in;
+    }
+    
+    .print-header {
+      background: white;
+      padding: 0.5in;
+      border-radius: 0.5in;
+      margin-bottom: 0.5in;
+      text-align: center;
+    }
+    
+    .print-header h1 {
+      font-size: 24px;
+      margin-bottom: 0.25in;
+      color: #1a1a1a;
+    }
+    
+    .instructions {
+      background: #f9fafb;
+      padding: 0.25in;
+      border-radius: 0.25in;
+      margin-bottom: 0.25in;
+      text-align: left;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .instructions h2 {
+      font-size: 14px;
+      margin-bottom: 0.125in;
+      color: #374151;
+    }
+    
+    .instructions ol {
+      padding-left: 0.25in;
+      font-size: 12px;
+      color: #4b5563;
+      line-height: 1.8;
+    }
+    
+    .instructions kbd {
+      background: #e5e7eb;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: monospace;
+      font-size: 11px;
+    }
+    
+    .print-btn {
+      background: #f59e0b;
+      color: white;
+      border: none;
+      padding: 12px 32px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .print-btn:hover {
+      background: #d97706;
+    }
+    
+    .postcards {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5in;
+    }
+    
+    @media print {
+      .print-header {
+        display: none;
+      }
+      
+      body {
+        padding: 0;
+        background: white;
+      }
+      
+      .postcards {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-header">
+    <h1>Postcard Print Page</h1>
+    <div class="instructions">
+      <h2>Print / Save as PDF Instructions</h2>
+      <ol>
+        <li>Press <kbd>Ctrl</kbd>+<kbd>P</kbd> (or <kbd>Cmd</kbd>+<kbd>P</kbd> on Mac)</li>
+        <li>Set destination to <strong>"Save as PDF"</strong></li>
+        <li>Set paper size to <strong>"Letter"</strong></li>
+        <li>Set margins to <strong>"None"</strong></li>
+        <li>Enable <strong>"Background graphics"</strong></li>
+        <li>Disable <strong>headers and footers</strong></li>
+        <li>Save as PDF</li>
+      </ol>
+    </div>
+    <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+  </div>
+
+  <div class="postcards">
+    <!-- Front of postcard -->
+    <div class="postcard postcard-front">
+      <div class="bleed-area">
+        <div class="safe-area">
+          <div class="header">
+            <img src="/postcard/logo.png" alt="Postalocity" class="logo">
+            <div class="brand">
+              <span class="tagline">Professional Mailing Services</span>
+            </div>
+          </div>
+          <div class="content">
+            <h1 class="headline">Make Your Conference Connections Count</h1>
+            <p class="subheadline">Follow up with professional postcard mailing. Stand out from the crowd.</p>
+          </div>
+          <div class="decoration">
+            <div class="accent-line"></div>
+          </div>
+        </div>
+        <div class="crop-mark top-left"></div>
+        <div class="crop-mark top-right"></div>
+        <div class="crop-mark bottom-left"></div>
+        <div class="crop-mark bottom-right"></div>
+      </div>
+    </div>
+
+    <!-- Back of postcard -->
+    <div class="postcard postcard-back">
+      <div class="bleed-area">
+        <div class="safe-area">
+          <div class="message-section">
+            <p class="message">Thank you for connecting with us at the conference. We look forward to helping you streamline your mailing needs.</p>
+            <p class="cta">Visit postalocity.com to get started</p>
+          </div>
+          <div class="contact-section">
+            <div class="address-block">
+              <img src="/postcard/logo.png" alt="Postalocity" class="logo-small">
+              <div class="address">
+                <span class="website">postalocity.com</span>
+                <span class="phone">316-260-2220</span>
+                <span class="address-line">820 W 2nd St N, Wichita KS 67203</span>
+              </div>
+            </div>
+            <div class="postal-area">
+              <div class="postal-mark">
+                <span class="presort">PRESORTED</span>
+                <span class="permit">FIRST CLASS MAIL</span>
+                <span class="permit-no">PERMIT NO. 1234</span>
+                <span class="city">WICHITA KS 67203</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="crop-mark top-left"></div>
+        <div class="crop-mark top-right"></div>
+        <div class="crop-mark bottom-left"></div>
+        <div class="crop-mark bottom-right"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BenefitsContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
-import { getGridLayoutClasses, getColumnClass } from "../../utils/grid-layout";
+import { getGridLayoutClasses, getColumnSpanClass, getColumnClass } from "../../utils/grid-layout";
 
 interface BenefitsSectionProps {
   benefits: BenefitsContent;
@@ -40,6 +40,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
         <div className={gridClasses}>
           {benefits.benefits.map((benefit, idx) => {
             const Icon = getIcon(benefit.icon);
+            const colSpanClass = getColumnSpanClass(itemCount);
             const colClass = getColumnClass(idx, itemCount);
 
             return (
@@ -48,7 +49,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className={`bg-card rounded-xl p-8 border-2 border-border hover:border-primary/50 transition-colors ${colClass}`}
+                className={`bg-card rounded-xl p-8 border-2 border-border hover:border-primary/50 transition-colors ${colSpanClass} ${colClass}`}
               >
                 <div aria-hidden="true" className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
                   <Icon className="w-7 h-7 text-primary" />

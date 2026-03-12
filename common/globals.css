@@ -146,3 +146,26 @@
     @apply bg-hero-foreground/10;
   }
 }
+
+@layer utilities {
+  /* Grid column utilities for centered layouts */
+  .grid-col-start-2 {
+    grid-column-start: 2;
+  }
+  .grid-col-start-3 {
+    grid-column-start: 3;
+  }
+  .grid-col-start-4 {
+    grid-column-start: 4;
+  }
+  .justify-items-center {
+    justify-items: center;
+  }
+  /* Force include grid column classes for Tailwind */
+  .grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+}

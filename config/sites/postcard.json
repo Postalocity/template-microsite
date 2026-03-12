@@ -1,0 +1,196 @@
+{
+  "site": {
+    "id": "postcard",
+    "name": "Postalocity Postcard",
+    "slug": "postcard",
+    "domain": "postalocity.com",
+    "basename": "/postcard",
+    "contact": {
+      "email": "helpdesk@postalocity.com",
+      "phone": "316-260-2220",
+      "address": "820 W 2nd St N, Wichita KS 67203"
+    }
+  },
+  "canonicalDomain": "https://postcard.postalocity.com",
+  "branding": {
+    "tagline": "Professional Postcard Mailing Services",
+    "logo": null
+  },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 100,
+      "l": 45
+    },
+    "gradients": {
+      "hero": "210 95% 12%",
+      "cta": "220 90% 55%"
+    }
+  },
+  "seo": {
+    "title": "Professional Postcard Mailing | Postalocity",
+    "description": "High-quality postcard printing and mailing services. Perfect for conference follow-ups, marketing campaigns, and direct mail. Get started today.",
+    "keywords": [
+      "postcard mailing",
+      "direct mail marketing",
+      "conference follow up",
+      "postcard printing",
+      "postalocity"
+    ],
+    "ogTitle": "Professional Postcard Mailing Services | Postalocity",
+    "ogDescription": "Make your conference connections count. Professional postcard mailing with print and mail services.",
+    "robots": "index, follow",
+    "sitemapPriority": 0.8,
+    "sitemapChangeFrequency": "monthly"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "About",
+        "href": "#about"
+      },
+      {
+        "label": "Contact",
+        "href": "#contact"
+      }
+    ],
+    "cta": {
+      "text": "Get Started",
+      "subtext": "Start Mailing",
+      "href": "#contact",
+      "variant": "primary"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Make Your Conference Connections Count",
+        "highlightTerm": "Professional Postcard Mailing"
+      },
+      "subhead": "Follow up with your new contacts using professional, high-quality postcards. We handle printing, addressing, and mailing so you can focus on closing deals.",
+      "background": {
+        "image": "/postcard/images/postcard-hero.jpg",
+        "alt": "Professional postcard mailing"
+      },
+      "ctas": [
+        {
+          "text": "Start Your Campaign",
+          "subtext": "No minimums",
+          "href": "#contact",
+          "variant": "primary"
+        },
+        {
+          "text": "Learn More",
+          "subtext": "How it works",
+          "href": "#about",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Why Use Professional Postcard Mailing?",
+        "description": "Stand out from the crowd with high-quality printed postcards."
+      },
+      "benefits": [
+        {
+          "icon": "eye",
+          "title": "High Open Rate",
+          "detail": "Unlike email, physical mail gets noticed. Postcards have a 90% open rate and create lasting impressions.",
+          "metrics": "90% open rate"
+        },
+        {
+          "icon": "clock",
+          "title": "Saves Time",
+          "detail": "No more stuffing envelopes or standing in line at the post office. We handle everything.",
+          "metrics": "Save hours weekly"
+        },
+        {
+          "icon": "check-circle",
+          "title": "Professional Quality",
+          "detail": "Premium cardstock, vibrant printing, and proper addressing make your brand look professional.",
+          "metrics": "Premium quality"
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification",
+          "detail": "We verify all addresses before printing to ensure your postcards actually get delivered.",
+          "metrics": "Less returned mail"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Postcard Options",
+        "description": "Choose the postcard size and options that fit your needs."
+      },
+      "services": [
+        {
+          "icon": "image",
+          "title": "Standard 4x6",
+          "description": "Perfect for short messages and quick follow-ups. Economical and effective."
+        },
+        {
+          "icon": "image",
+          "title": "Large 5x7",
+          "description": "More space for your message and branding. Stands out in the mailbox."
+        },
+        {
+          "icon": "mail",
+          "title": "Mailing Services",
+          "description": "We handle printing, addressing, postage, and delivery. Just provide your design."
+        },
+        {
+          "icon": "users",
+          "title": "Targeted Lists",
+          "description": "Need addresses? We can help you reach your ideal audience with targeted mailing lists."
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Common Questions",
+        "description": "Answers about postcard mailing services."
+      },
+      "faqs": [
+        {
+          "q": "What sizes do you offer?",
+          "a": "We offer standard 4x6 and large 5x7 postcards. Both include standard bleed for professional printing."
+        },
+        {
+          "q": "How long does it take?",
+          "a": "Standard turnaround is 3-5 business days from approval to delivery. Rush options available."
+        },
+        {
+          "q": "Do you provide design services?",
+          "a": "We can connect you with design partners, or you can provide your own print-ready artwork."
+        },
+        {
+          "q": "What's the minimum order?",
+          "a": "No minimums! Send as few as 1 postcard or as many as 100,000+."
+        }
+      ]
+    },
+    "about": {
+      "section": {
+        "title": "About Postalocity",
+        "description": "Your partner in professional mailing services."
+      },
+      "company": {
+        "founded": "2018",
+        "teamSize": "25-40 employees",
+        "locations": [
+          "Austin, TX (Headquarters)",
+          "Denver, CO (Operations)"
+        ]
+      },
+      "mission": "Postalocity empowers businesses with professional, reliable automated printing and mailing services.",
+      "values": [
+        "Reliable delivery",
+        "Professional quality",
+        "Fast turnaround",
+        "Excellent support"
+      ]
+    }
+  }
+}

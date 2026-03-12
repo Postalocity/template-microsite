@@ -225,39 +225,42 @@ async function generateOgImages(siteDir: string, config: SiteConfig): Promise<vo
     return;
   }
 
-  // Try to find the hero image in multiple locations
-  let heroFullPath: string | null = null;
+  // Map config path to source image based on site slug
+  const heroSourcePaths: Record<string, string> = {
+    // Map industry-specific image paths
+    'credit-repair': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
+    'debt-collection': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
+    'healthcare-billing': path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),
+    'healthcare-mailing-services': path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),
+    'software-billing': path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'),
+    'utility-billing': path.join(TEMPLATE_DIR, 'common/assets/utilities/hero-bg.jpg'),
+    'international-mail': path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'),
+    'postcard': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
+  };
 
-  // 1. Check if it's an absolute path from root
-  if (heroImagePath.startsWith('/')) {
-    // Try config-relative path first
-    const relativePath = heroImagePath.substring(1); // remove leading /
-    const configPath1 = path.join(TEMPLATE_DIR, relativePath);
-    const configPath2 = path.join(__dirname, '..', relativePath);
+  // Get source hero image path based on site slug
+  const siteSlug = config.site?.slug || '';
+  const heroSourcePath = heroSourcePaths[siteSlug];
 
-    // 2. Try generated site directory
-    const generatedPath = path.join(siteDir, relativePath);
-
-    // 3. Try public/images directory
-    const publicPath = path.join(publicDir, 'images', path.basename(heroImagePath));
-
-    if (fs.existsSync(configPath1)) {
-      heroFullPath = configPath1;
-    } else if (fs.existsSync(configPath2)) {
-      heroFullPath = configPath2;
-    } else if (fs.existsSync(generatedPath)) {
-      heroFullPath = generatedPath;
-    } else if (fs.existsSync(publicPath)) {
-      heroFullPath = publicPath;
-    } else {
-      console.log(`⚠ Hero image not found at: ${heroImagePath} - generating fallback OG image`);
-      await generateFallbackOgImage(ogImageDest, config);
-      return;
-    }
-  } else {
-    // Relative path from config
-    heroFullPath = heroImagePath;
+  if (!heroSourcePath || !fs.existsSync(heroSourcePath)) {
+    console.log(`⚠ No hero image source for ${siteSlug} - generating fallback OG image`);
+    await generateFallbackOgImage(ogImageDest, config);
+    return;
   }
+
+  // Copy hero image to generated site's public/images folder
+  const heroImagesDir = path.join(publicDir, 'images');
+  if (!fs.existsSync(heroImagesDir)) {
+    fs.mkdirSync(heroImagesDir, { recursive: true });
+  }
+  // Use source path for copy, but keep config's filename for the destination
+  const heroImageFilename = path.basename(heroImagePath);
+  const heroImagePathInSite = path.join(heroImagesDir, heroImageFilename);
+  fs.copyFileSync(heroSourcePath, heroImagePathInSite);
+  console.log(`✓ Copied hero image to: ${heroImagePathInSite}`);
+
+  // Use the source path for OG image generation
+  let heroFullPath = heroSourcePath;
 
   if (!heroFullPath) {
     return;

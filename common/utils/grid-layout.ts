@@ -2,73 +2,83 @@
  * Grid Layout Utilities for 3-2-2 Pattern
  *
  * Provides proper row centering for 3-2-2 pattern and 2x2 patterns
+ * Uses 6-column grid with col-span-2 for true centering
  */
 
 /**
  * Get grid column configuration
+ * 
+ * For centered layouts:
+ * - 4 items (2x2): use 2 columns so items naturally fill 2x2
+ * - 7 items (3-2-2): use 6 columns with each item spanning 2 columns
+ *   This allows true centering: 3 items fill row (6 cols), 2 items centered (4 cols)
+ * - 5 items (3-2): use 6 columns with each item spanning 2 columns
  */
 export const getGridColumns = (count: number): { small: number; medium: number; large: number } => {
-  return {
-    small: 2,
-    medium: 2,
-    large: 3
-  };
-};
-
-/**
- * Get grid column for a specific item based on row position
- * @param index - Current item index (0-based)
- * @param count - Total item count
- * @returns CSS grid column value
- */
-export const getGridColumn = (index: number, count: number): string => {
-  // For 7 items (3-2-2 pattern):
-  // Row 1 (items 0-2): cols 1, 2, 3 (natural placement)
-  // Row 2 (items 3-4): cols 2, 3 (shifted right to center)
-  // Row 3 (items 5-6): cols 2, 3 (shifted right to center)
-
+  if (count === 4) {
+    // 2x2 centered pattern - use 2 columns
+    return { small: 2, medium: 2, large: 2 };
+  }
   if (count === 7) {
-    const row = Math.floor(index / 3);
-    const colInRow = index % 3;
-
-    if (row === 1) {
-      // Second row (items 3,4): shift right
-      return colInRow === 0 ? '2' : colInRow === 1 ? '3' : '';
-    } else if (row === 2) {
-      // Third row (items 5,6): shift right
-      return colInRow === 0 ? '2' : colInRow === 1 ? '3' : '';
-    }
-    // First row: natural (1, 2, 3)
+    // 3-2-2 pattern - use 6 columns with col-span-2 for each item
+    // Row 1: 3 items × 2 cols = 6 cols (full row)
+    // Row 2: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
+    // Row 3: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
+    return { small: 2, medium: 6, large: 6 };
   }
-
-  // For 5 items (3-2 pattern):
-  // Row 1 (items 0-2): cols 1, 2, 3 (natural placement)
-  // Row 2 (items 3-4): cols 2, 3 (shifted right to center)
-  if (count === 5) {
-    const row = Math.floor(index / 3);
-    const colInRow = index % 3;
-
-    if (row === 1) {
-      return colInRow === 0 ? '2' : colInRow === 1 ? '3' : '';
-    }
-  }
-
-  // Default: no special column shifting
-  return '';
+  // 5 items (3-2): use 6 columns with col-span-2
+  // Row 1: 3 items × 2 cols = 6 cols (full row)
+  // Row 2: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
+  return { small: 2, medium: 6, large: 6 };
 };
 
 /**
- * Get CSS class for specific grid column
- * @param index - Item index
- * @param count - Total count
- * @returns CSS class like 'md:col-start-2' or empty string
+ * Get the grid column span class for item width
+ * Each item spans 2 columns to achieve proper centering in 6-column grid
+ */
+export const getColumnSpanClass = (count: number): string => {
+  if (count === 7 || count === 5) {
+    return "md:col-span-2"; // Only apply col-span-2 on medium+ screens
+  }
+  if (count === 4) {
+    return "md:col-span-1"; // Make 4 items narrower in 2x2 grid
+  }
+  return "";
+};
+
+/**
+ * Get the grid column start class for item positioning
+ * Used to center items in rows with fewer than full columns
+ * 
+ * @param index - 0-based index of the item
+ * @param count - total number of items
  */
 export const getColumnClass = (index: number, count: number): string => {
-  const col = getGridColumn(index, count);
-  if (col) {
-    return `md:col-start-${col}`;
+  if (count === 7) {
+    // 3-2-2 pattern with 6-column grid + col-span-2
+    // Row 1 (indices 0-2): default auto-placement, fills 6 cols (1-2, 3-4, 5-6)
+    // Row 2 (indices 3-4): 2 items × 2 cols = 4 cols, centered in 6
+    //   - col-start-2: spans cols 2-3 (leaving col 1 empty on left)
+    //   - Next item auto-places to col 4, spans 4-5 (leaving col 6 empty on right)
+    // Row 3 (indices 5-6): 2 items × 2 cols = 4 cols, centered in 6
+    //   - Must start at col 2 again to center (col-start-2)
+    if (index === 3) {
+      return "md:col-start-2";
+    }
+    if (index === 5) {
+      return "md:col-start-2";
+    }
+    // index 4 and 6: auto-placement works correctly after explicit col-start
   }
-  return '';
+  if (count === 5) {
+    // 3-2 pattern with 6-column grid + col-span-2
+    // Row 1 (indices 0-2): fills 6 cols
+    // Row 2 (indices 3-4): 2 items centered
+    if (index === 3) {
+      return "md:col-start-2";
+    }
+  }
+  return "";
 };
 
 /**
