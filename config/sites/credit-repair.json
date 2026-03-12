@@ -131,7 +131,7 @@
         {
           "icon": "eye",
           "title": "Real-Time Scanning & Documentation",
-          "detail": "Every mailing includes USPS Intelligent Mail Barcodes for scanning. Certified Mail provides full tracking with delivery confirmation. Dashboard shows processing, shipment, and delivery status through your account dashboard, eliminating post office follow-ups for client updates or regulatory needs.",
+          "detail": "Every mailing includes USPS Intelligent Mail Barcodes for scanning. Certified Mail provides full tracking with delivery confirmation. Post office follow-ups for client updates or regulatory needs are eliminated with access to processing, shipment, and delivery status through your account dashboard.",
           "metrics": "Full delivery visibility"
         },
         {
