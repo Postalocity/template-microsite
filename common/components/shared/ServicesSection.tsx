@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { ServicesContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
 import { sanitizeHtml } from "../../utils/sanitize-html";
-import { getGridClasses, getItemClasses } from "../../utils/grid-layout";
+import { getGridLayoutClasses } from "../../utils/grid-layout";
 
 interface ServicesSectionProps {
   services: ServicesContent;
@@ -13,6 +13,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const itemCount = services.services.length;
+  const gridClasses = getGridLayoutClasses(itemCount);
 
   return (
     <section id="services" className="section-padding bg-section-alt" ref={ref}>
@@ -31,7 +32,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           </p>
         </motion.div>
 
-        <div className={`${getGridClasses(itemCount)} gap-6`}>
+        <div className={gridClasses}>
           {services.services.map((service, i) => {
             const Icon = getIcon(service.icon);
             const itemClasses = getItemClasses(i, itemCount);

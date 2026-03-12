@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { BenefitsContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
-import { getGridClasses, getItemClasses } from "../../utils/grid-layout";
+import { getGridLayoutClasses } from "../../utils/grid-layout";
 
 interface BenefitsSectionProps {
   benefits: BenefitsContent;
@@ -18,6 +18,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
   }
 
   const itemCount = benefits.benefits.length;
+  const gridClasses = getGridLayoutClasses(itemCount);
 
   return (
     <section id="benefits" className="section-padding bg-background" ref={ref}>
@@ -36,7 +37,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           </p>
         </motion.div>
 
-        <div className={`${getGridClasses(itemCount)} gap-6 mb-12`}>
+        <div className={gridClasses}>
           {benefits.benefits.map((benefit, idx) => {
             const Icon = getIcon(benefit.icon);
             const itemClasses = getItemClasses(idx, itemCount);

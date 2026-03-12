@@ -1,68 +1,113 @@
 /**
- * Grid Layout Utilities
+ * Grid Layout Utilities for Flexible Box Layouts
  *
- * Provides standardized grid layout rules for consistent centering across template sections
- * - Odd numbers are centered with proper stagger
- * - 4 boxes: 2x2 grid
- * - 5 boxes: 3-2 pattern (3 top row, 2 bottom row centered)
- * - 7 boxes: 3-2-2 pattern (all rows centered)
- * - All boxes always centered
+ * Provides standardized grid layouts for sections with varying item counts
+ * - All boxes always centered using mx-auto container
+ * - Supports specific patterns: 2x2 (4 items), 3-2-2 (7 items)
+ * - Dynamic centering with margin helpers
  */
 
-/**
- * Get grid container classes based on item count
- * @param count - Number of items
- * @returns CSS classes for grid container
- */
-export const getGridClasses = (count: number): string => {
-  switch (count) {
-    case 4:
-      return "grid md:grid-cols-2 gap-6 max-w-4xl mx-auto";
-    case 5:
-      return "grid md:grid-cols-3 gap-6 max-w-5xl mx-auto";
-    case 7:
-      return "grid md:grid-cols-3 gap-6 max-w-5xl mx-auto";
-    default:
-      return "grid md:grid-cols-2 lg:grid-cols-3";
-  }
+export type GridColumns = {
+  small: number;
+  medium: number;
+  large: number;
 };
 
-/**
- * Get individual item classes to handle centered last rows
- * @param index - Current item index
- * @param count - Total item count
- * @returns CSS classes for individual items
- */
-export const getItemClasses = (index: number, count: number): string => {
-  // For 5 items: items 4-5 (index 3+) should be centered in last row
-  if (count === 5 && index >= 3) {
-    return "md:col-start-auto";
-  }
-
-  // For 7 items: items 6-7 (index 5+) should be centered in last row
-  if (count === 7 && index >= 5) {
-    return "md:col-start-auto";
-  }
-
-  return "";
-};
+export interface GridLayoutParams {
+  cols: GridColumns;
+  hasMarginHelper?: boolean;
+  marginWidth: string;
+}
 
 /**
- * Get item classes without the col-start-auto for sections that need different centering
- * @param index - Current item index
- * @param count - Total item count
- * @returns CSS classes for individual items
+ * Get grid column configuration based on item count
+ * @param count - Number of items to display
+ * @returns Grid columns configuration
  */
-export const getItemClassesNoCenter = (index: number, count: number): string => {
-  const centerMaps = {
-    4: [],
-    5: [3, 4],
-    7: [5, 6],
+export const getGridColumns = (count: number): GridColumns => {
+  // Standardize on 3-column layout for better centering control
+  return {
+    small: 2,    // Mobile: 2 columns
+    medium: 2,   // Tablet: 2 columns
+    large: 3    // Desktop: 3 columns (for centering patterns)
   };
+};
 
-  if (centerMaps[count]?.includes(index)) {
-    return "md:col-start-auto";
+/**
+ * Check if grid needs margin helper for centering
+ * @param count - Number of items
+ * @returns Whether margin helper is needed
+ */
+export const needsMarginHelper = (count: number): boolean => {
+  // Grid is 3 columns on desktop
+  const cols = 3;
+  const fullRows = Math.floor(count / cols);
+  const incompleteRows = count % cols;
+
+  // Need margin helper if there's a partial row (items don't fill complete rows)
+  return incompleteRows > 0 && incompleteRows < cols && fullRows > 0;
+};
+
+/**
+ * Get margin helper percentage based on item count
+ * @param count - Number of items
+ * @param cols - Number of columns in grid
+ * @returns Margin percentage as Tailwind class prefix
+ */
+export const getMarginHelper = (count: number, cols: number = 3): string => {
+  // Calculate which row is incomplete
+  const fullRows = Math.floor(count / cols);
+  const incompleteRowItems = count % cols;
+
+  // For 7 items in 3-column grid: 1st row (3 items), 2nd row (2 items), 3rd row (2 items)
+  // Pattern: 3-2-2
+
+  // Determine margin based on row position (for 3-2-2 pattern):
+  if (count === 5) {
+    // 3-2 pattern: Last row needs 66.666% margin to center
+    return 'max-w-[66.667%]';
+  } else if (count === 7) {
+    // 3-2-2 pattern: Last 2 rows each need 66.667% margin
+    return 'max-w-[66.667%]';
   }
 
-  return "";
+  // Default: Calculate dynamically
+  // Row with less than cols items needs margin of: (items/cols) * 100%
+  const marginPercent = (incompleteRowItems / cols) * 100;
+  const marginClass = `max-w-[${marginPercent.toFixed(3)}%]`;
+
+  return marginClass;
+};
+
+/**
+ * Get complete grid classes including margin helper
+ * @param count - Number of items
+ * @returns Complete CSS classes string
+ */
+export const getGridLayoutClasses = (count: number): string => {
+  const cols = getGridColumns(count);
+  const useMarginHelper = needsMarginHelper(count);
+  const marginClass = useMarginHelper ? getMarginHelper(count, cols.large) : '';
+
+  return `grid grid-cols-${cols.small} md:grid-cols-${cols.medium} lg:grid-cols-${cols.large} gap-6 ${marginClass} mx-auto container`;
+};
+
+/**
+ * Get specific row breakdown for layouts
+ * @param count - Total item count
+ * @returns Array of row sizes (for PHP/section generation logic)
+ */
+export const getRowBreakdown = (count: number): number[] => {
+  // For 7 items: [3, 2, 2]
+  if (count === 7) {
+    return [3, 2, 2];
+  }
+
+  // For 5 items: [3, 2]
+  if (count === 5) {
+    return [3, 2];
+  }
+
+  // Default: Just return count (no special breakdown needed)
+  return [count];
 };
