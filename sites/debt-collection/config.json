@@ -95,10 +95,10 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Debt Collection Mailing Service — Save 15+ Hours Weekly",
-        "highlightTerm": "Automated Notices & Certified Letters"
+        "main": "Automated Certified Mail for Collection Agencies",
+        "highlightTerm": "Streamlined Notices & Documentation"
       },
-      "subhead": "Collection agencies manage high volumes of collection notices, certified letters, compliance documents, and payment reminders. Postalocity's automated mailing platform streamlines processing, includes address verification to reduce returned mail, and provides real-time USPS tracking for every letter.",
+      "subhead": "Automated mailing platform for collection notices, demand letters, and certified mail with built-in address verification and tracking for every document.",
       "background": {
         "image": "/debt-collection/images/debt-collection-hero.jpg",
         "overlay": true
@@ -126,23 +126,23 @@
       "benefits": [
         {
           "icon": "clock",
-          "title": "Reclaim Hours Weekly",
+          "title": "Streamline Mailing Operations",
           "description": "Automate printing, folding, stuffing, sealing, and postage application.",
-          "detail": "Manual processes consume significant hours weekly. Automation reduces this to minutes.",
-          "metrics": "Up to 15+ hours saved weekly"
+          "detail": "Manual processes consume significant time weekly. Automation reduces manual handling to minutes.",
+          "metrics": "Reduce manual processing time"
         },
         {
           "icon": "map-pin",
           "title": "Reduce Returned Mail",
           "description": "Pre-production address verification against USPS databases catches inaccuracies before printing.",
           "detail": "Reduces rework and delays caused by invalid addresses reaching the postal system.",
-          "metrics": "Up to 95% fewer returns"
+          "metrics": "Improve deliverability"
         },
         {
           "icon": "shield",
-          "title": "Compliance Documentation",
+          "title": "Audit Documentation",
           "description": "Real-time USPS tracking for every letter provides proof of submission and mailing.",
-          "detail": "ISO 9001 documented processes support audit requirements and compliance documentation.",
+          "detail": "ISO 9001 documented processes support audit requirements and quality documentation.",
           "metrics": "Full tracking visibility"
         },
         {
@@ -157,7 +157,7 @@
     "comparison": {
       "section": {
         "title": "Why Choose Automated Mailing vs. Manual Processing",
-        "description": "Compare the efficiency and compliance advantages of Postalocity's automated service vs. in-house manual mailing."
+        "description": "Compare the efficiency and reliability advantages of Postalocity's automated service vs. in-house manual mailing."
       },
       "columns": {
         "ourSolution": "Postalocity Automated Mailing",
@@ -199,7 +199,7 @@
     "services": {
       "section": {
         "title": "Debt Collection Mailing Services",
-        "description": "End-to-end automated mailing designed to streamline collection operations while ensuring compliance documentation."
+        "description": "End-to-end automated mailing designed to streamline collection operations while ensuring audit documentation."
       },
       "services": [
         {
@@ -215,7 +215,7 @@
         {
           "icon": "mail",
           "title": "Certified Mail Services",
-          "description": "Full Certified Mail options with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for compliance and client protection."
+          "description": "Full Certified Mail options with proof of delivery for documented disputes. USPS tracking numbers, delivery confirmations, and signature requirements ensure documented evidence for quality assurance."
         },
         {
           "icon": "map-pin",
@@ -230,19 +230,19 @@
         {
           "icon": "file-text",
           "title": "Document Variety",
-          "description": "Mail all collection document types including collection notices, FDCPA validation letters, payment reminders, cease communications, and affidavits. Single platform for your entire document volume."
+          "description": "Mail all collection document types including collection notices, validation letters, payment reminders, cease communications, and affidavits. Single platform for your entire document volume."
         }
       ]
     },
     "faq": {
       "section": {
         "title": "Common Questions About Debt Collection Mailing",
-        "description": "Answers about integration, compliance, processing, and getting started with automated mailing."
+        "description": "Answers about integration, reliability, processing, and getting started with automated mailing."
       },
       "faqs": [
         {
           "q": "What types of debt collection letters can be processed?",
-          "a": "The platform handles collection notices, FDCPA validation letters, payment reminders, cease communications, and certified mail where proof of mailing is required."
+          "a": "The platform handles collection notices, validation letters, payment reminders, cease communications, and certified mail where proof of mailing is required."
         },
         {
           "q": "Is address verification included?",
@@ -253,12 +253,41 @@
           "a": "Yes — real-time USPS tracking is provided for every letter, supporting proof-of-mailing documentation."
         },
         {
-          "q": "How does this support compliance documentation needs?",
+          "q": "How does this support audit documentation needs?",
           "a": "Tracking records provide verifiable proof of submission and mailing (ISO 9001 documented processes). Precise PDF templates help maintain consistent notice content."
         },
         {
           "q": "What is the starting price?",
           "a": "Processing starts at $1.31 per letter (1-page, single-sided, black & white, including envelope and First-Class postage with tracking)."
+        }
+      ]
+    },
+    "trustSignals": {
+      "section": {
+        "title": "Address Verification & Quality Standards",
+        "description": "Industry-standard verification processes and documented quality management ensuring reliable delivery and operational excellence."
+      },
+      "signals": [
+        {
+          "type": "certification",
+          "name": "NCOA Verified",
+          "organization": "National Change of Address",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "CASS Certified",
+          "organization": "Coding Accuracy Support System",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "ISO 9001 Documented Processes",
+          "organization": "International Organization for Standardization",
+          "year": "2023",
+          "verified": true
         }
       ]
     },
