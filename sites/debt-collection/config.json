@@ -309,8 +309,8 @@
     },
     "trustSignals": {
       "section": {
-        "title": "Trusted by businesses nationwide",
-        "description": "Address Verification & Quality Standards — *Less than 100 pieces. Max 2 pages per piece. Standard #10 envelope. First-Class mail only."
+        "title": "Address Verification & Quality Standards",
+        "description": "Industry-standard verification processes and documented quality management ensuring reliable delivery and operational excellence."
       },
       "signals": [
         {
@@ -335,6 +335,11 @@
           "verified": true
         }
       ]
+    },
+    "trustedBy": {
+      "section": {
+        "title": "Trusted by businesses nationwide"
+      }
     },
     "footer": {
       "finalCTA": {
