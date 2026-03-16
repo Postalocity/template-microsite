@@ -95,6 +95,7 @@
       ]
     },
     "trustSignals": {
+      "section": { "title": "Trusted by Businesses Nationwide" },
       "signals": ["NCOA Verified 2024", "CASS Certified 2024", "ISO 9001 2023"]
     },
     "footer": {
