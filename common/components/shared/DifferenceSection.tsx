@@ -155,8 +155,8 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <p className="text-white/60 text-sm">
-            Trusted by businesses nationwide
+          <p className="text-white/60 text-xs">
+            *Less than 100 pieces. Max 2 pages per piece. Standard #10 envelope. First-Class mail only.
           </p>
         </motion.div>
       </div>
