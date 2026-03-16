@@ -2,26 +2,20 @@
   "version": "Postalocity Microsite Config — [Industry]",
   "site": {
     "id": "[slug]",
-    "name": "[Industry] Mailing",
+    "name": "[Industry] Mailing Service",
     "slug": "[slug]",
     "domain": "postalocity.com",
     "basename": "/[slug]",
-    "contact": {
-      "email": "contact@postalocity.com",
-      "phone": "316-260-2220"
-    }
+    "contact": { "email": "contact@postalocity.com", "phone": "316-260-2220" }
   },
-  "branding": {
-    "tagline": "Proof of Mailing. Every Letter.",
-    "logo": "/logo.png"
-  },
-  "theme": {
-    "primary": { "h": 200, "s": 80, "l": 30 }
-  },
+  "branding": { "tagline": "Proof of Mailing. Every Letter.", "logo": "/logo.png" },
+  "theme": { "primary": { "h": 200, "s": 80, "l": 30 } },
   "seo": {
-    "title": "[Industry] Mailing Service — Proof & Savings",
-    "description": "[Primary keyword] from $1.31/letter with proof of mailing.",
-    "keywords": ["[primary keyword]", "[secondary keyword]"],
+    "title": "[Industry] Mailing — Proof & Compliance",
+    "description": "Automate [industry] mailing: [primary keyword] from $1.31/letter with proof, verification & tracking.",
+    "keywords": ["[primary keyword]", "[secondary keyword]", "[tertiary keyword]"],
+    "ogTitle": "[Industry] Mailing — Proof Every Letter",
+    "ogDescription": "Streamline [use cases] — automated, verified, compliant.",
     "ogImage": "/[slug]/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://[slug].postalocity.com"
@@ -30,104 +24,73 @@
     "links": [
       { "label": "Benefits", "href": "#benefits" },
       { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
       { "label": "FAQ", "href": "#faq" }
     ],
-    "cta": {
-      "text": "Start at $1.31",
-      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026"
-    }
+    "cta": { "text": "Start at $1.31", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026" }
   },
   "content": {
     "hero": {
       "headline": "[Industry] Mailing Service",
       "highlightTerm": "Proof Every Letter",
-      "subhead": "Streamline [use cases] — automated, verified, compliant.",
-      "background": { "image": "/[slug]/images/[slug]-hero.jpg" },
+      "subhead": "Automate [use cases] — secure upload, verification, proof & tracking.",
+      "background": { "image": "/[slug]/images/[slug]-hero.jpg", "overlay": true },
       "ctas": [
-        {
-          "text": "Get Started — $1.31/letter",
-          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026"
-        }
+        { "text": "Get Started — $1.31/letter", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026", "variant": "primary" },
+        { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
       ]
     },
     "benefits": {
-      "title": "Why [Industry] Choose Us",
+      "section": { "title": "Why Choose Postalocity", "description": "Save time & stay compliant with automated mailing." },
       "benefits": [
-        {
-          "icon": "clock",
-          "title": "Save Time",
-          "description": "Automation handles printing & mailing."
-        },
-        {
-          "icon": "map-pin",
-          "title": "Reduce Returns",
-          "description": "Built-in address verification."
-        },
-        {
-          "icon": "shield",
-          "title": "Proof of Mailing",
-          "description": "Digital proof included on every letter."
-        },
-        {
-          "icon": "file-text",
-          "title": "Secure & Compliant",
-          "description": "ISO 9001 certified processes."
-        }
+        { "icon": "clock", "title": "Save Time", "description": "No post office trips — upload & approve.", "detail": "We print, fold, stuff & mail." },
+        { "icon": "map-pin", "title": "Fewer Returns", "description": "Real-time address verification.", "detail": "Catches errors pre-print." },
+        { "icon": "shield", "title": "Proof Every Letter", "description": "Digital proof included.", "detail": "Certified upgrade for tracking." },
+        { "icon": "file-text", "title": "Secure & Compliant", "description": "ISO 9001 protected handling.", "detail": "Encrypted uploads." }
       ]
     },
     "comparison": {
-      "title": "vs Traditional Mailing",
+      "section": { "title": "vs Traditional Mailing", "description": "Automated vs in-house." },
+      "columns": { "traditional": "Traditional", "ourSolution": "Postalocity" },
       "rows": [
-        { "feature": "Address Verification", "postalocity": "Included" },
-        { "feature": "Proof of Mailing", "postalocity": "Every letter" },
-        { "feature": "Processing", "postalocity": "Same-day" },
-        { "feature": "Cost", "postalocity": "$1.31 all-inclusive" }
+        { "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
+        { "feature": "Proof of Mailing", "ourSolution": "Digital every letter", "traditionalApproach": "Post office receipt" },
+        { "feature": "Processing", "ourSolution": "Same-day approved", "traditionalApproach": "Daily trips" },
+        { "feature": "Cost", "ourSolution": "$1.31 all-inclusive", "traditionalApproach": "Equipment, postage, labor" }
       ]
     },
     "services": {
-      "title": "[Industry] Mailing Needs",
+      "section": { "title": "[Industry] Use Cases", "description": "Routine to compliance mailings." },
       "services": [
-        { "title": "[Use Case 1]", "description": "Automated with proof." },
-        { "title": "[Use Case 2]", "description": "Compliance & notices." },
-        { "title": "[Use Case 3]", "description": "Recurring documents." }
+        { "icon": "bell", "title": "[Use Case 1]", "description": "Automated with proof & verification." },
+        { "icon": "file", "title": "[Use Case 2]", "description": "Compliance notices with documentation." },
+        { "icon": "calendar", "title": "[Use Case 3]", "description": "Recurring comms, consistent format." },
+        { "icon": "mail", "title": "[Use Case 4]", "description": "Verifiable notices & records." }
       ]
     },
     "difference": {
-      "title": "What Sets Us Apart",
+      "section": { "title": "Postalocity Difference", "description": "What sets us apart." },
       "differences": [
-        "Proof of mailing — every letter",
-        "Real-time dashboard tracking",
-        "Address verification included",
-        "Same-day processing (approve by noon CT)"
+        { "icon": "shield", "title": "Proof on Every Letter", "description": "Every letter includes proof of mailing. Certified upgrade available for tracking." },
+        { "icon": "eye", "title": "Real-time Dashboard", "description": "Track mailing status instantly — know exactly when each letter mails." },
+        { "icon": "map-pin", "title": "Address Verification", "description": "Built-in verification reduces returns by catching inaccurate addresses." },
+        { "icon": "clock", "title": "Same-Day Processing", "description": "Approve by noon CT for same-day processing." }
       ]
     },
     "faq": {
-      "title": "FAQ",
+      "section": { "title": "FAQ", "description": "Proof, pricing & more." },
       "faqs": [
-        {
-          "q": "Proof of mailing included?",
-          "a": "Yes — on every letter. Certified upgrade available."
-        },
-        {
-          "q": "Address verification?",
-          "a": "Yes — built-in to reduce returns."
-        },
-        {
-          "q": "Starting price?",
-          "a": "$1.31 per letter (includes postage, envelope, 1-page B&W)."
-        }
+        { "q": "Proof included?", "a": "Yes — every letter. Certified upgrade for tracking." },
+        { "q": "Address verification?", "a": "Yes — built-in, reduces returns." },
+        { "q": "Starting price?", "a": "$1.31/letter (1-page B&W, envelope + postage)." },
+        { "q": "Processing time?", "a": "Same-day if approved by noon CT." }
       ]
     },
     "trustSignals": {
-      "signals": [
-        "NCOA Verified",
-        "CASS Certified",
-        "ISO 9001"
-      ]
+      "signals": ["NCOA Verified 2024", "CASS Certified 2024", "ISO 9001 2023"]
     },
     "footer": {
-      "headline": "Ready to simplify [industry] mailing?",
-      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026",
+      "finalCTA": { "headline": "Streamline [industry] mailing today?", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026" },
       "tagline": "Proof of Mailing. Every Letter."
     }
   }
