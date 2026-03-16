@@ -49,7 +49,7 @@
       ]
     },
     "comparison": {
-      "section": { "title": "vs Traditional Mailing", "description": "Automated vs in-house." },
+      "section": { "title": "Postalocity vs Traditional Mailing", "description": "Automated vs in-house." },
       "columns": { "traditional": "Traditional", "ourSolution": "Postalocity" },
       "rows": [
         { "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
