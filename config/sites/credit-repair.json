@@ -3,7 +3,7 @@
     "id": "credit-repair",
     "name": "Credit Repair Mailing Service",
     "slug": "credit-repair",
-    "domain": "postalcity.com",
+    "domain": "postalocity.com",
     "basename": "/credit-repair",
     "contact": {
       "email": "contact@postalocity.com",
@@ -64,18 +64,12 @@
   },
   "navigation": {
     "links": [
-      {
-        "label": "Benefits",
-        "href": "#benefits"
-      },
-      {
-        "label": "Services",
-        "href": "#services"
-      },
-      {
-        "label": "FAQ",
-        "href": "#faq"
-      }
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Why Us", "href": "#difference" },
+      { "label": "Certifications", "href": "#trust-signals" },
+      { "label": "FAQ", "href": "#faq" }
     ],
     "cta": {
       "text": "Start Automating",

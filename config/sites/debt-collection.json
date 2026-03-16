@@ -39,7 +39,7 @@
     "id": "debt-collection",
     "name": "Debt Collection Mailing Service",
     "slug": "debt-collection",
-    "domain": "postalcity.com",
+    "domain": "postalocity.com",
     "basename": "/debt-collection",
     "contact": {
       "email": "contact@postalocity.com",
@@ -47,7 +47,7 @@
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "canonicalDomain": "https://debt-collection.postalcity.com",
+  "canonicalDomain": "https://debt-collection.postalocity.com",
   "branding": {
     "tagline": "Proof of Mailing. Every Letter.",
     "primaryColor": "#0F766E",
@@ -85,7 +85,7 @@
     "twitterTitle": "Debt Collection Mailing Service — Proof of Mailing",
     "twitterDescription": "Automate debt collection mailing — notices, certified letters & compliance docs. Address verification & tracking from $1.31/letter.",
     "twitterCard": "summary_large_image",
-    "canonical": "https://debt-collection.postalcity.com",
+    "canonical": "https://debt-collection.postalocity.com",
     "robots": "index, follow",
     "sitemapPriority": 1.0,
     "sitemapChangeFrequency": "weekly"
@@ -102,7 +102,7 @@
     "cta": {
       "text": "Upload Your Letters",
       "subtext": "Starting at $1.31/page",
-      "href": "https://prod.postalcity.com/login.html?signUp=true&promo=debt2026",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
       "variant": "primary"
     }
   },
@@ -121,7 +121,7 @@
         {
           "text": "Upload Your Letters",
           "subtext": "Starting at $1.31/page. First-class postage included.",
-          "href": "https://prod.postalcity.com/login.html?signUp=true&promo=debt2026",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
           "variant": "primary"
         },
         {
@@ -332,7 +332,7 @@
     "footer": {
       "finalCTA": {
         "headline": "Ready to streamline your collection mailing?",
-        "href": "https://prod.postalcity.com/login.html?signUp=true&promo=debt2026"
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026"
       }
     }
   }
