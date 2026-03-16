@@ -1,5 +1,14 @@
 {
   "version": "Postalocity Microsite Config — [Industry]",
+  "instructions": {
+    "promoCodes": {
+      "real-estate": "re2026",
+      "property-management": "pm2026", 
+      "self-storage": "pm2026",
+      "propane": "pr2026",
+      "education": "ed2026"
+    }
+  },
   "site": {
     "id": "[slug]",
     "name": "[Industry] Mailing Service",
@@ -31,8 +40,7 @@
   },
   "content": {
     "hero": {
-      "headline": "[Industry] Mailing Service",
-      "highlightTerm": "Proof Every Letter",
+      "headline": { "main": "[Industry] Mailing Service", "highlightTerm": "Proof Every Letter" },
       "subhead": "Automate [use cases] — secure upload, verification, proof & tracking.",
       "background": { "image": "/[slug]/images/[slug]-hero.jpg", "overlay": true },
       "ctas": [

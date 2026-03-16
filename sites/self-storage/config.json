@@ -1,364 +1,95 @@
 {
   "version": "Postalocity Microsite Config — Self Storage Facility Mailing Service",
-  "planningSessionSummary": "Enhanced self-storage vertical with deeper competitor analysis (including Simple Certified Mail, RPost), expanded keywords for compliance-focused searches, and additional content sections for better depth and AI optimization; maintains strict adherence to no speculative claims, hours-focused value, and quantified credibility.",
-  "research": {
-    "currentRankingSnapshot": "Limited direct Postalocity visibility for self-storage specific terms; strong opportunity in underserved automated physical mailing niche amid industry lien compliance needs and growth in 2.1B+ sq ft US market.",
-    "keywordOpportunityAnalysis": [
-      {
-        "keyword": "self storage mailing service",
-        "volume": "Low–Medium (est. 100–500)",
-        "difficulty": "Low",
-        "intent": "Transactional",
-        "priority": "High"
-      },
-      {
-        "keyword": "storage facility mailing notices",
-        "volume": "Low (est. 50–300)",
-        "difficulty": "Low",
-        "intent": "Informational/Transactional",
-        "priority": "High"
-      },
-      {
-        "keyword": "automated mailing for self storage",
-        "volume": "Low–Medium",
-        "difficulty": "Low–Medium",
-        "intent": "Transactional",
-        "priority": "High"
-      },
-      {
-        "keyword": "self storage late fee notice mailing",
-        "volume": "Low (est. 50–200)",
-        "difficulty": "Low",
-        "intent": "Transactional",
-        "priority": "Medium"
-      },
-      {
-        "keyword": "self storage lien notice mailing",
-        "volume": "Low",
-        "difficulty": "Low",
-        "intent": "Transactional",
-        "priority": "Medium"
-      },
-      {
-        "keyword": "self storage certified mail service",
-        "volume": "Low–Medium",
-        "difficulty": "Low",
-        "intent": "Transactional",
-        "priority": "High"
-      },
-      {
-        "keyword": "automated lien notice mailing self storage",
-        "volume": "Low",
-        "difficulty": "Low",
-        "intent": "Transactional",
-        "priority": "Medium"
-      }
-    ],
-    "competitiveGapInsights": [
-      "UploadLetters.com (uploadletters.com/self-storage) — Tailored for self-storage with next-day processing, Certified Mail options, tracking portal, bulk import; strong on lien/auction notices but limited address verification emphasis and no explicit return reduction metrics.",
-      "Simple Certified Mail (simplecertifiedmail.com) — Integrates with SiteLink/software for desk-based Certified/First-Class mailing; focuses on compliance proof and mailbox drop-off. Lacks full print/fold automation and real-time address verification.",
-      "RPost / RMail (rpost.com) — Registered email for lien notices with legal proof; reduces physical mailing where allowed. Not a print-and-mail solution; no USPS tracking for physical letters or address standardization.",
-      "General alternatives (e.g., Ai Lean for automated compliance workflows, software-integrated tools) — Emphasize digital notices or templates; lack end-to-end physical mailing with verification and tracking.",
-      "Postalocity advantage: Secure browser-based PDF upload, real-time address verification (reduces returns up to 40% in high-volume scenarios), full USPS tracking on every letter, no contracts/minimums, scalable processing from $1.31 per letter."
-    ],
-    "actionableRecommendations": [
-      "High impact / low effort: Publish dedicated /self-storage page with this config; optimize meta/hero for primary keywords.",
-      "High impact / medium effort: Expand content to 10+ sections covering lien compliance, bulk reminders, and software integration potential; incorporate updated competitor differentiators.",
-      "Medium impact / low effort: Add cross-links from general mailing/business pages; monitor emerging compliance searches tied to state lien law changes.",
-      "High impact / medium effort: Develop FAQ addressing common questions on certified mail for liens, address verification benefits, and tracking for proof of mailing."
-    ]
-  },
   "site": {
     "id": "self-storage",
-    "name": "Self Storage Facility Mailing Service",
+    "name": "Self Storage Mailing Service",
     "slug": "self-storage",
     "domain": "postalocity.com",
     "basename": "/self-storage",
-    "contact": {
-      "email": "contact@postalocity.com",
-      "phone": "316-260-2220",
-      "address": "820 W 2nd St N, Wichita KS 67203"
-    }
+    "contact": { "email": "contact@postalocity.com", "phone": "316-260-2220" }
   },
-  "branding": {
-    "tagline": "Proof of Mailing. Every Letter.",
-    "logo": "/logo.png",
-    "primaryColor": "#2E7D32",
-    "secondaryColor": "#1565C0"
-  },
-  "theme": {
-    "primary": {
-      "h": 142,
-      "s": 65,
-      "l": 24
-    },
-    "secondary": {
-      "h": 207,
-      "s": 76,
-      "l": 33
-    },
-    "gradients": {
-      "hero": "142 65% 24%",
-      "cta": "142 65% 24%"
-    }
-  },
+  "branding": { "tagline": "Proof of Mailing. Every Letter.", "logo": "/logo.png" },
+  "theme": { "primary": { "h": 200, "s": 80, "l": 30 } },
   "seo": {
-    "title": "Self Storage Mailing Service — Automated Notices & Tenant Letters",
-    "description": "Automate self storage mailing for late fee notices, lien notifications, rent reminders, and compliance documents. Address verification, USPS tracking, and secure processing from $1.31 per letter.",
-    "keywords": [
-      "self storage mailing service",
-      "storage facility mailing notices",
-      "automated mailing for self storage",
-      "self storage late fee notice mailing",
-      "self storage lien notice mailing",
-      "self storage certified mail service"
-    ],
-    "ogTitle": "Self Storage Mailing Service — Automated Notices",
-    "ogDescription": "Self-storage operators streamline tenant notices and compliance mailings with Postalocity's automated platform, including address verification and real-time tracking.",
+    "title": "Self Storage Mailing — Proof & Compliance",
+    "description": "Automate self storage mailing: self storage mailing service from $1.31/letter with proof, verification & tracking.",
+    "keywords": ["self storage mailing service", "automated mailing for self storage", "self storage lien notice mailing"],
+    "ogTitle": "Self Storage Mailing — Proof Every Letter",
+    "ogDescription": "Streamline late fee notices, lien notifications, rent reminders — automated, verified, compliant.",
     "ogImage": "/self-storage/images/og-image.png",
-    "twitterTitle": "Self Storage Mailing Service — Automated Notices",
-    "twitterDescription": "Automate self storage mailing for late fee notices, lien notifications, and compliance documents from $1.31/letter.",
     "twitterCard": "summary_large_image",
-    "canonical": "https://self-storage.postalocity.com",
-    "robots": "index, follow",
-    "sitemapPriority": 1.0,
-    "sitemapChangeFrequency": "weekly"
+    "canonical": "https://self-storage.postalocity.com"
   },
   "navigation": {
     "links": [
       { "label": "Benefits", "href": "#benefits" },
       { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Use Cases", "href": "#use-cases" },
+      { "label": "Services", "href": "#services" },
       { "label": "FAQ", "href": "#faq" }
     ],
-    "cta": {
-      "text": "Starting at $1.31",
-      "subtext": "$1.31/page",
-      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=self2026",
-      "variant": "primary"
-    }
+    "cta": { "text": "Start at $1.31", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026" }
   },
   "content": {
     "hero": {
-      "headline": {
-        "main": "Self Storage Mailing Service —",
-        "highlightTerm": "Automated Notices & Tenant Letters"
-      },
-      "subhead": "Self-storage facilities manage frequent tenant communications including late payments, lien notifications, and rent reminders. Postalocity's automated platform streamlines secure PDF upload, address verification to reduce returned mail, printing, and real-time USPS tracking.",
-      "background": {
-        "image": "/self-storage/images/self-storage-hero.jpg",
-        "overlay": true
-      },
+      "headline": { "main": "Self Storage Mailing Service", "highlightTerm": "Proof Every Letter" },
+      "subhead": "Automate late fee notices, lien notifications, rent reminders, compliance mailings — secure upload, verification, proof & tracking.",
+      "background": { "image": "/self-storage/images/self-storage-hero.jpg", "overlay": true },
       "ctas": [
-        {
-          "text": "Starting at $1.31",
-          "subtext": "$1.31/page",
-          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=self2026",
-          "variant": "primary"
-        },
-        {
-          "text": "See How It Works",
-          "subtext": "Explore automated mailing for self-storage",
-          "href": "#how-it-works",
-          "variant": "outline"
-        }
+        { "text": "Get Started — $1.31/letter", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026", "variant": "primary" },
+        { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
       ]
     },
     "benefits": {
-      "section": {
-        "title": "Why Self-Storage Operators Choose Postalocity",
-        "description": "Streamline tenant communications with automated mailing that saves time and ensures compliance."
-      },
+      "section": { "title": "Why Choose Postalocity", "description": "Save time & stay compliant with automated mailing." },
       "benefits": [
-        {
-          "icon": "clock",
-          "title": "Reclaim Administrative Time",
-          "description": "Automated printing, folding, stuffing, and mailing frees up staff hours previously spent on manual notice preparation.",
-          "detail": "Upload PDFs, approve, and let Postalocity handle the rest—no more daily post office trips."
-        },
-        {
-          "icon": "map-pin",
-          "title": "Address Verification Reduces Returns",
-          "description": "Real-time address validation catches errors before printing, significantly reducing undeliverable mail.",
-          "detail": "Verified addresses mean fewer returned notices and more effective tenant communication."
-        },
-        {
-          "icon": "shield",
-          "title": "Proof of Mailing for Compliance",
-          "description": "Every letter includes proof of mailing—essential for lien notices and tenant disputes.",
-          "detail": "Upgrade to Certified Mail for full USPS tracking with delivery confirmation."
-        },
-        {
-          "icon": "file-text",
-          "title": "Secure Document Handling",
-          "description": "ISO 9001 documented processes ensure tenant information stays protected.",
-          "detail": "Secure PDF upload with encrypted processing and compliant data handling."
-        }
-      ]
-    },
-    "services": {
-      "section": {
-        "title": "Self-Storage Mailing Use Cases",
-        "description": "From rent reminders to compliance notices, Postalocity handles your tenant communications."
-      },
-      "services": [
-        {
-          "icon": "bell",
-          "title": "Late Fee Notices",
-          "description": "Automate delinquent tenant notifications with verified addresses and proof of mailing.",
-          "detail": "Process high volumes quickly with batch upload capabilities."
-        },
-        {
-          "icon": "file",
-          "title": "Lien Notifications",
-          "description": "Meet state-specific lien requirements with documented proof of mailing.",
-          "detail": "Certified Mail options provide extra documentation for compliance."
-        },
-        {
-          "icon": "calendar",
-          "title": "Rent Reminders",
-          "description": "Send monthly rent reminders with consistent, professional formatting.",
-          "detail": "Template-based processing ensures uniformity across all communications."
-        },
-        {
-          "icon": "mail",
-          "title": "Auction Notices",
-          "description": "Deliver auction notices with verifiable proof of service.",
-          "detail": "Documented mailing supports legal requirements and tenant records."
-        },
-        {
-          "icon": "user-check",
-          "title": "Tenant Move-Out",
-          "description": "Send security deposit returns and final statements with tracking.",
-          "detail": "Full documentation protects both facility and tenant interests."
-        }
+        { "icon": "clock", "title": "Save Time", "description": "No post office trips — upload & approve.", "detail": "We print, fold, stuff & mail." },
+        { "icon": "map-pin", "title": "Fewer Returns", "description": "Real-time address verification.", "detail": "Catches errors pre-print." },
+        { "icon": "shield", "title": "Proof Every Letter", "description": "Digital proof included.", "detail": "Certified upgrade for tracking." },
+        { "icon": "file-text", "title": "Secure & Compliant", "description": "ISO 9001 protected handling.", "detail": "Encrypted uploads." }
       ]
     },
     "comparison": {
-      "section": {
-        "title": "Postalocity vs. Traditional Self-Storage Mailing",
-        "description": "See how automated mailing compares to in-house processing."
-      },
-      "columns": [
-        { "header": "Feature" },
-        { "header": "Traditional Approach" },
-        { "header": "Postalocity" }
-      ],
+      "section": { "title": "vs Traditional Mailing", "description": "Automated vs in-house." },
+      "columns": { "traditional": "Traditional", "ourSolution": "Postalocity" },
       "rows": [
-        {
-          "feature": "Address Verification",
-          "traditionalApproach": "Manual checks or none",
-          "ourSolution": "Real-time USPS verification included"
-        },
-        {
-          "feature": "Proof of Mailing",
-          "traditionalApproach": "Post office receipt only",
-          "ourSolution": "Digital proof of mailing on every letter"
-        },
-        {
-          "feature": "Processing Time",
-          "traditionalApproach": "Daily trips to post office",
-          "ourSolution": "Same-day processing after approval"
-        },
-        {
-          "feature": "Cost per Letter",
-          "traditionalApproach": "Equipment, postage, labor",
-          "ourSolution": "$1.31 includes everything"
-        }
+        { "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
+        { "feature": "Proof of Mailing", "ourSolution": "Digital every letter", "traditionalApproach": "Post office receipt" },
+        { "feature": "Processing", "ourSolution": "Same-day approved", "traditionalApproach": "Daily trips" },
+        { "feature": "Cost", "ourSolution": "$1.31 all-inclusive", "traditionalApproach": "Equipment, postage, labor" }
+      ]
+    },
+    "services": {
+      "section": { "title": "Self Storage Use Cases", "description": "Routine to compliance mailings." },
+      "services": [
+        { "icon": "bell", "title": "Late Fee Notices", "description": "Automated with proof & verification." },
+        { "icon": "file", "title": "Lien Notifications", "description": "Compliance notices with documentation." },
+        { "icon": "calendar", "title": "Rent Reminders", "description": "Recurring comms, consistent format." },
+        { "icon": "mail", "title": "Auction Notices", "description": "Verifiable notices & records." }
       ]
     },
     "difference": {
-      "section": {
-        "title": "The Postalocity Difference",
-        "description": "What sets our self-storage mailing services apart."
-      },
-      "background": "dark",
+      "section": { "title": "Postalocity Difference", "description": "What sets us apart." },
       "differences": [
-        {
-          "icon": "shield",
-          "title": "Proof of Mailing. Every Letter.",
-          "description": "Every letter includes proof of mailing. Upgrade to Certified Mail for full USPS tracking with delivery confirmation."
-        },
-        {
-          "icon": "eye",
-          "title": "Full Visibility in Your Dashboard",
-          "description": "Know exactly when each notice mails with real-time status updates. No more guessing."
-        },
-        {
-          "icon": "map-pin",
-          "title": "Address Verification Included",
-          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned mail and ensuring critical notices reach tenants."
-        },
-        {
-          "icon": "clock",
-          "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing."
-        }
+        { "icon": "shield", "title": "Proof on Every Letter", "description": "Every letter includes proof of mailing. Certified upgrade available for tracking." },
+        { "icon": "eye", "title": "Real-time Dashboard", "description": "Track mailing status instantly — know exactly when each letter mails." },
+        { "icon": "map-pin", "title": "Address Verification", "description": "Built-in verification reduces returns by catching inaccurate addresses." },
+        { "icon": "clock", "title": "Same-Day Processing", "description": "Approve by noon CT for same-day processing." }
       ]
     },
     "faq": {
-      "section": {
-        "title": "Common Questions About Self-Storage Mailing",
-        "description": "Answers about lien notices, address verification, and getting started."
-      },
+      "section": { "title": "FAQ", "description": "Proof, pricing & more." },
       "faqs": [
-        {
-          "q": "What types of self-storage communications can be processed?",
-          "a": "The platform handles late fee notices, lien notifications, rent reminders, auction notices, move-out statements, and other tenant communications requiring proof of mailing."
-        },
-        {
-          "q": "Does every letter include proof of mailing?",
-          "a": "Every letter includes proof of mailing. Upgrade to Certified Mail for full USPS tracking with delivery confirmation—essential for lien documentation."
-        },
-        {
-          "q": "Is address verification included?",
-          "a": "Yes—address verification is built-in and included with every mailing to help reduce returned mail and ensure tenant notices reach the correct address."
-        },
-        {
-          "q": "How does this support lien compliance needs?",
-          "a": "Proof of mailing provides documented evidence of notification, critical for lien proceedings. Certified Mail adds delivery confirmation for extra documentation."
-        },
-        {
-          "q": "What is the starting price?",
-          "a": "Processing starts at $1.31 per letter (1-page, single-sided, black & white, including envelope and First-Class postage). Upgrade to Certified Mail for full tracking."
-        }
+        { "q": "Proof included?", "a": "Yes — every letter. Certified upgrade for tracking." },
+        { "q": "Address verification?", "a": "Yes — built-in, reduces returns." },
+        { "q": "Starting price?", "a": "$1.31/letter (1-page B&W, envelope + postage)." },
+        { "q": "Processing time?", "a": "Same-day if approved by noon CT." }
       ]
     },
     "trustSignals": {
-      "section": {
-        "title": "Trusted by businesses nationwide",
-        "description": "Industry-standard verification processes and documented quality management ensuring reliable delivery."
-      },
-      "signals": [
-        {
-          "type": "certification",
-          "name": "NCOA Verified",
-          "organization": "National Change of Address",
-          "year": "2024",
-          "verified": true
-        },
-        {
-          "type": "certification",
-          "name": "CASS Certified",
-          "organization": "Coding Accuracy Support System",
-          "year": "2024",
-          "verified": true
-        },
-        {
-          "type": "certification",
-          "name": "ISO 9001",
-          "organization": "International Organization for Standardization",
-          "year": "2023",
-          "verified": true
-        }
-      ]
+      "signals": ["NCOA Verified 2024", "CASS Certified 2024", "ISO 9001 2023"]
     },
     "footer": {
-      "finalCTA": {
-        "headline": "Ready to streamline your self-storage mailing?",
-        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=self2026"
-      },
-      "description": "Automated mailing for self-storage facilities—save time, reduce returns, and maintain compliance.",
+      "finalCTA": { "headline": "Streamline self-storage mailing today?", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026" },
       "tagline": "Proof of Mailing. Every Letter."
     }
   }

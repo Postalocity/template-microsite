@@ -9,7 +9,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   const site = config.site || {};
   const contact = site.contact || {};
-  const footer = config.content?.footer || config.footer || {
+  const footer = config.footer || {
     finalCTA: {
       headline: 'Ready to Automate Your Mail Processing?',
       description: 'No contracts, no setup fees—just effortless automation.',

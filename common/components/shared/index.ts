@@ -7,7 +7,6 @@ export { default as ComparisonTable } from './ComparisonTable';
 export { default as SiteNavigation } from './SiteNavigation';
 export { default as SiteFooter } from './SiteFooter';
 export { default as TrustBadgesSection } from './TrustBadgesSection';
-export { default as TrustedBySection } from './TrustedBySection';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as QuantifiableBenefitsSection } from './QuantifiableBenefitsSection';
 export { default as DifferenceSection } from './DifferenceSection';
