@@ -36,19 +36,20 @@
     ]
   },
   "site": {
+    "id": "debt-collection",
     "name": "Debt Collection Mailing Service",
     "slug": "debt-collection",
-    "domain": "postalocity.com",
+    "domain": "postalcity.com",
     "basename": "/debt-collection",
     "contact": {
-      "email": "helpdesk@postalocity.com",
+      "email": "contact@postalocity.com",
       "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "canonicalDomain": "https://debt-collection.postalocity.com",
+  "canonicalDomain": "https://debt-collection.postalcity.com",
   "branding": {
-    "tagline": "Reclaim Hours Weekly with Automated Mailing",
+    "tagline": "Proof of Mailing. Every Letter.",
     "primaryColor": "#0F766E",
     "secondaryColor": "#F59E0B"
   },
@@ -62,11 +63,15 @@
       "h": 38,
       "s": 92,
       "l": 50
+    },
+    "gradients": {
+      "hero": "173 79% 12%",
+      "cta": "173 79% 24%"
     }
   },
   "seo": {
-    "title": "Debt Collection Mailing Service — Automated Notices & Certified Letters",
-    "description": "Automate debt collection mailing for notices, certified letters, compliance documents, and payment reminders. Reclaim hours weekly with address verification, USPS tracking, and secure PDF upload processing from $1.31 per letter.",
+    "title": "Debt Collection Mailing Service — Automated Mailing Services for Debt Collection Agencies",
+    "description": "Debt collection mailing service for agencies — automate notices, certified letters & compliance docs. Address verification, USPS tracking & secure PDF upload from $1.31/letter.",
     "keywords": [
       "debt collection mailing service",
       "automated mailing for collection agencies",
@@ -74,28 +79,37 @@
       "debt collection letter printing and mailing",
       "collection notices mailing services"
     ],
-    "ogTitle": "Debt Collection Mailing Service — Reclaim Hours Weekly",
+    "ogTitle": "Debt Collection Mailing Service — Proof of Mailing",
     "ogDescription": "Collection agencies streamline high-volume notices and certified mailings with Postalocity's automated platform.",
-    "canonical": "https://postalocity.com/debt-collection"
+    "ogImage": "/debt-collection/images/og-image.png",
+    "twitterTitle": "Debt Collection Mailing Service — Proof of Mailing",
+    "twitterDescription": "Automate debt collection mailing — notices, certified letters & compliance docs. Address verification & tracking from $1.31/letter.",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://debt-collection.postalcity.com",
+    "robots": "index, follow",
+    "sitemapPriority": 1.0,
+    "sitemapChangeFrequency": "weekly"
   },
   "navigation": {
     "links": [
       { "label": "Benefits", "href": "#benefits" },
       { "label": "How It Works", "href": "#how-it-works" },
       { "label": "Services", "href": "#services" },
+      { "label": "Why Us", "href": "#difference" },
+      { "label": "Certifications", "href": "#trust-signals" },
       { "label": "FAQ", "href": "#faq" }
     ],
     "cta": {
-      "text": "Starting at $1.31",
-      "subtext": "1-page. single-sided. B&W. includes postage.",
-      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
+      "text": "Upload Your Letters",
+      "subtext": "Starting at $1.31/page",
+      "href": "https://prod.postalcity.com/login.html?signUp=true&promo=debt2026",
       "variant": "primary"
     }
   },
   "content": {
     "hero": {
       "headline": {
-        "main": "Automated Certified Mail for Collection Agencies",
+        "main": "Automated Certified Mail for Debt Collection Agencies",
         "highlightTerm": "Streamlined Notices & Documentation"
       },
       "subhead": "Automated mailing platform for collection notices, demand letters, and certified mail with built-in address verification and tracking for every document.",
@@ -105,14 +119,14 @@
       },
       "ctas": [
         {
-          "text": "Starting at $1.31",
-          "subtext": "1-page. single-sided. B&W. includes postage.",
-          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
+          "text": "Upload Your Letters",
+          "subtext": "Starting at $1.31/page. First-class postage included.",
+          "href": "https://prod.postalcity.com/login.html?signUp=true&promo=debt2026",
           "variant": "primary"
         },
         {
           "text": "See How It Works",
-          "subtext": "Explore automated mailing for collection agencies",
+          "subtext": "Explore automated mailing for debt collection agencies",
           "href": "#how-it-works",
           "variant": "outline"
         }
@@ -198,7 +212,7 @@
     },
     "services": {
       "section": {
-        "title": "Debt Collection Mailing Services",
+        "title": "Mailing Services for Debt Collection Agencies",
         "description": "End-to-end automated mailing designed to streamline collection operations while ensuring audit documentation."
       },
       "services": [
@@ -294,7 +308,7 @@
     "footer": {
       "finalCTA": {
         "headline": "Ready to streamline your collection mailing?",
-        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026"
+        "href": "https://prod.postalcity.com/login.html?signUp=true&promo=debt2026"
       }
     }
   }

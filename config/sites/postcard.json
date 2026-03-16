@@ -6,7 +6,7 @@
     "domain": "postalocity.com",
     "basename": "/postcard",
     "contact": {
-      "email": "helpdesk@postalocity.com",
+      "email": "contact@postalocity.com",
       "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
@@ -96,8 +96,8 @@
         {
           "icon": "eye",
           "title": "High Open Rate",
-          "detail": "Unlike email, physical mail gets noticed. Postcards have a 90% open rate and create lasting impressions.",
-          "metrics": "90% open rate"
+          "detail": "Unlike email, physical mail gets noticed. Postcards have a high open rate and create lasting impressions.",
+          "metrics": "High open rate"
         },
         {
           "icon": "clock",

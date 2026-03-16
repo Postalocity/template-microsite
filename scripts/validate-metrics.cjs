@@ -14,12 +14,14 @@ const prohibitedPatterns = [
   {
     pattern: /\d+\+?\s*Hours?\/Week/i,
     message: "Specific time savings claims (e.g., '15+ Hours/Week') require data sources",
-    severity: "ERROR"
+    severity: "ERROR",
+    excludeContext: ["changefreq", "weekly", "monthly", "daily"] // Don't flag sitemap frequencies
   },
   {
     pattern: /\d+\+?\s*hours?\s*(saved|weekly|saved)/i,
     message: "Specific time savings claims (e.g., '15+ hours saved') require data sources",
-    severity: "ERROR"
+    severity: "ERROR",
+    excludeContext: ["changefreq"] // Don't flag sitemap frequencies
   },
   {
     pattern: /up\s*to\s*\d+%/i,
@@ -64,19 +66,32 @@ const warningPatterns = [
 
 function validateFile(filePath) {
   const content = fs.readFileSync(filePath, 'utf8');
+  const lines = content.split('\n');
   const issues = [];
   
   // Check prohibited patterns
-  prohibitedPatterns.forEach(({ pattern, message, severity }) => {
+  prohibitedPatterns.forEach(({ pattern, message, severity, excludeContext }) => {
     const matches = content.match(pattern);
     if (matches) {
       matches.forEach(match => {
+        // Find the line containing this match
+        const lineNum = getLineNumber(content, match);
+        const line = lines[lineNum - 1] || '';
+        
+        // Skip if match is in excluded context (e.g., sitemap changefreq)
+        if (excludeContext) {
+          const isExcluded = excludeContext.some(ctx => 
+            line.includes(`"${ctx}"`) || line.includes(`'${ctx}'`)
+          );
+          if (isExcluded) return;
+        }
+        
         issues.push({
           file: path.basename(filePath),
           match: match,
           message,
           severity,
-          line: getLineNumber(content, match)
+          line: lineNum
         });
       });
     }

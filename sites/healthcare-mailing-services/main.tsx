@@ -1,10 +1,10 @@
 /**
  * Healthcare Mail Services - Generated from template-microsite
- * Generated at: 2026-03-12T13:14:20.297Z
+ * Generated at: 2026-03-16T14:48:04.704Z
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonSection } from '../common/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection } from '../common/components/shared';
 import SiteNavigation from '../common/components/shared/SiteNavigation';
 import SiteFooter from '../common/components/shared/SiteFooter';
 import '../common/globals.css';
@@ -17,8 +17,10 @@ function App() {
       <SiteNavigation config={config} />
       <HeroSection hero={content.hero} />
       <BenefitsSection benefits={content.benefits} />
-      <ComparisonSection comparison={content.comparison} />
+      {content.comparison && <ComparisonTable comparison={content.comparison} promoCode="healthcare-mailing-services2026" />}
       <ServicesSection services={content.services} />
+      {content.difference && <DifferenceSection difference={content.difference} />}
+      {content.trustSignals && <TrustBadgesSection trustSignals={content.trustSignals} />}
       <FAQSection faq={content.faq} />
       <SiteFooter config={config} />
     </>

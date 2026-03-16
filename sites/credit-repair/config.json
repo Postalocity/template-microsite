@@ -6,7 +6,7 @@
     "domain": "postalcity.com",
     "basename": "/credit-repair",
     "contact": {
-      "email": "helpdesk@postalocity.com",
+      "email": "contact@postalocity.com",
       "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
@@ -19,7 +19,7 @@
   "footer": {
     "finalCTA": {
       "headline": "Automate Your Dispute Letter Mailing Today",
-      "description": "Reclaim hours weekly with automated printing, address verification, and Certified Mail services\u2014no contracts, pay-as-you-go pricing.",
+      "description": "Reclaim significant time with automated printing, address verification, and Certified Mail services—no contracts, pay-as-you-go pricing.",
       "buttonText": "Start Automating Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026"
     },
@@ -39,7 +39,7 @@
   },
   "seo": {
     "title": "Automate Dispute Letter Mailing Service | Credit Repair Mailing Service",
-    "description": "Automated dispute letter mailing from $1.31/letter. Reclaim hours weekly. Free signup, address verification, Certified Mail, USPS tracking, API integration.",
+    "description": "Automated dispute letter mailing from $1.31/letter. Reclaim significant time. Free signup, address verification, Certified Mail, USPS tracking, API integration.",
     "keywords": [
       "dispute letter mailing service",
       "credit repair mailing service",
@@ -393,7 +393,7 @@
           "location": "Dallas, TX",
           "role": "Credit Repair Agency Owner",
           "rating": 5,
-          "text": "Processing 500+ dispute letters monthly consumed 50+ hours of my time. After implementing Postalocity, I now spend 2 hours weekly on approvals and reclaimed 48 hours for client strategy. Returned letters dropped from 12% to under 2% with address verification.",
+          "text": "Processing 500+ dispute letters monthly consumed 50+ hours of my time. After implementing Postalocity, I now spend minimal time on approvals and reclaimed significant hours for client strategy. Returned letters dropped significantly with address verification.",
           "date": "2025-02-15",
           "verified": true
         },
@@ -452,7 +452,7 @@
               "category": "Returned Mail Rate",
               "before": "12%",
               "after": "1.8%",
-              "delta": "85% reduction"
+              "delta": "Significant reduction"
             },
             {
               "category": "Client Capacity",
@@ -470,7 +470,7 @@
           "methodology": "Implemented bulk upload workflow replacing manual printing, stuffing, and postage application. Address verification deployed to catch inaccuracies before processing. Certified Mail selected for all dispute documentation. Dashboard monitoring replaced USPS.com scanning checks.",
           "timeline": "Week 1: Account setup and integration training; Week 2: Bulk upload workflow testing and optimization; Week 3: Full implementation with address verification enabled; Ongoing: Dashboard monitoring and process refinement",
           "outcome": "Practice scaled client volume by 60% without additional staff. Time savings redirected to client strategy and business development. Returned mail reduction improved bureau response rates and client satisfaction scores.",
-          "testimonial": "I spent 50+ hours weekly folding and stuffing letters. Now I click approve and focus on growing my business. The address verification alone saves hours of follow-up on returned mail."
+          "testimonial": "I spent significant time folding and stuffing letters. Now I click approve and focus on growing my business. The address verification alone saves hours of follow-up on returned mail."
         },
         {
           "client": {
@@ -507,7 +507,7 @@
           ],
           "methodology": "API integration with Credit Repair Cloud deployed across all three locations. Centralized dashboard monitoring replaced distributed scanning. Custom branded stationery implemented for consistency. Certified Mail standardized across all dispute letters.",
           "timeline": "Setup: API integration testing and certification; Rollout: Phased deployment across locations (2 weeks); Training: Staff onboarding and documentation (3 days); Ongoing: Administrative dashboard oversight",
-          "outcome": "Eliminated variability in processing quality across locations. Centralized oversight improved compliance and reduced administrative overhead. Practice expanded to serve 40% more clients without adding operational staff.",
+          "outcome": "Eliminated variability in processing quality across locations. Centralized oversight improved compliance and reduced administrative overhead. Practice expanded to serve significantly more clients without adding operational staff.",
           "testimonial": "Managing three locations meant three different processes. Now everyone works the same way through a single dashboard. The API integration means my team never leaves Credit Repair Cloud, and clients get instant updates."
         }
       ]
