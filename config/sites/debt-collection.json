@@ -118,7 +118,7 @@
       "ctas": [
         {
           "text": "Upload Your Letters",
-          "subtext": "Same-day processing. Starting at $1.31/page with First-class postage included.",
+          "subtext": "Starting at $1.31/page",
           "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
           "variant": "primary"
         },
