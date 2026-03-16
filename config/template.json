@@ -1,0 +1,307 @@
+{
+  "version": "Postalocity Microsite Config — [Industry Vertical Name]",
+  "planningSessionSummary": "Brief summary of research focus, key messaging guidelines, and goals (optional but recommended for extended configs)",
+  "research": {
+    "currentRankingSnapshot": "Summary of current SERP positions for target keywords, landscape description",
+    "keywordOpportunityAnalysis": [
+      {
+        "keyword": "example keyword phrase",
+        "volume": "800–2,000 (est.)",
+        "difficulty": "Low–Medium",
+        "intent": "Transactional",
+        "priority": "High"
+      }
+    ],
+    "competitiveGapInsights": [
+      "Competitor name (url) — key strengths and features",
+      "Another competitor — where they outrank and why",
+      "Postalocity advantage: list of differentiators"
+    ],
+    "actionableRecommendations": [
+      "High impact / low effort: description of action",
+      "High impact / medium effort: description",
+      "Other ranked recommendations"
+    ]
+  },
+  "site": {
+    "id": "[slug]",
+    "name": "[Industry] Mailing Service",
+    "slug": "[slug]",
+    "domain": "postalocity.com",
+    "basename": "/[slug]",
+    "contact": {
+      "email": "contact@postalocity.com",
+      "phone": "316-260-2220",
+      "address": "820 W 2nd St N, Wichita KS 67203"
+    }
+  },
+  "branding": {
+    "tagline": "Proof of Mailing. Every Letter.",
+    "logo": "/logo.png",
+    "primaryColor": "[brand-color-hex]",
+    "secondaryColor": "[brand-color-hex]"
+  },
+  "theme": {
+    "primary": {
+      "h": [0-360],
+      "s": [0-100],
+      "l": [0-100]
+    },
+    "secondary": {
+      "h": [0-360],
+      "s": [0-100],
+      "l": [0-100]
+    },
+    "gradients": {
+      "hero": "[h] [s]% [l]%",
+      "cta": "[h] [s]% [l]%"
+    }
+  },
+  "seo": {
+    "title": "[Industry] Mailing Service — [Key Benefit]",
+    "description": "[Primary keyword] for [target audience]. [Key differentiators] from $1.31/letter.",
+    "keywords": [
+      "[primary keyword]",
+      "[secondary keyword]",
+      "[tertiary keyword]"
+    ],
+    "ogTitle": "[Industry] Mailing Service — [Tagline]",
+    "ogDescription": "[Target audience] streamline [use cases] with Postalocity's automated platform.",
+    "ogImage": "/[slug]/images/og-image.png",
+    "twitterTitle": "[Industry] Mailing Service — [Tagline]",
+    "twitterDescription": "[Primary keyword] for [target audience] from $1.31/letter.",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://[slug].postalocity.com",
+    "robots": "index, follow",
+    "sitemapPriority": 1.0,
+    "sitemapChangeFrequency": "weekly"
+  },
+  "navigation": {
+    "links": [
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "cta": {
+      "text": "Starting at $1.31",
+      "subtext": "$1.31/page",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026",
+      "variant": "primary"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "[Industry] Mailing Service —",
+        "highlightTerm": "[Key Value Proposition]"
+      },
+      "subhead": "[Target audience] manage [use cases]. Postalocity's automated platform streamlines [key benefits].",
+      "background": {
+        "image": "/[slug]/images/[slug]-hero.jpg",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Starting at $1.31",
+          "subtext": "$1.31/page",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026",
+          "variant": "primary"
+        },
+        {
+          "text": "See How It Works",
+          "subtext": "Explore automated mailing for [industry]",
+          "href": "#how-it-works",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Why [Industry] Choose Postalocity",
+        "description": "Streamline communications with automated mailing that saves time and ensures compliance."
+      },
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Reclaim Administrative Time",
+          "description": "Automated printing, folding, stuffing, and mailing frees up staff hours.",
+          "detail": "Upload PDFs, approve, and let Postalocity handle the rest."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification Reduces Returns",
+          "description": "Real-time address validation catches errors before printing.",
+          "detail": "Verified addresses mean fewer returned notices."
+        },
+        {
+          "icon": "shield",
+          "title": "Proof of Mailing for Compliance",
+          "description": "Every letter includes proof of mailing—essential for documentation.",
+          "detail": "Upgrade to Certified Mail for full USPS tracking."
+        },
+        {
+          "icon": "file-text",
+          "title": "Secure Document Handling",
+          "description": "ISO 9001 documented processes ensure information stays protected.",
+          "detail": "Secure PDF upload with encrypted processing."
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Postalocity vs. Traditional Mailing",
+        "description": "See how automated mailing compares to in-house processing."
+      },
+      "columns": [
+        { "header": "Feature" },
+        { "header": "Traditional Approach" },
+        { "header": "Postalocity" }
+      ],
+      "rows": [
+        {
+          "feature": "Address Verification",
+          "traditionalApproach": "Manual checks or none",
+          "ourSolution": "Real-time USPS verification included"
+        },
+        {
+          "feature": "Proof of Mailing",
+          "traditionalApproach": "Post office receipt only",
+          "ourSolution": "Digital proof of mailing on every letter"
+        },
+        {
+          "feature": "Processing Time",
+          "traditionalApproach": "Daily trips to post office",
+          "ourSolution": "Same-day processing after approval"
+        },
+        {
+          "feature": "Cost per Letter",
+          "traditionalApproach": "Equipment, postage, labor",
+          "ourSolution": "$1.31 includes everything"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "[Industry] Mailing Use Cases",
+        "description": "From routine communications to compliance notices, Postalocity handles your mailings."
+      },
+      "services": [
+        {
+          "icon": "bell",
+          "title": "[Use Case 1]",
+          "description": "Automated [use case] with verified addresses and proof of mailing.",
+          "detail": "Process high volumes quickly with batch upload."
+        },
+        {
+          "icon": "file",
+          "title": "[Use Case 2]",
+          "description": "Meet [compliance] requirements with documented proof of mailing.",
+          "detail": "[Service] options provide extra documentation."
+        },
+        {
+          "icon": "calendar",
+          "title": "[Use Case 3]",
+          "description": "Send [recurring communications] with consistent formatting.",
+          "detail": "Template-based processing ensures uniformity."
+        },
+        {
+          "icon": "mail",
+          "title": "[Use Case 4]",
+          "description": "Deliver [notices] with verifiable proof of service.",
+          "detail": "Documented mailing supports records requirements."
+        }
+      ]
+    },
+    "difference": {
+      "section": {
+        "title": "The Postalocity Difference",
+        "description": "What sets our [industry] mailing services apart."
+      },
+      "background": "dark",
+      "differences": [
+        {
+          "icon": "shield",
+          "title": "Proof of Mailing. Every Letter.",
+          "description": "Every letter includes proof of mailing. Upgrade to Certified Mail for full USPS tracking."
+        },
+        {
+          "icon": "eye",
+          "title": "Full Visibility in Your Dashboard",
+          "description": "Know exactly when each piece mails with real-time status updates. No more guessing."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification Included",
+          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned mail."
+        },
+        {
+          "icon": "clock",
+          "title": "Same-Day Processing",
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing."
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Common Questions About [Industry] Mailing",
+        "description": "Answers about services, verification, and getting started."
+      },
+      "faqs": [
+        {
+          "q": "What types of [industry] communications can be processed?",
+          "a": "The platform handles [use cases] and other communications requiring proof of mailing."
+        },
+        {
+          "q": "Does every letter include proof of mailing?",
+          "a": "Every letter includes proof of mailing. Upgrade to Certified Mail for full USPS tracking with delivery confirmation."
+        },
+        {
+          "q": "Is address verification included?",
+          "a": "Yes—address verification is built-in and included with every mailing to help reduce returned mail."
+        },
+        {
+          "q": "What is the starting price?",
+          "a": "Processing starts at $1.31 per letter (1-page, single-sided, black & white, including envelope and First-Class postage). Upgrade to Certified Mail for full tracking."
+        }
+      ]
+    },
+    "trustSignals": {
+      "section": {
+        "title": "Trusted by businesses nationwide",
+        "description": "Industry-standard verification processes and documented quality management ensuring reliable delivery."
+      },
+      "signals": [
+        {
+          "type": "certification",
+          "name": "NCOA Verified",
+          "organization": "National Change of Address",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "CASS Certified",
+          "organization": "Coding Accuracy Support System",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "ISO 9001",
+          "organization": "International Organization for Standardization",
+          "year": "2023",
+          "verified": true
+        }
+      ]
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready to streamline your [industry] mailing?",
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026"
+      },
+      "description": "Automated mailing for [industry]—save time, reduce returns, and maintain compliance.",
+      "tagline": "Proof of Mailing. Every Letter."
+    }
+  }
+}
