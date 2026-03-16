@@ -2,11 +2,11 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 interface TrustSignal {
-  type: string;
+  type?: string;
   name: string;
-  organization: string;
-  year: string;
-  verified: boolean;
+  organization?: string;
+  year?: string;
+  verified?: boolean;
 }
 
 interface TrustSignalsProps {
@@ -15,7 +15,7 @@ interface TrustSignalsProps {
       title?: string;
       description?: string;
     };
-    signals?: TrustSignal[];
+    signals?: (TrustSignal | string)[];
   };
 }
 
@@ -23,12 +23,17 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
-  // Default signals if none provided
-  const signals = trustSignals?.signals || [
-    { type: "certification", name: "NCOA Verified", organization: "National Change of Address", year: "2024", verified: true },
-    { type: "certification", name: "CASS Certified", organization: "Coding Accuracy Support System", year: "2024", verified: true },
-    { type: "certification", name: "ISO 9001", organization: "International Organization for Standardization", year: "2023", verified: true },
-  ];
+  // Handle both string array and object array formats
+  const rawSignals = trustSignals?.signals;
+  const signals: TrustSignal[] = rawSignals 
+    ? rawSignals.map(s => typeof s === 'string' 
+        ? { name: s }  // Convert string to object
+        : s)
+    : [
+        { name: "NCOA Verified", year: "2024" },
+        { name: "CASS Certified", year: "2024" },
+        { name: "ISO 9001", year: "2023" },
+      ];
 
   return (
     <section className="py-8 bg-section-alt" ref={ref} id="trust-signals">
