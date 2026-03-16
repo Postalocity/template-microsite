@@ -52,7 +52,7 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
 
   return (
     <section
-      id="comparison"
+      id="how-it-works"
       className="section-padding bg-section-alt"
       ref={ref}
     >
