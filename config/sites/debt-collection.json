@@ -271,7 +271,12 @@
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips."
+        },
+        {
+          "icon": "info",
+          "title": "*Restrictions Apply",
+          "description": "Less than 100 pieces. Max 2 pages per piece. Standard #10 envelope. First-Class mail only."
         }
       ]
     },
@@ -309,7 +314,7 @@
     },
     "trustSignals": {
       "section": {
-        "title": "Quality Standards & Certifications",
+        "title": "Trusted by businesses nationwide",
         "description": "Industry-standard verification processes and documented quality management ensuring reliable delivery and operational excellence."
       },
       "signals": [
