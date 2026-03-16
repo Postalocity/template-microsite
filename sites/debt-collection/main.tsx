@@ -1,6 +1,6 @@
 /**
  * Debt Collection Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-16T19:25:43.351Z
+ * Generated at: 2026-03-16T21:00:03.802Z
  */
 
 import { createRoot } from 'react-dom/client';
