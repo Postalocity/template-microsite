@@ -3,7 +3,7 @@
     "id": "healthcare-mailing-services",
     "name": "Healthcare Mail Services",
     "slug": "healthcare-mailing-services",
-    "domain": "postalcity.com",
+    "domain": "postalocity.com",
     "basename": "/healthcare-mailing-services",
     "contact": {
       "email": "contact@postalocity.com",
@@ -62,22 +62,10 @@
   },
   "navigation": {
     "links": [
-      {
-        "label": "Benefits",
-        "href": "#benefits"
-      },
-      {
-        "label": "Services",
-        "href": "#services"
-      },
-      {
-        "label": "FAQ",
-        "href": "#faq"
-      },
-      {
-        "label": "Contact",
-        "href": "#contact"
-      }
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" }
     ],
     "cta": {
       "text": "Get Started",

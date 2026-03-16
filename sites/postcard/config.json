@@ -45,14 +45,11 @@
   },
   "navigation": {
     "links": [
-      {
-        "label": "About",
-        "href": "#about"
-      },
-      {
-        "label": "Contact",
-        "href": "#contact"
-      }
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" },
+      { "label": "About", "href": "#about" }
     ],
     "cta": {
       "text": "Get Started",

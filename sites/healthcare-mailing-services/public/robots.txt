@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://postalcity.com/healthcare-mailing-services/sitemap.xml
+Sitemap: https://postalocity.com/healthcare-mailing-services/sitemap.xml
