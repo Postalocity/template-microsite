@@ -51,22 +51,11 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
                 href={cta.href}
                 className={
                   cta.variant === 'primary'
-                    ? 'inline-flex flex-col items-center bg-primary/10 border-2 border-primary rounded-xl px-8 py-4 hover:bg-primary/20 transition-all'
+                    ? 'inline-flex flex-col items-center bg-primary text-primary-foreground rounded-xl px-8 py-4 hover:opacity-90 transition-all font-bold text-lg sm:text-xl'
                     : 'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl btn-cta-outline text-lg'
                 }
               >
-                {cta.variant === 'primary' && cta.subtext ? (
-                  <>
-                    <span className="text-xl sm:text-2xl font-black text-primary">
-                      {cta.text}
-                    </span>
-                    <span className="text-xs text-hero-subtitle">
-                      {cta.subtext}
-                    </span>
-                  </>
-                ) : (
-                  cta.text
-                )}
+                {cta.text}
               </a>
             ))}
           </div>
