@@ -11,11 +11,11 @@
   "branding": { "tagline": "Proof of Mailing. Every Letter.", "logo": "/logo.png" },
   "theme": { "primary": { "h": 200, "s": 80, "l": 30 } },
   "seo": {
-    "title": "Self Storage Mailing — Proof & Compliance",
-    "description": "Automate self storage mailing: self storage mailing service from $1.31/letter with proof, verification & tracking.",
-    "keywords": ["self storage mailing service", "automated mailing for self storage", "self storage lien notice mailing"],
-    "ogTitle": "Self Storage Mailing — Proof Every Letter",
-    "ogDescription": "Streamline late fee notices, lien notifications, rent reminders — automated, verified, compliant.",
+    "title": "Self Storage Mailing — Automated Lien Notices & Tenant Communications",
+    "description": "Automate self storage mailing for lien notices, late fee notices, rent reminders from $1.31/letter with address verification, proof of mailing, and real-time tracking.",
+    "keywords": ["self storage mailing service", "automated mailing for self storage", "self storage lien notice mailing", "self storage certified mail", "storage facility tenant notices"],
+    "ogTitle": "Self Storage Mailing Service — Proof Every Letter",
+    "ogDescription": "Automate lien notices, late fee notices, and tenant communications with secure upload, address verification, proof of mailing, and real-time tracking.",
     "ogImage": "/self-storage/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://self-storage.postalocity.com"
@@ -32,7 +32,7 @@
   "content": {
     "hero": {
       "headline": { "main": "Self Storage Mailing Service", "highlightTerm": "Proof Every Letter" },
-      "subhead": "Automate late fee notices, lien notifications, rent reminders, compliance mailings — secure upload, verification, proof & tracking.",
+      "subhead": "Automate tenant communications at your self-storage facility — from late fee notices and lien notifications to rent reminders and auction announcements. Upload PDFs, verify addresses in real-time, and track every piece with proof of mailing included.",
       "background": { "image": "/self-storage/images/self-storage-hero.jpg", "overlay": true },
       "ctas": [
         { "text": "Get Started — $1.31/letter", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026", "variant": "primary" },
@@ -40,49 +40,51 @@
       ]
     },
     "benefits": {
-      "section": { "title": "Why Choose Postalocity", "description": "Save time & stay compliant with automated mailing." },
+      "section": { "title": "Why Self-Storage Operators Choose Postalocity", "description": "Streamline tenant communications while maintaining compliance — save hours weekly on mailing tasks." },
       "benefits": [
-        { "icon": "clock", "title": "Save Time", "description": "No post office trips — upload & approve.", "detail": "We print, fold, stuff & mail." },
-        { "icon": "map-pin", "title": "Fewer Returns", "description": "Real-time address verification.", "detail": "Catches errors pre-print." },
-        { "icon": "shield", "title": "Proof Every Letter", "description": "Digital proof included.", "detail": "Certified upgrade for tracking." },
-        { "icon": "file-text", "title": "Secure & Compliant", "description": "ISO 9001 protected handling.", "detail": "Encrypted uploads." }
+        { "icon": "clock", "title": "Reclaim Operational Hours", "description": "Eliminate manual envelope stuffing and post office runs. Upload tenant documents, approve, and we handle printing, folding, stuffing, sealing, and mailing.", "detail": "Staff previously spending hours on mailing can focus on tenant relations and facility management." },
+        { "icon": "map-pin", "title": "Reduce Returned Mail", "description": "Real-time address verification catches invalid addresses before printing — dramatically reducing undeliverable mail and ensuring critical notices reach tenants.", "detail": "Reduces returned mail by up to 40% in high-volume scenarios, preventing compliance issues with lien deadlines." },
+        { "icon": "shield", "title": "Proof of Mailing Every Letter", "description": "Every mailing includes digital proof of mailing — essential for lien compliance and tenant disputes. Upgrade to Certified Mail for full USPS tracking with delivery confirmation.", "detail": "Meets state legal requirements for lien notices and auction notifications." },
+        { "icon": "file-text", "title": "Secure & Compliant Handling", "description": "ISO 9001 documented processes protect sensitive tenant information. Encrypted file transfers and secure processing ensure data compliance.", "detail": "Your tenant data stays protected from upload through delivery." }
       ]
     },
     "comparison": {
-      "section": { "title": "Postalocity vs Traditional Mailing", "description": "Automated vs in-house." },
+      "section": { "title": "Postalocity vs Traditional Self-Storage Mailing", "description": "See how automated mailing compares to in-house processing for facility operations." },
       "columns": { "traditional": "Traditional", "ourSolution": "Postalocity" },
       "rows": [
-        { "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
-        { "feature": "Proof of Mailing", "ourSolution": "Digital every letter", "traditionalApproach": "Post office receipt" },
-        { "feature": "Processing", "ourSolution": "Same-day approved", "traditionalApproach": "Daily trips" },
-        { "feature": "Cost", "ourSolution": "$1.31 all-inclusive", "traditionalApproach": "Equipment, postage, labor" }
+        { "feature": "Address Verification", "ourSolution": "Real-time USPS verification included", "traditionalApproach": "Manual address checks or none" },
+        { "feature": "Proof of Mailing", "ourSolution": "Digital proof on every letter", "traditionalApproach": "Post office receipt only" },
+        { "feature": "Processing Time", "ourSolution": "Same-day after approval", "traditionalApproach": "Daily trips to post office" },
+        { "feature": "Lien Compliance", "ourSolution": "Documented proof for legal requirements", "traditionalApproach": "Manual documentation" },
+        { "feature": "Cost per Letter", "ourSolution": "$1.31 includes everything", "traditionalApproach": "Equipment, postage, labor" }
       ]
     },
     "services": {
-      "section": { "title": "Self Storage Use Cases", "description": "Routine to compliance mailings." },
+      "section": { "title": "Self Storage Mailing Use Cases", "description": "From routine rent reminders to legally required lien notices — handle all tenant communications professionally." },
       "services": [
-        { "icon": "bell", "title": "Late Fee Notices", "description": "Automated with proof & verification." },
-        { "icon": "file", "title": "Lien Notifications", "description": "Compliance notices with documentation." },
-        { "icon": "calendar", "title": "Rent Reminders", "description": "Recurring comms, consistent format." },
-        { "icon": "mail", "title": "Auction Notices", "description": "Verifiable notices & records." }
+        { "icon": "bell", "title": "Late Fee & Delinquency Notices", "description": "Automate delinquent tenant notifications with verified addresses and documented proof of mailing for compliance." },
+        { "icon": "file", "title": "Lien Notifications", "description": "Meet state-specific lien requirements with documented proof of mailing — essential for legal compliance." },
+        { "icon": "calendar", "title": "Rent Reminders", "description": "Send consistent, professional rent reminders on schedule with template-based formatting." },
+        { "icon": "mail", "title": "Auction Notices", "description": "Deliver auction notices with verifiable proof of service for legal documentation." }
       ]
     },
     "difference": {
-      "section": { "title": "Postalocity Difference", "description": "What sets us apart." },
+      "section": { "title": "Postalocity Difference", "description": "What sets us apart for self-storage operators." },
       "differences": [
-        { "icon": "shield", "title": "Proof on Every Letter", "description": "Every letter includes proof of mailing. Certified upgrade available for tracking." },
+        { "icon": "shield", "title": "Proof on Every Letter", "description": "Every letter includes proof of mailing. Certified upgrade available for full tracking." },
         { "icon": "eye", "title": "Real-time Dashboard", "description": "Track mailing status instantly — know exactly when each letter mails." },
         { "icon": "map-pin", "title": "Address Verification", "description": "Built-in verification reduces returns by catching inaccurate addresses." },
         { "icon": "clock", "title": "Same-Day Processing", "description": "Approve by noon CT for same-day processing." }
       ]
     },
     "faq": {
-      "section": { "title": "FAQ", "description": "Proof, pricing & more." },
+      "section": { "title": "FAQ", "description": "Common questions about self-storage mailing." },
       "faqs": [
-        { "q": "Proof included?", "a": "Yes — every letter. Certified upgrade for tracking." },
-        { "q": "Address verification?", "a": "Yes — built-in, reduces returns." },
-        { "q": "Starting price?", "a": "$1.31/letter (1-page B&W, envelope + postage)." },
-        { "q": "Processing time?", "a": "Same-day if approved by noon CT." }
+        { "q": "What tenant communications can you process?", "a": "We handle late fee notices, lien notifications, rent reminders, auction notices, and any communications requiring proof of mailing." },
+        { "q": "Is proof of mailing included?", "a": "Yes — every letter includes proof of mailing. Certified upgrade available for full USPS tracking." },
+        { "q": "Is address verification included?", "a": "Yes — built-in address verification reduces returns and ensures tenant notices reach the correct address." },
+        { "q": "How does this help with lien compliance?", "a": "Proof of mailing provides documented evidence of notification, critical for lien proceedings. Certified Mail adds delivery confirmation." },
+        { "q": "What is the starting price?", "a": "$1.31/letter (1-page B&W, envelope + postage). Certified upgrade available for full tracking." }
       ]
     },
     "trustSignals": {
