@@ -1,10 +1,10 @@
 /**
  * Debt Collection Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-16T18:36:40.033Z
+ * Generated at: 2026-03-16T18:39:28.406Z
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, TrustedBySection } from '../common/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection } from '../common/components/shared';
 import SiteNavigation from '../common/components/shared/SiteNavigation';
 import SiteFooter from '../common/components/shared/SiteFooter';
 import '../common/globals.css';
@@ -21,7 +21,6 @@ function App() {
       <ServicesSection services={content.services} />
       {content.difference && <DifferenceSection difference={content.difference} />}
       {content.trustSignals && <TrustBadgesSection trustSignals={content.trustSignals} />}
-      {content.trustedBy && <TrustedBySection trustedBy={content.trustedBy} />}
       <FAQSection faq={content.faq} />
       <SiteFooter config={config} />
     </>
