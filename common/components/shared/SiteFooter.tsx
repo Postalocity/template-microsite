@@ -103,9 +103,16 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-background/10 gap-4">
-          <p className="text-background/50 text-sm">
-            © {new Date().getFullYear()} Postalocity. All rights reserved.
-          </p>
+          <div>
+            <p className="text-background/50 text-sm">
+              © {new Date().getFullYear()} Postalocity. All rights reserved.
+            </p>
+            {footer.disclaimer && (
+              <p className="text-background/40 text-xs mt-2">
+                {footer.disclaimer}
+              </p>
+            )}
+          </div>
           <button
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
