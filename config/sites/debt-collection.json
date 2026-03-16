@@ -248,7 +248,7 @@
     },
     "difference": {
       "section": {
-        "title": "The Postalocity Difference",
+        "title": "*Less than 100 pieces. Max 2 pages per piece. Standard #10 envelope. First-Class mail only.",
         "description": "What sets our debt collection mailing services apart from traditional in-house operations."
       },
       "background": "dark",
@@ -335,11 +335,6 @@
           "verified": true
         }
       ]
-    },
-    "trustedBy": {
-      "section": {
-        "title": "*Less than 100 pieces. Max 2 pages per piece. Standard #10 envelope. First-Class mail only."
-      }
     },
     "footer": {
       "finalCTA": {
