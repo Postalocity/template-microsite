@@ -37,6 +37,11 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
         >
           {footer.finalCTA.buttonText}
         </a>
+        {footer.disclaimer && (
+          <p className="text-background/40 text-xs mt-6">
+            {footer.disclaimer}
+          </p>
+        )}
       </div>
 
       <div className="section-container py-12">
