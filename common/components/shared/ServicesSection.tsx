@@ -24,7 +24,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
   } : {};
 
   return (
-    <section id="services" className="section-padding bg-section-alt" ref={ref}>
+    <section id="services" className="section-padding" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -248,6 +248,30 @@
         }
       ]
     },
+    "difference": {
+      "section": {
+        "title": "The Postalocity Difference",
+        "description": "What sets our debt collection mailing services apart from traditional in-house operations."
+      },
+      "background": "dark",
+      "differences": [
+        {
+          "icon": "shield",
+          "title": "Proof of Mailing. Every Letter.",
+          "description": "Real-time USPS tracking on every letter provides documented proof of submission and mailing for FDCPA compliance and audit requirements."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification Included",
+          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned mail and ensuring critical notices reach consumers."
+        },
+        {
+          "icon": "clock",
+          "title": "Same-Day Processing",
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips."
+        }
+      ]
+    },
     "faq": {
       "section": {
         "title": "Common Questions About Debt Collection Mailing",

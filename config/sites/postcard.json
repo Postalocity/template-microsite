@@ -171,6 +171,35 @@
         }
       ]
     },
+    "trustSignals": {
+      "section": {
+        "title": "Quality Standards & Certifications",
+        "description": "Industry-standard verification processes and documented quality management ensuring reliable delivery."
+      },
+      "signals": [
+        {
+          "type": "certification",
+          "name": "NCOA Verified",
+          "organization": "National Change of Address",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "CASS Certified",
+          "organization": "Coding Accuracy Support System",
+          "year": "2024",
+          "verified": true
+        },
+        {
+          "type": "certification",
+          "name": "ISO 9001",
+          "organization": "International Organization for Standardization",
+          "year": "2023",
+          "verified": true
+        }
+      ]
+    },
     "about": {
       "section": {
         "title": "About Postalocity",

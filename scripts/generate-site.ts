@@ -738,12 +738,12 @@ function generateIndexHtml(config: SiteConfig): string {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${config.seo?.title || `${site.name} | ${config.branding.tagline}`}</title>
     <meta name="description" content="${config.seo?.description || config.content?.hero?.subhead}" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="${config.seo?.canonicalUrl || canonicalUrl}" />
+    <link rel="sitemap" type="application/xml" href="${canonicalUrl}/sitemap.xml" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

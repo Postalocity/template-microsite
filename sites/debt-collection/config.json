@@ -42,7 +42,7 @@
     "domain": "postalcity.com",
     "basename": "/debt-collection",
     "contact": {
-      "email": "helpdesk@postalcity.com",
+      "email": "contact@postalocity.com",
       "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
@@ -245,6 +245,30 @@
           "icon": "file-text",
           "title": "Document Variety",
           "description": "Mail all collection document types including collection notices, validation letters, payment reminders, cease communications, and affidavits. Single platform for your entire document volume."
+        }
+      ]
+    },
+    "difference": {
+      "section": {
+        "title": "The Postalocity Difference",
+        "description": "What sets our debt collection mailing services apart from traditional in-house operations."
+      },
+      "background": "dark",
+      "differences": [
+        {
+          "icon": "shield",
+          "title": "Proof of Mailing. Every Letter.",
+          "description": "Real-time USPS tracking on every letter provides documented proof of submission and mailing for FDCPA compliance and audit requirements."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification Included",
+          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned mail and ensuring critical notices reach consumers."
+        },
+        {
+          "icon": "clock",
+          "title": "Same-Day Processing",
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips."
         }
       ]
     },

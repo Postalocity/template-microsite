@@ -7,6 +7,8 @@ interface SiteFooterProps {
 
 const SiteFooter = ({ config }: SiteFooterProps) => {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const site = config.site || {};
+  const contact = site.contact || {};
   const footer = config.footer || {
     finalCTA: {
       headline: 'Ready to Automate Your Mail Processing?',
@@ -73,7 +75,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
               </li>
               <li className="flex items-center gap-2 text-background/70">
                 <Mail className="w-4 h-4" />
-                <a href="mailto:helpdesk@postalocity.com" className="hover:text-background transition-colors">helpdesk@postalocity.com</a>
+                <a href={`mailto:${contact.email}`} className="hover:text-background transition-colors">{contact.email}</a>
               </li>
               <li className="flex items-start gap-2 text-background/70 mt-2">
                 <MapPin className="w-4 h-4 mt-0.5" />

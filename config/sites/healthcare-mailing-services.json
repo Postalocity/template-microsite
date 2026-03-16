@@ -348,6 +348,30 @@
         }
       ]
     },
+    "difference": {
+      "section": {
+        "title": "The Postalocity Difference",
+        "description": "What sets our healthcare mailing services apart from traditional in-house operations."
+      },
+      "background": "dark",
+      "differences": [
+        {
+          "icon": "shield",
+          "title": "HIPAA-Compliant Processing",
+          "description": "Secure handling of protected health information with documented compliance processes and encrypted data transmission."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Address Verification Included",
+          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned statements and ensuring critical communications reach patients."
+        },
+        {
+          "icon": "clock",
+          "title": "Same-Day Processing",
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips."
+        }
+      ]
+    },
     "faq": {
       "section": {
         "title": "Common Questions",
