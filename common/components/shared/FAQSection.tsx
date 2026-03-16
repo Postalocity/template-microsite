@@ -5,12 +5,14 @@ import { sanitizeHtml } from "../../utils/sanitize-html";
 
 const defaultFaqs = [];
 
-const FAQSection = (faqContent?: { faqs?: Array<{ q: string; a: string }> }) => {
+const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: string }> }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const faqs = faqContent?.faqs ?? defaultFaqs;
+  // Handle both direct faqs array or wrapped { faq: { section, faqs } } format
+  const faqData = faqContent?.faqs ? faqContent : (faqContent as any)?.faq;
+  const faqs = faqData?.faqs ?? defaultFaqs;
 
   return (
     <section id="faq" className="section-padding bg-background" ref={ref}>
