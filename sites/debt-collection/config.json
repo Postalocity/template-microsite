@@ -282,28 +282,32 @@
       },
       "faqs": [
         {
-          "q": "What types of debt collection letters can be processed?",
-          "a": "The platform handles collection notices, validation letters, payment reminders, cease communications, and certified mail where proof of mailing is required."
+          "q": "How fast can I get dispute letters mailed?",
+          "a": "Upload and approve by noon CT for same-day processing. Letters ship the same day via First-Class mail. *Restrictions apply: less than 100 pieces, max 2 pages per piece, standard #10 envelope."
         },
         {
-          "q": "What is the difference between First-Class and Certified Mail?",
-          "a": "First-Class Mail includes proof of mailing (certificate of mailing) at no extra cost—shows when and where you mailed it. Certified Mail adds full USPS tracking with delivery confirmation and signature required—ideal for disputed debts where proof of delivery matters."
-        },
-        {
-          "q": "Is address verification included?",
-          "a": "Yes — address verification is built-in and included with every mailing to help reduce returned mail and associated rework."
-        },
-        {
-          "q": "Does every letter include tracking?",
-          "a": "Every letter includes proof of mailing. Upgrade to Certified Mail for full USPS tracking with delivery confirmation."
-        },
-        {
-          "q": "How does this support audit documentation needs?",
-          "a": "Mailing records provide verifiable proof of submission (ISO 9001 documented processes). Precise PDF templates help maintain consistent notice content. Certified Mail adds full tracking with delivery confirmation."
-        },
-        {
-          "q": "What is the starting price?",
+          "q": "How much does a dispute letter mailing cost?",
           "a": "Processing starts at $1.31 per letter (1-page, single-sided, black & white, including envelope and First-Class postage). Upgrade to Certified Mail for full USPS tracking with proof of delivery."
+        },
+        {
+          "q": "How does Postalocity integrate with my credit repair software?",
+          "a": "Simply upload your PDF letters through our platform—no software integration required. Just upload, verify addresses, approve, and we handle the rest."
+        },
+        {
+          "q": "What mail classes and options do you support?",
+          "a": "We support First-Class Mail (includes proof of mailing) and Certified Mail (adds full USPS tracking, delivery confirmation, and signature required). Both include address verification."
+        },
+        {
+          "q": "How does address verification work?",
+          "a": "Address verification is built-in and included with every mailing. We check addresses against USPS databases before printing to reduce returned mail and ensure critical notices reach consumers."
+        },
+        {
+          "q": "What volume can Postalocity handle?",
+          "a": "From 1 to 100,000+ letters. Same-day processing available for orders under 100 pieces. High-volume orders ship within 1-2 business days."
+        },
+        {
+          "q": "Is the mailing process for dispute letters secure?",
+          "a": "Yes. We maintain ISO 9001 documented processes, use secure PDF handling, and never share your client data. All mailing records provide verifiable proof of submission."
         }
       ]
     },
