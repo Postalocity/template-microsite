@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://postalcity.com/debt-collection/sitemap.xml
+Sitemap: https://postalocity.com/debt-collection/sitemap.xml
