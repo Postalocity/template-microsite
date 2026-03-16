@@ -229,7 +229,7 @@ async function generateOgImages(siteDir: string, config: SiteConfig): Promise<vo
   const heroSourcePaths: Record<string, string> = {
     // Map industry-specific image paths
     'credit-repair': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
-    'debt-collection': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
+    'debt-collection': path.join(TEMPLATE_DIR, 'common/assets/debt-collection/hero-debt-collection.png'),
     'healthcare-billing': path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),
     'healthcare-mailing-services': path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),
     'software-billing': path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'),
