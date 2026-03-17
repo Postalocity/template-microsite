@@ -69,12 +69,11 @@
       { "label": "Services", "href": "#services" },
       { "label": "FAQ", "href": "#faq" }
     ],
-    "cta": {
-      "text": "Start Automating",
-      "subtext": "Reclaim hours weekly",
-      "href": "#contact",
-      "variant": "primary"
-    }
+"cta": {
+    "text": "Start at $1.31",
+    "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026",
+    "variant": "primary"
+  }
   },
   "content": {
     "hero": {

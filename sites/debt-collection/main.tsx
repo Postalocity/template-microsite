@@ -1,6 +1,6 @@
 /**
  * Debt Collection Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-17T13:38:35.006Z
+ * Generated at: 2026-03-17T13:46:57.002Z
  */
 
 import { createRoot } from 'react-dom/client';
@@ -10,14 +10,25 @@ import SiteFooter from '../common/components/shared/SiteFooter';
 import '../common/globals.css';
 import config from './config.json';
 
+// Promo code mapping for each site
+const promoCodeMap: Record<string, string> = {
+  'credit-repair': 'cr2026',
+  'debt-collection': 'debt2026',
+  'healthcare-billing': 'hb2026',
+  'healthcare-mailing-services': 'hm2026',
+  'postcard': 'pc2026',
+  'self-storage': 'pm2026',
+};
+
 function App() {
   const { content } = config;
+  const promoCode = promoCodeMap['debt-collection'] || '2026';
   return (
     <>
       <SiteNavigation config={config} />
       <HeroSection hero={content.hero} />
       <BenefitsSection benefits={content.benefits} />
-      {content.comparison && <ComparisonTable comparison={content.comparison} promoCode="debt-collection2026" />}
+      {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
       <ServicesSection services={content.services} />
       {content.difference && <DifferenceSection difference={content.difference} />}
       {content.trustSignals && <TrustBadgesSection trustSignals={content.trustSignals} />}
