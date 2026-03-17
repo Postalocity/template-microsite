@@ -1,6 +1,6 @@
 /**
  * Healthcare Billing Solutions - Generated from template-microsite
- * Generated at: 2026-03-17T14:55:49.662Z
+ * Generated at: 2026-03-17T14:57:54.222Z
  */
 
 import { createRoot } from 'react-dom/client';
