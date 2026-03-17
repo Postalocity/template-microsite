@@ -27,7 +27,7 @@ const defaultNavLinks = [
   { label: 'FAQ', href: '#faq' },
 ];
 
-const SiteNavigation = (config?: NavConfig) => {
+const SiteNavigation = ({ config }: { config?: NavConfig }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
