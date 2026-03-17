@@ -34,7 +34,16 @@ const SiteNavigation = (config?: NavConfig) => {
   const navLinks = config?.navigation?.links ?? defaultNavLinks;
   const cta = config?.navigation?.cta;
   
-  // Get promo code from site slug for fallback
+  // Extract promo code from existing CTA href if present
+  const getPromoFromHref = (href: string): string => {
+    const match = href.match(/[?&]promo=([^&]+)/);
+    return match?.[1] ?? '';
+  };
+  
+  // Get promo code - from CTA href, or fallback to slug-based mapping
+  const existingPromo = cta?.href ? getPromoFromHref(cta.href) : '';
+  
+  // Site slug fallback mapping
   const siteSlug = config?.site?.slug || '';
   const promoCodeMap: Record<string, string> = {
     'credit-repair': 'cr2026',
@@ -44,13 +53,15 @@ const SiteNavigation = (config?: NavConfig) => {
     'postcard': 'pc2026',
     'self-storage': 'pm2026',
   };
-  const defaultPromo = promoCodeMap[siteSlug] || '2026';
-  
-  // Build CTA with promo code if href doesn't have one
-  const getCtaHref = (href: string) => {
+  const fallbackPromo = promoCodeMap[siteSlug] || '';
+  const promoCode = existingPromo || fallbackPromo;
+
+  // Build CTA href with promo code
+  const getCtaHref = (href: string): string => {
     if (href.includes('promo=')) return href;
+    if (!promoCode) return href;
     const separator = href.includes('?') ? '&' : '?';
-    return `${href}${separator}promo=${defaultPromo}`;
+    return `${href}${separator}promo=${promoCode}`;
   };
 
   // Handle smooth scroll to section when link is clicked
@@ -122,7 +133,7 @@ const SiteNavigation = (config?: NavConfig) => {
             </a>
           ) : (
             <a
-              href={`https://prod.postalocity.com/login.html?signUp=true&promo=${defaultPromo}`}
+              href={`https://prod.postalocity.com/login.html?signUp=true${promoCode ? '&promo=' + promoCode : ''}`}
               rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
             >
@@ -174,7 +185,7 @@ const SiteNavigation = (config?: NavConfig) => {
                 </a>
               ) : (
                 <a
-                  href={`https://prod.postalocity.com/login.html?signUp=true&promo=${defaultPromo}`}
+                  href={`https://prod.postalocity.com/login.html?signUp=true${promoCode ? '&promo=' + promoCode : ''}`}
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
                 >
