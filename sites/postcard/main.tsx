@@ -1,6 +1,6 @@
 /**
  * Postalocity Postcard - Generated from template-microsite
- * Generated at: 2026-03-17T14:00:46.483Z
+ * Generated at: 2026-03-17T14:03:02.040Z
  */
 
 import { createRoot } from 'react-dom/client';

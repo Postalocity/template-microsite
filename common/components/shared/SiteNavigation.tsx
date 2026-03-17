@@ -4,6 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import postalocityLogo from '@/assets/postalocity-logo.png';
 
 type NavConfig = {
+  site?: {
+    slug?: string;
+  };
   navigation?: {
     links?: Array<{ label: string; href: string }>;
     cta?: {
@@ -32,7 +35,7 @@ const SiteNavigation = (config?: NavConfig) => {
   const cta = config?.navigation?.cta;
   
   // Get promo code from site slug for fallback
-  const siteSlug = (config as any)?.site?.slug || '';
+  const siteSlug = config?.site?.slug || '';
   const promoCodeMap: Record<string, string> = {
     'credit-repair': 'cr2026',
     'debt-collection': 'debt2026',
