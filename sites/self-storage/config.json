@@ -74,7 +74,7 @@
         { "icon": "shield", "title": "Proof on Every Letter", "description": "Every letter includes proof of mailing. Certified upgrade available for full tracking." },
         { "icon": "eye", "title": "Real-time Dashboard", "description": "Track mailing status instantly — know exactly when each letter mails." },
         { "icon": "map-pin", "title": "Address Verification", "description": "Built-in verification reduces returns by catching inaccurate addresses." },
-        { "icon": "clock", "title": "Same-Day Processing", "description": "Approve by noon CT for same-day processing." }
+        { "icon": "clock", "title": "Same-Day Processing", "description": "Approve by noon CT for same-day processing. *Restrictions apply." }
       ]
     },
     "faq": {
