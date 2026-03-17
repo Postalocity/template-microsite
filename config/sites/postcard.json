@@ -54,7 +54,7 @@
     "cta": {
       "text": "Get Started",
       "subtext": "Start Mailing",
-      "href": "#contact",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pc2026",
       "variant": "primary"
     }
   },
@@ -73,7 +73,7 @@
         {
           "text": "Start Your Campaign",
           "subtext": "No minimums",
-          "href": "#contact",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pc2026",
           "variant": "primary"
         },
         {

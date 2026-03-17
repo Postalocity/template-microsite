@@ -100,7 +100,7 @@ const SiteNavigation = (config?: NavConfig) => {
             </a>
           ) : (
             <a
-              href="https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+              href="https://prod.postalocity.com/login.html?signUp=true"
               rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
             >
@@ -152,7 +152,7 @@ const SiteNavigation = (config?: NavConfig) => {
                 </a>
               ) : (
                 <a
-                  href="https://prod.postalocity.com/login.html?signUp=true&promo=bank2026"
+                  href="https://prod.postalocity.com/login.html?signUp=true"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
                 >

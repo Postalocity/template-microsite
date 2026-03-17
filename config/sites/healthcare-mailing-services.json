@@ -70,7 +70,7 @@
     "cta": {
       "text": "Get Started",
       "subtext": "Free consultation",
-      "href": "#contact",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=hm2026",
       "variant": "primary"
     }
   },
@@ -93,7 +93,7 @@
         {
           "text": "Free Audit",
           "subtext": "45-minute session",
-          "href": "#contact",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=hm2026",
           "variant": "primary"
         },
         {
