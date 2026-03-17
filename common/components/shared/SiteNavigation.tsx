@@ -34,17 +34,10 @@ const SiteNavigation = (config?: NavConfig) => {
   const navLinks = config?.navigation?.links ?? defaultNavLinks;
   const cta = config?.navigation?.cta;
   
-  // Get promo code from site slug
-  const siteSlug = (config as any)?.site?.slug || '';
-  const promoCodeMap: Record<string, string> = {
-    'credit-repair': 'cr2026',
-    'debt-collection': 'debt2026',
-    'healthcare-billing': 'hb2026',
-    'healthcare-mailing-services': 'hm2026',
-    'postcard': 'pc2026',
-    'self-storage': 'pm2026',
-  };
-  const promoCode = promoCodeMap[siteSlug] || '2026';
+  // Get promo code from navigation CTA href if present
+  const ctaHref = cta?.href || '';
+  const promoMatch = ctaHref.match(/promo=([^&]+)/);
+  const promoCode = promoMatch ? promoMatch[1] : '2026';
 
   // Handle smooth scroll to section when link is clicked
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
