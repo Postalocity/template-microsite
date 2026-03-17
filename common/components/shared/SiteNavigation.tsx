@@ -36,8 +36,14 @@ const SiteNavigation = (config?: NavConfig) => {
   
   // Get promo code from navigation CTA href if present
   const ctaHref = cta?.href || '';
-  const promoMatch = ctaHref.match(/promo=([^&]+)/);
-  const promoCode = promoMatch ? promoMatch[1] : '2026';
+  let promoCode = '2026';
+  if (ctaHref.includes('promo=')) {
+    const parts = ctaHref.split('promo=');
+    const nextPart = parts[1]?.split('&')[0];
+    if (nextPart) {
+      promoCode = nextPart;
+    }
+  }
 
   // Handle smooth scroll to section when link is clicked
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {

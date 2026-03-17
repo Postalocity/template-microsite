@@ -1,6 +1,6 @@
 /**
  * Healthcare Mail Services - Generated from template-microsite
- * Generated at: 2026-03-17T15:03:13.982Z
+ * Generated at: 2026-03-17T15:05:27.816Z
  */
 
 import { createRoot } from 'react-dom/client';

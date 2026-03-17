@@ -1,6 +1,6 @@
 /**
  * Self Storage Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-17T15:03:14.828Z
+ * Generated at: 2026-03-17T15:05:28.714Z
  */
 
 import { createRoot } from 'react-dom/client';
