@@ -30,6 +30,25 @@ const SiteNavigation = (config?: NavConfig) => {
 
   const navLinks = config?.navigation?.links ?? defaultNavLinks;
   const cta = config?.navigation?.cta;
+  
+  // Get promo code from site slug for fallback
+  const siteSlug = (config as any)?.site?.slug || '';
+  const promoCodeMap: Record<string, string> = {
+    'credit-repair': 'cr2026',
+    'debt-collection': 'debt2026',
+    'healthcare-billing': 'hb2026',
+    'healthcare-mailing-services': 'hm2026',
+    'postcard': 'pc2026',
+    'self-storage': 'pm2026',
+  };
+  const defaultPromo = promoCodeMap[siteSlug] || '2026';
+  
+  // Build CTA with promo code if href doesn't have one
+  const getCtaHref = (href: string) => {
+    if (href.includes('promo=')) return href;
+    const separator = href.includes('?') ? '&' : '?';
+    return `${href}${separator}promo=${defaultPromo}`;
+  };
 
   // Handle smooth scroll to section when link is clicked
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -92,7 +111,7 @@ const SiteNavigation = (config?: NavConfig) => {
           ))}
           {cta ? (
             <a
-              href={cta.href}
+              href={getCtaHref(cta.href)}
               rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
             >
@@ -100,7 +119,7 @@ const SiteNavigation = (config?: NavConfig) => {
             </a>
           ) : (
             <a
-              href="https://prod.postalocity.com/login.html?signUp=true"
+              href={`https://prod.postalocity.com/login.html?signUp=true&promo=${defaultPromo}`}
               rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
             >
@@ -144,7 +163,7 @@ const SiteNavigation = (config?: NavConfig) => {
               ))}
               {cta ? (
                 <a
-                  href={cta.href}
+                  href={getCtaHref(cta.href)}
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
                 >
@@ -152,7 +171,7 @@ const SiteNavigation = (config?: NavConfig) => {
                 </a>
               ) : (
                 <a
-                  href="https://prod.postalocity.com/login.html?signUp=true"
+                  href={`https://prod.postalocity.com/login.html?signUp=true&promo=${defaultPromo}`}
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
                 >
