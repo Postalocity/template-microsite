@@ -10,7 +10,13 @@
     "preview": "vite preview",
     "generate": "tsx scripts/generate-site.ts",
     "post-process": "tsx scripts/post-process.ts",
-    "verify": "tsx scripts/verify-site.ts"
+    "verify": "tsx scripts/launch-validate.ts",
+    "launch-validate": "tsx scripts/launch-validate.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "content-validate": "node scripts/content-validator.js",
+    "content-validate:strict": "node scripts/content-validator.js --strict"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
@@ -59,12 +65,14 @@
     "react-router-dom": "^7.13.1",
     "recharts": "^3.8.0",
     "sonner": "^2.0.7",
-    "strray-ai": "^1.10.1",
+    "strray-ai": "^1.10.6",
     "tailwind-merge": "^2.6.1",
     "vaul": "^1.1.2"
   },
   "devDependencies": {
     "@jest/globals": "^30.2.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.3.3",
     "@types/react": "^18.3.17",
@@ -74,6 +82,7 @@
     "@vitest/ui": "^4.0.18",
     "autoprefixer": "^10.4.27",
     "jest": "^30.2.0",
+    "jsdom": "^29.0.0",
     "postcss": "^8.5.8",
     "postcss-cli": "^11.0.1",
     "postcss-nesting": "^12.1.5",

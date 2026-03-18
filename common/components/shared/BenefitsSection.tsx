@@ -59,7 +59,12 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                     </div>
                     <CardTitle className="text-xl">{benefit.title}</CardTitle>
                     <CardDescription className="text-base mt-2">
-                      {benefit.detail}
+                      {benefit.description}
+                      {benefit.detail && (
+                        <span className="block mt-2 font-medium text-primary/80">
+                          {benefit.detail}
+                        </span>
+                      )}
                     </CardDescription>
                     {benefit.metrics && (
                       <div className="text-base font-semibold text-primary mt-4">
