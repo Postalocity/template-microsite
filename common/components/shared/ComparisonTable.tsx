@@ -128,8 +128,8 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
 
                   return (
                     <tr key={row.feature}>
-                      <td className={`py-4 px-4 font-medium flex items-center gap-3 ${isEnvelopeRow ? 'text-foreground' : 'text-foreground'}`}>
-                        {Icon && !isEnvelopeRow && <div className="flex-shrink-0 text-primary">{Icon}</div>}
+                      <td className="py-4 px-4 font-medium flex items-center gap-3">
+                        {Icon && <div className="flex-shrink-0 text-primary">{Icon}</div>}
                         {row.feature}
                       </td>
                       <td className="py-4 px-4 text-center text-muted-foreground border border-border">
