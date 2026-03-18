@@ -527,13 +527,13 @@ function generateIndexFile(config: SiteConfig, brandConfig?: object, contactConf
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '../../common/components/shared';
-import SiteNavigation from '../../common/components/shared/SiteNavigation';
-import SiteFooter from '../../common/components/shared/SiteFooter';
-import FloatingCTA from '../../common/components/shared/FloatingCTA';
-import { BrandProvider } from '../../common/contexts/BrandContext';
-import { IKBProvider } from '../../common/contexts/IKBContext';
-import '../../common/globals.css';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '@/components/shared';
+import SiteNavigation from '@/components/shared/SiteNavigation';
+import SiteFooter from '@/components/shared/SiteFooter';
+import FloatingCTA from '@/components/shared/FloatingCTA';
+import { BrandProvider } from '@/contexts/BrandContext';
+import { IKBProvider } from '@/contexts/IKBContext';
+import '@/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
@@ -635,11 +635,11 @@ function generateViteConfig(basename: string): string {
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  base: '${basename}',
+  base: '/${basename}',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../../common'),
-      '../common': path.resolve(__dirname, '../../common'),
+      '@': path.resolve(__dirname, '../../../common'),
+      '@/': path.resolve(__dirname, '../../../common') + '/',
     },
     dedupe: ['react', 'react-dom'],
   },

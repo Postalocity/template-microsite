@@ -5,11 +5,11 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  base: 'postalocity-postcard',
+  base: '/postalocity-postcard',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '../../common'),
-      '../common': path.resolve(__dirname, '../../common'),
+      '@': path.resolve(__dirname, '../../../common'),
+      '@/': path.resolve(__dirname, '../../../common') + '/',
     },
     dedupe: ['react', 'react-dom'],
   },

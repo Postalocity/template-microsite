@@ -1,17 +1,17 @@
 /**
  * Debt Collection Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-18T17:10:05.366Z
+ * Generated at: 2026-03-18T17:12:44.693Z
  * Brand: Postalocity
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '../../common/components/shared';
-import SiteNavigation from '../../common/components/shared/SiteNavigation';
-import SiteFooter from '../../common/components/shared/SiteFooter';
-import FloatingCTA from '../../common/components/shared/FloatingCTA';
-import { BrandProvider } from '../../common/contexts/BrandContext';
-import { IKBProvider } from '../../common/contexts/IKBContext';
-import '../../common/globals.css';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '@/components/shared';
+import SiteNavigation from '@/components/shared/SiteNavigation';
+import SiteFooter from '@/components/shared/SiteFooter';
+import FloatingCTA from '@/components/shared/FloatingCTA';
+import { BrandProvider } from '@/contexts/BrandContext';
+import { IKBProvider } from '@/contexts/IKBContext';
+import '@/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
