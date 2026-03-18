@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  base: '/',
+  base: '/healthcare-billing',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../../../common'),

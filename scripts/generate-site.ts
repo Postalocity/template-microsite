@@ -388,7 +388,7 @@ async function generateSite(siteDir: string, config: SiteConfig) {
     fs.writeFileSync(path.join(siteDir, 'config.json'), JSON.stringify(config, null, 2));
 
     // Generate vite.config.ts
-    const viteConfigContent = generateViteConfig(site.basename);
+    const viteConfigContent = generateViteConfig(site.slug);
     fs.writeFileSync(path.join(siteDir, 'vite.config.ts'), viteConfigContent);
 
     // Copy postcss.config.js
@@ -627,7 +627,7 @@ root.render(<App />);
 `;
 }
 
-function generateViteConfig(basename: string): string {
+function generateViteConfig(serviceSlug: string): string {
   return `import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
@@ -635,7 +635,7 @@ function generateViteConfig(basename: string): string {
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  base: '/',
+  base: '/${serviceSlug}',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../../../common'),
