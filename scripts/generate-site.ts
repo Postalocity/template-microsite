@@ -2,26 +2,37 @@
 
 /**
  * Site Generation Script
- * Reads JSON config and generates microsite structure
+ * Multi-brand microsite generation platform
+ * 
+ * Usage:
+ *   npx ts-node scripts/generate-site.ts --brand postalocity --service credit-repair
+ *   npx ts-node scripts/generate-site.ts postalocity/credit-repair  (legacy)
  */
 
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { loadEngineContext, loadSiteConfig, listBrands, listServices } from '../engine/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+// Directory paths
+const ROOT_DIR = path.join(__dirname, '..');
+const CONFIGS_DIR = path.join(ROOT_DIR, 'config/sites/postalocity');  // Default to postalocity
+const SITES_DIR = path.join(ROOT_DIR, 'sites');
+const TEMPLATE_DIR = ROOT_DIR;
 
 /**
  * TypeScript interfaces for type safety (Codex #11)
  */
 interface SiteInfo {
-  id: string;
+  id?: string;
   name: string;
   slug: string;
-  domain: string;
+  domain?: string;
   basename: string;
-  contact: {
+  contact?: {
     email: string;
     phone: string;
     address: string;
@@ -118,9 +129,13 @@ interface SiteConfig {
         traditional: string;
       };
       rows: Array<{
-        icon: string;
+        icon?: string;
         feature: string;
-        ourSolution: string;
+        ourSolution: string | {
+          text: string;
+          highlight?: string;
+          isEnvelope?: boolean;
+        };
         traditionalApproach: string;
       }>;
     };
@@ -153,10 +168,6 @@ interface SiteConfig {
     tagline?: string;
   };
 }
-
-const CONFIGS_DIR = path.join(__dirname, '../config/sites');
-const SITES_DIR = path.join(__dirname, '../sites');
-const TEMPLATE_DIR = path.join(__dirname, '..');
 
 // Copy favicons from common/assets to all sites
 function copyFavicons(siteDir: string): void {
@@ -236,6 +247,7 @@ async function generateOgImages(siteDir: string, config: SiteConfig): Promise<vo
     'utility-billing': path.join(TEMPLATE_DIR, 'common/assets/utilities/hero-bg.jpg'),
     'international-mail': path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'),
     'postcard': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
+    'self-storage': path.join(TEMPLATE_DIR, 'common/assets/self-storage/hero-self-storage.jpg'),
   };
 
   // Get source hero image path based on site slug
@@ -356,14 +368,9 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
   }
 }
 
-async function generateSite(configPath: string) {
+async function generateSite(siteDir: string, config: SiteConfig) {
   try {
-    // Read configuration
-    const configContent = fs.readFileSync(configPath, 'utf-8');
-    const config = JSON.parse(configContent);
-
     const { site } = config;
-    const siteDir = path.join(SITES_DIR, site.slug);
 
     console.log(`Generating site: ${site.name}`);
     console.log(`Output directory: ${siteDir}`);
@@ -378,7 +385,7 @@ async function generateSite(configPath: string) {
     fs.writeFileSync(path.join(siteDir, 'main.tsx'), indexContent);
 
     // Copy config.json
-    fs.writeFileSync(path.join(siteDir, 'config.json'), configContent);
+    fs.writeFileSync(path.join(siteDir, 'config.json'), JSON.stringify(config, null, 2));
 
     // Generate vite.config.ts
     const viteConfigContent = generateViteConfig(site.basename);
@@ -463,45 +470,154 @@ async function generateSite(configPath: string) {
   }
 }
 
-function generateIndexFile(config: SiteConfig): string {
+function generateIndexFile(config: SiteConfig, brandConfig?: object, contactConfig?: object, socialConfig?: object): string {
   const { site } = config;
+  
+  // Default brand config for Postalocity (inline to avoid import issues)
+  const defaultBrand = {
+    id: 'postalocity',
+    name: 'Postalocity',
+    slug: 'postalocity',
+    domain: 'postalocity.com',
+    urls: {
+      app: 'https://prod.postalocity.com/login.html',
+      website: 'https://www.postalocity.com',
+      blog: 'https://www.postalocity.com/resources/blog/',
+      howWeHelp: 'https://www.postalocity.com/how-we-help/',
+      whoWeServe: 'https://www.postalocity.com/who-we-serve/',
+      contact: 'https://www.postalocity.com/contact/',
+      faq: 'https://www.postalocity.com/resources/faq/',
+    },
+    logo: {
+      filename: 'postalocity-logo.png',
+      alt: 'Postalocity - Direct Mail Automation',
+    },
+  };
+  
+  const defaultContact = {
+    phone: '316-260-2220',
+    email: 'support@postalocity.com',
+    address: {
+      street: '820 W 2nd St N',
+      city: 'Wichita',
+      state: 'KS',
+      zip: '67203',
+    },
+    hours: {
+      weekdays: '8:00 AM - 5:00 PM CST',
+      support: 'support@postalocity.com',
+    },
+  };
+  
+  const defaultSocial = {
+    twitter: 'https://twitter.com/postalocity',
+    linkedin: 'https://linkedin.com/company/postalocity',
+    facebook: 'https://facebook.com/postalocity',
+  };
+  
+  // Use provided configs or defaults
+  const brand = (brandConfig || defaultBrand) as typeof defaultBrand;
+  const contact = (contactConfig || defaultContact) as typeof defaultContact;
+  const social = (socialConfig || defaultSocial) as typeof defaultSocial;
+  
   return `/**
  * ${site.name} - Generated from template-microsite
  * Generated at: ${new Date().toISOString()}
+ * Brand: ${brand.name}
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection } from '../common/components/shared';
-import SiteNavigation from '../common/components/shared/SiteNavigation';
-import SiteFooter from '../common/components/shared/SiteFooter';
-import '../common/globals.css';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '../../common/components/shared';
+import SiteNavigation from '../../common/components/shared/SiteNavigation';
+import SiteFooter from '../../common/components/shared/SiteFooter';
+import FloatingCTA from '../../common/components/shared/FloatingCTA';
+import { BrandProvider } from '../../common/contexts/BrandContext';
+import { IKBProvider } from '../../common/contexts/IKBContext';
+import '../../common/globals.css';
 import config from './config.json';
 
-// Promo code mapping for each site
-const promoCodeMap: Record<string, string> = {
-  'credit-repair': 'cr2026',
-  'debt-collection': 'debt2026',
-  'healthcare-billing': 'hb2026',
-  'healthcare-mailing-services': 'hm2026',
-  'postcard': 'pc2026',
-  'self-storage': 'pm2026',
+// Brand configuration (from BrandContext defaults)
+const brandConfig = ${JSON.stringify(brand)};
+const contactConfig = ${JSON.stringify(contact)};
+const socialConfig = ${JSON.stringify(social)};
+
+// IKB configuration with promo codes
+const ikbConfig = {
+  rules: {
+    trustSignals: [
+      'NCOA Verified 2024',
+      'CASS Certified 2024',
+      'ISO 9001 Documented Processes 2023',
+    ],
+    promoCodes: {
+      'credit-repair': 'cr2026',
+      'debt-collection': 'debt2026',
+      'healthcare-billing': 'hb2026',
+      'healthcare-mailing-services': 'hm2026',
+      'postcard': 'pc2026',
+      'self-storage': 'pm2026',
+    },
+    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
+    blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
+    blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
+  },
+  pricing: {
+    basePrice: 0.69,
+    currency: 'USD',
+    units: 'per piece',
+    addOns: {
+      'certified-mail': 4.15,
+      'return-receipt': 3.50,
+      'ncoa-verification': 0.05,
+      'address-verification': 0.02,
+    },
+  },
+  proofOptions: {
+    standard: [{ id: 'usps-photo', name: 'USPS Photo', description: 'Photo of mailpiece delivered by carrier', tier: 'included' }],
+    upgrades: [
+      { id: 'certified-mail', name: 'Certified Mail', description: 'Track and confirm delivery with signature', tier: 'optional', additionalCost: 4.15 },
+      { id: 'electronic-return-receipt', name: 'Electronic Return Receipt', description: 'Digital signature confirmation via email', tier: 'optional', additionalCost: 3.50 },
+    ],
+  },
+  terminology: {
+    mailClasses: {
+      'first-class': { name: 'First-Class Mail', description: 'Standard USPS mail service', hasTracking: true, hasCertificate: false, allowsPersonalData: true, useCases: ['letters', 'invoices'] },
+      'marketing-mail': { name: 'Marketing Mail', description: 'Cost-effective bulk mailing', hasTracking: false, hasCertificate: false, allowsPersonalData: true, useCases: ['promotional'] },
+    },
+    certifications: {
+      'ncov': { name: 'NCOA', fullName: 'National Change of Address', description: 'Address verification service' },
+      'cass': { name: 'CASS', fullName: 'Coding Accuracy Support System', description: 'USPS-certified address standardization' },
+    },
+  },
 };
+
+// Get promo code from IKB for the service
+const promoCode = ikbConfig.rules.promoCodes['${site.slug}'] || '2026';
 
 function App() {
   const { content } = config;
-  const promoCode = promoCodeMap['${site.slug}'] || '2026';
+  const navCta = config.navigation?.cta;
   return (
-    <>
-      <SiteNavigation config={config} />
-      <HeroSection hero={content.hero} />
-      <BenefitsSection benefits={content.benefits} />
-      {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
-      <ServicesSection services={content.services} />
-      {content.difference && <DifferenceSection difference={content.difference} />}
-      {content.trustSignals && <TrustBadgesSection trustSignals={content.trustSignals} />}
-      <FAQSection faq={content.faq} />
-      <SiteFooter config={config} />
-    </>
+    <IKBProvider ikb={ikbConfig}>
+      <BrandProvider
+        brand={brandConfig}
+        contact={contactConfig}
+        social={socialConfig}
+        promoCode={promoCode}
+      >
+        <SiteNavigation config={config} />
+        <HeroSection hero={content.hero} />
+        <BenefitsSection benefits={content.benefits} />
+        {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        <ServicesSection services={content.services} />
+        {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
+        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+        <FAQSection faq={content.faq} />
+        <SiteFooter config={config} />
+        {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
+      </BrandProvider>
+    </IKBProvider>
   );
 }
 
@@ -743,7 +859,7 @@ function generateIndexHtml(config: SiteConfig): string {
   const ogImage = `${canonicalUrl}/og-image.png`;
 
   // Parse address once for schema
-  const addressParts = parseAddress(site.contact.address || '');
+  const addressParts = parseAddress(site.contact?.address || '');
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -774,6 +890,7 @@ function generateIndexHtml(config: SiteConfig): string {
     <meta name="keywords" content="${(config.seo?.keywords || [site.name, config.branding.tagline]).join(', ')}" />
     <meta name="author" content="${site.name}" />
     <meta name="robots" content="${config.seo?.robots || 'index, follow'}" />
+    <meta name="theme-color" content="#664400" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -801,14 +918,14 @@ function generateIndexHtml(config: SiteConfig): string {
         },
         {
           "@type": "Organization",
-          "name": "${site.name}",
+          "name": "Postalocity",
           "url": "${canonicalUrl}",
           "logo": "${canonicalUrl}/logo.png",
           "contactPoint": {
             "@type": "ContactPoint",
-            "telephone": "${site.contact.phone || ''}",
+            "telephone": "${site.contact?.phone || ''}",
             "contactType": "customer service",
-            "email": "${site.contact.email}"
+            "email": "${site.contact?.email || ''}"
           },
           "address": {
             "@type": "PostalAddress",
@@ -824,8 +941,8 @@ function generateIndexHtml(config: SiteConfig): string {
           "name": "${site.name}",
           "description": "${config.content?.hero?.subhead}",
           "url": "${canonicalUrl}",
-          "telephone": "${site.contact.phone || ''}",
-          "email": "${site.contact.email}",
+          "telephone": "${site.contact?.phone || ''}",
+          "email": "${site.contact?.email || ''}",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "${addressParts.streetAddress}",
@@ -860,7 +977,7 @@ function generateIndexHtml(config: SiteConfig): string {
           "image": "${canonicalUrl}/og-image.png",
           "brand": {
             "@type": "Brand",
-            "name": "${site.name}"
+            "name": "Postalocity"
           },
           "offers": {
             "@type": "Offer",
@@ -869,13 +986,6 @@ function generateIndexHtml(config: SiteConfig): string {
             "availability": "https://schema.org/InStock",
             "url": "${canonicalUrl}",
             "priceValidUntil": "2027-12-31"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "347",
-            "bestRating": "5",
-            "worstRating": "1"
           }
         },
         {
@@ -902,8 +1012,6 @@ function generateIndexHtml(config: SiteConfig): string {
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="${site.name}" />
     <meta name="format-detection" content="telephone=no" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-startup-image" href="/apple-touch-startup-image.png" />
   </head>
   <body>
     <div id="root"></div>
@@ -930,7 +1038,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://${site.domain}${site.basename}/sitemap.xml
+Sitemap: https://${site.slug}.${site.domain}/sitemap.xml
 `;
 }
 
@@ -954,21 +1062,180 @@ function generateSitemapXml(config: SiteConfig): string {
 
 // CLI interface
 const args = process.argv.slice(2);
-if (args.length === 0) {
-  console.error('Usage: node generate-site.js <config-name>');
-  console.error('Example: node generate-site.js healthcare-billing');
-  process.exit(1);
+
+interface CliOptions {
+  brand?: string;
+  service?: string;
+  config?: string;
 }
 
-const configName = args[0];
-const configPath = path.join(CONFIGS_DIR, `${configName}.json`);
-
-if (!fs.existsSync(configPath)) {
-  console.error(`Config file not found: ${configPath}`);
-  console.error(`Available configs:`);
-  const configs = fs.readdirSync(CONFIGS_DIR).filter(f => f.endsWith('.json'));
-  configs.forEach(c => console.error(`  - ${c.replace('.json', '')}`));
-  process.exit(1);
+function parseArgs(args: string[]): CliOptions {
+  const options: CliOptions = {};
+  
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i];
+    if (!arg) continue;
+    
+    if (arg === '--brand' || arg === '-b') {
+      options.brand = args[++i];
+    } else if (arg === '--service' || arg === '-s') {
+      options.service = args[++i];
+    } else if (arg === '--help' || arg === '-h') {
+      options.config = 'help';
+    } else if (!arg.startsWith('-')) {
+      // Legacy format: brand/service or just config name
+      if (arg.includes('/')) {
+        const [brand, service] = arg.split('/');
+        options.brand = brand;
+        options.service = service;
+      } else {
+        // Assume legacy single-config name (postalocity-specific)
+        options.config = arg;
+      }
+    }
+  }
+  
+  return options;
 }
 
-await generateSite(configPath);
+async function generateSiteMultiBrand(brandId: string, serviceId: string): Promise<void> {
+  console.log(`\n🚀 Generating microsite`);
+  console.log(`   Brand: ${brandId}`);
+  console.log(`   Service: ${serviceId}`);
+  
+  // Load engine context (brand config, IKB, contact, social)
+  const ctx = loadEngineContext(brandId);
+  console.log(`   Brand Name: ${ctx.brand.name}`);
+  console.log(`   Domain: ${ctx.brand.domain}`);
+  
+  // Load site-specific config
+  const siteConfig = loadSiteConfig(brandId, serviceId) as Record<string, unknown>;
+  
+  // Extract site info from site config
+  const siteInfo = (siteConfig.site || {}) as { name?: string; slug?: string };
+  const seoInfo = (siteConfig.seo || {}) as { title?: string; description?: string };
+  const contentInfo = (siteConfig.content || {}) as Record<string, unknown>;
+  
+  // Use the site slug for output
+  const siteSlug = siteInfo.slug || serviceId;
+  const siteBasename = `${brandId}-${siteSlug}`;
+  
+  // Create unified config that matches legacy SiteConfig structure
+  const unifiedConfig = {
+    site: {
+      id: brandId,
+      name: siteInfo.name || ctx.brand.name,
+      slug: siteSlug,
+      domain: ctx.brand.domain,
+      basename: siteBasename,
+      contact: {
+        email: ctx.contact.email,
+        phone: ctx.contact.phone,
+        address: `${ctx.contact.address.street}, ${ctx.contact.address.city}, ${ctx.contact.address.state} ${ctx.contact.address.zip}`,
+      },
+    },
+    branding: {
+      tagline: ctx.brand.tagline || '',
+      logo: `${siteBasename}/logo.png`,
+    },
+    seo: seoInfo,
+    navigation: (siteConfig.navigation || {}) as { links?: Array<{ label: string; href: string }>; cta?: { text: string; href: string } },
+    content: contentInfo,
+    footer: (siteConfig.footer || {}) as Record<string, unknown>,
+  };
+  
+  const siteDir = path.join(SITES_DIR, brandId, siteSlug);
+  
+  console.log(`\n📁 Output: ${siteDir}`);
+  
+  // Create site directory
+  if (!fs.existsSync(siteDir)) {
+    fs.mkdirSync(siteDir, { recursive: true });
+  }
+  
+  // Generate the site using legacy function
+  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig);
+  
+  console.log(`\n✅ ${ctx.brand.name} - ${serviceId} generated successfully!`);
+  
+  // Validate content quality
+  const { ContentValidator } = await import('./content-validator.js');
+  const validator = new ContentValidator();
+  const configPath = path.join(ROOT_DIR, 'config', 'sites', brandId, `${serviceId}.json`);
+  
+  console.log('\n📋 Running content validation...');
+  validator.validateConfig(configPath);
+  const passed = validator.errors.length === 0;
+  
+  if (passed) {
+    console.log('✅ Content validation passed');
+  } else {
+    console.log('❌ Content validation failed - review warnings above');
+  }
+}
+
+function printHelp(): void {
+  console.log(`
+🚀 Microsite Generator - Multi-Brand Platform
+
+USAGE:
+  npx ts-node scripts/generate-site.ts [options]
+
+OPTIONS:
+  --brand, -b <id>     Brand ID (e.g., postalocity, promo, techsp)
+  --service, -s <id>   Service ID (e.g., credit-repair, marketing)
+  --help, -h          Show this help message
+
+EXAMPLES:
+  # New format (recommended)
+  npx ts-node scripts/generate-site.ts --brand postalocity --service credit-repair
+  
+  # Legacy format (backward compatible)
+  npx ts-node scripts/generate-site.ts postalocity/credit-repair
+  npx ts-node scripts/generate-site.ts credit-repair
+
+AVAILABLE BRANDS:
+${listBrands().map(b => `  - ${b}`).join('\n')}
+
+AVAILABLE SERVICES (per brand):
+  postalocity: ${listServices('postalocity').join(', ')}
+`);
+}
+
+const options = parseArgs(args);
+
+// Handle help
+if (options.config === 'help' || args.includes('--help') || args.includes('-h')) {
+  printHelp();
+  process.exit(0);
+}
+
+// Validate and run
+if (options.brand && options.service) {
+  // New format: --brand X --service Y
+  await generateSiteMultiBrand(options.brand, options.service);
+} else if (options.config) {
+  // Legacy format: single config name (assumes postalocity)
+  const configName = options.config;
+  const configPath = path.join(CONFIGS_DIR, `${configName}.json`);
+  
+  if (!fs.existsSync(configPath)) {
+    console.error(`Config file not found: ${configPath}`);
+    console.error(`Available configs:`);
+    const configs = fs.readdirSync(CONFIGS_DIR).filter(f => f.endsWith('.json'));
+    configs.forEach(c => console.error(`  - ${c.replace('.json', '')}`));
+    process.exit(1);
+  }
+  
+  // Load legacy config
+  const configContent = fs.readFileSync(configPath, 'utf-8');
+  const config = JSON.parse(configContent) as SiteConfig;
+  const legacySiteDir = path.join(SITES_DIR, config.site.slug);
+  
+  await generateSite(legacySiteDir, config);
+} else {
+  console.error('Error: Missing required arguments');
+  console.error('');
+  printHelp();
+  process.exit(1);
+}
