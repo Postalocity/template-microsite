@@ -5,7 +5,7 @@ export default {
   content: [
     "./index.html",
     "./main.tsx",
-    "../../common/components/**/*.{js,ts,jsx,tsx}",
+    "../../../common/components/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
