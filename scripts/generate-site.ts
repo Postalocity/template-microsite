@@ -635,7 +635,7 @@ function generateViteConfig(basename: string): string {
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  base: '/${basename}',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../../../common'),
