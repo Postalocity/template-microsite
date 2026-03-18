@@ -1,8 +1,14 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
+import { useBrandName, useAppUrl } from "@/contexts";
 
-const benefits = [
+interface GetStartedSectionProps {
+  benefits?: string[];
+  headline?: string;
+}
+
+const defaultBenefits = [
   "No long contracts",
   "No setup fees",
   "Pay-as-you-go",
@@ -11,9 +17,14 @@ const benefits = [
   "Free onboarding support",
 ];
 
-const GetStartedSection = () => {
+const GetStartedSection = ({ benefits, headline }: GetStartedSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const brandName = useBrandName();
+  const appUrl = useAppUrl();
+
+  const benefitList = benefits && benefits.length > 0 ? benefits : defaultBenefits;
+  const title = headline || `Getting Started with ${brandName}`;
 
   return (
     <section
@@ -29,36 +40,36 @@ const GetStartedSection = () => {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-              Getting Started with Postalocity
+              {title}
             </h2>
-<p className="text-foreground text-lg leading-relaxed mb-6">
-               Sign up, upload your dispute letters or connect your credit repair software, and
-               stop stuffing envelopes. Process 5,000+ letters overnight. Our
-               support team is available to help when you need it.
-             </p>
+            <p className="text-foreground text-lg leading-relaxed mb-6">
+              Sign up, upload your dispute letters or connect your credit repair software, and
+              stop stuffing envelopes. Process 5,000+ letters overnight. Our
+              support team is available to help when you need it.
+            </p>
 
             <div className="space-y-6 mb-8">
               <p className="text-foreground text-lg font-semibold leading-relaxed">
                 Ready to stop doing mailing by hand?
               </p>
-<div className="flex flex-col sm:flex-row gap-4">
-                 <a
-                   href="https://prod.postalocity.com/login.html?signUp=true&promo=credit2026"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-cta-gold shadow-cta text-lg"
-                 >
-                   Get Started Now
-                   <ArrowRight size={20} />
-                 </a>
-                 <a
-                   href="https://prod.postalocity.com/login.html?signUp=true&promo=credit2026"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-primary text-primary hover:bg-primary/10 transition-colors text-lg"
-                 >
-                   Integrate Your EMR
-                 </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href={appUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl btn-cta-gold shadow-cta text-lg"
+                >
+                  Get Started Now
+                  <ArrowRight size={20} />
+                </a>
+                <a
+                  href={appUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl border-2 border-primary text-primary hover:bg-primary/10 transition-colors text-lg"
+                >
+                  Integrate Your EMR
+                </a>
               </div>
             </div>
           </motion.div>
@@ -73,7 +84,7 @@ const GetStartedSection = () => {
                 Why Sign Up?
               </h3>
               <ul className="space-y-3 mb-6">
-                {benefits.map((benefit) => (
+                {benefitList.map((benefit) => (
                   <li key={benefit} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-secondary" />

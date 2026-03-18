@@ -1,9 +1,11 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useBrandName } from "@/contexts";
 
 const IntroSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const brandName = useBrandName();
 
   return (
     <section className="section-padding bg-background" ref={ref}>
@@ -16,7 +18,7 @@ const IntroSection = () => {
         <article className="max-w-4xl mx-auto">
           <p className="text-lg sm:text-xl leading-relaxed text-foreground">
             Revenue cycles take 5+ days because of manual processing. Your
-            patients are waiting. Their payments are too. Postalocity handles
+            patients are waiting. Their payments are too. {brandName} handles
             everything—secure PDF upload through USPS delivery—so regional
             hospitals, urgent care centers, and medical practices cut costs,
             accelerate payments, and free your team to focus on what matters

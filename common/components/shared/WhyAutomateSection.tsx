@@ -9,49 +9,75 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { sanitizeHtml } from "../../utils/sanitize-html";
+import { useBrandName } from "@/contexts";
 
-const reasons = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const iconMap: Record<string, any> = {
+  trendingUp: TrendingUp,
+  clock: Clock,
+  dollarSign: DollarSign,
+  shieldCheck: ShieldCheck,
+  fileText: FileText,
+  users: Users,
+};
+
+interface ReasonItem {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+interface WhyAutomateSectionProps {
+  reasons?: ReasonItem[];
+}
+
+const defaultReasons = [
   {
-    icon: TrendingUp,
+    icon: 'trendingUp',
     title: "Process 5,000+ Statements Overnight",
     description:
       "Regional hospital volumes handled in hours, not days. Scale instantly—no overstaffing needed during peaks. We optimize your 5,000-50,000 volume at enterprise speed.",
   },
   {
-    icon: Clock,
+    icon: 'clock',
     title: "Same-Day Printing, 24-Hour Turnaround",
     description:
       "Upload by 3 PM, in mail by 5 PM, delivered tomorrow. Upload anytime through our secure dashboard. Speed you can trust with 99.7% on-time delivery.",
   },
   {
-    icon: DollarSign,
+    icon: 'dollarSign',
     title: "EMR Integration Ready",
     description:
       "Epic, Cerner, Athenahealth, Allscripts, eClinicalWorks connectors available. Export statements directly from your EMR to our platform. RESTful API endpoints available.",
   },
   {
-    icon: ShieldCheck,
+    icon: 'shieldCheck',
     title: "Revenue Acceleration",
     description:
       "Statements arrive tomorrow, not in 5 days. Your patients are waiting. Their payments are too. Reduce revenue cycle time by 80%.",
   },
   {
-    icon: FileText,
+    icon: 'fileText',
     title: "Secure Document Processing",
     description:
       "Enterprise-grade security with encrypted data transfers and secure processing facilities. End-to-end address verification with NCOA/CASS auto-verify before printing. ISO 9001 documented processes.",
   },
   {
-    icon: Users,
+    icon: 'users',
     title: "Zero Staff Time Required",
     description:
       "No printing, folding, stuffing, or addressing. Upload your PDFs and we handle the rest—giving your team hours back every week to focus on patient care.",
   },
 ];
 
-const WhyAutomateSection = () => {
+const WhyAutomateSection = ({ reasons }: WhyAutomateSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const brandName = useBrandName();
+
+  const items = reasons && reasons.length > 0
+    ? reasons
+    : defaultReasons;
 
   return (
     <section
@@ -67,7 +93,7 @@ const WhyAutomateSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Why Healthcare Providers Choose Postalocity
+            Why Healthcare Providers Choose {brandName}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Regional hospitals, urgent care centers, and medical practices
@@ -77,7 +103,7 @@ const WhyAutomateSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {reasons.map((item, i) => (
+          {items.map((item, i) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
@@ -86,7 +112,10 @@ const WhyAutomateSection = () => {
               className="bg-card rounded-xl p-8 shadow-card hover:shadow-card-hover transition-shadow group"
             >
               <div className="w-16 h-16 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
-                <item.icon className="w-8 h-8 text-primary" />
+                {(() => {
+                  const IconComponent = item.icon && iconMap[item.icon] ? iconMap[item.icon] : TrendingUp;
+                  return <IconComponent className="w-8 h-8 text-primary" />;
+                })()}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 {item.title}

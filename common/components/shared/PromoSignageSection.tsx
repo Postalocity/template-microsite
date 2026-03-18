@@ -1,10 +1,12 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import signageMockup from "@/assets/signage-mockup.svg";
+import { useAppUrl } from "@/contexts";
 
 const PromoSignageSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const appUrl = useAppUrl();
 
   return (
     <section className="section-padding bg-section-alt" ref={ref}>
@@ -52,7 +54,7 @@ const PromoSignageSection = () => {
             all professional, all from one portal.
           </p>
           <a
-            href="https://prod.postalocity.com/login.html?signUp=true&promo=credit2026"
+            href={appUrl}
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full btn-cta-gold text-lg"
           >

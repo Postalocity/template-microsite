@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { useTrustSignals } from "@/contexts";
 
 interface TrustSignal {
   type?: string;
@@ -22,6 +23,9 @@ interface TrustSignalsProps {
 const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
+  
+  // Get trust signals from IKB context (institutional knowledge)
+  const ikbTrustSignals = useTrustSignals();
 
   // Handle both string array and object array formats
   const rawSignals = trustSignals?.signals;
@@ -29,11 +33,24 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
     ? rawSignals.map(s => typeof s === 'string' 
         ? { name: s }  // Convert string to object
         : s)
-    : [
-        { name: "NCOA Verified", year: "2024" },
-        { name: "CASS Certified", year: "2024" },
-        { name: "ISO 9001", year: "2023" },
-      ];
+    : ikbTrustSignals.length > 0
+      ? ikbTrustSignals.map(s => {
+          // Parse signal like "NCOA Verified 2024" into name and year
+          const parts = s.split(' ');
+          const yearIndex = parts.findIndex(p => /^\d{4}$/.test(p));
+          if (yearIndex > 0) {
+            return {
+              name: parts.slice(0, yearIndex).join(' '),
+              year: parts[yearIndex],
+            };
+          }
+          return { name: s };
+        })
+      : [
+          { name: "NCOA Verified", year: "2024" },
+          { name: "CASS Certified", year: "2024" },
+          { name: "ISO 9001", year: "2023" },
+        ];
 
   return (
     <section className="py-8 bg-section-alt" ref={ref} id="trust-signals">
@@ -45,9 +62,9 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
             transition={{ duration: 0.4 }}
             className="text-center mb-6"
           >
-            <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
+            <h2 className="text-2xl font-bold text-foreground">
               {trustSignals.section.title}
-            </p>
+            </h2>
           </motion.div>
         )}
         <motion.div

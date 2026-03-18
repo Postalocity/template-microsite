@@ -209,6 +209,50 @@ const rules = {
   },
 
   /**
+   * SEO_BREADCRUMB
+   * Ensures BreadcrumbList schema is present for SERP rich results.
+   */
+  SEO_BREADCRUMB: {
+    severity: 'warning',
+    validate: (config) => {
+      // This is a structural check - will be validated by checking generated HTML
+      return null;
+    }
+  },
+
+  /**
+   * SEO_ADDRESS
+   * Ensures LocalBusiness has proper address coordinates.
+   */
+  SEO_ADDRESS: {
+    severity: 'error',
+    patterns: [
+      {
+        regex: /"latitude":\s*"39\.1147"/,
+        message: 'Wrong coordinates: 39.1147 is Kansas center, not Wichita (37.6872)'
+      },
+      {
+        regex: /"longitude":\s*"-95\.6798"/,
+        message: 'Wrong coordinates: -95.6798 is Kansas center, not Wichita (-97.3325)'
+      }
+    ]
+  },
+
+  /**
+   * SEO_HERO_ALT
+   * Ensures hero image has descriptive alt text.
+   */
+  SEO_HERO_ALT: {
+    severity: 'warning',
+    patterns: [
+      {
+        regex: /"alt":\s*"Background"|"alt":\s*"background"|"alt":\s*"Hero"/i,
+        message: 'Hero image alt text is too generic - describe the actual image content'
+      }
+    ]
+  },
+
+  /**
    * BENEFITS_DESCRIPTION_REQUIRED
    * Ensures benefits have both description and detail.
    */

@@ -1,25 +1,52 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Clock, MailX, TrendingUp } from "lucide-react";
+import { useBrandName } from "@/contexts";
 
-const challenges = [
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const iconMap: Record<string, any> = {
+  clock: Clock,
+  mailX: MailX,
+  trendingUp: TrendingUp,
+};
+
+interface ChallengeItem {
+  icon?: string;
+  text: string;
+}
+
+interface ChallengesSectionProps {
+  headline?: string;
+  closingStatement?: string;
+  challenges?: ChallengeItem[];
+}
+
+const defaultChallenges = [
   {
-    icon: Clock,
+    icon: 'clock',
     text: "Manual entry causes address errors and costly returns. Peak periods overload staff, leading to delays in dispute letter mailing.",
   },
   {
-    icon: MailX,
+    icon: 'mailX',
     text: "Rising USPS rates erode budgets without optimization. Returned letters due to address errors delay credit repair cycles while wasting postage.",
   },
   {
-    icon: TrendingUp,
+    icon: 'trendingUp',
     text: "High-risk, high-value client data demands secure handling. Deadline pressures for urgent notices and dispute letter mailing create operational challenges.",
   },
 ];
 
-const ChallengesSection = () => {
+const ChallengesSection = ({
+  headline = "Common Challenges with In-House Dispute Letter Mailing",
+  closingStatement,
+  challenges,
+}: ChallengesSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const brandName = useBrandName();
+
+  const challengeList = challenges && challenges.length > 0 ? challenges : defaultChallenges;
+  const closing = closingStatement || `${brandName} automates the entire process—secure PDF upload, address verification, printing, folding, stuffing, and USPS delivery—eliminating manual errors and delays.`;
 
   return (
     <section
@@ -35,12 +62,12 @@ const ChallengesSection = () => {
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Common Challenges with In-House Dispute Letter Mailing
+            {headline}
           </h2>
         </motion.div>
 
         <div className="max-w-3xl mx-auto space-y-5">
-          {challenges.map((item, i) => (
+          {challengeList.map((item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, x: -30 }}
@@ -49,7 +76,10 @@ const ChallengesSection = () => {
               className="flex items-start gap-4 bg-card rounded-xl p-6 shadow-card"
             >
               <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <item.icon className="w-8 h-8 text-primary" />
+                {(() => {
+                  const Icon = item.icon && iconMap[item.icon] ? iconMap[item.icon] : Clock;
+                  return <Icon className="w-8 h-8 text-primary" />;
+                })()}
               </div>
               <p className="text-foreground leading-relaxed pt-3">
                 {item.text}
@@ -64,9 +94,7 @@ const ChallengesSection = () => {
           transition={{ delay: 0.6 }}
           className="text-center mt-10 text-lg text-foreground"
         >
-          Postalocity automates the entire process—secure PDF upload, address
-          verification, printing, folding, stuffing, and USPS
-          delivery—eliminating manual errors and delays.
+          {closing}
         </motion.p>
       </div>
     </section>

@@ -1,31 +1,60 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight, BarChart3, Zap, Users } from "lucide-react";
+import { useAppUrl } from "@/contexts";
 
-const ScaleSection = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const iconMap: Record<string, any> = {
+  users: Users,
+  zap: Zap,
+  barChart3: BarChart3,
+};
+
+interface ScaleFeature {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+interface ScaleSectionProps {
+  features?: ScaleFeature[];
+  headline?: string;
+  subheadline?: string;
+  ctaText?: string;
+}
+
+const defaultFeatures = [
+  {
+    icon: 'users',
+    title: "Scale Without Commitment",
+    description:
+      "Process 10 or 10,000+ dispute letters monthly. Pay-as-you-go credit repair mailing service for any practice size.",
+  },
+  {
+    icon: 'zap',
+    title: "Automate Effortlessly",
+    description:
+      "Upload PDF letters to automate dispute letter mailing. No monthly fees, no minimums, no contracts.",
+  },
+  {
+    icon: 'barChart3',
+    title: "Streamlined onboarding",
+    description:
+      "Start automating dispute letters quickly. Secure PDF upload.",
+  },
+];
+
+const ScaleSection = ({ 
+  features, 
+  headline = "Pay-as-You-Go Dispute Letter Mailing: Scale Without Commitment",
+  subheadline = "From small practices to large operations, automate dispute letters and pay-as-you-go dispute letter mailing with no monthly fees, no contracts, and no minimums.",
+  ctaText = "Start Automating Today"
+}: ScaleSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const appUrl = useAppUrl();
 
-  const features = [
-    {
-      icon: Users,
-      title: "Scale Without Commitment",
-      description:
-        "Process 10 or 10,000+ dispute letters monthly. Pay-as-you-go credit repair mailing service for any practice size.",
-    },
-    {
-      icon: Zap,
-      title: "Automate Effortlessly",
-      description:
-        "Upload PDF letters to automate dispute letter mailing. No monthly fees, no minimums, no contracts.",
-    },
-    {
-      icon: BarChart3,
-      title: "Streamlined onboarding",
-      description:
-        "Start automating dispute letters quickly. Secure PDF upload.",
-    },
-  ];
+  const featureList = features && features.length > 0 ? features : defaultFeatures;
 
   return (
     <section id="scale" className="section-padding bg-section-alt" ref={ref}>
@@ -37,17 +66,15 @@ const ScaleSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Pay-as-You-Go Dispute Letter Mailing: Scale Without Commitment
+            {headline}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            From small practices to large operations, automate dispute letters and
-            pay-as-you-go dispute letter mailing with no monthly fees, no
-            contracts, and no minimums.
+            {subheadline}
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {features.map((feature, i) => (
+          {featureList.map((feature, i) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 30 }}
@@ -56,7 +83,10 @@ const ScaleSection = () => {
               className="bg-card rounded-xl p-6 shadow-card hover:shadow-card-hover transition-shadow"
             >
               <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <feature.icon className="w-8 h-8 text-primary" />
+                {(() => {
+                  const Icon = feature.icon && iconMap[feature.icon] ? iconMap[feature.icon] : Zap;
+                  return <Icon className="w-8 h-8 text-primary" />;
+                })()}
               </div>
               <h3 className="text-lg font-bold text-foreground mb-2">
                 {feature.title}
@@ -78,21 +108,21 @@ const ScaleSection = () => {
             <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
               <Zap className="w-10 h-10 text-primary" />
             </div>
-<h3 className="text-2xl font-bold text-foreground mb-6">
-               Pay-as-You-Go Credit Repair Mailing Service
-             </h3>
-             <p className="text-muted-foreground text-xl leading-relaxed mb-8 font-medium">
-               Start automating dispute letters today. No monthly fees, no
-               setup fees, no contracts. Pay-as-you-go credit repair mailing service
-               for any practice size.
-             </p>
+            <h3 className="text-2xl font-bold text-foreground mb-6">
+              Pay-as-You-Go Credit Repair Mailing Service
+            </h3>
+            <p className="text-muted-foreground text-xl leading-relaxed mb-8 font-medium">
+              Start automating dispute letters today. No monthly fees, no
+              setup fees, no contracts. Pay-as-you-go credit repair mailing service
+              for any practice size.
+            </p>
             <a
-              href="https://prod.postalocity.com/login.html?signUp=true&promo=credit2026"
+              href={appUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-5 rounded-xl btn-cta-gold shadow-cta text-lg font-semibold"
             >
-              Start Automating Patient Statement Mailing
+              {ctaText}
               <ArrowRight size={24} />
             </a>
           </div>

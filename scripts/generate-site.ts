@@ -917,6 +917,23 @@ function generateIndexHtml(config: SiteConfig): string {
           }
         },
         {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.postalocity.com"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "${site.name}",
+              "item": "${canonicalUrl}"
+            }
+          ]
+        },
+        {
           "@type": "Organization",
           "name": "Postalocity",
           "url": "${canonicalUrl}",
@@ -964,8 +981,8 @@ function generateIndexHtml(config: SiteConfig): string {
             "@type": "GeoCircle",
             "geoMidpoint": {
               "@type": "GeoCoordinates",
-              "latitude": "${config.seo?.latitude || '39.1147'}",
-              "longitude": "${config.seo?.longitude || '-95.6798'}"
+              "latitude": "${site.location?.latitude || '37.6872'}",
+              "longitude": "${site.location?.longitude || '-97.3325'}"
             },
             "geoRadius": "5000"
           }

@@ -10,6 +10,8 @@ export { default as TrustBadgesSection } from './TrustBadgesSection';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as QuantifiableBenefitsSection } from './QuantifiableBenefitsSection';
 export { default as DifferenceSection } from './DifferenceSection';
+export { default as HowItWorksSection } from './HowItWorksSection';
+export { default as FloatingCTA } from './FloatingCTA';
 
 // shadcn/ui components
 export { Button, buttonVariants } from '../ui/button';

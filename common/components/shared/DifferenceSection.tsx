@@ -2,9 +2,11 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Eye, Zap, Sparkles, Shield, CheckCircle, TrendingUp, Clock } from "lucide-react";
 import { sanitizeHtml } from "../../utils/sanitize-html";
+import { useBrandName } from "@/contexts";
 
-// Map icon names to components
-const iconMap: Record<string, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
+// Map icon names to components (using eslint-disable for lucide type compatibility)
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const iconMap: Record<string, any> = {
   mail: Mail,
   eye: Eye,
   zap: Zap,
@@ -32,7 +34,7 @@ interface DifferenceSectionProps {
   };
 }
 
-// Default differentials for healthcare (backward compatibility)
+// Default differentials (healthcare focused)
 const defaultDifferentials = [
   {
     icon: Mail,
@@ -58,6 +60,9 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   
+  // Get brand name from context
+  const brandName = useBrandName();
+  
   // Use config data if available, otherwise fall back to defaults
   const hasConfigData = difference?.differences && difference.differences.length > 0;
   const differentials = hasConfigData 
@@ -68,8 +73,10 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
       }))
     : defaultDifferentials;
     
-  const sectionTitle = difference?.section?.title || "The Postalocity Difference";
+  // Allow config to override title/description, with brand-aware defaults
+  const sectionTitle = difference?.section?.title || `The ${brandName} Difference`;
   const sectionDescription = difference?.section?.description || "Discover why businesses trust our mailing service";
+  const badgeText = difference?.section?.description ? undefined : `Why Choose ${brandName}`;
 
   return (
     <section
@@ -86,14 +93,16 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 bg-amber-600/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-amber-700/30">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-white text-sm font-medium tracking-wide uppercase">
-              Why Choose Postalocity
-            </span>
-          </div>
+          {badgeText && (
+            <div className="inline-flex items-center gap-2 bg-amber-600/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-amber-700/30">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-white text-sm font-medium tracking-wide uppercase">
+                {badgeText}
+              </span>
+            </div>
+          )}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            The <span className="text-primary">Postalocity</span> Difference
+            <span className="text-primary">{sectionTitle}</span>
           </h2>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             {sectionDescription}

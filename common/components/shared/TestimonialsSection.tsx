@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Quote } from "lucide-react";
+import { useBrandName } from "@/contexts";
 
 const testimonials = [
   {
@@ -32,6 +33,7 @@ const testimonials = [
 const TestimonialsSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const brandName = useBrandName();
 
   return (
     <section className="section-padding bg-muted/30" ref={ref}>
@@ -46,7 +48,7 @@ const TestimonialsSection = () => {
             Trusted by 500+ Healthcare Providers
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            See what healthcare administrators are saying about Postalocity
+            See what healthcare administrators are saying about {brandName}
           </p>
           <p className="text-xs text-muted-foreground max-w-2xl mx-auto mt-2">
             *Testimonial names and details are representative examples of

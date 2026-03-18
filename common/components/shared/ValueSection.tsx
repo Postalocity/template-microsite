@@ -8,40 +8,68 @@ import {
   Check,
 } from "lucide-react";
 import { sanitizeHtml } from "../../utils/sanitize-html";
+import { useBrandName } from "@/contexts";
 
-const ValueSection = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const iconMap: Record<string, any> = {
+  mail: Mail,
+  eye: Eye,
+  clock: Clock,
+};
+
+interface DifferentiatorItem {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+interface ValueSectionProps {
+  differentiators?: DifferentiatorItem[];
+  benefits?: string[];
+}
+
+const defaultDifferentiators = [
+  {
+    icon: 'mail',
+    title: "Full-Color Envelopes",
+    description:
+      "Every statement includes a professional full-color envelope—not loose paper with stickers. Professional builds trust.",
+  },
+  {
+    icon: 'eye',
+    title: "Complete Visibility",
+    description:
+      "USPS tracking available. See when each statement was mailed and delivered. No more guessing.",
+  },
+  {
+    icon: 'clock',
+    title: "Skip USPS Lines",
+    description:
+      "Bypass post office drop-off times and waiting in line. We automate—eliminating missed cutoffs and days in delivery time.",
+  },
+];
+
+const defaultBenefits = [
+  "No more staff time spent printing, folding, or stuffing envelopes",
+  "Upload by 3 PM, in mail by 5 PM, delivered tomorrow",
+  "Process 5,000+ statements overnight—no staffing required",
+  "EMR integration available: Epic, Cerner, Athena, Allscripts",
+  "Zero staff time required—upload & done",
+  "Revenue acceleration: statements arrive tomorrow, not in 5 days",
+];
+
+const ValueSection = ({ differentiators, benefits }: ValueSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const brandName = useBrandName();
 
-  const differentiators = [
-    {
-      icon: Mail,
-      title: "Full-Color Envelopes",
-      description:
-        "Every statement includes a professional full-color envelope—not loose paper with stickers. Professional builds trust.",
-    },
-    {
-      icon: Eye,
-      title: "Complete Visibility",
-      description:
-        "USPS tracking available. See when each statement was mailed and delivered. No more guessing.",
-    },
-    {
-      icon: Clock,
-      title: "Skip USPS Lines",
-      description:
-        "Bypass post office drop-off times and waiting in line. We automate—eliminating missed cutoffs and days in delivery time.",
-    },
-  ];
+  const diffs = differentiators && differentiators.length > 0
+    ? differentiators
+    : defaultDifferentiators;
 
-  const benefits = [
-    "No more staff time spent printing, folding, or stuffing envelopes",
-    "Upload by 3 PM, in mail by 5 PM, delivered tomorrow",
-    "Process 5,000+ statements overnight—no staffing required",
-    "EMR integration available: Epic, Cerner, Athena, Allscripts",
-    "Zero staff time required—upload & done",
-    "Revenue acceleration: statements arrive tomorrow, not in 5 days",
-  ];
+  const benefitList = benefits && benefits.length > 0
+    ? benefits
+    : defaultBenefits;
 
   return (
     <section id="value" className="section-padding bg-section-alt" ref={ref}>
@@ -53,7 +81,7 @@ const ValueSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Why Healthcare Providers Choose Postalocity
+            Why Healthcare Providers Choose {brandName}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             High-volume processing, same-day printing, EMR
@@ -64,7 +92,7 @@ const ValueSection = () => {
 
         {/* Top Differentiators */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          {differentiators.map((item, i) => (
+          {diffs.map((item, i) => (
             <motion.div
               key={item.title}
               initial={{ opacity: 0, y: 30 }}
@@ -73,7 +101,10 @@ const ValueSection = () => {
               className="bg-card rounded-xl p-8 shadow-card hover:shadow-card-hover transition-shadow group"
             >
               <div className="w-16 h-16 rounded-xl bg-accent flex items-center justify-center mb-5 group-hover:bg-primary/10 transition-colors">
-                <item.icon className="w-8 h-8 text-primary" />
+                {(() => {
+                  const Icon = item.icon && iconMap[item.icon] ? iconMap[item.icon] : Mail;
+                  return <Icon className="w-8 h-8 text-primary" />;
+                })()}
               </div>
               <h3 className="text-xl font-bold text-foreground mb-3">
                 {item.title}
@@ -94,10 +125,10 @@ const ValueSection = () => {
           className="mb-12"
         >
           <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-            What You Get with Postalocity
+            What You Get with {brandName}
           </h3>
           <div className="max-w-2xl mx-auto space-y-4">
-            {benefits.map((b, i) => (
+            {benefitList.map((b, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}

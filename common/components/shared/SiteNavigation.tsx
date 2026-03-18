@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useBrand, useBrandName } from '@/contexts';
 import postalocityLogo from '@/assets/postalocity-logo.png';
 
 type NavConfig = {
@@ -27,23 +28,42 @@ const defaultNavLinks = [
   { label: 'FAQ', href: '#faq' },
 ];
 
-const SiteNavigation = ({ config }: { config?: NavConfig }) => {
+interface SiteNavigationProps {
+  config?: NavConfig;
+}
+
+const SiteNavigation = ({ config }: SiteNavigationProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  // Get brand config from context
+  const ctx = useBrand();
+  const brandName = useBrandName();
+  
   const navLinks = config?.navigation?.links ?? defaultNavLinks;
   const cta = config?.navigation?.cta;
   
-  // Get promo code from navigation CTA href if present
+  // Get promo code from brand context
+  const promoCode = ctx.promoCode;
+  
+  // Extract promo code from CTA href if present
   const ctaHref = cta?.href || '';
-  let promoCode = '2026';
+  let extractedPromoCode = promoCode;
   if (ctaHref.includes('promo=')) {
     const parts = ctaHref.split('promo=');
     const nextPart = parts[1]?.split('&')[0];
     if (nextPart) {
-      promoCode = nextPart;
+      extractedPromoCode = nextPart;
     }
   }
+
+  // Build signup URL with promo code
+  const getSignupUrl = () => {
+    const baseUrl = ctx.brand.urls.app.replace(/\?.*$/, '');
+    return extractedPromoCode
+      ? `${baseUrl}?signUp=true&promo=${extractedPromoCode}`
+      : `${baseUrl}?signUp=true`;
+  };
 
   // Handle smooth scroll to section when link is clicked
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -80,12 +100,12 @@ const SiteNavigation = ({ config }: { config?: NavConfig }) => {
     >
       <div className="section-container flex items-center justify-between h-16 lg:h-20">
         <a
-          href="https://postalocity.com"
-          aria-label="Postalocity home"
+          href={ctx.brand.urls.website}
+          aria-label={`${brandName} home`}
         >
           <img
             src={postalocityLogo}
-            alt="Postalocity"
+            alt={brandName}
             className="h-8 lg:h-10 w-auto"
           />
         </a>
@@ -114,7 +134,7 @@ const SiteNavigation = ({ config }: { config?: NavConfig }) => {
             </a>
           ) : (
             <a
-              href={`https://prod.postalocity.com/login.html?signUp=true&promo=${promoCode || '2026'}`}
+              href={getSignupUrl()}
               rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm"
             >
@@ -166,7 +186,7 @@ const SiteNavigation = ({ config }: { config?: NavConfig }) => {
                 </a>
               ) : (
                 <a
-                  href={`https://prod.postalocity.com/login.html?signUp=true&promo=${promoCode || '2026'}`}
+                  href={getSignupUrl()}
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg btn-cta-gold text-sm mt-2"
                 >
