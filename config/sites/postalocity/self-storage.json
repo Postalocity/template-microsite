@@ -60,11 +60,11 @@
       "section": { "title": "Postalocity vs Traditional Self-Storage Mailing", "description": "See how automated mailing compares to in-house processing for facility operations." },
       "columns": { "traditional": "Traditional", "ourSolution": "Postalocity" },
       "rows": [
-        { "feature": "Address Verification", "ourSolution": "Real-time USPS verification included", "traditionalApproach": "Manual address checks or none" },
-        { "feature": "Proof of Mailing", "ourSolution": "Affidavit included — Certificate upgrade available", "traditionalApproach": "Post office receipt only" },
-        { "feature": "Processing Time", "ourSolution": "Same-day after approval", "traditionalApproach": "Daily trips to post office" },
-        { "feature": "Lien Compliance", "ourSolution": "Affidavit + Certificate upgrade for legal requirements", "traditionalApproach": "Manual documentation" },
-        { "feature": "Cost per Letter", "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage – includes envelope", "traditionalApproach": "Equipment, postage, labor" },
+        { "icon": "map-pin", "feature": "Address Verification", "ourSolution": "Real-time USPS verification included", "traditionalApproach": "Manual address checks or none" },
+        { "icon": "shield", "feature": "Proof of Mailing", "ourSolution": "Affidavit included — Certificate upgrade available", "traditionalApproach": "Post office receipt only" },
+        { "icon": "clock", "feature": "Processing Time", "ourSolution": "Same-day after approval", "traditionalApproach": "Daily trips to post office" },
+        { "icon": "file-text", "feature": "Lien Compliance", "ourSolution": "Affidavit + Certificate upgrade for legal requirements", "traditionalApproach": "Manual documentation" },
+        { "icon": "dollar-sign", "feature": "Cost per Letter", "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage – includes envelope", "traditionalApproach": "Equipment, postage, labor" },
         { "icon": "mail", "feature": "Envelope", "ourSolution": { "text": "Included — Color Optional", "highlight": "Professional envelope with every mailing", "isEnvelope": true }, "traditionalApproach": "Self-mailer — No envelope" }
       ]
     },
