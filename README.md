@@ -1,50 +1,67 @@
 # Microsite Platform
 
-A configuration-driven microsite generator platform that enables rapid creation of vertical-specific microsites (10-15 minutes per site) while maintaining professional quality and design consistency.
+A **multi-brand microsite generator** that enables rapid creation of vertical-specific microsites with support for multiple brands (Postalocity, Promo, TechSP) through separated brand configurations and institutional knowledge bases.
 
 ## Architecture
 
-**Template + JSON Config + Build Scripts** - Three-tier architecture separating structure from content:
+### Multi-Brand System
 
-- **Structure (60% of code)**: Fixed, shared React components with Framer Motion animations
-- **Content (40% of code)**: Vertical-specific configurations in JSON
-- **Generation**: Automated scaffolding scripts creating complete sites from configs
-
-### Design Pattern
-
-Configuration-Driven Component Architecture allows:
-
-- **80% code reuse**: Shared components reduce duplication
-- **5-7 hours foundation**: One-time setup for common infrastructure
-- **15-20 minutes per site**: Content creation vs. 80-160 hours for manual copy-paste
-- **95% error reduction**: Eliminates content leakage from manual operations
-
-## Project Structure
+The platform supports multiple brands with separated configurations:
 
 ```
-microsite-platform/
-├── common/
-│   ├── components/
-│   │   └── shared/              # Reusable components (props-driven)
-│   │       ├── HeroSection.tsx
-│   │       ├── BenefitsSection.tsx
-│   │       ├── ServicesSection.tsx
-│   │       ├── FAQSection.tsx
-│   │       ├── ComparisonSection.tsx
-│   │       ├── SiteNavigation.tsx
-│   │       └── SiteFooter.tsx
-│   └── types/
-│       └── content.ts           # TypeScript content type definitions
-├── config/
-│   └── sites/                   # Vertical-specific configurations
-│       └── healthcare-billing.json
-├── scripts/
-│   └── generate-site.ts         # Site generation script
-├── sites/                       # Generated microsites
-└── package.json
+config/
+├── brands/                    # Brand-specific configurations
+│   ├── postalocity/          # Postalocity brand
+│   │   ├── brand.json        # Brand metadata, URLs, logo
+│   │   ├── contact.json      # Contact information
+│   │   └── social.json       # Social media links
+│   ├── promo/                # Promo brand
+│   └── techsp/               # TechSP brand
+├── ikb/                       # Institutional Knowledge Bases
+│   ├── postalocity/          # Postalocity IKB
+│   │   ├── rules.json        # Trust signals, promo codes, blocklists
+│   │   ├── pricing.json      # Pricing tiers and add-ons
+│   │   ├── proof-options.json # Proof options and upgrades
+│   │   └── terminology.json   # Industry terminology
+│   ├── promo/                # Promo IKB
+│   └── techsp/               # TechSP IKB
+└── sites/                    # Site-specific configurations
 ```
 
-## Getting Started
+### React Context Architecture
+
+```
+common/contexts/
+├── BrandContext.tsx          # Multi-brand support
+│   ├── BrandProvider         # Provides brand config to components
+│   ├── useBrand()           # Full brand context
+│   ├── useBrandName()        # Brand name
+│   ├── useBrandUrls()        # All brand URLs
+│   ├── useBrandContact()     # Contact info
+│   ├── useBrandSocial()      # Social links
+│   ├── usePromoCode()        # Promo code
+│   └── useAppUrl()           # App URL with promo code
+└── IKBContext.tsx            # Institutional Knowledge Base
+    ├── IKBProvider           # Provides IKB to components
+    ├── useIKB()              # Full IKB context
+    ├── useIKBRules()         # Rules, trust signals, blocklists
+    ├── useTrustSignals()     # Certification badges
+    ├── usePromoCodeFromIKB() # Get promo code for service
+    ├── useIKBPricing()       # Pricing information
+    └── useIKBTerminology()   # Industry terminology
+```
+
+### Key Benefits
+
+| Feature | Benefit |
+|---------|---------|
+| **Single Codebase** | 13 components work across all brands |
+| **Brand Isolation** | Each brand has its own URLs, contacts, and social links |
+| **Institutional Knowledge** | IKB prevents AI hallucination with verified data |
+| **Fail-Fast Development** | Missing context throws errors in dev mode |
+| **Backward Compatible** | Default Postalocity values if no provider |
+
+## Quick Start
 
 ### Prerequisites
 
@@ -54,314 +71,206 @@ microsite-platform/
 ### Installation
 
 ```bash
-# Install dependencies
 npm install
+```
 
-# Run dev server
+### Generate a Site
+
+```bash
+# Generate Postalocity site
+npm run generate -- --brand postalocity --service credit-repair
+
+# Generate Promo site  
+npm run generate -- --brand promo --service signage
+
+# Generate TechSP site
+npm run generate -- --brand techsp --service saas-platform
+```
+
+### Run Generated Site
+
+```bash
+cd sites/postalocity/credit-repair
+npm install
 npm run dev
 ```
 
-### Generating a Site
+## Context Usage
 
-1. Create your configuration file in `config/sites/`:
-    ```bash
-    config/sites/your-vertical.json
-    ```
+### BrandContext
 
-2. Use the generation script:
-    ```bash
-    npm run generate your-vertical
+```tsx
+import { BrandProvider, useBrandName, useAppUrl } from '@/contexts';
 
-    # Example:
-    npm run generate healthcare-billing
-    ```
+// Wrap your app with brand config
+<BrandProvider brand={brandConfig} contact={contactConfig} social={socialConfig} promoCode="cr2026">
+  {children}
+</BrandProvider>
 
-3. Navigate to your generated site:
-    ```bash
-    cd sites/your-vertical
-    npm install
-    npm run dev
-    ```
+// Use in components
+function MyComponent() {
+  const brandName = useBrandName();        // "Postalocity"
+  const appUrl = useAppUrl();              // "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026"
+  const { brand, contact } = useBrand();  // Full context
+}
+```
 
-### Post-Processing with StringRay Agents
+### IKBContext
 
-After site generation, you can automatically invoke StringRay agents for quality assurance and optimization:
+```tsx
+import { IKBProvider, useTrustSignals, usePromoCodeFromIKB } from '@/contexts';
+
+// Wrap your app with IKB config
+<IKBProvider ikb={ikbConfig}>
+  {children}
+</IKBProvider>
+
+// Use in components
+function TrustBadges() {
+  const trustSignals = useTrustSignals();
+  // ['NCOA Verified 2024', 'CASS Certified 2024', 'ISO 9001 Documented Processes 2023']
+}
+
+function PromoCode() {
+  const code = usePromoCodeFromIKB('credit-repair');  // 'cr2026'
+}
+
+// Content validation
+const { isContentAllowed, isPhraseAllowed } = useIKB();
+isContentAllowed('testimonial');  // false (blocklisted)
+isPhraseAllowed('guaranteed delivery');  // false (blocklisted)
+```
+
+## Components
+
+All components use contexts for brand-agnostic rendering:
+
+| Component | Context Used |
+|-----------|-------------|
+| `SiteNavigation` | `useBrand()`, `useBrandUrls()` |
+| `SiteFooter` | `useBrand()`, `useBrandContact()` |
+| `IntroSection` | `useBrandName()` |
+| `TestimonialsSection` | `useBrandName()` |
+| `GetStartedSection` | `useBrandName()`, `useAppUrl()` |
+| `ScaleSection` | `useAppUrl()` |
+| `ConversionSection` | `useBrandName()`, `useAppUrl()` |
+| `PromoSignageSection` | `useAppUrl()` |
+| `TrustBadgesSection` | `useTrustSignals()` |
+
+## Testing
 
 ```bash
-# Run post-processing on a generated site
-npx tsx scripts/post-process.ts healthcare-billing
+# Run all tests (158 tests)
+npm test
 
-# Or with the generation script (includes --post-processing flag)
-npx tsx scripts/generate-site.ts healthcare-billing --post-process
+# Run with coverage
+npm run test:coverage
 ```
 
-**Agents Invoked:**
-- `@enforcer`: Codex v1.7.5 compliance validation (60 error prevention terms)
-- `@seo-consultant`: Canonical tags, meta tags, sitemap, schema optimization
-- `@growth-strategist`: Promo code consistency, messaging optimization, market positioning
+### Test Files
 
-**Agent Reports:**
-Generated reports are saved to `agent-reports/{site-name}/`:
-- `enforcer-report.md` - Codex compliance findings
-- `seo-consultant-report.md` - SEO analysis and recommendations
-- `growth-strategist-report.md` - Growth strategy recommendations
-- `summary.md` - Aggregated executive summary with priority levels
-
-**Example Report Content:**
-```
-Total Priority P0 Issues: 2
-Total Priority P1 Issues: 1
-Total Priority P2 Issues: 1
-```
-
-**Optional Flags:**
-```bash
-# Run specific agents only
-npx tsx scripts/post-process.ts healthcare-billing --agents enforcer,seo
-
-# Skip specific agents
-npx tsx scripts/post-process.ts healthcare-billing --skip growth-strategist
-```
-
-## Component Architecture
-
-### Props-Driven Components
-
-All components accept content props from JSON configs rather than hardcoded content:
-
-```typescript
-// Example: BenefitsSection
-interface BenefitsSectionProps {
-  benefits: BenefitsContent;
-}
-
-<BenefitsSection benefits={content.benefits} />
-```
-
-### Available Components
-
-| Component | Props | Purpose |
-|-----------|-------|---------|
-| `HeroSection` | `hero: HeroContent` | Hero banner with headline, CTA buttons |
-| `BenefitsSection` | `benefits: BenefitsContent` | Grid of benefits with icons and metrics |
-| `ServicesSection` | `services: ServicesContent` | Grid of service offerings |
-| `FAQSection` | `faq: FAQContent` | Accordion-style FAQ section |
-| `ComparisonSection` | `comparison: ComparisonContent` | 2-column comparison table |
-| `SiteNavigation` | `config: SiteConfig` | Sticky navigation with mobile menu |
-| `SiteFooter` | `config: SiteConfig` | Footer with branding and contact |
-
-## Configuration Schema
-
-### Site Configuration Structure
-
-```json
-{
-  "site": {
-    "id": "healthcare-billing",
-    "name": "Healthcare Billing Solutions",
-    "slug": "healthcare-billing",
-    "domain": "healthcare-billing.com",
-    "basename": "/healthcare-billing",
-    "contact": {
-      "email": "contact@healthcare-billing.com",
-      "phone": "1-800-555-0199",
-      "address": "123 Healthcare Way"
-    }
-  },
-  "branding": {
-    "tagline": "Healthcare Billing Solutions"
-  },
-  "theme": {
-    "primary": {
-      "h": 217,
-      "s": 91,
-      "l": 60
-    },
-    "gradients": {
-      "hero": "217 91% 60%",
-      "cta": "217 91% 60%"
-    }
-  },
-  "navigation": {
-    "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "Services", "href": "#services" }
-    ],
-    "cta": {
-      "text": "Get Started",
-      "href": "#contact",
-      "variant": "primary"
-    }
-  },
-  "content": {
-    "hero": { ... },
-    "benefits": { ... },
-    "services": { ... },
-    "faq": { ... },
-    "comparison": { ... }
-  }
-}
-```
-
-### Content Type Definitions
-
-See `common/types/content.ts` for complete type definitions including:
-
-- `HeroContent` - Headlines, CTA buttons, background images
-- `BenefitsContent` - Grid of benefit items with icons
-- `ServicesContent` - Grid of service descriptions
-- `FAQContent` - Question/answer pairs
-- `ComparisonContent` - Comparison table rows
-- `SiteConfig` - Site metadata and navigation
-
-## Platform Lessons Learned
-
-This platform incorporates lessons from the healthcare-billing site production:
-
-### Professional Tone Guidelines
-
-- NO dramatic language or emotional appeals
-- NO revenue-first messaging
-- Hours-focused messaging ("Reclaim 40-70 hours weekly")
-- Verified claims only (city/state testimonials, specific metrics)
-
-### Content Quality Standards
-
-- Keyword density: 0.5-2%, 90%+ coverage
-- H1/H2/H3 hierarchy required
-- Minimum 900+ words per page
-- First 100 words must contain primary keywords
-
-### Credibility Standards
-
-- Testimonials: City/State location required
-- Certifications: ISO 9001 documented, NOT HIPAA/SOC2
-- Metrics: Specific, verifiable numbers
-
-## Scaling Strategy
-
-### 1-10 Sites
-- Current template structure suffices
-- Manual site generation acceptable
-
-### 10-20+ Sites
-- Convert to monorepo (Turborepo)
-- Automated CI/CD pipelines
-- Shared content validation
-
-### 200+ Sites
-- Microservices architecture
-- Content management system
-- Automated SEO optimization
-
-## Development
-
-### Adding New Components
-
-1. Define types in `common/types/content.ts`
-2. Create component in `common/components/shared/`
-3. Export from `common/components/shared/index.ts`
-4. Update `scripts/generate-site.ts` template
-
-### Customizing Themes
-
-Edit the theme section in your site config:
-
-```json
-"theme": {
-  "primary": {
-    "h": 217,    // Hue (0-360)
-    "s": 91,     // Saturation (0-100)
-    "l": 60      // Lightness (0-100)
-  }
-}
-```
-
-### Image Assets
-
-Place images in site directories:
-
-```
-sites/your-vertical/
-├── public/
-│   └── images/
-│       └── hero-bg.jpg
-```
-
-Reference in config:
-
-```json
-"background": {
-  "image": "/images/hero-bg.jpg",
-  "alt": "Hero background description"
-}
-```
+| File | Tests | Coverage |
+|------|-------|----------|
+| `BrandContext.test.tsx` | 20 | Brand hooks, defaults, memoization |
+| `IKBContext.test.tsx` | 19 | IKB hooks, validation, defaults |
+| `generate-site.test.ts` | 24 | Site generation |
+| `config-loader.test.ts` | 23 | Brand/IKB loading |
+| `content-factory.test.ts` | 42 | Content validation |
+| `grid-layout.test.ts` | 21 | Layout utilities |
+| `sanitize-html.test.ts` | 5 | HTML sanitization |
+| `use-toast.test.ts` | 2 | Toast hook |
+| `base-path-plugin.test.ts` | 2 | Build plugin |
 
 ## Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run generate <config-name>` - Generate site from config
-- `npm run verify <config-name>` - Verify generated site
-
-## SEO Skills Installation
-
-The 12 SEO skills are included in the `strray-ai` npm package:
-
 ```bash
-npx strray-ai install
-# or
-node node_modules/strray-ai/scripts/integrations/install-claude-seo.js
+npm run dev              # Start dev server (root)
+npm run build            # Build root package
+npm run generate         # Generate site (see usage above)
+npm run verify           # Run launch validation
+npm run test             # Run tests
+npm run test:watch       # Watch mode
+npm run test:coverage    # Coverage report
 ```
 
-See [SEO Integration Guide](SEO-INTEGRATION.md) for complete documentation.
+## Adding a New Brand
 
-## SEO Capabilities
+### 1. Create Brand Config
 
-The platform includes **built-in SEO automation** plus **12 advanced SEO skills**:
-
-### Built-in SEO (Automatic)
-- ✅ robots.txt generation
-- ✅ sitemap.xml generation
-- ✅ Open Graph & Twitter Card tags
-- ✅ Schema.org structured data (WebSite, Organization, LocalBusiness, FAQPage)
-- ✅ Mobile optimization tags
-- ✅ Canonical URLs
-
-### Advanced SEO Skills (StringRay)
-- 📊 Full SEO audits with health scores
-- 🔍 Technical SEO (8 categories: crawl, index, security, URL, mobile, CWV, JS, AI crawlers)
-- 📝 E-E-A-T content quality analysis
-- 🤖 AI Search / GEO optimization (ChatGPT, Perplexity, AI Overviews)
-- 📈 Competitor comparison generators
-- 🗂️ Programmatic SEO strategies
-- 🌐 Multi-language SEO validation
-- 🖼️ Image optimization analysis
-
-**Usage**: Simply use natural language requests:
 ```bash
-"Can you perform a full SEO audit on our credit-repair site?"
-"Analyze the technical SEO of healthcare-billing.com"
-"What's the E-E-A-T score of my homepage?"
-"Optimize our content for AI search engines"
+mkdir -p config/brands/mybrand
 ```
 
-See [SEO-INTEGRATION.md](SEO-INTEGRATION.md) for complete documentation.
+Create `config/brands/mybrand/brand.json`:
+```json
+{
+  "id": "mybrand",
+  "name": "My Brand",
+  "slug": "mybrand",
+  "domain": "mybrand.com",
+  "urls": {
+    "app": "https://app.mybrand.com",
+    "website": "https://www.mybrand.com"
+  },
+  "logo": { "filename": "logo.png", "alt": "My Brand" }
+}
+```
+
+### 2. Create IKB
+
+```bash
+mkdir -p config/ikb/mybrand
+```
+
+Create `config/ikb/mybrand/rules.json`:
+```json
+{
+  "trustSignals": ["Verified 2024"],
+  "promoCodes": { "default": "mycode" },
+  "approvedSections": ["hero", "faq"],
+  "blocklistedContent": ["testimonial"],
+  "blocklistedPhrases": ["guaranteed"]
+}
+```
+
+### 3. Generate Site
+
+```bash
+npm run generate -- --brand mybrand --service default
+```
+
+## Project Structure
+
+```
+microsite-platform/
+├── common/
+│   ├── components/shared/     # Brand-agnostic components
+│   ├── contexts/             # React contexts
+│   │   ├── BrandContext.tsx  # Multi-brand support
+│   │   └── IKBContext.tsx    # Institutional knowledge
+│   └── types/
+│       └── engine.ts          # Type definitions
+├── config/
+│   ├── brands/               # Brand configurations
+│   ├── ikb/                  # Institutional knowledge bases
+│   └── sites/                # Site configurations
+├── engine/
+│   ├── config-loader.ts      # Brand/IKB loader
+│   └── index.ts              # Engine exports
+├── scripts/
+│   ├── generate-site.ts      # Site generator
+│   ├── content-factory.ts    # Content validation
+│   └── launch-validate.ts    # Launch checks
+└── sites/                    # Generated microsites
+```
 
 ## Documentation
 
-- **[SEO Integration Guide](SEO-INTEGRATION.md)** - Advanced SEO capabilities with StringRay SEO skills
-- **[Agents Reference](AGENTS.md)** - All available StringRay agents and SEO skills
-- [Full Documentation](https://github.com/htafolla/stringray)
+- [Architecture Guide](docs/ARCHITECTURE.md) - Detailed architecture documentation
+- [Institutional Knowledge](docs/institutional-knowledge.md) - IKB contents
+- [AI Guardrails](docs/ai-guardrails.md) - Content validation rules
+- [Agents Reference](AGENTS.md) - StringRay agents
 
 ## License
 
 MIT
-
-## Contributing
-
-Contributions welcome! Please read our coding standards and submit pull requests with:
-1. Clear description of changes
-2. Updated documentation
-3. Tests for new features

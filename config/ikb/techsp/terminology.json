@@ -1,0 +1,48 @@
+{
+  "technologies": {
+    "rest-api": {
+      "name": "REST API",
+      "description": "Standard RESTful API with JSON payloads",
+      "authentication": ["API Key", "OAuth 2.0", "JWT"],
+      "formats": ["JSON", "XML"]
+    },
+    "webhooks": {
+      "name": "Webhooks",
+      "description": "Real-time event notifications",
+      "retry": true,
+      "authentication": "HMAC signature"
+    },
+    "oauth": {
+      "name": "OAuth 2.0",
+      "description": "Secure third-party authentication",
+      "flows": ["Authorization Code", "Client Credentials"]
+    }
+  },
+  "integrations": {
+    "crm": {
+      "name": "CRM Systems",
+      "examples": ["Salesforce", "HubSpot", "Microsoft Dynamics"]
+    },
+    "erp": {
+      "name": "ERP Systems",
+      "examples": ["SAP", "Oracle", "NetSuite"]
+    },
+    "ecommerce": {
+      "name": "E-commerce",
+      "examples": ["Shopify", "WooCommerce", "Magento"]
+    }
+  },
+  "securityTerms": {
+    "hipaa": "Health Insurance Portability and Accountability Act - healthcare data protection standard",
+    "soc2": "Service Organization Control 2 - security compliance framework",
+    "gdpr": "General Data Protection Regulation - EU data privacy regulation",
+    "encryption-at-rest": "Data encrypted when stored",
+    "encryption-in-transit": "Data encrypted during transmission (TLS 1.3)"
+  },
+  "industryTerms": {
+    "api-key": "Unique identifier for authenticating API requests",
+    "rate-limit": "Maximum number of API calls allowed per time period",
+    "webhook": "HTTP callback triggered by specific events",
+    "sandbox": "Test environment that mirrors production"
+  }
+}

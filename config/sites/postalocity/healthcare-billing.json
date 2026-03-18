@@ -24,7 +24,14 @@
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
     "description": "Postalocity helps healthcare organizations reclaim significant time through automated revenue cycle management and claims processing services.",
-    "tagline": "Empowering Healthcare Providers with Reliable Revenue Cycle Solutions"
+    "tagline": "Empowering Healthcare Providers with Reliable Revenue Cycle Solutions",
+    "links": [
+      { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
+      { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
+      { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
+      { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
+      { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+    ]
   },
   "theme": {
     "primary": {

@@ -1,0 +1,20 @@
+{
+  "id": "techsp",
+  "name": "TechSP",
+  "slug": "techsp",
+  "domain": "techsp.io",
+  "tagline": "Enterprise Technology Solutions Platform",
+  "urls": {
+    "app": "https://app.techsp.io",
+    "website": "https://www.techsp.io",
+    "blog": "https://www.techsp.io/resources/blog/",
+    "howWeHelp": "https://www.techsp.io/how-it-works/",
+    "whoWeServe": "https://www.techsp.io/industries/",
+    "contact": "https://www.techsp.io/contact/",
+    "faq": "https://www.techsp.io/support/faq/"
+  },
+  "logo": {
+    "filename": "techsp-logo.png",
+    "alt": "TechSP - Enterprise Technology Solutions Platform"
+  }
+}

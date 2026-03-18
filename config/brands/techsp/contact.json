@@ -1,0 +1,14 @@
+{
+  "phone": "1-888-TECHSP-1",
+  "email": "enterprise@techsp.io",
+  "address": {
+    "street": "500 Technology Drive",
+    "city": "San Francisco",
+    "state": "CA",
+    "zip": "94105"
+  },
+  "hours": {
+    "weekdays": "24/7 Enterprise Support",
+    "support": "enterprise@techsp.io"
+  }
+}

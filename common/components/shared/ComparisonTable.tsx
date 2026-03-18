@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Check, X } from "lucide-react";
 import envelopeSample from "@/assets/envelope-sample.svg";
+import { useFormattedPricing } from "@/utils/pricing";
 
 interface ComparisonData {
   section: {
@@ -28,10 +29,19 @@ interface ComparisonTableProps {
 const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const { short, full, withEnvelope } = useFormattedPricing();
+  
+  // Process text with pricing placeholders
+  const processText = (text: string) => {
+    return text
+      .replace(/\{\{PRICING\}\}/g, full)
+      .replace(/\{\{PRICING_SHORT\}\}/g, short)
+      .replace(/\{\{PRICING_ENVELOPE\}\}/g, withEnvelope);
+  };
 
   const renderOurSolution = (data: string | { text: string; details?: string[]; highlight?: string; isEnvelope?: boolean }) => {
     if (typeof data === "string") {
-      return data;
+      return processText(data);
     }
 
     // Special rendering for envelope row
@@ -43,18 +53,18 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
             alt="Color envelope sample"
             className="w-44 mx-auto rounded-lg"
           />
-          <p className="mt-2 font-bold text-foreground text-sm">{data.text}</p>
-          {data.highlight && <p className="mt-1 text-xs text-muted-foreground">{data.highlight}</p>}
+          <p className="mt-2 font-bold text-foreground text-sm">{processText(data.text)}</p>
+          {data.highlight && <p className="mt-1 text-xs text-muted-foreground">{processText(data.highlight)}</p>}
         </div>
       );
     }
 
     return (
       <>
-        <span className="font-semibold text-primary">{data.text}</span>
-        {data.highlight && <span className="block text-xs text-muted-foreground mt-1">{data.highlight}</span>}
-        {data.details?.map((detail, i) => (
-          <span key={i} className="block text-xs text-muted-foreground mt-1">{detail}</span>
+        <span className="font-semibold text-primary">{processText(data.text)}</span>
+        {data.highlight && <span className="block text-xs text-muted-foreground mt-1">{processText(data.highlight)}</span>}
+        {data.details?.map((detail, idx) => (
+          <span key={idx} className="block text-xs text-muted-foreground mt-1">{processText(detail)}</span>
         ))}
       </>
     );

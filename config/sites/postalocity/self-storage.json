@@ -35,7 +35,7 @@
       "subhead": "Automate tenant communications at your self-storage facility — from late fee notices and lien notifications to rent reminders and auction announcements. Upload PDFs, verify addresses in real-time, and track every piece with proof of mailing included.",
       "background": { "image": "/self-storage/images/self-storage-hero.jpg", "overlay": true, "alt": "Self storage facility exterior" },
       "ctas": [
-        { "text": "Get Started — $1.31/letter", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026", "variant": "primary" },
+        { "text": "Get Started — {{PRICING_SHORT}}", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026", "variant": "primary" },
         { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
       ]
     },
@@ -64,7 +64,7 @@
         { "icon": "shield", "feature": "Proof of Mailing", "ourSolution": "Affidavit included — Certificate upgrade available", "traditionalApproach": "Post office receipt only" },
         { "icon": "clock", "feature": "Processing Time", "ourSolution": "Same-day after approval", "traditionalApproach": "Daily trips to post office" },
         { "icon": "file-text", "feature": "Lien Compliance", "ourSolution": "Affidavit + Certificate upgrade for legal requirements", "traditionalApproach": "Manual documentation" },
-        { "icon": "dollar-sign", "feature": "Cost per Letter", "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage – includes envelope", "traditionalApproach": "Equipment, postage, labor" },
+        { "icon": "dollar-sign", "feature": "Cost per Letter", "ourSolution": "{{PRICING_ENVELOPE}}", "traditionalApproach": "Equipment, postage, labor" },
         { "icon": "mail", "feature": "Envelope", "ourSolution": { "text": "Included — Color Optional", "highlight": "Professional envelope with every mailing", "isEnvelope": true }, "traditionalApproach": "Self-mailer — No envelope" }
       ]
     },
@@ -93,7 +93,7 @@
         { "q": "What proof of mailing do I get?", "a": "Every letter includes: (1) Our mailing affidavit documenting we processed and handed your items to USPS, and (2) USPS scan tracing showing processing status. For an official USPS postmark with the exact acceptance date — required by some states for lien deadlines — add the Certificate of Mailing upgrade." },
         { "q": "What's the difference between Proof of Mailing, USPS scan tracing, and Certificate of Mailing?", "a": "Three different things: (1) Proof of Mailing (Affidavit) documents that Postalocity processed and mailed your items. (2) USPS scan tracing shows where your letter is in the postal system — included with First-Class Mail. (3) Certificate of Mailing is an official USPS form with a post office postmark proving the EXACT DATE your letter was accepted by USPS — this is what some states require for lien deadlines. If your state requires documented proof of the mailing date, upgrade to Certificate of Mailing." },
         { "q": "What's the difference between USPS scanning and tracking?", "a": "First-Class includes USPS scan tracing (shows processing status). For full delivery confirmation with signature, upgrade to Priority Mail or Certified Mail. Marketing Mail has no tracking at all." },
-        { "q": "What is the starting price?", "a": "$1.31/letter (1-page B&W, First-Class envelope + postage). As low as $1.31 to print, fold, stuff, seal, and apply postage. Certificate of Mailing upgrade available for additional fee." }
+        { "q": "What is the starting price?", "a": "{{PRICING}} Certificate of Mailing upgrade available for additional fee." }
       ]
     },
     "trustSignals": {
@@ -103,7 +103,14 @@
     "footer": {
       "finalCTA": { "headline": "Streamline self-storage mailing today?", "buttonText": "Sign Up Now", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026" },
       "description": "Streamline self-storage tenant communications with automated mailing — lien notices, rent reminders, and auction notices with proof of mailing.",
-      "tagline": "Proof of Mailing. Every Letter."
+      "tagline": "Proof of Mailing. Every Letter.",
+      "links": [
+        { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
+        { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
+        { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
+        { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
+        { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+      ]
     }
   }
 }

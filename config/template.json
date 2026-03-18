@@ -27,7 +27,7 @@
   "theme": { "primary": { "h": 200, "s": 80, "l": 30 } },
   "seo": {
     "title": "[Industry] Mailing — Proof & Compliance",
-    "description": "Automate [industry] mailing: [primary keyword] from $1.31/letter with proof, verification & tracking.",
+    "description": "Automate [industry] mailing: [primary keyword] from {{PRICING_SHORT}} with proof, verification & tracking.",
     "keywords": ["[primary keyword]", "[secondary keyword]", "[tertiary keyword]"],
     "ogTitle": "[Industry] Mailing — Proof Every Letter",
     "ogDescription": "Streamline [use cases] — automated, verified, compliant.",
@@ -55,7 +55,7 @@
       "subhead": "Automate [use cases] — secure upload, verification, proof & tracking.",
       "background": { "image": "/[slug]/images/[slug]-hero.jpg", "overlay": true, "alt": "[Industry] mailing service for agencies" },
       "ctas": [
-        { "text": "Get Started — $1.31/letter", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026", "variant": "primary" },
+        { "text": "Get Started — {{PRICING_SHORT}}", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026", "variant": "primary" },
         { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
       ]
     },
@@ -75,7 +75,7 @@
         { "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
         { "feature": "Proof of Mailing", "ourSolution": "Digital every letter", "traditionalApproach": "Post office receipt" },
         { "feature": "Processing", "ourSolution": "Same-day approved", "traditionalApproach": "Daily trips" },
-        { "feature": "Cost", "ourSolution": "$1.31 all-inclusive", "traditionalApproach": "Equipment, postage, labor" }
+        { "feature": "Cost", "ourSolution": "{{PRICING}}", "traditionalApproach": "Equipment, postage, labor" }
       ]
     },
     "services": {
@@ -109,7 +109,7 @@
       "faqs": [
         { "q": "Proof included?", "a": "Yes — every letter. Certified upgrade for tracking." },
         { "q": "Address verification?", "a": "Yes — built-in, reduces returns." },
-        { "q": "Starting price?", "a": "$1.31/letter (1-page B&W, envelope + postage)." },
+        { "q": "Starting price?", "a": "{{PRICING}}" },
         { "q": "Processing time?", "a": "Same-day if approved by noon CT." }
       ]
     },

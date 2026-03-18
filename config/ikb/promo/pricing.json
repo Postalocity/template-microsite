@@ -1,0 +1,45 @@
+{
+  "basePrice": 1.29,
+  "currency": "USD",
+  "units": "per unit",
+  "tiers": [
+    {
+      "name": "Standard",
+      "price": 1.29,
+      "description": "Basic promotional materials",
+      "features": [
+        "Standard materials",
+        "5-7 day turnaround",
+        "Digital proof included"
+      ]
+    },
+    {
+      "name": "Premium",
+      "price": 2.99,
+      "description": "High-quality promotional materials",
+      "features": [
+        "Premium materials",
+        "3-5 day turnaround",
+        "Rush digital proof",
+        "Free revisions"
+      ]
+    },
+    {
+      "name": "Enterprise",
+      "price": 5.99,
+      "description": "Bulk promotional solutions",
+      "features": [
+        "Top-tier materials",
+        "1-3 day turnaround",
+        "Dedicated support",
+        "Custom solutions"
+      ]
+    }
+  ],
+  "addOns": {
+    "rush-production": 0.50,
+    "premium-materials": 1.00,
+    "custom-packaging": 0.75,
+    "design-services": 49.99
+  }
+}

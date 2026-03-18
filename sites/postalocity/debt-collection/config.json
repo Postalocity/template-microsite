@@ -75,7 +75,7 @@
       "ctas": [
         {
           "text": "Upload Your Letters",
-          "subtext": "Starting at $1.31/page",
+          "subtext": "Starting at {{PRICING_SHORT}}/page",
           "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026",
           "variant": "primary"
         },
@@ -160,7 +160,7 @@
         {
           "icon": "dollar-sign",
           "feature": "Cost per Letter",
-          "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage – includes envelope",
+          "ourSolution": "{{PRICING_ENVELOPE}}",
           "traditionalApproach": "Equipment, postage, labor costs"
         },
         {
@@ -276,7 +276,7 @@
         },
         {
           "q": "What is the starting price?",
-          "a": "Processing starts at $1.31 per letter (1-page, single-sided, black & white, including envelope and First-Class postage). Upgrade to Certified Mail for full USPS tracking with proof of delivery."
+          "a": "Processing starts at {{PRICING}} Upgrade to Certified Mail for full USPS tracking with proof of delivery."
         }
       ]
     },
@@ -295,7 +295,29 @@
         "headline": "Ready to streamline your collection mailing?",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026"
-      }
+      },
+      "links": [
+        {
+          "label": "Blog",
+          "href": "https://www.postalocity.com/resources/blog/"
+        },
+        {
+          "label": "FAQ",
+          "href": "https://www.postalocity.com/resources/faq/"
+        },
+        {
+          "label": "Contact",
+          "href": "https://www.postalocity.com/contact/"
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "https://www.postalocity.com/privacy/"
+        },
+        {
+          "label": "Terms of Service",
+          "href": "https://www.postalocity.com/terms/"
+        }
+      ]
     }
   },
   "footer": {}

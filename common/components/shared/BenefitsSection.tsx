@@ -4,6 +4,7 @@ import { BenefitsContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
 import { getGridLayoutClasses, getColumnSpanClass, getColumnClass } from "../../utils/grid-layout";
 import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
+import { useFormattedPricing } from "@/utils/pricing";
 
 interface BenefitsSectionProps {
   benefits: BenefitsContent;
@@ -12,6 +13,15 @@ interface BenefitsSectionProps {
 const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+  const { short, full, withEnvelope } = useFormattedPricing();
+  
+  // Process text with pricing placeholders
+  const processText = (text: string) => {
+    return text
+      .replace(/\{\{PRICING\}\}/g, full)
+      .replace(/\{\{PRICING_SHORT\}\}/g, short)
+      .replace(/\{\{PRICING_ENVELOPE\}\}/g, withEnvelope);
+  };
 
   // Guard clause for missing data - prevents runtime errors (Codex #7)
   if (!benefits?.section || !benefits?.benefits) {
@@ -59,16 +69,16 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                     </div>
                     <CardTitle className="text-xl">{benefit.title}</CardTitle>
                     <CardDescription className="text-base mt-2">
-                      {benefit.description}
+                      {processText(benefit.description)}
                       {benefit.detail && (
                         <span className="block mt-2 font-medium text-primary/80">
-                          {benefit.detail}
+                          {processText(benefit.detail)}
                         </span>
                       )}
                     </CardDescription>
                     {benefit.metrics && (
                       <div className="text-base font-semibold text-primary mt-4">
-                        {benefit.metrics}
+                        {processText(benefit.metrics)}
                       </div>
                     )}
                   </CardHeader>

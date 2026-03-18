@@ -1,0 +1,46 @@
+{
+  "standard": [
+    {
+      "id": "api-documentation",
+      "name": "API Documentation",
+      "description": "Comprehensive API docs with code examples",
+      "included": true,
+      "tier": "included",
+      "note": "Interactive sandbox environment included"
+    },
+    {
+      "id": "sdk-packages",
+      "name": "SDK Packages",
+      "description": "Official SDKs for popular languages",
+      "included": true,
+      "tier": "included",
+      "note": "Python, Node.js, Java, Go, Ruby available"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "dedicated-support",
+      "name": "Dedicated Support Engineer",
+      "description": "Named support engineer for your account",
+      "tier": "optional",
+      "additionalCost": 500.00,
+      "note": "Response time < 4 hours"
+    },
+    {
+      "id": "custom-integration",
+      "name": "Custom Integration",
+      "description": "We build and maintain custom integrations",
+      "tier": "optional",
+      "additionalCost": 2500.00,
+      "note": "One-time setup fee"
+    },
+    {
+      "id": "sla-upgrade",
+      "name": "SLA Upgrade",
+      "description": "Enhanced SLA with financial penalties",
+      "tier": "optional",
+      "additionalCost": 1000.00,
+      "note": "Includes service credits"
+    }
+  ]
+}

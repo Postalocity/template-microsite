@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { sanitizeHtml } from "../../utils/sanitize-html";
+import { useIKBPricing } from "@/contexts";
 
 const defaultFaqs = [];
 
@@ -9,10 +10,26 @@ const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: s
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  
+  // Get pricing from IKB context
+  const pricing = useIKBPricing();
+  
+  // Format pricing string for FAQ
+  const pricingText = useMemo(() => {
+    if (pricing?.basePrice) {
+      return `$${pricing.basePrice.toFixed(2)}/${pricing.units || 'letter'} (1-page B&W, envelope + postage)`;
+    }
+    return "$1.31/letter (1-page B&W, envelope + postage)";
+  }, [pricing]);
 
   // Handle both direct faqs array or wrapped { faq: { section, faqs } } format
   const faqData = faqContent?.faqs ? faqContent : (faqContent as any)?.faq;
   const faqs = faqData?.faqs ?? defaultFaqs;
+  
+  // Process FAQ answers to replace placeholders
+  const processAnswer = (answer: string) => {
+    return answer.replace(/\{\{PRICING\}\}/g, pricingText);
+  };
 
   return (
     <section id="faq" className="section-padding bg-background" ref={ref}>
@@ -61,7 +78,7 @@ const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: s
                   >
                     <p
                       className="px-6 pb-6 text-muted-foreground leading-relaxed"
-                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(faq.a) }}
+                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(processAnswer(faq.a)) }}
                     />
                   </motion.div>
                 )}

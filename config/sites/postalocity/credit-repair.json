@@ -24,7 +24,14 @@
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026"
     },
     "description": "Postalocity streamlines dispute letter processing for credit repair professionals with automation that reclaims operational time while ensuring accurate USPS delivery and compliance documentation.",
-    "tagline": "Empowering Credit Repair Professionals with Reliable Automation"
+    "tagline": "Empowering Credit Repair Professionals with Reliable Automation",
+    "links": [
+      { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
+      { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
+      { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
+      { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
+      { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+    ]
   },
   "theme": {
     "primary": {
@@ -88,7 +95,7 @@
       },
       "ctas": [
         {
-          "text": "Starting at $1.31",
+          "text": "Starting at {{PRICING_SHORT}}",
           "subtext": "1-page. single-sided. B&W. includes postage.",
           "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026",
           "variant": "primary"
@@ -269,7 +276,7 @@
         },
         {
           "q": "How much does a dispute letter mailing cost?",
-          "a": "Our price is $1.31 per a 1-page letter. Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail."
+          "a": "Our price is {{PRICING}} Single-sided, black and white. Includes envelope, folding, stuffing, sealing, and First-Class postage. There are no setup fees, no monthly fees, and no minimums. You only pay for what you actually mail."
         },
         {
           "q": "How does Postalocity integrate with my credit repair software?",

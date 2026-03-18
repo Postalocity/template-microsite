@@ -69,7 +69,7 @@
       },
       "ctas": [
         {
-          "text": "Get Started — $1.31/letter",
+          "text": "Get Started — {{PRICING_SHORT}}",
           "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026",
           "variant": "primary"
         },
@@ -173,7 +173,7 @@
         {
           "icon": "dollar-sign",
           "feature": "Cost per Letter",
-          "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage – includes envelope",
+          "ourSolution": "{{PRICING_ENVELOPE}}",
           "traditionalApproach": "Equipment, postage, labor"
         },
         {
@@ -269,7 +269,7 @@
         },
         {
           "q": "What is the starting price?",
-          "a": "$1.31/letter (1-page B&W, First-Class envelope + postage). As low as $1.31 to print, fold, stuff, seal, and apply postage. Certificate of Mailing upgrade available for additional fee."
+          "a": "{{PRICING}} Certificate of Mailing upgrade available for additional fee."
         }
       ]
     },
@@ -290,7 +290,29 @@
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026"
       },
       "description": "Streamline self-storage tenant communications with automated mailing — lien notices, rent reminders, and auction notices with proof of mailing.",
-      "tagline": "Proof of Mailing. Every Letter."
+      "tagline": "Proof of Mailing. Every Letter.",
+      "links": [
+        {
+          "label": "Blog",
+          "href": "https://www.postalocity.com/resources/blog/"
+        },
+        {
+          "label": "FAQ",
+          "href": "https://www.postalocity.com/resources/faq/"
+        },
+        {
+          "label": "Contact",
+          "href": "https://www.postalocity.com/contact/"
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "https://www.postalocity.com/privacy/"
+        },
+        {
+          "label": "Terms of Service",
+          "href": "https://www.postalocity.com/terms/"
+        }
+      ]
     }
   },
   "footer": {}

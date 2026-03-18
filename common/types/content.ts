@@ -132,6 +132,10 @@ export interface SectionContent {
   about?: AboutContent;
   reviews?: ReviewsContent;
   caseStudies?: CaseStudiesContent;
+  footer?: FooterContent;
+  difference?: DifferenceContent;
+  trustSignals?: TrustSignalsContent;
+  howItWorks?: HowItWorksContent;
 }
 
 // E-E-A-T: Experience - Reviews & Testimonials
@@ -237,9 +241,35 @@ export interface TrustSignal {
 export interface TrustSignalsContent {
   section: {
     title: string;
-    description: string;
+    description?: string;
   };
   signals: TrustSignal[];
+}
+
+export interface DifferenceContent {
+  section: {
+    title: string;
+    description?: string;
+  };
+  background?: string;
+  differences: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+}
+
+export interface HowItWorksContent {
+  section?: {
+    id?: string;
+    title?: string;
+    description?: string;
+  };
+  steps?: {
+    number?: string;
+    title: string;
+    description: string;
+  }[];
 }
 
 // E-E-A-T: Trustworthiness - Legal Pages
@@ -259,7 +289,9 @@ export interface FooterContent {
     buttonText: string;
     href: string;
     promoCode?: string;
+    disclaimer?: string;
   };
   description: string;
   tagline: string;
+  disclaimer?: string;
 }

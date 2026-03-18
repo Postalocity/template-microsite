@@ -1,0 +1,63 @@
+{
+  "trustSignals": [
+    "High-Quality Materials 2024",
+    "Eco-Friendly Printing 2024",
+    "Fast Turnaround Guaranteed"
+  ],
+  "promoCodes": {
+    "signage": "promo2026",
+    "trade-show": "trade2026",
+    "event-materials": "event2026",
+    "promotional-mail": "pm2026"
+  },
+  "approvedSections": [
+    "hero",
+    "howItWorks",
+    "features",
+    "faq",
+    "cta",
+    "footer",
+    "trustSignals",
+    "pricing",
+    "gallery"
+  ],
+  "blocklistedContent": [
+    "testimonial",
+    "testimonials",
+    "case-study",
+    "case-studies",
+    "video",
+    "video-content",
+    "live-chat",
+    "livechat",
+    "team",
+    "experts",
+    "award",
+    "awards",
+    "review",
+    "reviews",
+    "aggregateRating",
+    "star rating"
+  ],
+  "blocklistedPhrases": [
+    "millions of customers",
+    "award-winning",
+    "industry-leading",
+    "world-class",
+    "cutting-edge",
+    "revolutionary",
+    "game-changing",
+    "best-in-class",
+    "proven results",
+    "guaranteed results",
+    "satisfaction guaranteed",
+    "100% accurate",
+    "zero errors",
+    "trusted by celebrities",
+    "featured in Forbes",
+    "as seen on TV",
+    "free shipping always",
+    "cheapest option",
+    "lowest price guaranteed"
+  ]
+}

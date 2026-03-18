@@ -1,0 +1,20 @@
+{
+  "id": "promo",
+  "name": "Promo",
+  "slug": "promo",
+  "domain": "promobranding.com",
+  "tagline": "Professional Promotional Solutions",
+  "urls": {
+    "app": "https://app.promobranding.com",
+    "website": "https://www.promobranding.com",
+    "blog": "https://www.promobranding.com/resources/blog/",
+    "howWeHelp": "https://www.promobranding.com/how-we-help/",
+    "whoWeServe": "https://www.promobranding.com/who-we-serve/",
+    "contact": "https://www.promobranding.com/contact/",
+    "faq": "https://www.promobranding.com/resources/faq/"
+  },
+  "logo": {
+    "filename": "promo-logo.png",
+    "alt": "Promo - Professional Promotional Solutions"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "mailClasses": {
+    "first-class": {
+      "name": "First-Class Mail",
+      "description": "Commercial mail service with tracking",
+      "hasTracking": true,
+      "hasCertificate": true,
+      "allowsPersonalData": true,
+      "hipaaCompliant": true,
+      "useCases": [
+        "Bills and statements",
+        "Legal notices",
+        "HIPAA documents",
+        "Account notifications",
+        "Compliance documentation"
+      ]
+    },
+    "priority": {
+      "name": "Priority Mail",
+      "description": "Expedited mail with full tracking",
+      "hasTracking": true,
+      "hasCertificate": true,
+      "hasInsurance": true,
+      "allowsPersonalData": true,
+      "insuranceAmount": 100,
+      "useCases": [
+        "Time-sensitive documents",
+        "Valuable items",
+        "Legal filings"
+      ]
+    },
+    "certified": {
+      "name": "Certified Mail",
+      "description": "First-Class with signature proof",
+      "hasTracking": true,
+      "hasCertificate": true,
+      "hasSignature": true,
+      "allowsPersonalData": true,
+      "hipaaCompliant": true,
+      "useCases": [
+        "Legal compliance",
+        "Contract notices",
+        "Evidence of delivery"
+      ]
+    },
+    "marketing": {
+      "name": "Marketing Mail",
+      "description": "Standard advertising mail",
+      "hasTracking": false,
+      "hasCertificate": false,
+      "allowsPersonalData": false,
+      "restrictions": [
+        "No account numbers",
+        "No balance information",
+        "No personal identifiers",
+        "No HIPAA data",
+        "Advertisements only"
+      ],
+      "useCases": [
+        "Promotional materials",
+        "Newsletters",
+        "Catalogs",
+        "Advertising"
+      ]
+    }
+  },
+  "certifications": {
+    "ncoa": {
+      "name": "NCOA",
+      "fullName": "National Change of Address",
+      "description": "USPS-maintained database of address changes"
+    },
+    "cass": {
+      "name": "CASS",
+      "fullName": "Coding Accuracy Support System",
+      "description": "Address standardization certification"
+    },
+    "iso9001": {
+      "name": "ISO 9001",
+      "fullName": "ISO 9001:2015 Quality Management",
+      "description": "International quality management standard"
+    }
+  },
+  "industryTerms": {
+    "mailPiece": "A single item sent through the mail",
+    "mailingList": "Collection of addresses for a mailing campaign",
+    "ndc": "Network Distribution Center",
+    "scf": "Sectional Center Facility",
+    "dsf": "Delivery Sequence File",
+    "presort": "Pre-sorted mail for discounted rates"
+  }
+}

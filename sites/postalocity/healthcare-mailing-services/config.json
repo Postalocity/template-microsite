@@ -286,7 +286,7 @@
       },
       "pricing": {
         "title": "From small clinics to large healthcare systems, our pay-as-you-go model scales with your volume needs without contracts.",
-        "startingPrice": "$1.31 per 1-page statement",
+        "startingPrice": "{{PRICING}}",
         "features": [
           "Automated address verification",
           "Professional printing and finishing",
@@ -361,7 +361,7 @@
         },
         {
           "q": "How much does patient statement mailing cost?",
-          "a": "Our price starts at $1.31 per 1-page statement with no contracts or minimum volume requirements."
+          "a": "Our price starts at {{PRICING}} with no contracts or minimum volume requirements."
         },
         {
           "q": "Can I track patient statements?",
@@ -595,6 +595,28 @@
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
     "description": "Postalocity helps healthcare organizations reclaim significant time through automated patient statement mailing and billing communication services.",
-    "tagline": "Empowering Healthcare Providers with Reliable Mailing Solutions"
+    "tagline": "Empowering Healthcare Providers with Reliable Mailing Solutions",
+    "links": [
+      {
+        "label": "Blog",
+        "href": "https://www.postalocity.com/resources/blog/"
+      },
+      {
+        "label": "FAQ",
+        "href": "https://www.postalocity.com/resources/faq/"
+      },
+      {
+        "label": "Contact",
+        "href": "https://www.postalocity.com/contact/"
+      },
+      {
+        "label": "Privacy Policy",
+        "href": "https://www.postalocity.com/privacy/"
+      },
+      {
+        "label": "Terms of Service",
+        "href": "https://www.postalocity.com/terms/"
+      }
+    ]
   }
 }

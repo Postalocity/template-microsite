@@ -1,0 +1,48 @@
+{
+  "productTypes": {
+    "signage": {
+      "name": "Signage",
+      "description": "Banners, posters, and outdoor displays",
+      "materials": ["vinyl", "fabric", "rigid substrates"],
+      "useCases": ["events", "retail", "trade shows", "outdoor advertising"]
+    },
+    "trade-show": {
+      "name": "Trade Show Materials",
+      "description": "Booth displays, tabletop, and promotional items",
+      "materials": ["portable displays", "fabric", " lightweight rigid"],
+      "useCases": ["conferences", "expos", "corporate events"]
+    },
+    "promotional-items": {
+      "name": "Promotional Items",
+      "description": "Branded merchandise and giveaways",
+      "materials": ["various"],
+      "useCases": ["client gifts", "employee appreciation", "brand awareness"]
+    }
+  },
+  "materials": {
+    "vinyl": {
+      "name": "Vinyl",
+      "description": "Durable, weather-resistant for outdoor use",
+      "durability": "high",
+      "outdoor": true
+    },
+    "fabric": {
+      "name": "Fabric",
+      "description": "Lightweight, portable, machine washable",
+      "durability": "medium",
+      "outdoor": false
+    },
+    "rigid-substrate": {
+      "name": "Rigid Substrate",
+      "description": "Coroplast, foam board, or PVC for permanent displays",
+      "durability": "very-high",
+      "outdoor": true
+    }
+  },
+  "industryTerms": {
+    "bleed": "Extra print area extending beyond final trim size",
+    "dpi": "Dots per inch - measure of print resolution",
+    "grommets": "Metal rings inserted in banners for hanging",
+    "lamination": "Protective coating for added durability"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "phone": "1-800-PROMO-01",
+  "email": "support@promobranding.com",
+  "address": {
+    "street": "1500 Branding Blvd",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78701"
+  },
+  "hours": {
+    "weekdays": "8:00 AM - 6:00 PM CST",
+    "support": "support@promobranding.com"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "basePrice": 299.00,
+  "currency": "USD",
+  "units": "per month",
+  "tiers": [
+    {
+      "name": "Starter",
+      "price": 299.00,
+      "description": "Perfect for small teams getting started",
+      "features": [
+        "Up to 10 users",
+        "100,000 API calls/month",
+        "Standard integrations",
+        "Email support",
+        "99.9% uptime SLA"
+      ]
+    },
+    {
+      "name": "Professional",
+      "price": 799.00,
+      "description": "For growing businesses with advanced needs",
+      "features": [
+        "Up to 50 users",
+        "1,000,000 API calls/month",
+        "Premium integrations",
+        "Priority support",
+        "99.95% uptime SLA",
+        "Custom webhooks"
+      ]
+    },
+    {
+      "name": "Enterprise",
+      "price": 2499.00,
+      "description": "Mission-critical applications",
+      "features": [
+        "Unlimited users",
+        "Unlimited API calls",
+        "All integrations",
+        "Dedicated support",
+        "99.99% uptime SLA",
+        "Custom development",
+        "SLA guarantees",
+        "On-premise option"
+      ]
+    }
+  ],
+  "addOns": {
+    "additional-users": 10.00,
+    "additional-api-calls": 0.001,
+    "dedicated-support": 500.00,
+    "custom-integration": 2500.00,
+    "on-premise-deployment": 5000.00
+  }
+}

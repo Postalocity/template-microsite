@@ -1,0 +1,47 @@
+{
+  "standard": [
+    {
+      "id": "digital-proof",
+      "name": "Digital Proof",
+      "description": "Online preview of your design before printing",
+      "included": true,
+      "tier": "included",
+      "note": "Automatically included with every order"
+    },
+    {
+      "id": "color-matching",
+      "name": "Color Matching",
+      "description": "PANTONE color matching for brand consistency",
+      "included": false,
+      "tier": "optional",
+      "additionalCost": 15.00,
+      "note": "Recommended for brand materials"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "rush-production",
+      "name": "Rush Production",
+      "description": "Priority production for faster turnaround",
+      "tier": "optional",
+      "additionalCost": 0.50,
+      "note": "Reduces turnaround by 50%"
+    },
+    {
+      "id": "premium-materials",
+      "name": "Premium Materials",
+      "description": "Higher quality substrates for better durability",
+      "tier": "optional",
+      "additionalCost": 1.00,
+      "note": "Weather-resistant options available"
+    },
+    {
+      "id": "custom-finishing",
+      "name": "Custom Finishing",
+      "description": "Foil stamping, embossing, or spot UV",
+      "tier": "optional",
+      "additionalCost": 2.50,
+      "note": "Add premium look and feel"
+    }
+  ]
+}

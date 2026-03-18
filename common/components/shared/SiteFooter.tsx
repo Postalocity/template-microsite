@@ -3,19 +3,21 @@ import { useBrand, useBrandName } from '@/contexts';
 
 interface SiteFooterProps {
   config?: {
-    footer?: {
-      finalCTA?: {
-        headline?: string;
+    content?: {
+      footer?: {
+        finalCTA?: {
+          headline?: string;
+          description?: string;
+          buttonText?: string;
+          href?: string;
+          promoCode?: string;
+          disclaimer?: string;
+        };
         description?: string;
-        buttonText?: string;
-        href?: string;
-        promoCode?: string;
+        tagline?: string;
         disclaimer?: string;
+        links?: Array<{ label: string; href: string }>;
       };
-      description?: string;
-      tagline?: string;
-      disclaimer?: string;
-      links?: Array<{ label: string; href: string }>;
     };
   };
 }
@@ -27,7 +29,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   const ctx = useBrand();
   const brandName = useBrandName();
   
-  const content = config?.footer;
+  const content = config?.content?.footer;
   
   // Build CTA URL with promo code from context
   const getCTAUrl = () => {
@@ -88,7 +90,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             <ul className="space-y-2 text-sm">
               <li><a href={ctx.brand.urls.howWeHelp || ctx.brand.urls.website} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">How We Help</a></li>
               <li><a href={ctx.brand.urls.whoWeServe || ctx.brand.urls.website} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Who We Serve</a></li>
-              <li><a href={ctx.brand.urls.app} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Sign Up</a></li>
+              <li><a href={getCTAUrl()} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Sign Up</a></li>
             </ul>
           </div>
           <div>

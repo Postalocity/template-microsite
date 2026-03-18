@@ -5,6 +5,7 @@ import { getIcon } from "../../utils/icons";
 import { sanitizeHtml } from "../../utils/sanitize-html";
 import { getGridLayoutClasses, getColumnClass, getColumnSpanClass } from "../../utils/grid-layout";
 import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
+import { useFormattedPricing } from "@/utils/pricing";
 
 interface ServicesSectionProps {
   services: ServicesContent;
@@ -15,6 +16,15 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const itemCount = services.services.length;
   const gridClasses = getGridLayoutClasses(itemCount);
+  const { short, full, withEnvelope } = useFormattedPricing();
+  
+  // Process text with pricing placeholders
+  const processText = (text: string) => {
+    return text
+      .replace(/\{\{PRICING\}\}/g, full)
+      .replace(/\{\{PRICING_SHORT\}\}/g, short)
+      .replace(/\{\{PRICING_ENVELOPE\}\}/g, withEnvelope);
+  };
 
   // Force 6-column grid for 7 items
   const forceGridStyle = itemCount === 7 ? {
@@ -69,7 +79,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                     <CardTitle className="text-lg">{service.title}</CardTitle>
                     <CardDescription 
                       className="text-sm mt-2"
-                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(service.description) }}
+                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(service.description)) }}
                     />
                   </CardHeader>
                 </Card>

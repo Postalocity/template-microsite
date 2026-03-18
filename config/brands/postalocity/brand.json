@@ -1,0 +1,24 @@
+{
+  "id": "postalocity",
+  "name": "Postalocity",
+  "slug": "postalocity",
+  "domain": "postalocity.com",
+  "tagline": "Automate Your Direct Mail",
+  "urls": {
+    "app": "https://prod.postalocity.com/login.html",
+    "website": "https://www.postalocity.com",
+    "blog": "https://www.postalocity.com/resources/blog/",
+    "howWeHelp": "https://www.postalocity.com/how-we-help/",
+    "whoWeServe": "https://www.postalocity.com/who-we-serve/",
+    "contact": "https://www.postalocity.com/contact/",
+    "faq": "https://www.postalocity.com/resources/faq/"
+  },
+  "logo": {
+    "filename": "postalocity-logo.png",
+    "alt": "Postalocity - Direct Mail Automation"
+  },
+  "colors": {
+    "primary": { "h": 38, "s": 92, "l": 55 },
+    "accent": { "h": 45, "s": 100, "l": 50 }
+  }
+}

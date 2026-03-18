@@ -1,11 +1,20 @@
 import { motion } from 'framer-motion';
 import { HeroContent, CTA } from '../../types/content';
+import { useFormattedPricing } from '@/utils/pricing';
 
 interface HeroSectionProps {
   hero: HeroContent;
 }
 
 const HeroSection = ({ hero }: HeroSectionProps) => {
+  const { short, full } = useFormattedPricing();
+  
+  // Process text with pricing placeholders
+  const processText = (text: string) => {
+    return text
+      .replace(/\{\{PRICING\}\}/g, full)
+      .replace(/\{\{PRICING_SHORT\}\}/g, short);
+  };
   return (
     <header
       id="hero"
@@ -44,7 +53,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           </h1>
 
           <p className="text-lg sm:text-xl text-hero-subtitle leading-relaxed mb-10 max-w-2xl">
-            {hero.subhead}
+            {processText(hero.subhead)}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -58,7 +67,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
                     : 'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl btn-cta-outline text-lg'
                 }
               >
-                {cta.text}
+                {processText(cta.text)}
               </a>
             ))}
           </div>

@@ -23,6 +23,26 @@ const CONFIGS_DIR = path.join(ROOT_DIR, 'config/sites/postalocity');  // Default
 const SITES_DIR = path.join(ROOT_DIR, 'sites');
 const TEMPLATE_DIR = ROOT_DIR;
 
+// Default pricing values for placeholder replacement
+const DEFAULT_PRICING = {
+  basePrice: 1.31,
+  units: 'letter',
+};
+
+/**
+ * Process pricing placeholders in text
+ */
+function processPricingPlaceholders(text: string, basePrice: number = DEFAULT_PRICING.basePrice): string {
+  const shortPrice = `$${basePrice.toFixed(2)}/${DEFAULT_PRICING.units}`;
+  const fullPrice = `$${basePrice.toFixed(2)}/${DEFAULT_PRICING.units} (1-page B&W, envelope + postage)`;
+  const envelopePrice = `As low as $${basePrice.toFixed(2)} to print, fold, stuff, seal, and apply postage – includes envelope`;
+  
+  return text
+    .replace(/\{\{PRICING\}\}/g, fullPrice)
+    .replace(/\{\{PRICING_SHORT\}\}/g, shortPrice)
+    .replace(/\{\{PRICING_ENVELOPE\}\}/g, envelopePrice);
+}
+
 /**
  * TypeScript interfaces for type safety (Codex #11)
  */
@@ -866,7 +886,7 @@ function generateIndexHtml(config: SiteConfig): string {
   <head>
     <meta charset="UTF-8" />
     <title>${config.seo?.title || `${site.name} | ${config.branding.tagline}`}</title>
-    <meta name="description" content="${config.seo?.description || config.content?.hero?.subhead}" />
+    <meta name="description" content="${processPricingPlaceholders(config.seo?.description || config.content?.hero?.subhead || '')}" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="${config.seo?.canonicalUrl || canonicalUrl}" />
@@ -876,14 +896,14 @@ function generateIndexHtml(config: SiteConfig): string {
     <meta property="og:type" content="website" />
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:title" content="${config.seo?.ogTitle || `${site.name} | ${config.branding.tagline}`}" />
-    <meta property="og:description" content="${config.seo?.ogDescription || config.content?.hero?.subhead}" />
+    <meta property="og:description" content="${processPricingPlaceholders(config.seo?.ogDescription || config.content?.hero?.subhead || '')}" />
     <meta property="og:image" content="${ogImage}" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="${canonicalUrl}" />
     <meta property="twitter:title" content="${config.seo?.twitterTitle || `${site.name} | ${config.branding.tagline}`}" />
-    <meta property="twitter:description" content="${config.seo?.twitterDescription || config.content?.hero?.subhead}" />
+    <meta property="twitter:description" content="${processPricingPlaceholders(config.seo?.twitterDescription || config.content?.hero?.subhead || '')}" />
     <meta property="twitter:image" content="${ogImage}" />
 
     <!-- SEO Meta Tags -->

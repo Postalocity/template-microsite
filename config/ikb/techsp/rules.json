@@ -1,0 +1,58 @@
+{
+  "trustSignals": [
+    "Secure API Integration 2024",
+    "HIPAA Compliant Infrastructure",
+    "Enterprise SLA 99.99%"
+  ],
+  "promoCodes": {
+    "saas-platform": "tech2026",
+    "api-integration": "api2026",
+    "enterprise": "enterprise2026",
+    "startup": "startup2026"
+  },
+  "approvedSections": [
+    "hero",
+    "howItWorks",
+    "features",
+    "faq",
+    "cta",
+    "footer",
+    "trustSignals",
+    "pricing",
+    "security",
+    "integrations"
+  ],
+  "blocklistedContent": [
+    "testimonial",
+    "testimonials",
+    "case-study",
+    "case-studies",
+    "video",
+    "video-content",
+    "live-chat",
+    "livechat",
+    "award",
+    "awards",
+    "review",
+    "reviews",
+    "aggregateRating",
+    "star rating",
+    "guaranteed"
+  ],
+  "blocklistedPhrases": [
+    "millions of users",
+    "award-winning",
+    "industry-leading",
+    "world-class",
+    "revolutionary",
+    "game-changing",
+    "best-in-class",
+    "proven results",
+    "satisfaction guaranteed",
+    "zero bugs",
+    "100% secure",
+    "unhackable",
+    "perfect uptime",
+    "no downtime ever"
+  ]
+}
