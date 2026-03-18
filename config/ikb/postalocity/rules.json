@@ -1,0 +1,105 @@
+{
+  "trustSignals": [
+    "NCOA Verified 2024",
+    "CASS Certified 2024",
+    "ISO 9001 Documented Processes 2023"
+  ],
+  "promoCodes": {
+    "credit-repair": "cr2026",
+    "debt-collection": "debt2026",
+    "healthcare-billing": "hb2026",
+    "healthcare-mailing-services": "hm2026",
+    "postcard": "pc2026",
+    "self-storage": "pm2026"
+  },
+  "standardizedCopy": {
+    "proofOfMailing": {
+      "title": "Proof of Mailing (Affidavit)",
+      "description": "Documents that Postalocity processed and mailed your items."
+    },
+    "certificateOfMailing": {
+      "title": "Certificate of Mailing",
+      "description": "An official USPS form with a postmark proving the item was accepted at the post office.",
+      "complianceNote": "Some states require this for lien compliance deadlines."
+    },
+    "uspsScanTracing": {
+      "title": "USPS Scan Tracing (First-Class)",
+      "description": "Shows processing status — when and where your item was handled in the postal system."
+    },
+    "fullTracking": {
+      "title": "Full Tracking (Certified Mail)",
+      "description": "Includes delivery confirmation and signature proof."
+    },
+    "envelope": {
+      "title": "Every Letter Includes an Envelope",
+      "description": "Professionally printed, folded, stuffed, sealed, and mailed. No self-mailers or stickers."
+    },
+    "addressVerification": {
+      "title": "Address Verification",
+      "description": "Addresses are verified against USPS databases before printing to reduce returned mail."
+    }
+  },
+  "comparisonDefaults": {
+    "envelope": {
+      "ourSolution": "Included — Color Optional",
+      "traditionalApproach": "Self-mailer — No envelope"
+    },
+    "price": {
+      "template": "As low as $1.31 to print, fold, stuff, seal, and apply postage — includes envelope"
+    }
+  },
+  "approvedSections": [
+    "hero",
+    "howItWorks",
+    "features",
+    "faq",
+    "cta",
+    "footer",
+    "trustSignals",
+    "difference",
+    "pricing"
+  ],
+  "blocklistedContent": [
+    "testimonial",
+    "testimonials",
+    "case-study",
+    "case-studies",
+    "video",
+    "video-content",
+    "live-chat",
+    "livechat",
+    "team",
+    "experts",
+    "award",
+    "awards",
+    "review",
+    "reviews",
+    "aggregateRating",
+    "star rating",
+    "5-star"
+  ],
+  "blocklistedPhrases": [
+    "millions of customers",
+    "award-winning",
+    "industry-leading",
+    "world-class",
+    "cutting-edge",
+    "revolutionary",
+    "game-changing",
+    "best-in-class",
+    "proven results",
+    "guaranteed results",
+    "satisfaction guaranteed",
+    "100% accurate",
+    "zero errors",
+    "trusted by celebrities",
+    "featured in Forbes",
+    "as seen on TV",
+    "guaranteed delivery",
+    "100% delivery",
+    "verify with your legal counsel",
+    "verify with legal counsel",
+    "may meet state",
+    "may be required"
+  ]
+}

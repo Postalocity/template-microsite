@@ -121,6 +121,21 @@ const rules = {
           }
           return { valid: true };
         }
+      },
+      {
+        name: 'ALL_ROWS_HAVE_ICON',
+        validate: (rows) => {
+          const issues = [];
+          rows?.forEach((row, i) => {
+            if (!row.icon) {
+              issues.push(`Row ${i + 1} "${row.feature}" is missing icon`);
+            }
+          });
+          if (issues.length > 0) {
+            return { valid: false, message: issues.join('; ') };
+          }
+          return { valid: true };
+        }
       }
     ]
   },
@@ -135,6 +150,60 @@ const rules = {
       {
         regex: /\$1\.31\s+includes?\s+everything/i,
         message: '"$1.31 includes everything" is vague - specify what is included: print, fold, stuff, seal, postage, envelope'
+      }
+    ]
+  },
+
+  /**
+   * IKB_PROOF_OF_MAILING
+   * Ensures Proof of Mailing terminology is consistent with IKB standards.
+   */
+  IKB_PROOF_OF_MAILING: {
+    severity: 'error',
+    patterns: [
+      {
+        regex: /our internal document/i,
+        message: 'Use "Documents that Postalocity processed and mailed" instead of "our internal document"'
+      },
+      {
+        regex: /proving we processed/i,
+        message: 'Use "proving Postalocity processed" instead of "proving we processed"'
+      },
+      {
+        regex: /verify with (your|the) (legal|attorney|counsel)/i,
+        message: 'Do not use "verify with legal counsel" - explain what Certificate of Mailing provides instead'
+      }
+    ]
+  },
+
+  /**
+   * IKB_TRACKING_TERMINOLOGY
+   * Ensures tracking vs scanning terminology is consistent.
+   */
+  IKB_TRACKING_TERMINOLOGY: {
+    severity: 'warning',
+    patterns: [
+      {
+        regex: /tracking.*includes? scan tracing|scan tracing.*includes? tracking/i,
+        message: 'Scan tracing and full tracking are different - do not conflate them'
+      }
+    ]
+  },
+
+  /**
+   * IKB_SELF_MAILER
+   * Ensures self-mailer terminology is consistent.
+   */
+  IKB_SELF_MAILER: {
+    severity: 'warning',
+    patterns: [
+      {
+        regex: /loose paper|loose papers/i,
+        message: 'Use "Self-mailer" instead of "loose paper" for professional terminology'
+      },
+      {
+        regex: /sticker|stickers/i,
+        message: 'Use "Self-mailer" instead of "sticker" for professional terminology'
       }
     ]
   },
@@ -281,6 +350,27 @@ class ContentValidator {
 
     // Check for vague price language
     for (const pattern of rules.PRICE_CLARITY.patterns) {
+      if (pattern.regex.test(text)) {
+        this.log('warning', pattern.message, context);
+      }
+    }
+
+    // Check Proof of Mailing terminology
+    for (const pattern of rules.IKB_PROOF_OF_MAILING.patterns) {
+      if (pattern.regex.test(text)) {
+        this.log('error', pattern.message, context);
+      }
+    }
+
+    // Check tracking terminology
+    for (const pattern of rules.IKB_TRACKING_TERMINOLOGY.patterns) {
+      if (pattern.regex.test(text)) {
+        this.log('warning', pattern.message, context);
+      }
+    }
+
+    // Check self-mailer terminology
+    for (const pattern of rules.IKB_SELF_MAILER.patterns) {
       if (pattern.regex.test(text)) {
         this.log('warning', pattern.message, context);
       }
