@@ -164,6 +164,12 @@
           "feature": "Operational Efficiency",
           "ourSolution": "Reclaim time through full automation",
           "traditionalApproach": "Hours weekly on manual assembly & mailing"
+        },
+        {
+          "icon": "mail",
+          "feature": "Envelope",
+          "ourSolution": "Included — Color Optional",
+          "traditionalApproach": "Self-mailer — No envelope"
         }
       ]
     },

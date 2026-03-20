@@ -76,7 +76,8 @@
         { "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
         { "feature": "Proof of Mailing", "ourSolution": "Digital every letter", "traditionalApproach": "Post office receipt" },
         { "feature": "Processing", "ourSolution": "Same-day approved", "traditionalApproach": "Daily trips" },
-        { "feature": "Cost", "ourSolution": "{{PRICING}}", "traditionalApproach": "Equipment, postage, labor" }
+        { "feature": "Cost", "ourSolution": "{{PRICING}}", "traditionalApproach": "Equipment, postage, labor" },
+        { "feature": "Envelope", "ourSolution": "Included", "traditionalApproach": "Self-mailer — No envelope" }
       ]
     },
     "services": {
