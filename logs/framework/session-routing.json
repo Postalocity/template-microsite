@@ -1,0 +1,44 @@
+{"timestamp":"2026-03-20T13:22:37.943Z","message":"recalibarate stringray is upgraded and should not be fully working","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:23:23.052Z","message":"no","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:23:46.965Z","message":"no dont apply another pattern was likely added review what is there","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:29:59.084Z","message":"proide the extractActionWords() fn code I will pass along","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:31:57.229Z","message":"beyond that does the new upgrade look solid it should be far more refined then what we had","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:38:19.643Z","message":"lets return back to the microsite generators do a deep internal review of the architecture","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:41:58.983Z","message":"print this to file and then make a plan to correct the issues","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:47:54.073Z","message":"with IKB tracing there are 4 stages scanned: received. processed. transfer to another center. loaded","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:52:13.245Z","message":"all sites have the google analytics code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:54:00.808Z","message":"grab the google analytics code from the standalone sites in ~/dev","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:56:30.151Z","message":"canonical\": \"https://real-estate.postalocity.com\",\nin reality the urls are in form: canonical\": \"htt","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T13:59:22.217Z","message":"on all of these sites. can I just redeploy the index.html or the assets folder as well to get the ga","agent":"devops-engineer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:04:14.979Z","message":"reuploaded credit repair. assets are required as new index refers to generated asset names. but ther","agent":"frontend-engineer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:06:01.251Z","message":"rebuild all sites","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:08:42.713Z","message":"credit repair does not have the latest footer the footer should be applied across all sites in the t","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:10:10.600Z","message":"of course teh cta and postalocity sections can be unique per site. just the general footer should be","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:16:18.980Z","message":"does not the new footer have additonal links in the area of the copyright why not applied to credit-","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:17:48.689Z","message":"no look at the debt collection footer","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:18:54.264Z","message":"these are not needed: { \"label\": \"Accessibility\", \"href\": \"https://www.postalocity.com/accessibility","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:23:28.680Z","message":"error on real estate Download the React DevTools for a better development experience: https://reactj","agent":"frontend-engineer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:25:10.373Z","message":"still do not see the footer links on credit-repair check the generated code fix the issue throughout","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:30:08.510Z","message":"many of the links do not work. update to be simply: privacy terms for those lins. login ahould also ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:31:32.616Z","message":"[slug]2026 is problamatic should just be slug.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:32:29.127Z","message":"we do not need to duplicate the links that are already there. under quicklinks or resources in the b","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:35:01.884Z","message":"now that we have room in the very bottom footer links. send to seo stragegist and ask which other pa","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:44:42.381Z","message":"double check all feats are included in template from real-estate and self-storage","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:46:56.250Z","message":"what did architect come back with on a plan for the framework did we already implement it?","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:48:03.988Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:49:48.161Z","message":"write a deep reflection","agent":"storyteller","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:50:05.186Z","message":"Write a deep reflection about today's session working on the Postalocity microsite platform. \n\n## Ke","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T14:50:21.239Z","message":"Write a deep reflection about today's session working on the Postalocity microsite platform.\n\n## Key","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T17:21:33.656Z","message":"continue","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T17:26:37.148Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T17:33:14.688Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T17:38:57.874Z","message":"wait the email in the footer is to be conact@postalocity.com update the template and throughout.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T18:02:35.349Z","message":"continue planned phases","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T18:13:46.003Z","message":"on credit repair getting error wen upload dist credit-repair/:237  GET https://www.postalocity.com/m","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T18:26:44.022Z","message":"where not the postalocity seciont in the futer supposed to be unique per site","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T18:40:39.627Z","message":"can you also update the footers in the static sites in ~/dev","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T19:17:13.074Z","message":"check all sites at ~/dav the google analytics code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T19:17:26.654Z","message":"check all sites at ~/dev the google analytics code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T19:18:09.209Z","message":"wait do they have a google analytics code at all?","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T19:18:40.491Z","message":"why did you say they did not a sec ago","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-20T19:25:35.525Z","message":"git commit and push","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}

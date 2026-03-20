@@ -119,7 +119,7 @@ export function getDefaultBrandContext(): BrandContextValue {
     },
     contact: {
       phone: '316-260-2220',
-      email: 'support@postalocity.com',
+      email: 'contact@postalocity.com',
       address: {
         street: '820 W 2nd St N',
         city: 'Wichita',
@@ -128,7 +128,7 @@ export function getDefaultBrandContext(): BrandContextValue {
       },
       hours: {
         weekdays: '8:00 AM - 5:00 PM CST',
-        support: 'support@postalocity.com',
+        support: 'contact@postalocity.com',
       },
     },
     social: {

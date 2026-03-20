@@ -6,7 +6,7 @@
     "domain": "postalocity.com",
     "basename": "postalocity-credit-repair",
     "contact": {
-      "email": "support@postalocity.com",
+      "email": "contact@postalocity.com",
       "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita, KS 67203"
     }
@@ -492,27 +492,19 @@
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026"
     },
     "description": "Postalocity streamlines dispute letter processing for credit repair professionals with automation that reclaims operational time while ensuring accurate USPS delivery and compliance documentation.",
-    "tagline": "Empowering Credit Repair Professionals with Reliable Automation",
+    "tagline": "Proof of Mailing. Every Letter.",
     "links": [
       {
-        "label": "Blog",
-        "href": "https://www.postalocity.com/resources/blog/"
-      },
-      {
-        "label": "FAQ",
-        "href": "https://www.postalocity.com/resources/faq/"
-      },
-      {
-        "label": "Contact",
-        "href": "https://www.postalocity.com/contact/"
-      },
-      {
-        "label": "Privacy Policy",
+        "label": "Privacy",
         "href": "https://www.postalocity.com/privacy/"
       },
       {
-        "label": "Terms of Service",
+        "label": "Terms",
         "href": "https://www.postalocity.com/terms/"
+      },
+      {
+        "label": "Login",
+        "href": "https://prod.postalocity.com/login.html?promo=cr"
       }
     ]
   }

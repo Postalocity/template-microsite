@@ -6,7 +6,7 @@
     "domain": "postalocity.com",
     "basename": "postalocity-self-storage",
     "contact": {
-      "email": "support@postalocity.com",
+      "email": "contact@postalocity.com",
       "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita, KS 67203"
     }
@@ -29,7 +29,8 @@
     "ogDescription": "Automate lien notices, late fee notices, and tenant communications with secure upload, address verification, proof of mailing, and real-time tracking.",
     "ogImage": "/self-storage/images/og-image.png",
     "twitterCard": "summary_large_image",
-    "canonical": "https://self-storage.postalocity.com"
+    "canonical": "https://postalocity.com/self-storage",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [
@@ -100,9 +101,8 @@
         },
         {
           "icon": "shield",
-          "title": "Proof of Mailing (Affidavit)",
-          "description": "Every letter includes our mailing affidavit documenting we processed your items. Upgrade to Certificate of Mailing — an official USPS form with a postmark proving the exact date your letter was accepted by USPS.",
-          "detail": "If your state requires documented proof of the mailing date for lien deadlines, the Certificate of Mailing upgrade provides the official USPS postmark you need."
+          "title": "Affidavit of Mailing. Every Letter.",
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "file-text",
@@ -197,12 +197,12 @@
         {
           "icon": "bell",
           "title": "Late Fee & Delinquency Notices",
-          "description": "Automate delinquent tenant notifications with verified addresses and documented proof of mailing for compliance."
+          "description": "Automate delinquent tenant notifications with verified addresses and documented Proof of Mailing (Affidavit) for compliance."
         },
         {
           "icon": "file",
           "title": "Lien Notifications",
-          "description": "Meet state-specific lien requirements with documented proof of mailing — essential for legal compliance."
+          "description": "Meet state-specific lien requirements with documented Proof of Mailing (Affidavit) — essential for compliance."
         },
         {
           "icon": "calendar",
@@ -224,9 +224,8 @@
       "differences": [
         {
           "icon": "shield",
-          "title": "Proof of Mailing (Affidavit)",
-          "description": "Every letter includes our mailing affidavit documenting we processed your items. Upgrade to Certificate of Mailing — an official USPS form with a postmark proving the exact date your letter was accepted by USPS.",
-          "detail": "If your state requires documented proof of the mailing date for lien deadlines, the Certificate of Mailing upgrade provides the official USPS postmark you need."
+          "title": "Affidavit of Mailing. Every Letter.",
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "eye",
@@ -257,7 +256,7 @@
         },
         {
           "q": "What proof of mailing do I get?",
-          "a": "Every letter includes: (1) Our mailing affidavit documenting we processed and handed your items to USPS, and (2) USPS scan tracing showing processing status. For an official USPS postmark with the exact acceptance date — required by some states for lien deadlines — add the Certificate of Mailing upgrade."
+          "a": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "q": "What's the difference between Proof of Mailing, USPS scan tracing, and Certificate of Mailing?",
@@ -286,6 +285,7 @@
     "footer": {
       "finalCTA": {
         "headline": "Streamline self-storage mailing today?",
+        "description": "Automated tenant communications with proof of mailing—no contracts, pay-as-you-go pricing.",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026"
       },
@@ -293,27 +293,42 @@
       "tagline": "Proof of Mailing. Every Letter.",
       "links": [
         {
-          "label": "Blog",
-          "href": "https://www.postalocity.com/resources/blog/"
-        },
-        {
-          "label": "FAQ",
-          "href": "https://www.postalocity.com/resources/faq/"
-        },
-        {
-          "label": "Contact",
-          "href": "https://www.postalocity.com/contact/"
-        },
-        {
-          "label": "Privacy Policy",
+          "label": "Privacy",
           "href": "https://www.postalocity.com/privacy/"
         },
         {
-          "label": "Terms of Service",
+          "label": "Terms",
           "href": "https://www.postalocity.com/terms/"
+        },
+        {
+          "label": "Login",
+          "href": "https://prod.postalocity.com/login.html?promo=storage"
         }
       ]
     }
   },
-  "footer": {}
+  "footer": {
+    "finalCTA": {
+      "headline": "Streamline self-storage mailing today?",
+      "description": "Automated tenant communications with proof of mailing—no contracts, pay-as-you-go pricing.",
+      "buttonText": "Sign Up Now",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026"
+    },
+    "description": "Streamline self-storage tenant communications with automated mailing — lien notices, rent reminders, and auction notices with proof of mailing.",
+    "tagline": "Proof of Mailing. Every Letter.",
+    "links": [
+      {
+        "label": "Privacy",
+        "href": "https://www.postalocity.com/privacy/"
+      },
+      {
+        "label": "Terms",
+        "href": "https://www.postalocity.com/terms/"
+      },
+      {
+        "label": "Login",
+        "href": "https://prod.postalocity.com/login.html?promo=storage"
+      }
+    ]
+  }
 }

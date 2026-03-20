@@ -53,7 +53,7 @@ describe('config-loader', () => {
       
       expect(contact).toBeDefined();
       expect(contact.phone).toBe('316-260-2220');
-      expect(contact.email).toBe('support@postalocity.com');
+      expect(contact.email).toBe('contact@postalocity.com');
       expect(contact.address).toBeDefined();
       expect(contact.address.street).toBe('820 W 2nd St N');
       expect(contact.address.city).toBe('Wichita');

@@ -1,19 +1,10 @@
 # StringRay Agents - Consumer Guide
 
-**Version**: 1.10.6
-
 Quick reference for **using** the StringRay AI orchestration framework in your projects.
 
 ## What is StringRay?
 
-StringRay provides intelligent multi-agent orchestration with automatic delegation, Codex compliance validation, and async multi-agent coordination. Agents operate via OpenCode plugin injection - no manual setup needed.
-
-## New in v1.10
-
-- **Token Optimization**: 20K max tokens, automatic compression at 15K threshold
-- **Async Multi-Agent**: Up to 3 concurrent agents with capability-based routing
-- **Autonomous Reporting**: Hourly health reports with agent activities
-- **44 Available Agents**: Expanded agent ecosystem
+StringRay provides intelligent multi-agent orchestration with automatic delegation and Codex compliance validation. Agents operate via OpenCode plugin injection - no manual setup needed.
 
 ## Quick Start
 
@@ -40,50 +31,26 @@ That's it! StringRay handles the rest automatically.
 
 When you invoke an agent:
 - StringRay analyzes your request complexity
-- Routes to the most appropriate agent (capability-based)
-- For complex tasks, spawns multiple subagents concurrently (up to 3)
-- The agent(s) complete the task with Codex validation
+- Routes to the most appropriate agent
+- The agent completes the task
 - Results are delivered back to you
 
 You don't need to manage agents manually - just use the `@agent-name` syntax and StringRay handles everything.
 
-## Available Agents (44 Total)
-
-### Core Agents
+## Available Agents
 
 | Agent | Purpose | Example Invocation |
 |-------|---------|-------------------|
 | `@enforcer` | Codex compliance & error prevention | `@enforcer analyze this code` |
 | `@orchestrator` | Complex multi-step task coordination | `@orchestrator implement feature` |
 | `@architect` | System design & technical decisions | `@architect design API` |
-| `@code-reviewer` | Quality assessment | `@code-reviewer review PR` |
 | `@security-auditor` | Vulnerability detection | `@security-auditor scan` |
+| `@code-reviewer` | Quality assessment | `@code-reviewer review PR` |
 | `@refactorer` | Technical debt elimination | `@refactorer optimize code` |
 | `@testing-lead` | Testing strategy | `@testing-lead plan tests` |
 | `@bug-triage-specialist` | Error investigation | `@bug-triage-specialist debug error` |
-
-### Specialist Agents
-
-| Agent | Purpose | Example Invocation |
-|-------|---------|-------------------|
-| `@researcher` | Codebase exploration | `@researcher find implementation` |
 | `@storyteller` | Narrative deep reflections | `@storyteller write a journey` |
-| `@strategist` | Strategic planning | `@strategist plan product launch` |
-| `@seo-consultant` | SEO optimization | `@seo-consultant audit site` |
-| `@content-creator` | Content generation | `@content-creator write landing page` |
-| `@growth-strategist` | Growth tactics | `@growth-strategist plan acquisition` |
-| `@database-engineer` | Database design | `@database-engineer design schema` |
-| `@backend-engineer` | Backend development | `@backend-engineer implement API` |
-| `@frontend-engineer` | Frontend development | `@frontend-engineer build component` |
-| `@mobile-developer` | Mobile development | `@mobile-developer build app` |
-| `@devops-engineer` | DevOps & infrastructure | `@devops-engineer setup CI/CD` |
-| `@performance-engineer` | Performance optimization | `@performance-engineer optimize load` |
-| `@test-architect` | Testing architecture | `@test-architect design test suite` |
-| `@tech-writer` | Technical documentation | `@tech-writer write API docs` |
-| `@document-writer` | General documentation | `@document-writer write guide` |
-| `@frontend-ui-ux-engineer` | UI/UX design | `@frontend-ui-ux-engineer design form` |
-| `@multimodal-looker` | Visual analysis | `@multimodal-looker analyze mockup` |
-| `@log-monitor` | Log analysis | `@log-monitor analyze errors` |
+| `@researcher` | Codebase exploration | `@researcher find implementation` |
 
 ### Storyteller Agent
 
@@ -96,15 +63,21 @@ The `@storyteller` agent supports multiple story types:
 | `journey` | Investigation/learning journey | `@storyteller write a journey about X` |
 | `narrative` | Technical narrative - telling the story of code | `@storyteller write a narrative about X` |
 
+**Example:**
+```
+@storyteller write a reflection about fixing the memory leak
+```
+
 ## Complexity Routing
 
 StringRay automatically routes tasks based on complexity:
 
-- **Simple (≤25)**: Single agent handles it directly
-- **Moderate (26-95)**: Multi-agent coordination possible
-- **Enterprise (>95)**: Orchestrator-led team
+- **Simple (≤20)**: Single agent handles it directly
+- **Moderate (21-35)**: Single agent with additional tools
+- **Complex (36-75)**: Multi-agent coordination
+- **Enterprise (>75)**: Orchestrator-led team
 
-Formula: `Score = (files×2 + change/10 + deps×3 + duration/10) × operation_weight × risk_mult`
+You don't need to think about this - StringRay decides automatically based on your request.
 
 ## CLI Commands
 
@@ -342,23 +315,136 @@ npx strray-ai --version
 
 ---
 
-## Migration Guide (v1.10)
+## Migration Guide (v1.7.8)
 
-**Version 1.10 introduces token optimization and async multi-agent coordination.**
+**Good news: No migration needed!** ✨
 
-### What's New
+StringRay v1.7.8 maintains **100% backward compatibility**. All existing code continues to work exactly as before.
 
-- **Token Optimization**: 20K max tokens, compression at 15K threshold
-- **Async Multi-Agent**: Up to 3 concurrent agents
-- **44 Agents**: Expanded ecosystem including specialist agents
-- **Autonomous Reporting**: Hourly health reports
+### What Stayed the Same
+
+- ✅ `@agent-name` syntax - unchanged
+- ✅ All CLI commands - work exactly as before
+- ✅ Configuration files - same format and location
+- ✅ All agents - same names and capabilities
+- ✅ Custom agents - same creation process
+- ✅ Public APIs - unchanged
+
+### What Improved (Behind the Scenes)
+
+The refactoring improved internal architecture without affecting the public interface:
+
+- **Performance**: Faster agent spawning and task routing
+- **Maintainability**: Better code organization for future improvements
+- **Reliability**: More robust error handling
+- **Scalability**: Better handling of complex, multi-agent workflows
+
+### Do I Need to Change Anything?
+
+| If You're Using... | Action Needed |
+|-------------------|---------------|
+| `@agent-name` syntax | ✅ No changes needed |
+| CLI commands (`npx strray-ai ...`) | ✅ No changes needed |
+| Configuration files | ✅ No changes needed |
+| Custom agents | ✅ No changes needed |
+| Framework as-is | ✅ No changes needed |
+
+### Internal vs Public APIs
+
+**Public APIs** (you use these - unchanged):
+- `@agent-name` invocation syntax
+- CLI commands
+- Configuration file formats
+- Agent registration
+
+**Internal APIs** (changed, but you don't use them directly):
+- Internal agent coordination
+- Framework boot process
+- MCP server management
 
 ### Upgrading
 
 ```bash
+# Simply update to latest version
 npm update strray-ai
+
+# Or reinstall
+npm install strray-ai@latest
+
+# Verify installation
 npx strray-ai health
 ```
+
+---
+
+## Consumer FAQ
+
+### General Questions
+
+**Q: Do I need to change my code after the refactoring?**
+A: **No!** All public APIs remain unchanged. Your existing `@agent-name` invocations, CLI commands, and configuration files work exactly as before.
+
+**Q: What actually changed in the refactoring?**
+A: Only internal implementation details. The public interface you use (@agent syntax, CLI commands, config files) is 100% backward compatible.
+
+**Q: What improvements will I see?**
+A: Faster agent spawning, better error handling, and more reliable multi-agent coordination - all behind the scenes.
+
+**Q: Are there any breaking changes?**
+A: **No.** This is a zero-breaking-change release.
+
+### Using Agents
+
+**Q: How do I invoke an agent?**
+A: Use `@agent-name` syntax in your prompts or code comments:
+```
+@architect design an API for user authentication
+```
+
+**Q: Can I create my own agents?**
+A: Yes! Create a file in `.opencode/agents/` and it will be auto-discovered. See [Adding Custom Agents](#adding-custom-agents) section.
+
+**Q: What if an agent doesn't exist?**
+A: StringRay will tell you and suggest available agents. Run `npx strray-ai capabilities` to see all available agents.
+
+**Q: Can agents call other agents?**
+A: The orchestrator agent can spawn other agents for complex tasks. You don't need to manage this - just use `@orchestrator` for complex workflows.
+
+### Configuration
+
+**Q: Where do I configure StringRay?**
+A: Main configuration is in `.opencode/strray/features.json` and `.opencode/opencode.json`.
+
+**Q: How do I enable/disable features?**
+A: Use the CLI: `npx strray-ai config set --feature FEATURE_NAME.enabled --value true/false`
+
+**Q: Can I use environment variables?**
+A: Yes! See [Environment Variables](#environment-variables) section for available options.
+
+### Troubleshooting
+
+**Q: Agents aren't responding. What should I do?**
+A: Run `npx strray-ai health` to check the framework status. Common fixes:
+- Check if StringRay is installed: `npx strray-ai --version`
+- Validate configuration: `npx strray-ai validate`
+- Check logs: `cat .opencode/logs/strray-plugin-$(date +%Y-%m-%d).log`
+
+**Q: How do I update StringRay?**
+A: `npm update strray-ai` or `npm install strray-ai@latest`
+
+**Q: Where can I get help?**
+A: Run `npx strray-ai help` or check the [troubleshooting section](#troubleshooting).
+
+### Advanced Usage
+
+**Q: Can I use StringRay in CI/CD pipelines?**
+A: Yes! See [CI/CD Pipeline Integration](#cicd-pipeline-integration) section.
+
+**Q: How do I add custom validation rules?**
+A: You can extend the Codex or create custom agents. See [Adding Custom Agents](#adding-custom-agents).
+
+**Q: Can I disable telemetry?**
+A: Yes, set `STRRAY_NO_TELEMETRY=1` environment variable.
 
 ---
 
@@ -370,145 +456,4 @@ npx strray-ai health
 
 ---
 
-**Version**: 1.10.6 | [GitHub](https://github.com/htafolla/stringray)
-
----
-
-# Project Context: Multi-Brand Microsite Platform
-
-This section provides context for AI agents working on this codebase.
-
-## Project Overview
-
-**Purpose**: A multi-brand microsite generator that supports multiple brands (Postalocity, Promo, TechSP) with separated brand configurations and institutional knowledge bases (IKBs).
-
-**Key Files**:
-- `common/contexts/BrandContext.tsx` - Multi-brand support via React context
-- `common/contexts/IKBContext.tsx` - Institutional knowledge base (prevents AI hallucination)
-- `engine/config-loader.ts` - Brand/IKB loading with validation
-- `scripts/generate-site.ts` - Site generator with `--brand` and `--service` flags
-
-## Brand System
-
-### Supported Brands
-- **postalocity** - Direct mail automation (default)
-- **promo** - Promotional/branding solutions
-- **techsp** - Enterprise technology platform
-
-### Brand Config Structure
-```
-config/brands/{brand}/
-├── brand.json      # id, name, slug, domain, urls, logo
-├── contact.json    # phone, email, address, hours
-└── social.json     # twitter, linkedin, facebook, instagram
-```
-
-## IKB System (Institutional Knowledge Base)
-
-### Purpose
-Prevents AI hallucination by providing verified business rules, pricing, and terminology.
-
-### IKB Config Structure
-```
-config/ikb/{brand}/
-├── rules.json          # Trust signals, promo codes, blocklists
-├── pricing.json        # Base prices, tiers, add-ons
-├── proof-options.json  # Proof options and upgrades
-└── terminology.json    # Industry-specific terms
-```
-
-### Key IKB Rules
-- **Trust Signals**: Verified certifications (NCOA, CASS, ISO 9001)
-- **Promo Codes**: Service-specific promo codes per brand
-- **Blocklisted Content**: testimonial, video, live-chat, team, awards, reviews
-- **Blocklisted Phrases**: "guaranteed delivery", "100% accurate", "award-winning", etc.
-
-## Context Hooks
-
-### BrandContext Hooks
-```typescript
-useBrand()           // { brand, contact, social, promoCode }
-useBrandName()       // string - e.g., "Postalocity"
-useBrandUrls()       // { app, website, blog, ... }
-useBrandContact()     // { phone, email, address, hours }
-useBrandSocial()      // { twitter, linkedin, facebook, instagram }
-usePromoCode()       // string | undefined
-useAppUrl()          // string with promo code appended
-```
-
-### IKBContext Hooks
-```typescript
-useIKB()                    // Full context with validation
-useIKBRules()              // { trustSignals, promoCodes, blocklistedContent, ... }
-useTrustSignals()           // string[] - e.g., ["NCOA Verified 2024", "CASS Certified 2024"]
-usePromoCodeFromIKB(slug)  // Get promo code for service slug
-useIKBPricing()             // { basePrice, currency, tiers, addOns }
-useIKBTerminology()         // { mailClasses, certifications, industryTerms }
-```
-
-### Content Validation
-```typescript
-isContentAllowed('testimonial')  // false (blocklisted)
-isPhraseAllowed('guaranteed delivery')  // false (blocklisted)
-```
-
-## Testing
-
-```bash
-npm test              # 158 tests across 9 files
-npm run test:coverage # Coverage report
-```
-
-### Test Files
-| File | Tests |
-|------|-------|
-| `BrandContext.test.tsx` | 20 |
-| `IKBContext.test.tsx` | 19 |
-| `generate-site.test.ts` | 24 |
-| `config-loader.test.ts` | 23 |
-| `content-factory.test.ts` | 42 |
-
-## Site Generation
-
-```bash
-# Generate a site
-npm run generate -- --brand postalocity --service credit-repair
-
-# Then build
-cd sites/credit-repair && npm install && npm run build
-```
-
-## Important Patterns
-
-### 1. Always Use Context Hooks
-❌ **Don't**: `<a href="https://prod.postalocity.com/login.html">`
-✅ **Do**: `<a href={useAppUrl()}>`
-
-### 2. Don't Hardcode Brand Names
-❌ **Don't**: "Postalocity handles everything"
-✅ **Do**: `{useBrandName()} handles everything`
-
-### 3. Trust Signals from IKB
-❌ **Don't**: Hardcode certifications
-✅ **Do**: Use `useTrustSignals()` hook
-
-### 4. Validate Content Against Blocklists
-Before adding testimonials, videos, or promotional phrases, check:
-```typescript
-const { isContentAllowed, isPhraseAllowed } = useIKB();
-isContentAllowed('testimonial');  // false
-isPhraseAllowed('guaranteed results');  // false
-```
-
-## Error Handling
-
-- Missing `BrandProvider`: Throws in dev mode, falls back to Postalocity defaults in prod
-- Missing `IKBProvider`: Throws in dev mode, uses default IKB in prod
-- Invalid brand/IKB config: Validation errors in `config-loader.ts`
-
-## Adding a New Brand
-
-1. Create `config/brands/mybrand/{brand,contact,social}.json`
-2. Create `config/ikb/mybrand/{rules,pricing,proof-options,terminology}.json`
-3. Update `generate-site.ts` with new brand defaults (if needed)
-4. Add tests for new brand configurations
+**Version**: 1.7.8 | [GitHub](https://github.com/htafolla/stringray)

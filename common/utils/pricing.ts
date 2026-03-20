@@ -17,7 +17,7 @@ export function formatPrice(price: number, units: string = 'letter'): string {
  * Format full pricing description
  */
 export function formatFullPricing(basePrice: number, units: string = 'letter'): string {
-  return `$${basePrice.toFixed(2)}/${units} (1-page B&W, envelope + postage)`;
+  return `$${basePrice.toFixed(2)}/${units} (1-page B&W, single-sided, envelope + postage)`;
 }
 
 /**
@@ -26,7 +26,7 @@ export function formatFullPricing(basePrice: number, units: string = 'letter'): 
 export const DEFAULT_PRICING = {
   basePrice: 1.31,
   units: 'letter',
-  fullDescription: '$1.31/letter (1-page B&W, envelope + postage)',
+  fullDescription: '$1.31/letter (1-page B&W, single-sided, envelope + postage)',
 };
 
 /**
@@ -51,8 +51,13 @@ export function useFormattedPricing() {
 
 /**
  * Process text and replace pricing placeholders
+ * @param text - The text containing pricing placeholders
+ * @param pricing - Optional pricing config, uses DEFAULT_PRICING if not provided
  */
-export function processPricingPlaceholders(text: string, pricing: { basePrice?: number; units?: string }): string {
+export function processPricingPlaceholders(
+  text: string, 
+  pricing?: { basePrice?: number; units?: string }
+): string {
   const basePrice = pricing?.basePrice ?? DEFAULT_PRICING.basePrice;
   const units = pricing?.units ?? DEFAULT_PRICING.units;
   

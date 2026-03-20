@@ -33,7 +33,8 @@
     "ogDescription": "Streamline [use cases] — automated, verified, compliant.",
     "ogImage": "/[slug]/images/og-image.png",
     "twitterCard": "summary_large_image",
-    "canonical": "https://[slug].postalocity.com"
+    "canonical": "https://postalocity.com/[slug]",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [
@@ -47,7 +48,7 @@
       { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
       { "label": "Contact", "href": "https://www.postalocity.com/contact/" }
     ],
-    "cta": { "text": "Sign Up Now", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026" }
+    "cta": { "text": "Sign Up Now", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]" }
   },
   "content": {
     "hero": {
@@ -55,7 +56,7 @@
       "subhead": "Automate [use cases] — secure upload, verification, proof & tracking.",
       "background": { "image": "/[slug]/images/[slug]-hero.jpg", "overlay": true, "alt": "[Industry] mailing service for agencies" },
       "ctas": [
-        { "text": "Get Started — {{PRICING_SHORT}}", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026", "variant": "primary" },
+        { "text": "Get Started — {{PRICING_SHORT}}", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]", "variant": "primary" },
         { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
       ]
     },
@@ -88,11 +89,12 @@
       ]
     },
     "howItWorks": {
-      "section": { "id": "how-it-works", "title": "How It Works", "description": "Three simple steps to get started." },
+      "section": { "id": "how-it-works", "title": "How It Works", "description": "Four simple steps to get started." },
       "steps": [
         { "number": "1", "title": "Upload Your Documents", "description": "Upload your [industry] documents as PDFs. We accept standard file formats." },
         { "number": "2", "title": "We Verify Addresses", "description": "We run every address through USPS verification — catching errors before printing." },
-        { "number": "3", "title": "We Print, Stuff & Mail", "description": "We professionally print, fold, stuff into envelopes, seal, and mail. You get proof of mailing." }
+        { "number": "3", "title": "We Print, Stuff & Mail", "description": "We professionally print, fold, stuff into envelopes, seal, and mail. You get proof of mailing." },
+        { "number": "4", "title": "USPS Delivery", "description": "Reliable USPS delivery with tracking visibility and proof of mailing for every letter." }
       ]
     },
     "difference": {
@@ -118,15 +120,13 @@
       "signals": ["NCOA Verified 2024", "CASS Certified 2024", "ISO 9001 Documented Processes 2023"]
     },
     "footer": {
-      "finalCTA": { "headline": "Streamline [industry] mailing today?", "buttonText": "Sign Up Now", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]2026" },
+      "finalCTA": { "headline": "Streamline [industry] mailing today?", "buttonText": "Sign Up Now", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]" },
       "description": "Automate your [industry] mailing with proof of mailing, address verification, and compliant document handling.",
       "tagline": "Proof of Mailing. Every Letter.",
       "links": [
-        { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
-        { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
-        { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
-        { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
-        { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+        { "label": "Privacy", "href": "https://www.postalocity.com/privacy/" },
+        { "label": "Terms", "href": "https://www.postalocity.com/terms/" },
+        { "label": "Login", "href": "https://prod.postalocity.com/login.html?promo=[slug]" }
       ]
     }
   }

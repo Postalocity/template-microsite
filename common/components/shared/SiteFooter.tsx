@@ -29,7 +29,8 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   const ctx = useBrand();
   const brandName = useBrandName();
   
-  const content = config?.content?.footer;
+  // Support both config.footer and config.content.footer structures
+  const content = config?.content?.footer || config?.footer;
   
   // Build CTA URL with promo code from context
   const getCTAUrl = () => {
@@ -141,31 +142,24 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-background/10 gap-4">
-          <div>
-            <p className="text-background/50 text-sm">
-              © {new Date().getFullYear()} {brandName}. All rights reserved.
-            </p>
-            {content?.disclaimer && (
-              <p className="text-background/40 text-xs mt-2">
-                {content.disclaimer}
-              </p>
-            )}
-            {content?.links && content.links.length > 0 && (
-              <div className="flex flex-wrap gap-4 mt-3">
-                {content.links.map((link) => (
-                  <a 
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-background/50 text-xs hover:text-background/70 transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
+          <p className="text-background/50 text-sm">
+            © {new Date().getFullYear()} {brandName}. All rights reserved.
+          </p>
+          {(content?.links || config?.footer?.links) && (content?.links || config?.footer?.links).length > 0 && (
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {(content?.links || config?.footer?.links).map((link) => (
+                <a 
+                  key={link.href}
+                  href={link.href}
+                  target={link.label === 'Login' ? '_self' : '_blank'}
+                  rel="noopener noreferrer"
+                  className="text-background/50 text-xs hover:text-background/70 transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          )}
           <button
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"

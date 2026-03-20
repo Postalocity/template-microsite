@@ -1,0 +1,320 @@
+{
+  "version": "Postalocity Microsite Config \u2014 Real Estate",
+  "instructions": {
+    "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
+    "promoCodes": {
+      "real-estate": "re2026"
+    }
+  },
+  "site": {
+    "id": "real-estate",
+    "name": "Real Estate Mailing Service",
+    "slug": "real-estate",
+    "domain": "postalocity.com",
+    "basename": "/real-estate",
+    "contact": {
+      "email": "contact@postalocity.com",
+      "phone": "316-260-2220",
+      "address": "820 W 2nd St N, Wichita KS 67203"
+    }
+  },
+  "branding": {
+    "tagline": "Proof of Mailing. Every Letter."
+  },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 30
+    }
+  },
+  "seo": {
+    "title": "Real Estate Mailing Service \u2014 Automated Tenant Notices & Property Management Mailing",
+    "description": "The reliable real estate mailing service that automates tenant notice mailing, property management mailing, and compliance letters. Get proof, verification & tracking from {{PRICING_SHORT}}.",
+    "keywords": [
+      "real estate mailing service",
+      "property management mailing",
+      "tenant notice mailing"
+    ],
+    "ogTitle": "Real Estate Mailing Service \u2014 Proof Every Letter",
+    "ogDescription": "Automate tenant notices, marketing postcards, and compliance letters for property managers, landlords, and real estate professionals. Proof included with every mailing.",
+    "ogImage": "/real-estate/images/og-image.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://postalocity.com/real-estate",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "text": "Start Free Trial",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=re2026"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Real Estate Mailing Service Built for Property Managers",
+        "highlightTerm": "Proof Every Letter",
+        "alt": "Modern real estate office with property documents and mailing materials"
+      },
+      "subhead": "Automate tenant notice mailing, landlord mailing, and property management mailing at scale. Upload documents, get verified addresses, and receive proof of mailing for every letter you send.",
+      "background": {
+        "image": "/real-estate/images/real-estate-hero.jpg",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Start Your Free Trial",
+          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=re2026",
+          "variant": "primary"
+        },
+        {
+          "text": "See How It Works",
+          "href": "#how-it-works",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Why Real Estate Professionals Choose Postalocity",
+        "description": "Stop wasting hours on manual tenant notice mailing and property management mailing. Our real estate mailing service handles everything from upload to delivery with complete documentation."
+      },
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Reclaim Hours Every Week",
+          "description": "No more post office trips or stuffing envelopes. Upload your tenant notices, marketing postcards, or compliance letters and we handle the rest.",
+          "detail": "Print, fold, stuff & mail \u2014 all automated."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Dramatically Fewer Returned Mail",
+          "description": "Real-time USPS address verification catches inaccurate addresses before printing, saving you money and ensuring critical tenant communications arrive.",
+          "detail": "Reduces returned mail by up to 15%."
+        },
+        {
+          "icon": "shield",
+          "title": "Affidavit of Mailing. Every Letter.",
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+        },
+        {
+          "icon": "file-text",
+          "title": "Enterprise Security & Compliance",
+          "description": "ISO 9001 documented processes, encrypted uploads, and secure handling ensure your tenant data and property information stay protected.",
+          "detail": "SOC 2 compliant infrastructure."
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Postalocity vs. Traditional Real Estate Mailing",
+        "description": "See why thousands of property managers and real estate professionals switched to automated property management mailing."
+      },
+      "columns": {
+        "traditional": "Traditional Mailing",
+        "ourSolution": "Postalocity"
+      },
+      "rows": [
+        {
+          "icon": "map-pin",
+          "feature": "Address Verification",
+          "ourSolution": "Real-time USPS CASS certified",
+          "traditionalApproach": "Manual entry \u2014 error-prone"
+        },
+        {
+          "icon": "shield",
+          "feature": "Proof of Mailing (Affidavit)",
+          "ourSolution": "Affidavit for every letter",
+          "traditionalApproach": "Receipt from post office counter"
+        },
+        {
+          "icon": "clock",
+          "feature": "Processing Time",
+          "ourSolution": "Same-day when approved by noon",
+          "traditionalApproach": "Daily trips to post office"
+        },
+        {
+          "icon": "trending-up",
+          "feature": "Operational Efficiency",
+          "ourSolution": "Reclaim 3-5 hours per week",
+          "traditionalApproach": "Hours lost to manual tasks"
+        },
+        {
+          "icon": "mail",
+          "feature": "Envelope",
+          "ourSolution": {
+            "text": "Included \u2014 Color Optional",
+            "isEnvelope": true,
+            "highlight": "Print, fold, stuff & seal automatically"
+          },
+          "traditionalApproach": "Self-mailer \u2014 No envelope"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Complete Real Estate Mailing Service Solutions",
+        "description": "From routine tenant notice mailing to investor communications, our property management mailing platform handles every mailing need for real estate professionals."
+      },
+      "services": [
+        {
+          "icon": "bell",
+          "title": "Tenant Notice Mailing",
+          "description": "Tenant notice mailing for evictions, rent increases, lease renewals, and move-out documentation. Each letter includes Proof of Mailing (Affidavit) for your records."
+        },
+        {
+          "icon": "file",
+          "title": "Property Marketing Mailings",
+          "description": "Just Listed, Just Sold, open house invitations, and neighborhood farming campaigns. Professional postcards and letters that get opened and read by prospective tenants and buyers."
+        },
+        {
+          "icon": "calendar",
+          "title": "Investor & Stakeholder Communications",
+          "description": "Monthly statements, quarterly reports, capital call notices, and investor updates. Keep your stakeholders informed with documented, verifiable mailings."
+        },
+        {
+          "icon": "mail",
+          "title": "HOA & Association Mailings",
+          "description": "Meeting notices, assessment letters, violation notices, and community updates. Our landlord mailing solution scales from single-property to portfolio-wide distributions."
+        }
+      ]
+    },
+    "howItWorks": {
+      "section": {
+        "id": "how-it-works",
+        "title": "How Our Real Estate Mailing Service Works",
+        "description": "Get started in minutes. Our streamlined property management mailing process eliminates manual work while providing complete documentation."
+      },
+      "steps": [
+        {
+          "number": "1",
+          "title": "Upload Your Documents",
+          "description": "Upload tenant notices, marketing postcards, or compliance letters as PDFs. Our system accepts standard formats and batch uploads for portfolio-scale mailings."
+        },
+        {
+          "number": "2",
+          "title": "We Verify Every Address",
+          "description": "Each address is validated against current USPS databases using CASS-certified verification. Bad addresses are flagged before printing to prevent returned mail."
+        },
+        {
+          "number": "3",
+          "title": "Professional Production & Mailing",
+          "description": "We professionally print, fold, stuff into #10 envelopes, seal, and prepare for USPS delivery. Your landlord mailing is handled with care and consistency."
+        },
+        {
+          "number": "4",
+          "title": "Proof & Tracking Provided",
+          "description": "Receive a complete mailing affidavit for every letter. Upgrade to Certificate of Mailing for official USPS postmarks and delivery confirmation."
+        }
+      ]
+    },
+    "difference": {
+      "section": {
+        "title": "The Postalocity Difference for Real Estate Professionals",
+        "description": "Why property managers, landlords, and real estate investors choose our mailing service over alternatives."
+      },
+      "differences": [
+        {
+          "icon": "shield",
+          "title": "Affidavit of Mailing. Every Letter.",
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+        },
+        {
+          "icon": "eye",
+          "title": "Real-Time Dashboard Visibility",
+          "description": "Track mailing status across your entire property portfolio instantly. Know exactly when each tenant notice and marketing piece enters the USPS system via scan confirmation."
+        },
+        {
+          "icon": "map-pin",
+          "title": "USPS Address Verification Built-In",
+          "description": "Stop dealing with returned mail from bad addresses. Our CASS-certified verification catches errors before printing, reducing undeliverable mail by up to 15%."
+        },
+        {
+          "icon": "clock",
+          "title": "Same-Day Processing Available",
+          "description": "Need urgent tenant notice mailing? Approve by noon CT for same-day production. Our property management mailing service keeps your critical communications on schedule. *Restrictions apply."
+        }
+      ]
+    },
+    "trustSignals": {
+      "section": {
+        "title": "Trusted by Property Managers & Real Estate Professionals Nationwide"
+      },
+      "signals": [
+        "NCOA Verified 2024",
+        "CASS Certified 2024",
+        "ISO 9001 Documented Processes 2023"
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Frequently Asked Questions",
+        "description": "Everything you need to know about our real estate mailing service, from proof of mailing to pricing."
+      },
+      "faqs": [
+        {
+          "q": "Is proof of mailing included with tenant notice mailing?",
+          "a": "Yes \u2014 every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+        },
+        {
+          "q": "Does the property management mailing service include address verification?",
+          "a": "Yes. Every address is validated through USPS CASS-certified verification before printing. This catches inaccurate addresses and reduces returned mail, ensuring your tenant communications reach the right mailbox."
+        },
+        {
+          "q": "What's included in landlord mailing pricing?",
+          "a": "{{PRICING}}. All pricing includes printing, folding, stuffing into #10 envelopes, sealing, postage, and mailing affidavit. No hidden fees for standard real estate mailing service operations."
+        },
+        {
+          "q": "How fast can I get tenant notices mailed?",
+          "a": "Same-day production when approved by noon CT. For standard property management mailing, expect 1-3 business days for USPS delivery after approval. Expedited options available for urgent landlord mailing needs."
+        },
+        {
+          "q": "Can I mail to multiple properties at once?",
+          "a": "Absolutely. Our platform supports batch uploads for portfolio-scale landlord mailing. Upload addresses across your entire property portfolio and process all tenant notice mailing in a single workflow."
+        }
+      ]
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready to streamline your real estate mailing?",
+        "description": "Automated mailing for agent communications, door hanger campaigns, and property announcements—no contracts, pay-as-you-go.",
+        "buttonText": "Start Your Free Trial",
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=re2026"
+      },
+      "description": "Postalocity automates real estate mailing for agent communications, door hangers, and property announcements with proof of mailing included.",
+      "tagline": "Proof of Mailing. Every Letter.",
+      "links": [
+        {
+          "label": "Privacy",
+          "href": "https://www.postalocity.com/privacy/"
+        },
+        {
+          "label": "Terms",
+          "href": "https://www.postalocity.com/terms/"
+        },
+        {
+          "label": "Login",
+          "href": "https://prod.postalocity.com/login.html?promo=re"
+        }
+      ]
+    }
+  }
+}

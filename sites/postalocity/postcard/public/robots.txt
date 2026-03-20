@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://postcard.postalocity.com/sitemap.xml
+Sitemap: https://postalocity.com/postcard/sitemap.xml

@@ -209,6 +209,47 @@ const rules = {
   },
 
   /**
+   * IKB_BLOCKLISTED_PHRASES
+   * Catches phrases that imply legal guarantees or use incorrect terminology.
+   */
+  IKB_BLOCKLISTED_PHRASES: {
+    severity: 'error',
+    patterns: [
+      {
+        regex: /legal-grade|legal grade/i,
+        message: 'Use "Proof of Mailing (Affidavit)" instead of "Legal-Grade Proof of Mailing"'
+      },
+      {
+        regex: /defensible (documentation|proof)/i,
+        message: 'Use standard IKB terminology - do not use "defensible documentation" or "defensible proof"'
+      },
+      {
+        regex: /defensible for compliance/i,
+        message: 'Use standard IKB terminology for proof and compliance'
+      },
+      {
+        regex: /legally-compliant|legally compliant/i,
+        message: 'Use standard IKB terminology - avoid "legally compliant"'
+      }
+    ]
+  },
+
+  /**
+   * IKB_PROOF_TITLE
+   * Ensures Proof of Mailing titles use correct IKB format.
+   */
+  IKB_PROOF_TITLE: {
+    severity: 'error',
+    patterns: [
+      {
+        // Match "Proof of Mailing" NOT followed by "(Affidavit)"
+        regex: /Proof of Mailing(?! \([^)]*\))/i,
+        message: 'Use "Proof of Mailing (Affidavit)" - include "(Affidavit)" in title'
+      }
+    ]
+  },
+
+  /**
    * SEO_BREADCRUMB
    * Ensures BreadcrumbList schema is present for SERP rich results.
    */
@@ -417,6 +458,25 @@ class ContentValidator {
     for (const pattern of rules.IKB_SELF_MAILER.patterns) {
       if (pattern.regex.test(text)) {
         this.log('warning', pattern.message, context);
+      }
+    }
+
+    // Check blocklisted phrases
+    for (const pattern of rules.IKB_BLOCKLISTED_PHRASES.patterns) {
+      if (pattern.regex.test(text)) {
+        this.log('error', pattern.message, context);
+      }
+    }
+
+    // Check proof title format - only for titles (not descriptions/answers)
+    // Titles are: benefits, services, differences, services
+    const isProofTitle = context && !context.includes('FAQ:') && !context.includes('Every Letter') && !context.includes('tagline') && !context.includes('(detail)') && !context.includes('(description)');
+    // Only check text that appears to be a title (short text without many sentences)
+    if (isProofTitle && text.split(/[.!?]/).length <= 2) {
+      for (const pattern of rules.IKB_PROOF_TITLE.patterns) {
+        if (pattern.regex.test(text)) {
+          this.log('error', pattern.message, context);
+        }
       }
     }
 

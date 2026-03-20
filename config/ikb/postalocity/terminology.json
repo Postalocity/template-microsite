@@ -81,6 +81,76 @@
       "description": "International quality management standard"
     }
   },
+  "trackingScanEvents": {
+    "description": "USPS tracking scan events for mail piece visibility",
+    "stages": [
+      {
+        "stage": "received",
+        "displayName": "Accepted / Received",
+        "uspsStatuses": [
+          "Label Created, Not Yet In System",
+          "USPS Awaiting Item",
+          "Accepted at USPS Facility",
+          "Origin Acceptance",
+          "USPS In Possession of Item"
+        ],
+        "description": "Mail piece accepted into USPS system",
+        "proofProvided": "Affidavit of Service from Postalocity"
+      },
+      {
+        "stage": "processed",
+        "displayName": "Processed",
+        "uspsStatuses": [
+          "Processed at USPS Origin Facility",
+          "Arrived at USPS Facility",
+          "Departed USPS Facility",
+          "Processed at USPS Destination Facility"
+        ],
+        "description": "Mail piece processed at USPS facilities",
+        "proofProvided": "USPS scan tracing showing processing status"
+      },
+      {
+        "stage": "in_transit",
+        "displayName": "In Transit",
+        "uspsStatuses": [
+          "Departed USPS Facility",
+          "Arrived at USPS Facility",
+          "In Transit to Next Facility",
+          "Arriving Late"
+        ],
+        "description": "Mail piece moving through postal network",
+        "proofProvided": "USPS scan tracing showing facility transfers"
+      },
+      {
+        "stage": "out_for_delivery",
+        "displayName": "Out for Delivery",
+        "uspsStatuses": [
+          "Arrival at Unit",
+          "Out for Delivery",
+          "Awaiting Delivery Scan"
+        ],
+        "description": "Mail piece at local delivery office",
+        "proofProvided": "USPS scan confirmation of delivery attempt"
+      },
+      {
+        "stage": "delivered",
+        "displayName": "Delivered",
+        "uspsStatuses": [
+          "Delivered",
+          "Picked Up",
+          "Delivered to Agent"
+        ],
+        "description": "Mail piece delivered to recipient",
+        "proofProvided": "Delivery scan with date/time (upgrade to Certified Mail for signature)"
+      }
+    ],
+    "trackingNotes": [
+      "All barcoded mail includes scan tracing from acceptance to delivery",
+      "Tracking updates occur at each facility scan during transit",
+      "Multiple scans can occur at each stage depending on handling",
+      "Upgrade to Priority Mail or Certified Mail for full USPS tracking with delivery confirmation"
+    ]
+  },
   "industryTerms": {
     "mailPiece": "A single item sent through the mail",
     "mailingList": "Collection of addresses for a mailing campaign",

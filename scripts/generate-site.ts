@@ -23,25 +23,8 @@ const CONFIGS_DIR = path.join(ROOT_DIR, 'config/sites/postalocity');  // Default
 const SITES_DIR = path.join(ROOT_DIR, 'sites');
 const TEMPLATE_DIR = ROOT_DIR;
 
-// Default pricing values for placeholder replacement
-const DEFAULT_PRICING = {
-  basePrice: 1.31,
-  units: 'letter',
-};
-
-/**
- * Process pricing placeholders in text
- */
-function processPricingPlaceholders(text: string, basePrice: number = DEFAULT_PRICING.basePrice): string {
-  const shortPrice = `$${basePrice.toFixed(2)}/${DEFAULT_PRICING.units}`;
-  const fullPrice = `$${basePrice.toFixed(2)}/${DEFAULT_PRICING.units} (1-page B&W, envelope + postage)`;
-  const envelopePrice = `As low as $${basePrice.toFixed(2)} to print, fold, stuff, seal, and apply postage – includes envelope`;
-  
-  return text
-    .replace(/\{\{PRICING\}\}/g, fullPrice)
-    .replace(/\{\{PRICING_SHORT\}\}/g, shortPrice)
-    .replace(/\{\{PRICING_ENVELOPE\}\}/g, envelopePrice);
-}
+// Import pricing utilities from centralized pricing module
+import { processPricingPlaceholders } from '../common/utils/pricing';
 
 /**
  * TypeScript interfaces for type safety (Codex #11)
@@ -62,6 +45,36 @@ interface SiteInfo {
 interface FAQ {
   q: string;
   a: string;
+}
+
+interface BrandContext {
+  brand: {
+    id: string;
+    name: string;
+    slug: string;
+    domain: string;
+    tagline?: string;
+    urls: Record<string, string>;
+    logo: {
+      filename: string;
+      alt: string;
+    };
+  };
+  contact: {
+    phone: string;
+    email: string;
+    address: {
+      street: string;
+      city: string;
+      state: string;
+      zip: string;
+    };
+    hours?: {
+      weekdays?: string;
+      support?: string;
+    };
+  };
+  social: Record<string, string>;
 }
 
 interface SiteConfig {
@@ -88,6 +101,7 @@ interface SiteConfig {
     priceRange?: string;
     latitude?: number;
     longitude?: number;
+    googleAnalyticsId?: string;
   };
   navigation?: {
     links?: Array<{ label: string; href: string; }>;
@@ -256,26 +270,32 @@ async function generateOgImages(siteDir: string, config: SiteConfig): Promise<vo
     return;
   }
 
-  // Map config path to source image based on site slug
-  const heroSourcePaths: Record<string, string> = {
-    // Map industry-specific image paths
-    'credit-repair': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
-    'debt-collection': path.join(TEMPLATE_DIR, 'common/assets/debt-collection/hero-debt-collection.jpg'),
-    'healthcare-billing': path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),
-    'healthcare-mailing-services': path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),
-    'software-billing': path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'),
-    'utility-billing': path.join(TEMPLATE_DIR, 'common/assets/utilities/hero-bg.jpg'),
-    'international-mail': path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'),
-    'postcard': path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),
-    'self-storage': path.join(TEMPLATE_DIR, 'common/assets/self-storage/hero-self-storage.jpg'),
-  };
-
-  // Get source hero image path based on site slug
+  // Auto-detect hero image source based on site slug
+  // Standard convention: common/assets/{slug}/hero.jpg
   const siteSlug = config.site?.slug || '';
-  const heroSourcePath = heroSourcePaths[siteSlug];
+  
+  // Try standard slug directory first, then fall back to category-based directories
+  const possibleSourcePaths = [
+    path.join(TEMPLATE_DIR, 'common/assets', siteSlug, 'hero.jpg'),
+    path.join(TEMPLATE_DIR, 'common/assets', siteSlug, 'hero-bg.jpg'),
+    // Category-based fallbacks for services that share assets
+    path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),        // credit-repair, postcard
+    path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),    // healthcare-*
+    path.join(TEMPLATE_DIR, 'common/assets/utilities/hero-bg.jpg'),     // utility-billing
+    path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'),               // generic fallback
+  ];
 
-  if (!heroSourcePath || !fs.existsSync(heroSourcePath)) {
-    console.log(`⚠ No hero image source for ${siteSlug} - generating fallback OG image`);
+  // Find first existing source path
+  let heroSourcePath: string | undefined;
+  for (const srcPath of possibleSourcePaths) {
+    if (fs.existsSync(srcPath)) {
+      heroSourcePath = srcPath;
+      break;
+    }
+  }
+
+  if (!heroSourcePath) {
+    console.log(`⚠ No hero image source found for ${siteSlug} - generating fallback OG image`);
     await generateFallbackOgImage(ogImageDest, config);
     return;
   }
@@ -388,7 +408,7 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
   }
 }
 
-async function generateSite(siteDir: string, config: SiteConfig) {
+async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext) {
   try {
     const { site } = config;
 
@@ -400,8 +420,8 @@ async function generateSite(siteDir: string, config: SiteConfig) {
       fs.mkdirSync(siteDir, { recursive: true });
     }
 
-    // Generate main.tsx
-    const indexContent = generateIndexFile(config);
+    // Generate main.tsx with brand context
+    const indexContent = generateIndexFile(config, brandContext);
     fs.writeFileSync(path.join(siteDir, 'main.tsx'), indexContent);
 
     // Copy config.json
@@ -490,11 +510,11 @@ async function generateSite(siteDir: string, config: SiteConfig) {
   }
 }
 
-function generateIndexFile(config: SiteConfig, brandConfig?: object, contactConfig?: object, socialConfig?: object): string {
+function generateIndexFile(config: SiteConfig, brandContext?: BrandContext): string {
   const { site } = config;
   
-  // Default brand config for Postalocity (inline to avoid import issues)
-  const defaultBrand = {
+  // Fallback defaults (only used for legacy mode without brand context)
+  const fallbackBrand = {
     id: 'postalocity',
     name: 'Postalocity',
     slug: 'postalocity',
@@ -514,9 +534,9 @@ function generateIndexFile(config: SiteConfig, brandConfig?: object, contactConf
     },
   };
   
-  const defaultContact = {
+  const fallbackContact = {
     phone: '316-260-2220',
-    email: 'support@postalocity.com',
+    email: 'contact@postalocity.com',
     address: {
       street: '820 W 2nd St N',
       city: 'Wichita',
@@ -525,20 +545,20 @@ function generateIndexFile(config: SiteConfig, brandConfig?: object, contactConf
     },
     hours: {
       weekdays: '8:00 AM - 5:00 PM CST',
-      support: 'support@postalocity.com',
+      support: 'contact@postalocity.com',
     },
   };
   
-  const defaultSocial = {
+  const fallbackSocial = {
     twitter: 'https://twitter.com/postalocity',
     linkedin: 'https://linkedin.com/company/postalocity',
     facebook: 'https://facebook.com/postalocity',
   };
   
-  // Use provided configs or defaults
-  const brand = (brandConfig || defaultBrand) as typeof defaultBrand;
-  const contact = (contactConfig || defaultContact) as typeof defaultContact;
-  const social = (socialConfig || defaultSocial) as typeof defaultSocial;
+  // Use brand context if provided, otherwise fall back to hardcoded defaults
+  const brand = brandContext?.brand || fallbackBrand;
+  const contact = brandContext?.contact || fallbackContact;
+  const social = brandContext?.social || fallbackSocial;
   
   return `/**
  * ${site.name} - Generated from template-microsite
@@ -582,12 +602,12 @@ const ikbConfig = {
     blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
   },
   pricing: {
-    basePrice: 0.69,
+    basePrice: 1.31,
     currency: 'USD',
-    units: 'per piece',
+    units: 'letter',
     addOns: {
-      'certified-mail': 4.15,
-      'return-receipt': 3.50,
+      'certified-mail': 4.50,
+      'return-receipt': 3.35,
       'ncoa-verification': 0.05,
       'address-verification': 0.02,
     },
@@ -874,8 +894,8 @@ function parseAddress(address: string) {
 
 function generateIndexHtml(config: SiteConfig): string {
   const { site } = config;
-  // Use canonicalDomain, seo.canonicalUrl, or fall back to slug-based subdomain pattern
-  const canonicalUrl = config.canonicalDomain || config.seo?.canonicalUrl || `https://${site.slug}.postalocity.com`;
+  // Use canonicalDomain, seo.canonicalUrl, or fall back to slug-based subdirectory pattern
+  const canonicalUrl = config.canonicalDomain || config.seo?.canonicalUrl || `https://postalocity.com/${site.slug}`;
   const ogImage = `${canonicalUrl}/og-image.png`;
 
   // Parse address once for schema
@@ -889,7 +909,7 @@ function generateIndexHtml(config: SiteConfig): string {
     <meta name="description" content="${processPricingPlaceholders(config.seo?.description || config.content?.hero?.subhead || '')}" />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="${config.seo?.canonicalUrl || canonicalUrl}" />
+    <link rel="canonical" href="${canonicalUrl}" />
     <link rel="sitemap" type="application/xml" href="${canonicalUrl}/sitemap.xml" />
 
     <!-- Open Graph / Facebook -->
@@ -919,6 +939,17 @@ function generateIndexHtml(config: SiteConfig): string {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${config.seo?.googleAnalyticsId || 'G-XXXXXXXXXX'}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${config.seo?.googleAnalyticsId || 'G-XXXXXXXXXX'}', {
+        page_path: window.location.pathname,
+      });
+    </script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -1060,6 +1091,9 @@ function generateIndexHtml(config: SiteConfig): string {
 
 // FIX #3 - Generate robots.txt for SEO indexing
 function generateRobotsTxt(site: SiteInfo): string {
+  // Use subdirectory format: https://postalocity.com/credit-repair
+  const sitemapUrl = `https://${site.domain}/${site.slug}/sitemap.xml`;
+  
   return `User-agent: *
 Allow: /
 
@@ -1075,7 +1109,7 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://${site.slug}.${site.domain}/sitemap.xml
+Sitemap: ${sitemapUrl}
 `;
 }
 
@@ -1083,7 +1117,8 @@ Sitemap: https://${site.slug}.${site.domain}/sitemap.xml
 function generateSitemapXml(config: SiteConfig): string {
   const { site } = config;
   const currentDate = new Date().toISOString().split('T')[0];
-  const canonicalUrl = config.canonicalDomain || config.seo?.canonicalUrl || `https://${site.slug}.postalocity.com`.replace(/\/$/, '');
+  // Use subdirectory format: https://postalocity.com/credit-repair
+  const canonicalUrl = config.canonicalDomain || config.seo?.canonicalUrl || `https://${site.domain}/${site.slug}`.replace(/\/$/, '');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -1178,7 +1213,28 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
     seo: seoInfo,
     navigation: (siteConfig.navigation || {}) as { links?: Array<{ label: string; href: string }>; cta?: { text: string; href: string } },
     content: contentInfo,
-    footer: (siteConfig.footer || {}) as Record<string, unknown>,
+    // Support footer at root level OR nested in content
+    footer: (siteConfig.footer || (contentInfo as Record<string, unknown>)?.footer || {}) as Record<string, unknown>,
+  };
+  
+  // Create brand context from engine context for use in generated site
+  const brandContext: BrandContext = {
+    brand: {
+      id: ctx.brand.id,
+      name: ctx.brand.name,
+      slug: ctx.brand.slug,
+      domain: ctx.brand.domain,
+      tagline: ctx.brand.tagline,
+      urls: ctx.brand.urls,
+      logo: ctx.brand.logo,
+    },
+    contact: {
+      phone: ctx.contact.phone,
+      email: ctx.contact.email,
+      address: ctx.contact.address,
+      hours: ctx.contact.hours,
+    },
+    social: ctx.social,
   };
   
   const siteDir = path.join(SITES_DIR, brandId, siteSlug);
@@ -1190,8 +1246,8 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
     fs.mkdirSync(siteDir, { recursive: true });
   }
   
-  // Generate the site using legacy function
-  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig);
+  // Generate the site using legacy function with brand context
+  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext);
   
   console.log(`\n✅ ${ctx.brand.name} - ${serviceId} generated successfully!`);
   

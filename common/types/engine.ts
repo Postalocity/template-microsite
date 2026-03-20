@@ -5,6 +5,35 @@
  */
 
 // =============================================================================
+// IMPORTS FROM CONTENT.TS (Shared Types)
+// =============================================================================
+
+// Import shared content types from content.ts for use in this file
+import type {
+  HeroContent,
+  FAQContent,
+  DifferenceContent,
+  HowItWorksContent,
+  FooterContent,
+  PricingTier,
+  PricingContent,
+} from './content';
+
+// Re-export shared types for backward compatibility
+export type {
+  CTA,
+  HeroContent,
+  FAQContent,
+  DifferenceContent,
+  HowItWorksContent,
+  FooterContent,
+  PricingTier,
+  PricingContent,
+  SiteConfig,
+  SectionContent,
+} from './content';
+
+// =============================================================================
 // BRAND CONFIGURATION
 // =============================================================================
 
@@ -77,13 +106,6 @@ export interface IKBRules {
   blocklistedPhrases: string[];
 }
 
-export interface PricingTier {
-  name: string;
-  price: number;
-  description?: string;
-  features: string[];
-}
-
 export interface IKBProofOption {
   id: string;
   name: string;
@@ -147,28 +169,8 @@ export interface EngineContext {
 }
 
 // =============================================================================
-// SITE CONTENT TYPES
+// SITE CONTENT TYPES (Engine-specific)
 // =============================================================================
-
-export interface CTA {
-  text: string;
-  subtext?: string;
-  href: string;
-  variant?: string;
-}
-
-export interface HeroContent {
-  headline: {
-    main: string;
-    highlightTerm: string;
-  };
-  subhead: string;
-  background: {
-    image: string;
-    alt: string;
-  };
-  ctas: CTA[];
-}
 
 export interface FeaturesContent {
   section: {
@@ -190,78 +192,12 @@ export interface CTAContent {
   promoCode?: string;
 }
 
-export interface PricingTier {
-  name: string;
-  price: number;
-  description?: string;
-  features: string[];
-}
-
-export interface PricingContent {
-  section: {
-    title: string;
-    description: string;
-  };
-  tiers: PricingTier[];
-}
-
 export interface TrustSignalsContent {
   section: {
     title: string;
     description?: string;
   };
   badges: string[];
-}
-
-export interface DifferenceContent {
-  section: {
-    title: string;
-    description?: string;
-  };
-  background?: string;
-  differences: {
-    icon: string;
-    title: string;
-    description: string;
-  }[];
-}
-
-export interface HowItWorksContent {
-  section?: {
-    id?: string;
-    title?: string;
-    description?: string;
-  };
-  steps?: {
-    number?: string;
-    title: string;
-    description: string;
-  }[];
-}
-
-export interface FAQContent {
-  section: {
-    title: string;
-    description: string;
-  };
-  faqs: Array<{
-    q: string;
-    a: string;
-  }>;
-}
-
-export interface FooterContent {
-  finalCTA: {
-    headline: string;
-    description: string;
-    buttonText: string;
-    href: string;
-    promoCode?: string;
-    disclaimer?: string;
-  };
-  description: string;
-  tagline: string;
-  disclaimer?: string;
 }
 
 // =============================================================================
@@ -302,10 +238,3 @@ export interface SiteMeta {
   ogImage?: string;
   noIndex?: boolean;
 }
-
-// =============================================================================
-// RE-EXPORTS FROM CONTENT.TS
-// =============================================================================
-
-export type { SiteConfig } from './content';
-export type { SectionContent } from './content';

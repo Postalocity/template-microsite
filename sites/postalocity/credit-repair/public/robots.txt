@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://credit-repair.postalocity.com/sitemap.xml
+Sitemap: https://postalocity.com/credit-repair/sitemap.xml

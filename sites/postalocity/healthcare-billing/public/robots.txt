@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://healthcare-billing.postalocity.com/sitemap.xml
+Sitemap: https://postalocity.com/healthcare-billing/sitemap.xml

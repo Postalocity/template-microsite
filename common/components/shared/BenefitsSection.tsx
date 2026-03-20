@@ -15,8 +15,9 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const { short, full, withEnvelope } = useFormattedPricing();
   
-  // Process text with pricing placeholders
-  const processText = (text: string) => {
+  // Process text with pricing placeholders - handles undefined safely
+  const processText = (text: string | undefined) => {
+    if (!text) return '';
     return text
       .replace(/\{\{PRICING\}\}/g, full)
       .replace(/\{\{PRICING_SHORT\}\}/g, short)
@@ -69,7 +70,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                     </div>
                     <CardTitle className="text-xl">{benefit.title}</CardTitle>
                     <CardDescription className="text-base mt-2">
-                      {processText(benefit.description)}
+                      {processText(benefit.description || benefit.detail)}
                       {benefit.detail && (
                         <span className="block mt-2 font-medium text-primary/80">
                           {processText(benefit.detail)}

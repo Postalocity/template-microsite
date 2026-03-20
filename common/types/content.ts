@@ -295,3 +295,22 @@ export interface FooterContent {
   tagline: string;
   disclaimer?: string;
 }
+
+// =============================================================================
+// PRICING TYPES
+// =============================================================================
+
+export interface PricingTier {
+  name: string;
+  price: number;
+  description?: string;
+  features: string[];
+}
+
+export interface PricingContent {
+  section: {
+    title: string;
+    description: string;
+  };
+  tiers: PricingTier[];
+}

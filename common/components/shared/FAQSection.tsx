@@ -3,6 +3,7 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { sanitizeHtml } from "../../utils/sanitize-html";
 import { useIKBPricing } from "@/contexts";
+import { DEFAULT_PRICING } from "@/utils/pricing";
 
 const defaultFaqs = [];
 
@@ -14,12 +15,11 @@ const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: s
   // Get pricing from IKB context
   const pricing = useIKBPricing();
   
-  // Format pricing string for FAQ
+  // Format pricing string for FAQ - uses dynamic pricing from IKB, falls back to DEFAULT_PRICING
   const pricingText = useMemo(() => {
-    if (pricing?.basePrice) {
-      return `$${pricing.basePrice.toFixed(2)}/${pricing.units || 'letter'} (1-page B&W, envelope + postage)`;
-    }
-    return "$1.31/letter (1-page B&W, envelope + postage)";
+    const basePrice = pricing?.basePrice ?? DEFAULT_PRICING.basePrice;
+    const units = pricing?.units ?? DEFAULT_PRICING.units;
+    return `$${basePrice.toFixed(2)}/${units} (1-page B&W, single-sided, envelope + postage)`;
   }, [pricing]);
 
   // Handle both direct faqs array or wrapped { faq: { section, faqs } } format

@@ -11,26 +11,33 @@
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "canonicalDomain": "https://healthcare-billing.postalocity.com",
+  "canonicalDomain": "https://postalocity.com/healthcare-billing",
   "branding": {
-    "tagline": "Automated Claims Processing for Healthcare",
+    "tagline": "Proof of Mailing. Every Letter.",
     "logo": null
   },
   "footer": {
     "finalCTA": {
       "headline": "Optimize Your Revenue Cycle Today",
-      "description": "Streamline claims processing, reduce denials, and accelerate reimbursement—no contracts, pay-as-you-go pricing.",
+      "description": "Streamline claims processing, reduce denials, and accelerate reimbursement\u2014no contracts, pay-as-you-go pricing.",
       "buttonText": "Get Started Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
     "description": "Postalocity helps healthcare organizations reclaim significant time through automated revenue cycle management and claims processing services.",
-    "tagline": "Empowering Healthcare Providers with Reliable Revenue Cycle Solutions",
+    "tagline": "Proof of Mailing. Every Letter.",
     "links": [
-      { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
-      { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
-      { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
-      { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
-      { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+      {
+        "label": "Privacy",
+        "href": "https://www.postalocity.com/privacy/"
+      },
+      {
+        "label": "Terms",
+        "href": "https://www.postalocity.com/terms/"
+      },
+      {
+        "label": "Login",
+        "href": "https://prod.postalocity.com/login.html?promo=health"
+      }
     ]
   },
   "theme": {
@@ -70,10 +77,22 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Services", "href": "#services" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "cta": {
       "text": "Sign Up Now",
@@ -221,11 +240,11 @@
           "icon": "mail",
           "feature": "Envelope",
           "ourSolution": {
-            "text": "Included — Color Optional",
+            "text": "Included \u2014 Color Optional",
             "highlight": "Professional envelope with every mailing",
             "isEnvelope": true
           },
-          "traditionalApproach": "Self-mailer — No envelope"
+          "traditionalApproach": "Self-mailer \u2014 No envelope"
         }
       ]
     },
@@ -244,12 +263,12 @@
         {
           "icon": "map-pin",
           "title": "Address Verification Included",
-          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned statements and ensuring critical communications reach patients."
+          "description": "Pre-production address verification catches inaccuracies before printing\u2014reducing returned statements and ensuring critical communications reach patients."
         },
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing\u2014bypass slow in-house printing and daily post office trips. *Restrictions apply."
         }
       ]
     },

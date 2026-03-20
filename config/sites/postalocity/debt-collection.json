@@ -1,26 +1,26 @@
 {
-  "version": "Postalocity Microsite Config — Debt Collection Agencies",
+  "version": "Postalocity Microsite Config \u2014 Debt Collection Agencies",
   "planningSessionSummary": "Complete microsite for debt collection agencies. Emphasizes reclaiming operational hours through automation of notices, validation letters, and certified mail. Core differentiators: built-in address verification, proof of mailing included, Certified Mail upgrade for full tracking, simple PDF upload. No delivery claims, no specific hour savings, ISO 9001 documented processes.",
   "research": {
-    "currentRankingSnapshot": "Top 3–5 positions on primary transactional phrases: mailing services for debt collection agencies, debt collection letter printing and mailing services, certified mail for debt collection agencies.",
+    "currentRankingSnapshot": "Top 3\u20135 positions on primary transactional phrases: mailing services for debt collection agencies, debt collection letter printing and mailing services, certified mail for debt collection agencies.",
     "keywordOpportunityAnalysis": [
       {
         "keyword": "mailing services for debt collection agencies",
-        "volume": "800–2,000 (est.)",
-        "difficulty": "Low–Medium",
+        "volume": "800\u20132,000 (est.)",
+        "difficulty": "Low\u2013Medium",
         "intent": "Transactional",
         "priority": "High"
       },
       {
         "keyword": "debt collection letter printing and mailing services",
-        "volume": "600–1,500 (est.)",
+        "volume": "600\u20131,500 (est.)",
         "difficulty": "Low",
         "intent": "Transactional",
         "priority": "High"
       },
       {
         "keyword": "certified mail for debt collection agencies",
-        "volume": "1,000–3,000 (est.)",
+        "volume": "1,000\u20133,000 (est.)",
         "difficulty": "Medium",
         "intent": "Transactional",
         "priority": "High"
@@ -47,7 +47,7 @@
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "canonicalDomain": "https://debt-collection.postalocity.com",
+  "canonicalDomain": "https://postalocity.com/debt-collection",
   "branding": {
     "tagline": "Proof of Mailing. Every Letter.",
     "primaryColor": "#0F766E",
@@ -70,8 +70,8 @@
     }
   },
   "seo": {
-    "title": "Debt Collection Mailing Service — Automated Mailing Services for Debt Collection Agencies",
-    "description": "Debt collection mailing service for agencies — automate notices, certified letters & compliance docs. Address verification, USPS tracking & secure PDF upload from $1.31/letter.",
+    "title": "Debt Collection Mailing Service \u2014 Automated Mailing Services for Debt Collection Agencies",
+    "description": "Debt collection mailing service for agencies \u2014 automate notices, certified letters & compliance docs. Address verification, USPS tracking & secure PDF upload from $1.31/letter.",
     "keywords": [
       "debt collection mailing service",
       "automated mailing for collection agencies",
@@ -79,23 +79,36 @@
       "debt collection letter printing and mailing",
       "collection notices mailing services"
     ],
-    "ogTitle": "Debt Collection Mailing Service — Proof of Mailing",
+    "ogTitle": "Debt Collection Mailing Service \u2014 Proof of Mailing",
     "ogDescription": "Collection agencies streamline high-volume notices and certified mailings with Postalocity's automated platform.",
     "ogImage": "/debt-collection/images/og-image.png",
-    "twitterTitle": "Debt Collection Mailing Service — Proof of Mailing",
-    "twitterDescription": "Automate debt collection mailing — notices, certified letters & compliance docs. Address verification & tracking from $1.31/letter.",
+    "twitterTitle": "Debt Collection Mailing Service \u2014 Proof of Mailing",
+    "twitterDescription": "Automate debt collection mailing \u2014 notices, certified letters & compliance docs. Address verification & tracking from $1.31/letter.",
     "twitterCard": "summary_large_image",
-    "canonical": "https://debt-collection.postalocity.com",
+    "canonical": "https://postalocity.com/debt-collection",
+    "googleAnalyticsId": "G-9HXQD6LYZ4",
     "robots": "index, follow",
     "sitemapPriority": 1.0,
     "sitemapChangeFrequency": "weekly"
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Services", "href": "#services" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "cta": {
       "text": "Sign Up Now",
@@ -131,7 +144,7 @@
     },
     "benefits": {
       "section": {
-        "title": "Why Collection Agencies Choose Postalocity",
+        "title": "Why Collection Agents Choose Postalocity",
         "description": "Streamline your debt collection mailing operations with automated processing"
       },
       "benefits": [
@@ -139,29 +152,51 @@
           "icon": "clock",
           "title": "Streamline Mailing Operations",
           "description": "Automate printing, folding, stuffing, sealing, and postage application.",
-          "detail": "Manual processes consume significant time weekly. Automation reduces manual handling to minutes.",
-          "metrics": "Reduce manual processing time"
+          "detail": "Manual processes consume significant time weekly."
         },
         {
           "icon": "map-pin",
           "title": "Reduce Returned Mail",
-          "description": "Pre-production address verification against USPS databases catches inaccuracies before printing.",
-          "detail": "Reduces rework and delays caused by invalid addresses reaching the postal system.",
-          "metrics": "Improve deliverability"
+          "description": "Pre-production address verification against USPS databases catches inaccuracies before printing to improve deliverability."
         },
         {
           "icon": "shield",
-          "title": "Audit Documentation",
-          "description": "USPS tracking and proof of mailing for every letter provides documented proof of submission.",
-          "detail": "ISO 9001 documented processes support audit requirements and quality documentation. Upgrade to Certified Mail for full tracking with delivery confirmation.",
-          "metrics": "Proof of mailing"
+          "title": "Affidavit of Mailing. Every Letter.",
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "trending-up",
           "title": "Scale Without Staffing",
-          "description": "Process high volumes without proportional staffing increases.",
-          "detail": "From 50 to 5,000+ letters monthly, the platform scales automatically.",
-          "metrics": "50 to 5,000+ letters monthly"
+          "description": "Process high volumes without proportional staffing increases."
+        }
+      ]
+    },
+    "howItWorks": {
+      "section": {
+        "id": "how-it-works",
+        "title": "How It Works",
+        "description": "Four simple steps to streamline your debt collection mailing."
+      },
+      "steps": [
+        {
+          "number": "1",
+          "title": "Upload Your Documents",
+          "description": "Upload your debt collection letters as PDFs. We accept standard file formats."
+        },
+        {
+          "number": "2",
+          "title": "We Verify Addresses",
+          "description": "We run every address through USPS verification \u2014 catching errors before printing."
+        },
+        {
+          "number": "3",
+          "title": "We Print, Stuff & Mail",
+          "description": "We professionally print, fold, stuff into envelopes, seal, and mail. You get proof of mailing."
+        },
+        {
+          "number": "4",
+          "title": "USPS Mailing & Tracing",
+          "description": "Same-day or next-day mailing. Upgrade to Priority Mail or Certified Mail to track letters through delivery."
         }
       ]
     },
@@ -190,7 +225,7 @@
         {
           "icon": "shield",
           "feature": "Tracking & Documentation",
-          "ourSolution": "Proof of mailing included, Certified Mail upgrade for full tracking",
+          "ourSolution": "Affidavit and free tracing included. Upgrade to Priority Mail or Certified Mail for full tracking.",
           "traditionalApproach": "No tracking, manual documentation"
         },
         {
@@ -215,11 +250,11 @@
           "icon": "mail",
           "feature": "Envelope",
           "ourSolution": {
-            "text": "Included — Color Optional",
+            "text": "Included \u2014 Color Optional",
             "highlight": "Professional envelope with every mailing",
             "isEnvelope": true
           },
-          "traditionalApproach": "Self-mailer — No envelope"
+          "traditionalApproach": "Self-mailer \u2014 No envelope"
         }
       ]
     },
@@ -257,7 +292,7 @@
         {
           "icon": "file-text",
           "title": "Send Multiple Document Types",
-          "description": "Debt collection documents including collection notices, validation letters, payment reminders, cease communications, and affidavits can all mailed through a single platform."
+          "description": "Debt collection documents including collection notices, validation letters, payment reminders, cease communications, and affidavits can all be mailed through a single platform."
         }
       ]
     },
@@ -270,23 +305,23 @@
       "differences": [
         {
           "icon": "shield",
-          "title": "Proof of Mailing. Every Letter.",
-          "description": "Every letter includes proof of mailing. Upgrade to Certified Mail for full USPS tracking with delivery confirmation."
+          "title": "Affidavit of Mailing. Every Letter.",
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "eye",
           "title": "Full Visibility in Your Dashboard",
-          "description": "Know exactly when each letter mails with real-time status updates. No more guessing—no more black boxes."
+          "description": "Know exactly when each letter mails with real-time status updates. No more guessing\u2014no more black boxes."
         },
         {
           "icon": "map-pin",
           "title": "Address Verification Included",
-          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned mail and ensuring critical notices reach consumers."
+          "description": "Pre-production address verification catches inaccuracies before printing\u2014reducing returned mail and ensuring critical notices reach consumers."
         },
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing\u2014bypass slow in-house printing and daily post office trips. *Restrictions apply."
         }
       ]
     },
@@ -302,15 +337,15 @@
         },
         {
           "q": "What proof of mailing do I get with First-Class Mail?",
-          "a": "First-Class Mail includes our mailing affidavit (proving Postalocity processed your items) and USPS scan tracing (showing processing status). Certificate of Mailing — an official USPS form with postmark proving the EXACT acceptance date — is available as an upgrade if you need documented proof of the mailing date."
+          "a": "First-Class Mail includes our mailing affidavit (proving Postalocity processed your items) and USPS scan tracing (showing processing status). Certificate of Mailing \u2014 an official USPS form with postmark proving the EXACT acceptance date \u2014 is available as an upgrade if you need documented proof of the mailing date."
         },
         {
           "q": "Is address verification included?",
-          "a": "Yes — address verification is built-in and included with every mailing to help reduce returned mail and associated rework."
+          "a": "Yes \u2014 address verification is built-in and included with every mailing to help reduce returned mail and associated rework."
         },
         {
           "q": "Does every letter include tracking?",
-          "a": "Every letter includes proof of mailing. Upgrade to Certified Mail for full USPS tracking with delivery confirmation."
+          "a": "Every mail piece includes USPS scan tracing that will show its processing status. Upgrade to Priority Mail or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "q": "How does this support audit documentation needs?",
@@ -322,7 +357,7 @@
         }
       ]
     },
-"trustSignals": {
+    "trustSignals": {
       "section": {
         "title": "Trusted by businesses nationwide"
       },
@@ -335,15 +370,25 @@
     "footer": {
       "finalCTA": {
         "headline": "Ready to streamline your collection mailing?",
+        "description": "Automated debt collection letter mailing with address verification and proof of mailing—no contracts, pay-as-you-go.",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=debt2026"
       },
+      "description": "Postalocity automates debt collection letter mailing with built-in address verification, proof of mailing, and Certified Mail options for full tracking.",
+      "tagline": "Proof of Mailing. Every Letter.",
       "links": [
-        { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
-        { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
-        { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
-        { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
-        { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+        {
+          "label": "Privacy",
+          "href": "https://www.postalocity.com/privacy/"
+        },
+        {
+          "label": "Terms",
+          "href": "https://www.postalocity.com/terms/"
+        },
+        {
+          "label": "Login",
+          "href": "https://prod.postalocity.com/login.html?promo=debt"
+        }
       ]
     }
   }

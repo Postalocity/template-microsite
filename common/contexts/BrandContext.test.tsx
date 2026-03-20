@@ -71,7 +71,7 @@ describe('BrandContext', () => {
       expect(context.brand.name).toBe('Postalocity');
       expect(context.brand.domain).toBe('postalocity.com');
       expect(context.contact.phone).toBe('316-260-2220');
-      expect(context.contact.email).toBe('support@postalocity.com');
+      expect(context.contact.email).toBe('contact@postalocity.com');
     });
 
     it('should have correct URLs structure', () => {

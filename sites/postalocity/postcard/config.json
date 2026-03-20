@@ -6,7 +6,7 @@
     "domain": "postalocity.com",
     "basename": "postalocity-postcard",
     "contact": {
-      "email": "support@postalocity.com",
+      "email": "contact@postalocity.com",
       "phone": "316-260-2220",
       "address": "820 W 2nd St N, Wichita, KS 67203"
     }
@@ -233,33 +233,50 @@
     "footer": {
       "finalCTA": {
         "headline": "Start mailing postcards today?",
+        "description": "Perfect for conference follow-ups, marketing campaigns, and direct mail. Professional printing and USPS delivery included.",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pc2026"
       },
-      "tagline": "Professional Mailing Services",
+      "description": "Postalocity makes postcard mailing simple—upload your design, we handle printing and USPS delivery with proof of mailing for every campaign.",
+      "tagline": "Proof of Mailing. Every Letter.",
       "links": [
         {
-          "label": "Blog",
-          "href": "https://www.postalocity.com/resources/blog/"
-        },
-        {
-          "label": "FAQ",
-          "href": "https://www.postalocity.com/resources/faq/"
-        },
-        {
-          "label": "Contact",
-          "href": "https://www.postalocity.com/contact/"
-        },
-        {
-          "label": "Privacy Policy",
+          "label": "Privacy",
           "href": "https://www.postalocity.com/privacy/"
         },
         {
-          "label": "Terms of Service",
+          "label": "Terms",
           "href": "https://www.postalocity.com/terms/"
+        },
+        {
+          "label": "Login",
+          "href": "https://prod.postalocity.com/login.html?promo=post"
         }
       ]
     }
   },
-  "footer": {}
+  "footer": {
+    "finalCTA": {
+      "headline": "Start mailing postcards today?",
+      "description": "Perfect for conference follow-ups, marketing campaigns, and direct mail. Professional printing and USPS delivery included.",
+      "buttonText": "Sign Up Now",
+      "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pc2026"
+    },
+    "description": "Postalocity makes postcard mailing simple—upload your design, we handle printing and USPS delivery with proof of mailing for every campaign.",
+    "tagline": "Proof of Mailing. Every Letter.",
+    "links": [
+      {
+        "label": "Privacy",
+        "href": "https://www.postalocity.com/privacy/"
+      },
+      {
+        "label": "Terms",
+        "href": "https://www.postalocity.com/terms/"
+      },
+      {
+        "label": "Login",
+        "href": "https://prod.postalocity.com/login.html?promo=post"
+      }
+    ]
+  }
 }

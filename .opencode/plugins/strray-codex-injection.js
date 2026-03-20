@@ -1,16 +1,64 @@
 /**
  * StrRay Codex Injection Plugin for OpenCode
  *
- * This plugin automatically injects the Universal Development Codex v1.2.0
+ * This plugin automatically injects the Universal Development Codex
  * into the system prompt for all AI agents, ensuring codex terms are
  * consistently enforced across the entire development session.
  *
- * @version 1.0.0
  * @author StrRay Framework
  */
 import * as fs from "fs";
 import * as path from "path";
 import { spawn } from "child_process";
+// Dynamic imports with absolute paths at runtime
+let runQualityGateWithLogging;
+let qualityGateDirectory = "";
+async function importQualityGate(directory) {
+    if (!runQualityGateWithLogging || qualityGateDirectory !== directory) {
+        try {
+            const qualityGatePath = path.join(directory, "dist", "plugin", "quality-gate.js");
+            const module = await import(qualityGatePath);
+            runQualityGateWithLogging = module.runQualityGateWithLogging;
+            qualityGateDirectory = directory;
+        }
+        catch (e) {
+            // Quality gate not available
+        }
+    }
+}
+// Direct activity logging - writes to activity.log without module isolation issues
+let activityLogPath = "";
+let activityLogInitialized = false;
+function initializeActivityLog(directory) {
+    if (activityLogInitialized && activityLogPath)
+        return;
+    const logDir = path.join(directory, "logs", "framework");
+    if (!fs.existsSync(logDir)) {
+        fs.mkdirSync(logDir, { recursive: true });
+    }
+    // Use a separate file for plugin tool events to avoid framework overwrites
+    activityLogPath = path.join(logDir, "plugin-tool-events.log");
+    activityLogInitialized = true;
+}
+function logToolActivity(directory, eventType, tool, args, result, error, duration) {
+    initializeActivityLog(directory);
+    const timestamp = new Date().toISOString();
+    const jobId = `plugin-${Date.now()}-${Math.random().toString(36).substring(2, 8)}`;
+    if (eventType === "start") {
+        const entry = `${timestamp} [${jobId}] [agent] tool-started - INFO | {"tool":"${tool}","args":${JSON.stringify(Object.keys(args || {}))}}\n`;
+        fs.appendFileSync(activityLogPath, entry);
+    }
+    else if (eventType === "routing") {
+        const entry = `${timestamp} [${jobId}] [agent] routing-detected - INFO | {"tool":"${tool}","routing":${JSON.stringify(args)}}\n`;
+        fs.appendFileSync(activityLogPath, entry);
+    }
+    else {
+        const success = !error;
+        const level = success ? "SUCCESS" : "ERROR";
+        const entry = `${timestamp} [${jobId}] [agent] tool-${success ? "complete" : "failed"} - ${level} | {"tool":"${tool}","duration":${duration || 0}${error ? `,"error":"${error}"` : ""}}\n`;
+        fs.appendFileSync(activityLogPath, entry);
+    }
+}
 // Import lean system prompt generator
 let SystemPromptGenerator;
 async function importSystemPromptGenerator() {
@@ -28,17 +76,12 @@ let ProcessorManager;
 let StrRayStateManager;
 let featuresConfigLoader;
 let detectTaskType;
-// TODO: Enable TaskSkillRouter after v1.11.0
-// let TaskSkillRouter: any;
-// let taskSkillSkillRouterInstance: any;
+let TaskSkillRouter;
+let taskSkillRouterInstance;
 async function loadStrRayComponents() {
-    // FORCE LOG - use console.error to ensure visibility
-    console.error(`[StrRay-FORCE] loadStrRayComponents() CALLED`);
     if (ProcessorManager && StrRayStateManager && featuresConfigLoader) {
-        console.error(`[StrRay-FORCE] Early return - already loaded`);
         return;
     }
-    // Create a temporary logger for component loading
     const tempLogger = await getOrCreateLogger(process.cwd());
     tempLogger.log(`[StrRay] 🔄 loadStrRayComponents() called - attempting to load framework components`);
     // Try local dist first (for development)
@@ -82,42 +125,102 @@ async function loadStrRayComponents() {
 /**
  * Extract task description from tool input
  */
-// TODO: Enable after v1.11.0
-/*
-function extractTaskDescription(input: { tool: string; args?: Record<string, unknown> }): string | null {
-  const { tool, args } = input;
-  
-  // Extract meaningful task description from various inputs
-  if (args?.content) {
-    const content = String(args.content);
-    // Get first 200 chars as description
-    return content.slice(0, 200);
-  }
-  
-  if (args?.filePath) {
-    return `${tool} ${args.filePath}`;
-  }
-  
-  if (args?.command) {
-    return String(args.command);
-  }
-  
-  return null;
+function extractTaskDescription(input) {
+    const { tool, args } = input;
+    // Extract meaningful task description from various inputs
+    if (args?.content) {
+        const content = String(args.content);
+        // Get first 200 chars as description
+        return content.slice(0, 200);
+    }
+    if (args?.filePath) {
+        return `${tool} ${args.filePath}`;
+    }
+    if (args?.command) {
+        return String(args.command);
+    }
+    // Fallback: Use tool name as task description for routing
+    // This enables routing even when OpenCode doesn't pass args
+    if (tool) {
+        return `execute ${tool} tool`;
+    }
+    return null;
 }
-*/
+/**
+ * Estimate complexity score based on message content
+ * Higher complexity = orchestrator routing
+ * Lower complexity = code-reviewer routing
+ */
+function estimateComplexity(message) {
+    const text = message.toLowerCase();
+    // High complexity indicators
+    const highComplexityKeywords = [
+        "architecture", "system", "design", "complex", "multiple",
+        "integrate", "database", "migration", "refactor",
+        "performance", "optimize", "security", "audit",
+        "orchestrate", "coordinate", "workflow"
+    ];
+    // Low complexity indicators  
+    const lowComplexityKeywords = [
+        "review", "check", "simple", "quick", "fix",
+        "small", "typo", "format", "lint", "test"
+    ];
+    let score = 50; // default medium
+    // Check message length
+    if (message.length > 200)
+        score += 10;
+    if (message.length > 500)
+        score += 15;
+    // Check for high complexity keywords
+    for (const keyword of highComplexityKeywords) {
+        if (text.includes(keyword))
+            score += 8;
+    }
+    // Check for low complexity keywords
+    for (const keyword of lowComplexityKeywords) {
+        if (text.includes(keyword))
+            score -= 5;
+    }
+    // Clamp to 0-100
+    return Math.max(0, Math.min(100, score));
+}
 async function loadTaskSkillRouter() {
-    // Task routing will be available after framework is built and installed
-    // For now, tasks are routed based on explicit @agent syntax
+    if (taskSkillRouterInstance) {
+        return; // Already loaded
+    }
+    // Try local dist first (for development)
+    try {
+        const module = await import("../../dist/delegation/task-skill-router.js");
+        TaskSkillRouter = module.TaskSkillRouter;
+        taskSkillRouterInstance = new TaskSkillRouter();
+    }
+    catch (distError) {
+        // Try node_modules (for consumer installs)
+        try {
+            const module = await import("strray-ai/dist/delegation/task-skill-router.js");
+            TaskSkillRouter = module.TaskSkillRouter;
+            taskSkillRouterInstance = new TaskSkillRouter();
+        }
+        catch (nmError) {
+            // Task routing not available - continue without it
+        }
+    }
 }
 function spawnPromise(command, args, cwd) {
     return new Promise((resolve, reject) => {
         const child = spawn(command, args, {
             cwd,
-            stdio: ["ignore", "inherit", "pipe"], // Original working stdio - stdout to terminal (ASCII visible)
+            stdio: ["ignore", "pipe", "pipe"],
         });
         let stdout = "";
         let stderr = "";
-        // Capture stderr only (stdout goes to inherit/terminal)
+        if (child.stdout) {
+            child.stdout.on("data", (data) => {
+                const text = data.toString();
+                stdout += text;
+                process.stdout.write(text);
+            });
+        }
         if (child.stderr) {
             child.stderr.on("data", (data) => {
                 stderr += data.toString();
@@ -206,63 +309,6 @@ function getFrameworkIdentity() {
 
 📖 Documentation: .opencode/strray/ (codex, config, agents docs)
 `;
-}
-/**
- * Run Enforcer quality gate check before operations
- */
-async function runEnforcerQualityGate(input, logger) {
-    const violations = [];
-    const { tool, args } = input;
-    // Rule 1: tests-required for new files
-    if (tool === "write" && args?.filePath) {
-        const filePath = args.filePath;
-        // Check if this is a source file (not test, not config)
-        if (filePath.endsWith(".ts") &&
-            !filePath.includes(".test.") &&
-            !filePath.includes(".spec.")) {
-            // Check if test file exists
-            const testPath = filePath.replace(".ts", ".test.ts");
-            const specPath = filePath.replace(".ts", ".spec.ts");
-            if (!fs.existsSync(testPath) && !fs.existsSync(specPath)) {
-                violations.push(`tests-required: No test file found for ${filePath} (expected ${testPath} or ${specPath})`);
-                logger.log(`⚠️ ENFORCER: tests-required violation detected for ${filePath}`);
-            }
-        }
-    }
-    // Rule 2: documentation-required for new features
-    if (tool === "write" && args?.filePath?.includes("src/")) {
-        const docsDir = path.join(process.cwd(), "docs");
-        const readmePath = path.join(process.cwd(), "README.md");
-        // Check if docs directory exists
-        if (!fs.existsSync(docsDir) && !fs.existsSync(readmePath)) {
-            violations.push(`documentation-required: No documentation found for new feature`);
-            logger.log(`⚠️ ENFORCER: documentation-required violation detected`);
-        }
-    }
-    // Rule 3: resolve-all-errors - check if we're creating code with error patterns
-    if (args?.content) {
-        const errorPatterns = [
-            /console\.log\s*\(/g,
-            /TODO\s*:/gi,
-            /FIXME\s*:/gi,
-            /throw\s+new\s+Error\s*\(\s*['"]test['"]\s*\)/gi,
-        ];
-        for (const pattern of errorPatterns) {
-            if (pattern.test(args.content)) {
-                violations.push(`resolve-all-errors: Found debug/error pattern (${pattern.source}) in code`);
-                logger.log(`⚠️ ENFORCER: resolve-all-errors violation detected`);
-                break;
-            }
-        }
-    }
-    const passed = violations.length === 0;
-    if (!passed) {
-        logger.error(`🚫 Quality Gate FAILED with ${violations.length} violations`);
-    }
-    else {
-        logger.log(`✅ Quality Gate PASSED`);
-    }
-    return { passed, violations };
 }
 /**
  * Global codex context cache (loaded once)
@@ -373,6 +419,8 @@ function formatCodexContext(contexts) {
  *
  * This plugin hooks into experimental.chat.system.transform event
  * to inject codex terms into system prompt before it's sent to LLM.
+ *
+ * OpenCode expects hooks to be nested under a "hooks" key.
  */
 export default async function strrayCodexPlugin(input) {
     const { directory: inputDirectory } = input;
@@ -380,30 +428,26 @@ export default async function strrayCodexPlugin(input) {
     return {
         "experimental.chat.system.transform": async (_input, output) => {
             try {
-                // Use lean system prompt generator for token efficiency
                 await importSystemPromptGenerator();
                 let leanPrompt = getFrameworkIdentity();
-                // Use lean generator if available, otherwise fall back to minimal logic
                 if (SystemPromptGenerator) {
                     leanPrompt = await SystemPromptGenerator({
                         showWelcomeBanner: true,
-                        showCodexContext: false, // Disabled for token efficiency
+                        showCodexContext: false,
                         enableTokenOptimization: true,
-                        maxTokenBudget: 3000, // Conservative token budget
+                        maxTokenBudget: 3000,
                         showCriticalTermsOnly: true,
                         showEssentialLinks: true
                     });
                 }
+                // Routing is handled in chat.message hook - this hook only does system prompt injection
                 if (output.system && Array.isArray(output.system)) {
-                    // Replace verbose system prompt with lean version
                     output.system = [leanPrompt];
                 }
             }
             catch (error) {
-                // Critical failure - log error but don't break the plugin
                 const logger = await getOrCreateLogger(directory);
                 logger.error("System prompt injection failed:", error);
-                // Fallback to minimal prompt
                 const fallback = getFrameworkIdentity();
                 if (output.system && Array.isArray(output.system)) {
                     output.system = [fallback];
@@ -412,8 +456,8 @@ export default async function strrayCodexPlugin(input) {
         },
         "tool.execute.before": async (input, output) => {
             const logger = await getOrCreateLogger(directory);
-            logger.log(`🚀 TOOL EXECUTE BEFORE HOOK FIRED: ${input.tool}`);
-            logger.log(`📥 Full input: ${JSON.stringify(input)}`);
+            // Log tool start to activity logger (direct write - no module isolation issues)
+            logToolActivity(directory, "start", input.tool, input.args || {});
             await loadStrRayComponents();
             if (featuresConfigLoader && detectTaskType) {
                 try {
@@ -432,55 +476,19 @@ export default async function strrayCodexPlugin(input) {
                 }
             }
             const { tool, args } = input;
-            // ============================================================
-            // TASK ROUTING: Analyze task and route to best agent
-            // TODO: Enable after v1.11.0 - requires built framework
-            // ============================================================
-            /*
-            const taskDescription = extractTaskDescription(input);
-            
-            if (taskDescription && featuresConfigLoader) {
-              try {
-                await loadTaskSkillRouter();
-                
-                if (taskSkillRouterInstance) {
-                  const config = featuresConfigLoader.loadConfig();
-                  
-                  // Check if task routing is enabled (model_routing.enabled flag)
-                  if (config.model_routing?.enabled) {
-                    const routingResult = taskSkillRouterInstance.routeTask(taskDescription, {
-                      toolName: tool,
-                    });
-                    
-                    if (routingResult && routingResult.agent) {
-                      logger.log(
-                        `🎯 Task routed: "${taskDescription.slice(0, 50)}..." → ${routingResult.agent} (confidence: ${routingResult.confidence})`,
-                      );
-                      
-                      // Store routing result for downstream processing
-                      output._strrayRouting = routingResult;
-                      
-                      // If complexity is high, log a warning
-                      if (routingResult.context?.complexity > 50) {
-                        logger.log(
-                          `⚠️ High complexity task detected (${routingResult.context.complexity}) - consider multi-agent orchestration`,
-                        );
-                      }
-                    }
-                  }
-                }
-              } catch (e) {
-                logger.error("Task routing error:", e);
-              }
-            }
-            */
+            // Routing is handled in chat.message hook - this hook only does tool execution logging
             // ENFORCER QUALITY GATE CHECK - Block on violations
-            const qualityGateResult = await runEnforcerQualityGate(input, logger);
-            if (!qualityGateResult.passed) {
-                logger.error(`🚫 Quality gate failed: ${qualityGateResult.violations.join(", ")}`);
-                throw new Error(`ENFORCER BLOCKED: ${qualityGateResult.violations.join("; ")}`);
+            await importQualityGate(directory);
+            if (!runQualityGateWithLogging) {
+                logger.log("Quality gate not available, skipping");
             }
-            logger.log(`✅ Quality gate passed for ${tool}`);
+            else {
+                const qualityGateResult = await runQualityGateWithLogging({ tool, args }, logger);
+                if (!qualityGateResult.passed) {
+                    logger.error(`🚫 Quality gate failed: ${qualityGateResult.violations.join(", ")}`);
+                    throw new Error(`ENFORCER BLOCKED: ${qualityGateResult.violations.join("; ")}`);
+                }
+            }
             // Run processors for ALL tools (not just write/edit)
             if (ProcessorManager || StrRayStateManager) {
                 // PHASE 1: Connect to booted framework or boot if needed
@@ -617,8 +625,10 @@ export default async function strrayCodexPlugin(input) {
         // Execute POST-processors AFTER tool completes (this is the correct place!)
         "tool.execute.after": async (input, _output) => {
             const logger = await getOrCreateLogger(directory);
-            await loadStrRayComponents();
             const { tool, args, result } = input;
+            // Log tool completion to activity logger (direct write - no module isolation issues)
+            logToolActivity(directory, "complete", tool, args || {}, result, result?.error, result?.duration);
+            await loadStrRayComponents();
             // Debug: log full input
             logger.log(`📥 After hook input: ${JSON.stringify({ tool, hasArgs: !!args, args, hasResult: !!result }).slice(0, 200)}`);
             // Run post-processors for ALL tools AFTER tool completes
@@ -687,6 +697,103 @@ export default async function strrayCodexPlugin(input) {
                     logger.error(`💥 Post-processor error`, error);
                 }
             }
+        },
+        /**
+         * chat.message - Intercept user messages for routing
+         * Output contains message and parts with user content
+         */
+        "chat.message": async (input, output) => {
+            const logger = await getOrCreateLogger(directory);
+            // DEBUG: Log ALL output
+            const debugLogPath = path.join(process.cwd(), "logs", "framework", "routing-debug.log");
+            fs.appendFileSync(debugLogPath, `\n[${new Date().toISOString()}] === chat.message HOOK FIRED ===\n`);
+            fs.appendFileSync(debugLogPath, `OUTPUT KEYS: ${JSON.stringify(Object.keys(output || {}))}\n`);
+            fs.appendFileSync(debugLogPath, `MESSAGE: ${JSON.stringify(output?.message)}\n`);
+            fs.appendFileSync(debugLogPath, `PARTS: ${JSON.stringify(output?.parts)}\n`);
+            // Extract user message from parts (TextPart has type="text" and text field)
+            let userMessage = "";
+            if (output?.parts && Array.isArray(output.parts)) {
+                for (const part of output.parts) {
+                    if (part?.type === "text" && part?.text) {
+                        userMessage = part.text;
+                        break;
+                    }
+                }
+            }
+            fs.appendFileSync(debugLogPath, `userMessage: "${userMessage.slice(0, 100)}"\n`);
+            if (!userMessage || userMessage.length === 0) {
+                fs.appendFileSync(debugLogPath, `SKIP: No user text found\n`);
+                return;
+            }
+            logger.log(`👤 User message: "${userMessage.slice(0, 50)}..."`);
+            try {
+                await loadTaskSkillRouter();
+                if (taskSkillRouterInstance) {
+                    // Get complexity score for tiebreaking
+                    let complexityScore = 50; // default medium
+                    try {
+                        if (featuresConfigLoader) {
+                            const config = featuresConfigLoader.loadConfig();
+                            if (config.model_routing?.complexity?.enabled) {
+                                // Estimate complexity based on message length and keywords
+                                complexityScore = estimateComplexity(userMessage);
+                            }
+                        }
+                    }
+                    catch (e) {
+                        // Silent fail for complexity estimation
+                    }
+                    fs.appendFileSync(debugLogPath, `Complexity estimated: ${complexityScore}\n`);
+                    // Route with complexity context
+                    const routingResult = taskSkillRouterInstance.routeTask(userMessage, {
+                        source: "chat_message",
+                        complexity: complexityScore,
+                    });
+                    fs.appendFileSync(debugLogPath, `Routing result: ${JSON.stringify(routingResult)}\n`);
+                    if (routingResult && routingResult.agent) {
+                        // Apply weighted confidence scoring
+                        let finalConfidence = routingResult.confidence;
+                        let routingMethod = "keyword";
+                        // If keyword confidence is low, use complexity-based routing
+                        if (routingResult.confidence < 0.7 && complexityScore > 50) {
+                            // High complexity tasks get orchestrator boost
+                            if (complexityScore > 70) {
+                                routingResult.agent = "orchestrator";
+                                finalConfidence = Math.min(0.85, routingResult.confidence + 0.15);
+                                routingMethod = "complexity";
+                            }
+                        }
+                        // If low complexity and low confidence, boost code-reviewer
+                        if (routingResult.confidence < 0.6 && complexityScore < 30) {
+                            routingResult.agent = "code-reviewer";
+                            finalConfidence = Math.min(0.75, routingResult.confidence + 0.15);
+                            routingMethod = "complexity";
+                        }
+                        logger.log(`🎯 Routed to: @${routingResult.agent} (${Math.round(finalConfidence * 100)}%) via ${routingMethod}`);
+                        fs.appendFileSync(debugLogPath, `Final agent: ${routingResult.agent}, confidence: ${finalConfidence}, method: ${routingMethod}\n`);
+                        // Store routing in session for later use
+                        const sessionRoutingPath = path.join(process.cwd(), "logs", "framework", "session-routing.json");
+                        try {
+                            fs.appendFileSync(sessionRoutingPath, JSON.stringify({
+                                timestamp: new Date().toISOString(),
+                                message: userMessage.slice(0, 100),
+                                agent: routingResult.agent,
+                                confidence: finalConfidence,
+                                method: routingMethod,
+                                complexity: complexityScore,
+                            }) + "\n");
+                        }
+                        catch (e) {
+                            // Silent fail for session routing logging
+                        }
+                    }
+                }
+            }
+            catch (e) {
+                logger.error("Chat message routing error:", e);
+                fs.appendFileSync(debugLogPath, `ERROR: ${e}\n`);
+            }
+            fs.appendFileSync(debugLogPath, `=== END chat.message ===\n`);
         },
         config: async (_config) => {
             const logger = await getOrCreateLogger(directory);

@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://self-storage.postalocity.com/sitemap.xml
+Sitemap: https://postalocity.com/self-storage/sitemap.xml

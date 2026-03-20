@@ -11,26 +11,33 @@
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "canonicalDomain": "https://healthcare-mailing-services.postalocity.com",
+  "canonicalDomain": "https://postalocity.com/healthcare-mailing-services",
   "branding": {
-    "tagline": "Automated Healthcare Mailing Services",
+    "tagline": "Proof of Mailing. Every Letter.",
     "logo": null
   },
   "footer": {
     "finalCTA": {
       "headline": "Optimize Your Healthcare Mailing Today",
-      "description": "Streamline patient statements and billing mail, reduce manual processing, and accelerate delivery—no contracts, pay-as-you-go pricing.",
+      "description": "Streamline patient statements and billing mail, reduce manual processing, and accelerate delivery\u2014no contracts, pay-as-you-go pricing.",
       "buttonText": "Get Started Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
     "description": "Postalocity helps healthcare organizations reclaim significant time through automated patient statement mailing and billing communication services.",
-    "tagline": "Empowering Healthcare Providers with Reliable Mailing Solutions",
+    "tagline": "Proof of Mailing. Every Letter.",
     "links": [
-      { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
-      { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
-      { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
-      { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
-      { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+      {
+        "label": "Privacy",
+        "href": "https://www.postalocity.com/privacy/"
+      },
+      {
+        "label": "Terms",
+        "href": "https://www.postalocity.com/terms/"
+      },
+      {
+        "label": "Login",
+        "href": "https://prod.postalocity.com/login.html?promo=health"
+      }
     ]
   },
   "theme": {
@@ -69,10 +76,22 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Services", "href": "#services" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "cta": {
       "text": "Sign Up Now",
@@ -83,10 +102,10 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Healthcare Mailing Service — Save Significant Time Weekly",
+        "main": "Healthcare Mailing Service \u2014 Save Significant Time Weekly",
         "highlightTerm": "Automate Patient Statements & Billing Mail"
       },
-      "subhead": "Secure Healthcare Mailing Service – Automate Patient Statements & Billing Mail with accuracy and reliability. Focus on patient care while we handle your mail processing efficiently.",
+      "subhead": "Secure Healthcare Mailing Service \u2013 Automate Patient Statements & Billing Mail with accuracy and reliability. Focus on patient care while we handle your mail processing efficiently.",
       "background": {
         "image": "/images/healthcare-workspace.svg",
         "alt": "Healthcare professional managing patient statements and billing mail efficiently"
@@ -117,25 +136,25 @@
       },
       "benefits": [
         {
-          "icon": "⏰",
+          "icon": "\u23f0",
           "title": "Streamline Patient Statements",
           "detail": "Automated patient statement processing reduces manual data entry errors and accelerates printing by completing statements three times faster than manual processing.",
           "metrics": "Reduce processing 70-80%"
         },
         {
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "title": "Address Verification",
           "detail": "Streamlined workflows improve address accuracy by validating addresses before printing, ensuring reliable delivery to patients.",
           "metrics": "Improve accuracy 95-98%"
         },
         {
-          "icon": "💬",
+          "icon": "\ud83d\udcac",
           "title": "Automated Billing Mail Processing",
           "detail": "Automated payment posting and follow-up reduces administrative overhead while improving cash flow by processing billing mail immediately upon receipt.",
           "metrics": "Save significant time"
         },
         {
-          "icon": "🎯",
+          "icon": "\ud83c\udfaf",
           "title": "Free Up Staff for Patient Care",
           "detail": "Intelligent error detection identifies common mailing patterns before processing, reducing rework by 50% and administrative costs by 40%, allowing your team to focus on patient interactions.",
           "metrics": "Reclaim significant time"
@@ -165,7 +184,7 @@
         },
         {
           "title": "Revenue Cycle Delays",
-          "description": "Postalocity automates the entire process—secure PDF upload, address verification, printing, folding, stuffing, and USPS delivery—eliminating manual errors and delays.",
+          "description": "Postalocity automates the entire process\u2014secure PDF upload, address verification, printing, folding, stuffing, and USPS delivery\u2014eliminating manual errors and delays.",
           "metrics": "15-25 business days faster processing"
         }
       ]
@@ -177,32 +196,32 @@
       },
       "services": [
         {
-          "icon": "📋",
+          "icon": "\ud83d\udccb",
           "title": "Patient Statements",
           "description": "Automate patient statement generation and delivery with accurate, reliable processing that ensures timely patient communication."
         },
         {
-          "icon": "📈",
+          "icon": "\ud83d\udcc8",
           "title": "Billing Invoices",
           "description": "Secure billing invoice processing with integrated address verification and tracking for reliable delivery to payers."
         },
         {
-          "icon": "🔍",
+          "icon": "\ud83d\udd0d",
           "title": "Address Verification",
           "description": "Comprehensive address validation identifies undeliverable addresses before printing, ensuring reliable delivery and reducing returned mail."
         },
         {
-          "icon": "💰",
+          "icon": "\ud83d\udcb0",
           "title": "Revenue Cycle Notices",
           "description": "Automated revenue cycle notices with processing automation reducing manual entry and accelerating delivery cycles."
         },
         {
-          "icon": "📞",
+          "icon": "\ud83d\udcde",
           "title": "Patient Communication",
           "description": "Patient inquiry resolution improving patient satisfaction and payment collection rates through reliable mailing systems."
         },
         {
-          "icon": "🔒",
+          "icon": "\ud83d\udd12",
           "title": "Compliance Support",
           "description": "Reliable processing ensuring your operations align with healthcare mailing requirements without disruption."
         }
@@ -274,25 +293,25 @@
           "step": 1,
           "title": "Upload Secure PDF",
           "description": "Upload patient statements and billing documents through our secure portal or integrate with your EMR system.",
-          "icon": "📄"
+          "icon": "\ud83d\udcc4"
         },
         {
           "step": 2,
           "title": "Address Verification",
           "description": "Automated address verification validates addresses before printing, ensuring reliable delivery and reducing returned mail.",
-          "icon": "🔍"
+          "icon": "\ud83d\udd0d"
         },
         {
           "step": 3,
           "title": "We Print & Process",
           "description": "Professional printing, folding, and stuffing with 98% accuracy and next-day USPS pickup for faster delivery.",
-          "icon": "🖨️"
+          "icon": "\ud83d\udda8\ufe0f"
         },
         {
           "step": 4,
           "title": "USPS Delivery",
           "description": "Reliable USPS delivery with Certified Mail and tracking options for patient statements and revenue-cycle notices.",
-          "icon": "📦"
+          "icon": "\ud83d\udce6"
         }
       ]
     },
@@ -357,12 +376,12 @@
         {
           "icon": "map-pin",
           "title": "Address Verification Included",
-          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned statements and ensuring critical communications reach patients."
+          "description": "Pre-production address verification catches inaccuracies before printing\u2014reducing returned statements and ensuring critical communications reach patients."
         },
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing\u2014bypass slow in-house printing and daily post office trips. *Restrictions apply."
         }
       ]
     },
@@ -419,14 +438,22 @@
         {
           "name": "Dr. Sarah Martinez",
           "title": "Director of Healthcare Mailing Strategy",
-          "credentials": ["CHDA", "RHIA", "HIMSS"],
+          "credentials": [
+            "CHDA",
+            "RHIA",
+            "HIMSS"
+          ],
           "bio": "Sarah brings 15 years of healthcare operations experience, having led mailing optimization initiatives for 200+ practices across 12 states. She previously served as Mailing Operations Director for a 500-bed hospital system, reducing returned mail by 68% through process redesign.",
           "experience": "15 years in healthcare mailing, patient statements, and revenue communication management"
         },
         {
           "name": "James Thompson",
           "title": "Senior Address Verification Specialist",
-          "credentials": ["CDIA", "CAP", "CIPP/US"],
+          "credentials": [
+            "CDIA",
+            "CAP",
+            "CIPP/US"
+          ],
           "bio": "James is an address verification expert with 12 years of postal operations experience. He has conducted 500+ address validation audits and developed processing frameworks that reduce returned mail by 45%.",
           "experience": "12 years in address verification, postal operations, and delivery optimization"
         }
@@ -502,7 +529,13 @@
       "aggregateRating": {
         "overall": 4.8,
         "total": 127,
-        "distribution": [0, 3, 8, 21, 95]
+        "distribution": [
+          0,
+          3,
+          8,
+          21,
+          95
+        ]
       }
     },
     "caseStudies": {

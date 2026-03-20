@@ -11,9 +11,9 @@
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "canonicalDomain": "https://postcard.postalocity.com",
+  "canonicalDomain": "https://postalocity.com/postcard",
   "branding": {
-    "tagline": "Professional Postcard Mailing Services",
+    "tagline": "Proof of Mailing. Every Letter.",
     "logo": null
   },
   "theme": {
@@ -45,11 +45,26 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Services", "href": "#services" },
-      { "label": "FAQ", "href": "#faq" },
-      { "label": "About", "href": "#about" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      }
     ],
     "cta": {
       "text": "Sign Up Now",
@@ -153,7 +168,7 @@
         {
           "icon": "mail",
           "title": "Every Mailer Includes an Envelope",
-          "description": "We use real envelopes—not self-mailers. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
+          "description": "We use real envelopes\u2014not self-mailers. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
         },
         {
           "icon": "eye",
@@ -163,12 +178,12 @@
         {
           "icon": "zap",
           "title": "Skip USPS Drop Boxes & Cutoffs",
-          "description": "Bypass post office drop-off times and waiting in line. We automate the process—eliminating missed cutoffs and potentially days in delivery time."
+          "description": "Bypass post office drop-off times and waiting in line. We automate the process\u2014eliminating missed cutoffs and potentially days in delivery time."
         },
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing\u2014bypass slow in-house printing and daily post office trips. *Restrictions apply."
         }
       ]
     },
@@ -230,16 +245,25 @@
     "footer": {
       "finalCTA": {
         "headline": "Start mailing postcards today?",
+        "description": "Perfect for conference follow-ups, marketing campaigns, and direct mail. Professional printing and USPS delivery included.",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pc2026"
       },
-      "tagline": "Professional Mailing Services",
+      "description": "Postalocity makes postcard mailing simple—upload your design, we handle printing and USPS delivery with proof of mailing for every campaign.",
+      "tagline": "Proof of Mailing. Every Letter.",
       "links": [
-        { "label": "Blog", "href": "https://www.postalocity.com/resources/blog/" },
-        { "label": "FAQ", "href": "https://www.postalocity.com/resources/faq/" },
-        { "label": "Contact", "href": "https://www.postalocity.com/contact/" },
-        { "label": "Privacy Policy", "href": "https://www.postalocity.com/privacy/" },
-        { "label": "Terms of Service", "href": "https://www.postalocity.com/terms/" }
+        {
+          "label": "Privacy",
+          "href": "https://www.postalocity.com/privacy/"
+        },
+        {
+          "label": "Terms",
+          "href": "https://www.postalocity.com/terms/"
+        },
+        {
+          "label": "Login",
+          "href": "https://prod.postalocity.com/login.html?promo=post"
+        }
       ]
     }
   }
