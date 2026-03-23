@@ -1,5 +1,5 @@
 {
-  "version": "Postalocity Microsite Config — Education",
+  "version": "Postalocity Microsite Config — Education (Enhanced Content)",
   "site": {
     "id": "education",
     "name": "Education Mailing Service",
@@ -29,17 +29,18 @@
     }
   },
   "seo": {
-    "title": "Education Mailing Services — Proof & Compliance",
-    "description": "Automate education mailing services: school letters, university notices, parent communications, and student statements from $1.31/letter with proof, address verification & tracking.",
+    "title": "Education Mailing Services — Proof & Compliance for Schools & Universities",
+    "description": "Automate education mailing services: parent communications, student statements, enrollment packets, compliance notices from $1.31/letter with real-time verification, digital proof & tracking to reclaim operational time.",
     "keywords": [
       "education mailing services",
       "school mailing automation",
       "university mailing service",
       "automated school letters",
-      "student billing mailing"
+      "student billing mailing",
+      "compliance notices mailing education"
     ],
     "ogTitle": "Education Mailing Services — Proof Every Letter",
-    "ogDescription": "Streamline parent communications, student statements, enrollment packets, compliance notices — automated processing, verified, documented.",
+    "ogDescription": "Reclaim operational time for educational institutions with automated processing of parent notices, student billing, enrollment materials, and official compliance mail — verified, documented, efficient.",
     "robots": "index, follow",
     "sitemapPriority": 0.8,
     "sitemapChangeFrequency": "monthly",
@@ -56,8 +57,12 @@
         "href": "#how-it-works"
       },
       {
-        "label": "Services",
+        "label": "Use Cases",
         "href": "#services"
+      },
+      {
+        "label": "Comparison",
+        "href": "#comparison"
       },
       {
         "label": "FAQ",
@@ -72,14 +77,14 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Education Mailing Service",
+        "main": "Education Mailing Services",
         "highlightTerm": "Proof Every Letter"
       },
-      "subhead": "Automate education mailing services for parent communications, student statements, enrollment packets, compliance notices — secure upload, real-time verification, proof & tracking.",
+      "subhead": "Automate education mailing services — secure upload, real-time address verification, same-day processing when approved, digital proof, and USPS tracking options to reclaim operational time for schools, districts, and universities.",
       "background": {
         "image": "/images/education-hero.jpg",
         "overlay": true,
-        "alt": "University campus administrative building with staff handling official correspondence"
+        "alt": "Modern university administrative office with staff managing secure document processing and mailing"
       },
       "ctas": [
         {
@@ -96,75 +101,75 @@
     },
     "benefits": {
       "section": {
-        "title": "Why Choose Postalocity for Education Mailing",
-        "description": "Reclaim operational time and support accurate documentation with automated mailing tailored to educational institutions."
+        "title": "Why Educational Institutions Choose Postalocity",
+        "description": "Automated mailing reclaims operational time while providing verifiable documentation essential for administrative and compliance workflows."
       },
       "benefits": [
         {
           "icon": "clock",
           "title": "Reclaim Operational Time",
-          "description": "No post office trips — upload & approve remotely.",
-          "detail": "We handle print, fold, stuff, seal & postage."
+          "description": "Eliminate manual preparation and post office runs — upload PDFs securely and approve remotely for full automation of printing, folding, stuffing, sealing, and postage.",
+          "detail": "Administrative teams redirect focus to student support, program coordination, and strategic planning."
         },
         {
           "icon": "map-pin",
-          "title": "Fewer Returned Mail Items",
-          "description": "Real-time address verification included.",
-          "detail": "Identifies issues before processing."
+          "title": "Reduce Returned Mail",
+          "description": "Real-time address verification catches inaccuracies before processing, minimizing bounce-backs and follow-up efforts.",
+          "detail": "Supports accurate delivery records for parent and student communications."
         },
         {
           "icon": "shield",
           "title": "Proof Every Letter",
-          "description": "Digital proof provided for each mailing.",
-          "detail": "Certified upgrade option for USPS tracking."
+          "description": "Digital proof generated for each piece mailed, with certified mail upgrade for real-time USPS tracking.",
+          "detail": "Provides auditable records critical for institutional accountability."
         },
         {
           "icon": "file-text",
           "title": "Secure & Documented Handling",
-          "description": "ISO 9001 documented processes.",
-          "detail": "Encrypted secure uploads for sensitive correspondence."
+          "description": "ISO 9001 documented processes with encrypted uploads protect sensitive student and family data.",
+          "detail": "Aligns with requirements for handling official notices and billing."
         }
       ]
     },
     "comparison": {
       "section": {
-        "title": "Postalocity vs Traditional Mailing for Schools & Universities",
-        "description": "Automated processing vs. in-house manual workflows."
+        "title": "Postalocity vs. Traditional In-House Mailing",
+        "description": "Automated efficiency compared to manual school and university workflows."
       },
       "columns": {
-        "ourSolution": "Postalocity",
-        "traditional": "Traditional In-House"
+        "traditional": "Traditional In-House",
+        "ourSolution": "Postalocity"
       },
       "rows": [
         {
           "icon": "map-pin",
           "feature": "Address Verification",
-          "ourSolution": "Real-time included",
-          "traditionalApproach": "Manual checks or none"
+          "ourSolution": "Real-time automated checks included",
+          "traditionalApproach": "Manual review or absent"
         },
         {
           "icon": "shield",
           "feature": "Proof of Mailing",
-          "ourSolution": "Digital proof every letter",
-          "traditionalApproach": "Post office receipt if obtained"
+          "ourSolution": "Digital proof for every letter",
+          "traditionalApproach": "Limited to post office receipts when pursued"
         },
         {
           "icon": "clock",
           "feature": "Processing",
           "ourSolution": "Same-day if approved by noon CT",
-          "traditionalApproach": "Staff-dependent daily preparation & trips"
-        },
-        {
-          "icon": "file-text",
-          "feature": "Cost",
-          "ourSolution": "$1.31/letter all-inclusive",
-          "traditionalApproach": "Equipment, postage, labor costs"
+          "traditionalApproach": "Staff availability and daily physical handling"
         },
         {
           "icon": "zap",
           "feature": "Operational Efficiency",
-          "ourSolution": "Reclaim time through full automation",
-          "traditionalApproach": "Hours weekly on manual assembly & mailing"
+          "ourSolution": "Reclaim time through end-to-end automation",
+          "traditionalApproach": "Significant weekly time on preparation, assembly, and mailing"
+        },
+        {
+          "icon": "eye",
+          "feature": "Tracking & Documentation",
+          "ourSolution": "Real-time options + verifiable records",
+          "traditionalApproach": "Manual logging or none"
         },
         {
           "icon": "mail",
@@ -176,29 +181,29 @@
     },
     "services": {
       "section": {
-        "title": "Education Mailing Use Cases",
-        "description": "From routine notifications to compliance-required mailings."
+        "title": "Key Education Mailing Use Cases",
+        "description": "Tailored automation for routine administrative and compliance-driven correspondence."
       },
       "services": [
         {
           "icon": "bell",
           "title": "Parent & Guardian Communications",
-          "description": "Automated processing for newsletters, event notices, progress reports with verification & proof."
+          "description": "Process newsletters, event invitations, attendance updates, and progress reports with address verification and proof for reliable family outreach."
         },
         {
           "icon": "file",
-          "title": "Student Billing & Statements",
-          "description": "Tuition invoices, fee reminders handled securely with address verification & documentation."
+          "title": "Student Billing & Financial Statements",
+          "description": "Automate tuition invoices, fee reminders, and payment notices with secure handling and documentation to ensure accurate family records."
         },
         {
           "icon": "calendar",
-          "title": "Enrollment & Registration Packets",
-          "description": "Recurring admissions & registration materials with consistent formatting & tracking."
+          "title": "Enrollment & Registration Materials",
+          "description": "Handle recurring admissions packets, welcome letters, and registration confirmations with consistent formatting and tracking during high-volume periods."
         },
         {
           "icon": "mail",
           "title": "Compliance & Official Notices",
-          "description": "Verifiable truancy letters, regulatory notifications & records with proof included."
+          "description": "Manage truancy notifications, FERPA-related correspondence, disciplinary letters, and regulatory mailings with verifiable proof and records."
         }
       ]
     },
@@ -261,25 +266,25 @@
     },
     "faq": {
       "section": {
-        "title": "FAQ for Education Mailing Services",
-        "description": "Common questions on proof, pricing, verification & processing."
+        "title": "Frequently Asked Questions — Education Mailing Services",
+        "description": "Answers on proof, verification, pricing, and processing for schools and universities."
       },
       "faqs": [
         {
-          "q": "Is proof of mailing included?",
-          "a": "Yes — digital proof for every letter. Certified mail upgrade available for real-time USPS tracking."
+          "q": "Is proof of mailing included with every letter?",
+          "a": "Yes — digital proof is provided for each letter processed. A certified mail upgrade is available for real-time USPS tracking on priority items."
         },
         {
-          "q": "Does it include address verification?",
-          "a": "Yes — real-time verification built-in to reduce returned mail."
+          "q": "How does address verification work?",
+          "a": "Real-time verification is built-in and flags potential issues before printing, helping reduce returned mail and administrative rework."
         },
         {
-          "q": "What is the starting price?",
-          "a": "$1.31 per letter (1-page, single-sided B&W, includes envelope & postage)."
+          "q": "What is the starting price per letter?",
+          "a": "$1.31 per letter for qualifying specifications (1-page, single-sided black & white, including envelope and postage)."
         },
         {
-          "q": "What is the processing time?",
-          "a": "Same-day processing if approved by noon CT; prompt submission to USPS follows."
+          "q": "What is the typical processing timeframe?",
+          "a": "Same-day processing applies when files are approved by noon CT, followed by prompt submission to USPS."
         }
       ]
     },
@@ -295,7 +300,7 @@
     },
     "footer": {
       "finalCTA": {
-        "headline": "Streamline education mailing services today?",
+        "headline": "Ready to reclaim operational time with automated education mailing services?",
         "description": "Automated parent communications, student statements, enrollment packets, and compliance notices with proof of mailing—no contracts, pay-as-you-go.",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=ed2026"
