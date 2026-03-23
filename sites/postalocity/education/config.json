@@ -157,6 +157,11 @@
           "feature": "Envelope",
           "ourSolution": "Included — Color Optional",
           "traditionalApproach": "Self-mailer — No envelope"
+        },
+        {
+          "feature": "Test Row Without Icon",
+          "ourSolution": "test",
+          "traditionalApproach": "test"
         }
       ]
     },

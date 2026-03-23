@@ -73,11 +73,11 @@
       "section": { "title": "Postalocity vs Traditional Mailing", "description": "Automated vs in-house." },
       "columns": { "traditional": "Traditional", "ourSolution": "Postalocity" },
       "rows": [
-        { "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
-        { "feature": "Proof of Mailing", "ourSolution": "Digital every letter", "traditionalApproach": "Post office receipt" },
-        { "feature": "Processing", "ourSolution": "Same-day approved", "traditionalApproach": "Daily trips" },
-        { "feature": "Cost", "ourSolution": "{{PRICING}}", "traditionalApproach": "Equipment, postage, labor" },
-        { "feature": "Envelope", "ourSolution": "Included", "traditionalApproach": "Self-mailer — No envelope" }
+        { "icon": "map-pin", "feature": "Address Verification", "ourSolution": "Real-time included", "traditionalApproach": "Manual or none" },
+        { "icon": "shield", "feature": "Proof of Mailing", "ourSolution": "Digital every letter", "traditionalApproach": "Post office receipt" },
+        { "icon": "clock", "feature": "Processing", "ourSolution": "Same-day approved", "traditionalApproach": "Daily trips" },
+        { "icon": "dollar-sign", "feature": "Cost", "ourSolution": "{{PRICING}}", "traditionalApproach": "Equipment, postage, labor" },
+        { "icon": "mail", "feature": "Envelope", "ourSolution": "Included — Color Optional", "traditionalApproach": "Self-mailer — No envelope" }
       ]
     },
     "services": {

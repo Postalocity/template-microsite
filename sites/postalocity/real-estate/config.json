@@ -57,11 +57,11 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Real Estate Mailing Service Built for Property Managers",
+        "main": "Real Estate Mailing Service – Automation for Property Managers",
         "highlightTerm": "Proof Every Letter",
         "alt": "Modern real estate office with property documents and mailing materials"
       },
-      "subhead": "Automate tenant notice mailing, landlord mailing, and property management mailing at scale. Upload documents, get verified addresses, and receive proof of mailing for every letter you send.",
+      "subhead": "Automate tenant notice mailing, landlord mailing, and property management mailing at scale. Upload PDFs, reduce returned mail with verified addresses, and trace every piece. Easily add a Certificate of Mailing as proof of mailing on your tenant notices.",
       "background": {
         "image": "/real-estate/images/real-estate-hero.jpg",
         "overlay": true
@@ -93,7 +93,7 @@
         },
         {
           "icon": "map-pin",
-          "title": "Dramatically Fewer Returned Mail",
+          "title": "Dramatically Fewer Returned Mail Pieces",
           "description": "Real-time USPS address verification catches inaccurate addresses before printing, saving you money and ensuring critical tenant communications arrive.",
           "detail": "Reduces returned mail by up to 15%."
         },
@@ -123,7 +123,7 @@
         {
           "icon": "map-pin",
           "feature": "Address Verification",
-          "ourSolution": "Real-time USPS CASS certified",
+          "ourSolution": "Real-time USPS NCOA verified and CASS certified",
           "traditionalApproach": "Manual entry — error-prone"
         },
         {
@@ -143,6 +143,12 @@
           "feature": "Operational Efficiency",
           "ourSolution": "Reclaim 3-5 hours per week",
           "traditionalApproach": "Hours lost to manual tasks"
+        },
+        {
+          "icon": "dollar-sign",
+          "feature": "Cost per Letter",
+          "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage",
+          "traditionalApproach": "Equipment, postage, labor"
         },
         {
           "icon": "mail",
@@ -208,7 +214,7 @@
         },
         {
           "number": "4",
-          "title": "Proof & Tracking Provided",
+          "title": "Proof & Tracing Provided",
           "description": "Receive a complete mailing affidavit for every letter. Upgrade to Certificate of Mailing for official USPS postmarks and delivery confirmation."
         }
       ]
@@ -226,8 +232,8 @@
         },
         {
           "icon": "eye",
-          "title": "Real-Time Dashboard Visibility",
-          "description": "Track mailing status across your entire property portfolio instantly. Know exactly when each tenant notice and marketing piece enters the USPS system via scan confirmation."
+          "title": "Real-Time Dashboard",
+          "description": "Trace mailing status instantly across your entire property portfolio instantly."
         },
         {
           "icon": "map-pin",
@@ -267,7 +273,7 @@
         },
         {
           "q": "What's included in landlord mailing pricing?",
-          "a": "{{PRICING}}. All pricing includes printing, folding, stuffing into #10 envelopes, sealing, postage, and mailing affidavit. No hidden fees for standard real estate mailing service operations."
+          "a": "Starts at $1.31 per letter. All pricing includes printing, folding, stuffing into #10 envelopes, sealing, postage, and mailing affidavit. No hidden fees for standard real estate mailing service operations."
         },
         {
           "q": "How fast can I get tenant notices mailed?",

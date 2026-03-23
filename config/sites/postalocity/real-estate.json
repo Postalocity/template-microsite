@@ -1,5 +1,5 @@
 {
-  "version": "Postalocity Microsite Config \u2014 Real Estate",
+  "version": "Postalocity Microsite Config — Real Estate",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {
@@ -29,14 +29,14 @@
     }
   },
   "seo": {
-    "title": "Real Estate Mailing Service \u2014 Automated Tenant Notices & Property Management Mailing",
+    "title": "Real Estate Mailing Service — Automated Tenant Notices & Property Management Mailing",
     "description": "The reliable real estate mailing service that automates tenant notice mailing, property management mailing, and compliance letters. Get proof, verification & tracking from {{PRICING_SHORT}}.",
     "keywords": [
       "real estate mailing service",
       "property management mailing",
       "tenant notice mailing"
     ],
-    "ogTitle": "Real Estate Mailing Service \u2014 Proof Every Letter",
+    "ogTitle": "Real Estate Mailing Service — Proof Every Letter",
     "ogDescription": "Automate tenant notices, marketing postcards, and compliance letters for property managers, landlords, and real estate professionals. Proof included with every mailing.",
     "ogImage": "/real-estate/images/og-image.png",
     "twitterCard": "summary_large_image",
@@ -70,11 +70,11 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Real Estate Mailing Service Built for Property Managers",
+        "main": "Real Estate Mailing Service – Automation for Property Managers",
         "highlightTerm": "Proof Every Letter",
         "alt": "Modern real estate office with property documents and mailing materials"
       },
-      "subhead": "Automate tenant notice mailing, landlord mailing, and property management mailing at scale. Upload documents, get verified addresses, and receive proof of mailing for every letter you send.",
+      "subhead": "Automate tenant notice mailing, landlord mailing, and property management mailing at scale. Upload PDFs, reduce returned mail with verified addresses, and trace every piece. Easily add a Certificate of Mailing as proof of mailing on your tenant notices.",
       "background": {
         "image": "/real-estate/images/real-estate-hero.jpg",
         "overlay": true
@@ -102,11 +102,11 @@
           "icon": "clock",
           "title": "Reclaim Hours Every Week",
           "description": "No more post office trips or stuffing envelopes. Upload your tenant notices, marketing postcards, or compliance letters and we handle the rest.",
-          "detail": "Print, fold, stuff & mail \u2014 all automated."
+          "detail": "Print, fold, stuff & mail — all automated."
         },
         {
           "icon": "map-pin",
-          "title": "Dramatically Fewer Returned Mail",
+          "title": "Dramatically Fewer Returned Mail Pieces",
           "description": "Real-time USPS address verification catches inaccurate addresses before printing, saving you money and ensuring critical tenant communications arrive.",
           "detail": "Reduces returned mail by up to 15%."
         },
@@ -136,8 +136,8 @@
         {
           "icon": "map-pin",
           "feature": "Address Verification",
-          "ourSolution": "Real-time USPS CASS certified",
-          "traditionalApproach": "Manual entry \u2014 error-prone"
+          "ourSolution": "Real-time USPS NCOA verified and CASS certified",
+          "traditionalApproach": "Manual entry — error-prone"
         },
         {
           "icon": "shield",
@@ -158,14 +158,20 @@
           "traditionalApproach": "Hours lost to manual tasks"
         },
         {
+          "icon": "dollar-sign",
+          "feature": "Cost per Letter",
+          "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage",
+          "traditionalApproach": "Equipment, postage, labor"
+        },
+        {
           "icon": "mail",
           "feature": "Envelope",
           "ourSolution": {
-            "text": "Included \u2014 Color Optional",
+            "text": "Included — Color Optional",
             "isEnvelope": true,
             "highlight": "Print, fold, stuff & seal automatically"
           },
-          "traditionalApproach": "Self-mailer \u2014 No envelope"
+          "traditionalApproach": "Self-mailer — No envelope"
         }
       ]
     },
@@ -221,7 +227,7 @@
         },
         {
           "number": "4",
-          "title": "Proof & Tracking Provided",
+          "title": "Proof & Tracing Provided",
           "description": "Receive a complete mailing affidavit for every letter. Upgrade to Certificate of Mailing for official USPS postmarks and delivery confirmation."
         }
       ]
@@ -239,8 +245,8 @@
         },
         {
           "icon": "eye",
-          "title": "Real-Time Dashboard Visibility",
-          "description": "Track mailing status across your entire property portfolio instantly. Know exactly when each tenant notice and marketing piece enters the USPS system via scan confirmation."
+          "title": "Real-Time Dashboard",
+          "description": "Trace mailing status instantly across your entire property portfolio instantly."
         },
         {
           "icon": "map-pin",
@@ -272,7 +278,7 @@
       "faqs": [
         {
           "q": "Is proof of mailing included with tenant notice mailing?",
-          "a": "Yes \u2014 every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+          "a": "Yes — every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "q": "Does the property management mailing service include address verification?",
@@ -280,7 +286,7 @@
         },
         {
           "q": "What's included in landlord mailing pricing?",
-          "a": "{{PRICING}}. All pricing includes printing, folding, stuffing into #10 envelopes, sealing, postage, and mailing affidavit. No hidden fees for standard real estate mailing service operations."
+          "a": "Starts at $1.31 per letter. All pricing includes printing, folding, stuffing into #10 envelopes, sealing, postage, and mailing affidavit. No hidden fees for standard real estate mailing service operations."
         },
         {
           "q": "How fast can I get tenant notices mailed?",
