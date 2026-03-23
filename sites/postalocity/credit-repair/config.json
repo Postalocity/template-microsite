@@ -38,7 +38,8 @@
     "twitterDescription": "Save hours weekly with automated dispute letter mailing. Address verification, Certified Mail, USPS tracking, API integration with credit repair software.",
     "robots": "index, follow",
     "sitemapPriority": 1,
-    "sitemapChangeFrequency": "weekly"
+    "sitemapChangeFrequency": "weekly",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [

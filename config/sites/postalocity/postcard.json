@@ -41,7 +41,8 @@
     "ogDescription": "Make your conference connections count. Professional postcard mailing with print and mail services.",
     "robots": "index, follow",
     "sitemapPriority": 0.8,
-    "sitemapChangeFrequency": "monthly"
+    "sitemapChangeFrequency": "monthly",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [
@@ -168,7 +169,7 @@
         {
           "icon": "mail",
           "title": "Every Mailer Includes an Envelope",
-          "description": "We use real envelopes\u2014not self-mailers. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
+          "description": "We use real envelopes—not self-mailers. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
         },
         {
           "icon": "eye",
@@ -178,12 +179,12 @@
         {
           "icon": "zap",
           "title": "Skip USPS Drop Boxes & Cutoffs",
-          "description": "Bypass post office drop-off times and waiting in line. We automate the process\u2014eliminating missed cutoffs and potentially days in delivery time."
+          "description": "Bypass post office drop-off times and waiting in line. We automate the process—eliminating missed cutoffs and potentially days in delivery time."
         },
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing\u2014bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
         }
       ]
     },

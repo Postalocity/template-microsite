@@ -19,7 +19,7 @@
   "footer": {
     "finalCTA": {
       "headline": "Optimize Your Revenue Cycle Today",
-      "description": "Streamline claims processing, reduce denials, and accelerate reimbursement\u2014no contracts, pay-as-you-go pricing.",
+      "description": "Streamline claims processing, reduce denials, and accelerate reimbursement—no contracts, pay-as-you-go pricing.",
       "buttonText": "Get Started Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
@@ -72,8 +72,9 @@
     "twitterTitle": "Patient Statement Automation | Healthcare Mailing Services",
     "twitterDescription": "Reclaim significant time with automated patient statement mailing. HIPAA-compliant, address verification, Certified Mail, EMR integration with systems.",
     "robots": "index, follow",
-    "sitemapPriority": 1.0,
-    "sitemapChangeFrequency": "weekly"
+    "sitemapPriority": 1,
+    "sitemapChangeFrequency": "weekly",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [
@@ -240,11 +241,11 @@
           "icon": "mail",
           "feature": "Envelope",
           "ourSolution": {
-            "text": "Included \u2014 Color Optional",
+            "text": "Included — Color Optional",
             "highlight": "Professional envelope with every mailing",
             "isEnvelope": true
           },
-          "traditionalApproach": "Self-mailer \u2014 No envelope"
+          "traditionalApproach": "Self-mailer — No envelope"
         }
       ]
     },
@@ -263,12 +264,12 @@
         {
           "icon": "map-pin",
           "title": "Address Verification Included",
-          "description": "Pre-production address verification catches inaccuracies before printing\u2014reducing returned statements and ensuring critical communications reach patients."
+          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned statements and ensuring critical communications reach patients."
         },
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing\u2014bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
         }
       ]
     },

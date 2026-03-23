@@ -19,7 +19,7 @@
   "footer": {
     "finalCTA": {
       "headline": "Automate Your Dispute Letter Mailing Today",
-      "description": "Reclaim significant time with automated printing, address verification, and Certified Mail services\u2014no contracts, pay-as-you-go pricing.",
+      "description": "Reclaim significant time with automated printing, address verification, and Certified Mail services—no contracts, pay-as-you-go pricing.",
       "buttonText": "Sign Up Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=cr2026"
     },
@@ -73,8 +73,9 @@
     "twitterTitle": "Dispute Letter Mailing Automation | Credit Repair Mailing Service",
     "twitterDescription": "Save hours weekly with automated dispute letter mailing. Address verification, Certified Mail, USPS tracking, API integration with credit repair software.",
     "robots": "index, follow",
-    "sitemapPriority": 1.0,
-    "sitemapChangeFrequency": "weekly"
+    "sitemapPriority": 1,
+    "sitemapChangeFrequency": "weekly",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [
@@ -104,10 +105,10 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Dispute Letter Mailing Service \u2014",
+        "main": "Dispute Letter Mailing Service —",
         "highlightTerm": "Automated Credit Repair Mailing"
       },
-      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning\u2014reclaiming hours weekly for client strategy.",
+      "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning—reclaiming hours weekly for client strategy.",
       "background": {
         "image": "/credit-repair/images/credit-repair-hero.jpg",
         "alt": "Credit repair professionals managing automated dispute letter mailing"
@@ -212,7 +213,7 @@
         {
           "icon": "mail",
           "title": "Every Mailer Includes an Envelope",
-          "description": "We use real envelopes\u2014not self-mailers. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
+          "description": "We use real envelopes—not self-mailers. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
         },
         {
           "icon": "eye",
@@ -222,12 +223,12 @@
         {
           "icon": "zap",
           "title": "Skip USPS Drop Boxes & Cutoffs",
-          "description": "Bypass post office drop-off times and waiting in line. We automate the process\u2014eliminating missed cutoffs and potentially days in delivery time."
+          "description": "Bypass post office drop-off times and waiting in line. We automate the process—eliminating missed cutoffs and potentially days in delivery time."
         },
         {
           "icon": "clock",
           "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing\u2014bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
         }
       ]
     },
@@ -275,11 +276,11 @@
           "icon": "mail",
           "feature": "Envelope",
           "ourSolution": {
-            "text": "Included \u2014 Color Optional",
+            "text": "Included — Color Optional",
             "highlight": "Professional envelope with every mailing",
             "isEnvelope": true
           },
-          "traditionalApproach": "Self-mailer \u2014 No envelope"
+          "traditionalApproach": "Self-mailer — No envelope"
         }
       ]
     },

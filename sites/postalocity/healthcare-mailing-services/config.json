@@ -36,7 +36,8 @@
     "twitterDescription": "Reclaim significant time with automated patient statement mailing. Address verification, Certified Mail, EMR integration with systems.",
     "robots": "index, follow",
     "sitemapPriority": 1,
-    "sitemapChangeFrequency": "weekly"
+    "sitemapChangeFrequency": "weekly",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [

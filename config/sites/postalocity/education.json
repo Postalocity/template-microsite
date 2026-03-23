@@ -42,7 +42,8 @@
     "ogDescription": "Streamline parent communications, student statements, enrollment packets, compliance notices — automated processing, verified, documented.",
     "robots": "index, follow",
     "sitemapPriority": 0.8,
-    "sitemapChangeFrequency": "monthly"
+    "sitemapChangeFrequency": "monthly",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
     "links": [
