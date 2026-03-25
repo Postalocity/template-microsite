@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBrand, useBrandName } from '@/contexts';
-import postalocityLogo from '@/assets/postalocity-logo.png';
 
 type NavConfig = {
   site?: {
@@ -104,7 +103,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
           aria-label={`${brandName} home`}
         >
           <img
-            src={postalocityLogo}
+            src="/logo.png"
             alt={brandName}
             className="h-8 lg:h-10 w-auto"
           />
