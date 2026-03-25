@@ -252,21 +252,10 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
     });
   });
 
-  // Copy and resize logo from common assets
-  if (fs.existsSync(commonLogoPath) && sipsCheck.stdout) {
-    await new Promise<void>((resolve) => {
-      exec(`sips -Z 500 "${commonLogoPath}" --out "${logoDest}"`, (error) => {
-        if (!error) {
-          console.log('✓ Resized logo image from common assets (max 500px)');
-        } else {
-          console.log('⚠ Failed to resize logo, copying instead');
-          fs.copyFileSync(commonLogoPath, logoDest);
-        }
-        resolve();
-      });
-    });
-  } else if (fs.existsSync(commonLogoPath)) {
+  // Copy logo from common assets (no resizing - each brand maintains its original dimensions)
+  if (fs.existsSync(commonLogoPath)) {
     fs.copyFileSync(commonLogoPath, logoDest);
+    console.log('✓ Copied logo image from common assets');
   }
 
   // Get hero image path from config with fallback locations
