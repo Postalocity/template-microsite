@@ -204,23 +204,27 @@ interface SiteConfig {
 }
 
 // Copy favicons from common/assets to all sites
-function copyFavicons(siteDir: string): void {
+function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
   const publicDir = path.join(siteDir, 'public');
-  const commonAssetsFavicon = path.join(TEMPLATE_DIR, 'common/assets/favicon.ico');
+  
+  // Try brand-specific favicon first, fallback to postalocity
+  const brandFaviconPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'favicon.ico');
+  const fallbackFaviconPath = path.join(TEMPLATE_DIR, 'common/assets/favicon.ico');
+  const faviconSource = fs.existsSync(brandFaviconPath) ? brandFaviconPath : fallbackFaviconPath;
 
-  if (fs.existsSync(commonAssetsFavicon)) {
+  if (fs.existsSync(faviconSource)) {
     // Create public dir if it doesn't exist
     if (!fs.existsSync(publicDir)) {
       fs.mkdirSync(publicDir, { recursive: true });
     }
 
     // Copy favicon.ico
-    fs.copyFileSync(commonAssetsFavicon, path.join(publicDir, 'favicon.ico'));
+    fs.copyFileSync(faviconSource, path.join(publicDir, 'favicon.ico'));
   }
 }
 
 // Generate Open Graph images from hero banner
-async function generateOgImages(siteDir: string, config: SiteConfig): Promise<void> {
+async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string = 'postalocity'): Promise<void> {
   const { exec } = await import('child_process');
   const publicDir = path.join(siteDir, 'public');
 
@@ -231,7 +235,10 @@ async function generateOgImages(siteDir: string, config: SiteConfig): Promise<vo
 
   const ogImageDest = path.join(publicDir, 'og-image.png');
   const logoDest = path.join(publicDir, 'logo.png');
-  const commonLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
+  // Use brand-specific logo from common assets, fallback to postalocity
+  const brandLogoPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'logo.png');
+  const fallbackLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
+  const commonLogoPath = fs.existsSync(brandLogoPath) ? brandLogoPath : fallbackLogoPath;
 
   // Check if sips is available (macOS)
   const sipsCheck = await new Promise<{ stdout: string, stderr: string }>((resolve) => {
@@ -408,7 +415,7 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
   }
 }
 
-async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext) {
+async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext, brandId?: string) {
   try {
     const { site } = config;
 
@@ -461,10 +468,10 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
 
     // Copy common assets (favicon, etc.)
-    copyFavicons(siteDir);
+    copyFavicons(siteDir, brandId || 'postalocity');
 
     // Generate Open Graph images from hero banner (SEO optimization)
-    await generateOgImages(siteDir, config);
+    await generateOgImages(siteDir, config, brandId || 'postalocity');
 
     // Post-processing with StringRay agents (if --post-process flag)
     const postProcessFlag = process.argv.includes('--post-process');
@@ -1247,7 +1254,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   }
   
   // Generate the site using legacy function with brand context
-  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext);
+  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext, brandId);
   
   console.log(`\n✅ ${ctx.brand.name} - ${serviceId} generated successfully!`);
   
