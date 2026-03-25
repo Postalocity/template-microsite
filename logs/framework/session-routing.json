@@ -195,3 +195,7 @@
 {"timestamp":"2026-03-25T20:40:39.151Z","message":"2. Or keep the generator changes but fix them properly","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-25T20:41:48.587Z","message":"fix all type errors as well","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-25T20:57:05.078Z","message":"fix the logo issue to resolve correctly for every brand every postalocity is still broken now. look ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:00:51.622Z","message":"The server is configured with a public base URL of /education - did you mean to visit /education/log","agent":"backend-engineer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:02:05.729Z","message":"<img src=\"postalocity-education/logo.png\" alt=\"Postalocity\" class=\"h-8 lg:h-10 w-auto\">\nThe server i","agent":"backend-engineer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:08:37.933Z","message":"rebuild","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:09:55.719Z","message":"<img src=\"logo.png\" alt=\"Postalocity\" class=\"h-8 lg:h-10 w-auto\"> it needs to be <site>/logo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
