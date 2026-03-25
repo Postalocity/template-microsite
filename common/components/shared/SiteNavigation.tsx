@@ -103,7 +103,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
           aria-label={`${brandName} home`}
         >
           <img
-            src="/logo.png"
+            src={config?.branding?.logo || '/logo.png'}
             alt={brandName}
             className="h-8 lg:h-10 w-auto"
           />

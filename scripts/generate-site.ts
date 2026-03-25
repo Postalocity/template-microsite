@@ -1215,7 +1215,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
     },
     branding: {
       tagline: ctx.brand.tagline || '',
-      logo: `${siteBasename}/logo.png`,
+      logo: 'logo.png',
     },
     seo: seoInfo,
     navigation: (siteConfig.navigation || {}) as { links?: Array<{ label: string; href: string }>; cta?: { text: string; href: string } },
