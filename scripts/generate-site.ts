@@ -255,9 +255,9 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
   // Copy and resize logo from common assets
   if (fs.existsSync(commonLogoPath) && sipsCheck.stdout) {
     await new Promise<void>((resolve) => {
-      exec(`sips -z 500 500 "${commonLogoPath}" --out "${logoDest}"`, (error) => {
+      exec(`sips -Z 500 "${commonLogoPath}" --out "${logoDest}"`, (error) => {
         if (!error) {
-          console.log('✓ Resized logo image from common assets (500x500px)');
+          console.log('✓ Resized logo image from common assets (max 500px)');
         } else {
           console.log('⚠ Failed to resize logo, copying instead');
           fs.copyFileSync(commonLogoPath, logoDest);
@@ -1216,7 +1216,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
     },
     branding: {
       tagline: ctx.brand.tagline || '',
-      logo: `${siteBasename}/logo.png`,
+      logo: 'logo.png',
     },
     seo: seoInfo,
     navigation: (siteConfig.navigation || {}) as { links?: Array<{ label: string; href: string }>; cta?: { text: string; href: string } },

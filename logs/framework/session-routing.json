@@ -199,3 +199,8 @@
 {"timestamp":"2026-03-25T21:02:05.729Z","message":"<img src=\"postalocity-education/logo.png\" alt=\"Postalocity\" class=\"h-8 lg:h-10 w-auto\">\nThe server i","agent":"backend-engineer","confidence":0.98,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-25T21:08:37.933Z","message":"rebuild","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-25T21:09:55.719Z","message":"<img src=\"logo.png\" alt=\"Postalocity\" class=\"h-8 lg:h-10 w-auto\"> it needs to be <site>/logo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:13:39.518Z","message":"stop pushing broken code. the postalocity logo is scewed go back 3 or more commits and look at how i","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:16:54.247Z","message":"now you need to update the generator wiethout breaking it to be brand agnostic. for instance broadsr","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:21:36.116Z","message":"<img src=\"/logo.png\" alt=\"Broadstroke\" class=\"h-8 lg:h-10 w-auto\">","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:23:11.175Z","message":"look the generated html must always have <folder>/log.png ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:24:48.119Z","message":"logow was copied in a scewed state that needs fixed too. and we need the white version from https://","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
