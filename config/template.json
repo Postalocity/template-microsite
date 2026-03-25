@@ -113,7 +113,9 @@
         { "q": "Proof included?", "a": "Yes — every letter. Certified upgrade for tracking." },
         { "q": "Address verification?", "a": "Yes — built-in, reduces returns." },
         { "q": "Starting price?", "a": "{{PRICING}}" },
-        { "q": "Processing time?", "a": "Same-day if approved by noon CT." }
+        { "q": "Processing time?", "a": "Same-day if approved by noon CT." },
+        { "q": "What is the best way to mail [industry] documents online?", "a": "The best way is through an automated mailing service. Upload your documents as PDFs, verify addresses, select mail options, and approve for same-day processing. This saves 5-10 hours per 100 letters compared to manual processing." },
+        { "q": "How much does [industry] mailing cost per letter?", "a": "{{PRICING}} Standard service includes printing, envelope, folding, stuffing, First-Class postage, address verification, and proof of mailing. Optional upgrades: color printing (+\$0.15), Certified Mail (+\$4.50), return receipt (+\$3.35). No setup fees or monthly minimums." }
       ]
     },
     "trustSignals": {
@@ -124,11 +126,30 @@
       "finalCTA": { "headline": "Streamline [industry] mailing today?", "buttonText": "Sign Up Now", "href": "https://prod.postalocity.com/login.html?signUp=true&promo=[slug]" },
       "description": "Automate your [industry] mailing with proof of mailing, address verification, and compliant document handling.",
       "tagline": "Proof of Mailing. Every Letter.",
-      "links": [
-        { "label": "Privacy", "href": "https://www.postalocity.com/privacy/" },
-        { "label": "Terms", "href": "https://www.postalocity.com/terms/" },
-        { "label": "Login", "href": "https://prod.postalocity.com/login.html?promo=[slug]" }
-      ]
-    }
-  }
-}
+"links": [
+         { "label": "Privacy", "href": "https://www.postalocity.com/privacy/" },
+         { "label": "Terms", "href": "https://www.postalocity.com/terms/" },
+         { "label": "Login", "href": "https://prod.postalocity.com/login.html?promo=[slug]" }
+       ]
+     }
+   },
+   "notes": {
+     "seoBestPractices": [
+       "Expand keywords to 15-20 terms including long-tail voice search queries",
+       "Add geographic references (Wichita, Kansas, Midwest) for local SEO",
+       "Include voice search FAQs: 'What is the best way to...', 'How much does it cost to...'",
+       "Keep FAQs 50-150 words for featured snippet optimization",
+       "Avoid keyword duplication - vary messaging across sections",
+       "Use specific document names rather than generic 'ceremonial documents'",
+       "Include proof/stats but cite sources for credibility",
+       "Schema markup auto-generated: ensure address format is 'Street, City, ST Zip'"
+     ],
+     "contentGuidelines": {
+       "wordCount": "Target 1,200-1,500 words for depth",
+       "keywordDensity": "Keep primary keywords under 2%",
+       "faqCount": "Minimum 6 FAQs, target 8 for voice search coverage",
+       "ctaVariation": "Vary CTA text: 'Sign Up', 'Start Free Trial', 'Get Started'",
+       "heroHighlight": "Use specific keywords: 'Acceptance Letters' not 'Ceremonial Documents'"
+     }
+   }
+ }

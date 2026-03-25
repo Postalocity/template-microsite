@@ -1,0 +1,162 @@
+{
+  "mailClasses": {
+    "first-class": {
+      "name": "First-Class Mail",
+      "description": "Commercial mail service with tracking",
+      "hasTracking": true,
+      "hasCertificate": true,
+      "allowsPersonalData": true,
+      "hipaaCompliant": true,
+      "useCases": [
+        "Bills and statements",
+        "Legal notices",
+        "HIPAA documents",
+        "Account notifications",
+        "Compliance documentation"
+      ]
+    },
+    "priority": {
+      "name": "Priority Mail",
+      "description": "Expedited mail with full tracking",
+      "hasTracking": true,
+      "hasCertificate": true,
+      "hasInsurance": true,
+      "allowsPersonalData": true,
+      "insuranceAmount": 100,
+      "useCases": [
+        "Time-sensitive documents",
+        "Valuable items",
+        "Legal filings"
+      ]
+    },
+    "certified": {
+      "name": "Certified Mail",
+      "description": "First-Class with signature proof",
+      "hasTracking": true,
+      "hasCertificate": true,
+      "hasSignature": true,
+      "allowsPersonalData": true,
+      "hipaaCompliant": true,
+      "useCases": [
+        "Legal compliance",
+        "Contract notices",
+        "Evidence of delivery"
+      ]
+    },
+    "marketing": {
+      "name": "Marketing Mail",
+      "description": "Standard advertising mail",
+      "hasTracking": false,
+      "hasCertificate": false,
+      "allowsPersonalData": false,
+      "restrictions": [
+        "No account numbers",
+        "No balance information",
+        "No personal identifiers",
+        "No HIPAA data",
+        "Advertisements only"
+      ],
+      "useCases": [
+        "Promotional materials",
+        "Newsletters",
+        "Catalogs",
+        "Advertising"
+      ]
+    }
+  },
+  "certifications": {
+    "ncoa": {
+      "name": "NCOA",
+      "fullName": "National Change of Address",
+      "description": "USPS-maintained database of address changes"
+    },
+    "cass": {
+      "name": "CASS",
+      "fullName": "Coding Accuracy Support System",
+      "description": "Address standardization certification"
+    },
+    "iso9001": {
+      "name": "ISO 9001",
+      "fullName": "ISO 9001:2015 Quality Management",
+      "description": "International quality management standard"
+    }
+  },
+  "trackingScanEvents": {
+    "description": "USPS tracking scan events for mail piece visibility",
+    "stages": [
+      {
+        "stage": "received",
+        "displayName": "Accepted / Received",
+        "uspsStatuses": [
+          "Label Created, Not Yet In System",
+          "USPS Awaiting Item",
+          "Accepted at USPS Facility",
+          "Origin Acceptance",
+          "USPS In Possession of Item"
+        ],
+        "description": "Mail piece accepted into USPS system",
+        "proofProvided": "Affidavit of Service from Postalocity"
+      },
+      {
+        "stage": "processed",
+        "displayName": "Processed",
+        "uspsStatuses": [
+          "Processed at USPS Origin Facility",
+          "Arrived at USPS Facility",
+          "Departed USPS Facility",
+          "Processed at USPS Destination Facility"
+        ],
+        "description": "Mail piece processed at USPS facilities",
+        "proofProvided": "USPS scan tracing showing processing status"
+      },
+      {
+        "stage": "in_transit",
+        "displayName": "In Transit",
+        "uspsStatuses": [
+          "Departed USPS Facility",
+          "Arrived at USPS Facility",
+          "In Transit to Next Facility",
+          "Arriving Late"
+        ],
+        "description": "Mail piece moving through postal network",
+        "proofProvided": "USPS scan tracing showing facility transfers"
+      },
+      {
+        "stage": "out_for_delivery",
+        "displayName": "Out for Delivery",
+        "uspsStatuses": [
+          "Arrival at Unit",
+          "Out for Delivery",
+          "Awaiting Delivery Scan"
+        ],
+        "description": "Mail piece at local delivery office",
+        "proofProvided": "USPS scan confirmation of delivery attempt"
+      },
+      {
+        "stage": "delivered",
+        "displayName": "Delivered",
+        "uspsStatuses": [
+          "Delivered",
+          "Picked Up",
+          "Delivered to Agent"
+        ],
+        "description": "Mail piece delivered to recipient",
+        "proofProvided": "Delivery scan with date/time (upgrade to Certified Mail for signature)"
+      }
+    ],
+    "trackingNotes": [
+      "All barcoded mail includes scan tracing from acceptance to delivery",
+      "Tracking updates occur at each facility scan during transit",
+      "Multiple scans can occur at each stage depending on handling",
+      "Upgrade to Priority Mail or Certified Mail for full USPS tracking with delivery confirmation"
+    ]
+  },
+  "industryTerms": {
+    "mailPiece": "A single item sent through the mail",
+    "mailingList": "Collection of addresses for a mailing campaign",
+    "ndc": "Network Distribution Center",
+    "scf": "Sectional Center Facility",
+    "dsf": "Delivery Sequence File",
+    "presort": "Pre-sorted mail for discounted rates"
+  }
+}

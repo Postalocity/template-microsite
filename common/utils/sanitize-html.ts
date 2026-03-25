@@ -15,7 +15,7 @@ export const sanitizeHtml = (html: string): string => {
 
   return DOMPurify.sanitize(html, {
     ALLOWED_TAGS: ['b', 'i', 'em', 'strong', 'a', 'br', 'p', 'span', 'ul', 'ol', 'li'],
-    ALLOWED_ATTR: ['href', 'target', 'rel', 'className'],
+    ALLOWED_ATTR: ['href', 'target', 'rel', 'className', 'style'],
     FORBID_TAGS: ['script', 'style', 'iframe', 'object'],
     FORBID_ATTR: ['onclick', 'onload', 'onerror', 'javascript:'],
   });

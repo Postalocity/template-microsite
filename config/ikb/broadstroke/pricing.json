@@ -1,0 +1,53 @@
+{
+  "basePrice": 1.31,
+  "currency": "USD",
+  "units": "per letter",
+  "tiers": [
+    {
+      "name": "Marketing Mail",
+      "price": 0.244,
+      "description": "Standard advertising mail",
+      "features": [
+        "No tracking",
+        "No personal data",
+        "Best for advertisements"
+      ]
+    },
+    {
+      "name": "First-Class Mail",
+      "price": 1.31,
+      "description": "Commercial mail with tracking",
+      "features": [
+        "Tracking scans",
+        "Certificate of mailing",
+        "Personalized data allowed",
+        "HIPAA compliant"
+      ]
+    },
+    {
+      "name": "Priority Mail",
+      "price": 11.50,
+      "description": "Fast delivery with full tracking",
+      "features": [
+        "Full tracking",
+        "Up to $100 insurance",
+        "Fast delivery"
+      ]
+    },
+    {
+      "name": "Certified Mail",
+      "price": 4.50,
+      "description": "First-Class with signature proof",
+      "features": [
+        "Full tracking",
+        "Signature proof",
+        "Legal compliance"
+      ]
+    }
+  ],
+  "addOns": {
+    "certifiedMail": 4.50,
+    "returnReceipt": 3.35,
+    "restrictedDelivery": 8.50
+  }
+}

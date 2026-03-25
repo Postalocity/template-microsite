@@ -1,5 +1,11 @@
 {
-  "version": "Postalocity Microsite Config — Education (Enhanced Content)",
+  "version": "Postalocity Microsite Config — Education (Final 2026)",
+  "instructions": {
+    "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
+    "promoCodes": {
+      "education": "ed2026"
+    }
+  },
   "site": {
     "id": "education",
     "name": "Education Mailing Service",
@@ -12,38 +18,42 @@
       "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "canonicalDomain": "https://postalocity.com/education",
   "branding": {
     "tagline": "Proof of Mailing. Every Letter.",
-    "logo": null
+    "logo": "/logo.png"
   },
   "theme": {
     "primary": {
       "h": 200,
       "s": 80,
       "l": 30
-    },
-    "gradients": {
-      "hero": "210 95% 12%",
-      "cta": "220 90% 55%"
     }
   },
   "seo": {
-    "title": "Education Mailing Services — Proof & Compliance for Schools & Universities",
-    "description": "Automate education mailing services: parent communications, student statements, enrollment packets, compliance notices from $1.31/letter with real-time verification, digital proof & tracking to reclaim operational time.",
+    "title": "Education Mailing Services — Acceptance Letters & Transcripts",
+    "description": "Automate high-impact education mailings: acceptance letters, scholarship offers, official transcripts and compliance notices. Physical mail achieves significantly higher engagement than email alone. $1.31/letter with proof of mailing.",
     "keywords": [
       "education mailing services",
+      "acceptance letter mailing",
+      "scholarship notification mailing",
+      "official transcript mailing",
+      "FERPA compliant mailing",
       "school mailing automation",
-      "university mailing service",
-      "automated school letters",
-      "student billing mailing",
-      "compliance notices mailing education"
+      "university mailing services",
+      "college acceptance letter mailing",
+      "secure transcript delivery",
+      "admissions document mailing",
+      "SIS mailing integration",
+      "how to mail acceptance letters online",
+      "bulk official transcript mailing",
+      "automated scholarship notification",
+      "university document mailing company"
     ],
-    "ogTitle": "Education Mailing Services — Proof Every Letter",
-    "ogDescription": "Reclaim operational time for educational institutions with automated processing of parent notices, student billing, enrollment materials, and official compliance mail — verified, documented, efficient.",
-    "robots": "index, follow",
-    "sitemapPriority": 0.8,
-    "sitemapChangeFrequency": "monthly",
+    "ogTitle": "Education Mailing Services — Ceremonial & Official Documents",
+    "ogDescription": "Physical acceptance letters create memorable moments that families frame and share. Secure transcript and compliance document mailing with proof of delivery and ISO 9001 documented handling.",
+    "ogImage": "/education/images/education-hero.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://postalocity.com/education",
     "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
   "navigation": {
@@ -78,13 +88,13 @@
     "hero": {
       "headline": {
         "main": "Education Mailing Services",
-        "highlightTerm": "Proof Every Letter"
+        "highlightTerm": "Acceptance Letters & Transcripts",
+        "alt": "University administrative staff preparing acceptance letters and official documents for mailing"
       },
-      "subhead": "Automate education mailing services — secure upload, real-time address verification, same-day processing when approved, digital proof, and USPS tracking options to reclaim operational time for schools, districts, and universities.",
+      "subhead": "Mailed acceptance letters create lasting impact that email cannot replicate. Trusted by universities nationwide from our Wichita, Kansas facility—automate high-impact documents with proof of mailing, ISO 9001 documented handling, and real-time tracking.",
       "background": {
-        "image": "/images/education-hero.jpg",
-        "overlay": true,
-        "alt": "Modern university administrative office with staff managing secure document processing and mailing"
+        "image": "/education/images/education-hero.jpg",
+        "overlay": true
       },
       "ctas": [
         {
@@ -101,75 +111,81 @@
     },
     "benefits": {
       "section": {
-        "title": "Why Educational Institutions Choose Postalocity",
-        "description": "Automated mailing reclaims operational time while providing verifiable documentation essential for administrative and compliance workflows."
+        "title": "Why Institutions Choose High-Impact Physical Documents",
+        "description": "Physical acceptance letters and scholarships create lasting impact that email cannot replicate—while maintaining compliance documentation."
       },
       "benefits": [
         {
-          "icon": "clock",
-          "title": "Reclaim Operational Time",
-          "description": "Eliminate manual preparation and post office runs — upload PDFs securely and approve remotely for full automation of printing, folding, stuffing, sealing, and postage.",
-          "detail": "Administrative teams redirect focus to student support, program coordination, and strategic planning."
+          "icon": "trophy",
+          "title": "Stand Out From Inbox Clutter",
+          "description": "Mailed acceptance letters and scholarship offers stand out from inbox clutter.",
+          "detail": "Students share photos on social media, families frame notifications, and the tactile experience reinforces institutional prestige."
         },
         {
-          "icon": "map-pin",
-          "title": "Reduce Returned Mail",
-          "description": "Real-time address verification catches inaccuracies before processing, minimizing bounce-backs and follow-up efforts.",
-          "detail": "Supports accurate delivery records for parent and student communications."
+          "icon": "file-check",
+          "title": "Official Document Authenticity",
+          "description": "Transcripts and certificates maintain tamper-evident security when mailed.",
+          "detail": "Sealed official documents satisfy employer and institution verification requirements that digital copies cannot meet."
         },
         {
           "icon": "shield",
-          "title": "Proof Every Letter",
-          "description": "Digital proof generated for each piece mailed, with certified mail upgrade for real-time USPS tracking.",
-          "detail": "Provides auditable records critical for institutional accountability."
+          "title": "Compliance Documentation",
+          "description": "FERPA notices, truancy letters, and special education IEPs require proof of delivery.",
+          "detail": "Digital proof of mailing with timestamps satisfies audit and legal requirements."
         },
         {
-          "icon": "file-text",
-          "title": "Secure & Documented Handling",
-          "description": "ISO 9001 documented processes with encrypted uploads protect sensitive student and family data.",
-          "detail": "Aligns with requirements for handling official notices and billing."
+          "icon": "clock",
+          "title": "Same-Day Processing",
+          "description": "Meet enrollment deadlines and compliance notification periods with predictable delivery.",
+          "detail": "Approve by noon CT for same-day processing with predictable delivery timelines."
         }
       ]
     },
     "comparison": {
       "section": {
-        "title": "Postalocity vs. Traditional In-House Mailing",
-        "description": "Automated efficiency compared to manual school and university workflows."
+        "title": "Physical Acceptance Documents vs Email",
+        "description": "Why acceptance letters and scholarships still require physical delivery."
       },
       "columns": {
-        "traditional": "Traditional In-House",
-        "ourSolution": "Postalocity"
+        "traditional": "Email Notification",
+        "ourSolution": "Mailed Document"
       },
       "rows": [
         {
-          "icon": "map-pin",
-          "feature": "Address Verification",
-          "ourSolution": "Real-time automated checks included",
-          "traditionalApproach": "Manual review or absent"
+          "icon": "eye",
+          "feature": "Open Rate",
+          "ourSolution": "High — Physical mail gets opened",
+          "traditionalApproach": "Low — Lost in inbox clutter"
+        },
+        {
+          "icon": "heart",
+          "feature": "Emotional Impact",
+          "ourSolution": "High — Tactile keepsake families frame",
+          "traditionalApproach": "Low — Deleted after reading"
+        },
+        {
+          "icon": "share-2",
+          "feature": "Social Sharing",
+          "ourSolution": "High — Students post photos, organic marketing",
+          "traditionalApproach": "Minimal — Rarely screenshot/shared"
+        },
+        {
+          "icon": "file-check",
+          "feature": "Proof of Delivery",
+          "ourSolution": "Digital proof + certified mail options",
+          "traditionalApproach": "Read receipt unreliable"
         },
         {
           "icon": "shield",
-          "feature": "Proof of Mailing",
-          "ourSolution": "Digital proof for every letter",
-          "traditionalApproach": "Limited to post office receipts when pursued"
+          "feature": "Compliance",
+          "ourSolution": "Meets FERPA/truancy documentation needs",
+          "traditionalApproach": "May not satisfy legal requirements"
         },
         {
-          "icon": "clock",
-          "feature": "Processing",
-          "ourSolution": "Same-day if approved by noon CT",
-          "traditionalApproach": "Staff availability and daily physical handling"
-        },
-        {
-          "icon": "zap",
-          "feature": "Operational Efficiency",
-          "ourSolution": "Reclaim time through end-to-end automation",
-          "traditionalApproach": "Significant weekly time on preparation, assembly, and mailing"
-        },
-        {
-          "icon": "eye",
-          "feature": "Tracking & Documentation",
-          "ourSolution": "Real-time options + verifiable records",
-          "traditionalApproach": "Manual logging or none"
+          "icon": "archive",
+          "feature": "Retention",
+          "ourSolution": "Physical keepsake for years",
+          "traditionalApproach": "Lost or deleted"
         },
         {
           "icon": "mail",
@@ -181,146 +197,87 @@
     },
     "services": {
       "section": {
-        "title": "Key Education Mailing Use Cases",
-        "description": "Tailored automation for routine administrative and compliance-driven correspondence."
+        "title": "High-Value Education Mailings",
+        "description": "Ceremonial and compliance documents that require physical delivery with proof."
       },
       "services": [
         {
-          "icon": "bell",
-          "title": "Parent & Guardian Communications",
-          "description": "Process newsletters, event invitations, attendance updates, and progress reports with address verification and proof for reliable family outreach."
+          "icon": "award",
+          "title": "Acceptance Letters & Scholarship Offers",
+          "description": "Create memorable moments that strengthen enrollment decisions. Premium presentation options available for competitive admissions."
         },
         {
-          "icon": "file",
-          "title": "Student Billing & Financial Statements",
-          "description": "Automate tuition invoices, fee reminders, and payment notices with secure handling and documentation to ensure accurate family records."
+          "icon": "scroll",
+          "title": "Official Transcripts & Diplomas",
+          "description": "Tamper-evident sealed documents with proof of mailing. Essential for college applications, employment verification, and licensing boards."
         },
         {
-          "icon": "calendar",
-          "title": "Enrollment & Registration Materials",
-          "description": "Handle recurring admissions packets, welcome letters, and registration confirmations with consistent formatting and tracking during high-volume periods."
+          "icon": "shield-check",
+          "title": "FERPA & Compliance Notices",
+          "description": "Truancy notifications, special education IEPs, and disciplinary actions with documented delivery for legal protection."
         },
         {
           "icon": "mail",
-          "title": "Compliance & Official Notices",
-          "description": "Manage truancy notifications, FERPA-related correspondence, disciplinary letters, and regulatory mailings with verifiable proof and records."
-        }
-      ]
-    },
-    "howItWorks": {
-      "section": {
-        "id": "how-it-works",
-        "title": "How It Works",
-        "description": "Four simple steps to streamline your education mailing."
-      },
-      "steps": [
-        {
-          "number": "1",
-          "title": "Upload Your Documents",
-          "description": "Upload your education documents as PDFs — newsletters, statements, enrollment forms. We accept standard file formats."
-        },
-        {
-          "number": "2",
-          "title": "We Verify Addresses",
-          "description": "We run every address through USPS verification — catching errors before printing and reducing returned mail."
-        },
-        {
-          "number": "3",
-          "title": "We Print, Stuff & Mail",
-          "description": "We professionally print, fold, stuff into envelopes, seal, and mail. You receive proof of mailing for every item."
-        },
-        {
-          "number": "4",
-          "title": "USPS Delivery",
-          "description": "Reliable USPS delivery with tracking visibility and proof of mailing for every piece of correspondence."
-        }
-      ]
-    },
-    "difference": {
-      "section": {
-        "title": "The Postalocity Difference for Education",
-        "description": "What sets us apart for schools and universities."
-      },
-      "differences": [
-        {
-          "icon": "shield",
-          "title": "Proof on Every Letter",
-          "description": "Every letter includes proof of mailing. Certified upgrade available for tracking."
-        },
-        {
-          "icon": "eye",
-          "title": "Real-time Dashboard",
-          "description": "Track mailing status instantly — know exactly when each letter is processed and delivered."
-        },
-        {
-          "icon": "map-pin",
-          "title": "Address Verification",
-          "description": "Built-in verification reduces returned mail by catching inaccurate addresses before processing."
-        },
-        {
-          "icon": "clock",
-          "title": "Same-Day Processing",
-          "description": "Approve by noon CT for same-day processing. *Restrictions apply."
+          "title": "Financial Aid & Tuition Documents",
+          "description": "1098-T forms, award letters, and billing statements with address verification and proof of delivery for audit trails."
         }
       ]
     },
     "faq": {
       "section": {
-        "title": "Frequently Asked Questions — Education Mailing Services",
-        "description": "Answers on proof, verification, pricing, and processing for schools and universities."
+        "title": "FAQ — Official & Celebratory Education Mailings",
+        "description": "Why acceptance letters and scholarships still require physical delivery."
       },
       "faqs": [
         {
-          "q": "Is proof of mailing included with every letter?",
-          "a": "Yes — digital proof is provided for each letter processed. A certified mail upgrade is available for real-time USPS tracking on priority items."
+          "q": "Why mail acceptance letters and scholarship offers instead of emailing them?",
+          "a": "Physical documents stand out from inbox clutter and achieve significantly higher engagement than email. Students share photos of acceptance packets on social media (organic marketing), families frame scholarship notifications as achievements, and the tactile experience reinforces your institution's prestige. While email is faster, mailed documents create lasting emotional impact that strengthens enrollment decisions."
         },
         {
-          "q": "How does address verification work?",
-          "a": "Real-time verification is built-in and flags potential issues before printing, helping reduce returned mail and administrative rework."
+          "q": "Why do official transcripts still need to be mailed rather than sent digitally?",
+          "a": "Many institutions and employers require original, sealed transcripts for authenticity verification—digital copies can be easily altered. Mailed transcripts with official seals provide tamper-evident documentation that protects academic integrity. Licensing boards, graduate programs, and employers often specifically require physical transcripts with verifiable chain of custody. Postalocity's proof of mailing creates the documentation trail essential for these official purposes."
         },
         {
-          "q": "What is the starting price per letter?",
-          "a": "$1.31 per letter for qualifying specifications (1-page, single-sided black & white, including envelope and postage)."
+          "q": "What legal education documents must be mailed with proof of delivery?",
+          "a": "Several education documents require physical mail with verifiable delivery for legal compliance: (1) FERPA notices — Must provide proof of delivery for privacy compliance, (2) Truancy notifications — Legal requirements often mandate certified mail with proof of mailing, (3) Special education IEP notices — Due process requires documented delivery, (4) Disciplinary actions — Suspension/expulsion notices need verifiable receipt, (5) Financial aid appeals — Disputed aid often requires documented delivery. Postalocity's proof of mailing and certified mail options satisfy these legal requirements, protecting institutions from compliance violations."
         },
         {
-          "q": "What is the typical processing timeframe?",
-          "a": "Same-day processing applies when files are approved by noon CT, followed by prompt submission to USPS."
+          "q": "How quickly can we get acceptance letters and scholarship offers mailed for enrollment deadlines?",
+          "a": "Same-day processing when approved by noon CT enables rapid delivery of time-sensitive documents. This speed is critical for enrollment deadlines and financial aid notification periods. For official transcripts requiring special handling, processing maintains the same timeline while ensuring proper presentation. Real-time tracking provides visibility for both institutions and recipients, and proof of mailing documents the exact send date for compliance records."
+        },
+        {
+          "q": "How do we balance the cost of mailing with ceremonial impact?",
+          "a": "Smart mailing strategy focuses investment where it matters most: (1) Ceremonial documents (acceptances, scholarships) — Use premium options like color printing and certified mail for maximum impact, (2) Compliance documents (FERPA, truancy) — Standard mail with proof covers legal needs cost-effectively, (3) Routine communications — Can be hybrid (email for routine, mail for important). At $1.31 for standard processing, you can selectively upgrade high-impact documents while keeping costs manageable. Many institutions report that improved enrollment conversion from mailed acceptances more than covers the mailing costs."
+        },
+        {
+          "q": "Do you support bulk address imports from our Student Information System?",
+          "a": "Yes. Upload your documents as PDFs along with your mailing list data. We accept PDFs generated from your SIS (PowerSchool, Infinite Campus, Skyward, Blackbaud) or parent portal. We verify every address against USPS databases in real-time, flagging outdated or incorrect addresses to reduce returned mail. This ensures critical communications—acceptance letters to the correct permanent address, transcripts to current student locations—reach their destination."
+        },
+        {
+          "q": "What is the best way to mail acceptance letters online?",
+          "a": "The best way to mail acceptance letters online is through an automated mailing service like Postalocity. Simply upload your acceptance letter PDFs and recipient addresses, select your mail options (First-Class or Certified), and approve by noon CT for same-day processing. The service handles printing, envelope stuffing, postage, and delivery with digital proof of mailing for each letter. This approach saves 5-10 hours per 100 letters compared to manual processing with reliable delivery timelines."
+        },
+        {
+          "q": "How much does it cost to mail transcripts in bulk?",
+          "a": "Mailing transcripts in bulk costs $1.31 per letter for standard service (single-sided, black and white, #10 envelope, First-Class postage included). For 1,000 transcripts, that equals $1,310 total with no setup fees or monthly minimums. Optional upgrades include color printing (+$0.15 per letter), Certified Mail (+$4.50), or return receipt (+$3.35). Volume discounts may apply for 10,000+ letters per semester. All pricing includes real-time address verification, proof of mailing, and tracking through delivery."
         }
-      ]
-    },
-    "trustSignals": {
-      "section": {
-        "title": "Trusted by educational institutions nationwide"
-      },
-      "signals": [
-        "NCOA Verified 2024",
-        "CASS Certified 2024",
-        "ISO 9001 Documented Processes 2023"
       ]
     },
     "footer": {
       "finalCTA": {
-        "headline": "Ready to reclaim operational time with automated education mailing services?",
-        "description": "Automated parent communications, student statements, enrollment packets, and compliance notices with proof of mailing—no contracts, pay-as-you-go.",
+        "headline": "Ready to drive higher enrollment with mailed acceptance letters?",
+        "description": "Automate admissions and compliance mailings—acceptance letters, scholarships, transcripts—with proof of mailing, ISO 9001 documented handling, and same-day processing.",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=ed2026"
       },
-      "description": "Postalocity automates education mailing for parent communications, student statements, enrollment materials, and compliance notices with proof of mailing included.",
       "tagline": "Proof of Mailing. Every Letter.",
-      "links": [
-        {
-          "label": "Privacy",
-          "href": "https://www.postalocity.com/privacy/"
-        },
-        {
-          "label": "Terms",
-          "href": "https://www.postalocity.com/terms/"
-        },
-        {
-          "label": "Login",
-          "href": "https://prod.postalocity.com/login.html?promo=education"
-        }
-      ]
+      "description": "Postalocity automates admissions and official education mailings—acceptance letters, scholarship offers, transcripts, and compliance notices—with proof of mailing and ISO 9001 documented handling."
     }
+  },
+  "notes": {
+    "staticSections": "Auto-generated: howItWorks, difference, trustSignals",
+    "heroAlt": "Descriptive for accessibility and SEO",
+    "ctaText": "Always use 'Sign Up Now'",
+    "keyChanges": "Updated 2026: Focus on ceremonial documents (acceptance, scholarships, transcripts) that drive enrollment and require physical delivery. Replaced generic FAQs with mailed-document-specific positioning."
   }
 }

@@ -1,0 +1,286 @@
+{
+  "site": {
+    "id": "broadstroke",
+    "name": "Professional Printing Services",
+    "slug": "printing",
+    "domain": "broadstrokeinc.com",
+    "basename": "broadstroke-printing",
+    "contact": {
+      "email": "info@broadstrokeinc.com",
+      "phone": "316-262-3333",
+      "address": "820 W 2nd St N, Wichita, KS 67203"
+    }
+  },
+  "branding": {
+    "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+    "logo": "broadstroke-printing/logo.png"
+  },
+  "seo": {
+    "title": "Professional Printing Services — Broadstroke",
+    "description": "High-quality printing services in Wichita. Business cards, brochures, flyers, banners and more. Quick turnaround, free estimates.",
+    "keywords": [
+      "printing services Wichita",
+      "business printing",
+      "brochure printing",
+      "flyer printing",
+      "banner printing",
+      "wide format printing"
+    ],
+    "ogTitle": "Professional Printing Services — Broadstroke",
+    "ogDescription": "High-quality printing services with quick turnaround. Free estimates on all projects.",
+    "ogImage": "/printing/images/og-image.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://broadstrokeinc.com/printing",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Process",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ]
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Professional Printing Services",
+        "highlightTerm": "Quality You Can Trust"
+      },
+      "subhead": "High-quality printing for your business. From business cards to large format banners, we deliver exceptional results with quick turnaround times.",
+      "background": {
+        "image": "/broadstroke/images/printing-hero.jpg",
+        "overlay": true,
+        "alt": "Professional printing equipment and materials"
+      },
+      "ctas": [
+        {
+          "text": "Get Free Quote",
+          "href": "https://broadstrokeinc.com/contact/",
+          "variant": "primary"
+        },
+        {
+          "text": "View Our Work",
+          "href": "https://broadstrokeinc.com/about/our-work/",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Why Choose Broadstroke for Printing",
+        "description": "Experience the difference of working with a team that cares about your project as much as you do."
+      },
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Quick Turnaround",
+          "description": "Tight deadline? No worries. We'll deliver your project quickly and accurately without cutting corners.",
+          "detail": "Same-day and next-day services available for urgent projects."
+        },
+        {
+          "icon": "star",
+          "title": "High Quality",
+          "description": "Just like you, we take great pride in the accuracy and quality of finished materials.",
+          "detail": "Industry-leading equipment and premium materials."
+        },
+        {
+          "icon": "users",
+          "title": "Dedicated Service",
+          "description": "Dedicated people ready to provide exceptional service. National-quality products across the entire printing spectrum.",
+          "detail": "Your project gets personalized attention from start to finish."
+        },
+        {
+          "icon": "dollar-sign",
+          "title": "Free Estimates",
+          "description": "Trust our expertise and experience with process and materials to give you an accurate, cost-effective quote.",
+          "detail": "No hidden fees or surprise costs."
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Our Printing Services",
+        "description": "From concept to completion, we handle all your printing needs."
+      },
+      "services": [
+        {
+          "icon": "file-text",
+          "title": "Business Cards",
+          "description": "Make a lasting first impression with professionally printed business cards."
+        },
+        {
+          "icon": "mail",
+          "title": "Brochures & Flyers",
+          "description": "Eye-catching marketing materials that communicate your message effectively."
+        },
+        {
+          "icon": "package",
+          "title": "Large Format",
+          "description": "Banners, signs, vehicle wraps and more. Make a big impact with large format printing."
+        },
+        {
+          "icon": "award",
+          "title": "Promotional Products",
+          "description": "Custom branded items that help your company stay top of mind."
+        }
+      ]
+    },
+    "howItWorks": {
+      "section": {
+        "id": "how-it-works",
+        "title": "How It Works",
+        "description": "Three simple steps to your perfect print project."
+      },
+      "steps": [
+        {
+          "number": "1",
+          "title": "Tell Us What You Need",
+          "description": "Share your goals, challenges, and opportunities. Our expert team will set you on the right path."
+        },
+        {
+          "number": "2",
+          "title": "We Get to Work",
+          "description": "We'll offer a range of paper and product options, along with proofs showing how your artwork will look in the final print."
+        },
+        {
+          "number": "3",
+          "title": "Project Complete",
+          "description": "Pick up your items, or let us handle delivery and setup for large format projects."
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Choose Broadstroke",
+        "description": "The Broadstroke difference."
+      },
+      "columns": {
+        "traditional": "Other Print Shops",
+        "ourSolution": "Broadstroke"
+      },
+      "rows": [
+        {
+          "icon": "clock",
+          "feature": "Turnaround Time",
+          "ourSolution": "Same-day & next-day available",
+          "traditionalApproach": "Days or weeks"
+        },
+        {
+          "icon": "users",
+          "feature": "Dedicated Support",
+          "ourSolution": "Personal attention on every project",
+          "traditionalApproach": "Generic service"
+        },
+        {
+          "icon": "star",
+          "feature": "Quality",
+          "ourSolution": "Premium materials & equipment",
+          "traditionalApproach": "Standard options"
+        },
+        {
+          "icon": "dollar-sign",
+          "feature": "Pricing",
+          "ourSolution": "Free estimates, no hidden fees",
+          "traditionalApproach": "Surprise costs"
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Frequently Asked Questions",
+        "description": "Got questions? We've got answers."
+      },
+      "faqs": [
+        {
+          "q": "Do you offer free estimates?",
+          "a": "Yes! We provide free, accurate quotes on all printing projects. Just share your project details and we'll get you a price within 24 hours."
+        },
+        {
+          "q": "What file formats do you accept?",
+          "a": "We accept PDF, AI, EPS, PSD, and many other formats. Our team can also help prepare your files for print."
+        },
+        {
+          "q": "How quickly can you complete my order?",
+          "a": " turnaround times vary by project complexity. Same-day and next-day services are available for urgent jobs."
+        },
+        {
+          "q": "Do you deliver?",
+          "a": "Yes! We offer delivery within the Wichita area and can ship nationwide. Large format items can be professionally installed."
+        }
+      ]
+    },
+    "trustSignals": {
+      "section": {
+        "title": "Trusted by Wichita Businesses"
+      },
+      "signals": [
+        "70+ Years Combined Experience",
+        "Local Business",
+        "Premium Equipment"
+      ]
+    },
+    "cta": {
+      "headline": "Ready to Start Your Project?",
+      "subhead": "Let's work on something together. No project is too big or too small.",
+      "button": {
+        "text": "Get Started",
+        "href": "https://broadstrokeinc.com/contact/"
+      }
+    },
+    "footer": {
+      "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+      "links": [
+        {
+          "label": "Printing",
+          "href": "https://broadstrokeinc.com/printing/"
+        },
+        {
+          "label": "Mailing",
+          "href": "https://broadstrokeinc.com/mailing/"
+        },
+        {
+          "label": "Promo",
+          "href": "https://www.broadstrokepromos.com/"
+        },
+        {
+          "label": "Contact",
+          "href": "https://broadstrokeinc.com/contact/"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+    "links": [
+      {
+        "label": "Printing",
+        "href": "https://broadstrokeinc.com/printing/"
+      },
+      {
+        "label": "Mailing",
+        "href": "https://broadstrokeinc.com/mailing/"
+      },
+      {
+        "label": "Promo",
+        "href": "https://www.broadstrokepromos.com/"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact/"
+      }
+    ]
+  }
+}

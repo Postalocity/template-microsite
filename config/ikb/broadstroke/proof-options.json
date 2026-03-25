@@ -1,0 +1,48 @@
+{
+  "standard": [
+    {
+      "id": "affidavit",
+      "name": "Affidavit of Service",
+      "description": "Internal processing document proving Postalocity handled your mail",
+      "included": true,
+      "tier": "all"
+    },
+    {
+      "id": "scan",
+      "name": "USPS Scan Proof",
+      "description": "Scanned barcode showing your mail entered the postal system",
+      "included": true,
+      "tier": "first-class",
+      "note": "Available for First-Class and above"
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "certificate",
+      "name": "Certificate of Mailing",
+      "description": "Official USPS form 3877 showing acceptance date",
+      "additionalCost": 1.75,
+      "tier": "first-class"
+    },
+    {
+      "id": "certified",
+      "name": "Certified Mail",
+      "description": "Full tracking with signature proof of delivery",
+      "additionalCost": 4.50,
+      "tier": "first-class"
+    },
+    {
+      "id": "restricted",
+      "name": "Restricted Delivery",
+      "description": "Delivery only to specified recipient",
+      "additionalCost": 8.50,
+      "tier": "certified"
+    }
+  ],
+  "comparison": {
+    "affidavit": "Postalocity processed & handed to USPS",
+    "scan": "Item entered postal system",
+    "certificate": "USPS accepted item (with date)",
+    "certified": "USPS delivered (with signature)"
+  }
+}

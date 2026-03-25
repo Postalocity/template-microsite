@@ -1,6 +1,6 @@
 /**
  * Education Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-23T14:29:22.171Z
+ * Generated at: 2026-03-25T17:25:43.369Z
  * Brand: Postalocity
  */
 

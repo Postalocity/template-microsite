@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { BenefitsContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
 import { getGridLayoutClasses, getColumnSpanClass, getColumnClass } from "../../utils/grid-layout";
+import { sanitizeHtml } from "../../utils/sanitize-html";
 import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { useFormattedPricing } from "@/utils/pricing";
 
@@ -69,14 +70,15 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                       <Icon className="w-7 h-7 text-primary" />
                     </div>
                     <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                    <CardDescription className="text-base mt-2">
-                      {processText(benefit.description || benefit.detail)}
-                      {benefit.detail && (
-                        <span className="block mt-2 font-medium text-primary/80">
-                          {processText(benefit.detail)}
-                        </span>
-                      )}
-                    </CardDescription>
+                    <CardDescription 
+                      className="text-base mt-2"
+                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(benefit.description || benefit.detail)) }}
+                    />
+                    {benefit.detail && (
+                      <CardDescription className="text-base mt-2 font-medium text-primary/80">
+                        {processText(benefit.detail)}
+                      </CardDescription>
+                    )}
                     {benefit.metrics && (
                       <div className="text-base font-semibold text-primary mt-4">
                         {processText(benefit.metrics)}

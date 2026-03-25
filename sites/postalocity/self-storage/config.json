@@ -1,7 +1,7 @@
 {
   "site": {
     "id": "postalocity",
-    "name": "Self Storage Mailing Service",
+    "name": "Self-Storage Mailing Service",
     "slug": "self-storage",
     "domain": "postalocity.com",
     "basename": "postalocity-self-storage",
@@ -16,16 +16,16 @@
     "logo": "postalocity-self-storage/logo.png"
   },
   "seo": {
-    "title": "Self Storage Mailing — Automated Lien Notices & Tenant Communications",
-    "description": "Automate self storage mailing for lien notices, late fee notices, rent reminders from $1.31/letter with address verification, proof of mailing, and real-time tracking.",
+    "title": "Self-Storage Mailing — Automated Lien Notices & Tenant Communications",
+    "description": "Automate self-storage mailing for lien notices, late fee notices, rent reminders from $1.31/letter with address verification, proof of mailing, and real-time tracking.",
     "keywords": [
-      "self storage mailing service",
-      "automated mailing for self storage",
-      "self storage lien notice mailing",
-      "self storage certified mail",
+      "self-storage mailing service",
+      "automated mailing for self-storage",
+      "self-storage lien notice mailing",
+      "self-storage certified mail",
       "storage facility tenant notices"
     ],
-    "ogTitle": "Self Storage Mailing Service — Proof Every Letter",
+    "ogTitle": "Self-Storage Mailing Service — Proof Every Letter",
     "ogDescription": "Automate lien notices, late fee notices, and tenant communications with secure upload, address verification, proof of mailing, and real-time tracking.",
     "ogImage": "/self-storage/images/og-image.png",
     "twitterCard": "summary_large_image",
@@ -59,14 +59,14 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Self Storage Mailing Service",
-        "highlightTerm": "Proof Every Letter"
+        "main": "Self-Storage Mailing Service",
+        "highlightTerm": "Efficiency with Automation"
       },
-      "subhead": "Automate tenant communications at your self-storage facility — from late fee notices and lien notifications to rent reminders and auction announcements. Upload PDFs, verify addresses in real-time, and track every piece with proof of mailing included.",
+      "subhead": "Automate tenant communications for your self-storage facility — from late fee notices and lien notifications to rent reminders and auction announcements. Upload PDFs, verify addresses in real-time, and trace every piece. Easily add a Certificate of Mailing as proof of mailing on your lien notices.",
       "background": {
         "image": "/self-storage/images/self-storage-hero.jpg",
         "overlay": true,
-        "alt": "Self storage facility exterior"
+        "alt": "Self-storage facility exterior"
       },
       "ctas": [
         {
@@ -91,7 +91,7 @@
           "icon": "clock",
           "title": "Reclaim Operational Hours",
           "description": "Eliminate manual envelope stuffing and post office runs. Upload tenant documents, approve, and we handle printing, folding, stuffing, sealing, and mailing.",
-          "detail": "Staff previously spending hours on mailing can focus on tenant relations and facility management."
+          "detail": "Staff hours spent on mailings can be redirected to tenant relations and facility management."
         },
         {
           "icon": "map-pin",
@@ -102,7 +102,8 @@
         {
           "icon": "shield",
           "title": "Affidavit of Mailing. Every Letter.",
-          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS.",
+          "detail": "Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "file-text",
@@ -132,7 +133,7 @@
         {
           "number": "3",
           "title": "We Print, Stuff & Mail",
-          "description": "We professionally print, fold, stuff into envelopes, seal, and mail. You receive a mailing affidavit for every letter."
+          "description": "We professionally print, fold, stuff into envelopes, seal, and mail. You receive a mailing affidavit for every letter. Upgrade to a Certificate of Mailing for proof of mailing."
         }
       ]
     },
@@ -173,7 +174,7 @@
         {
           "icon": "dollar-sign",
           "feature": "Cost per Letter",
-          "ourSolution": "{{PRICING_ENVELOPE}}",
+          "ourSolution": "As low as $1.31 to print, fold, stuff, seal, and apply postage",
           "traditionalApproach": "Equipment, postage, labor"
         },
         {
@@ -190,19 +191,19 @@
     },
     "services": {
       "section": {
-        "title": "Self Storage Mailing Use Cases",
+        "title": "Self-Storage Mailing Use Cases",
         "description": "From routine rent reminders to legally required lien notices — handle all tenant communications professionally."
       },
       "services": [
         {
           "icon": "bell",
           "title": "Late Fee & Delinquency Notices",
-          "description": "Automate delinquent tenant notifications with verified addresses and documented Proof of Mailing (Affidavit) for compliance."
+          "description": "Automate delinquent tenant notifications with address verification. Upgrade to a Certificate of Mailing as documented proof of mailing for compliance."
         },
         {
-          "icon": "file",
-          "title": "Lien Notifications",
-          "description": "Meet state-specific lien requirements with documented Proof of Mailing (Affidavit) — essential for compliance."
+          "icon": "shield-check",
+          "title": "Proof of Mailing",
+          "description": "Meet state-specific lien requirements with a Certificate of Mailing as documented proof of mailing — essential for legal compliance."
         },
         {
           "icon": "calendar",
@@ -212,7 +213,7 @@
         {
           "icon": "mail",
           "title": "Auction Notices",
-          "description": "Deliver auction notices with verifiable proof of service for legal documentation."
+          "description": "Deliver auction notices with a Certificate of Mailing as verifiable proof of service for legal documentation."
         }
       ]
     },
@@ -225,12 +226,13 @@
         {
           "icon": "shield",
           "title": "Affidavit of Mailing. Every Letter.",
-          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS.",
+          "detail": "Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "eye",
           "title": "Real-time Dashboard",
-          "description": "Track mailing status instantly — know exactly when each letter mails via USPS scan confirmation."
+          "description": "Trace mailing status instantly – know exactly when each letter mails via USPS scan confirmation."
         },
         {
           "icon": "map-pin",
@@ -259,12 +261,12 @@
           "a": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
-          "q": "What's the difference between Proof of Mailing, USPS scan tracing, and Certificate of Mailing?",
-          "a": "Three different things: (1) Proof of Mailing (Affidavit) documents that Postalocity processed and mailed your items. (2) USPS scan tracing shows where your letter is in the postal system — included with First-Class Mail. (3) Certificate of Mailing is an official USPS form with a post office postmark proving the EXACT DATE your letter was accepted by USPS — this is what some states require for lien deadlines. If your state requires documented proof of the mailing date, upgrade to Certificate of Mailing."
+          "q": "What's the difference between Proof of Mailing (Affidavit), USPS scan tracing, and Certificate of Mailing?",
+          "a": "Three different levels of documentation: (1) Proof of Mailing (Affidavit) proves that Postalocity processed and mailed your items. (2) USPS scan tracing shows processing status through the postal system — included with First-Class Mail. (3) A Certificate of Mailing is an official USPS form showing the item was accepted at the post office. Some states require a Certificate of Mailing for lien compliance — check your state requirements."
         },
         {
           "q": "What's the difference between USPS scanning and tracking?",
-          "a": "First-Class includes USPS scan tracing (shows processing status). For full delivery confirmation with signature, upgrade to Priority Mail or Certified Mail. Marketing Mail has no tracking at all."
+          "a": "USPS scan tracing shows processing status for all mail types. For full tracking and delivery confirmation with signature, upgrade to Priority Mail or Certified Mail."
         },
         {
           "q": "What is the starting price?",
@@ -290,7 +292,7 @@
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026"
       },
       "description": "Streamline self-storage tenant communications with automated mailing — lien notices, rent reminders, and auction notices with proof of mailing.",
-      "tagline": "Proof of Mailing. Every Letter.",
+      "tagline": "Proof of Mailing (Affidavit). Every Letter.",
       "links": [
         {
           "label": "Privacy",
@@ -315,7 +317,7 @@
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026"
     },
     "description": "Streamline self-storage tenant communications with automated mailing — lien notices, rent reminders, and auction notices with proof of mailing.",
-    "tagline": "Proof of Mailing. Every Letter.",
+    "tagline": "Proof of Mailing (Affidavit). Every Letter.",
     "links": [
       {
         "label": "Privacy",

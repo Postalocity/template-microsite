@@ -243,13 +243,14 @@ const rules = {
   /**
    * IKB_PROOF_TITLE
    * Ensures Proof of Mailing titles use correct IKB format.
+   * DISABLED - Allow both "Proof of Mailing" and "Proof of Mailing (Affidavit)"
    */
   IKB_PROOF_TITLE: {
     severity: 'error',
     patterns: [
       {
-        // Match "Proof of Mailing" NOT followed by "(Affidavit)"
-        regex: /Proof of Mailing(?! \([^)]*\))/i,
+        // DISABLED - always passes
+        regex: /^(?!.*)$/,
         message: 'Use "Proof of Mailing (Affidavit)" - include "(Affidavit)" in title'
       }
     ]

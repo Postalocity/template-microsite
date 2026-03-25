@@ -55,3 +55,140 @@
 {"timestamp":"2026-03-23T13:55:54.152Z","message":"all sites now have a GA code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-23T14:23:29.410Z","message":"{\n  \"version\": \"Postalocity Microsite Config — [Industry]\",\n  \"instructions\": {\n    \"requiredFields\"","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-23T14:24:59.623Z","message":"{\n  \"version\": \"Postalocity Microsite Config — Education (Enhanced Content)\",\n  \"instructions\": {\n  ","agent":"strategist","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T14:31:52.886Z","message":"send education to seo and growth","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T14:32:09.831Z","message":"Please review the education microsite at sites/postalocity/education/ for SEO and growth opportuniti","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T14:34:35.430Z","message":"how can we be missing an H1 tag is this a flaw in the template?","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T14:39:26.387Z","message":"you were looking into the h1 issue what was wrong","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T14:44:00.403Z","message":"ye","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T15:16:34.971Z","message":"send education to seo and growth","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T15:16:52.335Z","message":"Analyze the education microsite at /Users/henrytafolla/dev/template-microsite/sites/education for SE","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T15:16:52.343Z","message":"Analyze the education microsite at /Users/henrytafolla/dev/template-microsite/sites/education for gr","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T15:23:22.433Z","message":"public/images/main.tsx.png is new hero image resize and set as hero image","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T15:25:58.746Z","message":"did you link it to the site as the hero image do not see it.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T15:39:21.793Z","message":"do not see the image in the hero section only a brown background","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T16:14:52.146Z","message":"is there a way to avoid this happening again with a validator or template change","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:20:36.201Z","message":"real estate remove proof every letter from hero. Real-Time Dashboard remove the last instantly","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:22:48.169Z","message":"buidl the site","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:25:03.642Z","message":"did you update the json so the build picks it up","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:29:18.457Z","message":"Real Estate Mailing Service – Automation for Property Managers Proof Every Letter\n","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:31:18.731Z","message":"you are missing something is the json updated? do not modify dist","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:33:47.182Z","message":"check the content here: http://localhost:3000/real-estate","agent":"code-reviewer","confidence":0.935,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:35:49.163Z","message":"when you build it thiere is no css","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:36:48.188Z","message":"then when I generate via command line still say proof of every letter","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:40:06.615Z","message":"css not rendered","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:42:24.588Z","message":"no it is not. you are making to many errors. stop","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:43:23.322Z","message":"send bug triage to look at the two simple changes not occurring","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T18:43:38.516Z","message":"Investigate two issues with the real-estate microsite at /Users/henrytafolla/dev/template-microsite/","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T19:00:32.958Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T19:50:50.251Z","message":"just recompiled in sites/real-estate and here title is: Real Estate Mailing Service – Automation for","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T19:57:02.336Z","message":"or yu have been editing the wrong site not sure why twe wo were to archive those at root. should be ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T19:59:40.993Z","message":"you are not listing fix the site under postalocity that is where it actually lives right? ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T20:06:49.315Z","message":"seems the opaticy for the hero image velum not tranparetn outhg","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T20:08:21.093Z","message":"wrong direction check other sites on what it should be","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-23T20:09:24.093Z","message":"continue","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:06:09.063Z","message":"did you remove the real-estate project at root and archive it there should no longer be projects in ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:07:40.340Z","message":"now back education are the faq's education centric send to seo specialist and growth strategist","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:07:57.865Z","message":"Review the education microsite FAQs at /Users/henrytafolla/dev/template-microsite/config/sites/posta","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:08:00.341Z","message":"Review the education microsite FAQs at /Users/henrytafolla/dev/template-microsite/config/sites/posta","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:19:03.711Z","message":"send back to growth strategist and need to reorient content toward acceptance letters, scholarship o","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:19:16.380Z","message":"Review the education microsite FAQs with a NEW FOCUS: reorient content toward documents that are DEF","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:32:42.268Z","message":"compare and contrast to this one create final outcome json file: {\n  \"version\": \"Postalocity Microsi","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:36:56.066Z","message":"regenerate site","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:38:50.226Z","message":"remove diplomas","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:45:57.638Z","message":"print the json file to feed to grok","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:56:19.958Z","message":"how times the 40% duplicated and other topics send to seo specialist and growth stratetgist","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:56:39.842Z","message":"Analyze the education microsite config at /Users/henrytafolla/dev/template-microsite/config/sites/po","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T13:56:44.074Z","message":"Analyze the education microsite config at /Users/henrytafolla/dev/template-microsite/config/sites/po","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T14:00:08.132Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T14:16:07.853Z","message":"send the hero h1 to seo specialist and growth startegist","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T14:16:27.969Z","message":"Review the hero H1 (headline) for the education microsite at /Users/henrytafolla/dev/template-micros","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T14:16:30.839Z","message":"Review the hero H1 (headline) for the education microsite at /Users/henrytafolla/dev/template-micros","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T14:23:33.698Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T14:26:31.162Z","message":"does credit repair have the qa code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T14:27:32.135Z","message":"i mean the google analytics code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:46:29.752Z","message":"for education is the code updated throughout the buttons?","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:47:24.046Z","message":"i meant the promo code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:48:53.894Z","message":"have seo specialist and growth strategist do a final review","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:49:11.963Z","message":"Perform a FINAL comprehensive SEO review of the education microsite at /Users/henrytafolla/dev/templ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:49:26.104Z","message":"Perform a FINAL comprehensive growth/conversion optimization review of the education microsite at /U","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:50:59.887Z","message":"focus only on the seo specialist changes.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:53:31.382Z","message":"ask seo specialist what the delta is from 83/100","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:53:40.280Z","message":"We have the education microsite at /Users/henrytafolla/dev/template-microsite/config/sites/postaloci","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:55:15.083Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T16:58:04.016Z","message":"take all feedback fro the education site and ensure the template is fully updated and fixed","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T17:01:49.039Z","message":"placed education hero image  in public/images/grok-image-13dc8916-dbba-475c-8f52-1e9c4b4325ae","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T17:03:54.354Z","message":"you need to resize the image and madie it the hero image","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T17:06:13.006Z","message":"still seeing the old image check the acutal build","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T17:14:15.242Z","message":"i placed the grok image back cleanup the others should only be one image","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T17:26:00.776Z","message":"downlaoded a new version of grok image to transform","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T17:44:17.275Z","message":"check again it is now there","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T18:11:49.503Z","message":"the system only supports pdf not csv.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T18:48:21.691Z","message":"uploaded a new version of the image resize and use","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T19:02:23.407Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T19:56:42.146Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:06:34.784Z","message":"99.2% on-time delivery rate. replace this inflated","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:09:41.008Z","message":"this needs fact checked. 95% get opened versus 20% for emails.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:14:22.684Z","message":"fact check all percentages throughout the site and update","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:18:02.505Z","message":"the velum on the background pic does not seem to match the other sites double check.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:19:23.588Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:30:40.537Z","message":"you keep inavdertantely overwriting the here image put the latest in the public/images folder","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:51:12.871Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-24T20:58:11.345Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T13:29:15.218Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T13:48:35.842Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T13:55:31.392Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T13:57:43.810Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T14:11:47.040Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T14:22:29.110Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T14:38:49.363Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T14:40:15.994Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T14:42:38.460Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T14:45:49.540Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T15:01:57.882Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T15:14:31.895Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T15:26:03.450Z","message":"use of self-storage is not consistent on this page. I have tried to mark it in below, but please hyp","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T15:33:34.028Z","message":"Reclaim Operational Hours Yellow Text Staff hours spent on mailings can be redirected to tenant rela","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T15:34:13.663Z","message":"Proof of Mailing (Affidavit) Black Text, add the following at the end of the second sentence , or Ce","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T15:36:06.262Z","message":"Staff previously spending hours on mailing can focus on tenant relations and facility management.\nto","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T15:46:33.674Z","message":"Lien Notifications Meet state-specific lien requirements with a Certificate of Mailing as documented","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:03:45.856Z","message":"Meet state-specific lien requirements with documented Proof of Mailing (Affidavit) — essential for c","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:06:05.808Z","message":"Track mailing status instantly — know exactly when each letter mails via USPS scan confirmation.\nto\n","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:06:53.097Z","message":"Track mailing status instantly — know exactly when each letter mails via USPS scan confirmation.\nto\n","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:09:14.102Z","message":"What’s the Difference… A proof of mailing (affidavit) proves that Postalocity processed and mailed y","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:14:28.982Z","message":"(1) Proof of Mailing (Affidavit) documents that Postalocity processed and mailed your items.\nto\n(1) ","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:26:02.969Z","message":"revise to avoie","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:26:53.883Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:29:06.808Z","message":"why did you drop (3) A Certificate of Mailing is an official USPS form showing the item was accepted","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:32:16.996Z","message":"make this the yellow text: . Upgrade to a Certificate of Mailing for official USPS documentation or ","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:37:12.295Z","message":"renders as \nAffidavit of Mailing. Every Letter.\nEvery letter includes affidavit of mailing from Post","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:44:07.477Z","message":"the hero image in vacation compiled is wrong outdated version","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:44:38.454Z","message":"what happended ot the site. education is the outdated version","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:45:02.290Z","message":"i mean education site","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:46:29.071Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:47:54.393Z","message":"it is in public/images under education","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T16:53:03.362Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:00:24.453Z","message":"uploaded new version of image resize and make hereo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:03:20.823Z","message":"back to self-storage look at the rest of the boxes in the same section this is still formatted diff:","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:06:01.046Z","message":"Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS ","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:20:46.607Z","message":"add an emoji icon to lean complience","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:21:00.727Z","message":"Under Self-Storage Mailing Use Cases, remove the (Affidavit) after ‘Proof of Mailing’, since a Certi","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:25:22.278Z","message":"back to education the css is not rendering correctly find issue and rebuild","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:31:34.320Z","message":"back to self-storage site was teh Lien Compliance emoji added?","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:32:22.193Z","message":"double check json updated and complied for both changes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:33:33.136Z","message":"check the complied dist folder change not there","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:34:08.143Z","message":"remove the validator (Affidavit)","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:42:18.449Z","message":"no icon on this line in table why? Lien Compliance\nManual documentation\tAffidavit + Certificate upgr","agent":"tech-writer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:45:23.613Z","message":"Proof of Mailing (Affidavit) remove (Affidavit)","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:50:53.041Z","message":"now we will turn our attention to broadstroke. create a new folder: https://broadstrokeinc.com/","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:51:28.860Z","message":"no","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:51:38.794Z","message":"correct","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:52:30.610Z","message":"start by digesting the website: https://broadstrokeinc.com/","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:56:16.625Z","message":"create promo","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T17:57:50.615Z","message":"we need to pull also for the brand the favicon and logo from teh site.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T18:06:20.773Z","message":"local is still postalocity for printing site","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T18:08:43.253Z","message":"broadstroke logo does not resolve as log.png","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T19:26:36.583Z","message":"logo still not showing for printing","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T19:36:21.896Z","message":"The server is configured with a public base URL of /printing - did you mean to visit /printing/logo.","agent":"backend-engineer","confidence":0.98,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T20:34:05.868Z","message":"what is the prior commit?","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T20:37:44.357Z","message":"you need to undo all the logo mappings in templates back to last commit they are broken for postaloc","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T20:38:50.870Z","message":"git commit and push","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}

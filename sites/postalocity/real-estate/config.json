@@ -23,7 +23,7 @@
       "property management mailing",
       "tenant notice mailing"
     ],
-    "ogTitle": "Real Estate Mailing Service — Proof Every Letter",
+    "ogTitle": "Real Estate Mailing Service",
     "ogDescription": "Automate tenant notices, marketing postcards, and compliance letters for property managers, landlords, and real estate professionals. Proof included with every mailing.",
     "ogImage": "/real-estate/images/og-image.png",
     "twitterCard": "summary_large_image",
@@ -57,8 +57,8 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Real Estate Mailing Service – Automation for Property Managers",
-        "highlightTerm": "Proof Every Letter",
+        "main": "Real Estate Mailing Service",
+        "highlightTerm": "Automation for Property Managers",
         "alt": "Modern real estate office with property documents and mailing materials"
       },
       "subhead": "Automate tenant notice mailing, landlord mailing, and property management mailing at scale. Upload PDFs, reduce returned mail with verified addresses, and trace every piece. Easily add a Certificate of Mailing as proof of mailing on your tenant notices.",
@@ -233,7 +233,7 @@
         {
           "icon": "eye",
           "title": "Real-Time Dashboard",
-          "description": "Trace mailing status instantly across your entire property portfolio instantly."
+          "description": "Trace mailing status across your entire property portfolio."
         },
         {
           "icon": "map-pin",
@@ -293,7 +293,7 @@
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=re2026"
       },
       "description": "Postalocity automates real estate mailing for agent communications, door hangers, and property announcements with proof of mailing included.",
-      "tagline": "Proof of Mailing. Every Letter.",
+      "tagline": "Automated Mailing for Real Estate Professionals",
       "links": [
         {
           "label": "Privacy",
@@ -318,7 +318,7 @@
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=re2026"
     },
     "description": "Postalocity automates real estate mailing for agent communications, door hangers, and property announcements with proof of mailing included.",
-    "tagline": "Proof of Mailing. Every Letter.",
+    "tagline": "Automated Mailing for Real Estate Professionals",
     "links": [
       {
         "label": "Privacy",

@@ -1,0 +1,24 @@
+{
+  "id": "broadstroke",
+  "name": "Broadstroke",
+  "slug": "broadstroke",
+  "domain": "broadstrokeinc.com",
+  "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+  "urls": {
+    "app": "https://prod.postalocity.com/login.html",
+    "website": "https://www.broadstrokeinc.com",
+    "blog": "https://broadstrokeinc.com/about/blogs/",
+    "howWeHelp": "https://broadstrokeinc.com/",
+    "whoWeServe": "https://broadstrokeinc.com/about/",
+    "contact": "https://broadstrokeinc.com/contact/",
+    "faq": "https://broadstrokeinc.com/resources/"
+  },
+  "logo": {
+    "filename": "logo.png",
+    "alt": "Broadstroke - Print, Mail, Promo"
+  },
+  "colors": {
+    "primary": { "h": 200, "s": 80, "l": 40 },
+    "accent": { "h": 45, "s": 100, "l": 50 }
+  }
+}
