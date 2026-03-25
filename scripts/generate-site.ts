@@ -204,27 +204,23 @@ interface SiteConfig {
 }
 
 // Copy favicons from common/assets to all sites
-function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
+function copyFavicons(siteDir: string): void {
   const publicDir = path.join(siteDir, 'public');
-  
-  // Try brand-specific favicon first, fallback to postalocity
-  const brandFaviconPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'favicon.ico');
-  const fallbackFaviconPath = path.join(TEMPLATE_DIR, 'common/assets/favicon.ico');
-  const faviconSource = fs.existsSync(brandFaviconPath) ? brandFaviconPath : fallbackFaviconPath;
+  const commonAssetsFavicon = path.join(TEMPLATE_DIR, 'common/assets/favicon.ico');
 
-  if (fs.existsSync(faviconSource)) {
+  if (fs.existsSync(commonAssetsFavicon)) {
     // Create public dir if it doesn't exist
     if (!fs.existsSync(publicDir)) {
       fs.mkdirSync(publicDir, { recursive: true });
     }
 
     // Copy favicon.ico
-    fs.copyFileSync(faviconSource, path.join(publicDir, 'favicon.ico'));
+    fs.copyFileSync(commonAssetsFavicon, path.join(publicDir, 'favicon.ico'));
   }
 }
 
 // Generate Open Graph images from hero banner
-async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string = 'postalocity'): Promise<void> {
+async function generateOgImages(siteDir: string, config: SiteConfig): Promise<void> {
   const { exec } = await import('child_process');
   const publicDir = path.join(siteDir, 'public');
 
@@ -235,10 +231,7 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
 
   const ogImageDest = path.join(publicDir, 'og-image.png');
   const logoDest = path.join(publicDir, 'logo.png');
-  // Use brand-specific logo from common assets, fallback to postalocity
-  const brandLogoPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'logo.png');
-  const fallbackLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
-  const commonLogoPath = fs.existsSync(brandLogoPath) ? brandLogoPath : fallbackLogoPath;
+  const commonLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
 
   // Check if sips is available (macOS)
   const sipsCheck = await new Promise<{ stdout: string, stderr: string }>((resolve) => {
@@ -415,7 +408,7 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
   }
 }
 
-async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext, brandId?: string) {
+async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext) {
   try {
     const { site } = config;
 
@@ -468,10 +461,10 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
 
     // Copy common assets (favicon, etc.)
-    copyFavicons(siteDir, brandId || 'postalocity');
+    copyFavicons(siteDir);
 
     // Generate Open Graph images from hero banner (SEO optimization)
-    await generateOgImages(siteDir, config, brandId || 'postalocity');
+    await generateOgImages(siteDir, config);
 
     // Post-processing with StringRay agents (if --post-process flag)
     const postProcessFlag = process.argv.includes('--post-process');
@@ -1215,7 +1208,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
     },
     branding: {
       tagline: ctx.brand.tagline || '',
-      logo: 'logo.png',
+      logo: `${siteBasename}/logo.png`,
     },
     seo: seoInfo,
     navigation: (siteConfig.navigation || {}) as { links?: Array<{ label: string; href: string }>; cta?: { text: string; href: string } },
@@ -1254,7 +1247,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   }
   
   // Generate the site using legacy function with brand context
-  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext, brandId);
+  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext);
   
   console.log(`\n✅ ${ctx.brand.name} - ${serviceId} generated successfully!`);
   
