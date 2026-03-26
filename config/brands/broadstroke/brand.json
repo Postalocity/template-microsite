@@ -4,6 +4,7 @@
   "slug": "broadstroke",
   "domain": "broadstrokeinc.com",
   "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+  "googleAnalyticsId": "G-XXXXXXXXXX",
   "urls": {
     "app": "https://prod.postalocity.com/login.html",
     "website": "https://www.broadstrokeinc.com",

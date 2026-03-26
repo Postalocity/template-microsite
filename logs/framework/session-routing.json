@@ -209,3 +209,11 @@
 {"timestamp":"2026-03-26T13:01:30.671Z","message":"continue","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-26T13:08:38.828Z","message":"git commit and push","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-26T13:11:58.108Z","message":"education Physical Acceptance Documents vs Email\nevery row need an emoji icon. how did the validator","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:18:02.891Z","message":"Envelope row should be removed, since we’re comparing using email to sending physical mail, and it’s","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:19:12.179Z","message":"Remove the *line item at the bottom of The Postalocity Difference – it’s not connected to anything i","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:19:42.146Z","message":"FAQs – How much does it cost mail transcripts in bulk?\n\nMailing transcripts in bulk starts at $1.31 ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:23:26.117Z","message":"remove *Less than 100 pieces. Max 2 pages per piece. Standard #10 envelope. First-Class mail only.\n\n","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:32:32.494Z","message":"does education have the google analytics code","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:35:48.521Z","message":"now the ga id is unique per brand. are we setup for that? for broadstroke it will remain the same.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:52:23.654Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:57:43.450Z","message":"for broadstroke the id is the same. but we want to support cases where a new brand is not the same.","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}

@@ -86,46 +86,44 @@ const rules = {
   COMPARISON_TABLE: {
     severity: 'error',
     checks: [
-      {
-        name: 'ENVELOPE_ROW_LAST',
-        validate: (rows) => {
-          // Skip if no rows (config uses chart format or has no comparison)
-          if (!rows || rows.length === 0) return { valid: true };
-          const lastRow = rows[rows.length - 1];
-          if (lastRow.feature !== 'Envelope') {
-            return { valid: false, message: `Envelope row should be last, but last row is "${lastRow.feature}"` };
-          }
-          return { valid: true };
-        }
-      },
-      {
-        name: 'SELF_MAILER_TEXT',
-        validate: (rows) => {
-          // Skip if no rows
-          const envelopeRow = rows?.find(r => r.feature === 'Envelope');
-          if (!envelopeRow) return { valid: true };
-          const traditional = envelopeRow.traditionalApproach;
-          if (!traditional.includes('Self-mailer') || !traditional.includes('No envelope')) {
-            return { valid: false, message: `Envelope row traditional column should say "Self-mailer — No envelope", got: "${traditional}"` };
-          }
-          return { valid: true };
-        }
-      },
-      {
-        name: 'ENVELOPE_INCLUDE_TEXT',
-        validate: (rows) => {
-          // Skip if no rows
-          const envelopeRow = rows?.find(r => r.feature === 'Envelope');
-          if (!envelopeRow) return { valid: true };
-          const ourSolution = typeof envelopeRow.ourSolution === 'object' 
-            ? envelopeRow.ourSolution.text 
-            : envelopeRow.ourSolution;
-          if (!ourSolution.includes('Included') || !ourSolution.includes('Color Optional')) {
-            return { valid: false, message: `Envelope row should say "Included — Color Optional", got: "${ourSolution}"` };
-          }
-          return { valid: true };
-        }
-      },
+      // DISABLED: Envelope row rules - not all sites have envelope comparison (e.g., education compares email vs physical mail)
+      // {
+      //   name: 'ENVELOPE_ROW_LAST',
+      //   validate: (rows) => {
+      //     if (!rows || rows.length === 0) return { valid: true };
+      //     const lastRow = rows[rows.length - 1];
+      //     if (lastRow.feature !== 'Envelope') {
+      //       return { valid: false, message: `Envelope row should be last, but last row is "${lastRow.feature}"` };
+      //     }
+      //     return { valid: true };
+      //   }
+      // },
+      // {
+      //   name: 'SELF_MAILER_TEXT',
+      //   validate: (rows) => {
+      //     const envelopeRow = rows?.find(r => r.feature === 'Envelope');
+      //     if (!envelopeRow) return { valid: true };
+      //     const traditional = envelopeRow.traditionalApproach;
+      //     if (!traditional.includes('Self-mailer') || !traditional.includes('No envelope')) {
+      //       return { valid: false, message: `Envelope row traditional column should say "Self-mailer — No envelope", got: "${traditional}"` };
+      //     }
+      //     return { valid: true };
+      //   }
+      // },
+      // {
+      //   name: 'ENVELOPE_INCLUDE_TEXT',
+      //   validate: (rows) => {
+      //     const envelopeRow = rows?.find(r => r.feature === 'Envelope');
+      //     if (!envelopeRow) return { valid: true };
+      //     const ourSolution = typeof envelopeRow.ourSolution === 'object' 
+      //       ? envelopeRow.ourSolution.text 
+      //       : envelopeRow.ourSolution;
+      //     if (!ourSolution.includes('Included') || !ourSolution.includes('Color Optional')) {
+      //       return { valid: false, message: `Envelope row should say "Included — Color Optional", got: "${ourSolution}"` };
+      //     }
+      //     return { valid: true };
+      //   }
+      // },
       {
         name: 'ALL_ROWS_HAVE_ICON',
         validate: (rows) => {

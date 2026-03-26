@@ -1208,7 +1208,11 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
       tagline: ctx.brand.tagline || '',
       logo: 'logo.png',
     },
-    seo: seoInfo,
+    // Merge SEO with brand-level GA ID as fallback
+    seo: {
+      ...seoInfo,
+      googleAnalyticsId: seoInfo?.googleAnalyticsId || ctx.brand.googleAnalyticsId || 'G-9HXQD6LYZ4',
+    },
     navigation: (siteConfig.navigation || {}) as { links?: Array<{ label: string; href: string }>; cta?: { text: string; href: string } },
     content: contentInfo,
     // Support footer at root level OR nested in content
