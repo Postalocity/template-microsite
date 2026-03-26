@@ -205,3 +205,5 @@
 {"timestamp":"2026-03-25T21:23:11.175Z","message":"look the generated html must always have <folder>/log.png ","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-25T21:24:48.119Z","message":"logow was copied in a scewed state that needs fixed too. and we need the white version from https://","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-25T21:27:00.694Z","message":"now postalicty logo is scewed every brand must have its own logo dimension no recrtrictions should b","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-25T21:28:57.034Z","message":"any other bugs around brands that need resolved? should we all add option to have root site vs folde","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T13:01:30.671Z","message":"continue","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}

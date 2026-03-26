@@ -891,8 +891,9 @@ function parseAddress(address: string) {
 
 function generateIndexHtml(config: SiteConfig): string {
   const { site } = config;
-  // Use canonicalDomain, seo.canonicalUrl, or fall back to slug-based subdirectory pattern
-  const canonicalUrl = config.canonicalDomain || config.seo?.canonicalUrl || `https://postalocity.com/${site.slug}`;
+  // Use canonicalDomain or seo.canonical, or fall back to slug-based subdirectory pattern
+  const seoConfig = config.seo as Record<string, unknown> | undefined;
+  const canonicalUrl = config.canonicalDomain || (seoConfig?.canonical as string) || `https://${site.domain}/${site.slug}`;
   const ogImage = `${canonicalUrl}/og-image.png`;
 
   // Parse address once for schema
