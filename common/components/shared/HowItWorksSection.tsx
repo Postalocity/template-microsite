@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Upload, Printer, Mail, Truck, Check } from "lucide-react";
+import { useBrand } from "@/contexts";
 
 interface HowItWorksStep {
   number?: string;
@@ -24,18 +25,24 @@ interface HowItWorksSectionProps {
 // Icon mapping based on step title keywords
 const getIcon = (title: string) => {
   const lower = title.toLowerCase();
-  if (lower.includes('upload') || lower.includes('document')) return Upload;
-  if (lower.includes('print') || lower.includes('process')) return Printer;
+  if (lower.includes('upload') || lower.includes('document') || lower.includes('tell')) return Upload;
+  if (lower.includes('print') || lower.includes('process') || lower.includes('work')) return Printer;
   if (lower.includes('verify') || lower.includes('address')) return Mail;
-  if (lower.includes('mail') || lower.includes('deliver')) return Truck;
+  if (lower.includes('mail') || lower.includes('deliver') || lower.includes('complete')) return Truck;
   return Mail;
 };
 
 const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-
-  const steps = howItWorks?.steps || [
+  
+  // Get brand config for default content
+  const ctx = useBrand();
+  const brandHowItWorks = ctx.brand.howItWorks;
+  
+  // Use config content if provided, otherwise fall back to brand defaults
+  const hasConfig = howItWorks && (howItWorks.steps?.length || howItWorks.section?.title);
+  const allSteps = hasConfig ? howItWorks?.steps : (brandHowItWorks?.steps || [
     {
       number: "1",
       title: "Upload Your PDFs",
@@ -44,22 +51,24 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
     {
       number: "2",
       title: "Address Verification",
-      description: "NCOA/CASS verification updates addresses before mailing, reducing returned letters by 40%."
+      "description": "NCOA/CASS verification updates addresses before mailing, reducing returned letters by 40%."
     },
     {
       number: "3", 
-      title: "We Print & Process",
-      description: "Professional printing, folding, stuffing into envelopes, and sealing—all automated."
+      "title": "We Print & Process",
+      "description": "Professional printing, folding, stuffing into envelopes, and sealing—all automated."
     },
     {
       number: "4",
-      title: "USPS Mailing & Tracking",
-      description: "Same-day or next-day mailing. Track Priority and Certified letters through delivery."
+      "title": "USPS Mailing & Tracking",
+      "description": "Same-day or next-day mailing. Track Priority and Certified letters through delivery."
     }
-  ];
+  ]);
+  const steps = allSteps || [];
 
-  const sectionTitle = howItWorks?.section?.title || "How It Works";
-  const sectionDesc = howItWorks?.section?.description || "Four simple steps from upload to mailing";
+  const sectionTitle = howItWorks?.section?.title || brandHowItWorks?.section?.title || "How It Works";
+  const sectionDesc = howItWorks?.section?.description || brandHowItWorks?.section?.description || "Four simple steps from upload to mailing";
+  const sectionId = howItWorks?.section?.id || brandHowItWorks?.section?.id || "how-it-works";
   const numSteps = steps.length;
   
   // Dynamic grid columns based on number of steps
@@ -67,7 +76,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
 
   return (
     <section
-      id={howItWorks?.section?.id || "how-it-works"}
+      id={sectionId}
       className="section-padding bg-background"
       ref={ref}
     >

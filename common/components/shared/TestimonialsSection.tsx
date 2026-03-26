@@ -1,9 +1,14 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Quote } from "lucide-react";
-import { useBrandName } from "@/contexts";
+import { useBrand, useBrandName } from "@/contexts";
 
-const testimonials = [
+interface Testimonial {
+  quote: string;
+  attribution: string;
+}
+
+const defaultTestimonials = [
   {
     quote:
       "Postalocity eliminated two full days of manual mailing work per month from our administrative workflow. Staff can now focus on calling clients and resolving disputes.",
@@ -34,6 +39,21 @@ const TestimonialsSection = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const brandName = useBrandName();
+  const ctx = useBrand();
+  
+  // Use brand testimonials if available, otherwise fallback to defaults
+  const brandTestimonials = ctx.brand.testimonials as Testimonial[] | undefined;
+  const testimonials = brandTestimonials?.length 
+    ? brandTestimonials.map(t => ({ quote: t.quote, name: t.attribution, title: '', institution: '', metrics: '' }))
+    : defaultTestimonials;
+  
+  // Custom header for Broadstroke
+  const headerTitle = brandTestimonials?.length 
+    ? "What Our Clients Say" 
+    : "Trusted by 500+ Healthcare Providers";
+  const headerSubtitle = brandTestimonials?.length
+    ? "Businesses throughout Wichita trust Broadstroke for their printing and mailing needs."
+    : `See what healthcare administrators are saying about ${brandName}`;
 
   return (
     <section className="section-padding bg-muted/30" ref={ref}>
@@ -45,15 +65,17 @@ const TestimonialsSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Trusted by 500+ Healthcare Providers
+            {headerTitle}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            See what healthcare administrators are saying about {brandName}
+            {headerSubtitle}
           </p>
-          <p className="text-xs text-muted-foreground max-w-2xl mx-auto mt-2">
-            *Testimonial names and details are representative examples of
-            typical customer experiences.
-          </p>
+          {!brandTestimonials?.length && (
+            <p className="text-xs text-muted-foreground max-w-2xl mx-auto mt-2">
+              *Testimonial names and details are representative examples of
+              typical customer experiences.
+            </p>
+          )}
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">

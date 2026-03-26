@@ -203,9 +203,41 @@ interface SiteConfig {
   };
 }
 
-// Copy favicons from common/assets to all sites
+// Expand shorthand content config (like "headline": "...") into full section configs
+function expandShorthandContent(content: Record<string, unknown>): Record<string, unknown> {
+  const expanded = { ...content };
+  
+  // Map of shorthand fields to their full section structure
+  const sectionFields = ['benefits', 'comparison', 'services', 'faq', 'howItWorks', 'trustSignals'];
+  
+  for (const field of sectionFields) {
+    if (expanded[field]) {
+      const value = expanded[field] as Record<string, unknown>;
+      // If it's a shorthand with just "headline", expand to full section
+      if (value.headline && !value.section) {
+        expanded[field] = {
+          section: {
+            title: value.headline as string,
+            description: value.description || '',
+          },
+          // Preserve other fields like benefits, services, rows, etc.
+          ...value,
+        };
+      }
+    }
+  }
+  
+  return expanded;
+}
+
+// Copy favicons and logos from common/assets to all sites
 function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
   const publicDir = path.join(siteDir, 'public');
+  
+  // Create public dir if it doesn't exist
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
   
   // Try brand-specific favicon first, fallback to default
   const brandFaviconPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'favicon.ico');
@@ -213,13 +245,23 @@ function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
   const faviconSource = fs.existsSync(brandFaviconPath) ? brandFaviconPath : fallbackFaviconPath;
 
   if (fs.existsSync(faviconSource)) {
-    // Create public dir if it doesn't exist
-    if (!fs.existsSync(publicDir)) {
-      fs.mkdirSync(publicDir, { recursive: true });
-    }
-
     // Copy favicon.ico
     fs.copyFileSync(faviconSource, path.join(publicDir, 'favicon.ico'));
+  }
+  
+  // Copy logo files (light and dark variants)
+  const brandLogoDir = path.join(TEMPLATE_DIR, 'common/assets', brandId);
+  
+  // Copy light logo (logo.png)
+  const lightLogoSource = path.join(brandLogoDir, 'logo.png');
+  if (fs.existsSync(lightLogoSource)) {
+    fs.copyFileSync(lightLogoSource, path.join(publicDir, 'logo.png'));
+  }
+  
+  // Copy dark logo (logo-dark.png)
+  const darkLogoSource = path.join(brandLogoDir, 'logo-dark.png');
+  if (fs.existsSync(darkLogoSource)) {
+    fs.copyFileSync(darkLogoSource, path.join(publicDir, 'logo-dark.png'));
   }
 }
 
@@ -268,13 +310,18 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
   }
 
   // Auto-detect hero image source based on site slug
-  // Standard convention: common/assets/{slug}/hero.jpg
+  // Standard convention: common/assets/{slug}/hero.jpg or common/assets/{brand}/{slug}-hero.jpg
   const siteSlug = config.site?.slug || '';
+  const brandSlug = config.site?.id?.split('-')[0] || 'postalocity'; // Extract brand from site id
   
-  // Try standard slug directory first, then fall back to category-based directories
+  // Try standard slug directory first, then brand directory, then fall back to category-based directories
   const possibleSourcePaths = [
     path.join(TEMPLATE_DIR, 'common/assets', siteSlug, 'hero.jpg'),
     path.join(TEMPLATE_DIR, 'common/assets', siteSlug, 'hero-bg.jpg'),
+    // Brand-specific hero images: common/assets/broadstroke/commercial-printing-hero.jpg
+    path.join(TEMPLATE_DIR, 'common/assets', brandSlug, `${siteSlug}-hero.jpg`),
+    path.join(TEMPLATE_DIR, 'common/assets', brandSlug, 'hero.jpg'),
+    path.join(TEMPLATE_DIR, 'common/assets', brandSlug, 'hero-bg.jpg'),
     // Category-based fallbacks for services that share assets
     path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'),        // credit-repair, postcard
     path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'),    // healthcare-*
@@ -441,7 +488,7 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     fs.writeFileSync(path.join(siteDir, 'package.json'), packageJson);
 
     // Create index.html
-    const indexHtml = generateIndexHtml(config);
+    const indexHtml = generateIndexHtml(config, brandContext);
     fs.writeFileSync(path.join(siteDir, 'index.html'), indexHtml);
 
     // Ensure public directory exists for static assets
@@ -564,7 +611,7 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext): str
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '@/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -650,6 +697,7 @@ function App() {
         <ServicesSection services={content.services} />
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+        <TestimonialsSection />
         <FAQSection faq={content.faq} />
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
@@ -877,24 +925,66 @@ function generatePackageJson(site: SiteInfo): string {
   }, null, 2);
 }
 
-// FIX #1 - Address parsing bug: Properly parse address components from address string
-function parseAddress(address: string) {
-  const parts = address.split(',').map((s: string) => s.trim());
-  const cityStateZip = parts.length > 1 ? parts[1]?.trim().split(' ') || ['', '', ''] : ['', '', ''];
+// FIX #1 - Address parsing bug: Properly parse address components from address string or object
+function parseAddress(address: string | { street?: string; city?: string; state?: string; zip?: string } | undefined) {
+  // Handle object format (from processed config)
+  if (address && typeof address === 'object') {
+    return {
+      streetAddress: (address as { street?: string }).street || '',
+      addressLocality: (address as { city?: string }).city || '',
+      addressRegion: (address as { state?: string }).state || '',
+      postalCode: (address as { zip?: string }).zip || '',
+    };
+  }
+  
+  // Handle string format - handle both "City, State ZIP" and "City, KS 67203"
+  if (typeof address !== 'string') {
+    return { streetAddress: '', addressLocality: '', addressRegion: '', postalCode: '' };
+  }
+  
+  // Split by comma and clean up
+  const parts = address.split(',').map((s: string) => s.trim()).filter(Boolean);
+  
+  if (parts.length === 0) {
+    return { streetAddress: '', addressLocality: '', addressRegion: '', postalCode: '' };
+  }
+  
+  const streetAddress = parts[0] || '';
+  
+  // For the rest, try to extract city, state, zip
+  let addressLocality = '';
+  let addressRegion = '';
+  let postalCode = '';
+  
+  if (parts.length > 1) {
+    // Join remaining parts and try to parse "Wichita KS 67203" or "KS 67203"
+    const remaining = parts.slice(1).join(' ').trim();
+    const match = remaining.match(/^([A-Za-z\s]+)?\s*([A-Z]{2})\s*(\d{5})?/);
+    if (match) {
+      addressLocality = match[1]?.trim() || '';
+      addressRegion = match[2] || '';
+      postalCode = match[3] || '';
+    }
+  }
+  
   return {
-    streetAddress: parts[0] || '',
-    addressLocality: cityStateZip[0] || '',
-    addressRegion: cityStateZip[1] || '',
-    postalCode: cityStateZip[2] || '',
+    streetAddress,
+    addressLocality,
+    addressRegion,
+    postalCode,
   };
 }
 
-function generateIndexHtml(config: SiteConfig): string {
+function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): string {
   const { site } = config;
   // Use canonicalDomain or seo.canonical, or fall back to slug-based subdirectory pattern
   const seoConfig = config.seo as Record<string, unknown> | undefined;
   const canonicalUrl = config.canonicalDomain || (seoConfig?.canonical as string) || `https://${site.domain}/${site.slug}`;
   const ogImage = `${canonicalUrl}/og-image.png`;
+
+  // Extract brand name from domain or brandContext
+  const brandName = brandContext?.brand?.name || (site.domain.includes('broadstroke') ? 'Broadstroke, Inc.' : 'Postalocity');
+  const brandWebsite = brandContext?.brand?.urls?.website || (site.domain.includes('broadstroke') ? 'https://www.broadstrokeinc.com' : 'https://www.postalocity.com');
 
   // Parse address once for schema
   const addressParts = parseAddress(site.contact?.address || '');
@@ -972,7 +1062,7 @@ function generateIndexHtml(config: SiteConfig): string {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://www.postalocity.com"
+              "item": "${brandWebsite}"
             },
             {
               "@type": "ListItem",
@@ -984,7 +1074,7 @@ function generateIndexHtml(config: SiteConfig): string {
         },
         {
           "@type": "Organization",
-          "name": "Postalocity",
+          "name": "${brandName}",
           "url": "${canonicalUrl}",
           "logo": "${canonicalUrl}/logo.png",
           "contactPoint": {
@@ -1186,6 +1276,9 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   const seoInfo = (siteConfig.seo || {}) as { title?: string; description?: string };
   const contentInfo = (siteConfig.content || {}) as Record<string, unknown>;
   
+  // Expand shorthand section configs (like "headline") into full section structures
+  const expandedContent = expandShorthandContent(contentInfo);
+  
   // Use the site slug for output
   const siteSlug = siteInfo.slug || serviceId;
   const siteBasename = `${brandId}-${siteSlug}`;
@@ -1214,7 +1307,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
       googleAnalyticsId: seoInfo?.googleAnalyticsId || ctx.brand.googleAnalyticsId || 'G-9HXQD6LYZ4',
     },
     navigation: (siteConfig.navigation || {}) as { links?: Array<{ label: string; href: string }>; cta?: { text: string; href: string } },
-    content: contentInfo,
+    content: expandedContent,
     // Support footer at root level OR nested in content
     footer: (siteConfig.footer || (contentInfo as Record<string, unknown>)?.footer || {}) as Record<string, unknown>,
   };
@@ -1227,8 +1320,15 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
       slug: ctx.brand.slug,
       domain: ctx.brand.domain,
       tagline: ctx.brand.tagline,
+      googleAnalyticsId: ctx.brand.googleAnalyticsId,
       urls: ctx.brand.urls,
       logo: ctx.brand.logo,
+      colors: ctx.brand.colors,
+      howItWorks: ctx.brand.howItWorks,
+      difference: ctx.brand.difference,
+      testimonials: ctx.brand.testimonials,
+      trustSignals: ctx.brand.trustSignals,
+      footer: ctx.brand.footer,
     },
     contact: {
       phone: ctx.contact.phone,

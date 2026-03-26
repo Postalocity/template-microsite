@@ -102,11 +102,23 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
           href={ctx.brand.urls.website}
           aria-label={`${brandName} home`}
         >
-          <img
-            src={`${config?.site?.slug || ''}/logo.png`}
-            alt={brandName}
-            className="h-8 lg:h-10 w-auto"
-          />
+          {/* Logo files: logo.png = dark, logo-dark.png = light */}
+          <div className="h-8 lg:h-10 w-[150px] lg:w-[180px] relative">
+            <img
+              src={`/${config?.site?.slug || ''}/logo.png`}
+              alt={brandName}
+              className={`h-full w-full object-contain transition-opacity duration-300 ${
+                scrolled ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+            <img
+              src={`/${config?.site?.slug || ''}/logo-dark.png`}
+              alt={brandName}
+              className={`h-full w-full object-contain absolute inset-0 transition-opacity duration-300 ${
+                scrolled ? 'opacity-0' : 'opacity-100'
+              }`}
+            />
+          </div>
         </a>
 
         {/* Desktop */}

@@ -31,6 +31,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   
   // Support both config.footer and config.content.footer structures
   const content = config?.content?.footer || config?.footer;
+  const brandFooter = ctx.brand.footer;
   
   // Build CTA URL with promo code from context
   const getCTAUrl = () => {
@@ -83,7 +84,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
               {content?.description || 'Streamline workflows, boost visibility, ensure accuracy, reduce overhead—no monthly fees, pay-as-you-go.'}
             </p>
             <p className="text-background/50 text-xs mt-3 italic">
-              {content?.tagline || ctx.brand.tagline || 'Empowering Businesses with Reliable Automation'}
+              {content?.tagline || brandFooter?.tagline || ctx.brand.tagline || 'Empowering Businesses with Reliable Automation'}
             </p>
           </div>
           <div>
@@ -145,9 +146,9 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
           <p className="text-background/50 text-sm">
             © {new Date().getFullYear()} {brandName}. All rights reserved.
           </p>
-          {(content?.links || config?.footer?.links) && (content?.links || config?.footer?.links).length > 0 && (
+          {(content?.links || brandFooter?.links) && (content?.links || brandFooter?.links).length > 0 && (
             <div className="flex flex-wrap gap-x-4 gap-y-2">
-              {(content?.links || config?.footer?.links).map((link) => (
+              {(content?.links || brandFooter?.links).map((link: { label: string; href: string }) => (
                 <a 
                   key={link.href}
                   href={link.href}

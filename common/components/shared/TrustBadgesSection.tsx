@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { useTrustSignals } from "@/contexts";
+import { useTrustSignals, useBrand } from "@/contexts";
 
 interface TrustSignal {
   type?: string;
@@ -26,31 +26,47 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
   
   // Get trust signals from IKB context (institutional knowledge)
   const ikbTrustSignals = useTrustSignals();
-
-  // Handle both string array and object array formats
+  
+  // Get trust signals from brand config
+  const ctx = useBrand();
+  const brandTrustSignals = ctx.brand.trustSignals;
+  
+  // Priority: config signals > brand signals > IKB signals > defaults
   const rawSignals = trustSignals?.signals;
-  const signals: TrustSignal[] = rawSignals 
-    ? rawSignals.map(s => typeof s === 'string' 
-        ? { name: s }  // Convert string to object
-        : s)
-    : ikbTrustSignals.length > 0
-      ? ikbTrustSignals.map(s => {
-          // Parse signal like "NCOA Verified 2024" into name and year
-          const parts = s.split(' ');
-          const yearIndex = parts.findIndex(p => /^\d{4}$/.test(p));
-          if (yearIndex > 0) {
-            return {
-              name: parts.slice(0, yearIndex).join(' '),
-              year: parts[yearIndex],
-            };
-          }
-          return { name: s };
-        })
-      : [
-          { name: "NCOA Verified", year: "2024" },
-          { name: "CASS Certified", year: "2024" },
-          { name: "ISO 9001", year: "2023" },
-        ];
+  
+  let signals: TrustSignal[];
+  
+  if (rawSignals?.length) {
+    // Use config signals if provided
+    signals = rawSignals.map(s => typeof s === 'string' ? { name: s } : s);
+  } else if (brandTrustSignals?.length) {
+    // Use brand signals
+    signals = brandTrustSignals.map(s => {
+      const parts = s.split(' ');
+      const yearIndex = parts.findIndex(p => /^\d{4}$/.test(p));
+      if (yearIndex > 0) {
+        return { name: parts.slice(0, yearIndex).join(' '), year: parts[yearIndex] };
+      }
+      return { name: s };
+    });
+  } else if (ikbTrustSignals.length > 0) {
+    // Use IKB signals
+    signals = ikbTrustSignals.map(s => {
+      const parts = s.split(' ');
+      const yearIndex = parts.findIndex(p => /^\d{4}$/.test(p));
+      if (yearIndex > 0) {
+        return { name: parts.slice(0, yearIndex).join(' '), year: parts[yearIndex] };
+      }
+      return { name: s };
+    });
+  } else {
+    // Default signals
+    signals = [
+      { name: "NCOA Verified", year: "2024" },
+      { name: "CASS Certified", year: "2024" },
+      { name: "ISO 9001", year: "2023" },
+    ];
+  }
 
   return (
     <section className="py-8 bg-section-alt" ref={ref} id="trust-signals">

@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Eye, Zap, Sparkles, Shield, CheckCircle, TrendingUp, Clock } from "lucide-react";
+import { Mail, Eye, Zap, Sparkles, Shield, CheckCircle, TrendingUp, Clock, Users, Package } from "lucide-react";
 import { sanitizeHtml } from "../../utils/sanitize-html";
-import { useBrandName } from "@/contexts";
+import { useBrand, useBrandName } from "@/contexts";
 
 // Map icon names to components (using eslint-disable for lucide type compatibility)
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -15,6 +15,8 @@ const iconMap: Record<string, any> = {
   "check-circle": CheckCircle,
   "trending-up": TrendingUp,
   clock: Clock,
+  users: Users,
+  package: Package,
 };
 
 interface DifferenceItem {
@@ -60,10 +62,12 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   
-  // Get brand name from context
+  // Get brand config from context
+  const ctx = useBrand();
   const brandName = useBrandName();
+  const brandDifference = ctx.brand.difference;
   
-  // Use config data if available, otherwise fall back to defaults
+  // Use config data if available, otherwise fall back to brand defaults
   const hasConfigData = difference?.differences && difference.differences.length > 0;
   const differentials = hasConfigData 
     ? difference!.differences!.map(item => ({
@@ -71,11 +75,15 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
         title: item.title,
         description: item.description,
       }))
-    : defaultDifferentials;
-    
+    : (brandDifference?.differences?.map(item => ({
+        icon: iconMap[item.icon || ''] || Mail,
+        title: item.title,
+        description: item.description,
+      })) || defaultDifferentials);
+      
   // Allow config to override title/description, with brand-aware defaults
-  const sectionTitle = difference?.section?.title || `The ${brandName} Difference`;
-  const sectionDescription = difference?.section?.description || "Discover why businesses trust our mailing service";
+  const sectionTitle = difference?.section?.title || brandDifference?.section?.title || `The ${brandName} Difference`;
+  const sectionDescription = difference?.section?.description || brandDifference?.section?.description || "Discover why businesses trust our service";
   const badgeText = difference?.section?.description ? undefined : `Why Choose ${brandName}`;
 
   return (
@@ -110,7 +118,7 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
         </motion.div>
 
         {/* Cards with dramatic effects */}
-        <div className={`grid md:grid-cols-2 ${differentials.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} gap-8`}>
+        <div className={`grid md:grid-cols-2 ${differentials.length <= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-3'} gap-8`}>
           {differentials.map((item, i) => (
             <motion.div
               key={item.title}

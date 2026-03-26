@@ -50,6 +50,7 @@ export interface BrandUrls {
 
 export interface BrandLogo {
   filename: string;
+  darkFilename?: string;
   alt: string;
 }
 
@@ -64,9 +65,43 @@ export interface BrandConfig {
   slug: string;
   domain: string;
   tagline?: string;
+  googleAnalyticsId?: string;
   urls: BrandUrls;
   logo: BrandLogo;
   colors?: BrandColors;
+  howItWorks?: {
+    section?: {
+      id?: string;
+      title?: string;
+      description?: string;
+    };
+    steps?: Array<{
+      number?: string;
+      title: string;
+      description: string;
+    }>;
+  };
+  difference?: {
+    section?: {
+      title?: string;
+      description?: string;
+    };
+    differences?: Array<{
+      icon?: string;
+      title: string;
+      description: string;
+    }>;
+  };
+  testimonials?: Array<{
+    quote: string;
+    attribution: string;
+  }>;
+  trustSignals?: string[];
+  footer?: {
+    tagline?: string;
+    taglineSecondary?: string;
+    links?: Array<{ label: string; href: string }>;
+  };
 }
 
 export interface ContactInfo {
