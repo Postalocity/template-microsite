@@ -1,9 +1,16 @@
 ---
+source: framework
 name: state-manager
 description: Application state management and persistence
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [infrastructure, state, manager]
+capabilities:
+  - manage_state
+  - persist_data
+  - handle_storage
+dependencies: []
 
 mcp:
   state-manager:

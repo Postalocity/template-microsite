@@ -1,9 +1,16 @@
 ---
+source: framework
 name: git-workflow
 description: Git workflow management and collaboration tools
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [collaboration, git, workflow]
+capabilities:
+  - manage_branches
+  - create_commits
+  - handle_pull_requests
+dependencies: []
 
 mcp:
   git-workflow:

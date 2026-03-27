@@ -251,3 +251,10 @@
 {"timestamp":"2026-03-26T18:00:26.841Z","message":"Please compare the color palettes between the Broadstroke commercial-printing microsite and the main","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-26T18:01:50.630Z","message":"yes","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
 {"timestamp":"2026-03-26T18:03:34.564Z","message":"git commit and push","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T18:17:29.746Z","message":"The Broadstroke Difference\n the two cards removed should we add that text somewhere else in site","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T18:17:41.160Z","message":"Please review the Broadstroke commercial-printing microsite and recommend where the removed \"differe","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T18:26:42.233Z","message":"we did it! transformed the engine to multi-site. used stringray. look at the broadstroke commercial-","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T18:31:04.802Z","message":"git commit and push","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T18:55:19.810Z","message":"{\n  \"version\": \"Broadstroke Microsite Config — Promotional Products\",\n  \"instructions\": {\n    \"requi","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T19:02:35.461Z","message":"put a new image in the public/images for the hero banner resize and use as hero","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}
+{"timestamp":"2026-03-26T19:14:39.391Z","message":"only load the dark log from the framework if one exists for intance for postalocity we only hav eone","agent":"architect","confidence":0.6,"method":"keyword","complexity":50}

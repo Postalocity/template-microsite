@@ -1,9 +1,16 @@
 ---
+source: framework
 name: performance-analysis
 description: System performance analysis and optimization
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [performance, performance, analysis]
+capabilities:
+  - analyze_performance
+  - identify_bottlenecks
+  - optimize_code
+dependencies: []
 
 mcp:
   performance-analysis:

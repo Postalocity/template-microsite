@@ -1,9 +1,16 @@
 ---
+source: framework
 name: architect-tools
 description: System design and technical architecture tools
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [design, architect, tools]
+capabilities:
+  - design_system
+  - evaluate_architecture
+  - recommend_tools
+dependencies: []
 
 mcp:
   architect-tools:

@@ -76,8 +76,6 @@ let ProcessorManager;
 let StrRayStateManager;
 let featuresConfigLoader;
 let detectTaskType;
-let TaskSkillRouter;
-let taskSkillRouterInstance;
 async function loadStrRayComponents() {
     if (ProcessorManager && StrRayStateManager && featuresConfigLoader) {
         return;
@@ -147,6 +145,50 @@ function extractTaskDescription(input) {
     return null;
 }
 /**
+ * Extract action words from command for better routing
+ * Maps verbs/intents to skill categories
+ */
+function extractActionWords(command) {
+    if (!command || command.length < 3)
+        return null;
+    // Strip quotes and escape sequences for cleaner matching
+    const cleanCommand = command.replace(/["']/g, ' ').replace(/\\./g, ' ');
+    // Action word -> skill mapping (ordered by priority)
+    const actionMap = [
+        // Review patterns - check first since user likely wants to review content
+        { pattern: /\b(review|check|audit|examine|inspect|assess|evaluate)\b/i, skill: "code-review" },
+        // Analyze patterns  
+        { pattern: /\b(analyze|investigate|study)\b/i, skill: "code-analyzer" },
+        // Fix patterns
+        { pattern: /\b(fix|debug|resolve|troubleshoot|repair)\b/i, skill: "bug-triage" },
+        // Create patterns
+        { pattern: /\b(create|write|generate|build|make|add)\b/i, skill: "content-creator" },
+        // Test patterns
+        { pattern: /\b(test|validate|verify)\b/i, skill: "testing" },
+        // Design patterns
+        { pattern: /\b(design|plan|architect)\b/i, skill: "architecture" },
+        // Optimize patterns
+        { pattern: /\b(optimize|improve|enhance|speed)\b/i, skill: "performance" },
+        // Security patterns
+        { pattern: /\b(scan|secure|vulnerability)\b/i, skill: "security" },
+        // Refactor patterns
+        { pattern: /\b(refactor|clean|restructure)\b/i, skill: "refactoring" },
+    ];
+    // Search for action words anywhere in the command
+    for (const { pattern } of actionMap) {
+        const match = cleanCommand.match(pattern);
+        if (match) {
+            // Return the matched word plus context after it
+            const word = match[0];
+            const idx = cleanCommand.toLowerCase().indexOf(word.toLowerCase());
+            const after = cleanCommand.slice(idx + word.length, Math.min(idx + word.length + 25, cleanCommand.length)).trim();
+            return `${word} ${after}`.trim().slice(0, 40);
+        }
+    }
+    // If no action word found, return null to use default routing
+    return null;
+}
+/**
  * Estimate complexity score based on message content
  * Higher complexity = orchestrator routing
  * Lower complexity = code-reviewer routing
@@ -183,28 +225,6 @@ function estimateComplexity(message) {
     }
     // Clamp to 0-100
     return Math.max(0, Math.min(100, score));
-}
-async function loadTaskSkillRouter() {
-    if (taskSkillRouterInstance) {
-        return; // Already loaded
-    }
-    // Try local dist first (for development)
-    try {
-        const module = await import("../../dist/delegation/task-skill-router.js");
-        TaskSkillRouter = module.TaskSkillRouter;
-        taskSkillRouterInstance = new TaskSkillRouter();
-    }
-    catch (distError) {
-        // Try node_modules (for consumer installs)
-        try {
-            const module = await import("strray-ai/dist/delegation/task-skill-router.js");
-            TaskSkillRouter = module.TaskSkillRouter;
-            taskSkillRouterInstance = new TaskSkillRouter();
-        }
-        catch (nmError) {
-            // Task routing not available - continue without it
-        }
-    }
 }
 function spawnPromise(command, args, cwd) {
     return new Promise((resolve, reject) => {
@@ -456,7 +476,27 @@ export default async function strrayCodexPlugin(input) {
         },
         "tool.execute.before": async (input, output) => {
             const logger = await getOrCreateLogger(directory);
-            // Log tool start to activity logger (direct write - no module isolation issues)
+            // Retrieve original user message for context preservation (file-based)
+            let originalMessage = null;
+            try {
+                const contextFiles = fs.readdirSync(directory)
+                    .filter(f => f.startsWith("context-") && f.endsWith(".json"))
+                    .map(f => ({
+                    name: f,
+                    time: fs.statSync(path.join(directory, f)).mtime.getTime()
+                }))
+                    .sort((a, b) => b.time - a.time);
+                if (contextFiles.length > 0 && contextFiles[0]) {
+                    const latestContext = JSON.parse(fs.readFileSync(path.join(directory, contextFiles[0].name), "utf-8"));
+                    originalMessage = latestContext.userMessage;
+                }
+            }
+            catch (e) {
+                // Silent fail - context is optional
+            }
+            if (originalMessage) {
+                logger.log(`📌 Original intent: "${originalMessage.slice(0, 80)}..."`);
+            }
             logToolActivity(directory, "start", input.tool, input.args || {});
             await loadStrRayComponents();
             if (featuresConfigLoader && detectTaskType) {
@@ -476,7 +516,20 @@ export default async function strrayCodexPlugin(input) {
                 }
             }
             const { tool, args } = input;
-            // Routing is handled in chat.message hook - this hook only does tool execution logging
+            // Extract action words from command for better tool routing
+            const command = args?.command ? String(args.command) : "";
+            let taskDescription = null;
+            if (command) {
+                const actionWords = extractActionWords(command);
+                if (actionWords) {
+                    taskDescription = actionWords;
+                    logger.log(`📝 Action words extracted: "${actionWords}"`);
+                }
+            }
+            // Also try to extract from content if no command
+            if (!taskDescription) {
+                taskDescription = extractTaskDescription(input);
+            }
             // ENFORCER QUALITY GATE CHECK - Block on violations
             await importQualityGate(directory);
             if (!runQualityGateWithLogging) {
@@ -547,6 +600,12 @@ export default async function strrayCodexPlugin(input) {
                         name: "coverageAnalysis",
                         type: "post",
                         priority: 20,
+                        enabled: true,
+                    });
+                    processorManager.registerProcessor({
+                        name: "agentsMdValidation",
+                        type: "post",
+                        priority: 30,
                         enabled: true,
                     });
                     // Store for future use
@@ -704,13 +763,6 @@ export default async function strrayCodexPlugin(input) {
          */
         "chat.message": async (input, output) => {
             const logger = await getOrCreateLogger(directory);
-            // DEBUG: Log ALL output
-            const debugLogPath = path.join(process.cwd(), "logs", "framework", "routing-debug.log");
-            fs.appendFileSync(debugLogPath, `\n[${new Date().toISOString()}] === chat.message HOOK FIRED ===\n`);
-            fs.appendFileSync(debugLogPath, `OUTPUT KEYS: ${JSON.stringify(Object.keys(output || {}))}\n`);
-            fs.appendFileSync(debugLogPath, `MESSAGE: ${JSON.stringify(output?.message)}\n`);
-            fs.appendFileSync(debugLogPath, `PARTS: ${JSON.stringify(output?.parts)}\n`);
-            // Extract user message from parts (TextPart has type="text" and text field)
             let userMessage = "";
             if (output?.parts && Array.isArray(output.parts)) {
                 for (const part of output.parts) {
@@ -720,80 +772,26 @@ export default async function strrayCodexPlugin(input) {
                     }
                 }
             }
-            fs.appendFileSync(debugLogPath, `userMessage: "${userMessage.slice(0, 100)}"\n`);
+            // Store original user message for tool hooks (context preservation)
+            const sessionId = output?.message?.sessionID || "default";
+            try {
+                const contextData = JSON.stringify({
+                    sessionId,
+                    userMessage,
+                    timestamp: new Date().toISOString()
+                });
+                const contextPath = path.join(directory, `context-${sessionId}.json`);
+                fs.writeFileSync(contextPath, contextData, "utf-8");
+            }
+            catch (e) {
+                // Silent fail - context is optional
+            }
+            globalThis.__strRayOriginalMessage = userMessage;
+            logger.log(`userMessage: "${userMessage.slice(0, 100)}"`);
             if (!userMessage || userMessage.length === 0) {
-                fs.appendFileSync(debugLogPath, `SKIP: No user text found\n`);
                 return;
             }
             logger.log(`👤 User message: "${userMessage.slice(0, 50)}..."`);
-            try {
-                await loadTaskSkillRouter();
-                if (taskSkillRouterInstance) {
-                    // Get complexity score for tiebreaking
-                    let complexityScore = 50; // default medium
-                    try {
-                        if (featuresConfigLoader) {
-                            const config = featuresConfigLoader.loadConfig();
-                            if (config.model_routing?.complexity?.enabled) {
-                                // Estimate complexity based on message length and keywords
-                                complexityScore = estimateComplexity(userMessage);
-                            }
-                        }
-                    }
-                    catch (e) {
-                        // Silent fail for complexity estimation
-                    }
-                    fs.appendFileSync(debugLogPath, `Complexity estimated: ${complexityScore}\n`);
-                    // Route with complexity context
-                    const routingResult = taskSkillRouterInstance.routeTask(userMessage, {
-                        source: "chat_message",
-                        complexity: complexityScore,
-                    });
-                    fs.appendFileSync(debugLogPath, `Routing result: ${JSON.stringify(routingResult)}\n`);
-                    if (routingResult && routingResult.agent) {
-                        // Apply weighted confidence scoring
-                        let finalConfidence = routingResult.confidence;
-                        let routingMethod = "keyword";
-                        // If keyword confidence is low, use complexity-based routing
-                        if (routingResult.confidence < 0.7 && complexityScore > 50) {
-                            // High complexity tasks get orchestrator boost
-                            if (complexityScore > 70) {
-                                routingResult.agent = "orchestrator";
-                                finalConfidence = Math.min(0.85, routingResult.confidence + 0.15);
-                                routingMethod = "complexity";
-                            }
-                        }
-                        // If low complexity and low confidence, boost code-reviewer
-                        if (routingResult.confidence < 0.6 && complexityScore < 30) {
-                            routingResult.agent = "code-reviewer";
-                            finalConfidence = Math.min(0.75, routingResult.confidence + 0.15);
-                            routingMethod = "complexity";
-                        }
-                        logger.log(`🎯 Routed to: @${routingResult.agent} (${Math.round(finalConfidence * 100)}%) via ${routingMethod}`);
-                        fs.appendFileSync(debugLogPath, `Final agent: ${routingResult.agent}, confidence: ${finalConfidence}, method: ${routingMethod}\n`);
-                        // Store routing in session for later use
-                        const sessionRoutingPath = path.join(process.cwd(), "logs", "framework", "session-routing.json");
-                        try {
-                            fs.appendFileSync(sessionRoutingPath, JSON.stringify({
-                                timestamp: new Date().toISOString(),
-                                message: userMessage.slice(0, 100),
-                                agent: routingResult.agent,
-                                confidence: finalConfidence,
-                                method: routingMethod,
-                                complexity: complexityScore,
-                            }) + "\n");
-                        }
-                        catch (e) {
-                            // Silent fail for session routing logging
-                        }
-                    }
-                }
-            }
-            catch (e) {
-                logger.error("Chat message routing error:", e);
-                fs.appendFileSync(debugLogPath, `ERROR: ${e}\n`);
-            }
-            fs.appendFileSync(debugLogPath, `=== END chat.message ===\n`);
         },
         config: async (_config) => {
             const logger = await getOrCreateLogger(directory);

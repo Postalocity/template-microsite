@@ -1,9 +1,16 @@
 ---
+source: framework
 name: enforcer
 description: Codex compliance validation and error prevention
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [quality, enforcer]
+capabilities:
+  - validate_compliance
+  - prevent_errors
+  - enforce_codex
+dependencies: []
 
 mcp:
   enforcer:

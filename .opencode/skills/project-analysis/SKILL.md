@@ -1,9 +1,16 @@
 ---
+source: framework
 name: project-analysis
 description: Analyze project structure, complexity, and health metrics
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [analysis, project, complexity, health]
+capabilities:
+  - analyze_structure
+  - measure_complexity
+  - provide_metrics
+dependencies: []
 
 mcp:
   project-analysis:

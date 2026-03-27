@@ -1,9 +1,16 @@
 ---
+source: framework
 name: ui-ux-design
 description: User interface and user experience design with mobile-first approach, cognitive simplicity, and accessibility-first principles
 author: StrRay Framework
 version: 2.1.0
+schema_version: "1.0"
 tags: [design, ui, ux, accessibility, mobile-first, visual-hierarchy, wcag, contrast, color-theory, dont-make-me-think]
+capabilities:
+  - design_ui
+  - design_ux
+  - ensure_accessibility
+dependencies: []
 
 mcp:
   ui-ux-design:

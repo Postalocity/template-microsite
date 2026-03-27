@@ -1,9 +1,16 @@
 ---
+source: framework
 name: testing-best-practices
 description: Testing best practices and quality assurance
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [testing, testing, best, practices]
+capabilities:
+  - write_unit_tests
+  - write_integration_tests
+  - analyze_coverage
+dependencies: []
 
 mcp:
   testing-best-practices:

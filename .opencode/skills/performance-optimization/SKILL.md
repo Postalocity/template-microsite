@@ -1,9 +1,16 @@
 ---
+source: framework
 name: performance-optimization
 description: Application performance optimization and tuning
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [performance, performance, optimization]
+capabilities:
+  - optimize_performance
+  - tune_application
+  - improve_efficiency
+dependencies: []
 
 mcp:
   performance-optimization:

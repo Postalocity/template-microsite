@@ -1,9 +1,16 @@
 ---
+source: framework
 name: auto-format
 description: Automated code formatting and style consistency
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [formatting, auto, format]
+capabilities:
+  - format_code
+  - enforce_style
+  - fix_lint_errors
+dependencies: []
 
 mcp:
   auto-format:

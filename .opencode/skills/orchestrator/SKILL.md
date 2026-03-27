@@ -1,9 +1,16 @@
 ---
+source: framework
 name: orchestrator
 description: Multi-agent workflow coordination and task delegation
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [orchestration, orchestrator]
+capabilities:
+  - coordinate_agents
+  - delegate_tasks
+  - manage_workflow
+dependencies: []
 
 mcp:
   orchestrator:

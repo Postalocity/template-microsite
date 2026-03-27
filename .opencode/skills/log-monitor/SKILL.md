@@ -1,9 +1,16 @@
 ---
+source: framework
 name: log-monitor
 description: Log analysis, pattern detection, and alerting
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [monitoring, logging, alerting, observability]
+capabilities:
+  - analyze_logs
+  - detect_patterns
+  - send_alerts
+dependencies: []
 
 mcp:
   log-monitor:

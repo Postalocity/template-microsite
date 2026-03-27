@@ -1,9 +1,16 @@
 ---
+source: framework
 name: testing-strategy
 description: Design comprehensive testing strategies and optimize test coverage
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [testing, strategy, coverage, quality]
+capabilities:
+  - design_strategy
+  - optimize_coverage
+  - ensure_quality
+dependencies: []
 
 mcp:
   testing-strategy:

@@ -1,9 +1,16 @@
 ---
+source: framework
 name: session-management
 description: Manage user sessions and persistent state
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [infrastructure, session, management]
+capabilities:
+  - create_session
+  - manage_session
+  - handle_persistence
+dependencies: []
 
 mcp:
   session-management:

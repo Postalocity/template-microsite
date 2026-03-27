@@ -1,9 +1,16 @@
 ---
+source: framework
 name: researcher
 description: Multi-repo analysis, documentation lookup, and implementation examples
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [research, researcher]
+capabilities:
+  - search_repositories
+  - find_implementations
+  - analyze_documentation
+dependencies: []
 
 mcp:
   researcher:

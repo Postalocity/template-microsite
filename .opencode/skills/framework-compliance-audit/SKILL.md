@@ -1,9 +1,16 @@
 ---
+source: framework
 name: framework-compliance-audit
 description: Framework compliance auditing and validation
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [compliance, framework, compliance, audit]
+capabilities:
+  - audit_compliance
+  - validate_framework
+  - generate_report
+dependencies: []
 
 mcp:
   framework-compliance-audit:

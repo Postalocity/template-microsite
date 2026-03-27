@@ -1,9 +1,16 @@
 ---
+source: framework
 name: lint
 description: Code linting and static analysis
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [quality, lint]
+capabilities:
+  - analyze_code
+  - find_issues
+  - suggest_fixes
+dependencies: []
 
 mcp:
   lint:

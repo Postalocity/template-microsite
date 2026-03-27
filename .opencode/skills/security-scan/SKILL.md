@@ -1,9 +1,16 @@
 ---
+source: framework
 name: security-scan
 description: Security vulnerability scanning and assessment
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [security, security, scan]
+capabilities:
+  - scan_vulnerabilities
+  - assess_risks
+  - provide_recommendations
+dependencies: []
 
 mcp:
   security-scan:

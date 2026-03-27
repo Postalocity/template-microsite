@@ -1,9 +1,16 @@
 ---
+source: framework
 name: architecture-patterns
 description: Software architecture patterns and best practices
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [design, architecture, patterns]
+capabilities:
+  - analyze_architecture
+  - recommend_patterns
+  - evaluate_design
+dependencies: []
 
 mcp:
   architecture-patterns:

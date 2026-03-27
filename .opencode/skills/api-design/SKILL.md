@@ -1,9 +1,16 @@
 ---
+source: framework
 name: api-design
 description: RESTful API design and validation
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [design, api, design]
+capabilities:
+  - design_rest_api
+  - validate_api_specs
+  - generate_api_docs
+dependencies: []
 
 mcp:
   api-design:

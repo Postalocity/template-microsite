@@ -1,9 +1,16 @@
 ---
+source: framework
 name: refactoring-strategies
 description: Code refactoring techniques and strategies
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [refactoring, refactoring, strategies]
+capabilities:
+  - analyze_code_smell
+  - suggest_refactoring
+  - apply_patterns
+dependencies: []
 
 mcp:
   refactoring-strategies:

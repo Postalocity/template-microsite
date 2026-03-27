@@ -1,9 +1,16 @@
 ---
+source: framework
 name: boot-orchestrator
 description: Framework initialization and boot orchestration
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [infrastructure, boot, orchestrator]
+capabilities:
+  - initialize_framework
+  - orchestrate_boot_sequence
+  - manage_dependencies
+dependencies: []
 
 mcp:
   boot-orchestrator:

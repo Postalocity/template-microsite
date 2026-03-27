@@ -1,9 +1,16 @@
 ---
+source: framework
 name: bug-triage
 description: Bug triage, debugging analysis, and issue prioritization
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [debugging, bug-fix, triage, error-analysis]
+capabilities:
+  - triage_bugs
+  - analyze_issues
+  - prioritize_fixes
+dependencies: []
 
 mcp:
   bug-triage-specialist:

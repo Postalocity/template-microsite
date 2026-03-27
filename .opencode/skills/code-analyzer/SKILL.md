@@ -1,9 +1,16 @@
 ---
+source: framework
 name: code-analyzer
 description: Deep code analysis, metrics extraction, and pattern detection (CONSOLIDATED - combines analyzer, explore, and original code-analyzer)
 author: StrRay Framework
 version: 1.0.0
+schema_version: "1.0"
 tags: [analysis, metrics, code-quality, patterns]
+capabilities:
+  - analyze_code
+  - extract_metrics
+  - detect_patterns
+dependencies: []
 
 mcp:
   code-analyzer:
