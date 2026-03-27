@@ -3,6 +3,21 @@ import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useBrand, useBrandName } from '@/contexts';
 
+// Helper to check if dark logo exists for a brand
+function useDarkLogoExists(slug: string): boolean {
+  const [exists, setExists] = useState(false);
+  
+  useEffect(() => {
+    // Try to load the dark logo
+    const img = new Image();
+    img.onload = () => setExists(true);
+    img.onerror = () => setExists(false);
+    img.src = `/${slug}/logo-dark.png`;
+  }, [slug]);
+  
+  return exists;
+}
+
 type NavConfig = {
   site?: {
     slug?: string;
@@ -38,6 +53,10 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
   // Get brand config from context
   const ctx = useBrand();
   const brandName = useBrandName();
+  
+  // Check if dark logo exists for this brand
+  const siteSlug = config?.site?.slug || '';
+  const hasDarkLogo = useDarkLogoExists(siteSlug);
   
   const navLinks = config?.navigation?.links ?? defaultNavLinks;
   const cta = config?.navigation?.cta;
@@ -102,22 +121,36 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
           href={ctx.brand.urls.website}
           aria-label={`${brandName} home`}
         >
-          {/* Logo files: logo.png = dark, logo-dark.png = light */}
+          {/* Logo: single logo or dual logos with scroll-based switching */}
           <div className="h-8 lg:h-10 w-[150px] lg:w-[180px] relative">
-            <img
-              src={`/${config?.site?.slug || ''}/logo.png`}
-              alt={brandName}
-              className={`h-full w-full object-contain transition-opacity duration-300 ${
-                scrolled ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-            <img
-              src={`/${config?.site?.slug || ''}/logo-dark.png`}
-              alt={brandName}
-              className={`h-full w-full object-contain absolute inset-0 transition-opacity duration-300 ${
-                scrolled ? 'opacity-0' : 'opacity-100'
-              }`}
-            />
+            {hasDarkLogo ? (
+              // Dual logos: switch on scroll (logo.png = dark, logo-dark.png = light)
+              <>
+                <img
+                  src={`/${siteSlug}/logo.png`}
+                  alt={brandName}
+                  className={`h-full w-full object-contain transition-opacity duration-300 ${
+                    scrolled ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
+                <img
+                  src={`/${siteSlug}/logo-dark.png`}
+                  alt={brandName}
+                  className={`h-full w-full object-contain absolute inset-0 transition-opacity duration-300 ${
+                    scrolled ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+              </>
+            ) : (
+              // Single logo: always show, invert colors when on dark background
+              <img
+                src={`/${siteSlug}/logo.png`}
+                alt={brandName}
+                className={`h-full w-full object-contain transition-all duration-300 ${
+                  scrolled ? '' : 'brightness-0 invert'
+                }`}
+              />
+            )}
           </div>
         </a>
 

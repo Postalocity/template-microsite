@@ -1,7 +1,7 @@
 {
   "site": {
     "id": "broadstroke",
-    "name": "Promotional Products",
+    "name": "Promotional Products & Apparel — Broadstroke, Inc.",
     "slug": "promo",
     "domain": "broadstrokeinc.com",
     "basename": "broadstroke-promo",
@@ -16,22 +16,22 @@
     "logo": "logo.png"
   },
   "seo": {
-    "title": "Promotional Products — Broadstroke",
-    "description": "Custom branded promotional products in Wichita. Logo apparel, drinkware, pens, bags and more. Make a lasting impression with branded merchandise.",
+    "title": "Promotional Products & Apparel — Broadstroke, Inc.",
+    "description": "One-stop promotional products and apparel solutions in Wichita KS: custom branded merchandise with screen printing, embroidery, free estimates, fast turnaround & proven brand impact.",
     "keywords": [
       "promotional products Wichita",
-      "custom branded merchandise",
-      "promo items",
-      "corporate gifts",
-      "logo apparel",
-      "custom drinkware"
+      "promo products Kansas",
+      "custom promotional products Wichita KS",
+      "branded merchandise Wichita",
+      "promotional apparel Wichita",
+      "promotional products near me Wichita"
     ],
-    "ogTitle": "Promotional Products — Broadstroke",
-    "ogDescription": "Custom branded promotional products that help your company stay top of mind.",
+    "ogTitle": "Promotional Products & Apparel — Broadstroke, Inc.",
+    "ogDescription": "Print, mail, promo & fulfillment made simple.",
     "ogImage": "/promo/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/promo",
-    "googleAnalyticsId": "G-9HXQD6LYZ4"
+    "googleAnalyticsId": "G-XXXXXXXXXX"
   },
   "navigation": {
     "links": [
@@ -40,247 +40,91 @@
         "href": "#benefits"
       },
       {
-        "label": "Products",
-        "href": "#services"
+        "label": "How It Works",
+        "href": "#how-it-works"
       },
       {
-        "label": "Process",
-        "href": "#how-it-works"
+        "label": "Services",
+        "href": "#services"
       },
       {
         "label": "FAQ",
         "href": "#faq"
       }
-    ]
+    ],
+    "cta": {
+      "text": "Get Free Estimate",
+      "href": "https://broadstrokeinc.com/contact/?service=promo"
+    }
   },
   "content": {
     "hero": {
       "headline": {
-        "main": "Promotional Products",
-        "highlightTerm": "Make Your Mark"
+        "main": "Promotional Products & Apparel Solutions",
+        "highlightTerm": "One-Stop Shop.",
+        "alt": "Professional promotional products and custom apparel with screen printing and embroidery displayed for businesses in Wichita KS"
       },
-      "subhead": "Custom branded merchandise that helps your company stay top of mind. From logo apparel to drinkware, we make promotional products that impress.",
+      "subhead": "Custom branded merchandise, apparel, and gifts — integrated with commercial printing, automated mailing, and large-format graphics through concierge service.",
       "background": {
-        "image": "/broadstroke/images/promo-hero.jpg",
-        "overlay": true,
-        "alt": "Custom promotional products and branded merchandise"
+        "image": "/promo/images/promo-hero.jpg",
+        "overlay": true
       },
       "ctas": [
         {
-          "text": "Get Free Quote",
-          "href": "https://broadstrokeinc.com/contact/",
+          "text": "Request Free Estimate",
+          "href": "https://broadstrokeinc.com/contact/?service=promo",
           "variant": "primary"
         },
         {
-          "text": "Browse Products",
-          "href": "https://www.broadstrokepromos.com/",
+          "text": "See How It Works",
+          "href": "#how-it-works",
           "variant": "outline"
         }
       ]
     },
     "benefits": {
       "section": {
-        "title": "Why Choose Broadstroke for Promo Products",
-        "description": "Quality branded merchandise that represents your business well."
+        "title": "Benefits of Working with Broadstroke for Promotional Products",
+        "description": ""
       },
-      "benefits": [
-        {
-          "icon": "star",
-          "title": "High Quality",
-          "description": "Just like you, we take great pride in the accuracy and quality of finished materials.",
-          "detail": "Premium products that last and represent your brand well."
-        },
-        {
-          "icon": "users",
-          "title": "Dedicated Service",
-          "description": "Dedicated people ready to provide exceptional service. We'll curate options that fit your budget and brand.",
-          "detail": "Personalized attention from concept to delivery."
-        },
-        {
-          "icon": "clock",
-          "title": "Quick Turnaround",
-          "description": "Tight deadline? No worries. We'll deliver your project quickly and accurately.",
-          "detail": "Rush services available for time-sensitive events."
-        },
-        {
-          "icon": "dollar-sign",
-          "title": "Free Estimates",
-          "description": "Trust our expertise to give you an accurate, cost-effective quote.",
-          "detail": "No hidden fees or surprise costs."
-        }
-      ]
-    },
-    "services": {
-      "section": {
-        "title": "Our Promotional Products",
-        "description": "Wide selection of branded merchandise for every occasion."
-      },
-      "services": [
-        {
-          "icon": "award",
-          "title": "Logo Apparel",
-          "description": "Branded t-shirts, hoodies, caps and more. Quality apparel your team will actually want to wear."
-        },
-        {
-          "icon": "coffee",
-          "title": "Drinkware",
-          "description": "Custom mugs, water bottles, and tumblers. Practical promo that keeps your brand visible."
-        },
-        {
-          "icon": "file-text",
-          "title": "Writing Instruments",
-          "description": "Pens, pencils and markers. Classic promo items that always get used."
-        },
-        {
-          "icon": "package",
-          "title": "Bags & Totes",
-          "description": "Custom bags, backpacks and totes. Mobile advertising that lasts."
-        }
-      ]
-    },
-    "howItWorks": {
-      "section": {
-        "id": "how-it-works",
-        "title": "How It Works",
-        "description": "Three simple steps to your perfect promo order."
-      },
-      "steps": [
-        {
-          "number": "1",
-          "title": "Tell Us What You Need",
-          "description": "Share your goals, budget, and brand requirements. We'll curate a list of top picks for you."
-        },
-        {
-          "number": "2",
-          "title": "We Get to Work",
-          "description": "We'll mock up your logo on the products and provide proofs showing how they'll look in the final print."
-        },
-        {
-          "number": "3",
-          "title": "Project Complete",
-          "description": "Your branded merchandise is ready! Pick up, delivery, or bulk shipping available."
-        }
-      ]
+      "headline": "Benefits of Working with Broadstroke for Promotional Products"
     },
     "comparison": {
       "section": {
-        "title": "Why Choose Broadstroke",
-        "description": "The Broadstroke difference for promotional products."
+        "title": "Broadstroke vs. Standalone Promo Suppliers",
+        "description": ""
       },
-      "columns": {
-        "traditional": "Other Promo Companies",
-        "ourSolution": "Broadstroke"
+      "headline": "Broadstroke vs. Standalone Promo Suppliers"
+    },
+    "services": {
+      "section": {
+        "title": "Promotional Products & Apparel Categories",
+        "description": ""
       },
-      "rows": [
-        {
-          "icon": "star",
-          "feature": "Quality",
-          "ourSolution": "Premium products that last",
-          "traditionalApproach": "Cheap items that break"
-        },
-        {
-          "icon": "users",
-          "feature": "Dedicated Support",
-          "ourSolution": "Personal attention on every project",
-          "traditionalApproach": "Generic catalog service"
-        },
-        {
-          "icon": "clock",
-          "feature": "Turnaround",
-          "ourSolution": "Quick turnaround available",
-          "traditionalApproach": "Weeks of waiting"
-        },
-        {
-          "icon": "dollar-sign",
-          "feature": "Pricing",
-          "ourSolution": "Free estimates, no hidden fees",
-          "traditionalApproach": "Surprise costs"
-        }
-      ]
+      "headline": "Promotional Products & Apparel Categories"
     },
     "faq": {
       "section": {
         "title": "Frequently Asked Questions",
-        "description": "Got questions? We've got answers."
+        "description": ""
       },
-      "faqs": [
-        {
-          "q": "What is the minimum order quantity?",
-          "a": "Minimums vary by product. Some items start at just 12 units, while others require higher quantities. We'll help you find options that work for your needs."
-        },
-        {
-          "q": "How long does production take?",
-          "a": "Production times vary by product and quantity. Standard production is typically 7-14 business days. Rush services are available for urgent orders."
-        },
-        {
-          "q": "Can you help with logo design?",
-          "a": "Yes! Our team can help with logo vectorization and design services to ensure your branding looks great on promotional products."
-        },
-        {
-          "q": "Do you offer samples?",
-          "a": "Yes! We can arrange product samples so you can see and feel the quality before placing a full order."
-        }
-      ]
-    },
-    "trustSignals": {
-      "section": {
-        "title": "Trusted by Wichita Businesses"
-      },
-      "signals": [
-        "70+ Years Combined Experience",
-        "Local Business",
-        "Premium Products"
-      ]
-    },
-    "cta": {
-      "headline": "Ready to Promote Your Brand?",
-      "subhead": "Let's work on something together. No project is too big or too small.",
-      "button": {
-        "text": "Get Started",
-        "href": "https://broadstrokeinc.com/contact/"
-      }
+      "headline": "Frequently Asked Questions"
     },
     "footer": {
-      "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
-      "links": [
-        {
-          "label": "Printing",
-          "href": "https://broadstrokeinc.com/printing/"
-        },
-        {
-          "label": "Mailing",
-          "href": "https://broadstrokeinc.com/mailing/"
-        },
-        {
-          "label": "Promo",
-          "href": "https://www.broadstrokepromos.com/"
-        },
-        {
-          "label": "Contact",
-          "href": "https://broadstrokeinc.com/contact/"
-        }
-      ]
+      "finalCTA": {
+        "headline": "Ready to simplify your promotional products and apparel needs?",
+        "buttonText": "Get Free Estimate",
+        "href": "https://broadstrokeinc.com/contact/?service=promo"
+      },
+      "tagline": "Print. Mail. Promo. One Call."
     }
   },
   "footer": {
-    "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
-    "links": [
-      {
-        "label": "Printing",
-        "href": "https://broadstrokeinc.com/printing/"
-      },
-      {
-        "label": "Mailing",
-        "href": "https://broadstrokeinc.com/mailing/"
-      },
-      {
-        "label": "Promo",
-        "href": "https://www.broadstrokepromos.com/"
-      },
-      {
-        "label": "Contact",
-        "href": "https://broadstrokeinc.com/contact/"
-      }
-    ]
+    "finalCTA": {
+      "headline": "Ready to simplify your promotional products and apparel needs?",
+      "buttonText": "Get Free Estimate",
+      "href": "https://broadstrokeinc.com/contact/?service=promo"
+    },
+    "tagline": "Print. Mail. Promo. One Call."
   }
 }
