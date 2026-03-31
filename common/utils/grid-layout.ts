@@ -1,106 +1,128 @@
 /**
- * Grid Layout Utilities for Various Patterns
+ * Grid Layout Utilities - Aligned with healthcare-billing patterns
  *
- * Provides proper row layouts for:
- * - 3x3 pattern (6 items)
- * - 3-2-2 pattern (7 items)
- * - 3-2 pattern (5 items)
- * - 2x2 pattern (4 items)
+ * Patterns from healthcare-billing:
+ * - Services (5 items): flex flex-wrap justify-center gap-6 with card widths
+ * - Benefits (4 items): grid md:grid-cols-2 gap-6 max-w-4xl mx-auto
+ * - HowItWorks (4 steps): grid md:grid-cols-2 lg:grid-cols-4 gap-6
+ * - Difference (3 items): grid md:grid-cols-2 lg:grid-cols-3 gap-8
+ * - Testimonials (3 items): grid md:grid-cols-3 gap-8
+ * - TrustSignals (4 items): flex flex-wrap items-center justify-center gap-8
  */
 
 /**
- * Get grid column configuration
+ * Get grid column configuration for sections
  * 
- * For centered layouts:
- * - 4 items (2x2): use 2 columns so items naturally fill 2x2
- * - 6 items (3x3): use 3 columns, natural 3x3 grid
- * - 7 items (3-2-2): use 6 columns with each item spanning 2 columns
- *   This allows true centering: 3 items fill row (6 cols), 2 items centered (4 cols)
- * - 5 items (3-2): use 6 columns with each item spanning 2 columns
+ * Layout patterns:
+ * - 3 items: 3 columns (lg), centered
+ * - 4 items: 2 columns (md), can have max-w container
+ * - 5 items: flex-wrap (2 cols sm, 3 lg)
+ * - 6 items: 3 columns (lg), natural 3x3
  */
 export const getGridColumns = (count: number): { small: number; medium: number; large: number } => {
-  if (count === 4) {
-    // 2x2 centered pattern - use 2 columns
-    return { small: 2, medium: 2, large: 2 };
+  if (count === 3) {
+    return { small: 1, medium: 3, large: 3 };
   }
-  if (count === 6) {
-    // 3x3 pattern - use 3 columns, natural placement
+  if (count === 4) {
+    // Benefits pattern: 2 cols on md+
+    return { small: 1, medium: 2, large: 2 };
+  }
+  if (count === 5) {
+    // Services flex pattern: 2 cols sm, 3 cols lg
     return { small: 2, medium: 3, large: 3 };
   }
-  if (count === 7) {
-    // 3-2-2 pattern - use 6 columns with col-span-2 for each item
-    // Row 1: 3 items × 2 cols = 6 cols (full row)
-    // Row 2: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
-    // Row 3: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
-    return { small: 2, medium: 6, large: 6 };
+  if (count === 6) {
+    // 3x3 pattern
+    return { small: 2, medium: 3, large: 3 };
   }
-  // 5 items (3-2): use 6 columns with col-span-2
-  // Row 1: 3 items × 2 cols = 6 cols (full row)
-  // Row 2: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
-  return { small: 2, medium: 6, large: 6 };
+  if (count >= 7) {
+    return { small: 2, medium: 3, large: 4 };
+  }
+  // Default: 1 column
+  return { small: 1, medium: 1, large: 1 };
 };
 
 /**
  * Get the grid column span class for item width
- * Each item spans 2 columns to achieve proper centering in 6-column grid
  */
 export const getColumnSpanClass = (count: number): string => {
-  if (count === 7 || count === 5) {
-    return "md:col-span-2"; // Only apply col-span-2 on medium+ screens
+  if (count === 5) {
+    return "sm:col-span-1"; // Flex handles sizing
   }
   if (count === 4) {
-    return "md:col-span-1"; // Make 4 items narrower in 2x2 grid
+    return "md:col-span-1"; // 2x2 grid
   }
   if (count === 6) {
-    return "md:col-span-1"; // 6 items in 3x3, natural span
+    return "md:col-span-1"; // 3x3 grid
+  }
+  if (count === 7 || count === 8) {
+    return "lg:col-span-1"; // 4 columns
   }
   return "";
 };
 
 /**
- * Get the grid column start class for item positioning
- * Used to center items in rows with fewer than full columns
- * 
- * @param index - 0-based index of the item
- * @param count - total number of items
- */
-export const getColumnClass = (index: number, count: number): string => {
-  if (count === 6) {
-    // 3x3 pattern - natural flow, no special positioning needed
-    return "";
-  }
-  if (count === 7) {
-    // 3-2-2 pattern with 6-column grid + col-span-2
-    // Row 1 (indices 0-2): default auto-placement, fills 6 cols (1-2, 3-4, 5-6)
-    // Row 2 (indices 3-4): 2 items × 2 cols = 4 cols, centered in 6
-    //   - col-start-2: spans cols 2-3 (leaving col 1 empty on left)
-    //   - Next item auto-places to col 4, spans 4-5 (leaving col 6 empty on right)
-    // Row 3 (indices 5-6): 2 items × 2 cols = 4 cols, centered in 6
-    //   - Must start at col 2 again to center (col-start-2)
-    if (index === 3) {
-      return "md:col-start-2";
-    }
-    if (index === 5) {
-      return "md:col-start-2";
-    }
-    // index 4 and 6: auto-placement works correctly after explicit col-start
-  }
-  if (count === 5) {
-    // 3-2 pattern with 6-column grid + col-span-2
-    // Row 1 (indices 0-2): fills 6 cols
-    // Row 2 (indices 3-4): 2 items centered
-    if (index === 3) {
-      return "md:col-start-2";
-    }
-  }
-  return "";
-};
-
-/**
- * Get complete grid layout classes
+ * Get grid layout classes - matches healthcare-billing patterns
  */
 export const getGridLayoutClasses = (count: number): string => {
   const cols = getGridColumns(count);
 
   return `grid grid-cols-${cols.small} md:grid-cols-${cols.medium} lg:grid-cols-${cols.large} gap-6`;
+};
+
+/**
+ * Get flex layout classes for services (matches healthcare-billing ServicesSection)
+ * Returns classes for: max-w-sm, w-full, responsive widths
+ */
+export const getFlexItemClasses = (count: number, _index?: number): string => {
+  if (count === 5) {
+    // 5 items: 2 cols on sm (w-1/2), 3 cols on lg (w-1/3)
+    return "w-1/2 lg:w-1/3";
+  }
+  if (count === 4) {
+    // 4 items: w-1/2
+    return "w-1/2";
+  }
+  if (count === 3) {
+    // 3 items: w-1/3
+    return "w-1/3";
+  }
+  // Default
+  return "w-full max-w-sm";
+};
+
+/**
+ * Get centered container max-width for benefits-like sections
+ */
+export const getCenteredMaxWidth = (count: number): string => {
+  if (count === 4) {
+    // Benefits pattern: max-w-4xl mx-auto
+    return "max-w-4xl mx-auto";
+  }
+  if (count <= 3) {
+    return "max-w-6xl mx-auto";
+  }
+  return "";
+};
+
+/**
+ * Check if section should use flex instead of grid
+ * Used for services with 5 items (healthcare-billing pattern)
+ */
+export const shouldUseFlex = (count: number): boolean => {
+  return count === 5;
+};
+
+/**
+ * Get column start class for centering items (legacy support)
+ */
+export const getColumnClass = (_index: number, _count: number): string => {
+  return "";
+};
+
+/**
+ * Get flex container classes
+ */
+export const getFlexContainerClasses = (): string => {
+  return "flex flex-wrap justify-center gap-6";
 };

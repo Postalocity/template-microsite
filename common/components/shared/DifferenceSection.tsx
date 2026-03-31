@@ -89,9 +89,8 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
   return (
     <section
       id="difference"
-      className="section-padding bg-section-alt"
+      className="section-lg section-alt"
       ref={ref}
-      style={{ backgroundColor: "#333333" }}
     >
       <div className="section-container">
         {/* Section header with sparkle icon */}

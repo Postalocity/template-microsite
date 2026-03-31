@@ -137,25 +137,25 @@
       },
       "benefits": [
         {
-          "icon": "⏰",
+          "icon": "clock",
           "title": "Streamline Patient Statements",
           "detail": "Automated patient statement processing reduces manual data entry errors and accelerates printing by completing statements three times faster than manual processing.",
           "metrics": "Reduce processing 70-80%"
         },
         {
-          "icon": "📊",
+          "icon": "bar-chart",
           "title": "Address Verification",
           "detail": "Streamlined workflows improve address accuracy by validating addresses before printing, ensuring reliable delivery to patients.",
           "metrics": "Improve accuracy 95-98%"
         },
         {
-          "icon": "💬",
+          "icon": "message-circle",
           "title": "Automated Billing Mail Processing",
           "detail": "Automated payment posting and follow-up reduces administrative overhead while improving cash flow by processing billing mail immediately upon receipt.",
           "metrics": "Save significant time"
         },
         {
-          "icon": "🎯",
+          "icon": "target",
           "title": "Free Up Staff for Patient Care",
           "detail": "Intelligent error detection identifies common mailing patterns before processing, reducing rework by 50% and administrative costs by 40%, allowing your team to focus on patient interactions.",
           "metrics": "Reclaim significant time"
@@ -197,32 +197,32 @@
       },
       "services": [
         {
-          "icon": "📋",
+          "icon": "file-text",
           "title": "Patient Statements",
           "description": "Automate patient statement generation and delivery with accurate, reliable processing that ensures timely patient communication."
         },
         {
-          "icon": "📈",
+          "icon": "trending-up",
           "title": "Billing Invoices",
           "description": "Secure billing invoice processing with integrated address verification and tracking for reliable delivery to payers."
         },
         {
-          "icon": "🔍",
+          "icon": "search",
           "title": "Address Verification",
           "description": "Comprehensive address validation identifies undeliverable addresses before printing, ensuring reliable delivery and reducing returned mail."
         },
         {
-          "icon": "💰",
+          "icon": "dollar-sign",
           "title": "Revenue Cycle Notices",
           "description": "Automated revenue cycle notices with processing automation reducing manual entry and accelerating delivery cycles."
         },
         {
-          "icon": "📞",
+          "icon": "phone",
           "title": "Patient Communication",
           "description": "Patient inquiry resolution improving patient satisfaction and payment collection rates through reliable mailing systems."
         },
         {
-          "icon": "🔒",
+          "icon": "lock",
           "title": "Compliance Support",
           "description": "Reliable processing ensuring your operations align with healthcare mailing requirements without disruption."
         }
@@ -294,25 +294,25 @@
           "step": 1,
           "title": "Upload Secure PDF",
           "description": "Upload patient statements and billing documents through our secure portal or integrate with your EMR system.",
-          "icon": "📄"
+          "icon": "file-text"
         },
         {
           "step": 2,
           "title": "Address Verification",
           "description": "Automated address verification validates addresses before printing, ensuring reliable delivery and reducing returned mail.",
-          "icon": "🔍"
+          "icon": "search"
         },
         {
           "step": 3,
           "title": "We Print & Process",
           "description": "Professional printing, folding, and stuffing with 98% accuracy and next-day USPS pickup for faster delivery.",
-          "icon": "🖨️"
+          "icon": "file-text"
         },
         {
           "step": 4,
           "title": "USPS Delivery",
           "description": "Reliable USPS delivery with Certified Mail and tracking options for patient statements and revenue-cycle notices.",
-          "icon": "📦"
+          "icon": "package"
         }
       ]
     },

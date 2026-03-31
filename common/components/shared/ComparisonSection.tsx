@@ -1,11 +1,14 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ComparisonContent } from "../../types/content";
-import { getIcon } from "../../utils/icons";
 
 interface ComparisonSectionProps {
   comparison: ComparisonContent;
 }
+
+// Steady, purposeful easing
+const easeOutExpo = [0.16, 1, 0.3, 1];
+const easeOutQuart = [0.25, 1, 0.5, 1];
 
 const ComparisonSection = ({ comparison }: ComparisonSectionProps) => {
   const ref = useRef(null);
@@ -14,68 +17,130 @@ const ComparisonSection = ({ comparison }: ComparisonSectionProps) => {
   return (
     <section
       id="comparison"
-      className="section-padding bg-background"
+      className="section-lg section-alt"
       ref={ref}
     >
       <div className="section-container">
+        {/* Section header - rustic, left-aligned */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          transition={{ duration: 0.5, ease: easeOutExpo }}
+          className="max-w-2xl mb-14"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+          <p 
+            className="text-sm font-bold uppercase-tracked mb-3"
+            style={{ color: 'hsl(var(--accent))' }}
+          >
+            The Difference
+          </p>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl mb-4 text-foreground">
             {comparison.section.title}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="font-body text-lg text-muted-foreground leading-relaxed">
             {comparison.section.description}
           </p>
         </motion.div>
 
-        <div className="overflow-x-auto max-w-4xl mx-auto">
-          <table className="w-full border-collapse bg-card rounded-xl overflow-hidden shadow-card border-2 border-border">
+        {/* Comparison table - rustic, no rounded corners, no decorative icons */}
+        <div className="overflow-x-auto">
+          <motion.table 
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1, ease: easeOutQuart }}
+            className="w-full border-collapse rustic-table"
+          >
             <thead>
-              <tr className="bg-muted/50">
-                <th className="text-left p-4 font-semibold text-foreground border-b-2 border-r border-border">
+              <tr>
+                <th 
+                  className="text-left font-bold uppercase-tracked text-sm p-5 border-b-2 border-r"
+                  style={{ 
+                    background: 'hsl(var(--muted) / 0.3)',
+                    borderColor: 'hsl(var(--border))',
+                    width: '40%'
+                  }}
+                >
                   Feature
                 </th>
-                <th className="text-center p-4 font-semibold text-destructive border-b-2 border-r border-border w-1/3">
+                <th 
+                  className="text-center font-bold uppercase-tracked text-sm p-5 border-b-2 border-r"
+                  style={{ 
+                    background: 'hsl(var(--muted) / 0.3)',
+                    borderColor: 'hsl(var(--border))',
+                    color: 'hsl(var(--muted-foreground))',
+                    width: '30%'
+                  }}
+                >
                   {comparison.columns.traditional}
                 </th>
-                <th className="text-center p-4 font-semibold text-primary border-b-2 w-1/3">
+                <th 
+                  className="text-center font-bold uppercase-tracked text-sm p-5 border-b-2"
+                  style={{ 
+                    background: 'hsl(var(--accent) / 0.1)',
+                    borderColor: 'hsl(var(--border))',
+                    color: 'hsl(var(--accent))',
+                    width: '30%'
+                  }}
+                >
                   {comparison.columns.ourSolution}
                 </th>
               </tr>
             </thead>
             <tbody>
-              {comparison.rows.map((row, i) => {
-                const Icon = getIcon(row.icon);
-                return (
-                  <motion.tr
-                    key={row.feature}
-                    initial={{ opacity: 0 }}
-                    animate={inView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.3, delay: i * 0.05 }}
-                    className="border-b border-border last:border-0 hover:bg-muted/30"
+              {comparison.rows.map((row, i) => (
+                <motion.tr
+                  key={row.feature}
+                  initial={{ opacity: 0 }}
+                  animate={inView ? { opacity: 1 } : {}}
+                  transition={{ duration: 0.3, delay: 0.15 + i * 0.05, ease: easeOutQuart }}
+                  className="border-b"
+                  style={{ borderColor: 'hsl(var(--border))' }}
+                >
+                  {/* Feature - simple text, no decorative icon */}
+                  <td 
+                    className="p-5 border-r font-bold"
+                    style={{ borderColor: 'hsl(var(--border))' }}
                   >
-                    <td className="p-4 border-r border-border">
-                      <div className="flex items-center gap-3">
-                        <Icon className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="font-medium text-foreground">{row.feature}</span>
-                      </div>
-                    </td>
-                    <td className="p-4 text-center border-r border-border text-muted-foreground">
-                      {row.traditionalApproach}
-                    </td>
-                    <td className="p-4 text-center font-semibold text-primary">
-                      {row.ourSolution}
-                    </td>
-                  </motion.tr>
-                );
-              })}
+                    {row.feature}
+                  </td>
+                  
+                  {/* Traditional - muted */}
+                  <td 
+                    className="p-5 text-center border-r font-body"
+                    style={{ 
+                      borderColor: 'hsl(var(--border))',
+                      color: 'hsl(var(--muted-foreground))'
+                    }}
+                  >
+                    {row.traditionalApproach}
+                  </td>
+                  
+                  {/* Our Solution - highlighted */}
+                  <td 
+                    className="p-5 text-center font-bold font-body"
+                    style={{ 
+                      color: 'hsl(var(--foreground))',
+                      background: 'hsl(var(--accent) / 0.03)'
+                    }}
+                  >
+                    {row.ourSolution}
+                  </td>
+                </motion.tr>
+              ))}
             </tbody>
-          </table>
+          </motion.table>
         </div>
+
+        {/* Bottom note - simple, direct */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.6, duration: 0.4 }}
+          className="mt-8 text-center font-body text-sm"
+          style={{ color: 'hsl(var(--muted-foreground))' }}
+        >
+          Synthetic formulation means consistent performance without the variability of natural products.
+        </motion.p>
       </div>
     </section>
   );

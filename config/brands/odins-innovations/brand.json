@@ -1,0 +1,84 @@
+{
+  "id": "odins-innovations",
+  "name": "Odin's Innovations",
+  "slug": "odins-innovations",
+  "domain": "odinsinnovations.com",
+  "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+  "googleAnalyticsId": "G-XXXXXXXXXX",
+  "urls": {
+    "app": "https://www.odinsinnovations.com",
+    "website": "https://www.odinsinnovations.com",
+    "blog": "https://www.odinsinnovations.com/blog",
+    "shop": "https://www.odinsinnovations.com/collections/scent-beads",
+    "contact": "https://www.odinsinnovations.com/pages/contact"
+  },
+  "logo": {
+    "filename": "odins-logo.png",
+    "alt": "Odin's Innovations - Synthetic Scent Beads"
+  },
+  "colors": {
+    "primary": { "h": 30, "s": 80, "l": 35 },
+    "accent": { "h": 45, "s": 100, "l": 50 }
+  },
+  "howItWorks": {
+    "section": {
+      "id": "how-it-works",
+      "title": "How It Works",
+      "description": "Simple deployment for extended results"
+    },
+    "steps": [
+      {
+        "number": "1",
+        "title": "Deploy the Beads",
+        "description": "Place a small amount of beads in mock scrapes, on drag lines, or around stands."
+      },
+      {
+        "number": "2",
+        "title": "Natural Release",
+        "description": "The biodegradable polymer matrix releases lab-formulated attractants steadily for 30+ days."
+      },
+      {
+        "number": "3",
+        "title": "Weatherproof Performance",
+        "description": "The formula resists washing away in rain and maintains effectiveness through temperature changes."
+      },
+      {
+        "number": "4",
+        "title": "Consistent Results",
+        "description": "Lab-consistent results with no spoilage or freezing. Effective for deer, hogs, bears, and elk."
+      }
+    ]
+  },
+  "difference": {
+    "section": {
+      "title": "The Odin's Difference",
+      "description": "Synthetic scent beads engineered for performance where traditional lures fall short"
+    },
+    "differences": [
+      {
+        "icon": "shield",
+        "title": "Legal in All 50 States",
+        "description": "100% synthetic formula — not subject to natural urine or CWD restrictions."
+      },
+      {
+        "icon": "clock",
+        "title": "30+ Days of Attraction",
+        "description": "Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."
+      },
+      {
+        "icon": "leaf",
+        "title": "Biodegradable & Safe",
+        "description": "Polymer matrix breaks down naturally. No environmental residue or contamination."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "links": [
+      { "label": "Shop", "href": "https://www.odinsinnovations.com/collections/scent-beads" },
+      { "label": "About", "href": "https://www.odinsinnovations.com/pages/about" },
+      { "label": "Contact", "href": "https://www.odinsinnovations.com/pages/contact" },
+      { "label": "FAQ", "href": "https://www.odinsinnovations.com/pages/faq" }
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "version": "Broadstroke Microsite Config — [Service Line Name]",
+  "instructions": {
+    "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
+    "promoCodes": {
+      "postalocity": "bank2026",
+      "printing": "print2026",
+      "mailing": "mail2026",
+      "promo": "promo2026",
+      "large-format": "lf2026"
+    }
+  },
+  "site": {
+    "id": "[slug]",
+    "name": "[Service Line Name] — Broadstroke, Inc.",
+    "slug": "[slug]",
+    "domain": "broadstrokeinc.com",
+    "basename": "/[slug]",
+    "contact": { 
+      "email": "orders@broadstrokeinc.com", 
+      "phone": "316-262-3333", 
+      "address": "820 W 2nd St N, Wichita KS 67203" 
+    }
+  },
+  "branding": { 
+    "tagline": "Print. Mail. Promo. One Call.", 
+    "logo": "/logo.png" 
+  },
+  "theme": { "primary": { "h": 200, "s": 80, "l": 30 } },
+  "seo": {
+    "title": "[Service Line Name] — Broadstroke, Inc.",
+    "description": "[One-sentence description of the service line and its value proposition]",
+    "keywords": [
+      "[primary keyword]",
+      "[secondary keyword]",
+      "[tertiary keyword]",
+      "[additional keyword]"
+    ],
+    "ogTitle": "[Service Line Name] — Broadstroke, Inc.",
+    "ogDescription": "Print. Mail. Promo. One Call.",
+    "ogImage": "/[slug]/images/og-image.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://broadstrokeinc.com/[slug]"
+  },
+  "navigation": {
+    "links": [
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "cta": { "text": "Get Free Estimate", "href": "https://broadstrokeinc.com/contact/?service=[slug]" }
+  },
+  "content": {
+    "hero": {
+      "headline": { 
+        "main": "[Main Headline]", 
+        "highlightTerm": "[Highlighted term or phrase]", 
+        "alt": "[Descriptive alt text for hero image]" 
+      },
+      "subhead": "[Subheadline - 1-2 sentences describing the service]",
+      "background": { 
+        "image": "/[slug]/images/[slug]-hero.jpg", 
+        "overlay": true 
+      },
+      "ctas": [
+        { "text": "Request Free Estimate", "href": "https://broadstrokeinc.com/contact/?service=[slug]", "variant": "primary" },
+        { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
+      ]
+    },
+    "howItWorks": {
+      "section": {
+        "id": "how-it-works",
+        "title": "How It Works",
+        "description": "Broadstroke makes [service line] straightforward through a proven process."
+      },
+      "steps": [
+        {
+          "number": "1",
+          "title": "[Step 1 Title, e.g., 'Reach Out']",
+          "description": "[Step 1 description from website or general process]"
+        },
+        {
+          "number": "2",
+          "title": "[Step 2 Title, e.g., 'Let's Collaborate']",
+          "description": "[Step 2 description]"
+        },
+        {
+          "number": "3",
+          "title": "[Step 3 Title, e.g., 'Choose Your Merch']",
+          "description": "[Step 3 description]"
+        },
+        {
+          "number": "4",
+          "title": "[Step 4 Title, e.g., 'We Make It Happen']",
+          "description": "[Step 4 description]"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "[Short value proposition headline]",
+        "description": "[Section description - 1-2 sentences]"
+      },
+      "benefits": [
+        {
+          "icon": "[clock|shield|users|truck|package|file-check]",
+          "title": "[Benefit Title]",
+          "description": "[Benefit description - 1-2 sentences]",
+          "detail": "[Optional detail or metric]"
+        }
+        // Include 3-4 benefits
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Wichita Businesses Choose Broadstroke for [Service Line]",
+        "description": "See the difference professional concierge service makes."
+      },
+      "columns": {
+        "traditional": "[Competitor Type, e.g., 'Standalone Suppliers']",
+        "ourSolution": "Broadstroke"
+      },
+      "rows": [
+        {
+          "icon": "[users|package|truck|clock|file-check|shield]",
+          "feature": "[Feature Name]",
+          "ourSolution": "[What Broadstroke offers]",
+          "traditionalApproach": "[What competitors typically do]"
+        }
+        // Include 3-4 comparison rows
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "[Service Line] Categories — Wichita KS",
+        "description": "[Section description]"
+      },
+      "services": [
+        {
+          "icon": "[icon-name]",
+          "title": "[Service Title]",
+          "description": "[Service description - 1-2 sentences]"
+        }
+        // Include 4-6 services
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "[Service Line] FAQ",
+        "description": ""
+      },
+      "faqs": [
+        {
+          "q": "[Common question]",
+          "a": "[Detailed answer]"
+        }
+        // Include 4-6 FAQs
+      ]
+    },
+    "footer": {
+      "finalCTA": { 
+        "headline": "[Call to action headline]", 
+        "buttonText": "Get Free Estimate", 
+        "href": "https://broadstrokeinc.com/contact/?service=[slug]" 
+      },
+      "tagline": "Print. Mail. Promo. One Call."
+    }
+  },
+  "notes": {
+    "staticSections": "These are auto-generated from brand: difference, trustSignals. Include howItWorks in content.",
+    "ctaText": "Always use 'Get Free Estimate' for header/footer CTAs",
+    "servicesLayout": "Services use flexbox with justify-center. Best counts: 3, 4, 6, 9 items per row. 5 items = 3+2 centered, 7 items = 3+2+2 centered.",
+    "docs": "See docs/COMPONENT_PATTERNS.md for layout patterns"
+  }
+}

@@ -12,6 +12,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { exec } from 'child_process';
 import { loadEngineContext, loadSiteConfig, listBrands, listServices } from '../engine/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -231,7 +232,7 @@ function expandShorthandContent(content: Record<string, unknown>): Record<string
 }
 
 // Copy favicons and logos from common/assets to all sites
-function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
+async function copyFavicons(siteDir: string, brandId: string = 'postalocity', brandLogoFilename?: string, brandContext?: BrandContext): Promise<void> {
   const publicDir = path.join(siteDir, 'public');
   
   // Create public dir if it doesn't exist
@@ -252,21 +253,127 @@ function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
   // Copy logo files (light and dark variants)
   const brandLogoDir = path.join(TEMPLATE_DIR, 'common/assets', brandId);
   
-  // Copy light logo (logo.png)
-  const lightLogoSource = path.join(brandLogoDir, 'logo.png');
+  // Determine logo filename - use brand config filename or default to logo.png
+  const logoFilename = brandLogoFilename || 'logo.png';
+  const darkLogoFilename = 'logo-dark.png';
+  
+  // Copy light logo (use brand-specific filename or default logo.png)
+  const lightLogoSource = path.join(brandLogoDir, logoFilename);
+  const defaultLightLogo = path.join(brandLogoDir, 'logo.png');
+  const lightLogoDest = path.join(publicDir, 'logo.png');
+  
+  let logoCopied = false;
+  
   if (fs.existsSync(lightLogoSource)) {
-    fs.copyFileSync(lightLogoSource, path.join(publicDir, 'logo.png'));
+    fs.copyFileSync(lightLogoSource, lightLogoDest);
+    console.log(`✓ Copied ${logoFilename} to logo.png`);
+    logoCopied = true;
+  } else if (fs.existsSync(defaultLightLogo)) {
+    fs.copyFileSync(defaultLightLogo, lightLogoDest);
+    console.log(`✓ Copied logo.png`);
+    logoCopied = true;
+  }
+  
+  // If logo not found locally and we have brand context, try to fetch it
+  if (!logoCopied && brandContext) {
+    console.log(`⚠ Logo not found locally for ${brandId}, attempting to download...`);
+    const fetchedLogo = await fetchBrandLogo(brandId, brandContext);
+    if (fetchedLogo && fs.existsSync(fetchedLogo)) {
+      fs.copyFileSync(fetchedLogo, lightLogoDest);
+      console.log(`✓ Downloaded and copied logo from ${fetchedLogo}`);
+      logoCopied = true;
+    }
+  }
+  
+  // Final fallback to postalocity logo if nothing else worked
+  if (!logoCopied) {
+    const fallbackLogo = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
+    if (fs.existsSync(fallbackLogo)) {
+      fs.copyFileSync(fallbackLogo, lightLogoDest);
+      console.log(`⚠ Using fallback postalocity-logo.png`);
+    }
   }
   
   // Copy dark logo (logo-dark.png)
-  const darkLogoSource = path.join(brandLogoDir, 'logo-dark.png');
+  const darkLogoSource = path.join(brandLogoDir, darkLogoFilename);
   if (fs.existsSync(darkLogoSource)) {
     fs.copyFileSync(darkLogoSource, path.join(publicDir, 'logo-dark.png'));
+    console.log(`✓ Copied logo-dark.png`);
   }
 }
 
+/**
+ * Download a logo from a URL and save it locally
+ * Returns true if successful, false otherwise
+ */
+async function downloadLogo(url: string, destPath: string): Promise<boolean> {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.log(`⚠ Failed to download logo from ${url}: ${response.status} ${response.statusText}`);
+      return false;
+    }
+    
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    fs.writeFileSync(destPath, buffer);
+    console.log(`✓ Downloaded logo from ${url}`);
+    return true;
+  } catch (error) {
+    console.log(`⚠ Error downloading logo from ${url}: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    return false;
+  }
+}
+
+/**
+ * Try to fetch brand logo from common website locations
+ * Saves to brand assets directory if found
+ */
+async function fetchBrandLogo(brandId: string, brandContext?: BrandContext): Promise<string | null> {
+  if (!brandContext?.brand?.urls?.website) {
+    return null;
+  }
+  
+  const brandLogoDir = path.join(TEMPLATE_DIR, 'common/assets', brandId);
+  
+  // Create brand assets directory if it doesn't exist
+  if (!fs.existsSync(brandLogoDir)) {
+    fs.mkdirSync(brandLogoDir, { recursive: true });
+  }
+  
+  const websiteUrl = brandContext.brand.urls.website;
+  const logoFilename = brandContext.brand.logo?.filename || 'logo.png';
+  const logoPath = path.join(brandLogoDir, logoFilename);
+  
+  // If logo already exists locally, return it
+  if (fs.existsSync(logoPath)) {
+    return logoPath;
+  }
+  
+  // Common logo paths to try
+  const logoUrls = [
+    `${websiteUrl}/logo.png`,
+    `${websiteUrl}/assets/logo.png`,
+    `${websiteUrl}/images/logo.png`,
+    `${websiteUrl}/img/logo.png`,
+    `${websiteUrl}/static/logo.png`,
+    `${websiteUrl}/cdn/shop/files/logo.png`, // Shopify pattern
+    `${websiteUrl}/assets/odins-logo.png`,
+    `${websiteUrl}/images/odins-logo.png`,
+  ];
+  
+  // Try to download from each URL
+  for (const url of logoUrls) {
+    if (await downloadLogo(url, logoPath)) {
+      return logoPath;
+    }
+  }
+  
+  return null;
+}
+
 // Generate Open Graph images from hero banner
-async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string = 'postalocity'): Promise<void> {
+async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string = 'postalocity', brandLogoFilename?: string): Promise<void> {
   const { exec } = await import('child_process');
   const publicDir = path.join(siteDir, 'public');
 
@@ -278,26 +385,31 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
   const ogImageDest = path.join(publicDir, 'og-image.png');
   const logoDest = path.join(publicDir, 'logo.png');
   
-  // Determine logo source - use brand-specific logo if available, fallback to postalocity
-  const brandLogoPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'logo.png');
-  const fallbackLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
-  const commonLogoPath = fs.existsSync(brandLogoPath) ? brandLogoPath : fallbackLogoPath;
+  // Check if logo already exists (may have been copied by copyFavicons)
+  if (!fs.existsSync(logoDest)) {
+    // Determine logo source - use brand-specific logo if available, fallback to default
+    const logoFilename = brandLogoFilename || 'logo.png';
+    const brandLogoPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, logoFilename);
+    const brandLogoDefaultPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'logo.png');
+    const fallbackLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
+    
+    // Try brand-specific filename first, then logo.png, then fallback
+    let commonLogoPath: string;
+    if (fs.existsSync(brandLogoPath)) {
+      commonLogoPath = brandLogoPath;
+    } else if (fs.existsSync(brandLogoDefaultPath)) {
+      commonLogoPath = brandLogoDefaultPath;
+    } else {
+      commonLogoPath = fallbackLogoPath;
+    }
 
-  // Check if sips is available (macOS)
-  const sipsCheck = await new Promise<{ stdout: string, stderr: string }>((resolve) => {
-    exec('which sips', (error, stdout, stderr) => {
-      if (error) {
-        resolve({ stdout: '', stderr: String(error) });
-      } else {
-        resolve({ stdout, stderr });
-      }
-    });
-  });
-
-  // Copy logo from common assets (no resizing - each brand maintains its original dimensions)
-  if (fs.existsSync(commonLogoPath)) {
-    fs.copyFileSync(commonLogoPath, logoDest);
-    console.log('✓ Copied logo image from common assets');
+    // Copy logo from common assets (no resizing - each brand maintains its original dimensions)
+    if (fs.existsSync(commonLogoPath)) {
+      fs.copyFileSync(commonLogoPath, logoDest);
+      console.log(`✓ Copied logo image from ${commonLogoPath}`);
+    }
+  } else {
+    console.log('✓ Using existing logo from public folder');
   }
 
   // Get hero image path from config with fallback locations
@@ -338,25 +450,31 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
     }
   }
 
-  if (!heroSourcePath) {
-    console.log(`⚠ No hero image source found for ${siteSlug} - generating fallback OG image`);
-    await generateFallbackOgImage(ogImageDest, config);
-    return;
-  }
-
   // Copy hero image to generated site's public/images folder
   const heroImagesDir = path.join(publicDir, 'images');
   if (!fs.existsSync(heroImagesDir)) {
     fs.mkdirSync(heroImagesDir, { recursive: true });
   }
-  // Use source path for copy, but keep config's filename for the destination
+  
   const heroImageFilename = path.basename(heroImagePath);
   const heroImagePathInSite = path.join(heroImagesDir, heroImageFilename);
-  fs.copyFileSync(heroSourcePath, heroImagePathInSite);
-  console.log(`✓ Copied hero image to: ${heroImagePathInSite}`);
 
-  // Use the source path for OG image generation
-  let heroFullPath = heroSourcePath;
+  // Check if image already exists in public folder (e.g., manually downloaded from Unsplash)
+  const existingImage = path.join(publicDir, 'images', heroImageFilename);
+  if (fs.existsSync(existingImage)) {
+    console.log(`✓ Using existing hero image from public folder: ${existingImage}`);
+  } else if (heroSourcePath) {
+    // Use source path for copy if found and no existing image
+    fs.copyFileSync(heroSourcePath, heroImagePathInSite);
+    console.log(`✓ Copied hero image from: ${heroSourcePath} to: ${heroImagePathInSite}`);
+  } else {
+    console.log(`⚠ No hero image source found for ${siteSlug} - generating fallback OG image`);
+    await generateFallbackOgImage(ogImageDest, config);
+    return;
+  }
+
+  // Use the copied image path for OG image generation
+  let heroFullPath = heroImagePathInSite;
 
   if (!heroFullPath) {
     return;
@@ -396,8 +514,11 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
     return;
   }
 
+  // Check if we're on macOS and sips is available
+  const isMacOS = process.platform === 'darwin';
+
   // If sips is available, resize hero image
-  if (heroFullPath && sipsCheck.stdout) {
+  if (heroFullPath && isMacOS) {
     // Resize hero to 1200x630 for Open Graph
     await new Promise<void>((resolve) => {
       exec(`sips -z 630 1200 "${heroFullPath}" --out "${ogImageDest}"`, (error) => {
@@ -452,12 +573,16 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
   }
 }
 
-async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext, brandId?: string) {
+async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext, brandId?: string, isUpdate: boolean = false) {
   try {
     const { site } = config;
 
-    console.log(`Generating site: ${site.name}`);
+    console.log(`${isUpdate ? 'Updating' : 'Generating'} site: ${site.name}`);
     console.log(`Output directory: ${siteDir}`);
+    
+    if (isUpdate) {
+      console.log('📝 Update mode: preserving node_modules and dist directories');
+    }
 
     // Create site directory
     if (!fs.existsSync(siteDir)) {
@@ -505,10 +630,11 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
 
     // Copy common assets (favicon, etc.)
-    copyFavicons(siteDir, brandId || 'postalocity');
+    const brandLogoFilename = brandContext?.brand?.logo?.filename;
+    await copyFavicons(siteDir, brandId || 'postalocity', brandLogoFilename, brandContext);
 
     // Generate Open Graph images from hero banner (SEO optimization)
-    await generateOgImages(siteDir, config, brandId || 'postalocity');
+    await generateOgImages(siteDir, config, brandId || 'postalocity', brandLogoFilename);
 
     // Post-processing with StringRay agents (if --post-process flag)
     const postProcessFlag = process.argv.includes('--post-process');
@@ -604,6 +730,9 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext): str
   const contact = brandContext?.contact || fallbackContact;
   const social = brandContext?.social || fallbackSocial;
   
+  // Check if brand has testimonials configured (type-safe access)
+  const hasTestimonials = !!(brandContext?.brand && 'testimonials' in brandContext.brand && Array.isArray((brandContext.brand as any).testimonials) && (brandContext.brand as any).testimonials.length > 0);
+  
   return `/**
  * ${site.name} - Generated from template-microsite
  * Generated at: ${new Date().toISOString()}
@@ -611,7 +740,7 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext): str
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection${hasTestimonials ? ', TestimonialsSection' : ''} } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -625,13 +754,16 @@ const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
 
-// IKB configuration with promo codes
+// IKB configuration
 const ikbConfig = {
   rules: {
     trustSignals: [
-      'NCOA Verified 2024',
-      'CASS Certified 2024',
-      'ISO 9001 Documented Processes 2023',
+      'Made in the USA',
+      '50 State Legal',
+      'Field Tested',
+      '30+ Day Scent',
+      'Weatherproof',
+      'Biodegradable',
     ],
     promoCodes: {
       'credit-repair': 'cr2026',
@@ -640,38 +772,25 @@ const ikbConfig = {
       'healthcare-mailing-services': 'hm2026',
       'postcard': 'pc2026',
       'self-storage': 'pm2026',
+      '${site.slug}': 'HUNT2026',
     },
-    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
-    blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
+    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing', 'testimonials'],
+    blocklistedContent: ['video', 'live-chat', 'team', 'experts', 'award', 'awards'],
     blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
   },
   pricing: {
-    basePrice: 1.31,
+    basePrice: 17.95,
     currency: 'USD',
-    units: 'letter',
-    addOns: {
-      'certified-mail': 4.50,
-      'return-receipt': 3.35,
-      'ncoa-verification': 0.05,
-      'address-verification': 0.02,
-    },
+    units: 'bottle',
+    addOns: {},
   },
   proofOptions: {
-    standard: [{ id: 'usps-photo', name: 'USPS Photo', description: 'Photo of mailpiece delivered by carrier', tier: 'included' }],
-    upgrades: [
-      { id: 'certified-mail', name: 'Certified Mail', description: 'Track and confirm delivery with signature', tier: 'optional', additionalCost: 4.15 },
-      { id: 'electronic-return-receipt', name: 'Electronic Return Receipt', description: 'Digital signature confirmation via email', tier: 'optional', additionalCost: 3.50 },
-    ],
+    standard: [],
+    upgrades: [],
   },
   terminology: {
-    mailClasses: {
-      'first-class': { name: 'First-Class Mail', description: 'Standard USPS mail service', hasTracking: true, hasCertificate: false, allowsPersonalData: true, useCases: ['letters', 'invoices'] },
-      'marketing-mail': { name: 'Marketing Mail', description: 'Cost-effective bulk mailing', hasTracking: false, hasCertificate: false, allowsPersonalData: true, useCases: ['promotional'] },
-    },
-    certifications: {
-      'ncov': { name: 'NCOA', fullName: 'National Change of Address', description: 'Address verification service' },
-      'cass': { name: 'CASS', fullName: 'Coding Accuracy Support System', description: 'USPS-certified address standardization' },
-    },
+    mailClasses: {},
+    certifications: {},
   },
 };
 
@@ -693,11 +812,10 @@ function App() {
         <HeroSection hero={content.hero} />
         <BenefitsSection benefits={content.benefits} />
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        {content.comparison && <ComparisonTable comparison={content.comparison} />}
         <ServicesSection services={content.services} />
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
-        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
-        <TestimonialsSection />
+        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}${hasTestimonials ? '\n        <TestimonialsSection />' : ''}
         <FAQSection faq={content.faq} />
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
@@ -707,7 +825,9 @@ function App() {
 }
 
 // Initialize React
-const root = createRoot(document.getElementById('root'));
+const rootElement = document.getElementById('root');
+if (!rootElement) throw new Error('Failed to find root element');
+const root = createRoot(rootElement);
 root.render(<App />);
 `;
 }
@@ -764,7 +884,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Source Sans 3", "system-ui", "sans-serif"],
+        display: ["Oswald", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -1026,7 +1147,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=${config.seo?.googleAnalyticsId || 'G-XXXXXXXXXX'}"></script>
@@ -1128,16 +1249,16 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
         },
         {
           "@type": "Product",
-          "name": "Automated Mailing Service",
-          "description": "Upload PDFs or connect via API to automate mailing. Starting at $1.31/letter. Single-sided, B&W envelope, postage included.",
+          "name": "${site.name.replace(/"/g, '\\"')}",
+          "description": "${(config.seo?.description || site.name).replace(/"/g, '\\"')}",
           "image": "${canonicalUrl}/og-image.png",
           "brand": {
             "@type": "Brand",
-            "name": "Postalocity"
+            "name": "${brandName.replace(/"/g, '\\"')}"
           },
           "offers": {
             "@type": "Offer",
-            "price": "1.31",
+            "price": "17.95",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
             "url": "${canonicalUrl}",
@@ -1227,6 +1348,7 @@ interface CliOptions {
   brand?: string;
   service?: string;
   config?: string;
+  update?: boolean;
 }
 
 function parseArgs(args: string[]): CliOptions {
@@ -1240,6 +1362,8 @@ function parseArgs(args: string[]): CliOptions {
       options.brand = args[++i];
     } else if (arg === '--service' || arg === '-s') {
       options.service = args[++i];
+    } else if (arg === '--update' || arg === '-u') {
+      options.update = true;
     } else if (arg === '--help' || arg === '-h') {
       options.config = 'help';
     } else if (!arg.startsWith('-')) {
@@ -1258,10 +1382,14 @@ function parseArgs(args: string[]): CliOptions {
   return options;
 }
 
-async function generateSiteMultiBrand(brandId: string, serviceId: string): Promise<void> {
-  console.log(`\n🚀 Generating microsite`);
+async function generateSiteMultiBrand(brandId: string, serviceId: string, isUpdate: boolean = false): Promise<void> {
+  console.log(`\n🚀 ${isUpdate ? 'Updating' : 'Generating'} microsite`);
   console.log(`   Brand: ${brandId}`);
   console.log(`   Service: ${serviceId}`);
+  
+  if (isUpdate) {
+    console.log('   Mode: UPDATE (preserving node_modules and dist)');
+  }
   
   // Load engine context (brand config, IKB, contact, social)
   const ctx = loadEngineContext(brandId);
@@ -1349,7 +1477,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   }
   
   // Generate the site using legacy function with brand context
-  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext, brandId);
+  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext, brandId, isUpdate);
   
   console.log(`\n✅ ${ctx.brand.name} - ${serviceId} generated successfully!`);
   
@@ -1379,11 +1507,15 @@ USAGE:
 OPTIONS:
   --brand, -b <id>     Brand ID (e.g., postalocity, promo, techsp)
   --service, -s <id>   Service ID (e.g., credit-repair, marketing)
+  --update, -u         Update existing site (preserves node_modules and dist)
   --help, -h          Show this help message
 
 EXAMPLES:
   # New format (recommended)
   npx ts-node scripts/generate-site.ts --brand postalocity --service credit-repair
+  
+  # Update existing site (preserves node_modules and dist)
+  npx ts-node scripts/generate-site.ts --brand postalocity --service credit-repair --update
   
   # Legacy format (backward compatible)
   npx ts-node scripts/generate-site.ts postalocity/credit-repair
@@ -1408,7 +1540,7 @@ if (options.config === 'help' || args.includes('--help') || args.includes('-h'))
 // Validate and run
 if (options.brand && options.service) {
   // New format: --brand X --service Y
-  await generateSiteMultiBrand(options.brand, options.service);
+  await generateSiteMultiBrand(options.brand, options.service, options.update);
 } else if (options.config) {
   // Legacy format: single config name (assumes postalocity)
   const configName = options.config;
@@ -1427,7 +1559,7 @@ if (options.brand && options.service) {
   const config = JSON.parse(configContent) as SiteConfig;
   const legacySiteDir = path.join(SITES_DIR, config.site.slug);
   
-  await generateSite(legacySiteDir, config);
+  await generateSite(legacySiteDir, config, undefined, undefined, options.update);
 } else {
   console.error('Error: Missing required arguments');
   console.error('');

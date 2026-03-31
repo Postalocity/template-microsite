@@ -65,7 +65,8 @@ export interface SiteConfig {
 export interface Benefit {
   icon: string;
   title: string;
-  detail: string;
+  description?: string;
+  detail?: string;
   metrics?: string;
 }
 

@@ -124,23 +124,24 @@ const rules = {
       //     return { valid: true };
       //   }
       // },
-      {
-        name: 'ALL_ROWS_HAVE_ICON',
-        validate: (rows) => {
-          // Skip if no rows
-          if (!rows || rows.length === 0) return { valid: true };
-          const issues = [];
-          rows?.forEach((row, i) => {
-            if (!row.icon) {
-              issues.push(`Row ${i + 1} "${row.feature}" is missing icon`);
-            }
-          });
-          if (issues.length > 0) {
-            return { valid: false, message: issues.join('; ') };
-          }
-          return { valid: true };
-        }
-      }
+      // DISABLED: Icons are now optional for rustic design aesthetic
+      // {
+      //   name: 'ALL_ROWS_HAVE_ICON',
+      //   validate: (rows) => {
+      //     // Skip if no rows
+      //     if (!rows || rows.length === 0) return { valid: true };
+      //     const issues = [];
+      //     rows?.forEach((row, i) => {
+      //       if (!row.icon) {
+      //         issues.push(`Row ${i + 1} "${row.feature}" is missing icon`);
+      //       }
+      //     });
+      //     if (issues.length > 0) {
+      //       return { valid: false, message: issues.join('; ') };
+      //     }
+      //     return { valid: true };
+      //   }
+      // }
     ]
   },
 

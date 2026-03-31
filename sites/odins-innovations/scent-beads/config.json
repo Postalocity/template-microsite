@@ -1,0 +1,269 @@
+{
+  "site": {
+    "id": "odins-innovations",
+    "name": "Odin's Innovations Synthetic Scent Beads",
+    "slug": "scent-beads",
+    "domain": "odinsinnovations.com",
+    "basename": "odins-innovations-scent-beads",
+    "contact": {
+      "email": "paul@odinsinnovations.com",
+      "phone": "316-393-0440",
+      "address": ", ,  "
+    }
+  },
+  "branding": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "logo": "logo.png"
+  },
+  "seo": {
+    "title": "Odin's Innovations — Synthetic Scent Beads That Last 30+ Days",
+    "description": "100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA. Weatherproof performance for deer, hogs, bears & elk.",
+    "keywords": [
+      "synthetic scent beads",
+      "doe estrus scent beads",
+      "long lasting scent beads",
+      "scent beads deer attractant"
+    ],
+    "ogTitle": "Odin's Innovations Scent Beads — 30+ Days Attraction",
+    "ogDescription": "Consistent, weatherproof synthetic attractants engineered for 30+ days of release. Legal everywhere.",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://www.odinsinnovations.com/scent-beads",
+    "googleAnalyticsId": "G-XXXXXXXXXX"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Why Odin's",
+        "href": "#why-odins"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Products",
+        "href": "#products"
+      },
+      {
+        "label": "Comparison",
+        "href": "#comparison"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "text": "Shop Scent Beads — $17.95",
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Odin's Innovations",
+        "highlightTerm": "Synthetic Scent Beads — 30+ Days"
+      },
+      "subhead": "Engineered for consistent, weatherproof attraction. Legal in every state and biodegradable.",
+      "background": {
+        "image": "/scent-beads/images/hero1.jpg",
+        "alt": "Forest scene - Odin's synthetic scent beads for hunting",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Shop Now — Starting at $17.95",
+          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
+          "variant": "primary"
+        },
+        {
+          "text": "See How It Works",
+          "href": "#how-it-works",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Why Hunters Choose Odin's",
+        "description": "Synthetic scent beads engineered for performance where traditional lures fall short."
+      },
+      "benefits": [
+        {
+          "icon": "shield-check",
+          "title": "100% Synthetic — Legal Everywhere",
+          "description": "Not subject to natural urine or CWD restrictions. Legal in all 50 states."
+        },
+        {
+          "icon": "clock",
+          "title": "30+ Days of Continuous Release",
+          "description": "Steady attraction that lasts even after rain and through temperature changes."
+        },
+        {
+          "icon": "leaf",
+          "title": "Biodegradable & Eco-Friendly",
+          "description": "Polymer matrix breaks down naturally. No environmental residue."
+        },
+        {
+          "icon": "flask",
+          "title": "Lab-Consistent Results",
+          "description": "Every batch is lab-formulated. No spoilage, no freezing, no variability."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Made in the USA",
+          "description": "Field-tested weather resistance with American manufacturing quality."
+        },
+        {
+          "icon": "paw",
+          "title": "Works for Multiple Species",
+          "description": "Effective for deer, hogs, bears, and elk across all seasons."
+        }
+      ]
+    },
+    "brand-story": {
+      "section": {
+        "title": "The Odin's Story",
+        "description": "Born from the need for reliable scent without the limitations of natural urine."
+      },
+      "content": "Odin's Innovations develops 100% synthetic scent beads and liquids that deliver consistent attraction without the variability, spoilage, or legal restrictions of traditional urine-based products. Designed for hunters who demand performance in every condition."
+    },
+    "how-it-works": {
+      "section": {
+        "title": "How Odin's Synthetic Scent Beads Work",
+        "description": "Simple deployment for extended results."
+      },
+      "content": "Place a small amount of beads in mock scrapes, on drag lines, or around stands. The biodegradable polymer matrix releases lab-formulated attractants steadily for 30+ days. The formula resists washing away in rain and maintains effectiveness through temperature changes."
+    },
+    "services": {
+      "section": {
+        "title": "Signature Scent Beads",
+        "description": "Targeted formulas for every phase of the hunt."
+      },
+      "services": [
+        {
+          "title": "Doe Estrus",
+          "description": "Synthetic rut cue for peak-season activity",
+          "icon": "heart"
+        },
+        {
+          "title": "Dominant Buck",
+          "description": "Territorial challenge scent",
+          "icon": "crown"
+        },
+        {
+          "title": "Whitetail Scrape Blend",
+          "description": "Doe Estrus + Dominant Buck combination",
+          "icon": "layers"
+        },
+        {
+          "title": "Acorn",
+          "description": "Food-based curiosity attractant",
+          "icon": "nut"
+        },
+        {
+          "title": "Apple",
+          "description": "Sweet fruit attractant",
+          "icon": "apple"
+        },
+        {
+          "title": "Earth Cover",
+          "description": "Neutral cover scent to mask human odor",
+          "icon": "shield"
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Synthetic vs Traditional Urine Beads",
+        "description": "Clear performance differences."
+      },
+      "columns": {
+        "traditional": "Traditional Urine Beads",
+        "ourSolution": "Odin's Synthetic Beads"
+      },
+      "rows": [
+        {
+          "feature": "Legal in all 50 states",
+          "traditionalApproach": "Restricted in many states",
+          "ourSolution": "Yes - 100% synthetic"
+        },
+        {
+          "feature": "Scent duration",
+          "traditionalApproach": "Typically 7-14 days",
+          "ourSolution": "30+ days"
+        },
+        {
+          "feature": "Weather resistance",
+          "traditionalApproach": "Often washes away",
+          "ourSolution": "Maintains release after rain"
+        },
+        {
+          "feature": "Spoilage or freezing",
+          "traditionalApproach": "Common issue",
+          "ourSolution": "None - stable formula"
+        },
+        {
+          "feature": "Consistency",
+          "traditionalApproach": "Varies by source",
+          "ourSolution": "Lab-formulated every batch"
+        },
+        {
+          "feature": "Biodegradable",
+          "traditionalApproach": "Varies",
+          "ourSolution": "Yes - polymer matrix"
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Frequently Asked Questions",
+        "description": "Answers to common questions about synthetic scent beads."
+      },
+      "faqs": [
+        {
+          "q": "Are Odin's scent beads legal in every state?",
+          "a": "Yes — 100% synthetic, so they are not subject to natural urine or CWD restrictions."
+        },
+        {
+          "q": "How long do the beads last?",
+          "a": "Up to 30+ days of continuous release, even after rain or snow."
+        },
+        {
+          "q": "Are the beads biodegradable?",
+          "a": "Yes — the polymer matrix is designed to break down naturally."
+        },
+        {
+          "q": "Can they be used for hogs or bears?",
+          "a": "Yes — formulas such as Cherry and Peanut Butter are effective for multiple species."
+        },
+        {
+          "q": "What is the starting price?",
+          "a": "Scent beads start at $17.95 per 3-oz bottle with free shipping on orders over $79."
+        }
+      ]
+    },
+    "cta": {
+      "headline": "Ready for consistent, weatherproof results?",
+      "description": "Join thousands of hunters who trust Odin's Innovations for their next hunt.",
+      "buttonText": "Shop Scent Beads",
+      "buttonHref": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    },
+    "footer": {
+      "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+      "finalCTA": {
+        "headline": "Ready for consistent, weatherproof results?",
+        "buttonText": "Shop Scent Beads",
+        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "finalCTA": {
+      "headline": "Ready for consistent, weatherproof results?",
+      "buttonText": "Shop Scent Beads",
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    }
+  }
+}

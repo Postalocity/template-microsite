@@ -23,8 +23,7 @@
       "promo products Kansas",
       "custom promotional products Wichita KS",
       "branded merchandise Wichita",
-      "promotional apparel Wichita",
-      "promotional products near me Wichita"
+      "promotional apparel Wichita"
     ],
     "ogTitle": "Promotional Products & Apparel — Broadstroke, Inc.",
     "ogDescription": "Print, mail, promo & fulfillment made simple.",
@@ -82,33 +81,153 @@
         }
       ]
     },
+    "howItWorks": {
+      "section": {
+        "id": "how-it-works",
+        "title": "How It Works",
+        "description": "Broadstroke Promotions makes ordering branded merchandise straightforward through a proven process."
+      },
+      "steps": [
+        {
+          "number": "1",
+          "title": "Reach Out",
+          "description": "Call us for a consultation with your promo expert and we can help you with all your promo needs."
+        },
+        {
+          "number": "2",
+          "title": "Let's Collaborate",
+          "description": "Next, we'll take the time to research products that fit your needs and help you achieve your marketing goals."
+        },
+        {
+          "number": "3",
+          "title": "Choose Your Merch",
+          "description": "Which merch appeals to you? Narrow down the options and let us know the swag that speaks to you."
+        },
+        {
+          "number": "4",
+          "title": "We Make It Happen",
+          "description": "Pick your favorite products, we'll start the design process, then your products will be ready to hand out!"
+        }
+      ]
+    },
     "benefits": {
       "section": {
         "title": "Benefits of Working with Broadstroke for Promotional Products",
-        "description": ""
+        "description": "Skip the coordination headaches. One team manages your entire project from design through delivery."
       },
-      "headline": "Benefits of Working with Broadstroke for Promotional Products"
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Reclaim Hours Weekly",
+          "description": "Consolidate vendors into one professional team and reclaim hours weekly.",
+          "detail": "Single dedicated promo team"
+        },
+        {
+          "icon": "shield",
+          "title": "Brand Consistency",
+          "description": "Maintain brand consistency across promo, print, mail, and signage.",
+          "detail": "Seamless Postalocity integration"
+        },
+        {
+          "icon": "users",
+          "title": "Expert Curation",
+          "description": "Access expert curation from a team with more than 70 years of combined experience.",
+          "detail": "Industry knowledge"
+        },
+        {
+          "icon": "package",
+          "title": "Integrated Mailing",
+          "description": "Integrate promotional items with Postalocity automated mailing for efficient campaigns.",
+          "detail": "One-stop convenience"
+        }
+      ]
     },
     "comparison": {
       "section": {
-        "title": "Broadstroke vs. Standalone Promo Suppliers",
-        "description": ""
+        "title": "Why Wichita Businesses Choose Broadstroke for Promotional Products",
+        "description": "See the difference professional concierge service makes."
       },
-      "headline": "Broadstroke vs. Standalone Promo Suppliers"
+      "columns": {
+        "traditional": "Standalone Promo Suppliers",
+        "ourSolution": "Broadstroke"
+      },
+      "rows": [
+        {
+          "icon": "users",
+          "feature": "Vendor Management",
+          "ourSolution": "Single dedicated team for print, mail, and promo",
+          "traditionalApproach": "Multiple separate vendors"
+        },
+        {
+          "icon": "package",
+          "feature": "Integration",
+          "ourSolution": "Seamless with Postalocity automated mailing",
+          "traditionalApproach": "Limited or no mailing integration"
+        },
+        {
+          "icon": "clock",
+          "feature": "Time Savings",
+          "ourSolution": "Reclaim hours weekly through consolidated service",
+          "traditionalApproach": "Significant coordination time required"
+        }
+      ]
     },
     "services": {
       "section": {
-        "title": "Promotional Products & Apparel Categories",
-        "description": ""
+        "title": "Automate Promotional Products & Branded Merchandise",
+        "description": "Full-service promotional solutions for businesses that demand quality and reliability."
       },
-      "headline": "Promotional Products & Apparel Categories"
+      "services": [
+        {
+          "icon": "shirt",
+          "title": "Branded Apparel",
+          "description": "Branded apparel with screen printing and embroidery."
+        },
+        {
+          "icon": "coffee",
+          "title": "Drinkware",
+          "description": "Drinkware, office essentials, and everyday use items."
+        },
+        {
+          "icon": "gift",
+          "title": "Trade Show & Events",
+          "description": "Trade show giveaways and event merchandise."
+        },
+        {
+          "icon": "award",
+          "title": "Executive Gifts",
+          "description": "Executive gifts and recognition awards."
+        },
+        {
+          "icon": "shield",
+          "title": "Industry Products",
+          "description": "Industry-specific and safety-branded products."
+        }
+      ]
     },
     "faq": {
       "section": {
         "title": "Frequently Asked Questions",
         "description": ""
       },
-      "headline": "Frequently Asked Questions"
+      "faqs": [
+        {
+          "q": "How do promotional products integrate with other services?",
+          "a": "We coordinate custom promo with printing and automated mailing through Postalocity for seamless, trackable campaigns."
+        },
+        {
+          "q": "What is the process for ordering promotional products?",
+          "a": "Reach out for consultation, collaborate on product research, choose merch, and we handle design, production, and fulfillment."
+        },
+        {
+          "q": "Do you offer screen printing and embroidery?",
+          "a": "Yes. We provide professional decoration services on a wide range of apparel and products."
+        },
+        {
+          "q": "What items do you carry?",
+          "a": "We offer apparel, drinkware, pens, trade show giveaways, executive gifts, and industry-specific solutions."
+        }
+      ]
     },
     "footer": {
       "finalCTA": {

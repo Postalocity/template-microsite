@@ -1,0 +1,26 @@
+{
+  "trustSignals": [
+    "100% Synthetic Formula",
+    "Legal in All 50 States",
+    "30+ Days Scent Release",
+    "Biodegradable",
+    "Made in the USA",
+    "Weatherproof Performance"
+  ],
+  "promoCodes": {
+    "default": "HUNT2026"
+  },
+  "approvedSections": [
+    "hero",
+    "benefits",
+    "brand-story",
+    "how-it-works",
+    "services",
+    "comparison",
+    "faq",
+    "cta",
+    "footer"
+  ],
+  "blocklistedContent": [],
+  "blocklistedPhrases": []
+}

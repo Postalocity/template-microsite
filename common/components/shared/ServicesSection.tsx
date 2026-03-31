@@ -1,91 +1,54 @@
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { ServicesContent } from "../../types/content";
-import { getIcon } from "../../utils/icons";
 import { sanitizeHtml } from "../../utils/sanitize-html";
-import { getGridLayoutClasses, getColumnClass, getColumnSpanClass } from "../../utils/grid-layout";
-import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
-import { useFormattedPricing } from "@/utils/pricing";
 
 interface ServicesSectionProps {
   services: ServicesContent;
 }
 
 const ServicesSection = ({ services }: ServicesSectionProps) => {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-80px" });
-  const itemCount = services.services.length;
-  const gridClasses = getGridLayoutClasses(itemCount);
-  const { short, full, withEnvelope } = useFormattedPricing();
+  const itemCount = services?.services?.length || 0;
   
-  // Process text with pricing placeholders
-  const processText = (text: string) => {
-    return text
-      .replace(/\{\{PRICING\}\}/g, full)
-      .replace(/\{\{PRICING_SHORT\}\}/g, short)
-      .replace(/\{\{PRICING_ENVELOPE\}\}/g, withEnvelope);
-  };
-
-  // Force 6-column grid for 7 items
-  const forceGridStyle = itemCount === 7 ? {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(6, 1fr)',
-    gap: '1.5rem'
-  } : {};
+  if (!services?.section || itemCount === 0) {
+    return null;
+  }
 
   return (
-    <section id="services" className="section-padding" ref={ref}>
+    <section id="services" className="section-lg" style={{ background: 'hsl(220 15% 10%)' }}>
       <div className="section-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
+        {/* Section header - white on dark */}
+        <div className="max-w-2xl mb-16">
+          <p 
+            className="uppercase-tracked mb-4"
+            style={{ color: 'hsl(145 45% 55%)' }}
+          >
+            Our Scents
+          </p>
+          <h2 className="mb-6" style={{ color: 'white' }}>
             {services.section.title}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="font-body text-lg leading-relaxed" style={{ color: 'hsl(220 10% 65%)' }}>
             {services.section.description}
           </p>
-        </motion.div>
+        </div>
 
-        <div className={gridClasses} style={forceGridStyle}>
-          {services.services.map((service, i) => {
-            const Icon = getIcon(service.icon);
-            const colStartClass = getColumnClass(i, itemCount);
-            const colSpanClass = getColumnSpanClass(itemCount);
-
-            // Force col-span-2 and col-start for 7 items
-            // Use explicit start/end lines to ensure consistent widths
-            const forceItemStyle = itemCount === 7 ? {
-              gridColumn: i === 3 || i === 5 ? '2 / 4' : i === 4 || i === 6 ? '4 / 6' : 'span 2'
-            } : {};
-
-            return (
-              <motion.div
-                key={service.title}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className={`${colStartClass} ${colSpanClass}`}
-                style={forceItemStyle}
-              >
-                <Card className="h-full hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                      <Icon className="w-8 h-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-lg">{service.title}</CardTitle>
-                    <CardDescription 
-                      className="text-sm mt-2"
-                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(service.description)) }}
-                    />
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            );
-          })}
+        {/* Services - grid with dark cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ background: 'hsl(220 10% 20%)' }}>
+          {services.services.map((service) => (
+            <div 
+              key={service.title} 
+              className="p-8 transition-colors group"
+              style={{ background: 'hsl(220 15% 12%)' }}
+            >
+              <h3 className="font-body text-lg font-bold mb-3 group-hover:text-[hsl(145_45%_55%)] transition-colors" style={{ color: 'white' }}>
+                {service.title}
+              </h3>
+              <p 
+                className="font-body text-sm leading-relaxed"
+                style={{ color: 'hsl(220 10% 55%)' }}
+                dangerouslySetInnerHTML={{ __html: sanitizeHtml(service.description) }}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

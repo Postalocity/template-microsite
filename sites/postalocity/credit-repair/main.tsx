@@ -1,11 +1,11 @@
 /**
  * Credit Repair Mailing Service - Generated from template-microsite
- * Generated at: 2026-03-23T13:56:31.023Z
+ * Generated at: 2026-03-30T15:38:38.003Z
  * Brand: Postalocity
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '@/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -15,7 +15,7 @@ import '@/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
-const brandConfig = {"id":"postalocity","name":"Postalocity","slug":"postalocity","domain":"postalocity.com","tagline":"Automate Your Direct Mail","urls":{"app":"https://prod.postalocity.com/login.html","website":"https://www.postalocity.com","blog":"https://www.postalocity.com/resources/blog/","howWeHelp":"https://www.postalocity.com/how-we-help/","whoWeServe":"https://www.postalocity.com/who-we-serve/","contact":"https://www.postalocity.com/contact/","faq":"https://www.postalocity.com/resources/faq/"},"logo":{"filename":"postalocity-logo.png","alt":"Postalocity - Direct Mail Automation"}};
+const brandConfig = {"id":"postalocity","name":"Postalocity","slug":"postalocity","domain":"postalocity.com","tagline":"Automate Your Direct Mail","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://prod.postalocity.com/login.html","website":"https://www.postalocity.com","blog":"https://www.postalocity.com/resources/blog/","howWeHelp":"https://www.postalocity.com/how-we-help/","whoWeServe":"https://www.postalocity.com/who-we-serve/","contact":"https://www.postalocity.com/contact/","faq":"https://www.postalocity.com/resources/faq/"},"logo":{"filename":"postalocity-logo.png","alt":"Postalocity - Direct Mail Automation"},"colors":{"primary":{"h":38,"s":92,"l":55},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"id":"how-it-works","title":"How It Works","description":"Four simple steps from upload to mailing"},"steps":[{"number":"1","title":"Upload Your PDFs","description":"Drag-and-drop your documents into our secure dashboard. Same-day or next-day mailing available."},{"number":"2","title":"Address Verification","description":"NCOA/CASS verification updates addresses before mailing, reducing returned letters by 40%."},{"number":"3","title":"We Print & Process","description":"Professional printing, folding, stuffing into envelopes, and sealing—all automated."},{"number":"4","title":"USPS Mailing & Tracking","description":"Same-day or next-day mailing. Track Priority and Certified letters through delivery."}]},"difference":{"section":{"title":"The Postalocity Difference","description":"Discover why businesses trust our mailing service"},"differences":[{"icon":"mail","title":"Every Mailer Includes an Envelope","description":"We use real envelopes—not loose paper sealed with a sticker. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."},{"icon":"eye","title":"Mail Visibility","description":"Tracking available on Priority Mail and Certified Mail. First-Class Mail (standard) does not include tracking. Signature tracking on Certified Mail available for additional fee."},{"icon":"zap","title":"Skip USPS Drop Boxes & Cutoffs","description":"Bypass post office drop-off times and waiting in line. We automate the process—eliminating missed cutoffs and potentially days in delivery time."}]},"footer":{"tagline":"Automate Your Direct Mail","links":[{"label":"Services","href":"https://www.postalocity.com/how-we-help/"},{"label":"Pricing","href":"https://www.postalocity.com/pricing/"},{"label":"Resources","href":"https://www.postalocity.com/resources/"},{"label":"Contact","href":"https://www.postalocity.com/contact/"}]}};
 const contactConfig = {"phone":"316-260-2220","email":"contact@postalocity.com","address":{"street":"820 W 2nd St N","city":"Wichita","state":"KS","zip":"67203"},"hours":{"weekdays":"8:00 AM - 5:00 PM CST","support":"contact@postalocity.com"}};
 const socialConfig = {"twitter":"https://twitter.com/postalocity","linkedin":"https://linkedin.com/company/postalocity","facebook":"https://facebook.com/postalocity"};
 
@@ -91,6 +91,7 @@ function App() {
         <ServicesSection services={content.services} />
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+        <TestimonialsSection />
         <FAQSection faq={content.faq} />
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
