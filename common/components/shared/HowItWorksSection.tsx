@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Upload, Printer, Mail, Truck, Check } from "lucide-react";
+import { Printer, Mail, Truck, Check, FilePen } from "lucide-react";
 import { useBrand } from "@/contexts";
 
 interface HowItWorksStep {
@@ -25,8 +25,8 @@ interface HowItWorksSectionProps {
 // Icon mapping based on step title keywords
 const getIcon = (title: string) => {
   const lower = title.toLowerCase();
-  if (lower.includes('upload') || lower.includes('document') || lower.includes('tell')) return Upload;
-  if (lower.includes('print') || lower.includes('process') || lower.includes('work')) return Printer;
+  if (lower.includes('plan') || lower.includes('file') || lower.includes('upload') || lower.includes('document')) return FilePen;
+  if (lower.includes('produce') || lower.includes('print') || lower.includes('process')) return Printer;
   if (lower.includes('verify') || lower.includes('address')) return Mail;
   if (lower.includes('mail') || lower.includes('deliver') || lower.includes('complete')) return Truck;
   return Mail;
@@ -77,7 +77,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
   return (
     <section
       id={sectionId}
-      className="section-padding bg-background"
+      className="section-padding bg-section-alt"
       ref={ref}
     >
       <div className="section-container">
@@ -106,11 +106,6 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="relative bg-card rounded-xl p-8 shadow-card hover:shadow-card-hover transition-shadow"
               >
-                {step.number && (
-                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm">
-                    {step.number}
-                  </div>
-                )}
                 <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                   <Icon className="w-8 h-8 text-primary" />
                 </div>

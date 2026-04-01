@@ -1,113 +1,152 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Quote } from "lucide-react";
-import { useBrand, useBrandName } from "@/contexts";
+import { Quote, ImageOff } from "lucide-react";
+import { useBrand } from "@/contexts";
 
-interface Testimonial {
+interface TestimonialData {
   quote: string;
   attribution: string;
+  title?: string;
+  company?: string;
 }
 
-const defaultTestimonials = [
-  {
-    quote:
-      "Postalocity eliminated two full days of manual mailing work per month from our administrative workflow. Staff can now focus on calling clients and resolving disputes.",
-    name: "Sarah Mitchell",
-    title: "Practice Manager",
-    institution: "Midwest Credit Solutions, Chicago IL",
-    metrics: "40+ hours reclaimed monthly",
-  },
-  {
-    quote:
-      "Our returned mail rate dropped from 12% to under 4% after adding NCOA verification. Dispute resolution rates improved 22% in the first quarter.",
-    name: "James Chen",
-    title: "Director of Operations",
-    institution: "Valley Credit Repair, Salem OR",
-    metrics: "22% improvement in dispute resolution",
-  },
-  {
-    quote:
-      "Implementation was effortless—uploaded our first dispute letter file on Monday, received confirmation by end of day, and letters mailed the next morning.",
-    name: "Maria Rodriguez",
-    title: "Office Manager",
-    institution: "Phoenix Credit Solutions, Phoenix AZ",
-    metrics: "Setup in 3 business days",
-  },
-];
-
 const TestimonialsSection = () => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
-  const brandName = useBrandName();
   const ctx = useBrand();
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   
-  // Use brand testimonials if available, otherwise fallback to defaults
-  const brandTestimonials = ctx.brand.testimonials as Testimonial[] | undefined;
-  const testimonials = brandTestimonials?.length 
-    ? brandTestimonials.map(t => ({ quote: t.quote, name: t.attribution, title: '', institution: '', metrics: '' }))
-    : defaultTestimonials;
-  
-  // Custom header for Broadstroke
-  const headerTitle = brandTestimonials?.length 
-    ? "What Our Clients Say" 
-    : "Trusted by 500+ Healthcare Providers";
-  const headerSubtitle = brandTestimonials?.length
-    ? "Businesses throughout Wichita trust Broadstroke for their printing and mailing needs."
-    : `See what healthcare administrators are saying about ${brandName}`;
+  // Use brand testimonials if available
+  const brandTestimonials = ctx.brand.testimonials as TestimonialData[] | undefined;
+  const testimonial = brandTestimonials?.[0];
+  const hasTestimonial = !!testimonial;
+
+  const handleImageError = (index: number) => {
+    setImageErrors(prev => ({ ...prev, [index]: true }));
+  };
+
+  // Build attribution line safely - no "undefined" rendering
+  const attributionLine = [testimonial?.title, testimonial?.company]
+    .filter(Boolean)
+    .join(", ");
 
   return (
-    <section className="section-padding bg-muted/30" ref={ref}>
+    <section className="section-padding bg-section-alt" ref={ref} aria-labelledby="testimonials-heading">
       <div className="section-container">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            {headerTitle}
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {headerSubtitle}
-          </p>
-          {!brandTestimonials?.length && (
-            <p className="text-xs text-muted-foreground max-w-2xl mx-auto mt-2">
-              *Testimonial names and details are representative examples of
-              typical customer experiences.
-            </p>
-          )}
-        </motion.div>
+        <div className="max-w-5xl mx-auto">
+          {/* Section heading for orientation - higher contrast for dark background */}
+          <motion.h2
+            id="testimonials-heading"
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : undefined}
+            transition={{ duration: 0.4 }}
+            className="text-sm font-semibold uppercase tracking-wider text-foreground/80 mb-8 text-center"
+          >
+            {hasTestimonial ? "Trusted by Our Clients" : "What Our Clients Say"}
+          </motion.h2>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <div className="bg-card rounded-2xl p-8 shadow-card h-full flex flex-col">
-                <Quote className="w-10 h-10 text-primary/30 mb-4" />
-                <blockquote className="text-foreground flex-grow mb-6">
+          {hasTestimonial ? (
+            <>
+              {/* Testimonial - high emphasis cameo */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : undefined}
+                transition={{ duration: 0.6 }}
+                className="text-center mb-12"
+              >
+                <Quote className="w-10 h-10 text-primary/15 mx-auto mb-3" aria-hidden="true" />
+                <blockquote className="text-xl sm:text-2xl font-medium text-foreground leading-relaxed max-w-3xl mx-auto mb-6 italic">
                   "{testimonial.quote}"
                 </blockquote>
-                <div className="border-t border-border pt-4">
-                  <p className="font-bold text-foreground">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.title}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.institution}
-                  </p>
-                  <p className="text-primary font-bold text-sm mt-2">
-                    {testimonial.metrics}
-                  </p>
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-primary font-bold text-sm">
+                      {testimonial.attribution?.charAt(0)}
+                    </span>
+                  </div>
+                  <div className="text-left">
+                    <p className="font-bold text-foreground">
+                      {testimonial.attribution}
+                    </p>
+                    {attributionLine && (
+                      <p className="text-sm text-muted-foreground">
+                        {attributionLine}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+
+              {/* Product showcase - portrait display matching source image aspect ratio */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : undefined}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto mb-8"
+              >
+                {/* Image 1 */}
+                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[3/4]">
+                  {imageErrors[0] ? (
+                    <div className="w-full h-full flex items-center justify-center bg-muted">
+                      <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+                    </div>
+                  ) : (
+                    <img
+                      src="/commercial-printing/images/talent-on-parade-booklet-4.jpg"
+                      alt="Talent On Parade Des Moines booklet - printed by Broadstroke"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      onError={() => handleImageError(0)}
+                    />
+                  )}
+                </div>
+                {/* Image 2 */}
+                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[3/4]">
+                  {imageErrors[1] ? (
+                    <div className="w-full h-full flex items-center justify-center bg-muted">
+                      <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+                    </div>
+                  ) : (
+                    <img
+                      src="/commercial-printing/images/talent-on-parade-booklet-7.jpg"
+                      alt="Talent On Parade Des Moines booklet detail - printed by Broadstroke"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      onError={() => handleImageError(1)}
+                    />
+                  )}
+                </div>
+              </motion.div>
+
+              {/* 30-year trust signal - elevated from muted caption to prominent badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={inView ? { opacity: 1, y: 0 } : undefined}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="text-center"
+              >
+                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-card border border-border shadow-sm">
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 flex-shrink-0">
+                    <span className="text-primary font-bold text-xs">30</span>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-sm font-semibold text-foreground">Years of Trusted Partnership</p>
+                    <p className="text-xs text-muted-foreground">Talent On Parade, LLC — since 1996</p>
+                  </div>
+                </div>
+              </motion.div>
+            </>
+          ) : (
+            /* Fallback when no testimonial data available */
+            <div className="text-center py-16">
+              <p className="text-muted-foreground text-lg">
+                Client testimonials coming soon.
+              </p>
+              <p className="text-sm text-muted-foreground/70 mt-2">
+                Contact us to learn why businesses trust Broadstroke.
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </section>

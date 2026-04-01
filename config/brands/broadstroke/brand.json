@@ -25,78 +25,83 @@
   },
   "testimonials": [
     {
-      "quote": "It looks professional. It saves me time. It saves me money. All while helping me get paid quicker.",
-      "attribution": "Postalocity Business Client"
-    },
-    {
-      "quote": "Your team is the best I've ever worked with. Thanks for everything you do.",
-      "attribution": "CD"
-    },
-    {
-      "quote": "Thank you for getting the materials done for us so quickly. It was a huge help to keep us on track.",
-      "attribution": "Steven Shippy"
+      "quote": "We've had a great working relationship with Broadstroke for almost 30 years. Communication with them is always quick and easy, and they consistently produce our products on or before the requested deadlines. Their work quality is also exceptional. Highly recommend!",
+      "attribution": "Eric McCluer",
+      "title": "Owner",
+      "company": "Talent On Parade, LLC"
     }
   ],
   "trustSignals": [
-    "70+ Years Combined Experience",
-    "NCOA Verified",
-    "CASS Certified",
-    "ISO 9001 Documented Processes"
+    "60+ Years of Experience",
+    "Serving Wichita Since 1964",
+    "Full-Service Bindery",
+    "In-House Design Team"
   ],
   "howItWorks": {
     "section": {
       "id": "how-it-works",
       "title": "Commercial Printing Workflow",
-      "description": "Broadstroke, Inc. makes commercial printing straightforward through a concierge-managed workflow supported by more than 70 years of experience."
+      "description": "Broadstroke, Inc. makes commercial printing straightforward through a concierge-managed workflow supported by more than 60 years of experience."
     },
     "steps": [
       {
-        "number": "1",
+        "number": "01",
         "title": "Plan",
-        "description": "Share your project goals, files, or ideas. We'll recommend the best paper, quantities, and finishing options for your objectives."
+        "description": "Share your project goals, files, or ideas. We'll recommend the best paper and finishing options for your objectives."
       },
       {
-        "number": "2",
+        "number": "02",
         "title": "Produce",
-        "description": "We refine your designs, provide proofs for approval, then print and finish everything in-house (folding, scoring, binding)."
+        "description": "We create or refine your designs, provide proofs for approval, then print and finish everything in-house (folding, scoring, binding)."
       },
       {
-        "number": "3",
+        "number": "03",
         "title": "Deliver",
-        "description": "Pickup, local delivery, or seamless mailing through Postalocity with address verification and USPS submission. We handle the logistics."
+        "description": "Pickup, local delivery, or shipping available. You tell us where you want your print job to go and how you want it to get there, and we'll handle the logistics to get your job to its final destination."
       }
     ]
   },
   "difference": {
     "section": {
       "title": "The Broadstroke Difference",
-      "description": "Businesses throughout Wichita and Kansas trust Broadstroke for commercial printing because we deliver more than just printed materials — we provide a true one-stop concierge solution for print, mail, and promo."
+      "description": "Businesses in the Wichita area, Kansas, and nationwide trust Broadstroke for commercial printing because we deliver more than just printed materials — we provide a true one-stop concierge solution for print, mail, and promo."
     },
     "differences": [
       {
-        "icon": "package",
-        "title": "Integrated Print-to-Mail Capability",
-        "description": "When your project includes mailing, we handle printing, folding, stuffing into real envelopes, sealing, and preparation for USPS submission through our high-speed digital commercial printers and inserters — all managed by one experienced team."
-      },
-      {
         "icon": "zap",
         "title": "Operational Efficiency",
-        "description": "Eliminate the need to manage multiple suppliers for design, printing, finishing, and mailing. One point of contact oversees the entire process, supporting consistent brand presentation and smoother workflows."
+        "description": "Eliminate the need to manage multiple vendors for design, printing, mailing, and promotions. Our team oversees marketing and business materials across multiple channels, supporting consistent brand presentation and smoother workflows for your business."
+      },
+      {
+        "icon": "package",
+        "title": "Integrated Print-to-Mail Capability",
+        "description": "When your project includes mailing, it's handled as a single job with seamless workflow in-house. Whether it's a postcard, mailer, or mailing, every step of the process, including addressing and applying presort postage, is handled through our high-speed digital commercial printers and inserters, followed by distribution to USPS for delivery — all managed by one experienced team."
       },
       {
         "icon": "shield",
         "title": "Proven Local Expertise",
-        "description": "Serving the region since 1979 with more than 70 years of innovation in printing and mail services, Broadstroke combines traditional craftsmanship with modern automation to meet the needs of ad agencies, municipalities, healthcare, financial institutions, and other organizations."
+        "description": "Serving the region since 1964 with more than 60 years of innovation in printing and mail services, Broadstroke combines traditional craftsmanship with modern technology to provide concierge service that meets the needs of businesses of all sizes and across all industries, including small local businesses, non-profits, government entities, educational institutions, and established companies and corporations."
       }
     ]
   },
   "footer": {
-    "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+    "tagline": "Your one-stop-shop for all things print, mail and promo.",
     "taglineSecondary": "No project is too big or too small",
     "links": [
-      { "label": "Printing", "href": "https://broadstrokeinc.com/printing/" },
-      { "label": "Mailing", "href": "https://broadstrokeinc.com/mailing/" },
+      { "label": "Print", "href": "https://broadstrokeinc.com/commercial-printing/" },
+      { "label": "Mail", "href": "https://broadstrokeinc.com/mailing/" },
+      { "label": "Mail Pickup", "href": "https://broadstrokeinc.com/mail-pickup/" },
       { "label": "Promo", "href": "https://www.broadstrokepromos.com/" },
+      { "label": "Wide Format", "href": "https://broadstrokeinc.com/wide-format/" },
+      { "label": "Postalocity", "href": "https://www.postalocity.com/" },
+      { "label": "Business Forms", "href": "https://broadstrokeinc.com/business-forms/" },
+      { "label": "Technology", "href": "https://broadstrokeinc.com/technology/" }
+    ],
+    "companyLinks": [
+      { "label": "About", "href": "https://broadstrokeinc.com/about/" },
+      { "label": "Our Work", "href": "https://broadstrokeinc.com/our-work/" },
+      { "label": "Blog", "href": "https://broadstrokeinc.com/about/blogs/" },
+      { "label": "Careers", "href": "https://broadstrokeinc.com/careers/" },
       { "label": "Contact", "href": "https://broadstrokeinc.com/contact/" }
     ]
   }

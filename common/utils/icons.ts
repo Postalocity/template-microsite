@@ -79,6 +79,10 @@ import {
   UserCheck,
   UserX,
   MessageCircle,
+  BookOpen,
+  Clipboard,
+  Printer,
+  BarChart3,
 } from 'lucide-react';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -160,6 +164,10 @@ const iconMap: Record<string, LucideIcon> = {
   'user-check': UserCheck,
   'user-x': UserX,
   'message-circle': MessageCircle,
+  'book-open': BookOpen,
+  'clipboard': Clipboard,
+  'printer': Printer,
+  'bar-chart-3': BarChart3,
 };
 
 export function getIcon(iconName: string): LucideIcon {

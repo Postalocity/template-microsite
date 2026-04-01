@@ -1,4 +1,4 @@
-import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin, Instagram } from 'lucide-react';
 import { useBrand, useBrandName } from '@/contexts';
 
 interface SiteFooterProps {
@@ -17,7 +17,21 @@ interface SiteFooterProps {
         tagline?: string;
         disclaimer?: string;
         links?: Array<{ label: string; href: string }>;
+        quickLinks?: Array<{ label: string; href: string }>;
+        companyLinks?: Array<{ label: string; href: string }>;
       };
+    };
+    footer?: {
+      finalCTA?: {
+        headline?: string;
+        description?: string;
+        buttonText?: string;
+        href?: string;
+      };
+      tagline?: string;
+      links?: Array<{ label: string; href: string }>;
+      quickLinks?: Array<{ label: string; href: string }>;
+      companyLinks?: Array<{ label: string; href: string }>;
     };
   };
 }
@@ -52,6 +66,19 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   const phoneLink = ctx.contact.phone.replace(/[^0-9]/g, '');
   const formattedAddress = `${ctx.contact.address.street}, ${ctx.contact.address.city}, ${ctx.contact.address.state} ${ctx.contact.address.zip}`;
 
+  // Quick links - from config, brand config, or defaults
+  const quickLinks = content?.quickLinks || brandFooter?.links || [
+    { label: 'Print', href: ctx.brand.urls.website },
+    { label: 'Mail', href: ctx.brand.urls.website },
+    { label: 'Promo', href: ctx.brand.urls.website },
+  ];
+
+  // Company links - from config, brand config, or defaults
+  const companyLinks = content?.companyLinks || brandFooter?.companyLinks || [
+    { label: 'About', href: ctx.brand.urls.whoWeServe || ctx.brand.urls.website },
+    { label: 'Contact', href: ctx.brand.urls.contact || ctx.brand.urls.website },
+  ];
+
   return (
     <footer style={{ backgroundColor: '#333333' }} className="text-background" role="contentinfo">
       {/* Final CTA */}
@@ -59,9 +86,11 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
           {defaultCTA.headline}
         </h2>
-        <p className="text-background/70 text-lg mb-8 max-w-2xl mx-auto">
-          {defaultCTA.description}
-        </p>
+        {defaultCTA.description && (
+          <p className="text-background/70 text-lg mb-8 max-w-2xl mx-auto">
+            {defaultCTA.description}
+          </p>
+        )}
         <a
           href={defaultCTA.href}
           rel="noopener noreferrer"
@@ -78,31 +107,46 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
 
       <div className="section-container py-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
+          {/* Brand info */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-3">{brandName}</h3>
             <p className="text-background/60 text-sm leading-relaxed">
-              {content?.description || 'Streamline workflows, boost visibility, ensure accuracy, reduce overhead—no monthly fees, pay-as-you-go.'}
+              {content?.description || 'Your one-stop-shop for all things print, mail and promo.'}
             </p>
             <p className="text-background/50 text-xs mt-3 italic">
               {content?.tagline || brandFooter?.tagline || ctx.brand.tagline || 'Empowering Businesses with Reliable Automation'}
             </p>
           </div>
+
+          {/* Quick Links */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href={ctx.brand.urls.howWeHelp || ctx.brand.urls.website} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">How We Help</a></li>
-              <li><a href={ctx.brand.urls.whoWeServe || ctx.brand.urls.website} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Who We Serve</a></li>
-              <li><a href={getCTAUrl()} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Sign Up</a></li>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Resources</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Company</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href={ctx.brand.urls.blog || ctx.brand.urls.website} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Blog</a></li>
-              <li><a href={ctx.brand.urls.faq || ctx.brand.urls.website} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">FAQ</a></li>
-              <li><a href={ctx.brand.urls.contact || ctx.brand.urls.website} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">Contact</a></li>
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
+
+          {/* Contact */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Contact</h3>
             <ul className="space-y-2 text-sm">
@@ -120,12 +164,19 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
               </li>
             </ul>
           </div>
+
+          {/* Connect - Social */}
           <div>
             <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Connect</h3>
             <div className="flex gap-4">
-              {ctx.social.twitter && (
-                <a href={ctx.social.twitter} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label="Twitter">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              {ctx.social.instagram && (
+                <a href={ctx.social.instagram} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label="Instagram">
+                  <Instagram className="w-5 h-5" />
+                </a>
+              )}
+              {ctx.social.facebook && (
+                <a href={ctx.social.facebook} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label="Facebook">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                 </a>
               )}
               {ctx.social.linkedin && (
@@ -133,9 +184,14 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                 </a>
               )}
-              {ctx.social.facebook && (
-                <a href={ctx.social.facebook} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label="Facebook">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              {ctx.social.tiktok && (
+                <a href={ctx.social.tiktok} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label="TikTok">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15.2a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.73a8.19 8.19 0 0 0 4.76 1.52V6.8a4.84 4.84 0 0 1-1-.11z"/></svg>
+                </a>
+              )}
+              {ctx.social.youtube && (
+                <a href={ctx.social.youtube} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label="YouTube">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 </a>
               )}
             </div>

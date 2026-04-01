@@ -34,7 +34,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
   } : {};
 
   return (
-    <section id="services" className="section-padding" ref={ref}>
+    <section id="services" className="section-padding bg-section-alt" ref={ref}>
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,9 +42,9 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            {services.section.title}
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4"
+            dangerouslySetInnerHTML={{ __html: services.section.title }}
+          />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {services.section.description}
           </p>

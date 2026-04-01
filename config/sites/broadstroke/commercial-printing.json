@@ -23,7 +23,7 @@
     }
   },
   "branding": { 
-    "tagline": "Print. Mail. Promo. One Call.", 
+    "tagline": "Your One-Stop-Shop for Print, Mail & Promo", 
     "logo": "/logo.png" 
   },
   "theme": { 
@@ -31,7 +31,7 @@
   },
   "seo": {
     "title": "Commercial Printing Services Wichita KS — Broadstroke, Inc.",
-    "description": "Trusted commercial printing in Wichita KS since 1979. Business cards, brochures, forms, offset & digital printing with integrated mailing. Free estimates.",
+    "description": "Trusted commercial printing in Wichita KS since 1964. Business cards, brochures, forms, wide format, offset & digital printing with full-service finishing and in-house mailing. Free estimates.",
     "keywords": [
       "commercial printing Wichita",
       "printing services Wichita KS",
@@ -41,10 +41,12 @@
       "bulk printing services Wichita",
       "offset printing Wichita",
       "digital printing Wichita",
+      "wide format printing Wichita",
+      "finishing services Wichita",
       "one-stop print mail services Wichita"
     ],
     "ogTitle": "Commercial Printing Services — Broadstroke, Inc.",
-    "ogDescription": "One-stop commercial printing solutions in Wichita KS: quality printing with seamless design, fulfillment, and mailing integration.",
+    "ogDescription": "One-stop commercial printing solutions in Wichita KS: quality printing with seamless design, finishing, mailing, and promo integration.",
     "ogImage": "/commercial-printing/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/commercial-printing"
@@ -52,9 +54,23 @@
   "navigation": {
     "links": [
       { "label": "Benefits", "href": "#benefits" },
+      { "label": "Products", "href": "#products" },
       { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Services", "href": "#services" },
       { "label": "FAQ", "href": "#faq" }
+    ],
+    "serviceLinks": [
+      { "label": "Print", "href": "https://broadstrokeinc.com/commercial-printing" },
+      { "label": "Mail", "href": "https://broadstrokeinc.com/mailing" },
+      { "label": "Promo", "href": "https://www.broadstrokepromos.com/" },
+      { "label": "Wide Format", "href": "https://broadstrokeinc.com/wide-format" },
+      { "label": "Business Forms", "href": "https://broadstrokeinc.com/business-forms" }
+    ],
+    "companyLinks": [
+      { "label": "About", "href": "https://broadstrokeinc.com/about" },
+      { "label": "Our Work", "href": "https://broadstrokeinc.com/our-work" },
+      { "label": "Blog", "href": "https://broadstrokeinc.com/about/blogs" },
+      { "label": "Careers", "href": "https://broadstrokeinc.com/careers" },
+      { "label": "Contact", "href": "https://broadstrokeinc.com/contact" }
     ],
     "cta": { 
       "text": "Get Free Estimate", 
@@ -65,10 +81,10 @@
     "hero": {
       "headline": { 
         "main": "Commercial Printing Solutions", 
-        "highlightTerm": "One Call. Done.", 
-        "alt": "Professional commercial printing services Wichita KS with concierge support and integrated mailing" 
+        "highlightTerm": "Concierge Service", 
+        "alt": "Professional commercial printing services Wichita KS with concierge support and integrated finishing" 
       },
-      "subhead": "High-quality digital and offset printing with dedicated concierge service — one experienced team handles everything from design through delivery. Free estimates, quick turnaround, no project too big or small.",
+      "subhead": "High-quality digital and offset printing with dedicated concierge service — one experienced team handles everything from design through finishing and optional mailing. Free estimates, quick turnaround, no project too big or small.",
       "background": { 
         "image": "/commercial-printing/images/commercial-printing-hero.jpg", 
         "overlay": true 
@@ -111,16 +127,16 @@
           "detail": "Single point of contact throughout your project."
         },
         {
-          "icon": "truck",
-          "title": "Integrated Mailing",
-          "description": "Print and mailing under one roof means faster turnaround and better coordination.",
-          "detail": "We can handle fulfillment and distribution too."
+          "icon": "package",
+          "title": "Full-Service Finishing",
+          "description": "Cutting, scoring, binding, UV coating, foil imprint, embossing, and more — all in-house.",
+          "detail": "Complete bindery and finishing services under one roof."
         }
       ]
     },
     "comparison": { 
       "section": {
-        "title": "Why Wichita Businesses Choose Broadstroke for Commercial Printing",
+        "title": "Why Wichita Businesses Choose Broadstroke<br />for Commercial Printing",
         "description": "See the difference professional concierge service makes."
       },
       "columns": {
@@ -141,9 +157,33 @@
           "traditionalApproach": "Print-first, fix-later approach"
         },
         {
+          "icon": "palette",
+          "feature": "Design Services",
+          "ourSolution": "Full design services available",
+          "traditionalApproach": "Pre-flight services only to ensure printing specifications"
+        },
+        {
+          "icon": "book-open",
+          "feature": "Binding",
+          "ourSolution": "Wide variety: coil, perfect, saddle stitch, drilling",
+          "traditionalApproach": "Limited options available"
+        },
+        {
+          "icon": "scissors",
+          "feature": "Die-Cuts",
+          "ourSolution": "Custom options available",
+          "traditionalApproach": "Not available or limited options"
+        },
+        {
+          "icon": "shield",
+          "feature": "UV Coating",
+          "ourSolution": "Available in-house",
+          "traditionalApproach": "Not available or outsourced"
+        },
+        {
           "icon": "package",
           "feature": "One-Stop Service",
-          "ourSolution": "Print + mailing + fulfillment in-house",
+          "ourSolution": "Print, mail, promo, and more through a single vendor",
           "traditionalApproach": "Must coordinate multiple vendors"
         },
         {
@@ -156,8 +196,8 @@
     },
     "services": { 
       "section": {
-        "title": "Commercial Printing Services — Wichita KS",
-        "description": "Full-service commercial printing for businesses that demand quality and reliability."
+        "title": "Commercially Printed Products —<br />in Wichita, KS and Nationwide",
+        "description": "Full-service commercial printing for businesses that demand quality and reliability. We offer both digital and offset printing capabilities to match your quantity and quality requirements."
       },
       "services": [
         {
@@ -168,27 +208,32 @@
         {
           "icon": "book-open",
           "title": "Brochures & Catalogs",
-          "description": "Marketing brochures, product catalogs, and sell sheets in various sizes and finishes."
+          "description": "Marketing brochures (including oversize), product catalogs, and sell sheets in various sizes and finishes."
         },
         {
           "icon": "clipboard",
           "title": "Forms & Business Documents",
-          "description": "Custom forms, invoices, contracts, and business documents with sequential numbering available."
-        },
-        {
-          "icon": "printer",
-          "title": "Digital & Offset Printing",
-          "description": "Both digital and offset printing capabilities to match your quantity and quality requirements."
+          "description": "Custom forms, invoices, contracts, and business documents. Need it carbonless? We do that too! <a href='./business-forms/' class='underline hover:opacity-80 transition-opacity'>Learn more about business forms</a>."
         },
         {
           "icon": "mail",
-          "title": "Direct Mail Services",
-          "description": "Print, address, and mail — we handle the entire process from start to post office."
+          "title": "Mailers and Postcards",
+          "description": "Standard or custom sizes available to meet your needs with mailing service available in-house for single vendor service."
         },
         {
-          "icon": "package",
-          "title": "Fulfillment & Distribution",
-          "description": "Kit assembly, packaging, and direct distribution to multiple addresses."
+          "icon": "bar-chart-3",
+          "title": "Variable Data Print Items",
+          "description": "MICR checks, tickets, and documents available with sequential numbering."
+        },
+        {
+          "icon": "printer",
+          "title": "Finishing Services",
+          "description": "Full-service bindery: cutting, scoring, perforating, numbering, corner rounding, die cutting, custom foil imprint, embossing, folding, laminating (gloss, matte, soft touch), padding, UV coating, spot UV, spiral binding, wire binding, stapling, saddle stitched booklets w/ square folding, shrink wrapping, tabbing, custom kitting/packaging."
+        },
+        {
+          "icon": "image",
+          "title": "Wide Format",
+          "description": "Posters, banners, signs, stickers, decals, vehicle graphics, and installation services."
         }
       ]
     },
@@ -200,31 +245,23 @@
       "faqs": [
         {
           "q": "What file formats do you accept for commercial printing projects?",
-          "a": "We accept high-resolution PDF files as well as native files from common design programs such as Adobe InDesign, Illustrator, and Photoshop. Our team reviews all files and provides guidance on preparation to ensure optimal print quality."
-        },
-        {
-          "q": "Do you offer both digital and offset printing?",
-          "a": "Yes. Digital printing is ideal for shorter runs and variable data, while offset printing provides excellent color reproduction for larger volumes. We recommend the best method based on your quantity, timeline, and budget requirements."
+          "a": "We recommend submitting files in a high-resolution PDF format, but we also accept native files from common design programs such as Adobe InDesign, Illustrator, and Photoshop. Please inquire with us if you have a different file format, as we may still be able to accept it. Our team reviews all files and provides guidance on preparation to ensure optimal print quality."
         },
         {
           "q": "Is design assistance available?",
-          "a": "In-house designers are available to refine layouts, optimize images, select appropriate paper stocks, and prepare files. Whether you need minor adjustments or full creative support, one team handles every detail."
+          "a": "In-house designers are available to create a design for you from conception or to refine layouts, optimize images, select appropriate paper stocks, and prepare files from artwork you supply to us. Whether you need minor adjustments or full creative support, our team handles every detail. Customer Service provides support on paper stocks."
         },
         {
-          "q": "Can printed materials be sent directly into a mailing program?",
-          "a": "Absolutely. Completed pieces move seamlessly into fulfillment or into the Postalocity platform for automated mailing, address verification, and prompt submission to USPS — all managed by the same concierge team."
+          "q": "Can printed materials be mailed in-house?",
+          "a": "Absolutely. Completed pieces move seamlessly into fulfillment, presort postage is applied and pieces are provided to USPS for delivery — all managed by the same concierge team."
         },
         {
           "q": "What types of finishing options are available?",
-          "a": "We provide folding, scoring, die-cutting, binding, perforating, and other in-house finishing services. This ensures professional presentation whether producing brochures, business cards, forms, or marketing collateral."
+          "a": "We provide a full range of finishing services including folding, scoring, die-cutting, binding (coil, perfect, saddle stitch, drilling), perforating, numbering, corner rounding, custom foil imprint, embossing, laminating (gloss, matte, soft touch), padding, UV coating, spot UV, spiral binding, wire binding, shrink wrapping, tabbing, and custom kitting/packaging."
         },
         {
           "q": "How does the concierge model benefit commercial printing projects?",
-          "a": "One dedicated point of contact oversees the entire workflow — from file review through production, finishing, and optional mailing. This eliminates coordination across multiple vendors and helps organizations reclaim operational time weekly."
-        },
-        {
-          "q": "Do you support variable data printing?",
-          "a": "Yes. Our digital capabilities support personalized printing for targeted marketing materials, statements, invoices, and other variable-data projects with consistent quality and efficiency."
+          "a": "You have a single dedicated point of contact that oversees the entire workflow on your behalf — from file review through production, finishing, and optional mailing. This eliminates coordination across multiple vendors and helps your organization reclaim operational time weekly."
         },
         {
           "q": "What is the process for obtaining a free estimate?",
@@ -235,10 +272,11 @@
     "footer": {
       "finalCTA": { 
         "headline": "Ready to simplify your commercial printing projects?", 
+        "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
         "buttonText": "Get Free Estimate", 
         "href": "https://broadstrokeinc.com/contact/?service=commercial-printing" 
       },
-      "tagline": "Print. Mail. Promo. One Call."
+      "tagline": "Your one-stop-shop for all things print, mail and promo."
     }
   },
   "notes": {

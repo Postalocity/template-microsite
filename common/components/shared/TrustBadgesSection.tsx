@@ -69,7 +69,7 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
   }
 
   return (
-    <section className="py-8 bg-section-alt" ref={ref} id="trust-signals">
+    <section className="py-8 bg-background" ref={ref} id="trust-signals">
       <div className="section-container">
         {trustSignals?.section?.title && (
           <motion.div

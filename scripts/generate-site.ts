@@ -800,9 +800,9 @@ function App() {
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
         <BenefitsSection benefits={content.benefits} />
-        {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         <ServicesSection services={content.services} />
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         <TestimonialsSection />
