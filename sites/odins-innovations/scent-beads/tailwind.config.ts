@@ -6,6 +6,7 @@ export default {
     "./index.html",
     "./main.tsx",
     "../../../common/components/**/*.{js,ts,jsx,tsx}",
+    "../../../common/themes/odins-innovations/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
@@ -18,8 +19,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Source Sans 3", "system-ui", "sans-serif"],
-        display: ["Oswald", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

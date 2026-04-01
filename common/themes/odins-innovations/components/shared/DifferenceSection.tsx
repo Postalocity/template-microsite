@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Eye, Zap, Sparkles, Shield, CheckCircle, TrendingUp, Clock, Users, Package } from "lucide-react";
-import { sanitizeHtml } from "../../utils/sanitize-html";
+import { sanitizeHtml } from "@/utils/sanitize-html";
 import { useBrand, useBrandName } from "@/contexts";
 
 // Map icon names to components (using eslint-disable for lucide type compatibility)

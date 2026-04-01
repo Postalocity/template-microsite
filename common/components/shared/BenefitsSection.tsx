@@ -1,5 +1,10 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { BenefitsContent } from "../../types/content";
+import { getIcon } from "../../utils/icons";
+import { getGridLayoutClasses, getColumnSpanClass, getColumnClass } from "../../utils/grid-layout";
 import { sanitizeHtml } from "../../utils/sanitize-html";
+import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { useFormattedPricing } from "@/utils/pricing";
 
 interface BenefitsSectionProps {
@@ -7,12 +12,11 @@ interface BenefitsSectionProps {
 }
 
 const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
   const { short, full, withEnvelope } = useFormattedPricing();
   
-  if (!benefits?.section || !benefits?.benefits) {
-    return null;
-  }
-  
+  // Process text with pricing placeholders - handles undefined safely
   const processText = (text: string | undefined) => {
     if (!text) return '';
     return text
@@ -21,62 +25,70 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
       .replace(/\{\{PRICING_ENVELOPE\}\}/g, withEnvelope);
   };
 
+  // Guard clause for missing data - prevents runtime errors (Codex #7)
+  if (!benefits?.section || !benefits?.benefits) {
+    return null;
+  }
+
+  const itemCount = benefits.benefits.length;
+  const gridClasses = getGridLayoutClasses(itemCount);
+
   return (
-    <section id="benefits" className="section-lg section-alt">
+    <section id="benefits" className="section-padding bg-background" ref={ref}>
       <div className="section-container">
-        {/* Section header - bold, left-aligned */}
-        <div className="max-w-3xl mb-16">
-          <p 
-            className="uppercase-tracked mb-4"
-            style={{ color: 'hsl(var(--accent))' }}
-          >
-            Why Choose Odin&apos;s
-          </p>
-          <h2 className="mb-6 text-foreground">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
             {benefits.section.title}
           </h2>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             {benefits.section.description}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Benefits - two-column layout with visual hierarchy */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-          {benefits.benefits.map((benefit, idx) => (
-            <div key={idx} className="group">
-              {/* Number indicator */}
-              <span 
-                className="font-display text-5xl block mb-4"
-                style={{ 
-                  color: 'hsl(var(--accent) / 0.15)',
-                  lineHeight: 1
-                }}
+        <div className={gridClasses}>
+          {benefits.benefits.map((benefit, idx) => {
+            const Icon = getIcon(benefit.icon);
+            const colSpanClass = getColumnSpanClass(itemCount);
+            const colClass = getColumnClass(idx, itemCount);
+
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className={`${colSpanClass} ${colClass}`}
               >
-                {String(idx + 1).padStart(2, '0')}
-              </span>
-              <h3 className="font-body text-lg font-bold mb-3 text-foreground group-hover:text-[hsl(var(--accent))] transition-colors">
-                {benefit.title}
-              </h3>
-              <p 
-                className="font-body text-base leading-relaxed"
-                style={{ color: 'hsl(var(--muted-foreground))' }}
-                dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(benefit.description || benefit.detail)) }}
-              />
-              {benefit.metrics && (
-                <div 
-                  className="mt-4 pt-4 border-t"
-                  style={{ borderColor: 'hsl(var(--border))' }}
-                >
-                  <p 
-                    className="text-sm font-bold uppercase-tracked"
-                    style={{ color: 'hsl(var(--accent))' }}
-                  >
-                    {processText(benefit.metrics)}
-                  </p>
-                </div>
-              )}
-            </div>
-          ))}
+                <Card className="h-full border-2 hover:border-primary/50 transition-colors">
+                  <CardHeader>
+                    <div aria-hidden="true" className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon className="w-7 h-7 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">{benefit.title}</CardTitle>
+                    <CardDescription 
+                      className="text-base mt-2"
+                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(benefit.description || benefit.detail)) }}
+                    />
+                    {benefit.detail && (
+                      <CardDescription className="text-base mt-2 font-medium text-primary/80">
+                        {processText(benefit.detail)}
+                      </CardDescription>
+                    )}
+                    {benefit.metrics && (
+                      <div className="text-base font-semibold text-primary mt-4">
+                        {processText(benefit.metrics)}
+                      </div>
+                    )}
+                  </CardHeader>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

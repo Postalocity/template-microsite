@@ -1,3 +1,6 @@
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { Upload, Printer, Mail, Truck, Check } from "lucide-react";
 import { useBrand } from "@/contexts";
 
 interface HowItWorksStep {
@@ -19,107 +22,119 @@ interface HowItWorksSectionProps {
   howItWorks?: HowItWorksContent;
 }
 
+// Icon mapping based on step title keywords
+const getIcon = (title: string) => {
+  const lower = title.toLowerCase();
+  if (lower.includes('upload') || lower.includes('document') || lower.includes('tell')) return Upload;
+  if (lower.includes('print') || lower.includes('process') || lower.includes('work')) return Printer;
+  if (lower.includes('verify') || lower.includes('address')) return Mail;
+  if (lower.includes('mail') || lower.includes('deliver') || lower.includes('complete')) return Truck;
+  return Mail;
+};
+
 const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+  
+  // Get brand config for default content
   const ctx = useBrand();
   const brandHowItWorks = ctx.brand.howItWorks;
   
+  // Use config content if provided, otherwise fall back to brand defaults
   const hasConfig = howItWorks && (howItWorks.steps?.length || howItWorks.section?.title);
   const allSteps = hasConfig ? howItWorks?.steps : (brandHowItWorks?.steps || [
     {
-      number: "01",
-      title: "Choose Your Formula",
-      description: "Select from Doe Estrus, Dominant Buck, or specialty blends based on your target species and season."
+      number: "1",
+      title: "Upload Your PDFs",
+      description: "Drag-and-drop your documents into our secure dashboard. Same-day or next-day mailing available."
     },
     {
-      number: "02",
-      title: "Deploy in the Field",
-      description: "Place beads in mock scrapes, on drag lines, or around your stand. A little goes a long way."
+      number: "2",
+      title: "Address Verification",
+      "description": "NCOA/CASS verification updates addresses before mailing, reducing returned letters by 40%."
     },
     {
-      number: "03", 
-      title: "Let Science Work",
-      description: "The polymer matrix releases attractant steadily for 30+ days—rain or shine, hot or cold."
+      number: "3", 
+      "title": "We Print & Process",
+      "description": "Professional printing, folding, stuffing into envelopes, and sealing—all automated."
     },
     {
-      number: "04",
-      title: "Results in the Crosshairs",
-      description: "Consistent attraction that outlasts traditional lures. No re-application needed for weeks."
+      number: "4",
+      "title": "USPS Mailing & Tracking",
+      "description": "Same-day or next-day mailing. Track Priority and Certified letters through delivery."
     }
   ]);
   const steps = allSteps || [];
 
   const sectionTitle = howItWorks?.section?.title || brandHowItWorks?.section?.title || "How It Works";
-  const sectionDesc = howItWorks?.section?.description || brandHowItWorks?.section?.description || "Four steps to consistent results";
+  const sectionDesc = howItWorks?.section?.description || brandHowItWorks?.section?.description || "Four simple steps from upload to mailing";
   const sectionId = howItWorks?.section?.id || brandHowItWorks?.section?.id || "how-it-works";
+  const numSteps = steps.length;
+  
+  // Dynamic grid columns based on number of steps
+  const gridCols = numSteps <= 3 ? "lg:grid-cols-3" : numSteps === 2 ? "lg:grid-cols-2" : "lg:grid-cols-4";
 
   return (
-    <section id={sectionId} className="section-lg section-alt">
+    <section
+      id={sectionId}
+      className="section-padding bg-background"
+      ref={ref}
+    >
       <div className="section-container">
-        {/* Section header */}
-        <div className="max-w-2xl mb-16">
-          <p 
-            className="uppercase-tracked mb-4"
-            style={{ color: 'hsl(var(--accent))' }}
-          >
-            How It Works
-          </p>
-          <h2 className="mb-6 text-foreground">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
+        >
+          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             {sectionTitle}
           </h2>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed">
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             {sectionDesc}
           </p>
+        </motion.div>
+
+        <div className={`grid md:grid-cols-2 ${gridCols} gap-6`}>
+          {steps.map((step, i) => {
+            const Icon = getIcon(step.title);
+            return (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="relative bg-card rounded-xl p-8 shadow-card hover:shadow-card-hover transition-shadow"
+              >
+                {step.number && (
+                  <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-sm">
+                    {step.number}
+                  </div>
+                )}
+                <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                  <Icon className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
-        {/* Steps - horizontal timeline on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-6">
-          {steps.map((step, i) => (
-            <div key={step.title} className="relative">
-              {/* Connector line between steps (hidden on last) */}
-              {i < steps.length - 1 && (
-                <div 
-                  className="hidden md:block absolute top-8 left-full w-full h-px"
-                  style={{ background: 'hsl(var(--border))' }}
-                />
-              )}
-              
-              {/* Step number - large, accent colored */}
-              <div 
-                className="w-16 h-16 flex items-center justify-center mb-6"
-                style={{ 
-                  background: 'hsl(var(--accent) / 0.08)',
-                  border: '2px solid hsl(var(--accent) / 0.2)'
-                }}
-              >
-                <span 
-                  className="font-display text-2xl"
-                  style={{ color: 'hsl(var(--accent))' }}
-                >
-                  {step.number}
-                </span>
-              </div>
-              
-              <h3 className="font-body text-base font-bold mb-2 text-foreground">
-                {step.title}
-              </h3>
-              <p 
-                className="font-body text-sm leading-relaxed"
-                style={{ color: 'hsl(var(--muted-foreground))' }}
-              >
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom note */}
-        <div className="mt-16 pt-8 border-t" style={{ borderColor: 'hsl(var(--border))' }}>
-          <p className="font-body text-base leading-relaxed max-w-2xl">
-            <strong>Pro tip:</strong> Start with less than you think you need. 
-            These beads are engineered for slow, consistent release. 
-            A small handful in a mock scrape can last an entire season.
-          </p>
-        </div>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.5 }}
+          className="text-center mt-10 text-lg font-semibold text-foreground"
+        >
+          <Check className="inline w-5 h-5 text-secondary mr-2" />
+          Documents reach recipients reliably, accuracy is maintained,
+          and your team gains hours back weekly.
+        </motion.p>
       </div>
     </section>
   );

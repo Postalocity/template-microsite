@@ -51,7 +51,7 @@
       "subhead": "Engineered for consistent, weatherproof attraction. Legal in every state and biodegradable.",
       "background": {
         "image": "/scent-beads/images/hero1.jpg",
-        "alt": "Forest scene - Odin's synthetic scent beads for hunting",
+        "alt": "Noah Craddock - Plan paid off. Started with Apple Scent in July; got him in the Fall!",
         "overlay": true
       },
       "ctas": [
@@ -168,31 +168,37 @@
       },
       "rows": [
         {
+          "icon": "shield-check",
           "feature": "Legal in all 50 states",
           "traditionalApproach": "Restricted in many states",
           "ourSolution": "Yes - 100% synthetic"
         },
         {
+          "icon": "clock",
           "feature": "Scent duration",
           "traditionalApproach": "Typically 7-14 days",
           "ourSolution": "30+ days"
         },
         {
+          "icon": "cloud-rain",
           "feature": "Weather resistance",
           "traditionalApproach": "Often washes away",
           "ourSolution": "Maintains release after rain"
         },
         {
+          "icon": "snowflake",
           "feature": "Spoilage or freezing",
           "traditionalApproach": "Common issue",
           "ourSolution": "None - stable formula"
         },
         {
+          "icon": "flask-conical",
           "feature": "Consistency",
           "traditionalApproach": "Varies by source",
           "ourSolution": "Lab-formulated every batch"
         },
         {
+          "icon": "leaf",
           "feature": "Biodegradable",
           "traditionalApproach": "Varies",
           "ourSolution": "Yes - polymer matrix"

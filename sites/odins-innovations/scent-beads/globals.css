@@ -1,0 +1,476 @@
+/* === ODIN'S INNOVATIONS - PROFESSIONAL OUTDOOR BRAND CSS ===
+ * Clean, bold, product-focused. Let the product speak.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* === PROFESSIONAL OUTDOOR BRAND DESIGN SYSTEM ===
+     * 
+     * Clean, bold, product-focused.
+     * Inspired by Sitka Gear, Under Armour Hunting, Cabela's.
+     * 
+     * Tone: Professional, trustworthy, performance-driven
+     */
+    
+    /* === SEMANTIC COLORS === */
+    
+    /* Background: Clean white */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
+    
+    /* Cards: Subtle off-white */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 10%;
+    
+    /* Primary: Deep charcoal - strong, professional */
+    --primary: 220 12% 18%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary: Medium gray */
+    --secondary: 220 8% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted: Light gray */
+    --muted: 220 8% 92%;
+    --muted-foreground: 220 8% 48%;
+    
+    /* Accent: Odin's signature green - subtle but distinctive */
+    --accent: 145 45% 38%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Destructive: Red */
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders: Subtle gray */
+    --border: 220 10% 88%;
+    --input: 220 10% 88%;
+    --ring: 145 45% 38%;
+    --radius: 0;
+
+    /* === TYPOGRAPHY === */
+    /* Oswald: Condensed, bold, professional - headlines */
+    --font-display: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+    /* Source Sans 3: Clean, highly readable - body */
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+    
+    /* Professional type scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: clamp(2rem, 5vw, 3.5rem);
+    --text-3xl: clamp(3rem, 8vw, 5.5rem);
+    --text-4xl: clamp(4rem, 10vw, 7rem);
+    
+    /* === SPACING: Clean, consistent === */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 5rem;
+    --space-9: 7rem;
+    --space-10: 10rem;
+    
+    /* === SHADOWS: Minimal, professional === */
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.04);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+    
+    /* === MOTION: Minimal === */
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 200ms;
+    
+    /* === CUSTOM TOKENS === */
+    --hero-bg: 220 15% 12%;
+    --hero-foreground: 0 0% 100%;
+    --hero-subtitle: 220 10% 70%;
+    --section-alt: 220 10% 97%;
+    --success: 145 45% 38%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Sidebar tokens */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 15% 20%;
+    --sidebar-primary: 220 12% 18%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 8% 95%;
+    --sidebar-accent-foreground: 220 15% 10%;
+    --sidebar-border: 220 10% 90%;
+    --sidebar-ring: 145 45% 38%;
+  }
+
+  .dark {
+    --background: 220 15% 8%;
+    --foreground: 220 10% 92%;
+    --card: 220 15% 12%;
+    --card-foreground: 220 10% 95%;
+    --popover: 220 15% 12%;
+    --popover-foreground: 220 10% 95%;
+    --primary: 145 40% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 10% 30%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 10% 18%;
+    --muted-foreground: 220 8% 55%;
+    --accent: 145 40% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 50% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 20%;
+    --input: 220 10% 20%;
+    --ring: 145 40% 42%;
+    --hero-bg: 220 15% 6%;
+    --hero-foreground: 220 10% 95%;
+    --hero-subtitle: 220 8% 60%;
+    --section-alt: 220 15% 10%;
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 220 10% 92%;
+    --sidebar-primary: 145 40% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 14%;
+    --sidebar-accent-foreground: 220 10% 92%;
+    --sidebar-border: 220 10% 18%;
+    --sidebar-ring: 145 40% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Display typography: Oswald - condensed, bold, professional */
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
+  }
+  
+  h4, h5, h6 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    line-height: 1.25;
+  }
+  
+  h1 { font-size: var(--text-3xl); }
+  h2 { font-size: var(--text-2xl); }
+  h3 { font-size: var(--text-xl); }
+  h4 { font-size: 1.25rem; }
+  h5 { font-size: 1.125rem; }
+  h6 { font-size: 1rem; }
+  
+  /* Body: Source Sans 3 - clean, readable */
+  p, li {
+    font-family: var(--font-body);
+    line-height: 1.7;
+  }
+  
+  /* Emphasis */
+  strong, b {
+    font-weight: 700;
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer utilities {
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+  
+  .text-fluid-xs { font-size: var(--text-xs); }
+  .text-fluid-sm { font-size: var(--text-sm); }
+  .text-fluid-base { font-size: var(--text-base); }
+  .text-fluid-lg { font-size: var(--text-lg); }
+  .text-fluid-xl { font-size: var(--text-xl); }
+  .text-fluid-2xl { font-size: var(--text-2xl); }
+  .text-fluid-3xl { font-size: var(--text-3xl); }
+  .text-fluid-4xl { font-size: var(--text-4xl); }
+  
+  .uppercase-tracked {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family: var(--font-body);
+  }
+  
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
+  
+  .ease-out-quart { transition-timing-function: var(--ease-out-quart); }
+  .ease-out-expo { transition-timing-function: var(--ease-out-expo); }
+  .duration-fast { transition-duration: var(--duration-fast); }
+  .duration-normal { transition-duration: var(--duration-normal); }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto w-full;
+    max-width: min(1200px, 100% - var(--space-6));
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+  
+  @media (min-width: 640px) {
+    .section-container {
+      padding-left: var(--space-6);
+      padding-right: var(--space-6);
+    }
+  }
+  
+  /* Spacing - clean, consistent */
+  .section-sm { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+  .section-md { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+  .section-lg { padding-top: var(--space-9); padding-bottom: var(--space-9); }
+  .section-xl { padding-top: var(--space-10); padding-bottom: var(--space-10); }
+  
+  .section-padding { padding-top: var(--space-8); padding-bottom: var(--space-8); }
+  
+  /* Alternating backgrounds */
+  .section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+  
+  .bg-section-alt {
+    background-color: hsl(var(--section-alt));
+  }
+  
+  /* Primary button - clean, professional */
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-semibold transition-all;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    font-family: var(--font-body);
+    padding: var(--space-3) var(--space-5);
+    transition: all var(--duration-fast) var(--ease-out-quart);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+  }
+  
+  .btn-primary:hover {
+    background: hsl(220 12% 12%);
+    transform: translateY(-1px);
+  }
+  
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  
+  /* Accent button - Odin's green */
+  .btn-accent {
+    @apply inline-flex items-center justify-center font-semibold transition-all;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    font-family: var(--font-body);
+    padding: var(--space-3) var(--space-5);
+    transition: all var(--duration-fast) var(--ease-out-quart);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+  }
+  
+  .btn-accent:hover {
+    background: hsl(145 40% 32%);
+    transform: translateY(-1px);
+  }
+  
+  .btn-accent:active {
+    transform: translateY(0);
+  }
+  
+  /* Outline button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center font-semibold transition-all;
+    background: transparent;
+    color: hsl(var(--foreground));
+    border: 2px solid hsl(var(--border));
+    font-family: var(--font-body);
+    padding: calc(var(--space-3) - 2px) calc(var(--space-5) - 2px);
+    transition: all var(--duration-fast) var(--ease-out-quart);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .btn-outline:hover {
+    background: hsl(var(--foreground));
+    color: hsl(var(--background));
+    border-color: hsl(var(--foreground));
+  }
+  
+  /* Dark outline button for dark backgrounds */
+  .btn-outline-dark {
+    @apply inline-flex items-center justify-center font-semibold transition-all;
+    background: transparent;
+    color: hsl(var(--hero-foreground));
+    border: 2px solid hsl(var(--hero-foreground) / 0.4);
+    font-family: var(--font-body);
+    padding: calc(var(--space-3) - 2px) calc(var(--space-5) - 2px);
+    transition: all var(--duration-fast) var(--ease-out-quart);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .btn-outline-dark:hover {
+    background: hsl(var(--hero-foreground) / 0.1);
+    border-color: hsl(var(--hero-foreground) / 0.6);
+  }
+  
+  /* Dark accent button */
+  .btn-accent-dark {
+    @apply inline-flex items-center justify-center font-semibold transition-all;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    font-family: var(--font-body);
+    padding: var(--space-3) var(--space-5);
+    transition: all var(--duration-fast) var(--ease-out-quart);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+  }
+  
+  .btn-accent-dark:hover {
+    background: hsl(145 40% 32%);
+    transform: translateY(-1px);
+  }
+  
+  /* Badge - clean, minimal */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 text-xs font-semibold;
+    background: hsl(var(--accent));
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: var(--font-body);
+    font-weight: 600;
+  }
+  
+  /* Clean card */
+  .clean-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    padding: var(--space-5);
+    transition: all var(--duration-fast) var(--ease-out-quart);
+  }
+  
+  .clean-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+  
+  /* Feature list item */
+  .feature-item {
+    padding-left: var(--space-4);
+    border-left: 2px solid hsl(var(--accent));
+  }
+  
+  /* Earned badge - clean, minimal */
+  .trust-badge {
+    @apply inline-flex items-center gap-2;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: hsl(var(--foreground));
+    padding: var(--space-2) var(--space-3);
+    background: hsl(var(--muted));
+  }
+  
+  /* FAQ question */
+  .faq-question {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.0625rem;
+    color: hsl(var(--foreground));
+    line-height: 1.4;
+  }
+  
+  .faq-answer {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: hsl(var(--muted-foreground));
+  }
+  
+  /* Testimonial quote */
+  .testimonial-quote {
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground));
+    font-style: italic;
+  }
+  
+  /* Lucide icons - rustic styling for hunting/outdoor brand */
+  /* Thicker strokes, rounded caps - like hand-carved marks on wood */
+  .lucide {
+    stroke-width: 2.5 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+  }
+  
+  /* Comparison table */
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-4) var(--space-5);
+    border-bottom: 1px solid hsl(var(--border));
+    text-align: left;
+  }
+  
+  .comparison-table thead {
+    border-bottom: 2px solid hsl(var(--foreground));
+  }
+  
+  .comparison-table tbody tr:hover {
+    background: hsl(var(--section-alt));
+  }
+}

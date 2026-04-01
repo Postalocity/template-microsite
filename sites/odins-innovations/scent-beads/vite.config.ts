@@ -10,6 +10,7 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, '../../../common'),
       '@/': path.resolve(__dirname, '../../../common') + '/',
+      '@/themes/odins-innovations': path.resolve(__dirname, '../../../common/themes/odins-innovations'),
     },
     dedupe: ['react', 'react-dom'],
   },

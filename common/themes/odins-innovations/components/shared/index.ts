@@ -1,0 +1,11 @@
+export { default as HeroSection } from './HeroSection';
+export { default as BenefitsSection } from './BenefitsSection';
+export { default as ServicesSection } from './ServicesSection';
+export { default as FAQSection } from './FAQSection';
+export { default as ComparisonTable } from './ComparisonTable';
+export { default as DifferenceSection } from './DifferenceSection';
+export { default as TrustBadgesSection } from './TrustBadgesSection';
+export { default as HowItWorksSection } from './HowItWorksSection';
+export { default as TestimonialsSection } from './TestimonialsSection';
+export { default as SiteNavigation } from './SiteNavigation';
+export { default as SiteFooter } from './SiteFooter';

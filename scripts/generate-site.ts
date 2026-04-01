@@ -12,7 +12,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { exec } from 'child_process';
 import { loadEngineContext, loadSiteConfig, listBrands, listServices } from '../engine/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -231,8 +230,70 @@ function expandShorthandContent(content: Record<string, unknown>): Record<string
   return expanded;
 }
 
+/**
+ * Copy brand-specific assets to the site's public directory.
+ * Respects existing files - never overwrites brand-specific assets.
+ * Priority: common/assets/{brandId}/{slug}/* > common/assets/{brandId}/* > common/assets/*
+ */
+function copyBrandAssets(siteDir: string, brandId: string, siteSlug: string): void {
+  const publicDir = path.join(siteDir, 'public');
+  
+  // Create public dir if it doesn't exist
+  if (!fs.existsSync(publicDir)) {
+    fs.mkdirSync(publicDir, { recursive: true });
+  }
+
+  const imagesDir = path.join(publicDir, 'images');
+  
+  // Copy hero images from brand-specific source if they exist
+  // Priority: common/assets/{brandId}/{slug}/* > common/assets/{brandId}/hero* > common/assets/{slug}/* > common/assets/hero*
+  const heroImageSources = [
+    // Brand + service specific hero images
+    { src: path.join(TEMPLATE_DIR, 'common/assets', brandId, `${siteSlug}-hero.jpg`), dest: path.join(imagesDir, 'hero.jpg') },
+    { src: path.join(TEMPLATE_DIR, 'common/assets', brandId, `${siteSlug}-hero-bg.jpg`), dest: path.join(imagesDir, 'hero-bg.jpg') },
+    // Brand-level hero images
+    { src: path.join(TEMPLATE_DIR, 'common/assets', brandId, 'hero.jpg'), dest: path.join(imagesDir, 'hero.jpg') },
+    { src: path.join(TEMPLATE_DIR, 'common/assets', brandId, 'hero-bg.jpg'), dest: path.join(imagesDir, 'hero-bg.jpg') },
+    // Service-level hero images (non-brand-specific)
+    { src: path.join(TEMPLATE_DIR, 'common/assets', siteSlug, 'hero.jpg'), dest: path.join(imagesDir, 'hero.jpg') },
+    { src: path.join(TEMPLATE_DIR, 'common/assets', siteSlug, 'hero-bg.jpg'), dest: path.join(imagesDir, 'hero-bg.jpg') },
+    // Generic fallbacks (only if nothing brand-specific exists)
+    { src: path.join(TEMPLATE_DIR, 'common/assets/finance/hero-bg.jpg'), dest: path.join(imagesDir, 'hero-bg.jpg') },
+    { src: path.join(TEMPLATE_DIR, 'common/assets/healthcare/hero-bg.jpg'), dest: path.join(imagesDir, 'hero-bg.jpg') },
+    { src: path.join(TEMPLATE_DIR, 'common/assets/utilities/hero-bg.jpg'), dest: path.join(imagesDir, 'hero-bg.jpg') },
+    { src: path.join(TEMPLATE_DIR, 'common/assets/hero-bg.jpg'), dest: path.join(imagesDir, 'hero-bg.jpg') },
+  ];
+
+  // Find the first existing hero image source
+  let heroCopied = false;
+  for (const { src, dest } of heroImageSources) {
+    if (fs.existsSync(src)) {
+      // Create images dir if needed
+      if (!fs.existsSync(imagesDir)) {
+        fs.mkdirSync(imagesDir, { recursive: true });
+      }
+      // ONLY copy if destination doesn't already exist (preserve brand-specific pre-placed images)
+      if (!fs.existsSync(dest)) {
+        fs.copyFileSync(src, dest);
+        console.log(`✓ Copied hero image: ${path.basename(src)} → images/${path.basename(dest)}`);
+      } else {
+        console.log(`✓ Hero image already exists at ${dest} (preserving brand-specific asset)`);
+      }
+      heroCopied = true;
+      break;
+    }
+  }
+  
+  if (!heroCopied) {
+    console.log('ℹ No hero image source found - site will use config-specified image path');
+  }
+
+  // Copy favicons and logos
+  copyFavicons(siteDir, brandId);
+}
+
 // Copy favicons and logos from common/assets to all sites
-async function copyFavicons(siteDir: string, brandId: string = 'postalocity', brandLogoFilename?: string, brandContext?: BrandContext): Promise<void> {
+function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
   const publicDir = path.join(siteDir, 'public');
   
   // Create public dir if it doesn't exist
@@ -246,134 +307,42 @@ async function copyFavicons(siteDir: string, brandId: string = 'postalocity', br
   const faviconSource = fs.existsSync(brandFaviconPath) ? brandFaviconPath : fallbackFaviconPath;
 
   if (fs.existsSync(faviconSource)) {
-    // Copy favicon.ico
-    fs.copyFileSync(faviconSource, path.join(publicDir, 'favicon.ico'));
+    // ONLY copy if destination doesn't already exist
+    const faviconDest = path.join(publicDir, 'favicon.ico');
+    if (!fs.existsSync(faviconDest)) {
+      fs.copyFileSync(faviconSource, faviconDest);
+      console.log(`✓ Copied favicon from ${brandId === 'postalocity' ? 'default' : brandId} assets`);
+    } else {
+      console.log(`✓ Favicon already exists (preserving brand-specific asset)`);
+    }
   }
   
-  // Copy logo files (light and dark variants)
+  // Copy logo files (light and dark variants) - ONLY if they don't already exist
   const brandLogoDir = path.join(TEMPLATE_DIR, 'common/assets', brandId);
   
-  // Determine logo filename - use brand config filename or default to logo.png
-  const logoFilename = brandLogoFilename || 'logo.png';
-  const darkLogoFilename = 'logo-dark.png';
-  
-  // Copy light logo (use brand-specific filename or default logo.png)
-  const lightLogoSource = path.join(brandLogoDir, logoFilename);
-  const defaultLightLogo = path.join(brandLogoDir, 'logo.png');
+  // Copy light logo (logo.png)
+  const lightLogoSource = path.join(brandLogoDir, 'logo.png');
   const lightLogoDest = path.join(publicDir, 'logo.png');
-  
-  let logoCopied = false;
-  
-  if (fs.existsSync(lightLogoSource)) {
+  if (fs.existsSync(lightLogoSource) && !fs.existsSync(lightLogoDest)) {
     fs.copyFileSync(lightLogoSource, lightLogoDest);
-    console.log(`✓ Copied ${logoFilename} to logo.png`);
-    logoCopied = true;
-  } else if (fs.existsSync(defaultLightLogo)) {
-    fs.copyFileSync(defaultLightLogo, lightLogoDest);
-    console.log(`✓ Copied logo.png`);
-    logoCopied = true;
-  }
-  
-  // If logo not found locally and we have brand context, try to fetch it
-  if (!logoCopied && brandContext) {
-    console.log(`⚠ Logo not found locally for ${brandId}, attempting to download...`);
-    const fetchedLogo = await fetchBrandLogo(brandId, brandContext);
-    if (fetchedLogo && fs.existsSync(fetchedLogo)) {
-      fs.copyFileSync(fetchedLogo, lightLogoDest);
-      console.log(`✓ Downloaded and copied logo from ${fetchedLogo}`);
-      logoCopied = true;
-    }
-  }
-  
-  // Final fallback to postalocity logo if nothing else worked
-  if (!logoCopied) {
-    const fallbackLogo = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
-    if (fs.existsSync(fallbackLogo)) {
-      fs.copyFileSync(fallbackLogo, lightLogoDest);
-      console.log(`⚠ Using fallback postalocity-logo.png`);
-    }
+    console.log(`✓ Copied light logo from ${brandId} assets`);
+  } else if (fs.existsSync(lightLogoDest)) {
+    console.log(`✓ Light logo already exists (preserving brand-specific asset)`);
   }
   
   // Copy dark logo (logo-dark.png)
-  const darkLogoSource = path.join(brandLogoDir, darkLogoFilename);
-  if (fs.existsSync(darkLogoSource)) {
-    fs.copyFileSync(darkLogoSource, path.join(publicDir, 'logo-dark.png'));
-    console.log(`✓ Copied logo-dark.png`);
+  const darkLogoSource = path.join(brandLogoDir, 'logo-dark.png');
+  const darkLogoDest = path.join(publicDir, 'logo-dark.png');
+  if (fs.existsSync(darkLogoSource) && !fs.existsSync(darkLogoDest)) {
+    fs.copyFileSync(darkLogoSource, darkLogoDest);
+    console.log(`✓ Copied dark logo from ${brandId} assets`);
+  } else if (fs.existsSync(darkLogoDest)) {
+    console.log(`✓ Dark logo already exists (preserving brand-specific asset)`);
   }
-}
-
-/**
- * Download a logo from a URL and save it locally
- * Returns true if successful, false otherwise
- */
-async function downloadLogo(url: string, destPath: string): Promise<boolean> {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      console.log(`⚠ Failed to download logo from ${url}: ${response.status} ${response.statusText}`);
-      return false;
-    }
-    
-    const arrayBuffer = await response.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
-    fs.writeFileSync(destPath, buffer);
-    console.log(`✓ Downloaded logo from ${url}`);
-    return true;
-  } catch (error) {
-    console.log(`⚠ Error downloading logo from ${url}: ${error instanceof Error ? error.message : 'Unknown error'}`);
-    return false;
-  }
-}
-
-/**
- * Try to fetch brand logo from common website locations
- * Saves to brand assets directory if found
- */
-async function fetchBrandLogo(brandId: string, brandContext?: BrandContext): Promise<string | null> {
-  if (!brandContext?.brand?.urls?.website) {
-    return null;
-  }
-  
-  const brandLogoDir = path.join(TEMPLATE_DIR, 'common/assets', brandId);
-  
-  // Create brand assets directory if it doesn't exist
-  if (!fs.existsSync(brandLogoDir)) {
-    fs.mkdirSync(brandLogoDir, { recursive: true });
-  }
-  
-  const websiteUrl = brandContext.brand.urls.website;
-  const logoFilename = brandContext.brand.logo?.filename || 'logo.png';
-  const logoPath = path.join(brandLogoDir, logoFilename);
-  
-  // If logo already exists locally, return it
-  if (fs.existsSync(logoPath)) {
-    return logoPath;
-  }
-  
-  // Common logo paths to try
-  const logoUrls = [
-    `${websiteUrl}/logo.png`,
-    `${websiteUrl}/assets/logo.png`,
-    `${websiteUrl}/images/logo.png`,
-    `${websiteUrl}/img/logo.png`,
-    `${websiteUrl}/static/logo.png`,
-    `${websiteUrl}/cdn/shop/files/logo.png`, // Shopify pattern
-    `${websiteUrl}/assets/odins-logo.png`,
-    `${websiteUrl}/images/odins-logo.png`,
-  ];
-  
-  // Try to download from each URL
-  for (const url of logoUrls) {
-    if (await downloadLogo(url, logoPath)) {
-      return logoPath;
-    }
-  }
-  
-  return null;
 }
 
 // Generate Open Graph images from hero banner
-async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string = 'postalocity', brandLogoFilename?: string): Promise<void> {
+async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string = 'postalocity'): Promise<void> {
   const { exec } = await import('child_process');
   const publicDir = path.join(siteDir, 'public');
 
@@ -385,31 +354,29 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
   const ogImageDest = path.join(publicDir, 'og-image.png');
   const logoDest = path.join(publicDir, 'logo.png');
   
-  // Check if logo already exists (may have been copied by copyFavicons)
-  if (!fs.existsSync(logoDest)) {
-    // Determine logo source - use brand-specific logo if available, fallback to default
-    const logoFilename = brandLogoFilename || 'logo.png';
-    const brandLogoPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, logoFilename);
-    const brandLogoDefaultPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'logo.png');
-    const fallbackLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
-    
-    // Try brand-specific filename first, then logo.png, then fallback
-    let commonLogoPath: string;
-    if (fs.existsSync(brandLogoPath)) {
-      commonLogoPath = brandLogoPath;
-    } else if (fs.existsSync(brandLogoDefaultPath)) {
-      commonLogoPath = brandLogoDefaultPath;
-    } else {
-      commonLogoPath = fallbackLogoPath;
-    }
+  // Determine logo source - use brand-specific logo if available, fallback to postalocity
+  const brandLogoPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'logo.png');
+  const fallbackLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
+  const commonLogoPath = fs.existsSync(brandLogoPath) ? brandLogoPath : fallbackLogoPath;
 
-    // Copy logo from common assets (no resizing - each brand maintains its original dimensions)
-    if (fs.existsSync(commonLogoPath)) {
-      fs.copyFileSync(commonLogoPath, logoDest);
-      console.log(`✓ Copied logo image from ${commonLogoPath}`);
-    }
-  } else {
-    console.log('✓ Using existing logo from public folder');
+  // Check if sips is available (macOS)
+  const sipsCheck = await new Promise<{ stdout: string, stderr: string }>((resolve) => {
+    exec('which sips', (error, stdout, stderr) => {
+      if (error) {
+        resolve({ stdout: '', stderr: String(error) });
+      } else {
+        resolve({ stdout, stderr });
+      }
+    });
+  });
+
+  // Copy logo from common assets (no resizing - each brand maintains its original dimensions)
+  // ONLY copy if destination doesn't already exist
+  if (fs.existsSync(commonLogoPath) && !fs.existsSync(logoDest)) {
+    fs.copyFileSync(commonLogoPath, logoDest);
+    console.log('✓ Copied logo image from common assets');
+  } else if (fs.existsSync(logoDest)) {
+    console.log('✓ Logo already exists (preserving brand-specific asset)');
   }
 
   // Get hero image path from config with fallback locations
@@ -450,31 +417,38 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
     }
   }
 
-  // Copy hero image to generated site's public/images folder
-  const heroImagesDir = path.join(publicDir, 'images');
-  if (!fs.existsSync(heroImagesDir)) {
-    fs.mkdirSync(heroImagesDir, { recursive: true });
+  // CRITICAL: If the config specifies a hero image path that already exists in the site's public/images,
+  // use THAT image instead of overwriting with a generic fallback.
+  // This preserves brand-specific hero images that were pre-placed or downloaded.
+  const configHeroFullPath = path.join(siteDir, 'public', heroImagePath.replace(/^\//, ''));
+  if (fs.existsSync(configHeroFullPath)) {
+    console.log(`✓ Using existing brand-specific hero image: ${configHeroFullPath}`);
+    heroSourcePath = configHeroFullPath;
   }
-  
-  const heroImageFilename = path.basename(heroImagePath);
-  const heroImagePathInSite = path.join(heroImagesDir, heroImageFilename);
 
-  // Check if image already exists in public folder (e.g., manually downloaded from Unsplash)
-  const existingImage = path.join(publicDir, 'images', heroImageFilename);
-  if (fs.existsSync(existingImage)) {
-    console.log(`✓ Using existing hero image from public folder: ${existingImage}`);
-  } else if (heroSourcePath) {
-    // Use source path for copy if found and no existing image
-    fs.copyFileSync(heroSourcePath, heroImagePathInSite);
-    console.log(`✓ Copied hero image from: ${heroSourcePath} to: ${heroImagePathInSite}`);
-  } else {
+  if (!heroSourcePath) {
     console.log(`⚠ No hero image source found for ${siteSlug} - generating fallback OG image`);
     await generateFallbackOgImage(ogImageDest, config);
     return;
   }
 
-  // Use the copied image path for OG image generation
-  let heroFullPath = heroImagePathInSite;
+  // Copy hero image to generated site's public/images folder ONLY if destination doesn't exist
+  const heroImagesDir = path.join(publicDir, 'images');
+  if (!fs.existsSync(heroImagesDir)) {
+    fs.mkdirSync(heroImagesDir, { recursive: true });
+  }
+  // Use source path for copy, but keep config's filename for the destination
+  const heroImageFilename = path.basename(heroImagePath);
+  const heroImagePathInSite = path.join(heroImagesDir, heroImageFilename);
+  if (!fs.existsSync(heroImagePathInSite)) {
+    fs.copyFileSync(heroSourcePath, heroImagePathInSite);
+    console.log(`✓ Copied hero image to: ${heroImagePathInSite}`);
+  } else {
+    console.log(`✓ Hero image already exists at ${heroImagePathInSite} (preserving brand-specific asset)`);
+  }
+
+  // Use the source path for OG image generation
+  let heroFullPath = heroSourcePath;
 
   if (!heroFullPath) {
     return;
@@ -514,11 +488,8 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
     return;
   }
 
-  // Check if we're on macOS and sips is available
-  const isMacOS = process.platform === 'darwin';
-
   // If sips is available, resize hero image
-  if (heroFullPath && isMacOS) {
+  if (heroFullPath && sipsCheck.stdout) {
     // Resize hero to 1200x630 for Open Graph
     await new Promise<void>((resolve) => {
       exec(`sips -z 630 1200 "${heroFullPath}" --out "${ogImageDest}"`, (error) => {
@@ -573,16 +544,12 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
   }
 }
 
-async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext, brandId?: string, isUpdate: boolean = false) {
+async function generateSite(siteDir: string, config: SiteConfig, brandContext?: BrandContext, brandId?: string) {
   try {
     const { site } = config;
 
-    console.log(`${isUpdate ? 'Updating' : 'Generating'} site: ${site.name}`);
+    console.log(`Generating site: ${site.name}`);
     console.log(`Output directory: ${siteDir}`);
-    
-    if (isUpdate) {
-      console.log('📝 Update mode: preserving node_modules and dist directories');
-    }
 
     // Create site directory
     if (!fs.existsSync(siteDir)) {
@@ -590,14 +557,14 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     }
 
     // Generate main.tsx with brand context
-    const indexContent = generateIndexFile(config, brandContext);
+    const indexContent = generateIndexFile(config, brandContext, brandId);
     fs.writeFileSync(path.join(siteDir, 'main.tsx'), indexContent);
 
     // Copy config.json
     fs.writeFileSync(path.join(siteDir, 'config.json'), JSON.stringify(config, null, 2));
 
     // Generate vite.config.ts
-    const viteConfigContent = generateViteConfig(site.slug);
+    const viteConfigContent = generateViteConfig(site.slug, brandId);
     fs.writeFileSync(path.join(siteDir, 'vite.config.ts'), viteConfigContent);
 
     // Copy postcss.config.js
@@ -605,8 +572,17 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     fs.writeFileSync(path.join(siteDir, 'postcss.config.js'), postcssConfig);
 
     // Generate tailwind.config.ts for the site
-    const tailwindConfig = generateTailwindConfig();
+    const tailwindConfig = generateTailwindConfig(brandId);
     fs.writeFileSync(path.join(siteDir, 'tailwind.config.ts'), tailwindConfig);
+
+    // Copy globals.css - use brand-specific theme if available
+    const themeGlobalsPath = path.join(TEMPLATE_DIR, 'common/themes', brandId || '', 'globals.css');
+    const globalsSourcePath = fs.existsSync(themeGlobalsPath) ? themeGlobalsPath : path.join(TEMPLATE_DIR, 'common/globals.css');
+    const globalsCss = fs.readFileSync(globalsSourcePath, 'utf-8');
+    fs.writeFileSync(path.join(siteDir, 'globals.css'), globalsCss);
+    if (fs.existsSync(themeGlobalsPath)) {
+      console.log(`✓ Using brand-specific theme: ${brandId}`);
+    }
 
     // Copy package.json with site-specific config
     const packageJson = generatePackageJson(site);
@@ -629,12 +605,13 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     const sitemapXml = generateSitemapXml(config);
     fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml);
 
-    // Copy common assets (favicon, etc.)
-    const brandLogoFilename = brandContext?.brand?.logo?.filename;
-    await copyFavicons(siteDir, brandId || 'postalocity', brandLogoFilename, brandContext);
+    // Copy brand-specific assets (hero images, favicons, logos)
+    // Respects existing files - never overwrites brand-specific assets
+    copyBrandAssets(siteDir, brandId || 'postalocity', site.slug || '');
 
     // Generate Open Graph images from hero banner (SEO optimization)
-    await generateOgImages(siteDir, config, brandId || 'postalocity', brandLogoFilename);
+    // Uses existing brand-specific images if available, falls back to generated OG
+    await generateOgImages(siteDir, config, brandId || 'postalocity');
 
     // Post-processing with StringRay agents (if --post-process flag)
     const postProcessFlag = process.argv.includes('--post-process');
@@ -680,7 +657,7 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
   }
 }
 
-function generateIndexFile(config: SiteConfig, brandContext?: BrandContext): string {
+function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, brandId?: string): string {
   const { site } = config;
   
   // Fallback defaults (only used for legacy mode without brand context)
@@ -730,8 +707,8 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext): str
   const contact = brandContext?.contact || fallbackContact;
   const social = brandContext?.social || fallbackSocial;
   
-  // Check if brand has testimonials configured (type-safe access)
-  const hasTestimonials = !!(brandContext?.brand && 'testimonials' in brandContext.brand && Array.isArray((brandContext.brand as any).testimonials) && (brandContext.brand as any).testimonials.length > 0);
+  // Check if brand has theme-specific components
+  const usesBrandTheme = brandId && fs.existsSync(path.join(TEMPLATE_DIR, 'common/themes', brandId, 'globals.css'));
   
   return `/**
  * ${site.name} - Generated from template-microsite
@@ -740,13 +717,15 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext): str
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection${hasTestimonials ? ', TestimonialsSection' : ''} } from '@/components/shared';
+${usesBrandTheme ? `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/themes/${brandId}/components/shared';
+import SiteNavigation from '@/themes/${brandId}/components/shared/SiteNavigation';
+import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
-import SiteFooter from '@/components/shared/SiteFooter';
+import SiteFooter from '@/components/shared/SiteFooter';`}
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
-import '@/globals.css';
+${usesBrandTheme ? `import '@/themes/${brandId}/globals.css';` : `import '@/globals.css';`}
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
@@ -754,16 +733,13 @@ const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
 
-// IKB configuration
+// IKB configuration with promo codes
 const ikbConfig = {
   rules: {
     trustSignals: [
-      'Made in the USA',
-      '50 State Legal',
-      'Field Tested',
-      '30+ Day Scent',
-      'Weatherproof',
-      'Biodegradable',
+      'NCOA Verified 2024',
+      'CASS Certified 2024',
+      'ISO 9001 Documented Processes 2023',
     ],
     promoCodes: {
       'credit-repair': 'cr2026',
@@ -772,25 +748,38 @@ const ikbConfig = {
       'healthcare-mailing-services': 'hm2026',
       'postcard': 'pc2026',
       'self-storage': 'pm2026',
-      '${site.slug}': 'HUNT2026',
     },
-    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing', 'testimonials'],
-    blocklistedContent: ['video', 'live-chat', 'team', 'experts', 'award', 'awards'],
+    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
+    blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
     blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
   },
   pricing: {
-    basePrice: 17.95,
+    basePrice: 1.31,
     currency: 'USD',
-    units: 'bottle',
-    addOns: {},
+    units: 'letter',
+    addOns: {
+      'certified-mail': 4.50,
+      'return-receipt': 3.35,
+      'ncoa-verification': 0.05,
+      'address-verification': 0.02,
+    },
   },
   proofOptions: {
-    standard: [],
-    upgrades: [],
+    standard: [{ id: 'usps-photo', name: 'USPS Photo', description: 'Photo of mailpiece delivered by carrier', tier: 'included' }],
+    upgrades: [
+      { id: 'certified-mail', name: 'Certified Mail', description: 'Track and confirm delivery with signature', tier: 'optional', additionalCost: 4.15 },
+      { id: 'electronic-return-receipt', name: 'Electronic Return Receipt', description: 'Digital signature confirmation via email', tier: 'optional', additionalCost: 3.50 },
+    ],
   },
   terminology: {
-    mailClasses: {},
-    certifications: {},
+    mailClasses: {
+      'first-class': { name: 'First-Class Mail', description: 'Standard USPS mail service', hasTracking: true, hasCertificate: false, allowsPersonalData: true, useCases: ['letters', 'invoices'] },
+      'marketing-mail': { name: 'Marketing Mail', description: 'Cost-effective bulk mailing', hasTracking: false, hasCertificate: false, allowsPersonalData: true, useCases: ['promotional'] },
+    },
+    certifications: {
+      'ncov': { name: 'NCOA', fullName: 'National Change of Address', description: 'Address verification service' },
+      'cass': { name: 'CASS', fullName: 'Coding Accuracy Support System', description: 'USPS-certified address standardization' },
+    },
   },
 };
 
@@ -812,10 +801,11 @@ function App() {
         <HeroSection hero={content.hero} />
         <BenefitsSection benefits={content.benefits} />
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
-        {content.comparison && <ComparisonTable comparison={content.comparison} />}
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         <ServicesSection services={content.services} />
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
-        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}${hasTestimonials ? '\n        <TestimonialsSection />' : ''}
+        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+        <TestimonialsSection />
         <FAQSection faq={content.faq} />
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
@@ -825,14 +815,17 @@ function App() {
 }
 
 // Initialize React
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Failed to find root element');
-const root = createRoot(rootElement);
+const root = createRoot(document.getElementById('root'));
 root.render(<App />);
 `;
 }
 
-function generateViteConfig(serviceSlug: string): string {
+function generateViteConfig(serviceSlug: string, brandId?: string): string {
+  const themeAlias = brandId && fs.existsSync(path.join(TEMPLATE_DIR, 'common/themes', brandId, 'globals.css'))
+    ? `
+      '@/themes/${brandId}': path.resolve(__dirname, '../../../common/themes/${brandId}'),`
+    : '';
+  
   return `import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
@@ -844,7 +837,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../../../common'),
-      '@/': path.resolve(__dirname, '../../../common') + '/',
+      '@/': path.resolve(__dirname, '../../../common') + '/',${themeAlias}
     },
     dedupe: ['react', 'react-dom'],
   },
@@ -863,7 +856,12 @@ export default defineConfig({
 `;
 }
 
-function generateTailwindConfig(): string {
+function generateTailwindConfig(brandId?: string): string {
+  const themeContent = brandId && fs.existsSync(path.join(TEMPLATE_DIR, 'common/themes', brandId, 'globals.css'))
+    ? `,
+    "../../../common/themes/${brandId}/**/*.{js,ts,jsx,tsx}"`
+    : '';
+  
   return `import type { Config } from "tailwindcss";
 
 export default {
@@ -871,7 +869,7 @@ export default {
   content: [
     "./index.html",
     "./main.tsx",
-    "../../../common/components/**/*.{js,ts,jsx,tsx}",
+    "../../../common/components/**/*.{js,ts,jsx,tsx}"${themeContent},
   ],
   prefix: "",
   theme: {
@@ -884,8 +882,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Source Sans 3", "system-ui", "sans-serif"],
-        display: ["Oswald", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -1147,7 +1144,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=${config.seo?.googleAnalyticsId || 'G-XXXXXXXXXX'}"></script>
@@ -1249,16 +1246,16 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
         },
         {
           "@type": "Product",
-          "name": "${site.name.replace(/"/g, '\\"')}",
-          "description": "${(config.seo?.description || site.name).replace(/"/g, '\\"')}",
+          "name": "Automated Mailing Service",
+          "description": "Upload PDFs or connect via API to automate mailing. Starting at $1.31/letter. Single-sided, B&W envelope, postage included.",
           "image": "${canonicalUrl}/og-image.png",
           "brand": {
             "@type": "Brand",
-            "name": "${brandName.replace(/"/g, '\\"')}"
+            "name": "Postalocity"
           },
           "offers": {
             "@type": "Offer",
-            "price": "17.95",
+            "price": "1.31",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
             "url": "${canonicalUrl}",
@@ -1348,7 +1345,6 @@ interface CliOptions {
   brand?: string;
   service?: string;
   config?: string;
-  update?: boolean;
 }
 
 function parseArgs(args: string[]): CliOptions {
@@ -1362,8 +1358,6 @@ function parseArgs(args: string[]): CliOptions {
       options.brand = args[++i];
     } else if (arg === '--service' || arg === '-s') {
       options.service = args[++i];
-    } else if (arg === '--update' || arg === '-u') {
-      options.update = true;
     } else if (arg === '--help' || arg === '-h') {
       options.config = 'help';
     } else if (!arg.startsWith('-')) {
@@ -1382,14 +1376,10 @@ function parseArgs(args: string[]): CliOptions {
   return options;
 }
 
-async function generateSiteMultiBrand(brandId: string, serviceId: string, isUpdate: boolean = false): Promise<void> {
-  console.log(`\n🚀 ${isUpdate ? 'Updating' : 'Generating'} microsite`);
+async function generateSiteMultiBrand(brandId: string, serviceId: string): Promise<void> {
+  console.log(`\n🚀 Generating microsite`);
   console.log(`   Brand: ${brandId}`);
   console.log(`   Service: ${serviceId}`);
-  
-  if (isUpdate) {
-    console.log('   Mode: UPDATE (preserving node_modules and dist)');
-  }
   
   // Load engine context (brand config, IKB, contact, social)
   const ctx = loadEngineContext(brandId);
@@ -1477,7 +1467,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string, isUpda
   }
   
   // Generate the site using legacy function with brand context
-  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext, brandId, isUpdate);
+  await generateSite(siteDir, unifiedConfig as unknown as SiteConfig, brandContext, brandId);
   
   console.log(`\n✅ ${ctx.brand.name} - ${serviceId} generated successfully!`);
   
@@ -1507,15 +1497,11 @@ USAGE:
 OPTIONS:
   --brand, -b <id>     Brand ID (e.g., postalocity, promo, techsp)
   --service, -s <id>   Service ID (e.g., credit-repair, marketing)
-  --update, -u         Update existing site (preserves node_modules and dist)
   --help, -h          Show this help message
 
 EXAMPLES:
   # New format (recommended)
   npx ts-node scripts/generate-site.ts --brand postalocity --service credit-repair
-  
-  # Update existing site (preserves node_modules and dist)
-  npx ts-node scripts/generate-site.ts --brand postalocity --service credit-repair --update
   
   # Legacy format (backward compatible)
   npx ts-node scripts/generate-site.ts postalocity/credit-repair
@@ -1540,7 +1526,7 @@ if (options.config === 'help' || args.includes('--help') || args.includes('-h'))
 // Validate and run
 if (options.brand && options.service) {
   // New format: --brand X --service Y
-  await generateSiteMultiBrand(options.brand, options.service, options.update);
+  await generateSiteMultiBrand(options.brand, options.service);
 } else if (options.config) {
   // Legacy format: single config name (assumes postalocity)
   const configName = options.config;
@@ -1559,7 +1545,7 @@ if (options.brand && options.service) {
   const config = JSON.parse(configContent) as SiteConfig;
   const legacySiteDir = path.join(SITES_DIR, config.site.slug);
   
-  await generateSite(legacySiteDir, config, undefined, undefined, options.update);
+  await generateSite(legacySiteDir, config);
 } else {
   console.error('Error: Missing required arguments');
   console.error('');

@@ -1,17 +1,17 @@
 /**
  * Odin's Innovations Synthetic Scent Beads - Generated from template-microsite
- * Generated at: 2026-03-31T19:36:09.739Z
+ * Generated at: 2026-04-01T16:18:05.930Z
  * Brand: Odin's Innovations
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection } from '@/components/shared';
-import SiteNavigation from '@/components/shared/SiteNavigation';
-import SiteFooter from '@/components/shared/SiteFooter';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/themes/odins-innovations/components/shared';
+import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
+import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
-import '@/globals.css';
+import '@/themes/odins-innovations/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
@@ -19,16 +19,13 @@ const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug"
 const contactConfig = {"phone":"316-393-0440","email":"paul@odinsinnovations.com","address":{"street":"","city":"","state":"","zip":""}};
 const socialConfig = {"website":"https://www.odinsinnovations.com"};
 
-// IKB configuration
+// IKB configuration with promo codes
 const ikbConfig = {
   rules: {
     trustSignals: [
-      'Made in the USA',
-      '50 State Legal',
-      'Field Tested',
-      '30+ Day Scent',
-      'Weatherproof',
-      'Biodegradable',
+      'NCOA Verified 2024',
+      'CASS Certified 2024',
+      'ISO 9001 Documented Processes 2023',
     ],
     promoCodes: {
       'credit-repair': 'cr2026',
@@ -37,25 +34,38 @@ const ikbConfig = {
       'healthcare-mailing-services': 'hm2026',
       'postcard': 'pc2026',
       'self-storage': 'pm2026',
-      'scent-beads': 'HUNT2026',
     },
-    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing', 'testimonials'],
-    blocklistedContent: ['video', 'live-chat', 'team', 'experts', 'award', 'awards'],
+    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
+    blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
     blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
   },
   pricing: {
-    basePrice: 17.95,
+    basePrice: 1.31,
     currency: 'USD',
-    units: 'bottle',
-    addOns: {},
+    units: 'letter',
+    addOns: {
+      'certified-mail': 4.50,
+      'return-receipt': 3.35,
+      'ncoa-verification': 0.05,
+      'address-verification': 0.02,
+    },
   },
   proofOptions: {
-    standard: [],
-    upgrades: [],
+    standard: [{ id: 'usps-photo', name: 'USPS Photo', description: 'Photo of mailpiece delivered by carrier', tier: 'included' }],
+    upgrades: [
+      { id: 'certified-mail', name: 'Certified Mail', description: 'Track and confirm delivery with signature', tier: 'optional', additionalCost: 4.15 },
+      { id: 'electronic-return-receipt', name: 'Electronic Return Receipt', description: 'Digital signature confirmation via email', tier: 'optional', additionalCost: 3.50 },
+    ],
   },
   terminology: {
-    mailClasses: {},
-    certifications: {},
+    mailClasses: {
+      'first-class': { name: 'First-Class Mail', description: 'Standard USPS mail service', hasTracking: true, hasCertificate: false, allowsPersonalData: true, useCases: ['letters', 'invoices'] },
+      'marketing-mail': { name: 'Marketing Mail', description: 'Cost-effective bulk mailing', hasTracking: false, hasCertificate: false, allowsPersonalData: true, useCases: ['promotional'] },
+    },
+    certifications: {
+      'ncov': { name: 'NCOA', fullName: 'National Change of Address', description: 'Address verification service' },
+      'cass': { name: 'CASS', fullName: 'Coding Accuracy Support System', description: 'USPS-certified address standardization' },
+    },
   },
 };
 
@@ -77,10 +87,11 @@ function App() {
         <HeroSection hero={content.hero} />
         <BenefitsSection benefits={content.benefits} />
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
-        {content.comparison && <ComparisonTable comparison={content.comparison} />}
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         <ServicesSection services={content.services} />
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+        <TestimonialsSection />
         <FAQSection faq={content.faq} />
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
@@ -90,7 +101,5 @@ function App() {
 }
 
 // Initialize React
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Failed to find root element');
-const root = createRoot(rootElement);
+const root = createRoot(document.getElementById('root'));
 root.render(<App />);
