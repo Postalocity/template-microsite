@@ -1,6 +1,6 @@
 /**
  * Promotional Products & Apparel — Broadstroke, Inc. - Generated from template-microsite
- * Generated at: 2026-04-02T17:43:11.402Z
+ * Generated at: 2026-04-02T20:42:56.920Z
  * Brand: Broadstroke
  */
 
