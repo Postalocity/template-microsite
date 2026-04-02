@@ -80,7 +80,7 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
   return (
     <section
       id="comparison"
-      className="section-padding bg-background"
+      className="section-padding bg-section-alt"
       ref={ref}
     >
       <div className="section-container">

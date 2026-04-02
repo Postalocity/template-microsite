@@ -77,7 +77,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
   return (
     <section
       id={sectionId}
-      className="section-padding bg-section-alt"
+      className="section-padding bg-background"
       ref={ref}
     >
       <div className="section-container">
