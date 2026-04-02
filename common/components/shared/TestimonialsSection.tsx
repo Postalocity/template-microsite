@@ -87,7 +87,8 @@ const TestimonialsSection = () => {
                     <img
                       src="/commercial-printing/images/talent-on-parade-booklet-4.jpg"
                       alt="Talent On Parade Des Moines booklet - printed by Broadstroke"
-                      className="w-full h-full object-contain bg-white transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      style={{ objectPosition: 'center center' }}
                       loading="lazy"
                       onError={() => handleImageError(0)}
                     />
@@ -103,7 +104,8 @@ const TestimonialsSection = () => {
                     <img
                       src="/commercial-printing/images/talent-on-parade-booklet-7.jpg"
                       alt="Talent On Parade Des Moines booklet detail - printed by Broadstroke"
-                      className="w-full h-full object-contain bg-white transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      style={{ objectPosition: 'center center' }}
                       loading="lazy"
                       onError={() => handleImageError(1)}
                     />
