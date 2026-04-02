@@ -10,9 +10,8 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, '../../../common'),
       '@/': path.resolve(__dirname, '../../../common') + '/',
-      'prop-types': path.resolve(__dirname, 'node_modules/prop-types'),
     },
-    dedupe: ['react', 'react-dom', 'prop-types'],
+    dedupe: ['react', 'react-dom'],
   },
   server: {
     host: true,
