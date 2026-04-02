@@ -217,7 +217,7 @@
         {
           "icon": "clipboard",
           "title": "Forms & Business Documents",
-          "description": "Custom forms, invoices, contracts, and business documents. Need it carbonless? We do that too! <a href='./business-forms/' class='text-blue-600 underline hover:text-blue-800 transition-colors'>Learn more about business forms</a>."
+          "description": "Custom forms, invoices, contracts, and business documents. Need it carbonless? We do that too! <a href='./business-forms/' class='text-blue-600 underline hover:text-blue-900 hover:bg-blue-100 transition-colors'>Learn more about business forms</a>."
         },
         {
           "icon": "mail",
