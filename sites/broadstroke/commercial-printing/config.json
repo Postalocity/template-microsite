@@ -67,6 +67,18 @@
         "href": "https://broadstrokeinc.com/mailing"
       },
       {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup"
+      },
+      {
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com"
+      },
+      {
+        "label": "Technology",
+        "href": "https://www.postalocity.com"
+      },
+      {
         "label": "Promo",
         "href": "https://www.broadstrokepromos.com/"
       },
@@ -226,7 +238,8 @@
     "services": {
       "section": {
         "title": "Commercially Printed Products —<br />in Wichita, KS and Nationwide",
-        "description": "Full-service commercial printing for businesses that demand quality and reliability. We offer both digital and offset printing capabilities to match your quantity and quality requirements."
+        "description": "Full-service commercial printing for businesses that demand quality and reliability. We offer both digital and offset printing capabilities to match your quantity and quality requirements.",
+        "finishingNote": "Comprehensive finishing options are available for all printed products — including cutting, scoring, perforating, numbering, corner rounding, die cutting, custom foil imprint, embossing, folding, laminating (gloss, matte, soft touch), padding, UV coating, spot UV, spiral binding, wire binding, stapling, saddle stitched booklets with square folding, shrink wrapping, tabbing, and custom kitting or packaging."
       },
       "services": [
         {
@@ -242,7 +255,7 @@
         {
           "icon": "clipboard",
           "title": "Forms & Business Documents",
-          "description": "Custom forms, invoices, contracts, and business documents. Need it carbonless? We do that too! <a href='./business-forms/' class='underline hover:opacity-80 transition-opacity'>Learn more about business forms</a>."
+          "description": "Custom forms, invoices, contracts, and business documents. Need it carbonless? We do that too! <a href='./business-forms/' class='text-yellow-300 underline hover:opacity-80 transition-opacity'>Learn more about business forms</a>."
         },
         {
           "icon": "mail",
@@ -253,11 +266,6 @@
           "icon": "bar-chart-3",
           "title": "Variable Data Print Items",
           "description": "MICR checks, tickets, and documents available with sequential numbering."
-        },
-        {
-          "icon": "printer",
-          "title": "Finishing Services",
-          "description": "Full-service bindery: cutting, scoring, perforating, numbering, corner rounding, die cutting, custom foil imprint, embossing, folding, laminating (gloss, matte, soft touch), padding, UV coating, spot UV, spiral binding, wire binding, stapling, saddle stitched booklets w/ square folding, shrink wrapping, tabbing, custom kitting/packaging."
         },
         {
           "icon": "image",
@@ -278,7 +286,7 @@
         },
         {
           "q": "Is design assistance available?",
-          "a": "In-house designers are available to create a design for you from conception or to refine layouts, optimize images, select appropriate paper stocks, and prepare files from artwork you supply to us. Whether you need minor adjustments or full creative support, our team handles every detail. Customer Service provides support on paper stocks."
+          "a": "In-house designers are available to create a design for you from conception or to refine layouts, optimize images, and prepare files from artwork you supply to us. Whether you need minor adjustments or full creative support, our team handles every detail."
         },
         {
           "q": "Can printed materials be mailed in-house?",
@@ -294,7 +302,7 @@
         },
         {
           "q": "What is the process for obtaining a free estimate?",
-          "a": "Simply call 316-262-3333, email orders@broadstrokeinc.com, or submit details through our contact form. A member of our team will review your project and provide a clear, no-obligation estimate with recommended options and timelines."
+          "a": "Simply submit details through our <a href='https://broadstrokeinc.com/contact' class='underline hover:opacity-80 transition-opacity'>contact form</a>, email <a href='mailto:orders@broadstrokeinc.com' class='underline hover:opacity-80 transition-opacity'>orders@broadstrokeinc.com</a>, or call <a href='tel:316-262-3333' class='underline hover:opacity-80 transition-opacity'>316-262-3333</a>. A member of our team will review your project and provide a clear, no-obligation estimate with recommended options and timelines."
         }
       ]
     },
@@ -305,7 +313,7 @@
         "buttonText": "Get Free Estimate",
         "href": "https://broadstrokeinc.com/contact/?service=commercial-printing"
       },
-      "tagline": "Your one-stop-shop for all things print, mail and promo."
+      "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand."
     }
   },
   "footer": {
@@ -315,6 +323,6 @@
       "buttonText": "Get Free Estimate",
       "href": "https://broadstrokeinc.com/contact/?service=commercial-printing"
     },
-    "tagline": "Your one-stop-shop for all things print, mail and promo."
+    "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand."
   }
 }
