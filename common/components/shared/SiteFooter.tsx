@@ -15,6 +15,7 @@ interface SiteFooterProps {
         };
         description?: string;
         tagline?: string;
+        secondaryTagline?: string;
         disclaimer?: string;
         links?: Array<{ label: string; href: string }>;
         quickLinks?: Array<{ label: string; href: string }>;
@@ -29,6 +30,7 @@ interface SiteFooterProps {
         href?: string;
       };
       tagline?: string;
+      secondaryTagline?: string;
       links?: Array<{ label: string; href: string }>;
       quickLinks?: Array<{ label: string; href: string }>;
       companyLinks?: Array<{ label: string; href: string }>;
@@ -118,9 +120,14 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
                 {content.description}
               </p>
             )}
-            <p className="text-background/50 text-xs mt-3 italic">
+            <p className="text-background/70 text-sm mt-2">
               {content?.tagline || brandFooter?.tagline || ctx.brand.tagline}
             </p>
+            {(content?.secondaryTagline || brandFooter?.secondaryTagline) && (
+              <p className="text-background/50 text-xs mt-2 italic">
+                {content?.secondaryTagline || brandFooter?.secondaryTagline}
+              </p>
+            )}
           </div>
 
           {/* Quick Links */}
