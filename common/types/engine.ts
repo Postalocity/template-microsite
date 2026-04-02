@@ -100,7 +100,11 @@ export interface BrandConfig {
   footer?: {
     tagline?: string;
     taglineSecondary?: string;
+    description?: string;
     links?: Array<{ label: string; href: string }>;
+    companyLinks?: Array<{ label: string; href: string }>;
+    supportLinks?: Array<{ label: string; href: string }>;
+    logoSize?: string;
   };
 }
 

@@ -19,7 +19,7 @@ const __dirname = path.dirname(__filename);
 
 // Directory paths
 const ROOT_DIR = path.join(__dirname, '..');
-const CONFIGS_DIR = path.join(ROOT_DIR, 'config/sites/postalocity');  // Default to postalocity
+const CONFIGS_DIR = path.join(ROOT_DIR, 'config/sites');  // No default brand - require explicit brand parameter
 const SITES_DIR = path.join(ROOT_DIR, 'sites');
 const TEMPLATE_DIR = ROOT_DIR;
 
@@ -293,7 +293,7 @@ function copyBrandAssets(siteDir: string, brandId: string, siteSlug: string): vo
 }
 
 // Copy favicons and logos from common/assets to all sites
-function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
+function copyFavicons(siteDir: string, brandId: string): void {
   const publicDir = path.join(siteDir, 'public');
   
   // Create public dir if it doesn't exist
@@ -311,7 +311,7 @@ function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
     const faviconDest = path.join(publicDir, 'favicon.ico');
     if (!fs.existsSync(faviconDest)) {
       fs.copyFileSync(faviconSource, faviconDest);
-      console.log(`✓ Copied favicon from ${brandId === 'postalocity' ? 'default' : brandId} assets`);
+      console.log(`✓ Copied favicon from ${brandId} assets`);
     } else {
       console.log(`✓ Favicon already exists (preserving brand-specific asset)`);
     }
@@ -342,7 +342,7 @@ function copyFavicons(siteDir: string, brandId: string = 'postalocity'): void {
 }
 
 // Generate Open Graph images from hero banner
-async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string = 'postalocity'): Promise<void> {
+async function generateOgImages(siteDir: string, config: SiteConfig, brandId: string): Promise<void> {
   const { exec } = await import('child_process');
   const publicDir = path.join(siteDir, 'public');
 
@@ -354,10 +354,10 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
   const ogImageDest = path.join(publicDir, 'og-image.png');
   const logoDest = path.join(publicDir, 'logo.png');
   
-  // Determine logo source - use brand-specific logo if available, fallback to postalocity
+  // Determine logo source - use brand-specific logo if available
   const brandLogoPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'logo.png');
-  const fallbackLogoPath = path.join(TEMPLATE_DIR, 'common/assets/postalocity-logo.png');
-  const commonLogoPath = fs.existsSync(brandLogoPath) ? brandLogoPath : fallbackLogoPath;
+  const genericLogoPath = path.join(TEMPLATE_DIR, 'common/assets/logo.png');
+  const commonLogoPath = fs.existsSync(brandLogoPath) ? brandLogoPath : genericLogoPath;
 
   // Check if sips is available (macOS)
   const sipsCheck = await new Promise<{ stdout: string, stderr: string }>((resolve) => {
@@ -391,7 +391,7 @@ async function generateOgImages(siteDir: string, config: SiteConfig, brandId: st
   // Auto-detect hero image source based on site slug
   // Standard convention: common/assets/{slug}/hero.jpg or common/assets/{brand}/{slug}-hero.jpg
   const siteSlug = config.site?.slug || '';
-  const brandSlug = config.site?.id?.split('-')[0] || 'postalocity'; // Extract brand from site id
+  const brandSlug = config.site?.id?.split('-')[0] || 'default'; // Extract brand from site id
   
   // Try standard slug directory first, then brand directory, then fall back to category-based directories
   const possibleSourcePaths = [
@@ -515,7 +515,7 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
   
   // Get primary color from theme or branding, fallback to teal
   const primaryColor = config.theme?.primary || { h: 173, s: 79, l: 24 };
-  const siteName = config.site?.name || 'Postalocity';
+  const siteName = config.site?.name || 'Site';
   const tagline = config.branding?.tagline || 'Automated Mailing Service';
   
   // Create a simple gradient background with text
@@ -530,7 +530,7 @@ async function generateFallbackOgImage(ogImageDest: string, config: SiteConfig):
       <rect width="1200" height="630" fill="url(#bg)"/>
       <text x="600" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="64" font-weight="bold" fill="white" text-anchor="middle">${siteName}</text>
       <text x="600" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="rgba(255,255,255,0.9)" text-anchor="middle">${tagline}</text>
-      <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="rgba(255,255,255,0.7)" text-anchor="middle">postalocity.com</text>
+      <text x="600" y="450" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="rgba(255,255,255,0.7)" text-anchor="middle">${config.site?.domain || ''}</text>
     </svg>
   `;
 
@@ -607,11 +607,11 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
 
     // Copy brand-specific assets (hero images, favicons, logos)
     // Respects existing files - never overwrites brand-specific assets
-    copyBrandAssets(siteDir, brandId || 'postalocity', site.slug || '');
+    copyBrandAssets(siteDir, brandId || '', site.slug || '');
 
     // Generate Open Graph images from hero banner (SEO optimization)
     // Uses existing brand-specific images if available, falls back to generated OG
-    await generateOgImages(siteDir, config, brandId || 'postalocity');
+    await generateOgImages(siteDir, config, brandId || '');
 
     // Post-processing with StringRay agents (if --post-process flag)
     const postProcessFlag = process.argv.includes('--post-process');
@@ -661,48 +661,46 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
   const { site } = config;
   
   // Fallback defaults (only used for legacy mode without brand context)
+  // Note: Legacy mode should be avoided - always use brand context for proper multi-tenancy
   const fallbackBrand = {
-    id: 'postalocity',
-    name: 'Postalocity',
-    slug: 'postalocity',
-    domain: 'postalocity.com',
+    id: '',
+    name: '',
+    slug: '',
+    domain: '',
     urls: {
-      app: 'https://prod.postalocity.com/login.html',
-      website: 'https://www.postalocity.com',
-      blog: 'https://www.postalocity.com/resources/blog/',
-      howWeHelp: 'https://www.postalocity.com/how-we-help/',
-      whoWeServe: 'https://www.postalocity.com/who-we-serve/',
-      contact: 'https://www.postalocity.com/contact/',
-      faq: 'https://www.postalocity.com/resources/faq/',
+      app: '',
+      website: '',
+      blog: '',
+      howWeHelp: '',
+      whoWeServe: '',
+      contact: '',
+      faq: '',
     },
     logo: {
-      filename: 'postalocity-logo.png',
-      alt: 'Postalocity - Direct Mail Automation',
+      filename: '',
+      alt: '',
     },
   };
   
   const fallbackContact = {
-    phone: '316-260-2220',
-    email: 'contact@postalocity.com',
+    phone: '',
+    email: '',
     address: {
-      street: '820 W 2nd St N',
-      city: 'Wichita',
-      state: 'KS',
-      zip: '67203',
+      street: '',
+      city: '',
+      state: '',
+      zip: '',
     },
     hours: {
-      weekdays: '8:00 AM - 5:00 PM CST',
-      support: 'contact@postalocity.com',
+      weekdays: '',
+      support: '',
     },
   };
   
-  const fallbackSocial = {
-    twitter: 'https://twitter.com/postalocity',
-    linkedin: 'https://linkedin.com/company/postalocity',
-    facebook: 'https://facebook.com/postalocity',
-  };
+  const fallbackSocial = {};
   
-  // Use brand context if provided, otherwise fall back to hardcoded defaults
+  // Use brand context if provided, otherwise fall back to empty defaults
+  // IMPORTANT: For proper multi-tenancy, always provide brand context
   const brand = brandContext?.brand || fallbackBrand;
   const contact = brandContext?.contact || fallbackContact;
   const social = brandContext?.social || fallbackSocial;
@@ -1100,9 +1098,10 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
   const canonicalUrl = config.canonicalDomain || (seoConfig?.canonical as string) || `https://${site.domain}/${site.slug}`;
   const ogImage = `${canonicalUrl}/og-image.png`;
 
-  // Extract brand name from domain or brandContext
-  const brandName = brandContext?.brand?.name || (site.domain.includes('broadstroke') ? 'Broadstroke, Inc.' : 'Postalocity');
-  const brandWebsite = brandContext?.brand?.urls?.website || (site.domain.includes('broadstroke') ? 'https://www.broadstrokeinc.com' : 'https://www.postalocity.com');
+  // Extract brand name from brandContext or derive from domain
+  const domainParts = site.domain?.split('.') || [];
+  const brandName = brandContext?.brand?.name || (domainParts[0] ? domainParts[0].charAt(0).toUpperCase() + domainParts[0].slice(1) : 'Brand');
+  const brandWebsite = brandContext?.brand?.urls?.website || (site.domain ? `https://www.${site.domain}` : '');
 
   // Parse address once for schema
   const addressParts = parseAddress(site.contact?.address || '');
@@ -1251,7 +1250,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
           "image": "${canonicalUrl}/og-image.png",
           "brand": {
             "@type": "Brand",
-            "name": "Postalocity"
+            "name": "${brandName}"
           },
           "offers": {
             "@type": "Offer",

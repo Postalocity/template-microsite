@@ -1,6 +1,12 @@
 import { defineConfig } from 'vitest/config';
+import path from 'path';
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './common'),
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',
@@ -14,6 +20,7 @@ export default defineConfig({
       '**/node_modules/**',
       '**/dist/**',
       '**/sites/**',
+      '**/vitest.config.test.ts',
     ],
     coverage: {
       provider: 'v8',

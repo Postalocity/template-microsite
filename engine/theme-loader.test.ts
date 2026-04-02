@@ -46,9 +46,65 @@ describe("theme-loader", () => {
       expect(typeof generateThemeCSS).toBe("function");
     });
 
-    it("should handle basic case", async () => {
-      const result = await generateThemeCSS(undefined);
+    it("should handle basic case", () => {
+      const mockTheme = {
+        name: "Test Theme",
+        description: "Test theme for unit tests",
+        brandId: "test-brand",
+        colors: {
+          primary: { h: 200, s: 80, l: 50 },
+          accent: { h: 180, s: 70, l: 45 },
+          background: { h: 0, s: 0, l: 100 },
+          foreground: { h: 0, s: 0, l: 0 },
+          muted: { h: 0, s: 0, l: 95 },
+          mutedForeground: { h: 0, s: 0, l: 40 },
+          border: { h: 0, s: 0, l: 90 },
+          card: { h: 0, s: 0, l: 100 },
+          cardForeground: { h: 0, s: 0, l: 0 },
+          heroBg: { h: 200, s: 20, l: 95 },
+          heroForeground: { h: 0, s: 0, l: 0 },
+          heroSubtitle: { h: 0, s: 0, l: 40 },
+          sectionAlt: { h: 0, s: 0, l: 98 },
+        },
+        typography: {
+          display: "system-ui, sans-serif",
+          body: "system-ui, sans-serif",
+          headingWeight: 600,
+          headingTransform: "none",
+          headingLetterSpacing: "0",
+        },
+        spacing: {
+          sectionSm: "3rem",
+          sectionMd: "5rem",
+          sectionLg: "8rem",
+          sectionXl: "12rem",
+        },
+        shadows: {
+          sm: "0 1px 2px rgba(0,0,0,0.1)",
+          md: "0 4px 6px rgba(0,0,0,0.1)",
+          lg: "0 10px 15px rgba(0,0,0,0.1)",
+        },
+        borderRadius: "0.5rem",
+        buttonStyle: {
+          uppercase: false,
+          letterSpacing: "0",
+          fontWeight: 500,
+          borderRadius: "0.375rem",
+        },
+        navStyle: {
+          scrolledBg: "rgba(255,255,255,0.95)",
+          unscrolledBg: "transparent",
+          blur: "12px",
+          logoHeight: "40px",
+          logoHeightLg: "48px",
+        },
+        heroOverlay: "none",
+      };
+      
+      const result = generateThemeCSS(mockTheme as any);
       expect(typeof result).toBe('string');
+      expect(result).toContain(':root');
+      expect(result).toContain('--primary-h: 200');
     });
   });
 
@@ -59,7 +115,8 @@ describe("theme-loader", () => {
 
     it("should handle basic case", async () => {
       const result = await listThemes();
-      expect(result).toBeUndefined();
+      // listThemes returns an array of themes (could be empty)
+      expect(Array.isArray(result)).toBe(true);
     });
   });
 });

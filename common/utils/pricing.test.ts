@@ -5,7 +5,10 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { formatPrice, formatFullPricing, useFormattedPricing, processPricingPlaceholders, processTextWithPricing } from "./pricing";
+import { formatPrice, formatFullPricing, processPricingPlaceholders, processTextWithPricing, useFormattedPricing, DEFAULT_PRICING } from "./pricing";
+
+// Mock React for useFormattedPricing test
+const mockUseMemo = (fn: () => unknown) => fn();
 
 describe("pricing", () => {
   describe("formatPrice", () => {
@@ -13,9 +16,24 @@ describe("pricing", () => {
       expect(typeof formatPrice).toBe("function");
     });
 
-    it("should handle basic case", async () => {
-      const result = await formatPrice(1, "test");
-      expect(typeof result).toBe('string');
+    it("should format price with default units", () => {
+      const result = formatPrice(1.31);
+      expect(result).toBe("$1.31/letter");
+    });
+
+    it("should format price with custom units", () => {
+      const result = formatPrice(2.50, "postcard");
+      expect(result).toBe("$2.50/postcard");
+    });
+
+    it("should handle zero price", () => {
+      const result = formatPrice(0);
+      expect(result).toBe("$0.00/letter");
+    });
+
+    it("should round to 2 decimal places", () => {
+      const result = formatPrice(1.999);
+      expect(result).toBe("$2.00/letter");
     });
   });
 
@@ -24,20 +42,33 @@ describe("pricing", () => {
       expect(typeof formatFullPricing).toBe("function");
     });
 
-    it("should handle basic case", async () => {
-      const result = await formatFullPricing(1, "test");
-      expect(typeof result).toBe('string');
+    it("should format full pricing with default units", () => {
+      const result = formatFullPricing(1.31);
+      expect(result).toBe("$1.31/letter (1-page B&W, single-sided, envelope + postage)");
+    });
+
+    it("should format full pricing with custom units", () => {
+      const result = formatFullPricing(0.85, "postcard");
+      expect(result).toBe("$0.85/postcard (1-page B&W, single-sided, envelope + postage)");
     });
   });
 
-  describe("useFormattedPricing", () => {
+  describe("DEFAULT_PRICING", () => {
     it("should be defined", () => {
-      expect(typeof useFormattedPricing).toBe("function");
+      expect(DEFAULT_PRICING).toBeDefined();
     });
 
-    it("should handle basic case", async () => {
-      const result = await useFormattedPricing();
-      expect(result).toBeUndefined();
+    it("should have correct base price", () => {
+      expect(DEFAULT_PRICING.basePrice).toBe(1.31);
+    });
+
+    it("should have correct units", () => {
+      expect(DEFAULT_PRICING.units).toBe("letter");
+    });
+
+    it("should have full description", () => {
+      expect(DEFAULT_PRICING.fullDescription).toContain("$1.31");
+      expect(DEFAULT_PRICING.fullDescription).toContain("letter");
     });
   });
 
@@ -46,9 +77,20 @@ describe("pricing", () => {
       expect(typeof processPricingPlaceholders).toBe("function");
     });
 
-    it("should handle basic case", async () => {
-      const result = await processPricingPlaceholders("test", undefined);
-      expect(typeof result).toBe('string');
+    it("should return string when text is provided", () => {
+      const result = processPricingPlaceholders("Test text with pricing");
+      expect(typeof result).toBe("string");
+    });
+
+    it("should handle empty string", () => {
+      const result = processPricingPlaceholders("");
+      expect(typeof result).toBe("string");
+    });
+
+    it("should replace {{PRICING}} placeholders", () => {
+      const result = processPricingPlaceholders("Starting at {{PRICING}} per letter");
+      expect(result).not.toContain("{{PRICING}}");
+      expect(result).toContain("$1.31");
     });
   });
 
@@ -57,9 +99,28 @@ describe("pricing", () => {
       expect(typeof processTextWithPricing).toBe("function");
     });
 
-    it("should handle basic case", async () => {
-      const result = await processTextWithPricing("test");
-      expect(typeof result).toBe('string');
+    it("should return processed text", () => {
+      const result = processTextWithPricing("Test text");
+      expect(typeof result).toBe("string");
     });
+
+    it("should handle empty string", () => {
+      const result = processTextWithPricing("");
+      expect(typeof result).toBe("string");
+    });
+
+    it("should handle text with pricing info", () => {
+      const result = processTextWithPricing("Only $1.31 per letter");
+      expect(typeof result).toBe("string");
+    });
+  });
+
+  describe("useFormattedPricing", () => {
+    it("should be defined", () => {
+      expect(typeof useFormattedPricing).toBe("function");
+    });
+
+    // Note: useFormattedPricing requires React context provider
+    // Full integration testing should be done in component tests
   });
 });

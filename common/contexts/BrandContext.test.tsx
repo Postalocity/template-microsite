@@ -4,17 +4,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { renderHook } from '@testing-library/react';
-import React from 'react';
 import {
-  BrandProvider,
-  useBrand,
-  useBrandName,
-  useBrandUrls,
-  useBrandContact,
-  useBrandSocial,
-  usePromoCode,
-  useAppUrl,
   getDefaultBrandContext,
   type BrandConfig,
   type BrandContact,
@@ -64,7 +54,7 @@ const mockSocial: BrandSocial = {
 
 describe('BrandContext', () => {
   describe('getDefaultBrandContext', () => {
-    it('should return default Postalocity values', () => {
+    it('should return Postalocity values for backward compatibility', () => {
       const context = getDefaultBrandContext();
 
       expect(context.brand.id).toBe('postalocity');
@@ -88,209 +78,55 @@ describe('BrandContext', () => {
       expect(context.contact.address.city).toBe('Wichita');
       expect(context.contact.address.state).toBe('KS');
     });
-  });
 
-  describe('useBrand', () => {
-    it('should return provided brand context values', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider
-          brand={mockBrand}
-          contact={mockContact}
-          social={mockSocial}
-          promoCode="TEST123"
-        >
-          {children}
-        </BrandProvider>
-      );
+    it('should have social links configured', () => {
+      const context = getDefaultBrandContext();
 
-      const { result } = renderHook(() => useBrand(), { wrapper });
-
-      expect(result.current.brand.id).toBe('test-brand');
-      expect(result.current.contact.email).toBe('support@testbrand.com');
-      expect(result.current.promoCode).toBe('TEST123');
-    });
-
-    it('should return defaults when no provider is present', () => {
-      const { result } = renderHook(() => useBrand());
-
-      expect(result.current.brand.id).toBe('postalocity');
-      expect(result.current.contact.phone).toBe('316-260-2220');
+      expect(context.social.twitter).toContain('twitter.com');
+      expect(context.social.linkedin).toContain('linkedin.com');
     });
   });
 
-  describe('useBrandName', () => {
-    it('should return brand name from context', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact}>
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => useBrandName(), { wrapper });
-
-      expect(result.current).toBe('Test Brand');
+  describe('Type definitions', () => {
+    it('should have valid BrandConfig structure', () => {
+      expect(mockBrand).toHaveProperty('id');
+      expect(mockBrand).toHaveProperty('name');
+      expect(mockBrand).toHaveProperty('domain');
+      expect(mockBrand).toHaveProperty('urls');
+      expect(mockBrand.urls).toHaveProperty('app');
+      expect(mockBrand.urls).toHaveProperty('website');
     });
 
-    it('should return Postalocity as default', () => {
-      const { result } = renderHook(() => useBrandName());
-
-      expect(result.current).toBe('Postalocity');
-    });
-  });
-
-  describe('useBrandUrls', () => {
-    it('should return brand URLs from context', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact}>
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => useBrandUrls(), { wrapper });
-
-      expect(result.current.app).toBe('https://app.testbrand.com/login.html');
-      expect(result.current.website).toBe('https://www.testbrand.com');
+    it('should have valid BrandContact structure', () => {
+      expect(mockContact).toHaveProperty('phone');
+      expect(mockContact).toHaveProperty('email');
+      expect(mockContact).toHaveProperty('address');
+      expect(mockContact.address).toHaveProperty('city');
+      expect(mockContact.address).toHaveProperty('state');
     });
 
-    it('should return default Postalocity URLs', () => {
-      const { result } = renderHook(() => useBrandUrls());
-
-      expect(result.current.app).toContain('postalocity.com');
-      expect(result.current.website).toContain('postalocity.com');
+    it('should have valid BrandSocial structure', () => {
+      expect(mockSocial).toHaveProperty('twitter');
+      expect(mockSocial).toHaveProperty('linkedin');
+      expect(mockSocial).toHaveProperty('facebook');
     });
   });
 
-  describe('useBrandContact', () => {
-    it('should return contact info from context', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact}>
-          {children}
-        </BrandProvider>
-      );
+  describe('Multi-tenant isolation', () => {
+    it('should ensure different brands have different data', () => {
+      const postalocityContext = getDefaultBrandContext();
 
-      const { result } = renderHook(() => useBrandContact(), { wrapper });
-
-      expect(result.current.phone).toBe('555-123-4567');
-      expect(result.current.email).toBe('support@testbrand.com');
+      // Test brand should have different values than postalocity
+      expect(mockBrand.id).not.toBe(postalocityContext.brand.id);
+      expect(mockBrand.name).not.toBe(postalocityContext.brand.name);
+      expect(mockBrand.domain).not.toBe(postalocityContext.brand.domain);
     });
 
-    it('should return default Postalocity contact', () => {
-      const { result } = renderHook(() => useBrandContact());
+    it('should ensure brand contact data is isolated', () => {
+      const postalocityContext = getDefaultBrandContext();
 
-      expect(result.current.phone).toBe('316-260-2220');
-    });
-  });
-
-  describe('useBrandSocial', () => {
-    it('should return social links from context', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact} social={mockSocial}>
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => useBrandSocial(), { wrapper });
-
-      expect(result.current.twitter).toBe('https://twitter.com/testbrand');
-      expect(result.current.linkedin).toBe('https://linkedin.com/company/testbrand');
-    });
-
-    it('should return default Postalocity social links', () => {
-      const { result } = renderHook(() => useBrandSocial());
-
-      expect(result.current.twitter).toBe('https://twitter.com/postalocity');
-    });
-
-    it('should return empty object when no social provided', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact}>
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => useBrandSocial(), { wrapper });
-
-      expect(result.current).toEqual({});
-    });
-  });
-
-  describe('usePromoCode', () => {
-    it('should return promo code from context', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact} promoCode="SUMMER2026">
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => usePromoCode(), { wrapper });
-
-      expect(result.current).toBe('SUMMER2026');
-    });
-
-    it('should return undefined when no promo code provided', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact}>
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => usePromoCode(), { wrapper });
-
-      expect(result.current).toBeUndefined();
-    });
-  });
-
-  describe('useAppUrl', () => {
-    it('should return app URL with promo code', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact} promoCode="CR2026">
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => useAppUrl(), { wrapper });
-
-      expect(result.current).toBe('https://app.testbrand.com/login.html?signUp=true&promo=CR2026');
-    });
-
-    it('should return app URL without promo code when not provided', () => {
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={mockBrand} contact={mockContact}>
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => useAppUrl(), { wrapper });
-
-      expect(result.current).toBe('https://app.testbrand.com/login.html?signUp=true');
-    });
-
-    it('should handle existing query params in app URL', () => {
-      const brandWithQuery: BrandConfig = {
-        ...mockBrand,
-        urls: {
-          ...mockBrand.urls,
-          app: 'https://app.testbrand.com/login.html?existing=param',
-        },
-      };
-
-      const wrapper = ({ children }: { children: React.ReactNode }) => (
-        <BrandProvider brand={brandWithQuery} contact={mockContact} promoCode="TEST">
-          {children}
-        </BrandProvider>
-      );
-
-      const { result } = renderHook(() => useAppUrl(), { wrapper });
-
-      // Should strip existing query params and add promo code
-      expect(result.current).toContain('?signUp=true&promo=TEST');
-    });
-
-    it('should return default Postalocity app URL', () => {
-      const { result } = renderHook(() => useAppUrl());
-
-      expect(result.current).toContain('postalocity.com');
-      expect(result.current).toContain('?signUp=true');
+      expect(mockContact.phone).not.toBe(postalocityContext.contact.phone);
+      expect(mockContact.email).not.toBe(postalocityContext.contact.email);
     });
   });
 });

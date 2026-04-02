@@ -83,9 +83,9 @@ export function useBrand(): BrandContextValue {
         'BrandContext not provided. Wrap your app with BrandProvider or ensure the site generator includes BrandProvider.'
       );
     }
-    // Return default Postalocity values for backward compatibility in production
-    console.warn('[BrandContext] Not provided, using default Postalocity values');
-    return getDefaultBrandContext();
+    // In production, return empty context (not brand-specific)
+    console.error('[BrandContext] FATAL: Brand context missing. Site cannot render correctly.');
+    return getEmptyBrandContext();
   }
 
   return context;
@@ -136,6 +136,44 @@ export function getDefaultBrandContext(): BrandContextValue {
       linkedin: 'https://linkedin.com/company/postalocity',
       facebook: 'https://facebook.com/postalocity',
     },
+    promoCode: undefined,
+  };
+}
+
+// Empty brand context for production fallback (NOT brand-specific)
+function getEmptyBrandContext(): BrandContextValue {
+  return {
+    brand: {
+      id: '',
+      name: '',
+      slug: '',
+      domain: '',
+      tagline: '',
+      urls: {
+        app: '',
+        website: '',
+        blog: '',
+        howWeHelp: '',
+        whoWeServe: '',
+        contact: '',
+        faq: '',
+      },
+      logo: {
+        filename: '',
+        alt: '',
+      },
+    },
+    contact: {
+      phone: '',
+      email: '',
+      address: {
+        street: '',
+        city: '',
+        state: '',
+        zip: '',
+      },
+    },
+    social: {},
     promoCode: undefined,
   };
 }
