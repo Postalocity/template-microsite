@@ -215,6 +215,30 @@
         }
       ]
     },
+    "howItWorks": {
+      "section": {
+        "id": "how-it-works",
+        "title": "Promotional Products Workflow",
+        "description": "Broadstroke, Inc. makes promotional products and branded merchandise straightforward through a concierge-managed workflow."
+      },
+      "steps": [
+        {
+          "number": "01",
+          "title": "Select",
+          "description": "Browse our catalog or share your vision. We'll recommend products that align with your brand, budget, and timeline."
+        },
+        {
+          "number": "02",
+          "title": "Customize",
+          "description": "Our design team creates or refines your artwork. We provide proofs showing decoration placement before production begins."
+        },
+        {
+          "number": "03",
+          "title": "Deliver",
+          "description": "Products are decorated in-house with quality control at every step. Choose delivery to one location or fulfillment to multiple addresses."
+        }
+      ]
+    },
     "faq": {
       "section": {
         "title": "Promotional Products FAQ",
