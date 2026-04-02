@@ -7,8 +7,8 @@
     "domain": "broadstrokeinc.com",
     "basename": "/promo",
     "contact": { 
-      "email": "orders@broadstrokeinc.com", 
-      "phone": "316-262-3333", 
+      "email": "promoinfo@broadstrokeinc.com", 
+      "phone": "316-247-5348", 
       "address": "820 W 2nd St N, Wichita KS 67203" 
     }
   },
@@ -179,63 +179,78 @@
     "services": { 
       "section": {
         "title": "Promotional Products & Apparel —<br />in Wichita, KS and Nationwide",
-        "description": "Full-service promotional products and branded merchandise for businesses that demand quality and impact. From apparel to executive gifts, we help you make lasting impressions.",
-        "finishingNote": "All promotional products include professional decoration services—screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available."
+        "description": "Your one-stop shop for promotional products and business gifts. Our extensive range of promo products will ensure you find something to suit your requirements. With thousands of selections, we offer branded merchandise to fulfill all of your needs.",
+        "finishingNote": "Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on what items are available and can help find what you need."
       },
       "services": [
         {
           "icon": "shirt",
           "title": "Apparel & Clothing",
-          "description": "Custom t-shirts, polos, hoodies, jackets, and uniforms with screen printing or embroidery. Perfect for team building, events, and corporate wear."
+          "description": "T-shirts, Polos, Jackets & Pullovers, Activewear, Headwear, Workwear, and Accessories."
         },
         {
           "icon": "coffee",
           "title": "Drinkware",
-          "description": "Branded mugs, tumblers, water bottles, and drinkware that keeps your logo visible daily. Laser engraving and full-color printing available."
+          "description": "Branded mugs, tumblers, water bottles, and drinkware that keeps your logo visible daily."
         },
         {
-          "icon": "laptop",
-          "title": "Tech & Accessories",
-          "description": "USB drives, power banks, phone accessories, and tech gadgets that combine utility with brand visibility. Great for trade shows and client gifts."
+          "icon": "award",
+          "title": "Awards & Gifts",
+          "description": "Executive Gifts, Trophies, Plaques, Emblems, Pins, Medals, and Vases."
         },
         {
-          "icon": "gift",
-          "title": "Executive & Corporate Gifts",
-          "description": "Premium pens, leather portfolios, desk accessories, and high-end gifts for clients, employees, and special occasions."
+          "icon": "building",
+          "title": "Tradeshows & Events",
+          "description": "Everything you need for successful events and trade show appearances."
+        },
+        {
+          "icon": "trophy",
+          "title": "Sports & Outdoors",
+          "description": "Camping/Outdoors, Balls, Gameday, Outdoor & Fitness, Golf Items, and Team Spirit."
+        },
+        {
+          "icon": "briefcase",
+          "title": "Office",
+          "description": "Desk accessories, office supplies, and workplace essentials with your branding."
         },
         {
           "icon": "shopping-bag",
           "title": "Bags & Totes",
-          "description": "Custom bags, backpacks, tote bags, and luggage for trade shows, employee welcome kits, and retail. Durable and practical brand ambassadors."
+          "description": "Custom bags, backpacks, tote bags, and luggage for trade shows and events."
         },
         {
-          "icon": "pen-tool",
-          "title": "Writing Instruments",
-          "description": "Pens, pencils, markers, and highlighters—the promotional product staples that offer incredible brand exposure at affordable prices."
+          "icon": "smartphone",
+          "title": "Tech & Accessories",
+          "description": "Cell phone accessories, USB drives, power banks, and tech gadgets."
         }
       ]
     },
     "howItWorks": {
       "section": {
         "id": "how-it-works",
-        "title": "Promotional Products Workflow",
-        "description": "Broadstroke, Inc. makes promotional products and branded merchandise straightforward through a concierge-managed workflow."
+        "title": "How It Works",
+        "description": "Your one-stop shop for promotional products and business gifts. Browse thousands of selections or let us do the shopping for you."
       },
       "steps": [
         {
           "number": "01",
-          "title": "Select",
-          "description": "Browse our catalog or share your vision. We'll recommend products that align with your brand, budget, and timeline."
+          "title": "Reach Out",
+          "description": "Call us for a consultation with your promo expert and we can help you with all your promo needs."
         },
         {
           "number": "02",
-          "title": "Customize",
-          "description": "Our design team creates or refines your artwork. We provide proofs showing decoration placement before production begins."
+          "title": "Let's Collaborate",
+          "description": "Next, we'll take the time to research products that fit your needs and help you achieve your marketing goals."
         },
         {
           "number": "03",
-          "title": "Deliver",
-          "description": "Pickup, local delivery, or shipping available. You tell us where you want your promotional products to go and how you want them to get there, and we'll handle the logistics to get your order to its final destination."
+          "title": "Choose Your Merch",
+          "description": "Which merch appeals to you? Narrow down the options and let us know the swag that speaks to you."
+        },
+        {
+          "number": "04",
+          "title": "We Make It Happen",
+          "description": "Pick your favorite products, we'll start the design process, then your products will be ready to hand out!"
         }
       ]
     },
