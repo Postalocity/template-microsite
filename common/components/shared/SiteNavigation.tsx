@@ -181,7 +181,9 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
               <button
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className="text-sm font-medium flex items-center gap-1 transition-colors hover:text-primary"
+                className={`text-sm font-medium flex items-center gap-1 transition-colors hover:text-primary ${
+                  scrolled ? 'text-foreground' : 'text-hero-subtitle hover:text-hero-foreground'
+                }`}
                 style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
               >
                 Services
