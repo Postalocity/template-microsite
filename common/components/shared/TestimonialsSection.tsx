@@ -40,7 +40,7 @@ const TestimonialsSection = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={inView ? { opacity: 1, y: 0 } : undefined}
             transition={{ duration: 0.4 }}
-            className="text-sm font-semibold uppercase tracking-wider text-foreground/80 mb-8 text-center"
+            className="text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground mb-8 text-center"
           >
             {hasTestimonial ? "Trusted by Our Clients" : "What Our Clients Say"}
           </motion.h2>
@@ -54,26 +54,19 @@ const TestimonialsSection = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center mb-12"
               >
-                <Quote className="w-10 h-10 text-primary/15 mx-auto mb-3" aria-hidden="true" />
+                <Quote className="w-10 h-10 text-foreground mx-auto mb-3" aria-hidden="true" />
                 <blockquote className="text-xl sm:text-2xl font-medium text-foreground leading-relaxed max-w-3xl mx-auto mb-6 italic">
                   "{testimonial.quote}"
                 </blockquote>
-                <div className="flex items-center justify-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <span className="text-primary font-bold text-sm">
-                      {testimonial.attribution?.charAt(0)}
-                    </span>
-                  </div>
-                  <div className="text-left">
-                    <p className="font-bold text-foreground">
-                      {testimonial.attribution}
+                <div className="text-center">
+                  <p className="font-bold text-lg text-foreground">
+                    {testimonial.attribution}
+                  </p>
+                  {attributionLine && (
+                    <p className="text-base text-muted-foreground">
+                      {attributionLine}
                     </p>
-                    {attributionLine && (
-                      <p className="text-sm text-muted-foreground">
-                        {attributionLine}
-                      </p>
-                    )}
-                  </div>
+                  )}
                 </div>
               </motion.div>
 
@@ -85,7 +78,7 @@ const TestimonialsSection = () => {
                 className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto mb-8"
               >
                 {/* Image 1 */}
-                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[3/4]">
+                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
                   {imageErrors[0] ? (
                     <div className="w-full h-full flex items-center justify-center bg-muted">
                       <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
@@ -94,14 +87,14 @@ const TestimonialsSection = () => {
                     <img
                       src="/commercial-printing/images/talent-on-parade-booklet-4.jpg"
                       alt="Talent On Parade Des Moines booklet - printed by Broadstroke"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain bg-white transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                       onError={() => handleImageError(0)}
                     />
                   )}
                 </div>
                 {/* Image 2 */}
-                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[3/4]">
+                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
                   {imageErrors[1] ? (
                     <div className="w-full h-full flex items-center justify-center bg-muted">
                       <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
@@ -110,7 +103,7 @@ const TestimonialsSection = () => {
                     <img
                       src="/commercial-printing/images/talent-on-parade-booklet-7.jpg"
                       alt="Talent On Parade Des Moines booklet detail - printed by Broadstroke"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain bg-white transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                       onError={() => handleImageError(1)}
                     />
@@ -118,23 +111,7 @@ const TestimonialsSection = () => {
                 </div>
               </motion.div>
 
-              {/* 30-year trust signal - elevated from muted caption to prominent badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={inView ? { opacity: 1, y: 0 } : undefined}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-card border border-border shadow-sm">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 flex-shrink-0">
-                    <span className="text-primary font-bold text-xs">30</span>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-sm font-semibold text-foreground">Years of Trusted Partnership</p>
-                    <p className="text-xs text-muted-foreground">Talent On Parade, LLC — since 1996</p>
-                  </div>
-                </div>
-              </motion.div>
+
             </>
           ) : (
             /* Fallback when no testimonial data available */

@@ -224,21 +224,6 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
           <p className="text-background/50 text-sm">
             © {new Date().getFullYear()} {brandName}. All rights reserved.
           </p>
-          {(content?.links || brandFooter?.links) && (content?.links || brandFooter?.links).length > 0 && (
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
-              {(content?.links || brandFooter?.links).map((link: { label: string; href: string }) => (
-                <a 
-                  key={link.href}
-                  href={link.href}
-                  target={link.label === 'Login' ? '_self' : '_blank'}
-                  rel="noopener noreferrer"
-                  className="text-background/50 text-xs hover:text-background/70 transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
           <button
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"

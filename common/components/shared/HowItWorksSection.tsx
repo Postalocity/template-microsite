@@ -127,8 +127,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
           className="text-center mt-10 text-lg font-semibold text-foreground"
         >
           <Check className="inline w-5 h-5 text-secondary mr-2" />
-          Documents reach recipients reliably, accuracy is maintained,
-          and your team gains hours back weekly.
+          Print projects are reliably and accurately managed, ensuring quick turnaround at affordable prices, and eliminating hours of oversight and coordination for your team.
         </motion.p>
       </div>
     </section>

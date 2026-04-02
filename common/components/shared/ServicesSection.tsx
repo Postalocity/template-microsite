@@ -87,6 +87,20 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
             );
           })}
         </div>
+
+        {/* Finishing Options Note */}
+        {services.section.finishingNote && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-12 max-w-4xl mx-auto"
+          >
+            <p className="text-muted-foreground text-base text-center leading-relaxed">
+              {services.section.finishingNote}
+            </p>
+          </motion.div>
+        )}
       </div>
     </section>
   );
