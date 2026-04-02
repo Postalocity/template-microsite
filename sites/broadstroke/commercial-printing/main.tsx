@@ -1,6 +1,6 @@
 /**
  * Commercial Printing — Broadstroke, Inc. - Generated from template-microsite
- * Generated at: 2026-04-02T16:03:28.489Z
+ * Generated at: 2026-04-02T16:17:49.422Z
  * Brand: Broadstroke
  */
 
@@ -85,8 +85,8 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
-        <ServicesSection services={content.services} />
         <BenefitsSection benefits={content.benefits} />
+        <ServicesSection services={content.services} />
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
