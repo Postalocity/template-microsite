@@ -34,7 +34,7 @@
     "links": [
       {
         "label": "Why Odin's",
-        "href": "#why-odins"
+        "href": "#benefits"
       },
       {
         "label": "How It Works",
@@ -42,7 +42,7 @@
       },
       {
         "label": "Products",
-        "href": "#products"
+        "href": "#services"
       },
       {
         "label": "Comparison",
@@ -257,6 +257,7 @@
     },
     "footer": {
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+      "description": "100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.",
       "finalCTA": {
         "headline": "Ready for consistent, weatherproof results?",
         "buttonText": "Shop Scent Beads",
@@ -266,6 +267,7 @@
   },
   "footer": {
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "description": "100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.",
     "finalCTA": {
       "headline": "Ready for consistent, weatherproof results?",
       "buttonText": "Shop Scent Beads",

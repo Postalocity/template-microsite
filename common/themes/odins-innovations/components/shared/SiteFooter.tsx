@@ -1,5 +1,5 @@
 import { useBrand, useBrandName } from '@/contexts';
-import { Instagram } from 'lucide-react';
+import { Instagram, Mail, Phone } from 'lucide-react';
 
 interface SiteFooterProps {
   config?: {
@@ -19,7 +19,22 @@ interface SiteFooterProps {
         links?: Array<{ label: string; href: string }>;
         quickLinks?: Array<{ label: string; href: string }>;
         companyLinks?: Array<{ label: string; href: string }>;
+        supportLinks?: Array<{ label: string; href: string }>;
       };
+    };
+    footer?: {
+      finalCTA?: {
+        headline?: string;
+        description?: string;
+        buttonText?: string;
+        href?: string;
+      };
+      tagline?: string;
+      description?: string;
+      links?: Array<{ label: string; href: string }>;
+      quickLinks?: Array<{ label: string; href: string }>;
+      companyLinks?: Array<{ label: string; href: string }>;
+      supportLinks?: Array<{ label: string; href: string }>;
     };
   };
 }
@@ -44,18 +59,22 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
     href: content?.finalCTA?.href || getCTAUrl(),
   };
 
-  // Quick links - from config or defaults
-  const quickLinks = content?.quickLinks || [
-    { label: 'Shop Products', href: ctx.brand.urls.website },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'FAQ', href: '#faq' },
+  // Use brand config links, fallback to content config, then defaults
+  const quickLinks = content?.quickLinks || brandFooter?.links || [
+    { label: 'Scent Beads', href: 'https://www.odinsinnovations.com/collections/scent-beads' },
+    { label: 'Liquid Scents', href: 'https://www.odinsinnovations.com/collections/liquid-scents' },
+    { label: "Hunter's Kloak", href: 'https://www.odinsinnovations.com/collections/all-hunters-kloak' },
+    { label: 'Find a Dealer', href: 'https://www.odinsinnovations.com/pages/find-a-dealer' },
   ];
 
-  // Company links - from config or defaults
-  const companyLinks = content?.companyLinks || [
-    { label: 'About', href: `${ctx.brand.urls.website}/about` },
-    { label: 'Contact', href: `${ctx.brand.urls.website}/contact` },
+  const companyLinks = content?.companyLinks || brandFooter?.companyLinks || [
+    { label: 'Become a Dealer', href: 'https://www.odinsinnovations.com/pages/become-a-dealer' },
+    { label: 'Testimonials', href: 'https://www.odinsinnovations.com/pages/testimonials' },
+    { label: 'News', href: 'https://www.odinsinnovations.com/blogs/in-the-field' },
   ];
+
+  // Support links from brand config
+  const supportLinks = content?.supportLinks || brandFooter?.supportLinks;
 
   return (
     <footer 
@@ -92,15 +111,17 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
 
       {/* Footer info */}
       <div className="section-container py-12">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
           {/* Brand info */}
-          <div>
+          <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-3" style={{ color: 'white' }}>
               {brandName}
             </h3>
-            <p className="text-sm leading-relaxed mb-3" style={{ color: 'hsl(0 0% 100% / 0.6)' }}>
-              {content?.description || 'High-quality commercial printing with dedicated concierge service.'}
-            </p>
+            {content?.description && (
+              <p className="text-sm leading-relaxed mb-3" style={{ color: 'hsl(0 0% 100% / 0.6)' }}>
+                {content.description}
+              </p>
+            )}
             <p className="text-xs italic" style={{ color: 'hsl(0 0% 100% / 0.4)' }}>
               {content?.tagline || brandFooter?.tagline || ctx.brand.tagline}
             </p>
@@ -138,55 +159,76 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             </ul>
           </div>
           
-          {/* Contact & Connect */}
+          {/* Support - replaces Contact */}
+          <div>
+            {supportLinks ? (
+              <>
+                <h3 className="text-sm font-bold uppercase-tracked mb-3" style={{ color: 'hsl(0 0% 100% / 0.5)' }}>
+                  Support
+                </h3>
+                <ul className="space-y-2 text-sm">
+                  {supportLinks.map((link) => (
+                    <li key={link.href}>
+                      <a href={link.href} className="transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <>
+                <h3 className="text-sm font-bold uppercase-tracked mb-3" style={{ color: 'hsl(0 0% 100% / 0.5)' }}>
+                  Contact
+                </h3>
+                <ul className="space-y-2 text-sm">
+                  {ctx.contact.phone && (
+                    <li className="flex items-center gap-2">
+                      <Phone className="w-4 h-4" style={{ color: 'hsl(0 0% 100% / 0.6)' }} />
+                      <a href={`tel:${ctx.contact.phone.replace(/[^0-9]/g, '')}`} className="transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                        {ctx.contact.phone}
+                      </a>
+                    </li>
+                  )}
+                  {ctx.contact.email && (
+                    <li className="flex items-center gap-2">
+                      <Mail className="w-4 h-4" style={{ color: 'hsl(0 0% 100% / 0.6)' }} />
+                      <a href={`mailto:${ctx.contact.email}`} className="transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                        {ctx.contact.email}
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </>
+            )}
+          </div>
+          
+          {/* Connect - Social */}
           <div>
             <h3 className="text-sm font-bold uppercase-tracked mb-3" style={{ color: 'hsl(0 0% 100% / 0.5)' }}>
-              Contact
+              Connect
             </h3>
-            <ul className="space-y-2 text-sm">
-              {ctx.contact.phone && (
-                <li>
-                  <a href={`tel:${ctx.contact.phone.replace(/[^0-9]/g, '')}`} className="transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
-                    {ctx.contact.phone}
-                  </a>
-                </li>
+            <div className="flex gap-3">
+              {ctx.social?.instagram && (
+                <a href={ctx.social.instagram} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                  <Instagram size={20} strokeWidth={2} />
+                </a>
               )}
-              {ctx.contact.email && (
-                <li>
-                  <a href={`mailto:${ctx.contact.email}`} className="transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
-                    {ctx.contact.email}
-                  </a>
-                </li>
+              {ctx.social?.facebook && (
+                <a href={ctx.social.facebook} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </a>
               )}
-            </ul>
-            
-            {/* Connect - Social */}
-            <div className="mt-4">
-              <h3 className="text-sm font-bold uppercase-tracked mb-3" style={{ color: 'hsl(0 0% 100% / 0.5)' }}>
-                Connect
-              </h3>
-              <div className="flex gap-3">
-                {ctx.social?.instagram && (
-                  <a href={ctx.social.instagram} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
-                    <Instagram size={20} strokeWidth={2} />
-                  </a>
-                )}
-                {ctx.social?.facebook && (
-                  <a href={ctx.social.facebook} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                    </svg>
-                  </a>
-                )}
-                {ctx.social?.linkedin && (
-                  <a href={ctx.social.linkedin} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                      <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-                    </svg>
-                  </a>
-                )}
-              </div>
+              {ctx.social?.linkedin && (
+                <a href={ctx.social.linkedin} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                    <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
         </div>

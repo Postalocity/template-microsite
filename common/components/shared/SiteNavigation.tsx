@@ -126,13 +126,22 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
       }`}
       aria-label="Main navigation"
     >
-      <div className="section-container flex items-center justify-between h-20 lg:h-24">
+      <div className={`section-container flex items-center justify-between ${
+        ctx.brand.footer?.logoSize === 'extra-large' ? 'h-24 lg:h-32' : 
+        ctx.brand.footer?.logoSize === 'large' ? 'h-22 lg:h-28' : 
+        'h-20 lg:h-24'
+      }`}>
         <a
           href={ctx.brand.urls.website}
           aria-label={`${brandName} home`}
+          className="flex items-center"
         >
-          {/* Logo: larger size for better visibility */}
-          <div className="h-12 lg:h-16 w-[180px] lg:w-[240px] relative">
+          {/* Logo: dynamic size based on brand config, larger for better visibility */}
+          <div className={`relative ${
+            ctx.brand.footer?.logoSize === 'extra-large' ? 'h-20 lg:h-28 w-[280px] lg:w-[360px]' : 
+            ctx.brand.footer?.logoSize === 'large' ? 'h-16 lg:h-24 w-[240px] lg:w-[320px]' : 
+            'h-12 lg:h-16 w-[180px] lg:w-[240px]'
+          }`}>
             {hasDarkLogo ? (
               // Dual logos: switch on scroll (logo.png = dark, logo-dark.png = light)
               <>

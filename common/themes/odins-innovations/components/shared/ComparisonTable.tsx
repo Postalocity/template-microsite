@@ -1,5 +1,5 @@
 import { ComparisonContent } from "@/types/content";
-import { X, Check } from "lucide-react";
+import { X } from "lucide-react";
 
 interface ComparisonTableProps {
   comparison: ComparisonContent;
@@ -26,27 +26,27 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
         </div>
 
         {/* VS Header */}
-        <div className="grid md:grid-cols-2 gap-0 mb-8">
+        <div className="grid md:grid-cols-2 gap-0 mb-8 relative">
           <div className="text-center py-4" style={{ background: 'hsl(220 10% 15%)' }}>
             <h3 className="font-body text-sm font-bold uppercase-tracked" style={{ color: 'hsl(220 8% 50%)' }}>
               {comparison.columns.traditional}
             </h3>
           </div>
-          <div className="text-center py-4 relative" style={{ background: 'hsl(145 45% 38% / 0.15)' }}>
+          <div className="text-center py-4" style={{ background: 'hsl(145 45% 38% / 0.15)' }}>
             <h3 className="font-body text-sm font-bold uppercase-tracked" style={{ color: 'hsl(145 45% 55%)' }}>
               {comparison.columns.ourSolution}
             </h3>
-            {/* VS Badge */}
-            <div 
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center font-display text-lg"
-              style={{ 
-                background: 'hsl(220 15% 8%)',
-                border: '2px solid hsl(220 10% 25%)',
-                color: 'hsl(220 10% 60%)'
-              }}
-            >
-              VS
-            </div>
+          </div>
+          {/* VS Badge - positioned on the border between columns */}
+          <div 
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center font-display text-lg z-10 pointer-events-none"
+            style={{ 
+              background: 'hsl(220 15% 8%)',
+              border: '2px solid hsl(220 10% 25%)',
+              color: 'hsl(220 10% 60%)'
+            }}
+          >
+            VS
           </div>
         </div>
 
@@ -81,7 +81,7 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
                 </div>
               </div>
 
-              {/* Odin's - highlighted, with check */}
+              {/* Odin's - highlighted, with emoji checkmark */}
               <div className="p-6 lg:p-8 flex items-start gap-4" style={{ background: 'hsl(145 45% 38% / 0.05)' }}>
                 <div 
                   className="flex-shrink-0 w-7 h-7 flex items-center justify-center"
@@ -90,7 +90,7 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
                     color: 'hsl(145 45% 55%)'
                   }}
                 >
-                  <Check size={16} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
+                  ✓
                 </div>
                 <div>
                   <p className="font-body text-sm font-semibold mb-1" style={{ color: 'white' }}>

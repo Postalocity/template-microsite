@@ -105,8 +105,8 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{ 
         background: scrolled 
-          ? 'linear-gradient(to bottom, hsl(220 15% 12% / 0.98), hsl(220 12% 15% / 0.95))' 
-          : 'linear-gradient(to bottom, hsl(220 15% 10% / 0.8), hsl(220 15% 10% / 0.3))',
+          ? 'linear-gradient(to bottom, hsl(35 30% 95% / 0.98), hsl(35 25% 92% / 0.95))' 
+          : 'linear-gradient(to bottom, hsl(35 30% 98% / 0.95), hsl(35 25% 95% / 0.8))',
         backdropFilter: 'blur(12px)',
         boxShadow: scrolled ? '0 8px 32px rgb(0 0 0 / 0.3)' : '0 4px 16px rgb(0 0 0 / 0.15)',
         borderBottom: scrolled ? '1px solid hsl(145 45% 38% / 0.3)' : '1px solid hsl(0 0% 100% / 0.05)'
@@ -118,13 +118,12 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
           href={ctx.brand.urls.website}
           aria-label={`${brandName} home`}
         >
-          {/* Logo: bigger, always white */}
-          <div className="h-14 lg:h-18 w-[220px] lg:w-[280px] relative">
+          {/* Logo: normal color, larger size for visibility */}
+          <div className="h-16 lg:h-20 w-[260px] lg:w-[340px] relative">
             <img
               src={`/${siteSlug}/logo.png`}
               alt={brandName}
               className="h-full w-full object-contain"
-              style={{ filter: 'brightness(0) invert(1) drop-shadow(0 2px 4px rgb(0 0 0 / 0.3))' }}
             />
           </div>
         </a>
@@ -139,7 +138,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                 onMouseLeave={() => setServicesOpen(false)}
                 className="text-sm font-semibold tracking-wide uppercase flex items-center gap-1 transition-all hover:opacity-100"
                 style={{ 
-                  color: 'hsl(0 0% 100% / 0.75)',
+                  color: 'hsl(30 20% 20% / 0.9)',
                   letterSpacing: '0.08em',
                   background: 'none',
                   border: 'none',
@@ -172,7 +171,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                         key={link.href}
                         href={link.href}
                         className="block px-4 py-2.5 text-sm transition-colors hover:opacity-100"
-                        style={{ color: 'hsl(0 0% 100% / 0.75)' }}
+                        style={{ color: 'hsl(30 20% 20% / 0.9)' }}
                       >
                         {link.label}
                       </a>
@@ -191,7 +190,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
               onClick={(e) => handleLinkClick(e, link.href)}
               className="text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-100"
               style={{ 
-                color: 'hsl(0 0% 100% / 0.75)',
+                color: 'hsl(30 20% 20% / 0.9)',
                 letterSpacing: '0.08em'
               }}
             >
@@ -207,7 +206,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                 onMouseLeave={() => setCompanyOpen(false)}
                 className="text-sm font-semibold tracking-wide uppercase flex items-center gap-1 transition-all hover:opacity-100"
                 style={{ 
-                  color: 'hsl(0 0% 100% / 0.75)',
+                  color: 'hsl(30 20% 20% / 0.9)',
                   letterSpacing: '0.08em',
                   background: 'none',
                   border: 'none',
@@ -240,7 +239,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                         key={link.href}
                         href={link.href}
                         className="block px-4 py-2.5 text-sm transition-colors hover:opacity-100"
-                        style={{ color: 'hsl(0 0% 100% / 0.75)' }}
+                        style={{ color: 'hsl(30 20% 20% / 0.9)' }}
                       >
                         {link.label}
                       </a>
@@ -307,7 +306,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
               {/* Service Links (mobile) */}
               {hasMultiService && (
                 <div className="pb-3 border-b" style={{ borderColor: 'hsl(0 0% 100% / 0.1)' }}>
-                  <p className="text-xs font-bold uppercase-tracked mb-2" style={{ color: 'hsl(0 0% 100% / 0.5)' }}>
+                  <p className="text-xs font-bold uppercase-tracked mb-2" style={{ color: 'hsl(30 20% 30% / 0.7)' }}>
                     Services
                   </p>
                   {serviceLinks.map((link) => (
@@ -316,7 +315,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
                       className="block py-2 text-sm font-medium"
-                      style={{ color: 'hsl(0 0% 100% / 0.7)' }}
+                      style={{ color: 'hsl(30 20% 25% / 0.85)' }}
                     >
                       {link.label}
                     </a>
@@ -342,7 +341,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
               {/* Company Links (mobile) */}
               {hasCompany && (
                 <div className="pt-3 border-t" style={{ borderColor: 'hsl(0 0% 100% / 0.1)' }}>
-                  <p className="text-xs font-bold uppercase-tracked mb-2" style={{ color: 'hsl(0 0% 100% / 0.5)' }}>
+                  <p className="text-xs font-bold uppercase-tracked mb-2" style={{ color: 'hsl(30 20% 30% / 0.7)' }}>
                     Company
                   </p>
                   {companyLinks.map((link) => (
@@ -351,7 +350,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
                       className="block py-2 text-sm font-medium"
-                      style={{ color: 'hsl(0 0% 100% / 0.7)' }}
+                      style={{ color: 'hsl(30 20% 25% / 0.85)' }}
                     >
                       {link.label}
                     </a>

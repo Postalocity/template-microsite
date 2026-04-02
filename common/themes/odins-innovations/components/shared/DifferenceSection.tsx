@@ -110,7 +110,7 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
             </div>
           )}
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            <span className="text-primary">{sectionTitle}</span>
+            {sectionTitle}
           </h2>
           <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             {sectionDescription}
@@ -149,7 +149,7 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
 
                 {/* Content */}
                 <div className="relative">
-                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-amber-700 transition-colors duration-300">
                     {item.title}
                   </h3>
                   <p

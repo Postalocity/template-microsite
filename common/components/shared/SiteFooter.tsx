@@ -79,6 +79,9 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
     { label: 'Contact', href: ctx.brand.urls.contact || ctx.brand.urls.website },
   ];
 
+  // Support links - for brands that have support menu items (like Odin's)
+  const supportLinks = content?.supportLinks || brandFooter?.supportLinks;
+
   return (
     <footer style={{ backgroundColor: '#333333' }} className="text-background" role="contentinfo">
       {/* Final CTA */}
@@ -110,11 +113,13 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
           {/* Brand info */}
           <div className="lg:col-span-1">
             <h3 className="text-lg font-bold mb-3">{brandName}</h3>
-            <p className="text-background/60 text-sm leading-relaxed">
-              {content?.description || 'Your one-stop-shop for all things print, mail and promo.'}
-            </p>
+            {content?.description && (
+              <p className="text-background/60 text-sm leading-relaxed">
+                {content.description}
+              </p>
+            )}
             <p className="text-background/50 text-xs mt-3 italic">
-              {content?.tagline || brandFooter?.tagline || ctx.brand.tagline || 'Empowering Businesses with Reliable Automation'}
+              {content?.tagline || brandFooter?.tagline || ctx.brand.tagline}
             </p>
           </div>
 
@@ -146,23 +151,40 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Support or Contact */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Contact</h3>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-center gap-2 text-background/70">
-                <Phone className="w-4 h-4" />
-                <a href={`tel:${phoneLink}`} className="hover:text-background transition-colors">{ctx.contact.phone}</a>
-              </li>
-              <li className="flex items-center gap-2 text-background/70">
-                <Mail className="w-4 h-4" />
-                <a href={`mailto:${ctx.contact.email}`} className="hover:text-background transition-colors">{ctx.contact.email}</a>
-              </li>
-              <li className="flex items-start gap-2 text-background/70 mt-2">
-                <MapPin className="w-4 h-4 mt-0.5" />
-                <span>{formattedAddress}</span>
-              </li>
-            </ul>
+            {supportLinks ? (
+              <>
+                <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Support</h3>
+                <ul className="space-y-2 text-sm">
+                  {supportLinks.map((link) => (
+                    <li key={link.href}>
+                      <a href={link.href} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <>
+                <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Contact</h3>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-center gap-2 text-background/70">
+                    <Phone className="w-4 h-4" />
+                    <a href={`tel:${phoneLink}`} className="hover:text-background transition-colors">{ctx.contact.phone}</a>
+                  </li>
+                  <li className="flex items-center gap-2 text-background/70">
+                    <Mail className="w-4 h-4" />
+                    <a href={`mailto:${ctx.contact.email}`} className="hover:text-background transition-colors">{ctx.contact.email}</a>
+                  </li>
+                  <li className="flex items-start gap-2 text-background/70 mt-2">
+                    <MapPin className="w-4 h-4 mt-0.5" />
+                    <span>{formattedAddress}</span>
+                  </li>
+                </ul>
+              </>
+            )}
           </div>
 
           {/* Connect - Social */}
