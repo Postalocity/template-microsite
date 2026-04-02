@@ -302,7 +302,8 @@
         "buttonText": "Get Free Estimate",
         "href": "https://broadstrokeinc.com/contact/?service=promo"
       },
-      "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand."
+      "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
+      "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
     }
   },
   "footer": {
@@ -312,6 +313,7 @@
       "buttonText": "Get Free Estimate",
       "href": "https://broadstrokeinc.com/contact/?service=promo"
     },
-    "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand."
+    "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
+    "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
   }
 }
