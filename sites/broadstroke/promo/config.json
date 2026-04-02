@@ -193,7 +193,7 @@
           "traditionalApproach": "Different person at each stage"
         },
         {
-          "icon": "palette",
+          "icon": "edit",
           "feature": "Design Services",
           "ourSolution": "Full design services included",
           "traditionalApproach": "Basic logo placement only"
@@ -211,7 +211,7 @@
           "traditionalApproach": "Standalone service only"
         },
         {
-          "icon": "clipboard-check",
+          "icon": "shield",
           "feature": "Quality Control",
           "ourSolution": "Multi-point inspection before delivery",
           "traditionalApproach": "Ship direct from decorator"
