@@ -153,55 +153,61 @@
     "comparison": {
       "section": {
         "title": "Comparison: Natural Urine vs. Odin's Synthetic Scent Beads",
-        "description": ""
+        "description": "See how synthetic scent beads outperform traditional natural urine"
       },
-      "headline": "Comparison: Natural Urine vs. Odin's Synthetic Scent Beads",
-      "table": [
-        [
-          "Attribute",
-          "Natural Doe Urine",
-          "Odin's Synthetic Scent Beads"
-        ],
-        [
-          "Consistency",
-          "Variable by batch",
-          "Identical molecular specification every unit"
-        ],
-        [
-          "Duration",
-          "Rapid degradation and dilution",
-          "30+ days continuous release"
-        ],
-        [
-          "Weather Resistance",
-          "Soaks in and dilutes with moisture",
-          "Unaffected by rain, snow, dew"
-        ],
-        [
-          "CWD Risk",
-          "Potential prion transmission",
-          "Zero — no animal ingredients"
-        ],
-        [
-          "Legal Status",
-          "Restricted or banned in multiple states",
-          "Legal in all 50 states"
-        ],
-        [
-          "Storage & Handling",
-          "Demanding, short shelf life",
-          "No special requirements"
-        ],
-        [
-          "Environmental Impact",
-          "Biological waste",
-          "Biodegradable polymer, USDA BioPreferred"
-        ],
-        [
-          "Reapplication Frequency",
-          "Frequent",
-          "Reduced — set once and maintain"
-        ]
+      "columns": {
+        "traditional": "Natural Doe Urine",
+        "ourSolution": "Odin's Synthetic Scent Beads"
+      },
+      "rows": [
+        {
+          "icon": "flask",
+          "feature": "Consistency",
+          "ourSolution": "Identical molecular specification every unit",
+          "traditionalApproach": "Variable by batch"
+        },
+        {
+          "icon": "clock",
+          "feature": "Duration",
+          "ourSolution": "30+ days continuous release",
+          "traditionalApproach": "Rapid degradation and dilution"
+        },
+        {
+          "icon": "cloud-rain",
+          "feature": "Weather Resistance",
+          "ourSolution": "Unaffected by rain, snow, dew",
+          "traditionalApproach": "Soaks in and dilutes with moisture"
+        },
+        {
+          "icon": "shield",
+          "feature": "CWD Risk",
+          "ourSolution": "Zero — no animal ingredients",
+          "traditionalApproach": "Potential prion transmission"
+        },
+        {
+          "icon": "check-circle",
+          "feature": "Legal Status",
+          "ourSolution": "Legal in all 50 states",
+          "traditionalApproach": "Restricted or banned in multiple states"
+        },
+        {
+          "icon": "package",
+          "feature": "Storage & Handling",
+          "ourSolution": "No special requirements",
+          "traditionalApproach": "Demanding, short shelf life"
+        },
+        {
+          "icon": "leaf",
+          "feature": "Environmental Impact",
+          "ourSolution": "Biodegradable polymer, USDA BioPreferred",
+          "traditionalApproach": "Biological waste"
+        },
+        {
+          "icon": "refresh-cw",
+          "feature": "Reapplication Frequency",
+          "ourSolution": "Reduced — set once and maintain",
+          "traditionalApproach": "Frequent"
+        }
       ]
     },
     "faq": {
