@@ -1,111 +1,106 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import { sanitizeHtml } from "@/utils/sanitize-html";
-import { useIKBPricing } from "@/contexts";
-import { DEFAULT_PRICING } from "@/utils/pricing";
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
-interface FAQ {
-  q: string;
-  a: string;
+interface FAQItem {
+  q?: string;
+  a?: string;
+  question?: string;
+  answer?: string;
 }
 
 interface FAQSectionProps {
-  section?: {
-    title?: string;
-    description?: string;
-  };
-  faqs?: FAQ[];
   faq?: {
-    section?: {
-      title?: string;
-      description?: string;
-    };
-    faqs?: FAQ[];
+    headline?: string;
+    title?: string;
+    items?: FAQItem[];
+    faqs?: FAQItem[];
   };
 }
 
-const FAQSection = ({ section, faqs: propFaqs, faq: legacyFaq }: FAQSectionProps) => {
+const FAQSection = ({ faq }: FAQSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  
-  const pricing = useIKBPricing();
-  
-  const pricingText = useMemo(() => {
-    const basePrice = pricing?.basePrice ?? DEFAULT_PRICING.basePrice;
-    const units = pricing?.units ?? DEFAULT_PRICING.units;
-    return `$${basePrice.toFixed(2)}/${units}`;
-  }, [pricing]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const faqs = propFaqs || legacyFaq?.faqs || [];
-  const sectionTitle = section?.title || legacyFaq?.section?.title || "Frequently Asked";
-  const sectionDesc = section?.description || legacyFaq?.section?.description;
-  
-  const processAnswer = (answer: string) => {
-    return answer.replace(/\{\{PRICING\}\}/g, pricingText);
-  };
+  if (!faq) {
+    return null;
+  }
+
+  const items = faq.items || faq.faqs || [];
+  const title = faq.headline || faq.title || "Frequently Asked Questions";
+
+  if (items.length === 0) {
+    return null;
+  }
 
   return (
-    <section id="faq" className="section-lg">
+    <section
+      id="faq"
+      ref={ref}
+      className="section-padding bg-section-alt"
+    >
       <div className="section-container">
-        {/* Section header */}
-        <div className="max-w-2xl mb-16">
-          <p 
-            className="uppercase-tracked mb-4"
-            style={{ color: 'hsl(var(--accent))' }}
-          >
-            Questions
-          </p>
-          <h2 className="mb-6 text-foreground">
-            {sectionTitle}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="max-w-3xl mx-auto"
+        >
+          <h2 className="font-display text-2xl uppercase mb-10 text-center">
+            {title}
           </h2>
-          {sectionDesc && (
-            <p className="font-body text-lg text-muted-foreground leading-relaxed">
-              {sectionDesc}
-            </p>
-          )}
-        </div>
 
-        {/* FAQ - rustic accordion with thick +/- icons */}
-        <div className="max-w-3xl">
-          {faqs.map((faq, i) => (
-            <div
-              key={i}
-              className="border-b"
-              style={{ borderColor: 'hsl(var(--border))' }}
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full flex items-start justify-between py-6 text-left group"
-                aria-expanded={openIndex === i}
-              >
-                <span className="faq-question pr-8 text-left">
-                  {faq.q}
-                </span>
-                <span 
-                  className="flex-shrink-0 w-8 h-8 flex items-center justify-center transition-all"
-                  style={{ 
-                    background: openIndex === i ? 'hsl(var(--accent))' : 'hsl(var(--muted))',
-                    color: openIndex === i ? 'white' : 'hsl(var(--muted-foreground))',
-                  }}
-                >
-                  {openIndex === i ? (
-                    <Minus size={18} strokeWidth={3} strokeLinecap="round" />
-                  ) : (
-                    <Plus size={18} strokeWidth={3} strokeLinecap="round" />
-                  )}
-                </span>
-              </button>
+          <div className="space-y-0">
+            {items.map((item, index) => {
+              const question = item.question || item.q || "";
+              const answer = item.answer || item.a || "";
               
-              {openIndex === i && (
-                <div className="pb-6 pl-0">
-                  <p
-                    className="faq-answer"
-                    dangerouslySetInnerHTML={{ __html: sanitizeHtml(processAnswer(faq.a)) }}
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="border-b border-border"
+                >
+                  <button
+                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                    className="w-full flex items-start justify-between py-6 text-left group"
+                    aria-expanded={openIndex === index}
+                  >
+                    <span className="font-body text-lg font-bold text-foreground pr-8 text-left">
+                      {question}
+                    </span>
+                    <span 
+                      className="flex-shrink-0 w-8 h-8 flex items-center justify-center transition-all"
+                      style={{ 
+                        background: openIndex === index ? 'hsl(var(--accent))' : 'hsl(var(--muted))',
+                        color: openIndex === index ? 'white' : 'hsl(var(--muted-foreground))',
+                      }}
+                    >
+                      {openIndex === index ? (
+                        <Minus size={18} strokeWidth={3} strokeLinecap="round" />
+                      ) : (
+                        <Plus size={18} strokeWidth={3} strokeLinecap="round" />
+                      )}
+                    </span>
+                  </button>
+                  
+                  {openIndex === index && (
+                    <div className="pb-6">
+                      <p className="font-body text-base leading-relaxed text-muted-foreground">
+                        {answer}
+                      </p>
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

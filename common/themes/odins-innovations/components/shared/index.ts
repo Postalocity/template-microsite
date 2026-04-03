@@ -9,3 +9,7 @@ export { default as HowItWorksSection } from './HowItWorksSection';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as SiteNavigation } from './SiteNavigation';
 export { default as SiteFooter } from './SiteFooter';
+export { default as WhyOdinsSection } from './WhyOdinsSection';
+export { default as WhenToUseSection } from './WhenToUseSection';
+export { default as HowToUseSection } from './HowToUseSection';
+export { default as ProductsSection } from './ProductsSection';

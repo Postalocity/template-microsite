@@ -1,83 +1,59 @@
-import { BenefitsContent } from "@/types/content";
-import { sanitizeHtml } from "@/utils/sanitize-html";
-import { useFormattedPricing } from "@/utils/pricing";
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Check } from 'lucide-react';
 
 interface BenefitsSectionProps {
-  benefits: BenefitsContent;
+  benefits: {
+    headline: string;
+    items: string[];
+  };
 }
 
 const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
-  const { short, full, withEnvelope } = useFormattedPricing();
-  
-  if (!benefits?.section || !benefits?.benefits) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  if (!benefits?.items || benefits.items.length === 0) {
     return null;
   }
-  
-  const processText = (text: string | undefined) => {
-    if (!text) return '';
-    return text
-      .replace(/\{\{PRICING\}\}/g, full)
-      .replace(/\{\{PRICING_SHORT\}\}/g, short)
-      .replace(/\{\{PRICING_ENVELOPE\}\}/g, withEnvelope);
-  };
 
   return (
-    <section id="benefits" className="section-lg section-alt">
+    <section
+      id="benefits"
+      ref={ref}
+      className="section-padding bg-section-alt"
+    >
       <div className="section-container">
-        {/* Section header - bold, left-aligned */}
-        <div className="max-w-3xl mb-16">
-          <p 
-            className="uppercase-tracked mb-4"
-            style={{ color: 'hsl(var(--accent))' }}
-          >
-            Why Choose Odin&apos;s
-          </p>
-          <h2 className="mb-6 text-foreground">
-            {benefits.section.title}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
+        >
+          <h2 className="font-display text-2xl uppercase mb-10 text-center">
+            {benefits.headline}
           </h2>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            {benefits.section.description}
-          </p>
-        </div>
 
-        {/* Benefits - two-column layout with visual hierarchy */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-          {benefits.benefits.map((benefit, idx) => (
-            <div key={idx} className="group">
-              {/* Number indicator */}
-              <span 
-                className="font-display text-5xl block mb-4"
-                style={{ 
-                  color: 'hsl(var(--accent) / 0.15)',
-                  lineHeight: 1
-                }}
+          <div className="grid md:grid-cols-2 gap-6">
+            {benefits.items.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="flex items-start gap-4"
               >
-                {String(idx + 1).padStart(2, '0')}
-              </span>
-              <h3 className="font-body text-lg font-bold mb-3 text-foreground group-hover:text-[hsl(var(--accent))] transition-colors">
-                {benefit.title}
-              </h3>
-              <p 
-                className="font-body text-base leading-relaxed"
-                style={{ color: 'hsl(var(--muted-foreground))' }}
-                dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(benefit.description || benefit.detail)) }}
-              />
-              {benefit.metrics && (
-                <div 
-                  className="mt-4 pt-4 border-t"
-                  style={{ borderColor: 'hsl(var(--border))' }}
-                >
-                  <p 
-                    className="text-sm font-bold uppercase-tracked"
-                    style={{ color: 'hsl(var(--accent))' }}
-                  >
-                    {processText(benefit.metrics)}
-                  </p>
+                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-accent flex items-center justify-center mt-0.5">
+                  <Check className="w-4 h-4 text-white" />
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
+                <p className="font-body text-base text-muted-foreground">
+                  {item}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

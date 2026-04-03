@@ -1,125 +1,101 @@
-import { useBrand } from "@/contexts";
-
-interface HowItWorksStep {
-  number?: string;
-  title: string;
-  description: string;
-}
-
-interface HowItWorksContent {
-  section?: {
-    id?: string;
-    title?: string;
-    description?: string;
-  };
-  steps?: HowItWorksStep[];
-}
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 interface HowItWorksSectionProps {
-  howItWorks?: HowItWorksContent;
+  howItWorks?: {
+    headline?: string;
+    body?: string;
+    section?: {
+      id?: string;
+      title?: string;
+      description?: string;
+    };
+    steps?: Array<{
+      number?: string;
+      title: string;
+      description: string;
+    }>;
+  };
 }
 
 const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
-  const ctx = useBrand();
-  const brandHowItWorks = ctx.brand.howItWorks;
-  
-  const hasConfig = howItWorks && (howItWorks.steps?.length || howItWorks.section?.title);
-  const allSteps = hasConfig ? howItWorks?.steps : (brandHowItWorks?.steps || [
-    {
-      number: "01",
-      title: "Choose Your Formula",
-      description: "Select from Doe Estrus, Dominant Buck, or specialty blends based on your target species and season."
-    },
-    {
-      number: "02",
-      title: "Deploy in the Field",
-      description: "Place beads in mock scrapes, on drag lines, or around your stand. A little goes a long way."
-    },
-    {
-      number: "03", 
-      title: "Let Science Work",
-      description: "The polymer matrix releases attractant steadily for 30+ days—rain or shine, hot or cold."
-    },
-    {
-      number: "04",
-      title: "Results in the Crosshairs",
-      description: "Consistent attraction that outlasts traditional lures. No re-application needed for weeks."
-    }
-  ]);
-  const steps = allSteps || [];
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const sectionTitle = howItWorks?.section?.title || brandHowItWorks?.section?.title || "How It Works";
-  const sectionDesc = howItWorks?.section?.description || brandHowItWorks?.section?.description || "Four steps to consistent results";
-  const sectionId = howItWorks?.section?.id || brandHowItWorks?.section?.id || "how-it-works";
+  // Check if using new format (headline + body) or old format (section + steps)
+  const isNewFormat = howItWorks?.headline && howItWorks?.body;
+  const isOldFormat = howItWorks?.section && howItWorks?.steps && howItWorks.steps.length > 0;
+
+  if (!isNewFormat && !isOldFormat) {
+    return null;
+  }
+
+  const sectionId = howItWorks?.section?.id || "how-it-works";
 
   return (
-    <section id={sectionId} className="section-lg section-alt">
+    <section
+      id={sectionId}
+      ref={ref}
+      className="section-padding bg-section-alt"
+    >
       <div className="section-container">
-        {/* Section header */}
-        <div className="max-w-2xl mb-16">
-          <p 
-            className="uppercase-tracked mb-4"
-            style={{ color: 'hsl(var(--accent))' }}
-          >
-            How It Works
-          </p>
-          <h2 className="mb-6 text-foreground">
-            {sectionTitle}
-          </h2>
-          <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            {sectionDesc}
-          </p>
-        </div>
-
-        {/* Steps - horizontal timeline on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-6">
-          {steps.map((step, i) => (
-            <div key={step.title} className="relative">
-              {/* Connector line between steps (hidden on last) */}
-              {i < steps.length - 1 && (
-                <div 
-                  className="hidden md:block absolute top-8 left-full w-full h-px"
-                  style={{ background: 'hsl(var(--border))' }}
-                />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="max-w-4xl mx-auto"
+        >
+          {isNewFormat ? (
+            // New format: Simple headline + body
+            <>
+              <h2 className="font-display text-2xl uppercase mb-6 text-center">
+                {howItWorks?.headline}
+              </h2>
+              <div className="prose prose-lg max-w-none">
+                <p className="font-body text-lg leading-relaxed text-muted-foreground">
+                  {howItWorks?.body}
+                </p>
+              </div>
+            </>
+          ) : (
+            // Old format: Section with steps
+            <>
+              <h2 className="font-display text-2xl uppercase mb-4 text-center">
+                {howItWorks?.section?.title}
+              </h2>
+              {howItWorks?.section?.description && (
+                <p className="font-body text-lg text-muted-foreground text-center mb-10">
+                  {howItWorks.section.description}
+                </p>
               )}
               
-              {/* Step number - large, accent colored */}
-              <div 
-                className="w-16 h-16 flex items-center justify-center mb-6"
-                style={{ 
-                  background: 'hsl(var(--accent) / 0.08)',
-                  border: '2px solid hsl(var(--accent) / 0.2)'
-                }}
-              >
-                <span 
-                  className="font-display text-2xl"
-                  style={{ color: 'hsl(var(--accent))' }}
-                >
-                  {step.number}
-                </span>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                {howItWorks?.steps?.map((step, index) => (
+                  <motion.div
+                    key={step.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-accent/10 border-2 border-accent/20">
+                      <span className="font-display text-2xl text-accent">
+                        {step.number}
+                      </span>
+                    </div>
+                    <h3 className="font-body text-base font-bold mb-2 text-foreground">
+                      {step.title}
+                    </h3>
+                    <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                      {step.description}
+                    </p>
+                  </motion.div>
+                ))}
               </div>
-              
-              <h3 className="font-body text-base font-bold mb-2 text-foreground">
-                {step.title}
-              </h3>
-              <p 
-                className="font-body text-sm leading-relaxed"
-                style={{ color: 'hsl(var(--muted-foreground))' }}
-              >
-                {step.description}
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom note */}
-        <div className="mt-16 pt-8 border-t" style={{ borderColor: 'hsl(var(--border))' }}>
-          <p className="font-body text-base leading-relaxed max-w-2xl">
-            <strong>Pro tip:</strong> Start with less than you think you need. 
-            These beads are engineered for slow, consistent release. 
-            A small handful in a mock scrape can last an entire season.
-          </p>
-        </div>
+            </>
+          )}
+        </motion.div>
       </div>
     </section>
   );

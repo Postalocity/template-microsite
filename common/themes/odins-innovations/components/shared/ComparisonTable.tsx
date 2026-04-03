@@ -1,126 +1,83 @@
-import { ComparisonContent } from "@/types/content";
-import { X } from "lucide-react";
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
-interface ComparisonTableProps {
-  comparison: ComparisonContent;
+interface TableComparisonProps {
+  comparison: {
+    headline: string;
+    table: string[][];
+  };
 }
 
-const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
+const ComparisonTable = ({ comparison }: TableComparisonProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  if (!comparison?.table || comparison.table.length < 2) {
+    return null;
+  }
+
+  const [headerRow, ...dataRows] = comparison.table;
+
   return (
-    <section id="comparison" className="section-lg" style={{ background: 'hsl(220 15% 8%)' }}>
+    <section
+      id="comparison"
+      ref={ref}
+      className="section-padding bg-background"
+    >
       <div className="section-container">
-        {/* Section header - bold, aggressive */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p 
-            className="uppercase-tracked mb-4"
-            style={{ color: 'hsl(145 45% 55%)' }}
-          >
-            The Difference
-          </p>
-          <h2 className="mb-6" style={{ color: 'white' }}>
-            {comparison.section.title}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="font-display text-2xl uppercase mb-10 text-center">
+            {comparison.headline}
           </h2>
-          <p className="font-body text-lg leading-relaxed" style={{ color: 'hsl(220 10% 60%)' }}>
-            {comparison.section.description}
-          </p>
-        </div>
 
-        {/* VS Header */}
-        <div className="grid md:grid-cols-2 gap-0 mb-8 relative">
-          <div className="text-center py-4" style={{ background: 'hsl(220 10% 15%)' }}>
-            <h3 className="font-body text-sm font-bold uppercase-tracked" style={{ color: 'hsl(220 8% 50%)' }}>
-              {comparison.columns.traditional}
-            </h3>
+          <div className="overflow-x-auto">
+            <table className="comparison-table w-full">
+              <thead>
+                <tr className="border-b-2 border-foreground">
+                  {headerRow.map((cell, index) => (
+                    <th
+                      key={index}
+                      className={`py-4 px-6 text-left font-display uppercase text-sm ${
+                        index === 0 ? 'w-1/4' : 'w-3/8'
+                      }`}
+                    >
+                      {cell}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {dataRows.map((row, rowIndex) => (
+                  <motion.tr
+                    key={rowIndex}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.4, delay: rowIndex * 0.1 }}
+                    className="border-b border-border hover:bg-section-alt transition-colors"
+                  >
+                    {row.map((cell, cellIndex) => (
+                      <td
+                        key={cellIndex}
+                        className={`py-4 px-6 ${
+                          cellIndex === 0
+                            ? 'font-body font-semibold text-foreground'
+                            : 'font-body text-muted-foreground'
+                        }`}
+                      >
+                        {cell}
+                      </td>
+                    ))}
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
           </div>
-          <div className="text-center py-4" style={{ background: 'hsl(145 45% 38% / 0.15)' }}>
-            <h3 className="font-body text-sm font-bold uppercase-tracked" style={{ color: 'hsl(145 45% 55%)' }}>
-              {comparison.columns.ourSolution}
-            </h3>
-          </div>
-          {/* VS Badge - positioned on the border between columns */}
-          <div 
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center font-display text-lg z-10 pointer-events-none"
-            style={{ 
-              background: 'hsl(220 15% 8%)',
-              border: '2px solid hsl(220 10% 25%)',
-              color: 'hsl(220 10% 60%)'
-            }}
-          >
-            VS
-          </div>
-        </div>
-
-        {/* Comparison rows */}
-        <div className="border border-[hsl(220_10%_20%)]">
-          {comparison.rows.map((row, i) => (
-            <div 
-              key={row.feature}
-              className="grid md:grid-cols-2"
-              style={{ 
-                borderBottom: i < comparison.rows.length - 1 ? '1px solid hsl(220 10% 15%)' : 'none'
-              }}
-            >
-              {/* Traditional - muted, with X */}
-              <div className="p-6 lg:p-8 flex items-start gap-4" style={{ background: 'hsl(220 10% 12%)' }}>
-                <div 
-                  className="flex-shrink-0 w-7 h-7 flex items-center justify-center"
-                  style={{ 
-                    background: 'hsl(0 50% 45% / 0.15)',
-                    color: 'hsl(0 50% 55%)'
-                  }}
-                >
-                  <X size={16} strokeWidth={3} strokeLinecap="round" />
-                </div>
-                <div>
-                  <p className="font-body text-sm font-semibold mb-1" style={{ color: 'hsl(220 10% 65%)' }}>
-                    {row.feature}
-                  </p>
-                  <p className="font-body text-sm" style={{ color: 'hsl(220 8% 45%)' }}>
-                    {row.traditionalApproach}
-                  </p>
-                </div>
-              </div>
-
-              {/* Odin's - highlighted, with emoji checkmark */}
-              <div className="p-6 lg:p-8 flex items-start gap-4" style={{ background: 'hsl(145 45% 38% / 0.05)' }}>
-                <div 
-                  className="flex-shrink-0 w-7 h-7 flex items-center justify-center"
-                  style={{ 
-                    background: 'hsl(145 45% 38% / 0.2)',
-                    color: 'hsl(145 45% 55%)'
-                  }}
-                >
-                  ✓
-                </div>
-                <div>
-                  <p className="font-body text-sm font-semibold mb-1" style={{ color: 'white' }}>
-                    {row.feature}
-                  </p>
-                  <p className="font-body text-sm" style={{ color: 'hsl(220 10% 70%)' }}>
-                    {row.ourSolution}
-                  </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA - aggressive, hunter-focused */}
-        <div className="mt-12 text-center">
-          <p className="font-body text-lg mb-6" style={{ color: 'hsl(220 10% 60%)' }}>
-            Stop settling for lures that wash away in the rain.
-          </p>
-          <a 
-            href="https://www.odinsinnovations.com/collections/scent-beads"
-            className="btn-accent text-base px-10 py-4 inline-block"
-            style={{ 
-              boxShadow: '0 8px 24px hsl(145 45% 38% / 0.3)',
-              letterSpacing: '0.08em'
-            }}
-          >
-            Shop Synthetic Beads — $17.95
-          </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
