@@ -1,6 +1,6 @@
 /**
  * Odin's Innovations Synthetic Scent Beads - Generated from template-microsite
- * Generated at: 2026-04-01T20:43:13.393Z
+ * Generated at: 2026-04-03T15:08:18.739Z
  * Brand: Odin's Innovations
  */
 
@@ -85,8 +85,8 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
-        <BenefitsSection benefits={content.benefits} />
         <ServicesSection services={content.services} />
+        <BenefitsSection benefits={content.benefits} />
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
