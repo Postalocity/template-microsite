@@ -1,7 +1,7 @@
 /**
- * Doe Estrus Scent Beads - Final Design
+ * Doe Estrus Scent Beads - Complete Content
  * Brand: Odin's Innovations
- * Style: Scent-beads baseline (38/40 score) - natural, earthy, clean
+ * Style: Scent-beads baseline - natural, earthy, clean
  */
 
 import { createRoot } from 'react-dom/client';
@@ -10,7 +10,11 @@ import {
   ServicesSection,
   BenefitsSection, 
   ComparisonTable, 
-  FAQSection
+  FAQSection,
+  WhyOdinsSection,
+  HowItWorksSection,
+  WhenToUseSection,
+  HowToUseSection
 } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
@@ -90,10 +94,28 @@ function App() {
       >
         <SiteNavigation config={config} />
         
-        {/* Scent-beads proven section order */}
+        {/* Complete section order with all content */}
         <HeroSection hero={content.hero} />
         
-        {/* Services - Product grid showing scent offerings */}
+        {/* Why Odin's - Main value proposition */}
+        {content['why-odins'] && (
+          <WhyOdinsSection content={content['why-odins']} />
+        )}
+        
+        {/* How It Works - The science */}
+        {content['how-it-works'] && (
+          <HowItWorksSection howItWorks={{
+            headline: content['how-it-works'].headline,
+            body: content['how-it-works'].body
+          }} />
+        )}
+        
+        {/* Benefits - Key advantages */}
+        {content.benefits && (
+          <BenefitsSection benefits={content.benefits} />
+        )}
+        
+        {/* Services/Products - What we offer */}
         {content.products && (
           <ServicesSection 
             services={{
@@ -110,9 +132,14 @@ function App() {
           />
         )}
         
-        {/* Benefits - Why choose Odin's */}
-        {content.benefits && (
-          <BenefitsSection benefits={content.benefits} />
+        {/* When to Use - Seasonal guide */}
+        {content['when-to-use'] && (
+          <WhenToUseSection content={content['when-to-use']} />
+        )}
+        
+        {/* How to Use - Application instructions */}
+        {content['how-to-use'] && (
+          <HowToUseSection content={content['how-to-use']} />
         )}
         
         {/* Comparison - Synthetic vs Traditional */}
