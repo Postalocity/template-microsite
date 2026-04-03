@@ -7,7 +7,8 @@ import {
   Leaf, 
   FlaskConical, 
   MapPin,
-  PawPrint
+  PawPrint,
+  Check
 } from 'lucide-react';
 
 interface BenefitsSectionProps {
@@ -17,12 +18,12 @@ interface BenefitsSectionProps {
       description?: string;
     };
     headline?: string;
-    items?: Array<{
-      icon?: string; // Can be Lucide icon name OR image URL
+    items?: Array<string | {
+      icon?: string;
       title: string;
       description: string;
     }>;
-    benefits?: Array<{
+    benefits?: Array<string | {
       icon?: string;
       title: string;
       description: string;
@@ -41,6 +42,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   'paw': PawPrint,
   'paw-print': PawPrint,
   'shield': ShieldCheck,
+  'check': Check,
 };
 
 // Check if icon is an image URL
@@ -48,45 +50,42 @@ const isImageUrl = (value: string): boolean => {
   return value && (value.startsWith('http') || value.startsWith('/') || value.startsWith('./'));
 };
 
+// Parse string benefit "Title — Description" into object
+const parseStringBenefit = (str: string): { title: string; description: string } => {
+  const parts = str.split('—').map(s => s.trim());
+  if (parts.length >= 2) {
+    return { title: parts[0], description: parts.slice(1).join(' — ') };
+  }
+  // If no separator, use the whole string as title
+  return { title: str, description: '' };
+};
+
 // Icon renderer
 const BenefitIcon = ({ icon, title }: { icon?: string; title: string }) => {
-  if (!icon) {
-    // Default icon based on title keywords
-    if (title.toLowerCase().includes('legal') || title.toLowerCase().includes('safe')) {
-      return <ShieldCheck className="w-8 h-8" />;
+  // If explicit icon provided
+  if (icon) {
+    if (isImageUrl(icon)) {
+      return <img src={icon} alt="" className="w-10 h-10 object-contain" loading="lazy" />;
     }
-    if (title.toLowerCase().includes('day') || title.toLowerCase().includes('lasting')) {
-      return <Clock className="w-8 h-8" />;
-    }
-    if (title.toLowerCase().includes('bio') || title.toLowerCase().includes('eco')) {
-      return <Leaf className="w-8 h-8" />;
-    }
-    if (title.toLowerCase().includes('lab') || title.toLowerCase().includes('consistent')) {
-      return <FlaskConical className="w-8 h-8" />;
-    }
-    return <MapPin className="w-8 h-8" />;
+    const LucideIcon = iconMap[icon.toLowerCase()];
+    if (LucideIcon) return <LucideIcon className="w-8 h-8" />;
   }
 
-  // If it's an image URL, render as img
-  if (isImageUrl(icon)) {
-    return (
-      <img 
-        src={icon} 
-        alt="" 
-        className="w-10 h-10 object-contain"
-        loading="lazy"
-      />
-    );
+  // Default icon based on title keywords
+  const titleLower = title?.toLowerCase() || '';
+  if (titleLower.includes('legal') || titleLower.includes('safe') || titleLower.includes('usa')) {
+    return <ShieldCheck className="w-8 h-8" />;
   }
-
-  // Try to get Lucide icon
-  const LucideIcon = iconMap[icon.toLowerCase()];
-  if (LucideIcon) {
-    return <LucideIcon className="w-8 h-8" />;
+  if (titleLower.includes('day') || titleLower.includes('lasting') || titleLower.includes('time')) {
+    return <Clock className="w-8 h-8" />;
   }
-
-  // Fallback
-  return <MapPin className="w-8 h-8" />;
+  if (titleLower.includes('bio') || titleLower.includes('eco') || titleLower.includes('green')) {
+    return <Leaf className="w-8 h-8" />;
+  }
+  if (titleLower.includes('lab') || titleLower.includes('consistent') || titleLower.includes('formula')) {
+    return <FlaskConical className="w-8 h-8" />;
+  }
+  return <Check className="w-8 h-8" />;
 };
 
 const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
@@ -97,20 +96,39 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
   const sectionTitle = benefits?.section?.title || benefits?.headline || "Why Hunters Choose Odin's";
   const sectionDesc = benefits?.section?.description || "Synthetic scent beads engineered for performance where traditional lures fall short.";
   
-  // Get items from either format
-  const items = benefits?.benefits || benefits?.items || [];
+  // Get raw items
+  const rawItems = benefits?.benefits || benefits?.items || [];
+
+  // Normalize to object format
+  const normalizedItems = rawItems.map((item, index) => {
+    if (typeof item === 'string') {
+      const parsed = parseStringBenefit(item);
+      return {
+        key: `benefit-${index}`,
+        icon: undefined,
+        title: parsed.title,
+        description: parsed.description
+      };
+    }
+    return {
+      key: `benefit-${index}`,
+      icon: item.icon,
+      title: item.title,
+      description: item.description
+    };
+  });
 
   // Default benefits if none provided
   const defaultBenefits = [
-    { icon: 'shield-check', title: "100% Synthetic — Legal Everywhere", description: "Not subject to natural urine or CWD restrictions. Legal in all 50 states." },
-    { icon: 'clock', title: "30+ Days of Continuous Release", description: "Steady attraction that lasts even after rain and through temperature changes." },
-    { icon: 'leaf', title: "Biodegradable & Eco-Friendly", description: "Polymer matrix breaks down naturally. No environmental residue." },
-    { icon: 'flask', title: "Lab-Consistent Results", description: "Every batch is lab-formulated. No spoilage, no freezing, no variability." },
-    { icon: 'map-pin', title: "Made in the USA", description: "Field-tested weather resistance with American manufacturing quality." },
-    { icon: 'paw', title: "Works for Multiple Species", description: "Effective for deer, hogs, bears, and elk across all seasons." }
+    { key: 'default-1', icon: 'shield-check', title: "100% Synthetic — Legal Everywhere", description: "Not subject to natural urine or CWD restrictions. Legal in all 50 states." },
+    { key: 'default-2', icon: 'clock', title: "30+ Days of Continuous Release", description: "Steady attraction that lasts even after rain and through temperature changes." },
+    { key: 'default-3', icon: 'leaf', title: "Biodegradable & Eco-Friendly", description: "Polymer matrix breaks down naturally. No environmental residue." },
+    { key: 'default-4', icon: 'flask', title: "Lab-Consistent Results", description: "Every batch is lab-formulated. No spoilage, no freezing, no variability." },
+    { key: 'default-5', icon: 'map-pin', title: "Made in the USA", description: "Field-tested weather resistance with American manufacturing quality." },
+    { key: 'default-6', icon: 'paw', title: "Works for Multiple Species", description: "Effective for deer, hogs, bears, and elk across all seasons." }
   ];
 
-  const displayItems = items.length > 0 ? items : defaultBenefits;
+  const displayItems = normalizedItems.length > 0 ? normalizedItems : defaultBenefits;
 
   return (
     <section
@@ -139,7 +157,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {displayItems.map((item, index) => (
               <motion.div
-                key={item.title}
+                key={item.key}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
