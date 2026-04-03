@@ -1,9 +1,8 @@
-/* === ODIN'S INNOVATIONS - NATURAL OUTDOOR BRAND CSS ===
- * Clean, natural, earthy. Let the product speak.
- * Scent-beads baseline - proven 38/40 design score
+/* === ODIN'S INNOVATIONS - PROFESSIONAL OUTDOOR BRAND CSS ===
+ * Clean, bold, product-focused. Let the product speak.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,46 +10,42 @@
 
 @layer base {
   :root {
-    /* === NATURAL OUTDOOR DESIGN SYSTEM ===
+    /* === PROFESSIONAL OUTDOOR BRAND DESIGN SYSTEM ===
      * 
-     * Earthy, trustworthy, biodegradable feel.
-     * Proven palette from successful scent-beads site.
+     * Clean, bold, product-focused.
+     * Inspired by Sitka Gear, Under Armour Hunting, Cabela's.
      * 
-     * Tone: Natural, authentic, eco-friendly, Made in USA
+     * Tone: Professional, trustworthy, performance-driven
      */
     
-    /* === SEMANTIC COLORS ===
-     * Reverted to scent-beads baseline (38/40 score)
-     * Olive green (h:85, s:25%) = natural, earthy
-     * Warm gold (h:42, s:70%) = premium, trustworthy
-     */
+    /* === SEMANTIC COLORS === */
     
-    /* Background: Warm off-white (easier on eyes than pure white) */
-    --background: 40 15% 97%;
+    /* Background: Clean white */
+    --background: 0 0% 100%;
     --foreground: 220 15% 15%;
     
-    /* Cards: Slightly warmer white */
-    --card: 40 12% 98%;
+    /* Cards: Subtle off-white */
+    --card: 0 0% 100%;
     --card-foreground: 220 15% 12%;
     
-    --popover: 40 12% 98%;
+    --popover: 0 0% 100%;
     --popover-foreground: 220 15% 10%;
     
-    /* Primary: Olive green - natural, earthy, biodegradable (h:85, s:25%) */
-    --primary: 85 25% 35%;
+    /* Primary: Deep charcoal - strong, professional */
+    --primary: 220 12% 18%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary: Muted olive - subtle variation */
-    --secondary: 80 20% 45%;
+    /* Secondary: Medium gray */
+    --secondary: 220 8% 45%;
     --secondary-foreground: 0 0% 100%;
     
-    /* Muted: Warm light gray */
-    --muted: 40 10% 92%;
-    --muted-foreground: 220 10% 45%;
+    /* Muted: Light gray */
+    --muted: 220 8% 92%;
+    --muted-foreground: 220 8% 48%;
     
-    /* Accent: Warm gold - premium quality (h:42, s:70%) */
-    --accent: 42 70% 50%;
-    --accent-foreground: 220 15% 15%;
+    /* Accent: Odin's signature green - subtle but distinctive */
+    --accent: 145 45% 38%;
+    --accent-foreground: 0 0% 100%;
     
     /* Destructive: Red */
     --destructive: 0 60% 45%;
@@ -59,24 +54,24 @@
     /* Borders: Subtle gray */
     --border: 220 10% 88%;
     --input: 220 10% 88%;
-    --ring: 85 25% 35%;
-    --radius: 0.5rem;
+    --ring: 145 45% 38%;
+    --radius: 0;
 
     /* === TYPOGRAPHY === */
-    /* Oswald: Condensed, bold - headlines */
-    --font-display: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
-    /* Source Sans 3: Clean, highly readable - body */
-    --font-body: 'Source Sans 3', system-ui, sans-serif;
+    /* Agency FB: Bold, professional display font - headlines */
+    --font-display: 'Agency FB', 'Arial Narrow', system-ui, sans-serif;
+    /* Montserrat: Clean, modern, highly readable - body */
+    --font-body: 'Montserrat', system-ui, sans-serif;
     
-    /* Natural type scale */
+    /* Professional type scale */
     --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
     --text-lg: 1.125rem;
     --text-xl: 1.25rem;
-    --text-2xl: clamp(1.75rem, 4vw, 2.5rem);
-    --text-3xl: clamp(2.25rem, 5vw, 3.5rem);
-    --text-4xl: clamp(3rem, 6vw, 4.5rem);
+    --text-2xl: clamp(2rem, 5vw, 3.5rem);
+    --text-3xl: clamp(3rem, 8vw, 5.5rem);
+    --text-4xl: clamp(4rem, 10vw, 7rem);
     
     /* === SPACING: Clean, consistent === */
     --space-1: 0.25rem;
@@ -90,7 +85,7 @@
     --space-9: 7rem;
     --space-10: 10rem;
     
-    /* === SHADOWS: Minimal, natural === */
+    /* === SHADOWS: Minimal, professional === */
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.04);
     --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
@@ -105,19 +100,19 @@
     --hero-bg: 220 15% 12%;
     --hero-foreground: 0 0% 100%;
     --hero-subtitle: 220 10% 70%;
-    --section-alt: 40 10% 95%;
-    --success: 85 30% 40%;
+    --section-alt: 220 10% 97%;
+    --success: 145 45% 38%;
     --success-foreground: 0 0% 100%;
     
     /* Sidebar tokens */
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 220 15% 20%;
-    --sidebar-primary: 85 25% 35%;
+    --sidebar-primary: 220 12% 18%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 40 10% 95%;
+    --sidebar-accent: 220 8% 95%;
     --sidebar-accent-foreground: 220 15% 10%;
     --sidebar-border: 220 10% 90%;
-    --sidebar-ring: 85 25% 35%;
+    --sidebar-ring: 145 45% 38%;
   }
 
   .dark {
@@ -127,31 +122,31 @@
     --card-foreground: 220 10% 95%;
     --popover: 220 15% 12%;
     --popover-foreground: 220 10% 95%;
-    --primary: 85 30% 42%;
+    --primary: 145 40% 42%;
     --primary-foreground: 0 0% 100%;
     --secondary: 220 10% 30%;
     --secondary-foreground: 0 0% 100%;
     --muted: 220 10% 18%;
     --muted-foreground: 220 8% 55%;
-    --accent: 42 70% 50%;
-    --accent-foreground: 220 15% 15%;
+    --accent: 145 40% 42%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 50% 50%;
     --destructive-foreground: 0 0% 100%;
     --border: 220 10% 20%;
     --input: 220 10% 20%;
-    --ring: 85 30% 42%;
+    --ring: 145 40% 42%;
     --hero-bg: 220 15% 6%;
     --hero-foreground: 220 10% 95%;
     --hero-subtitle: 220 8% 60%;
     --section-alt: 220 15% 10%;
     --sidebar-background: 220 15% 10%;
     --sidebar-foreground: 220 10% 92%;
-    --sidebar-primary: 85 30% 42%;
+    --sidebar-primary: 145 40% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 220 15% 14%;
     --sidebar-accent-foreground: 220 10% 92%;
     --sidebar-border: 220 10% 18%;
-    --sidebar-ring: 85 30% 42%;
+    --sidebar-ring: 145 40% 42%;
   }
 }
 
@@ -172,7 +167,7 @@
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
-  /* Display typography: Oswald - condensed, bold */
+  /* Display typography: Oswald - condensed, bold, professional */
   h1, h2, h3 {
     font-family: var(--font-display);
     font-weight: 600;
@@ -272,7 +267,7 @@
     background-color: hsl(var(--section-alt));
   }
   
-  /* Primary button - olive green, natural */
+  /* Primary button - clean, professional */
   .btn-primary {
     @apply inline-flex items-center justify-center font-semibold transition-all;
     background: hsl(var(--primary));
@@ -284,12 +279,11 @@
     letter-spacing: 0.06em;
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 0.5rem;
     border: 2px solid transparent;
   }
   
   .btn-primary:hover {
-    background: hsl(85 30% 28%);
+    background: hsl(220 12% 12%);
     transform: translateY(-1px);
   }
   
@@ -297,7 +291,7 @@
     transform: translateY(0);
   }
   
-  /* Accent button - warm gold */
+  /* Accent button - Odin's green */
   .btn-accent {
     @apply inline-flex items-center justify-center font-semibold transition-all;
     background: hsl(var(--accent));
@@ -309,12 +303,11 @@
     letter-spacing: 0.06em;
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 0.5rem;
     border: 2px solid transparent;
   }
   
   .btn-accent:hover {
-    background: hsl(42 75% 42%);
+    background: hsl(145 40% 32%);
     transform: translateY(-1px);
   }
   
@@ -335,7 +328,6 @@
     letter-spacing: 0.06em;
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 0.5rem;
   }
   
   .btn-outline:hover {
@@ -357,12 +349,31 @@
     letter-spacing: 0.06em;
     font-size: 0.875rem;
     font-weight: 600;
-    border-radius: 0.5rem;
   }
   
   .btn-outline-dark:hover {
     background: hsl(var(--hero-foreground) / 0.1);
     border-color: hsl(var(--hero-foreground) / 0.6);
+  }
+  
+  /* Dark accent button */
+  .btn-accent-dark {
+    @apply inline-flex items-center justify-center font-semibold transition-all;
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+    font-family: var(--font-body);
+    padding: var(--space-3) var(--space-5);
+    transition: all var(--duration-fast) var(--ease-out-quart);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+  }
+  
+  .btn-accent-dark:hover {
+    background: hsl(145 40% 32%);
+    transform: translateY(-1px);
   }
   
   /* Badge - clean, minimal */
@@ -374,15 +385,13 @@
     letter-spacing: 0.08em;
     font-family: var(--font-body);
     font-weight: 600;
-    border-radius: 0.25rem;
   }
   
-  /* Clean card - simple rounded rectangles */
+  /* Clean card */
   .clean-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
     padding: var(--space-5);
-    border-radius: 0.5rem;
     transition: all var(--duration-fast) var(--ease-out-quart);
   }
   
@@ -397,7 +406,7 @@
     border-left: 2px solid hsl(var(--accent));
   }
   
-  /* Trust badge - clean, minimal */
+  /* Earned badge - clean, minimal */
   .trust-badge {
     @apply inline-flex items-center gap-2;
     font-family: var(--font-body);
@@ -408,7 +417,6 @@
     color: hsl(var(--foreground));
     padding: var(--space-2) var(--space-3);
     background: hsl(var(--muted));
-    border-radius: 0.25rem;
   }
   
   /* FAQ question */
@@ -437,9 +445,10 @@
     font-style: italic;
   }
   
-  /* Lucide icons - natural styling */
+  /* Lucide icons - rustic styling for hunting/outdoor brand */
+  /* Thicker strokes, rounded caps - like hand-carved marks on wood */
   .lucide {
-    stroke-width: 2 !important;
+    stroke-width: 2.5 !important;
     stroke-linecap: round !important;
     stroke-linejoin: round !important;
   }

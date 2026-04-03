@@ -2,7 +2,7 @@
  * Clean, bold, product-focused. Let the product speak.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -20,32 +20,32 @@
     
     /* === SEMANTIC COLORS === */
     
-    /* Background: Warm off-white (easier on eyes than pure white) */
-    --background: 40 10% 97%;
+    /* Background: Clean white */
+    --background: 0 0% 100%;
     --foreground: 220 15% 15%;
     
-    /* Cards: Slightly warmer white */
-    --card: 40 8% 98%;
+    /* Cards: Subtle off-white */
+    --card: 0 0% 100%;
     --card-foreground: 220 15% 12%;
     
-    --popover: 40 8% 98%;
+    --popover: 0 0% 100%;
     --popover-foreground: 220 15% 10%;
     
-    /* Primary: Deep forest green - trustworthy, outdoorsy */
-    --primary: 140 60% 25%;
+    /* Primary: Deep charcoal - strong, professional */
+    --primary: 220 12% 18%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary: Burnt orange - hunting tradition, CTAs */
-    --secondary: 25 85% 45%;
+    /* Secondary: Medium gray */
+    --secondary: 220 8% 45%;
     --secondary-foreground: 0 0% 100%;
     
-    /* Muted: Warm light gray */
-    --muted: 40 8% 92%;
-    --muted-foreground: 220 10% 45%;
+    /* Muted: Light gray */
+    --muted: 220 8% 92%;
+    --muted-foreground: 220 8% 48%;
     
-    /* Accent: Warm gold - premium quality, badges */
-    --accent: 45 90% 55%;
-    --accent-foreground: 220 15% 15%;
+    /* Accent: Odin's signature green - subtle but distinctive */
+    --accent: 145 45% 38%;
+    --accent-foreground: 0 0% 100%;
     
     /* Destructive: Red */
     --destructive: 0 60% 45%;
@@ -58,10 +58,10 @@
     --radius: 0;
 
     /* === TYPOGRAPHY === */
-    /* Oswald: Condensed, bold, professional - headlines */
-    --font-display: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
-    /* Source Sans 3: Clean, highly readable - body */
-    --font-body: 'Source Sans 3', system-ui, sans-serif;
+    /* Agency FB: Bold, professional display font - headlines */
+    --font-display: 'Agency FB', 'Arial Narrow', system-ui, sans-serif;
+    /* Montserrat: Clean, modern, highly readable - body */
+    --font-body: 'Montserrat', system-ui, sans-serif;
     
     /* Professional type scale */
     --text-xs: 0.75rem;
