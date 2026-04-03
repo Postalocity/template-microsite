@@ -1,19 +1,15 @@
 /**
- * Doe Estrus Scent Beads - Generated from template-microsite
+ * Doe Estrus Scent Beads - Final Design
  * Brand: Odin's Innovations
+ * Style: Scent-beads baseline (38/40 score) - natural, earthy, clean
  */
 
 import { createRoot } from 'react-dom/client';
 import { 
   HeroSection, 
-  TrustBarSection,
+  ServicesSection,
   BenefitsSection, 
-  HowItWorksSection, 
-  ProductsSection,
   ComparisonTable, 
-  WhyOdinsSection,
-  WhenToUseSection,
-  HowToUseSection,
   FAQSection
 } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
@@ -24,7 +20,7 @@ import { IKBProvider } from '@/contexts/IKBContext';
 import '@/themes/odins-innovations/globals.css';
 import config from './config.json';
 
-// Brand configuration
+// Brand configuration - matching scent-beads olive palette
 const brandConfig = {
   "id": "odins-innovations",
   "name": "Odin's Innovations",
@@ -44,8 +40,8 @@ const brandConfig = {
     "alt": "Odin's Innovations - Synthetic Scent Beads"
   },
   "colors": {
-    "primary": { "h": 140, "s": 60, "l": 25 },
-    "accent": { "h": 45, "s": 90, "l": 55 }
+    "primary": { "h": 85, "s": 25, "l": 35 },
+    "accent": { "h": 42, "s": 70, "l": 50 }
   }
 };
 
@@ -66,8 +62,8 @@ const ikbConfig = {
       'ISO 9001 Documented Processes 2023',
     ],
     promoCodes: { 'doe-estrus-guide': 'HUNT2026' },
-    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
-    blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat'],
+    approvedSections: ['hero', 'services', 'benefits', 'comparison', 'faq', 'footer'],
+    blocklistedContent: ['testimonial', 'testimonials'],
     blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading'],
   },
   pricing: {
@@ -94,54 +90,37 @@ function App() {
       >
         <SiteNavigation config={config} />
         
-        {/* Conversion-optimized section order */}
+        {/* Scent-beads proven section order */}
         <HeroSection hero={content.hero} />
         
-        {/* Trust Bar - 4 key trust signals */}
-        <TrustBarSection trustSignals={[
-          { text: "Made in USA" },
-          { text: "30+ Day Release" },
-          { text: "CWD-Safe Formula" },
-          { text: "Weatherproof" }
-        ]} />
-        
-        {/* Benefits with stat highlight */}
-        <BenefitsSection benefits={content.benefits} />
-        
-        {/* How It Works - 3 step timeline */}
-        {content['how-it-works'] && (
-          <HowItWorksSection howItWorks={{
-            headline: content['how-it-works'].headline,
-            body: content['how-it-works'].body
-          }} />
-        )}
-        
-        {/* Products - Featured layout */}
+        {/* Services - Product grid showing scent offerings */}
         {content.products && (
-          <ProductsSection content={content.products} />
+          <ServicesSection 
+            services={{
+              section: {
+                title: content.products.headline || "Available Doe Estrus Products",
+                description: content.products.intro || "Targeted formulas for every phase of the hunt."
+              },
+              services: content.products.items?.map(item => ({
+                title: item.name,
+                description: item.description,
+                icon: undefined
+              }))
+            }} 
+          />
         )}
         
-        {/* Comparison Table */}
+        {/* Benefits - Why choose Odin's */}
+        {content.benefits && (
+          <BenefitsSection benefits={content.benefits} />
+        )}
+        
+        {/* Comparison - Synthetic vs Traditional */}
         {content.comparison && (
           <ComparisonTable comparison={content.comparison} />
         )}
         
-        {/* Why Odin's */}
-        {content['why-odins'] && (
-          <WhyOdinsSection content={content['why-odins']} />
-        )}
-        
-        {/* When to Use - with seasonal calendar */}
-        {content['when-to-use'] && (
-          <WhenToUseSection content={content['when-to-use']} />
-        )}
-        
-        {/* How to Use - with product instructions */}
-        {content['how-to-use'] && (
-          <HowToUseSection content={content['how-to-use']} />
-        )}
-        
-        {/* FAQ with category tabs */}
+        {/* FAQ - Questions answered */}
         <FAQSection faq={content.faq} />
         
         <SiteFooter config={config} />
@@ -153,5 +132,8 @@ function App() {
 }
 
 // Initialize React
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+const container = document.getElementById('root');
+if (container) {
+  const root = createRoot(container);
+  root.render(<App />);
+}
