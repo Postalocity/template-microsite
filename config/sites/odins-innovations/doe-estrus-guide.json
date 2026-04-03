@@ -47,6 +47,95 @@
         { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
       ]
     },
+    "why-odins": {
+      "headline": "Why Synthetic Doe Estrus Scent Beads Outperform Natural Urine",
+      "body": "Natural doe urine varies by batch, degrades quickly, and carries CWD risk. Odin's synthetic formula delivers identical potency every time, lasts 30+ days through any weather, and is legal everywhere."
+    },
+    "how-it-works": {
+      "headline": "How Biodegradable Scent Bead Technology Works",
+      "body": "Our plant-based biodegradable polymer matrix encapsulates lab-formulated scent attractants. The matrix releases scent steadily for 30+ days, maintaining 52% concentration even after 27 days of weather exposure."
+    },
+    "when-to-use": {
+      "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
+      "body": "Align deployment with seasonal movement patterns. Use during pre-rut and peak rut phases when buck activity increases. Deploy 2-3 weeks before peak activity for optimal conditioning of scrapes."
+    },
+    "how-to-use": {
+      "headline": "How to Use Odin's Doe Estrus Scent Beads and Liquid",
+      "beads": "Sprinkle approximately 3 oz of scent beads in mock scrapes, on drag lines, or around stands. The polymer matrix activates immediately and releases scent steadily for 30+ days.",
+      "liquid": "Use the 4 oz oil-based liquid for immediate scent dispersal on trails, vegetation, or as a supplement to beads. Perfect for quick deployment when time is limited."
+    },
+    "benefits": {
+      "headline": "Benefits of Odin's Synthetic Doe Estrus Scent Beads",
+      "items": [
+        "Reduce reapplication time — set once and maintain consistent release for 30+ days",
+        "Weatherproof performance — unaffected by rain, snow, or heavy dew",
+        "Lab-consistent formula — identical results in every bottle",
+        "Legal and CWD-safe — permitted in all 50 states with no animal-derived ingredients",
+        "Biodegradable — plant-based polymer breaks down naturally after use",
+        "Made in USA — scents, polymer, blending, and packaging completed domestically"
+      ]
+    },
+    "products": {
+      "headline": "Available Doe Estrus Products",
+      "intro": "Odin's synthetic doe estrus products start at $13.99 per 3-oz bottle of scent beads. Use promo code HUNT2026 for savings and enjoy free shipping on orders over $50.",
+      "items": [
+        { "name": "Synthetic Doe Estrus Scent Beads (3 oz)", "description": "Long-lasting polymer release" },
+        { "name": "Synthetic Doe Estrus Liquid (4 oz)", "description": "Oil-based for trails and immediate dispersal" },
+        { "name": "Season Kit", "description": "Liquid + beads bundle for combined immediate and extended performance" }
+      ],
+      "cta": "Shop the full collection: https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    },
+    "comparison": {
+      "headline": "Comparison: Natural Urine vs. Odin's Synthetic Scent Beads",
+      "table": [
+        ["Attribute", "Natural Doe Urine", "Odin's Synthetic Scent Beads"],
+        ["Consistency", "Variable by batch", "Identical molecular specification every unit"],
+        ["Duration", "Rapid degradation and dilution", "30+ days continuous release"],
+        ["Weather Resistance", "Soaks in and dilutes with moisture", "Unaffected by rain, snow, dew"],
+        ["CWD Risk", "Potential prion transmission", "Zero — no animal ingredients"],
+        ["Legal Status", "Restricted or banned in multiple states", "Legal in all 50 states"],
+        ["Storage & Handling", "Demanding, short shelf life", "No special requirements"],
+        ["Environmental Impact", "Biological waste", "Biodegradable polymer, USDA BioPreferred"],
+        ["Reapplication Frequency", "Frequent", "Reduced — set once and maintain"]
+      ]
+    },
+    "faq": {
+      "headline": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What is doe estrus scent?",
+          "answer": "Doe estrus scent replicates the pheromone signature associated with the estrus phase in whitetail does. Odin's uses 100% synthetic formulations with no natural deer urine, ensuring consistent potency and zero CWD risk."
+        },
+        {
+          "question": "Is synthetic doe estrus as effective as natural urine?",
+          "answer": "Odin's synthetic formulations are engineered to precise specifications and have been field-tested over 10 seasons. They deliver identical concentration without the batch-to-batch variability or degradation common in natural products."
+        },
+        {
+          "question": "When should I start using doe estrus scent beads?",
+          "answer": "Align deployment with the seeking and peak rut phases in your region — typically late October through November in northern states, adjusted for southern latitudes. Use scrape blends earlier in the season for conditioning."
+        },
+        {
+          "question": "How long does Odin's doe estrus scent last?",
+          "answer": "Scent beads release continuously for 30+ days. University testing documented 52% original concentration still releasing after 27 days. The liquid formula supports 7–10 days per application. Performance remains stable through moisture exposure."
+        },
+        {
+          "question": "Is synthetic deer scent legal where natural urine is banned?",
+          "answer": "Yes. Because Odin's products contain no cervid-derived ingredients, they are unaffected by natural urine restrictions and fully legal in all 50 states."
+        },
+        {
+          "question": "What is CWD and why does it matter for scent products?",
+          "answer": "Chronic Wasting Disease is a fatal neurological condition in cervids transmitted through prions in bodily fluids. Synthetic scents eliminate this pathway entirely. Consult your state wildlife agency or USDA resources for current management efforts."
+        },
+        {
+          "question": "Are Odin's scent beads biodegradable?",
+          "answer": "Yes. They are made from a certified plant-based biodegradable polymer that breaks down naturally, similar to organic matter such as a banana peel."
+        },
+        {
+          "question": "Where are Odin's products made?",
+          "answer": "All scents, polymers, blending, and packaging occur in the United States."
+        }
+      ]
+    },
     "footer": {
       "finalCTA": { "headline": "Ready for consistent, low-maintenance results?", "buttonText": "Shop Doe Estrus Scent Beads", "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
