@@ -1,0 +1,118 @@
+{
+  "site": {
+    "id": "odins-innovations",
+    "name": "Doe Estrus Scent Beads",
+    "slug": "doe-estrus-guide",
+    "domain": "odinsinnovations.com",
+    "basename": "odins-innovations-doe-estrus-guide",
+    "contact": {
+      "email": "paul@odinsinnovations.com",
+      "phone": "316-393-0440",
+      "address": ", ,  "
+    }
+  },
+  "branding": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "logo": "logo.png"
+  },
+  "seo": {
+    "title": "Best Doe Estrus Scent | Synthetic, CWD-Safe, 30+ Day Release | Odin's Innovations",
+    "description": "Odin's synthetic doe estrus scent beads deliver 30+ days continuous release. 100% biodegradable, rain-proof, legal in all 50 states. No natural urine. No CWD risk. Starting at $13.99.",
+    "keywords": [
+      "doe estrus scent beads",
+      "synthetic doe estrus",
+      "doe estrus scent",
+      "long lasting scent beads",
+      "synthetic doe estrus scent beads",
+      "doe in estrus scent"
+    ],
+    "ogTitle": "Doe Estrus Scent Beads — 30+ Days Continuous Release",
+    "ogDescription": "Weatherproof synthetic attractants engineered for consistent performance and reduced reapplication time. Legal everywhere, biodegradable, Made in USA.",
+    "ogImage": "/doe-estrus-guide/images/og-image.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://www.odinsinnovations.com/pages/doe-estrus-guide",
+    "googleAnalyticsId": "G-XXXXXXXXXX"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Why Odin's",
+        "href": "#why-odins"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "When to Use",
+        "href": "#when-to-use"
+      },
+      {
+        "label": "How to Use",
+        "href": "#how-to-use"
+      },
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Products",
+        "href": "#products"
+      },
+      {
+        "label": "Comparison",
+        "href": "#comparison"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "text": "Shop Scent Beads",
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Doe Estrus Scent Beads",
+        "highlightTerm": "30+ Days — Legal Everywhere",
+        "alt": "Odin's synthetic doe estrus scent beads deployed in a deer scrape"
+      },
+      "subhead": "Synthetic attractants engineered for consistent, weatherproof results with reduced reapplication time.",
+      "background": {
+        "image": "/doe-estrus-guide/images/doe-estrus-hero.jpg",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Shop Now — Starting at $13.99",
+          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
+          "variant": "primary"
+        },
+        {
+          "text": "See How It Works",
+          "href": "#how-it-works",
+          "variant": "outline"
+        }
+      ]
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready for consistent, low-maintenance results?",
+        "buttonText": "Shop Doe Estrus Scent Beads",
+        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      },
+      "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    }
+  },
+  "footer": {
+    "finalCTA": {
+      "headline": "Ready for consistent, low-maintenance results?",
+      "buttonText": "Shop Doe Estrus Scent Beads",
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    },
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  }
+}
