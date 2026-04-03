@@ -1,6 +1,6 @@
 /**
  * Doe Estrus Scent Beads - Generated from template-microsite
- * Generated at: 2026-04-03T18:10:00.144Z
+ * Generated at: 2026-04-03T18:30:59.858Z
  * Brand: Odin's Innovations
  */
 

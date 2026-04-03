@@ -20,32 +20,32 @@
     
     /* === SEMANTIC COLORS === */
     
-    /* Background: Clean white */
-    --background: 0 0% 100%;
+    /* Background: Warm off-white (easier on eyes than pure white) */
+    --background: 40 10% 97%;
     --foreground: 220 15% 15%;
     
-    /* Cards: Subtle off-white */
-    --card: 0 0% 100%;
+    /* Cards: Slightly warmer white */
+    --card: 40 8% 98%;
     --card-foreground: 220 15% 12%;
     
-    --popover: 0 0% 100%;
+    --popover: 40 8% 98%;
     --popover-foreground: 220 15% 10%;
     
-    /* Primary: Deep charcoal - strong, professional */
-    --primary: 220 12% 18%;
+    /* Primary: Deep forest green - trustworthy, outdoorsy */
+    --primary: 140 60% 25%;
     --primary-foreground: 0 0% 100%;
     
-    /* Secondary: Medium gray */
-    --secondary: 220 8% 45%;
+    /* Secondary: Burnt orange - hunting tradition, CTAs */
+    --secondary: 25 85% 45%;
     --secondary-foreground: 0 0% 100%;
     
-    /* Muted: Light gray */
-    --muted: 220 8% 92%;
-    --muted-foreground: 220 8% 48%;
+    /* Muted: Warm light gray */
+    --muted: 40 8% 92%;
+    --muted-foreground: 220 10% 45%;
     
-    /* Accent: Odin's signature green - subtle but distinctive */
-    --accent: 145 45% 38%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent: Warm gold - premium quality, badges */
+    --accent: 45 90% 55%;
+    --accent-foreground: 220 15% 15%;
     
     /* Destructive: Red */
     --destructive: 0 60% 45%;

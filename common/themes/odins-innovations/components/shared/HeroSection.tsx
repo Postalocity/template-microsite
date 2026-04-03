@@ -15,13 +15,51 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
       .replace(/\{\{PRICING_SHORT\}\}/g, short);
   };
 
+  // Check if video is provided (from customer's request)
+  const hasVideo = hero.background?.video;
+  const hasImage = hero.background?.image;
+
   return (
     <header
       id="hero"
       className="relative min-h-[85vh] flex items-end overflow-hidden"
       style={{ background: 'hsl(var(--hero-bg))' }}
     >
-      {hero.background?.image && (
+      {/* Video Background Support */}
+      {hasVideo && (
+        <div className="absolute inset-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={hero.background?.image}
+            className="w-full h-full object-cover"
+          >
+            <source src={hero.background.video} type="video/mp4" />
+            {/* Fallback to image if video fails */}
+            {hasImage && (
+              <img
+                src={hero.background.image}
+                alt={hero.background.alt || `${hero.headline?.main || 'Hero'} background`}
+                width={1920}
+                height={1080}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            )}
+          </video>
+          <div 
+            className="absolute inset-0" 
+            style={{ 
+              background: 'linear-gradient(to bottom, hsl(140 60% 15% / 0.4) 0%, hsl(140 60% 10% / 0.75) 100%)' 
+            }} 
+          />
+        </div>
+      )}
+
+      {/* Static Image Background (fallback) */}
+      {!hasVideo && hasImage && (
         <div className="absolute inset-0">
           <img
             src={hero.background.image}
@@ -34,7 +72,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'hsl(220 15% 10% / 0.65)' 
+              background: 'linear-gradient(to bottom, hsl(140 60% 15% / 0.4) 0%, hsl(140 60% 10% / 0.75) 100%)' 
             }} 
           />
         </div>
@@ -47,14 +85,21 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Badge */}
+            {/* Badge - New Professional Outdoor Style */}
             <motion.div
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4, delay: 0.15 }}
               className="mb-6"
             >
-              <span className="badge">
+              <span 
+                className="inline-flex items-center px-4 py-2 text-sm font-bold uppercase tracking-wider"
+                style={{ 
+                  background: 'hsl(var(--secondary))',
+                  color: 'white',
+                  clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 50%, calc(100% - 8px) 100%, 0 100%)'
+                }}
+              >
                 Made in USA
               </span>
             </motion.div>
