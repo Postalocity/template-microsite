@@ -9,6 +9,10 @@ interface ComparisonData {
   section: {
     title: string;
     description: string;
+    cta?: {
+      text: string;
+      href: string;
+    };
   };
   columns: {
     ourSolution: string;
@@ -151,6 +155,26 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
                 })}
               </tbody>
             </table>
+            
+            {/* CTA Button */}
+            {comparison.section.cta && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="mt-10 text-center"
+              >
+                <a
+                  href={comparison.section.cta.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  {comparison.section.cta.text}
+                  <Check className="w-4 h-4" />
+                </a>
+              </motion.div>
+            )}
           </div>
         </div>
       </div>
