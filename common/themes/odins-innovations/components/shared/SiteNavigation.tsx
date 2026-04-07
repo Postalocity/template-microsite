@@ -118,11 +118,11 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
           href={ctx.brand.urls.website}
           aria-label={`${brandName} home`}
         >
-          {/* Logo: normal color, larger size for visibility */}
-          <div className="h-16 lg:h-20 w-[260px] lg:w-[340px] relative">
+          {/* Logo: 150x150 for prominent display */}
+          <div className="h-[150px] w-[150px] relative">
             <img
-              src={`/${siteSlug}/logo.png`}
-              alt={brandName}
+              src={ctx.brand.logo.url || `/${siteSlug}/logo.png`}
+              alt={ctx.brand.logo.alt || brandName}
               className="h-full w-full object-contain"
             />
           </div>

@@ -13,4 +13,5 @@ export { default as WhyOdinsSection } from './WhyOdinsSection';
 export { default as WhenToUseSection } from './WhenToUseSection';
 export { default as HowToUseSection } from './HowToUseSection';
 export { default as ProductsSection } from './ProductsSection';
+export { default as SignatureScentBeadsSection } from './SignatureScentBeadsSection';
 export { default as TrustBarSection } from './TrustBarSection';

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Award, Leaf, Shield, Clock, Zap, Recycle } from 'lucide-react';
 
 interface WhyOdinsSectionProps {
   content: {
@@ -16,18 +15,79 @@ interface WhyOdinsSectionProps {
 }
 
 // Helper to check if value is an image URL
-const isImageUrl = (value: string): boolean => {
-  return value && (value.startsWith('http') || value.startsWith('/') || value.startsWith('./'));
+const isImageUrl = (value?: string): boolean => {
+  return !!value && (value.startsWith('http') || value.startsWith('/') || value.startsWith('./'));
 };
 
-// Default icons for points
+// Odin's style SVG icons (stroke-based, matching BenefitsSection)
+const OdinsIconShield = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 85c15-5 25-20 25-40V25L50 15 25 25v20c0 20 10 35 25 40z" />
+    <path d="M35 45l10 10 20-20" />
+  </svg>
+);
+
+const OdinsIconStopwatch = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="60.82" cy="54.12" r="4.26" />
+    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28" />
+    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4" />
+    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84" />
+  </svg>
+);
+
+const OdinsIconFlag = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    {/* Flag field - centered without pole */}
+    <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1" />
+    <path d="M15 35h70M15 45h70M15 55h70M15 65h70" />
+    {/* Canton (blue field with stars) */}
+    <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2" />
+    {/* Stars pattern */}
+    <circle cx="22" cy="32" r="2" fill="currentColor" />
+    <circle cx="30" cy="32" r="2" fill="currentColor" />
+    <circle cx="38" cy="32" r="2" fill="currentColor" />
+    <circle cx="26" cy="38" r="2" fill="currentColor" />
+    <circle cx="34" cy="38" r="2" fill="currentColor" />
+    <circle cx="22" cy="44" r="2" fill="currentColor" />
+    <circle cx="30" cy="44" r="2" fill="currentColor" />
+    <circle cx="38" cy="44" r="2" fill="currentColor" />
+    <circle cx="26" cy="50" r="2" fill="currentColor" />
+    <circle cx="34" cy="50" r="2" fill="currentColor" />
+  </svg>
+);
+
+const OdinsIconRibbon = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M44.18 67.51L30 89.72l-4.44-12.19-12.93 1.1 14.19-22.18a28.86 28.86 0 0 0 13.79 10.08 26.93 26.93 0 0 0 3 .85Zm43.19 11.12l-12.93-1.1L70 89.72 55.81 67.51l.63-.13a26.76 26.76 0 0 0 2.94-.85 28.8 28.8 0 0 0 13.8-10.08Z" />
+    <path d="M78.92 39.19a28.82 28.82 0 0 1-3.61 14 30 30 0 0 1-1.74 2.73 5 5 0 0 1-.39.52 28.8 28.8 0 0 1-13.79 10.09 26.76 26.76 0 0 1-2.94.85l-.63.13a29 29 0 0 1-11.63 0l-.62-.13a26.93 26.93 0 0 1-3-.85 28.86 28.86 0 0 1-13.75-10.08c-.13-.17-.26-.34-.38-.52q-.93-1.32-1.74-2.73a28.92 28.92 0 1 1 54.22-14Z" />
+    <path d="m56.95 42.84 1.63 9.55L50 47.88l-8.58 4.51 1.64-9.55-6.95-6.77 9.6-1.39 4.29-8.7 4.29 8.7 9.6 1.39-6.94 6.77z" />
+  </svg>
+);
+
+const OdinsIconCloud = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M25 60c-5 0-10-5-10-10s5-10 10-10h5c2-15 15-25 30-20 12 3 20 15 20 25v5h5c8 0 15 7 15 15s-7 15-15 15H25z" />
+    <path d="M30 70l-10 10m20-5l-5 15m25-10l5 10" />
+  </svg>
+);
+
+const OdinsIconPackage = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 89.87L15.33 69.86V30.08l34.78-19.95 34.56 19.95v39.78L50 89.87z" />
+    <path d="M67.33 50.78V40.09L32.76 20.14m-17.43 9.94L50 50.09" />
+    <path d="M50 89.87V50.09l34.67-20.01" />
+  </svg>
+);
+
+// Default icons for points (using Odin's SVGs instead of Lucide)
 const defaultIcons = [
-  <Shield className="w-8 h-8" />,
-  <Clock className="w-8 h-8" />,
-  <Leaf className="w-8 h-8" />,
-  <Award className="w-8 h-8" />,
-  <Zap className="w-8 h-8" />,
-  <Recycle className="w-8 h-8" />
+  <OdinsIconShield key="shield" />,
+  <OdinsIconStopwatch key="stopwatch" />,
+  // Note: Biodegradable uses image instead of SVG
+  <OdinsIconRibbon key="ribbon" />,
+  <OdinsIconCloud key="cloud" />,
+  <OdinsIconPackage key="package" />
 ];
 
 const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
@@ -37,18 +97,22 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
   // Default points if none provided
   const defaultPoints = [
     {
+      icon: "flag",
       title: "Legal in All 50 States",
       description: "100% synthetic formula — not subject to natural urine or CWD restrictions that ban traditional lures."
     },
     {
+      icon: "stopwatch",
       title: "30+ Days of Attraction",
       description: "Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."
     },
     {
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
       title: "Biodegradable & Safe",
       description: "Polymer matrix breaks down naturally. No environmental residue or contamination."
     },
     {
+      icon: "ribbon",
       title: "Lab-Tested Formula",
       description: "Third-party verified at Mississippi State University for consistent potency."
     }
@@ -111,7 +175,7 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
                 }}
               >
                 <div className="flex items-start gap-4">
-                  {/* Icon */}
+                  {/* Icon - Now uses Odin's SVGs */}
                   <div 
                     className="flex-shrink-0 w-16 h-16 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                     style={{ 
@@ -127,6 +191,18 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
                         className="w-8 h-8 object-contain"
                         loading="lazy"
                       />
+                    ) : point.icon === 'shield' ? (
+                      <OdinsIconShield />
+                    ) : point.icon === 'flag' ? (
+                      <OdinsIconFlag />
+                    ) : point.icon === 'stopwatch' ? (
+                      <OdinsIconStopwatch />
+                    ) : point.icon === 'ribbon' ? (
+                      <OdinsIconRibbon />
+                    ) : point.icon === 'cloud' ? (
+                      <OdinsIconCloud />
+                    ) : point.icon === 'package' ? (
+                      <OdinsIconPackage />
                     ) : (
                       defaultIcons[index % defaultIcons.length]
                     )}

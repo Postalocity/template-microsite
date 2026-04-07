@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Beaker, FileCheck, Microscope } from 'lucide-react';
 
 interface HowItWorksSectionProps {
   howItWorks?: {
@@ -19,6 +18,43 @@ interface HowItWorksSectionProps {
     }>;
   };
 }
+
+// Odin's style SVG icons (replacing Lucide and emoji)
+const OdinsIconBeaker = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M35 20h30M50 20v35L30 80h40L50 55V20" />
+    <path d="M40 45h20M38 55h24M35 65h30" />
+  </svg>
+);
+
+const OdinsIconCloud = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M25 60c-5 0-10-5-10-10s5-10 10-10h5c2-15 15-25 30-20 12 3 20 15 20 25v5h5c8 0 15 7 15 15s-7 15-15 15H25z" />
+    <path d="M30 70l-10 10m20-5l-5 15m25-10l5 10" />
+  </svg>
+);
+
+const OdinsIconClock = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="50" cy="50" r="35" />
+    <path d="M50 25v25l15 15" />
+  </svg>
+);
+
+const OdinsIconMicroscope = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-5 h-5" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="45" cy="35" r="20" />
+    <path d="M60 50l25 25M35 55v30M25 85h50" />
+    <path d="M50 15v10" />
+  </svg>
+);
+
+const OdinsIconFileCheck = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-5 h-5" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M20 15h50l20 20v60H20z" />
+    <path d="M70 15v20h20M35 45l10 10 20-20" />
+  </svg>
+);
 
 const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
   const ref = useRef(null);
@@ -42,56 +78,61 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
       transition={{ duration: 0.5, delay: 0.6 }}
       className="mt-12 inline-flex items-center gap-3 px-6 py-3"
       style={{ 
-        background: 'white',
-        border: '2px solid hsl(var(--accent))',
+        background: 'hsl(220 15% 12%)',
+        border: '2px solid hsl(145 45% 38%)',
         clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%)'
       }}
     >
       <div 
         className="p-2"
-        style={{ background: 'hsl(var(--accent) / 0.2)' }}
+        style={{ 
+          background: 'hsl(145 45% 38% / 0.2)',
+          color: 'white'
+        }}
       >
-        <Microscope className="w-5 h-5" style={{ color: 'hsl(var(--accent))' }} />
+        <OdinsIconMicroscope />
       </div>
       <div>
-        <div className="font-display text-sm font-bold uppercase" style={{ color: 'hsl(var(--primary))' }}>
+        <div className="font-display text-sm font-bold uppercase" style={{ color: 'white' }}>
           3rd Party Verified
         </div>
-        <div className="font-body text-xs text-muted-foreground">
+        <div className="font-body text-xs" style={{ color: 'hsl(145 45% 38%)' }}>
           Mississippi State University Testing
         </div>
       </div>
-      <FileCheck className="w-5 h-5 ml-2" style={{ color: 'hsl(var(--secondary))' }} />
+      <div style={{ color: 'white' }}>
+        <OdinsIconFileCheck />
+      </div>
     </motion.div>
   );
 
-  // 3-step timeline steps
+  // 3-step timeline steps (using Odin's SVG icons instead of Lucide/emoji)
   const timelineSteps = isNewFormat ? [
     { 
       number: "01", 
       title: "Advanced Formulation", 
       description: "Proprietary biopolymer matrix captures and preserves natural estrous compounds at the molecular level.",
-      icon: <Beaker className="w-6 h-6" />
+      icon: <OdinsIconBeaker />
     },
     { 
       number: "02", 
       title: "Weatherproof Protection", 
       description: "Durable shell withstands rain, snow, and extreme temperatures while maintaining scent integrity.",
-      icon: <div className="w-6 h-6 flex items-center justify-center font-display font-bold text-lg">❄</div>
+      icon: <OdinsIconCloud />
     },
     { 
       number: "03", 
       title: "Sustained Release", 
       description: "Gradual diffusion technology releases scent continuously for 30+ days—no reapplication needed.",
-      icon: <div className="w-6 h-6 flex items-center justify-center font-display font-bold text-lg">⟳</div>
+      icon: <OdinsIconClock />
     }
   ] : howItWorks?.steps?.map((step, idx) => ({
     number: step.number || `0${idx + 1}`,
     title: step.title,
     description: step.description,
-    icon: idx === 0 ? <Beaker className="w-6 h-6" /> : 
-          idx === 1 ? <div className="w-6 h-6 flex items-center justify-center font-display font-bold text-lg">❄</div> :
-          <div className="w-6 h-6 flex items-center justify-center font-display font-bold text-lg">⟳</div>
+    icon: idx === 0 ? <OdinsIconBeaker /> : 
+          idx === 1 ? <OdinsIconCloud /> :
+          <OdinsIconClock />
   })) || [];
 
   return (
@@ -154,14 +195,14 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                   <div 
                     className="relative z-10 w-20 h-20 mx-auto mb-6 flex flex-col items-center justify-center"
                     style={{ 
-                      background: 'white',
-                      border: `3px solid ${index === 0 ? 'hsl(var(--primary))' : index === 1 ? 'hsl(var(--accent))' : 'hsl(var(--secondary))'}`,
+                      background: 'hsl(220 15% 12%)',
+                      border: '3px solid hsl(145 45% 38%)',
                       clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)'
                     }}
                   >
                     <span 
                       className="font-display text-2xl font-bold"
-                      style={{ color: index === 0 ? 'hsl(var(--primary))' : index === 1 ? 'hsl(var(--accent))' : 'hsl(var(--secondary))' }}
+                      style={{ color: 'white' }}
                     >
                       {step.number}
                     </span>
@@ -171,16 +212,17 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                   <div 
                     className="p-6 text-center"
                     style={{ 
-                      background: 'white',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
-                      borderTop: `4px solid ${index === 0 ? 'hsl(var(--primary))' : index === 1 ? 'hsl(var(--accent))' : 'hsl(var(--secondary))'}`
+                      background: 'hsl(220 15% 12%)',
+                      borderTop: '4px solid hsl(145 45% 38%)',
+                      boxShadow: '0 4px 20px rgba(0,0,0,0.4)'
                     }}
                   >
                     <div 
                       className="w-12 h-12 mx-auto mb-4 flex items-center justify-center"
                       style={{ 
-                        background: 'hsl(var(--muted))',
-                        color: index === 0 ? 'hsl(var(--primary))' : index === 1 ? 'hsl(var(--accent))' : 'hsl(var(--secondary))',
+                        background: 'hsl(145 45% 38% / 0.15)',
+                        border: '1px solid hsl(145 45% 38% / 0.3)',
+                        color: 'white',
                         clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
                       }}
                     >
@@ -188,11 +230,11 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                     </div>
                     <h3 
                       className="font-display text-xl uppercase mb-3"
-                      style={{ color: 'hsl(var(--foreground))' }}
+                      style={{ color: 'white' }}
                     >
                       {step.title}
                     </h3>
-                    <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                    <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
                       {step.description}
                     </p>
                   </div>

@@ -1,0 +1,113 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="https://www.odinsinnovations.com/" />
+
+    <meta charset="UTF-8" />
+    <title>Synthetic Doe Estrus Scent | 30+ Day Release | Odin's</title>
+    <meta name="description" content="Synthetic doe estrus beads: 30+ days continuous release, CWD-safe, legal in all 50 states. Starting at $13.99 — use code HUNT2026. Shop now." />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="https://www.odinsinnovations.com/pages/doe-estrus-guide/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="Synthetic Doe Estrus Scent Beads — 30+ Days of Attraction" />
+    <meta property="og:description" content="Weatherproof synthetic attractants for consistent whitetail performance. CWD-safe, biodegradable, legal everywhere." />
+    <meta property="og:image" content="https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="Doe Estrus Scent Beads" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="doe estrus scent, synthetic doe estrus, doe estrus scent beads, best doe estrus scent, best synthetic doe estrus for rut, long lasting doe estrus scent beads, synthetic deer attractant beads, non-urine doe estrus scent, rain proof doe estrus scent, how long does doe estrus last, what is the best doe estrus scent, is synthetic doe estrus effective, rut season scent, pre-rut deer attractant, peak rut scent strategy, whitetail hunting scents, deer attractant beads, CWD safe deer scent" />
+    <meta name="author" content="Doe Estrus Scent Beads" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553" />
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Doe Estrus Scent Beads",
+          "url": "{{ canonical_url }}",
+          "description": "Weatherproof results. Zero reapplication. Legal everywhere.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Doe Estrus Scent Beads",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.odinsinnovations.com" },
+            { "@type": "ListItem", "position": 2, "name": "Doe Estrus Scent Beads", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Headshot_logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "316-393-0440",
+            "contactType": "customer service",
+            "email": "paul@odinsinnovations.com"
+          }
+        },
+        { "@type": "FAQPage", "mainEntity": [] }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Doe Estrus Scent Beads" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index-DjwAjgwS.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index-2hgtT8Ce.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>

@@ -474,3 +474,84 @@
     background: hsl(var(--section-alt));
   }
 }
+
+/* === SHOPIFY TEXT-WITH-ICONS SECTION STYLES ===
+ * For verbatim Shopify HTML compatibility
+ * Outside @layer to prevent Tailwind purging
+ */
+.text-with-icons {
+  padding-top: 60px;
+  margin-top: -40px;
+}
+
+.text-with-icons .page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-with-icons__blocks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.text-with-icons__blocks.has-3-per-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .text-with-icons__blocks.has-3-per-row {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.text-with-icons__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.text-with-icons__block-icon {
+  margin-bottom: 16px;
+}
+
+.text-with-icons__block-icon .icon {
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  fill: currentColor;
+}
+
+.text-with-icons__block-icon svg {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.text-with-icons__block-title h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+}
+
+.text-with-icons__block-text p {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.text-with-icons__button {
+  display: none;
+}

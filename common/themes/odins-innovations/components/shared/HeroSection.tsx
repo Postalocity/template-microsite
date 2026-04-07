@@ -52,7 +52,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'linear-gradient(to bottom, hsl(140 60% 15% / 0.4) 0%, hsl(140 60% 10% / 0.75) 100%)' 
+              background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.5) 0%, hsl(0 0% 0% / 0.9) 100%)' 
             }} 
           />
         </div>
@@ -72,7 +72,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'linear-gradient(to bottom, hsl(140 60% 15% / 0.4) 0%, hsl(140 60% 10% / 0.75) 100%)' 
+              background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.5) 0%, hsl(0 0% 0% / 0.9) 100%)' 
             }} 
           />
         </div>

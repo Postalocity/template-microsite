@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Heart, Crown, Layers, Nut, Apple, Shield } from 'lucide-react';
 
 interface ServiceItem {
   title: string;
   description: string;
-  icon?: string; // Lucide icon name or image URL
+  icon?: string; // Image URL only (no more Lucide icons)
 }
 
 interface ServicesSectionProps {
@@ -20,39 +19,26 @@ interface ServicesSectionProps {
   };
 }
 
-// Icon mapping
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  'heart': Heart,
-  'crown': Crown,
-  'layers': Layers,
-  'nut': Nut,
-  'apple': Apple,
-  'shield': Shield,
+const isImageUrl = (value?: string): boolean => {
+  return !!value && (value.startsWith('http') || value.startsWith('/') || value.startsWith('./'));
 };
 
-const isImageUrl = (value: string): boolean => {
-  return value && (value.startsWith('http') || value.startsWith('/') || value.startsWith('./'));
-};
+// Odin's style SVG for fallback (package/box icon)
+const OdinsIconPackage = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-16 h-16" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 89.87L15.33 69.86V30.08l34.78-19.95 34.56 19.95v39.78L50 89.87z" />
+    <path d="M67.33 50.78V40.09L32.76 20.14m-17.43 9.94L50 50.09" />
+    <path d="M50 89.87V50.09l34.67-20.01" />
+  </svg>
+);
 
 const ServiceIcon = ({ icon, title }: { icon?: string; title: string }) => {
-  if (!icon) {
-    // Default based on title
-    if (title.toLowerCase().includes('estrus')) return <Heart className="w-8 h-8" />;
-    if (title.toLowerCase().includes('buck')) return <Crown className="w-8 h-8" />;
-    if (title.toLowerCase().includes('scrape')) return <Layers className="w-8 h-8" />;
-    if (title.toLowerCase().includes('acorn') || title.toLowerCase().includes('nut')) return <Nut className="w-8 h-8" />;
-    if (title.toLowerCase().includes('apple')) return <Apple className="w-8 h-8" />;
-    return <Shield className="w-8 h-8" />;
+  if (icon && isImageUrl(icon)) {
+    return <img src={icon} alt={title} className="w-24 h-24 object-contain" loading="lazy" />;
   }
 
-  if (isImageUrl(icon)) {
-    return <img src={icon} alt="" className="w-10 h-10 object-contain" loading="lazy" />;
-  }
-
-  const LucideIcon = iconMap[icon.toLowerCase()];
-  if (LucideIcon) return <LucideIcon className="w-8 h-8" />;
-
-  return <Shield className="w-8 h-8" />;
+  // Fallback to Odin's style SVG
+  return <OdinsIconPackage />;
 };
 
 const ServicesSection = ({ services }: ServicesSectionProps) => {
@@ -63,20 +49,40 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
   const sectionDesc = services?.section?.description || "Targeted formulas for every phase of the hunt.";
   const items = services?.services || services?.items || [];
 
+  // Default services with Odin's category images instead of Lucide icons
   const defaultServices: ServiceItem[] = [
-    { title: "Doe Estrus", description: "Synthetic rut cue for peak-season activity", icon: "heart" },
-    { title: "Dominant Buck", description: "Territorial challenge scent", icon: "crown" },
-    { title: "Whitetail Scrape Blend", description: "Doe Estrus + Dominant Buck combination", icon: "layers" },
-    { title: "Acorn", description: "Food-based curiosity attractant", icon: "nut" },
-    { title: "Apple", description: "Sweet fruit attractant", icon: "apple" },
-    { title: "Earth Cover", description: "Neutral cover scent to mask human odor", icon: "shield" },
+    { 
+      title: "Doe Estrus", 
+      description: "Synthetic rut cue for peak-season activity", 
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380" 
+    },
+    { 
+      title: "Dominant Buck", 
+      description: "Territorial challenge scent", 
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380" 
+    },
+    { 
+      title: "Scrape Blend", 
+      description: "Doe Estrus + Dominant Buck combination", 
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380" 
+    },
+    { 
+      title: "Food Scents", 
+      description: "Apple, Acorn, Persimmon & Sweet Corn", 
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Food_Scents.png?v=1762888380" 
+    },
+    { 
+      title: "Cover Scents", 
+      description: "Earth, Pine & Vanilla to mask human odor", 
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Cover_Scents.png?v=1762888625" 
+    },
   ];
 
   const displayItems = items.length > 0 ? items : defaultServices;
 
   return (
     <section
-      id="services"
+      id="products"
       ref={ref}
       className="section-padding"
       style={{ background: 'hsl(var(--section-alt))' }}
@@ -98,7 +104,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           </div>
 
           {/* Services Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {displayItems.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -107,10 +113,10 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group"
               >
-                <div className="clean-card text-center h-full">
-                  {/* Icon */}
+                <div className="clean-card text-center h-full p-6">
+                  {/* Icon - Now uses Odin's category images */}
                   <div 
-                    className="mb-4 flex justify-center transition-transform duration-300 group-hover:scale-110"
+                    className="mb-6 flex justify-center transition-transform duration-300 group-hover:scale-105"
                     style={{ color: 'hsl(var(--primary))' }}
                   >
                     <ServiceIcon icon={item.icon} title={item.title} />

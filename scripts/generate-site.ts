@@ -207,6 +207,20 @@ interface SiteConfig {
 function expandShorthandContent(content: Record<string, unknown>): Record<string, unknown> {
   const expanded = { ...content };
   
+  // Map kebab-case fields to camelCase for processing
+  const fieldMappings: Record<string, string> = {
+    'how-it-works': 'howItWorks',
+    'when-to-use': 'whenToUse',
+    'how-to-use': 'howToUse',
+  };
+  
+  // Apply field mappings
+  for (const [kebab, camel] of Object.entries(fieldMappings)) {
+    if (expanded[kebab] && !expanded[camel]) {
+      expanded[camel] = expanded[kebab];
+    }
+  }
+  
   // Map of shorthand fields to their full section structure
   const sectionFields = ['benefits', 'comparison', 'services', 'faq', 'howItWorks', 'trustSignals'];
   
@@ -592,6 +606,10 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     const indexHtml = generateIndexHtml(config, brandContext);
     fs.writeFileSync(path.join(siteDir, 'index.html'), indexHtml);
 
+    // Create shopify.html (Liquid template for Shopify pages)
+    const shopifyHtml = generateShopifyHtml(config, brandContext);
+    fs.writeFileSync(path.join(siteDir, 'shopify.html'), shopifyHtml);
+
     // Ensure public directory exists for static assets
     const publicDir = path.join(siteDir, 'public');
     if (!fs.existsSync(publicDir)) {
@@ -640,6 +658,7 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     console.log(`   - tailwind.config.ts`);
     console.log(`   - package.json`);
     console.log(`   - index.html`);
+    console.log(`   - shopify.html (Shopify Liquid template)`);
     console.log(`   - globals.css`);
     console.log(`   - robots.txt`);
     console.log(`   - sitemap.xml`);
@@ -715,9 +734,9 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
  */
 
 import { createRoot } from 'react-dom/client';
-${usesBrandTheme ? `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/themes/${brandId}/components/shared';
+${usesBrandTheme ? `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, ProductsSection } from '@/themes/${brandId}/components/shared';
 import SiteNavigation from '@/themes/${brandId}/components/shared/SiteNavigation';
-import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/components/shared';
+import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, ProductsSection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';`}
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -797,6 +816,7 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
+        {content.products && <ProductsSection content={content.products} />}
         <ServicesSection services={content.services} />
         <BenefitsSection benefits={content.benefits} />
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
@@ -989,6 +1009,7 @@ function generatePackageJson(site: SiteInfo): string {
       dev: 'vite',
       build: 'vite build',
       preview: 'vite preview',
+      'post-build': 'node ../../../scripts/update-shopify-assets.js'
     },
     dependencies: {
       '@radix-ui/react-accordion': '^1.2.11',
@@ -1337,6 +1358,142 @@ function generateSitemapXml(config: SiteConfig): string {
 `;
 }
 
+// Generate Shopify Liquid page template
+function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): string {
+  const { site, seo } = config;
+  
+  // Extract keywords from config
+  const keywords = seo?.keywords ? seo.keywords.join(', ') : '';
+  
+  // Get fonts from config or use defaults
+  const fonts = `
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">`;
+
+  // Get brand website URL
+  const domainParts = site.domain?.split('.') || [];
+  const brandWebsite = brandContext?.brand?.urls?.website || (site.domain ? `https://www.${site.domain}` : '');
+  const canonicalUrl = config.canonicalDomain || (seo as any)?.canonical || `https://${site.domain}${site.basename}`;
+
+  // Get ogImage from config - use full CDN URL if available, otherwise fallback to asset_url
+  const ogImageUrl = (seo as any)?.ogImage || "{{ 'og-image.png' | asset_url }}";
+  
+  // Get logo from branding config - use full CDN URL if available
+  const logoUrl = config.branding?.logo || "{{ 'logo.png' | asset_url }}";
+
+  return `{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="${brandWebsite}/" />
+
+    <meta charset="UTF-8" />
+    <title>${seo?.title || site.name}</title>
+    <meta name="description" content="${seo?.description || ''}" />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="${canonicalUrl}/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="${seo?.ogTitle || site.name}" />
+    <meta property="og:description" content="${seo?.ogDescription || ''}" />
+    <meta property="og:image" content="${ogImageUrl}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="${(seo as any)?.twitterTitle || site.name}" />
+    <meta property="twitter:description" content="${(seo as any)?.twitterDescription || ''}" />
+    <meta property="twitter:image" content="${ogImageUrl}" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="${keywords}" />
+    <meta name="author" content="${site.name}" />
+    <meta name="robots" content="${seo?.robots || 'index, follow'}" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+
+    <!-- Fonts -->
+    ${fonts}
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${(seo as any)?.googleAnalyticsId || 'G-XXXXXXXXXX'}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${(seo as any)?.googleAnalyticsId || 'G-XXXXXXXXXX'}', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "${site.name}",
+          "url": "{{ canonical_url }}",
+          "description": "${(config.content as any)?.hero?.subhead || ''}",
+          "publisher": {
+            "@type": "Organization",
+            "name": "${site.name}",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "${brandWebsite}" },
+            { "@type": "ListItem", "position": 2, "name": "${site.name}", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "${logoUrl}",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "${site.contact?.phone || ''}",
+            "contactType": "customer service",
+            "email": "${site.contact?.email || ''}"
+          }
+        },
+        { "@type": "FAQPage", "mainEntity": [] }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="${site.name}" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>`;
+}
+
 // CLI interface
 const args = process.argv.slice(2);
 
@@ -1401,6 +1558,8 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   const siteBasename = `${brandId}-${siteSlug}`;
   
   // Create unified config that matches legacy SiteConfig structure
+  const siteTheme = (siteConfig as Record<string, unknown>)?.theme as SiteConfig['theme'];
+  
   const unifiedConfig = {
     site: {
       id: brandId,
@@ -1416,8 +1575,11 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
     },
     branding: {
       tagline: ctx.brand.tagline || '',
-      logo: 'logo.png',
+      logo: (siteConfig as Record<string, unknown>)?.branding && typeof (siteConfig as Record<string, unknown>).branding === 'object' 
+        ? ((siteConfig as Record<string, unknown>).branding as Record<string, unknown>)?.logo as string || 'logo.png'
+        : 'logo.png',
     },
+    theme: siteTheme,
     // Merge SEO with brand-level GA ID as fallback
     seo: {
       ...seoInfo,
@@ -1430,6 +1592,12 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   };
   
   // Create brand context from engine context for use in generated site
+  // Use site's theme.primary for colors if available, otherwise fallback to brand colors
+  const sitePrimaryColor = unifiedConfig.theme?.primary;
+  const brandColors = sitePrimaryColor 
+    ? { primary: sitePrimaryColor, accent: ctx.brand.colors?.accent || { h: 45, s: 100, l: 50 } }
+    : ctx.brand.colors;
+
   const brandContext: BrandContext = {
     brand: {
       id: ctx.brand.id,
@@ -1440,7 +1608,7 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
       googleAnalyticsId: ctx.brand.googleAnalyticsId,
       urls: ctx.brand.urls,
       logo: ctx.brand.logo,
-      colors: ctx.brand.colors,
+      colors: brandColors,
       howItWorks: ctx.brand.howItWorks,
       difference: ctx.brand.difference,
       testimonials: ctx.brand.testimonials,

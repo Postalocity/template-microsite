@@ -49,6 +49,8 @@ export interface BrandUrls {
 }
 
 export interface BrandLogo {
+  url?: string;
+  faviconUrl?: string;
   filename: string;
   darkFilename?: string;
   alt: string;
