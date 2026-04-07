@@ -57,10 +57,14 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mb-12 group cursor-pointer"
         >
-          {/* Background Image */}
+          {/* Background Image - Zoomed and shifted right to crop left edge */}
           <div 
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
-            style={{ backgroundImage: `url('/promo/images/promo-hall.png')` }}
+            className="absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-110"
+            style={{ 
+              backgroundImage: `url('/promo/images/promo-hall.png')`,
+              backgroundPosition: '75% center',
+              backgroundSize: '130%'
+            }}
           />
           
           {/* Dark Gradient Overlay */}
