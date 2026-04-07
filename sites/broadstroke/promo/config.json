@@ -156,12 +156,6 @@
       },
       "benefits": [
         {
-          "icon": "store",
-          "title": "Onsite Promo Showroom",
-          "description": "Visit in person to view a wide variety of product options for quality and appearance.",
-          "detail": "Team members provide expert recommendations based on your preferences."
-        },
-        {
           "icon": "shirt",
           "title": "Sample Orders",
           "description": "Sample orders available to ensure quality standards and color matches prior to full order placement.",
@@ -180,16 +174,16 @@
           "detail": "Present a polished appearance for positive first impressions."
         },
         {
-          "icon": "clock",
-          "title": "Save Hours Every Week",
-          "description": "No more juggling multiple vendors. One experienced team handles everything from product selection to customization and fulfillment.",
-          "detail": "Eliminates coordination time between designers, suppliers, and shippers."
-        },
-        {
           "icon": "palette",
           "title": "Design Services Included",
           "description": "Professional design team creates impactful branded merchandise that aligns with your marketing goals.",
           "detail": "From logo placement to full product design, we handle the creative work."
+        },
+        {
+          "icon": "clock",
+          "title": "Save Hours Every Week",
+          "description": "No more juggling multiple vendors. One experienced team handles everything from product selection to customization and fulfillment.",
+          "detail": "Eliminates coordination time between designers, suppliers, and shippers."
         },
         {
           "icon": "truck",
