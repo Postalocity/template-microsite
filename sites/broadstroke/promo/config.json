@@ -143,11 +143,6 @@
           "variant": "primary"
         },
         {
-          "text": "Request Free Estimate",
-          "href": "mailto:promoinfo@broadstrokeinc.com",
-          "variant": "secondary"
-        },
-        {
           "text": "See How It Works",
           "href": "#how-it-works",
           "variant": "outline"
