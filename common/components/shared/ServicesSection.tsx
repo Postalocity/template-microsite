@@ -26,13 +26,6 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
       .replace(/\{\{PRICING_ENVELOPE\}\}/g, withEnvelope);
   };
 
-  // Force 6-column grid for 7 items
-  const forceGridStyle = itemCount === 7 ? {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(6, 1fr)',
-    gap: '1.5rem'
-  } : {};
-
   return (
     <section id="services" className="section-padding bg-section-alt" ref={ref}>
       <div className="section-container">
@@ -50,17 +43,11 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           </p>
         </motion.div>
 
-        <div className={gridClasses} style={forceGridStyle}>
+        <div className={gridClasses}>
           {services.services.map((service, i) => {
             const Icon = getIcon(service.icon);
             const colStartClass = getColumnClass(i, itemCount);
             const colSpanClass = getColumnSpanClass(itemCount);
-
-            // Force col-span-2 and col-start for 7 items
-            // Use explicit start/end lines to ensure consistent widths
-            const forceItemStyle = itemCount === 7 ? {
-              gridColumn: i === 3 || i === 5 ? '2 / 4' : i === 4 || i === 6 ? '4 / 6' : 'span 2'
-            } : {};
 
             return (
               <motion.div
@@ -69,7 +56,6 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className={`${colStartClass} ${colSpanClass}`}
-                style={forceItemStyle}
               >
                 <Card className="h-full hover:shadow-lg transition-shadow">
                   <CardHeader>

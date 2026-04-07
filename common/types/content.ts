@@ -87,6 +87,7 @@ export interface ServicesContent {
   section: {
     title: string;
     description: string;
+    finishingNote?: string;
   };
   services: Service[];
 }

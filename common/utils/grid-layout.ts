@@ -24,19 +24,18 @@ export const getGridColumns = (count: number): { small: number; medium: number; 
     return { small: 2, medium: 2, large: 2 };
   }
   if (count === 6) {
-    // 3x3 pattern - use 3 columns, natural placement
+    // 3x2 pattern - use 3 columns, natural placement
     return { small: 2, medium: 3, large: 3 };
+  }
+  if (count === 9) {
+    // 3x3 pattern - use 3 columns for 3 rows of 3
+    return { small: 1, medium: 3, large: 3 };
   }
   if (count === 7) {
     // 3-2-2 pattern - use 6 columns with col-span-2 for each item
-    // Row 1: 3 items × 2 cols = 6 cols (full row)
-    // Row 2: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
-    // Row 3: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
     return { small: 2, medium: 6, large: 6 };
   }
   // 5 items (3-2): use 6 columns with col-span-2
-  // Row 1: 3 items × 2 cols = 6 cols (full row)
-  // Row 2: 2 items × 2 cols = 4 cols, centered in 6 (starts at col 2)
   return { small: 2, medium: 6, large: 6 };
 };
 
@@ -45,6 +44,9 @@ export const getGridColumns = (count: number): { small: number; medium: number; 
  * Each item spans 2 columns to achieve proper centering in 6-column grid
  */
 export const getColumnSpanClass = (count: number): string => {
+  if (count === 9) {
+    return ""; // 9 items in 3x3 grid, natural span of 1
+  }
   if (count === 7 || count === 5) {
     return "md:col-span-2"; // Only apply col-span-2 on medium+ screens
   }
@@ -52,7 +54,7 @@ export const getColumnSpanClass = (count: number): string => {
     return "md:col-span-1"; // Make 4 items narrower in 2x2 grid
   }
   if (count === 6) {
-    return "md:col-span-1"; // 6 items in 3x3, natural span
+    return "md:col-span-1"; // 6 items in 3x2, natural span
   }
   return "";
 };
@@ -65,30 +67,25 @@ export const getColumnSpanClass = (count: number): string => {
  * @param count - total number of items
  */
 export const getColumnClass = (index: number, count: number): string => {
-  if (count === 6) {
+  if (count === 9) {
     // 3x3 pattern - natural flow, no special positioning needed
+    return "";
+  }
+  if (count === 6) {
+    // 3x2 pattern - natural flow, no special positioning needed
     return "";
   }
   if (count === 7) {
     // 3-2-2 pattern with 6-column grid + col-span-2
-    // Row 1 (indices 0-2): default auto-placement, fills 6 cols (1-2, 3-4, 5-6)
-    // Row 2 (indices 3-4): 2 items × 2 cols = 4 cols, centered in 6
-    //   - col-start-2: spans cols 2-3 (leaving col 1 empty on left)
-    //   - Next item auto-places to col 4, spans 4-5 (leaving col 6 empty on right)
-    // Row 3 (indices 5-6): 2 items × 2 cols = 4 cols, centered in 6
-    //   - Must start at col 2 again to center (col-start-2)
     if (index === 3) {
       return "md:col-start-2";
     }
     if (index === 5) {
       return "md:col-start-2";
     }
-    // index 4 and 6: auto-placement works correctly after explicit col-start
   }
   if (count === 5) {
     // 3-2 pattern with 6-column grid + col-span-2
-    // Row 1 (indices 0-2): fills 6 cols
-    // Row 2 (indices 3-4): 2 items centered
     if (index === 3) {
       return "md:col-start-2";
     }
