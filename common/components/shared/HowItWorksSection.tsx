@@ -131,7 +131,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
           className="text-center mt-10 text-lg font-semibold text-foreground"
         >
           <Check className="inline w-5 h-5 text-secondary mr-2" />
-          Print projects are reliably and accurately managed, ensuring quick turnaround at affordable prices, and eliminating hours of oversight and coordination for your team.
+          Promo orders are facilitated from product selection, through artwork approval, to customer in-hand with a focus on quality products, affordable prices, and quick turnarounds to ensure your team can place orders with the confidence they'll arrive on time and as expected.
         </motion.p>
       </div>
     </section>
