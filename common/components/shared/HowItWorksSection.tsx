@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Printer, Mail, Truck, Check, FilePen } from "lucide-react";
+import { Printer, Mail, Truck, Check, FilePen, MousePointer2, Wand2 } from "lucide-react";
 import { useBrand } from "@/contexts";
 
 interface HowItWorksStep {
@@ -25,10 +25,12 @@ interface HowItWorksSectionProps {
 // Icon mapping based on step title keywords
 const getIcon = (title: string) => {
   const lower = title.toLowerCase();
+  if (lower.includes('select') || lower.includes('click') || lower.includes('browse')) return MousePointer2;
+  if (lower.includes('customize') || lower.includes('design') || lower.includes('artwork')) return Wand2;
   if (lower.includes('plan') || lower.includes('file') || lower.includes('upload') || lower.includes('document')) return FilePen;
   if (lower.includes('produce') || lower.includes('print') || lower.includes('process')) return Printer;
   if (lower.includes('verify') || lower.includes('address')) return Mail;
-  if (lower.includes('mail') || lower.includes('deliver') || lower.includes('complete')) return Truck;
+  if (lower.includes('mail') || lower.includes('deliver') || lower.includes('complete') || lower.includes('ship')) return Truck;
   return Mail;
 };
 
