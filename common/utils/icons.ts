@@ -83,6 +83,15 @@ import {
   Clipboard,
   Printer,
   BarChart3,
+  Palette,
+  Paintbrush,
+  Pencil,
+  Shirt,
+  Sparkles,
+  Wand2,
+  Layout,
+  Type,
+  Layers,
 } from 'lucide-react';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -168,6 +177,15 @@ const iconMap: Record<string, LucideIcon> = {
   'clipboard': Clipboard,
   'printer': Printer,
   'bar-chart-3': BarChart3,
+  'palette': Palette,
+  'paintbrush': Paintbrush,
+  'pencil': Pencil,
+  'shirt': Shirt,
+  'sparkles': Sparkles,
+  'wand': Wand2,
+  'layout': Layout,
+  'type': Type,
+  'layers': Layers,
 };
 
 export function getIcon(iconName: string): LucideIcon {

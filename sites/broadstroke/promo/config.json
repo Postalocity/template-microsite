@@ -249,7 +249,7 @@
           "traditionalApproach": "Ship direct from manufacturer"
         },
         {
-          "icon": "package",
+          "icon": "shirt",
           "feature": "Product Samples",
           "ourSolution": "Samples onsite in Promo Showroom and free sample orders available",
           "traditionalApproach": "Not available or charges for samples"
@@ -267,7 +267,7 @@
           "traditionalApproach": "Products in original vendor packaging"
         },
         {
-          "icon": "package",
+          "icon": "wand",
           "feature": "Personalization",
           "ourSolution": "One-off items with personalization available",
           "traditionalApproach": "Only offer a single standardized design"
