@@ -249,19 +249,19 @@
           "traditionalApproach": "Ship direct from manufacturer"
         },
         {
-          "icon": "package-check",
+          "icon": "📦",
           "feature": "Product Samples",
           "ourSolution": "Samples onsite in Promo Showroom and free sample orders available",
           "traditionalApproach": "Not available or charges for samples"
         },
         {
-          "icon": "award",
+          "icon": "🎓",
           "feature": "Product Expertise",
           "ourSolution": "Product knowledge and established relationships with trusted vendors",
           "traditionalApproach": "Go-betweens for third party vendors"
         },
         {
-          "icon": "gift",
+          "icon": "🎁",
           "feature": "Presentation",
           "ourSolution": "Professional wrapping and arrangements available",
           "traditionalApproach": "Products in original vendor packaging"
