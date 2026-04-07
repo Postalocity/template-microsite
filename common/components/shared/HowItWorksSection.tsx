@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Printer, Mail, Truck, Check, FilePen, MousePointer2, Wand2 } from "lucide-react";
 import { useBrand } from "@/contexts";
+import { sanitizeHtml } from "@/utils/sanitize-html";
 
 interface HowItWorksStep {
   number?: string;
@@ -114,9 +115,10 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                 <h3 className="text-lg font-bold text-foreground mb-2">
                   {step.title}
                 </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {step.description}
-                </p>
+                <p 
+                  className="text-muted-foreground text-sm leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(step.description) }}
+                />
               </motion.div>
             );
           })}
