@@ -81,6 +81,8 @@ export interface Service {
   icon: string;
   title: string;
   description: string;
+  image?: string;
+  href?: string;
 }
 
 export interface ServicesContent {
@@ -88,6 +90,10 @@ export interface ServicesContent {
     title: string;
     description: string;
     finishingNote?: string;
+    cta?: {
+      text: string;
+      href: string;
+    };
   };
   services: Service[];
 }

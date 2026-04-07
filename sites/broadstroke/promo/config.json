@@ -295,55 +295,64 @@
           "icon": "shirt",
           "title": "Apparel & Uniforms",
           "description": "T-shirts, polos, jackets, activewear, hats, workwear, bags, and accessories. Custom customization with screen printing or embroidery. Screen-printed apparel has a minimum of 24 pieces; embroidery has no minimum.",
-          "href": "https://www.broadstrokepromos.com/apparel"
+          "image": "/promo/images/categories/apparel.jpg",
+          "href": "https://www.broadstrokepromos.com/t-shirts.html"
         },
         {
           "icon": "calendar",
           "title": "Trade Show & Signage",
           "description": "Tablecloths, pop-up banners, tabletop banners, backdrops, wall kits, tents, and displays. Make a statement at events with coordinated materials.",
-          "href": "https://www.broadstrokepromos.com/trade-show"
+          "image": "/promo/images/categories/tradeshows.jpg",
+          "href": "https://www.broadstrokepromos.com/office-tradeshows-events.htm"
         },
         {
           "icon": "smartphone",
           "title": "Office & Tech",
           "description": "USB drives, power banks, phone accessories, writing instruments, notepads, journals, sticky notes, mousepads, clipboards, lanyards, name badges, and stress relievers.",
-          "href": "https://www.broadstrokepromos.com/office-tech"
+          "image": "/promo/images/categories/office.jpg",
+          "href": "https://www.broadstrokepromos.com/office.htm"
         },
         {
           "icon": "award",
           "title": "Awards & Trophies",
           "description": "Trophies, plaques, vases, emblems, pins, and medals. Custom engraved in-house with no minimum order quantity.",
-          "href": "https://www.broadstrokepromos.com/awards"
+          "image": "/promo/images/categories/awards.jpg",
+          "href": "https://www.broadstrokepromos.com/awards-recognition-trophies.htm"
         },
         {
           "icon": "shopping-bag",
           "title": "Bags & Totes",
           "description": "Backpacks, tote bags, duffels, coolers, and luggage. Perfect for events, giveaways, and employee gifts.",
-          "href": "https://www.broadstrokepromos.com/bags"
+          "image": "/promo/images/categories/bags.jpg",
+          "href": "https://www.broadstrokepromos.com/bags.html"
         },
         {
           "icon": "coffee",
           "title": "Drinkware",
           "description": "Branded mugs, tumblers, water bottles, and drinkware that keeps your logo visible daily. Laser engraving and full-color printing available.",
-          "href": "https://www.broadstrokepromos.com/drinkware"
+          "image": "/promo/images/categories/drinkware.jpg",
+          "href": "https://www.broadstrokepromos.com/drinkware.htm"
         },
         {
           "icon": "zap",
           "title": "Sports & Outdoors",
           "description": "Coolers, beverage insulators, umbrellas, blankets, chairs, golf, games, and team spirit. Be brand ready for outdoor activities or the big game.",
-          "href": "https://www.broadstrokepromos.com/sports-outdoors"
+          "image": "/promo/images/categories/sports.jpg",
+          "href": "https://www.broadstrokepromos.com/fun-outdoors.htm"
         },
         {
           "icon": "home",
           "title": "Home & Auto",
           "description": "Promotional items for the home and vehicle including keychains, tools, emergency kits, and lifestyle accessories.",
-          "href": "https://www.broadstrokepromos.com/home-auto"
+          "image": "/promo/images/categories/headwear.jpg",
+          "href": "https://www.broadstrokepromos.com/accessories.html"
         },
         {
           "icon": "gift",
           "title": "Client & Team Gifts",
           "description": "Executive gifts, recognition awards, welcome kits, and appreciation packages. Elevated presentation with professional wrapping and arrangements.",
-          "href": "https://www.broadstrokepromos.com/gifts"
+          "image": "/promo/images/categories/awards.jpg",
+          "href": "https://www.broadstrokepromos.com/executive-gifts.htm"
         }
       ]
     },
