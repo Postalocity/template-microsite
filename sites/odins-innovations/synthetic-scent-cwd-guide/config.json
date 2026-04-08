@@ -133,19 +133,12 @@
       ]
     },
     "benefits": {
-      "section": {
-        "id": "benefits",
-        "title": "Benefits of Odin's Synthetic Scents"
-      },
-      "headline": "Benefits of Odin's Synthetic Scents",
+      "headline": "Benefits of Odin's Synthetic Scent Beads",
       "items": [
-        "Reduce reapplication time — set once and maintain attraction for 30+ days",
-        "Weatherproof performance — unaffected by rain, snow, or dew",
-        "Lab-consistent formula — identical results every bottle",
-        "CWD-safe and legal — zero biological material, permitted everywhere",
-        "Biodegradable — plant-based, USDA BioPreferred certified",
-        "Made in USA — full domestic production",
-        "Versatile options — estrus, food, cover, and species-specific profiles"
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png", "title": "30+ Days of Scent", "description": "Lab and field tested, regardless of weather. Continuous release for over a month." },
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png", "title": "Weatherproof", "description": "Rainproof formula that won't wash away. Works in rain, snow, and dew." },
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png", "title": "Field Tested", "description": "Proven effectiveness in real hunting conditions across multiple seasons." },
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png", "title": "100% Biodegradable", "description": "Plant-based polymer breaks down naturally. No environmental residue." }
       ]
     },
     "comparison": {

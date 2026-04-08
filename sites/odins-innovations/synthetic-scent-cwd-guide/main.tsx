@@ -87,28 +87,7 @@ function App() {
         {content['how-it-works'] && <HowItWorksSection howItWorks={content['how-it-works']} />}
         
         {/* Benefits */}
-        {content['benefits'] && (
-          <section id="benefits" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">{content['benefits'].headline}</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {content['benefits'].items.map((item: string, index: number) => {
-                  const parts = item.split('—').map(s => s.trim());
-                  const title = parts[0];
-                  const description = parts.slice(1).join(' — ');
-                  return (
-                    <div key={index} className="p-6 bg-card rounded-lg border text-center">
-                      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-                      <p className="text-sm text-muted-foreground">{description}</p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-        )}
+        {content['benefits'] && <BenefitsSection benefits={content['benefits']} />}
         
         {/* Comparison */}
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
