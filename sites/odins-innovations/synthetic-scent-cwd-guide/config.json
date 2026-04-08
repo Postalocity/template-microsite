@@ -38,7 +38,7 @@
     ],
     "ogTitle": "Synthetic Deer Scent and CWD — Legal Everywhere",
     "ogDescription": "Compliant synthetic attractants engineered for 30+ days of weather-resistant performance with zero CWD risk.",
-    "ogImage": "/synthetic-scent-cwd-guide/images/og-image.png",
+    "ogImage": "./og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/pages/synthetic-scent-cwd-guide"
   },
@@ -61,7 +61,7 @@
       },
       "subhead": "100% synthetic attractants engineered for consistent, weatherproof results without regulatory risk.",
       "background": {
-        "image": "/synthetic-scent-cwd-guide/images/hero2.jpg",
+        "image": "./images/hero2.jpg",
         "overlay": true
       },
       "ctas": [

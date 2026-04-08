@@ -1,28 +1,31 @@
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'path';
 
-export default defineConfig({
-  plugins: [react()],
-  root: __dirname,
-  base: '/pages/synthetic-scent-cwd-guide',
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, '../../../common'),
-      '@/': path.resolve(__dirname, '../../../common') + '/',
-      '@/themes/odins-innovations': path.resolve(__dirname, '../../../common/themes/odins-innovations'),
+export default defineConfig(({ mode }) => {
+  const isProduction = mode === 'production';
+  return {
+    plugins: [react()],
+    root: __dirname,
+    base: isProduction ? '/pages/synthetic-scent-cwd-guide' : '/',
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '../../../common'),
+        '@/': path.resolve(__dirname, '../../../common') + '/',
+        '@/themes/odins-innovations': path.resolve(__dirname, '../../../common/themes/odins-innovations'),
+      },
+      dedupe: ['react', 'react-dom'],
     },
-    dedupe: ['react', 'react-dom'],
-  },
-  server: {
-    host: true,
-    port: 3000,
-    hmr: {
-      overlay: false,
+    server: {
+      host: true,
+      port: 3000,
+      hmr: {
+        overlay: false,
+      },
     },
-  },
-  build: {
-    outDir: 'dist',
-    sourcemap: true,
-  },
+    build: {
+      outDir: 'dist',
+      sourcemap: true,
+    },
+  };
 });
