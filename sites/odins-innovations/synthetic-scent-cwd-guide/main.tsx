@@ -57,58 +57,18 @@ function App() {
           </section>
         )}
         
-        {/* What Is CWD Section */}
-        {content['what-is-cwd'] && (
-          <section id="what-is-cwd" className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['what-is-cwd'].headline}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['what-is-cwd'].body}</p>
-            </div>
-          </section>
-        )}
-        
         {/* CWD Regulations Section */}
         {content['cwd-regulations'] && (
-          <section id="cwd-regulations" className="py-20 bg-background">
+          <section id="cwd-regulations" className="py-20 bg-muted/30">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{content['cwd-regulations'].headline}</h2>
-              <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto leading-relaxed">{content['cwd-regulations'].body}</p>
-            </div>
-          </section>
-        )}
-        
-        {/* Case for Synthetic Section */}
-        {content['case-for-synthetic'] && (
-          <section id="case-for-synthetic" className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['case-for-synthetic'].headline}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['case-for-synthetic'].body}</p>
-            </div>
-          </section>
-        )}
-        
-        {/* Effectiveness Section */}
-        {content['effectiveness'] && (
-          <section id="effectiveness" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['effectiveness'].headline}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['effectiveness'].body}</p>
+              <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto">{content['cwd-regulations'].body}</p>
             </div>
           </section>
         )}
         
         {/* How It Works */}
         {content['how-it-works'] && <HowItWorksSection howItWorks={content['how-it-works']} />}
-        
-        {/* Biodegradable Benefits Section */}
-        {content['biodegradable'] && (
-          <section id="biodegradable" className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['biodegradable'].headline}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['biodegradable'].body}</p>
-            </div>
-          </section>
-        )}
         
         {/* Benefits */}
         {content['benefits'] && <BenefitsSection benefits={content['benefits']} />}
