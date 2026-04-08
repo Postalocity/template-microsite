@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.odinsinnovations.com/pages/synthetic-scent-cwd-guide/sitemap.xml
