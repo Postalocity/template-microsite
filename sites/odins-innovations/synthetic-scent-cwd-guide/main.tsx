@@ -51,34 +51,48 @@ function App() {
         {content['why-odins'] && (
           <section id="why-odins" className="py-20 bg-background">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-center mb-8">{content['why-odins'].headline}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['why-odins'].headline}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{content['why-odins'].body}</p>
+            </div>
+          </section>
+        )}
+        
+        {/* What Is CWD Section */}
+        {content['what-is-cwd'] && (
+          <section id="what-is-cwd" className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['what-is-cwd'].headline}</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['what-is-cwd'].body}</p>
             </div>
           </section>
         )}
         
         {/* CWD Regulations Section */}
         {content['cwd-regulations'] && (
-          <section id="cwd-regulations" className="py-20 bg-muted/30">
+          <section id="cwd-regulations" className="py-20 bg-background">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl font-bold text-center mb-4">{content['cwd-regulations'].headline}</h2>
-              <p className="text-lg text-muted-foreground text-center mb-8 max-w-2xl mx-auto">{content['cwd-regulations'].description}</p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                {content['cwd-regulations'].states.map((item: any, index: number) => (
-                  <div key={index} className="p-4 bg-card rounded-lg border">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-semibold">{item.state}</span>
-                      <span className={`text-sm px-2 py-1 rounded ${
-                        item.status === 'Banned' ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
-                      }`}>
-                        {item.status}
-                      </span>
-                    </div>
-                    <p className="text-sm text-muted-foreground">{item.notes}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground text-center mt-4 italic">{content['cwd-regulations'].disclaimer}</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{content['cwd-regulations'].headline}</h2>
+              <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto leading-relaxed">{content['cwd-regulations'].body}</p>
+            </div>
+          </section>
+        )}
+        
+        {/* Case for Synthetic Section */}
+        {content['case-for-synthetic'] && (
+          <section id="case-for-synthetic" className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['case-for-synthetic'].headline}</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['case-for-synthetic'].body}</p>
+            </div>
+          </section>
+        )}
+        
+        {/* Effectiveness Section */}
+        {content['effectiveness'] && (
+          <section id="effectiveness" className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['effectiveness'].headline}</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['effectiveness'].body}</p>
             </div>
           </section>
         )}
@@ -86,11 +100,28 @@ function App() {
         {/* How It Works */}
         {content['how-it-works'] && <HowItWorksSection howItWorks={content['how-it-works']} />}
         
+        {/* Biodegradable Benefits Section */}
+        {content['biodegradable'] && (
+          <section id="biodegradable" className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['biodegradable'].headline}</h2>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">{content['biodegradable'].body}</p>
+            </div>
+          </section>
+        )}
+        
         {/* Benefits */}
         {content['benefits'] && <BenefitsSection benefits={content['benefits']} />}
         
         {/* Comparison */}
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        {content['comparison'] && (
+          <section id="comparison" className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
+              <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
+            </div>
+          </section>
+        )}
         
         {/* FAQ */}
         {content['faq'] && <FAQSection faq={content['faq']} />}
