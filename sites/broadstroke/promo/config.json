@@ -233,9 +233,9 @@
         },
         {
           "icon": "shield",
-          "feature": "Quality Control",
-          "ourSolution": "Multi-point inspection before delivery",
-          "traditionalApproach": "Ship direct from manufacturer"
+          "feature": "Apparel Quality Control",
+          "ourSolution": "All apparel inspected in-house before delivery",
+          "traditionalApproach": "Ship direct from manufacturer without inspection"
         },
         {
           "icon": "shirt",
