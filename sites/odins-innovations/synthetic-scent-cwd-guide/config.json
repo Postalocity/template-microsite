@@ -61,7 +61,7 @@
       },
       "subhead": "100% synthetic attractants engineered for consistent, weatherproof results without regulatory risk.",
       "background": {
-        "image": "./images/hero2.jpg",
+        "image": "https://www.odinsinnovations.com/cdn/shop/files/hero1.jpg",
         "overlay": true
       },
       "ctas": [
