@@ -19,22 +19,24 @@ else
     FRAMEWORK_ROOT="$PROJECT_ROOT"
 fi
 
-# StringRay Framework Version - read dynamically from package.json
-# Priority: node_modules (installed) > source (development)
-get_version() {
-    # 1. Try node_modules/strray-ai/package.json (installed consumer - THIS IS THE DEPLOYED VERSION)
-    if [ -f "$PROJECT_ROOT/node_modules/strray-ai/package.json" ]; then
-        node -e "console.log(require('$PROJECT_ROOT/node_modules/strray-ai/package.json').version)" 2>/dev/null && return
-    fi
-    # 2. Try .opencode parent package.json (if running from source)
-    if [ -f "$SCRIPT_DIR/../package.json" ]; then
-        node -e "console.log(require('$SCRIPT_DIR/../package.json').version)" 2>/dev/null && return
-    fi
-    # Fallback - should never reach here
-    echo "unknown"
-}
+# StringRay Framework Version - read from FRAMEWORK_ROOT (already resolved above)
+# FRAMEWORK_ROOT correctly picks source in dev mode, node_modules in consumer mode
+STRRAY_VERSION=$(node -e "console.log(require('$FRAMEWORK_ROOT/package.json').version)" 2>/dev/null || echo "unknown")
 
-STRRAY_VERSION=$(get_version)
+# Dedup guard — prevent duplicate runs during startup
+# Uses a TTL lockfile (10s window) since OpenCode may trigger config hook
+# from multiple plugin copies in quick succession
+# Key by PROJECT_ROOT (md5) so all invocations in the same project share one lock
+LOCK_KEY=$(echo -n "$PROJECT_ROOT" | md5 | cut -c1-16)
+LOCK_FILE="/tmp/strray-init-${LOCK_KEY}.lock"
+LOCK_TTL=10
+if [ -f "$LOCK_FILE" ]; then
+    LOCK_AGE=$(( $(date +%s) - $(stat -f %m "$LOCK_FILE" 2>/dev/null || stat -c %Y "$LOCK_FILE" 2>/dev/null || echo 0) ))
+    if [ "$LOCK_AGE" -lt "$LOCK_TTL" ]; then
+        exit 0
+    fi
+fi
+echo $$ > "$LOCK_FILE"
 
 START_TIME=$(date +%s)
 
