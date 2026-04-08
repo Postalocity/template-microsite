@@ -47,7 +47,6 @@
       { "label": "Why Odin's", "href": "#why-odins" },
       { "label": "CWD Regulations", "href": "#cwd-regulations" },
       { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Comparison", "href": "#comparison" },
       { "label": "Benefits", "href": "#benefits" },
       { "label": "FAQ", "href": "#faq" }
     ],
@@ -156,53 +155,20 @@
       },
       "headline": "Why Hunters Choose Synthetic Over Natural",
       "description": "See the difference synthetic makes for your hunt.",
+      "summary": "Odin's Innovations Wins On: Longest-lasting scent release • Lab-tested effectiveness • All-weather performance • CWD-safe formula",
       "columns": {
-        "natural": "Natural Deer Urine",
-        "synthetic": "Odin's Synthetic"
+        "ourSolution": "Odin's Synthetic",
+        "traditional": "Natural Deer Urine"
       },
-      "rows": [
-        {
-          "icon": "shield",
-          "feature": "CWD Safety",
-          "synthetic": "Zero risk — no biological material",
-          "natural": "Potential prion transmission risk"
-        },
-        {
-          "icon": "clock",
-          "feature": "Release Duration",
-          "synthetic": "30+ days continuous release",
-          "natural": "24-48 hours typical"
-        },
-        {
-          "icon": "droplets",
-          "feature": "Weather Resistance",
-          "synthetic": "Rain-proof, performance resumes when dry",
-          "natural": "Washes away, dilutes in moisture"
-        },
-        {
-          "icon": "flask",
-          "feature": "Consistency",
-          "synthetic": "Identical formula every batch",
-          "natural": "Varies by source animal, diet, season"
-        },
-        {
-          "icon": "globe",
-          "feature": "Legal Status",
-          "synthetic": "Legal in all 50 states",
-          "natural": "Banned or restricted in 14+ states"
-        },
-        {
-          "icon": "leaf",
-          "feature": "Environmental Impact",
-          "synthetic": "USDA BioPreferred certified biodegradable",
-          "natural": "Biological material, potential contamination"
-        },
-        {
-          "icon": "check",
-          "feature": "Certification",
-          "synthetic": "No licenses or certifications needed",
-          "natural": "May require game farm certification"
-        }
+      "table": [
+        ["Feature", "Natural Deer Urine", "Odin's Synthetic"],
+        ["CWD Safety", "Potential prion transmission risk", "✓"],
+        ["Release Duration", "24-48 hours typical", "✓"],
+        ["Weather Resistance", "Washes away, dilutes in moisture", "✓"],
+        ["Consistency", "Varies by source animal, diet, season", "✓"],
+        ["Legal Status", "Banned or restricted in 14+ states", "✓"],
+        ["Environmental Impact", "Biological material, potential contamination", "✓"],
+        ["Certification", "May require game farm certification", "✓"]
       ]
     },
     "faq": {
