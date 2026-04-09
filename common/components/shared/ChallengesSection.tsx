@@ -1,25 +1,29 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Clock, MailX, TrendingUp } from "lucide-react";
+import { ChallengesContent } from "../../types/content";
+import { Clock, MailX, TrendingUp, AlertTriangle } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { useBrandName } from "@/contexts";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const iconMap: Record<string, any> = {
+// Support both legacy props and new config-based content
+interface ChallengesSectionProps {
+  challenges?: ChallengesContent;
+  // Legacy props for backwards compatibility
+  headline?: string;
+  closingStatement?: string;
+  challengesList?: { icon?: string; text: string }[];
+}
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   clock: Clock,
   mailX: MailX,
   trendingUp: TrendingUp,
+  alert: AlertTriangle,
+  time: Clock,
+  volume: TrendingUp,
+  cost: TrendingUp,
+  warning: AlertTriangle,
 };
-
-interface ChallengeItem {
-  icon?: string;
-  text: string;
-}
-
-interface ChallengesSectionProps {
-  headline?: string;
-  closingStatement?: string;
-  challenges?: ChallengeItem[];
-}
 
 const defaultChallenges = [
   {
@@ -37,15 +41,86 @@ const defaultChallenges = [
 ];
 
 const ChallengesSection = ({
-  headline = "Common Challenges with In-House Dispute Letter Mailing",
-  closingStatement,
   challenges,
+  headline,
+  closingStatement,
+  challengesList,
 }: ChallengesSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const brandName = useBrandName();
 
-  const challengeList = challenges && challenges.length > 0 ? challenges : defaultChallenges;
+  // Determine which mode to use
+  const useConfigMode = challenges?.section !== undefined;
+
+  if (useConfigMode) {
+    // New config-based mode
+    const challengeItems = challenges?.challenges || [];
+
+    return (
+      <section id="challenges" className="section-padding bg-background" ref={ref}>
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
+              {challenges?.section?.title}
+            </h2>
+            {challenges?.section?.description && (
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                {challenges.section.description}
+              </p>
+            )}
+          </motion.div>
+
+          {challengeItems.length > 0 && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {challengeItems.map((challenge, idx) => {
+                const Icon = iconMap[challenge.icon || 'alert'] || AlertTriangle;
+                
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.1 + idx * 0.1 }}
+                  >
+                    <Card className="h-full">
+                      <CardHeader>
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="w-10 h-10 rounded-lg bg-destructive/10 flex items-center justify-center">
+                            <Icon className="w-5 h-5 text-destructive" />
+                          </div>
+                          {challenge.metric && (
+                            <span className="text-lg font-bold text-destructive">
+                              {challenge.metric}
+                            </span>
+                          )}
+                        </div>
+                        <CardTitle className="text-lg">{challenge.title}</CardTitle>
+                        <CardDescription>{challenge.description}</CardDescription>
+                        {challenge.impact && (
+                          <p className="text-sm text-muted-foreground mt-3 pt-3 border-t">
+                            <strong>Impact:</strong> {challenge.impact}
+                          </p>
+                        )}
+                      </CardHeader>
+                    </Card>
+                  </motion.div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  // Legacy mode for backwards compatibility
+  const challengeList = challengesList && challengesList.length > 0 ? challengesList : defaultChallenges;
   const closing = closingStatement || `${brandName} automates the entire process—secure PDF upload, address verification, printing, folding, stuffing, and USPS delivery—eliminating manual errors and delays.`;
 
   return (
@@ -62,7 +137,7 @@ const ChallengesSection = ({
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            {headline}
+            {headline || "Common Challenges with In-House Dispute Letter Mailing"}
           </h2>
         </motion.div>
 

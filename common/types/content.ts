@@ -4,7 +4,7 @@
 
 export interface CTA {
   text: string;
-  subtext?: string;
+  subtext?: string; // Phase 3: Small text below main CTA text
   href: string;
   variant?: 'primary' | 'outline' | string; // Allow string for JSON compatibility
 }
@@ -16,10 +16,23 @@ export interface HeroContent {
   };
   subhead: string;
   background: {
-    image: string;
-    alt: string;
+    image?: string;
+    alt?: string;
+    // Phase 3: Video background support
+    video?: {
+      src: string;
+      poster?: string;
+      autoplay?: boolean;
+      loop?: boolean;
+      muted?: boolean;
+    };
   };
   ctas: CTA[];
+  // Phase 3: Professional label (e.g., "Professional Grade", "Enterprise Ready")
+  professionalLabel?: {
+    text: string;
+    largeFont?: boolean;
+  };
 }
 
 export interface SiteConfig {
@@ -57,15 +70,20 @@ export interface SiteConfig {
       href?: string;
       variant?: string;
     };
+    // Phase 4: Navigation dropdown menus
+    serviceLinks?: Array<{ label: string; href: string }>;
+    companyLinks?: Array<{ label: string; href: string }>;
   };
   content: SectionContent;
   footer?: FooterContent;
 }
 
 export interface Benefit {
-  icon: string;
+  icon?: string; // Phase 3: Made optional - can use image instead
+  image?: string; // Phase 3: Image-based benefits (icon OR image, not both)
   title: string;
-  detail: string;
+  detail?: string; // Phase 3: Made optional for image-based cards
+  description?: string; // Phase 3: Alternative to detail
   metrics?: string;
 }
 
@@ -122,12 +140,39 @@ export interface ComparisonContent {
   section: {
     title: string;
     description: string;
+    cta?: {
+      text: string;
+      href: string;
+    };
   };
   columns: {
     ourSolution: string;
     traditional: string;
   };
   rows: ComparisonRow[];
+  // Phase 3: Visual chart format
+  chart?: ComparisonChartData;
+}
+
+// Phase 3: Visual comparison chart
+export interface ComparisonChartData {
+  totalTimeInHouse: number;
+  totalTimePostalocity: number;
+  redBarPercentage: number;
+  sections?: {
+    name: string;
+    inHouseTime: number;
+    postalocityTime: number;
+  }[];
+}
+
+// Phase 3: Standalone comparison chart content (for dedicated chart sections)
+export interface ComparisonChartContent {
+  section: {
+    title: string;
+    description?: string;
+  };
+  chart: ComparisonChartData;
 }
 
 export interface SectionContent {
@@ -143,6 +188,15 @@ export interface SectionContent {
   difference?: DifferenceContent;
   trustSignals?: TrustSignalsContent;
   howItWorks?: HowItWorksContent;
+  // Phase 2: P1 High Priority sections (optional)
+  pricing?: PricingContent;
+  challenges?: ChallengesContent;
+  businessContinuity?: BusinessContinuityContent;
+  // Phase 3: P2 Medium Priority sections (optional)
+  comparisonChart?: ComparisonChartContent;
+  productsCategories?: ProductsCategoriesContent;
+  // Phase 4: P4 Low Priority sections (optional)
+  brandStory?: BrandStoryContent;
 }
 
 // E-E-A-T: Experience - Reviews & Testimonials
@@ -301,6 +355,11 @@ export interface FooterContent {
   description: string;
   tagline: string;
   disclaimer?: string;
+  // Phase 4: Footer link sections
+  links?: Array<{ label: string; href: string }>; // Legacy support
+  quickLinks?: Array<{ label: string; href: string }>;
+  companyLinks?: Array<{ label: string; href: string }>;
+  supportLinks?: Array<{ label: string; href: string }>;
 }
 
 // =============================================================================
@@ -317,7 +376,90 @@ export interface PricingTier {
 export interface PricingContent {
   section: {
     title: string;
-    description: string;
+    description?: string;
   };
-  tiers: PricingTier[];
+  // Support both single pricing and tiered pricing
+  startingPrice?: string;
+  priceDescription?: string;
+  features?: string[];
+  cta?: {
+    text: string;
+    href: string;
+    variant?: string;
+  };
+  disclaimer?: string;
+  // Legacy tiered pricing support
+  tiers?: PricingTier[];
+}
+
+// Phase 2: P1 High Priority - Challenges Section
+export interface Challenge {
+  icon?: string;
+  title: string;
+  description: string;
+  metric?: string;
+  impact?: string;
+}
+
+export interface ChallengesContent {
+  section: {
+    title: string;
+    description?: string;
+  };
+  challenges: Challenge[];
+}
+
+// Phase 2: P1 High Priority - Business Continuity Section
+export interface BusinessContinuityFeature {
+  icon?: string;
+  title: string;
+  description: string;
+}
+
+export interface BusinessContinuityContent {
+  section: {
+    title: string;
+    description?: string;
+  };
+  features: BusinessContinuityFeature[];
+  disasterRecovery?: string;
+}
+
+// Phase 3: P2 Medium Priority - Products with Categories (Odin's scent beads)
+export interface ScentProduct {
+  name: string;
+  description?: string;
+  season?: string; // e.g., "rut", "pre-rut", "year-round"
+  image?: string;
+}
+
+export interface ProductCategory {
+  name: string;
+  description?: string;
+  scents: ScentProduct[];
+}
+
+export interface ProductsCategoriesContent {
+  section: {
+    title: string;
+    description?: string;
+  };
+  categories: ProductCategory[];
+}
+
+// Phase 4: P4 Low Priority - Brand Story Section
+export interface TimelineEvent {
+  year: string;
+  event: string;
+  description?: string;
+}
+
+export interface BrandStoryContent {
+  section: {
+    title: string;
+    description?: string;
+  };
+  origin?: string;
+  timeline?: TimelineEvent[];
+  philosophy?: string;
 }

@@ -19,6 +19,7 @@ interface FAQSectionProps {
     items?: FAQItem[];
     faqs?: FAQItem[];
     categories?: string[];
+    showContactSection?: boolean;
   };
 }
 
@@ -189,30 +190,32 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
           </div>
 
           {/* Contact CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-12 p-8 text-center"
-            style={{ 
-              background: 'hsl(var(--muted))',
-              borderLeft: '4px solid hsl(var(--accent))'
-            }}
-          >
-            <p className="font-body text-muted-foreground mb-4">
-              Still have questions? We're here to help.
-            </p>
-            <a
-              href="mailto:support@odinsinnovations.com"
-              className="inline-flex items-center gap-2 px-6 py-3 font-display font-bold uppercase tracking-wide transition-all duration-300"
+          {faq?.showContactSection !== false && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-12 p-8 text-center"
               style={{ 
-                background: 'hsl(var(--secondary))',
-                color: 'white'
+                background: 'hsl(var(--muted))',
+                borderLeft: '4px solid hsl(var(--accent))'
               }}
             >
-              Contact Support
-            </a>
-          </motion.div>
+              <p className="font-body text-muted-foreground mb-4">
+                Still have questions? We're here to help.
+              </p>
+              <a
+                href="mailto:support@odinsinnovations.com"
+                className="inline-flex items-center gap-2 px-6 py-3 font-display font-bold uppercase tracking-wide transition-all duration-300"
+                style={{ 
+                  background: 'hsl(var(--secondary))',
+                  color: 'white'
+                }}
+              >
+                Contact Support
+              </a>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </section>

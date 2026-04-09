@@ -5,14 +5,37 @@
     "slug": "synthetic-scent-cwd-guide",
     "domain": "odinsinnovations.com",
     "basename": "/pages/synthetic-scent-cwd-guide",
-    "contact": { "email": "paul@odinsinnovations.com", "phone": "316-393-0440" }
+    "contact": {
+      "email": "paul@odinsinnovations.com",
+      "phone": "316-393-0440"
+    }
   },
-  "branding": { "tagline": "Synthetic. Long-Lasting. Legal Everywhere.", "logo": "/logo.png" },
-  "theme": { "primary": { "h": 30, "s": 80, "l": 35 } },
+  "branding": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "logo": "/logo.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 30,
+      "s": 80,
+      "l": 35
+    }
+  },
   "seo": {
     "title": "Synthetic Deer Scent vs Natural Urine | CWD Regulations by State | Odin's Innovations",
     "description": "CWD has been detected in 36 states. Multiple states restrict or ban natural deer urine. Odin's 100% synthetic deer scent delivers consistent 30+ day release, zero CWD risk, and full legality everywhere. Biodegradable and weatherproof.",
-    "keywords": ["synthetic deer scent", "synthetic doe estrus", "synthetic deer attractant", "synthetic deer lure", "CWD safe scents", "disease free scents", "legal doe attractants", "regulatory approved scents", "biodegradable scents", "best synthetic deer scent"],
+    "keywords": [
+      "synthetic deer scent",
+      "synthetic doe estrus",
+      "synthetic deer attractant",
+      "synthetic deer lure",
+      "CWD safe scents",
+      "disease free scents",
+      "legal doe attractants",
+      "regulatory approved scents",
+      "biodegradable scents",
+      "best synthetic deer scent"
+    ],
     "ogTitle": "Synthetic Deer Scent and CWD — Legal Everywhere",
     "ogDescription": "Compliant synthetic attractants engineered for 30+ days of weather-resistant performance with zero biological risk.",
     "ogImage": "./og-image.png",
@@ -21,22 +44,55 @@
   },
   "navigation": {
     "links": [
-      { "label": "Why Odin's", "href": "#why-odins" },
-      { "label": "CWD Regulations", "href": "#cwd-regulations" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "What Is CWD",
+        "href": "#what-is-cwd"
+      },
+      {
+        "label": "Why Odin's",
+        "href": "#why-odins"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
-    "cta": { "text": "Shop Synthetic Scent Beads", "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" }
+    "cta": {
+      "text": "Shop Synthetic Scent Beads",
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    }
   },
   "content": {
     "hero": {
-      "headline": { "main": "Synthetic Deer Scent and CWD", "highlightTerm": "Legal Everywhere — 30+ Days Release", "alt": "Odin's synthetic scent beads in a deer scrape" },
+      "headline": {
+        "main": "Synthetic Deer Scent and CWD",
+        "highlightTerm": "Legal Everywhere — 30+ Days Release",
+        "alt": "Odin's synthetic scent beads in a deer scrape"
+      },
       "subhead": "100% synthetic attractants engineered for consistent, weatherproof results without regulatory or disease risk.",
-      "background": { "image": "https://www.odinsinnovations.com/cdn/shop/files/hero1.jpg", "overlay": true },
+      "background": {
+        "image": "https://www.odinsinnovations.com/cdn/shop/files/hero1.jpg",
+        "overlay": true
+      },
       "ctas": [
-        { "text": "Shop Now — Starting at $13.99", "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026", "variant": "primary" },
-        { "text": "View Regulations", "href": "#cwd-regulations", "variant": "outline" }
+        {
+          "text": "Shop Now — Starting at $13.99",
+          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
+          "variant": "primary"
+        },
+        {
+          "text": "View Regulations",
+          "href": "#cwd-regulations",
+          "variant": "outline"
+        }
       ]
     },
     "what-is-cwd": {
@@ -54,24 +110,76 @@
     "benefits": {
       "headline": "Benefits of Odin's Synthetic Scent Beads",
       "items": [
-        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png", "title": "30+ Days of Scent", "description": "Lab and field tested, regardless of weather. Continuous release for over a month." },
-        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png", "title": "Weatherproof", "description": "Rainproof formula that won't wash away. Works in rain, snow, and dew." },
-        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png", "title": "Field Tested", "description": "Proven effectiveness in real hunting conditions across multiple seasons." },
-        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png", "title": "100% Biodegradable", "description": "Plant-based polymer breaks down naturally. No environmental residue." }
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
+          "title": "30+ Days of Scent",
+          "description": "Lab and field tested, regardless of weather. Continuous release for over a month."
+        },
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
+          "title": "Weatherproof",
+          "description": "Rainproof formula that won't wash away. Works in rain, snow, and dew."
+        },
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
+          "title": "Field Tested",
+          "description": "Proven effectiveness in real hunting conditions across multiple seasons."
+        },
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
+          "title": "100% Biodegradable",
+          "description": "Plant-based polymer breaks down naturally. No environmental residue."
+        }
       ]
     },
     "comparison": {
       "headline": "Synthetic vs Natural Deer Scent — Direct Comparison",
       "table": [
-        ["Attribute", "Natural Cervid Urine", "Odin's Synthetic Scent Beads & Liquids"],
-        ["CWD/Prion Risk", "Potential exposure from captive herds", "Zero — no biological material"],
-        ["Regulatory Status", "Restricted or banned in multiple states", "Legal in all 50 states"],
-        ["Batch Consistency", "Varies by animal and collection", "Identical molecular profile every batch"],
-        ["Release Duration", "Short-term, frequent reapplication needed", "30+ days continuous, weather-resistant"],
-        ["Weather Resistance", "Dilutes or degrades with moisture", "Unaffected by rain, snow, dew"],
-        ["Shelf Life & Storage", "Requires refrigeration, spoilage risk", "Indefinite; no special requirements"],
-        ["Environmental Impact", "Potential non-biobased waste", "USDA BioPreferred; fully biodegradable"],
-        ["Reapplication Frequency", "High", "Reduced — set once and maintain"]
+        [
+          "Attribute",
+          "Natural Cervid Urine",
+          "Odin's Synthetic Scent Beads & Liquids"
+        ],
+        [
+          "CWD/Prion Risk",
+          "Potential exposure from captive herds",
+          "Zero — no biological material"
+        ],
+        [
+          "Regulatory Status",
+          "Restricted or banned in multiple states",
+          "Legal in all 50 states"
+        ],
+        [
+          "Batch Consistency",
+          "Varies by animal and collection",
+          "Identical molecular profile every batch"
+        ],
+        [
+          "Release Duration",
+          "Short-term, frequent reapplication needed",
+          "30+ days continuous, weather-resistant"
+        ],
+        [
+          "Weather Resistance",
+          "Dilutes or degrades with moisture",
+          "Unaffected by rain, snow, dew"
+        ],
+        [
+          "Shelf Life & Storage",
+          "Requires refrigeration, spoilage risk",
+          "Indefinite; no special requirements"
+        ],
+        [
+          "Environmental Impact",
+          "Potential non-biobased waste",
+          "USDA BioPreferred; fully biodegradable"
+        ],
+        [
+          "Reapplication Frequency",
+          "High",
+          "Reduced — set once and maintain"
+        ]
       ]
     },
     "faq": {
@@ -120,8 +228,18 @@
       ]
     },
     "footer": {
-      "finalCTA": { "headline": "Ready for consistent, compliant results?", "buttonText": "Shop Scent Beads", "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" },
+      "finalCTA": {
+        "headline": "Ready for consistent, compliant results?",
+        "buttonText": "Shop Scent Beads",
+        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
     }
+  },
+  "shopifyAssets": {
+    "css": "index-n-GK-1rz.css",
+    "js": "index-Q7TQlw8p.js",
+    "cssUrl": "{{ 'index-n-GK-1rz.css' | asset_url }}",
+    "jsUrl": "{{ 'index-Q7TQlw8p.js' | asset_url }}"
   }
 }

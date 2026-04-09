@@ -823,6 +823,10 @@ function App() {
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+        {/* Optional Sections - disabled by default, uncomment to enable: */}
+        {/* {content.about?.enabled && <AboutSection about={content.about} />} */}
+        {/* {content.reviews?.enabled && <ReviewsSection reviews={content.reviews} />} */}
+        {/* {content.caseStudies?.enabled && <CaseStudiesSection caseStudies={content.caseStudies} />} */}
         <TestimonialsSection />
         <FAQSection faq={content.faq} />
         <SiteFooter config={config} />

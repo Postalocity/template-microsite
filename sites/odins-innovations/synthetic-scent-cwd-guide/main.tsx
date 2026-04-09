@@ -47,22 +47,92 @@ function App() {
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
         
+        {/* What Is CWD Section */}
+        {content['what-is-cwd'] && (
+          <section id="what-is-cwd" className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['what-is-cwd'].headline}</h2>
+              
+              {/* Key Points Cards */}
+              <div className="grid md:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
+                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">Always Fatal</h3>
+                      <p className="text-sm text-muted-foreground">CWD is a transmissible spongiform encephalopathy caused by misfolded proteins (prions). It is 100% fatal in cervids with no vaccine, treatment, or cure.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">Spreads Through Bodily Fluids</h3>
+                      <p className="text-sm text-muted-foreground">Prions transmit via urine, saliva, feces, and contaminated environments. Even trace amounts can infect healthy deer.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">18+ Month Incubation</h3>
+                      <p className="text-sm text-muted-foreground">CWD can incubate for over 18 months without symptoms. Urine from seemingly healthy herds may contain infectious prions.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">State Restrictions</h3>
+                      <p className="text-sm text-muted-foreground">Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived material.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* CTA */}
+              <div className="text-center">
+                <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                  Shop CWD-Safe Synthetic Scents
+                </a>
+              </div>
+            </div>
+          </section>
+        )}
+        
         {/* Why Odin's Section */}
         {content['why-odins'] && (
           <section id="why-odins" className="py-20 bg-background">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['why-odins'].headline}</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">{content['why-odins'].body}</p>
-            </div>
-          </section>
-        )}
-        
-        {/* CWD Regulations Section */}
-        {content['cwd-regulations'] && (
-          <section id="cwd-regulations" className="py-20 bg-muted/30">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{content['cwd-regulations'].headline}</h2>
-              <p className="text-lg text-muted-foreground text-center mb-8 max-w-3xl mx-auto">{content['cwd-regulations'].body}</p>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">{content['why-odins'].body}</p>
+              <div className="text-center">
+                <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                  Shop Synthetic Scent Beads
+                </a>
+              </div>
             </div>
           </section>
         )}
@@ -79,12 +149,26 @@ function App() {
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
+              <div className="text-center mt-8">
+                <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                  See Why Hunters Choose Synthetic
+                </a>
+              </div>
             </div>
           </section>
         )}
         
         {/* FAQ */}
-        {content['faq'] && <FAQSection faq={content['faq']} />}
+        {content['faq'] && (
+          <>
+            <FAQSection faq={{ ...content['faq'], showContactSection: false }} />
+            <div className="text-center pb-8">
+              <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                Shop Synthetic Scent Beads
+              </a>
+            </div>
+          </>
+        )}
         
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}

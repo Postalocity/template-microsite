@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { HeroContent, CTA } from '../../types/content';
 import { useFormattedPricing } from '@/utils/pricing';
+import { Badge } from '../ui/badge';
 
 interface HeroSectionProps {
   hero: HeroContent;
@@ -15,13 +16,38 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
       .replace(/\{\{PRICING\}\}/g, full)
       .replace(/\{\{PRICING_SHORT\}\}/g, short);
   };
+
+  // Check for video background
+  const hasVideo = hero.background?.video?.src;
+  const hasImage = hero.background?.image && !hasVideo;
+
   return (
     <header
       id="hero"
       className="relative min-h-[90vh] flex items-center overflow-hidden"
       style={{ background: 'var(--gradient-hero)' }}
     >
-      {hero.background?.image && (
+      {/* Video Background */}
+      {hasVideo && (
+        <div className="absolute inset-0">
+          <video
+            src={hero.background.video!.src}
+            poster={hero.background.video!.poster}
+            autoPlay={hero.background.video!.autoplay !== false}
+            loop={hero.background.video!.loop !== false}
+            muted={hero.background.video!.muted !== false}
+            playsInline
+            className="w-full h-full object-cover opacity-30"
+            onError={(e) => {
+              e.currentTarget.parentElement?.remove();
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-hero/60 via-hero/40 to-hero/90" />
+        </div>
+      )}
+
+      {/* Image Background */}
+      {hasImage && (
         <div className="absolute inset-0">
           <img
             src={hero.background.image}
@@ -45,6 +71,25 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="max-w-3xl"
         >
+          {/* Professional Label */}
+          {hero.professionalLabel && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-6"
+            >
+              <Badge 
+                variant="outline" 
+                className={`bg-primary/10 text-primary border-primary/20 ${
+                  hero.professionalLabel.largeFont ? 'text-lg px-4 py-2' : ''
+                }`}
+              >
+                {hero.professionalLabel.text}
+              </Badge>
+            </motion.div>
+          )}
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-hero-foreground mb-6">
             {hero.headline.main}{' '}
             <span className="gradient-text">
@@ -68,6 +113,11 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
                 }
               >
                 {processText(cta.text)}
+                {cta.subtext && (
+                  <span className={`${cta.variant === 'primary' ? 'text-primary-foreground/70' : 'text-muted-foreground'} text-sm font-normal mt-1`}>
+                    {processText(cta.subtext)}
+                  </span>
+                )}
               </a>
             ))}
           </div>
