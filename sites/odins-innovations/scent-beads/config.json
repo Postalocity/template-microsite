@@ -54,7 +54,7 @@
       }
     ],
     "cta": {
-      "text": "Shop Scent Beads — $17.95",
+      "text": "Shop Scent Beads — $14.95",
       "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
     }
   },
@@ -72,7 +72,7 @@
       },
       "ctas": [
         {
-          "text": "Shop Now — Starting at $17.95",
+          "text": "Shop Now — Starting at $14.95",
           "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
           "variant": "primary"
         },
@@ -245,7 +245,7 @@
         },
         {
           "q": "What is the starting price?",
-          "a": "Scent beads start at $17.95 per 3-oz bottle with free shipping on orders over $79."
+          "a": "Scent beads start at $14.95 per 3-oz bottle with free shipping on orders over $79."
         }
       ]
     },

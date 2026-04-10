@@ -25,7 +25,6 @@ interface FAQSectionProps {
 
 const FAQSection = ({ faq }: FAQSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [activeCategory, setActiveCategory] = useState<string>("All");
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -35,16 +34,6 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
 
   const items = faq.items || faq.faqs || [];
   const title = faq.headline || faq.title || "Frequently Asked Questions";
-
-  // Extract categories from items or use defaults
-  const defaultCategories = ["All", "Product", "Usage", "Safety"];
-  const itemCategories = [...new Set(items.map(item => item.category).filter(Boolean))];
-  const categories = itemCategories.length > 0 ? ["All", ...itemCategories] : defaultCategories;
-
-  // Filter items by category
-  const filteredItems = activeCategory === "All" 
-    ? items 
-    : items.filter(item => item.category === activeCategory || (!item.category && activeCategory === "All"));
 
   if (items.length === 0) {
     return null;
@@ -84,47 +73,15 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
             </h2>
           </div>
 
-          {/* Category Tabs */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="flex flex-wrap justify-center gap-2 mb-10"
-          >
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => {
-                  setActiveCategory(category);
-                  setOpenIndex(null);
-                }}
-                className="px-5 py-2 font-body text-sm font-semibold uppercase tracking-wide transition-all duration-300"
-                style={{
-                  background: activeCategory === category 
-                    ? 'hsl(var(--primary))' 
-                    : 'hsl(var(--muted))',
-                  color: activeCategory === category 
-                    ? 'white' 
-                    : 'hsl(var(--muted-foreground))',
-                  clipPath: activeCategory === category 
-                    ? 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)' 
-                    : 'none'
-                }}
-              >
-                {category}
-              </button>
-            ))}
-          </motion.div>
-
           {/* FAQ Items */}
           <div className="space-y-3">
-            {filteredItems.map((item, index) => {
+            {items.map((item, index) => {
               const question = item.question || item.q || "";
               const answer = item.answer || item.a || "";
               
               return (
                 <motion.div
-                  key={`${activeCategory}-${index}`}
+                  key={index}
                   initial={{ opacity: 0, y: 10 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.4, delay: index * 0.05 }}

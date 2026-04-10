@@ -57,31 +57,15 @@ console.log(`   JS:  ${jsFile}`);
 // Read current shopify.html
 let shopifyHtml = fs.readFileSync(shopifyHtmlPath, 'utf-8');
 
-// Update CSS reference - replace {{ 'index.css' | asset_url | stylesheet_tag }}
-// with the actual hashed filename using Shopify's asset_url filter
-// Handle both the original template and previously hashed versions
-const oldCssRefs = [
-  `{{ 'index.css' | asset_url | stylesheet_tag }}`,
-  `{{ 'index-DRMLvOMf.css' | asset_url | stylesheet_tag }}`
-];
+// Update CSS reference - replace any index-*.css with the new hashed filename
+const cssRegex = /\{\{ 'index-[a-zA-Z0-9_-]*\.css' \| asset_url \| stylesheet_tag \}\}/;
 const newCssRef = `{{ '${cssFile}' | asset_url | stylesheet_tag }}`;
+shopifyHtml = shopifyHtml.replace(cssRegex, newCssRef);
 
-for (const oldRef of oldCssRefs) {
-  shopifyHtml = shopifyHtml.replace(oldRef, newCssRef);
-}
-
-// Update JS reference - replace {{ 'index.js' | asset_url }}
-// with the actual hashed filename using Shopify's asset_url filter
-// Handle both the original template and previously hashed versions
-const oldJsRefs = [
-  `<script type="module" src="{{ 'index.js' | asset_url }}"></script>`,
-  `<script type="module" src="{{ 'index-dyUMp9BQ.js' | asset_url }}"></script>`
-];
+// Update JS reference - replace any index-*.js with the new hashed filename  
+const jsRegex = /<script type="module" src="\{\{ 'index-[a-zA-Z0-9_-]*\.js' \| asset_url \}\}"><\/script>/;
 const newJsRef = `<script type="module" src="{{ '${jsFile}' | asset_url }}"></script>`;
-
-for (const oldRef of oldJsRefs) {
-  shopifyHtml = shopifyHtml.replace(oldRef, newJsRef);
-}
+shopifyHtml = shopifyHtml.replace(jsRegex, newJsRef);
 
 // Write updated shopify.html
 fs.writeFileSync(shopifyHtmlPath, shopifyHtml);

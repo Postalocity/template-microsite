@@ -51,7 +51,12 @@ function App() {
         {content['what-is-cwd'] && (
           <section id="what-is-cwd" className="py-20 bg-muted/30">
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['what-is-cwd'].headline}</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{content['what-is-cwd'].headline}</h2>
+              
+              {/* Intro Paragraph */}
+              {content['what-is-cwd'].intro && (
+                <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-8">{content['what-is-cwd'].intro}</p>
+              )}
               
               {/* Key Points Cards */}
               <div className="grid md:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
@@ -63,8 +68,8 @@ function App() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-foreground mb-1">Always Fatal</h3>
-                      <p className="text-sm text-muted-foreground">CWD is a transmissible spongiform encephalopathy caused by misfolded proteins (prions). It is 100% fatal in cervids with no vaccine, treatment, or cure.</p>
+                      <h3 className="font-semibold text-foreground mb-1">100% Fatal</h3>
+                      <p className="text-sm text-muted-foreground">Caused by misfolded proteins (prions) that attack the nervous system. No treatment or cure exists.</p>
                     </div>
                   </div>
                 </div>
@@ -106,7 +111,7 @@ function App() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">State Restrictions</h3>
-                      <p className="text-sm text-muted-foreground">Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived material.</p>
+                      <p className="text-sm text-muted-foreground">Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived materials and is legal for use in any state including Canada.</p>
                     </div>
                   </div>
                 </div>
@@ -137,11 +142,98 @@ function App() {
           </section>
         )}
         
-        {/* How It Works */}
-        {content['how-it-works'] && <HowItWorksSection howItWorks={content['how-it-works']} />}
+        {/* How It Works - Custom Implementation with Science Section */}
+        {content['how-it-works'] && (
+          <section id="how-it-works" className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{content['how-it-works'].headline}</h2>
+              <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">{content['how-it-works'].body}</p>
+              
+              {/* Steps Grid */}
+              <div className="grid md:grid-cols-2 gap-6 mb-16">
+                {content['how-it-works'].steps?.map((step, idx) => (
+                  <div key={idx} className="bg-background rounded-lg p-8 shadow-sm border border-border/50">
+                    {step.image ? (
+                      /* Step with image - side-by-side layout */
+                      <div className="flex flex-col sm:flex-row gap-4 mb-4">
+                        <div className="sm:w-24 sm:h-24 w-full h-32 flex-shrink-0 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 rounded-lg flex items-center justify-center overflow-hidden">
+                          <img
+                            src={step.image}
+                            alt={step.title}
+                            className="w-16 h-16 object-contain drop-shadow-sm"
+                            loading="lazy"
+                          />
+                        </div>
+                        <div className="flex-1">
+                          <div className="text-3xl font-bold text-primary mb-2">{step.number}</div>
+                          <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+                        </div>
+                      </div>
+                    ) : (
+                      /* Step without image - standard layout */
+                      <div className="text-4xl font-bold text-primary mb-4">{step.number}</div>
+                    )}
+                    {!step.image && <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>}
+                    <p className="text-base text-muted-foreground">{step.description}</p>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Science Section - Bigger Font */}
+              {content['how-it-works'].scienceSection && (
+                <div className="bg-primary/5 border-2 border-primary/20 rounded-xl p-8 md:p-12">
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">{content['how-it-works'].scienceSection.title}</h3>
+                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">{content['how-it-works'].scienceSection.description}</p>
+                  <div className="bg-primary/10 rounded-lg p-6 text-center">
+                    <p className="text-xl md:text-2xl font-bold text-primary">{content['how-it-works'].scienceSection.highlight}</p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
         
         {/* Benefits */}
         {content['benefits'] && <BenefitsSection benefits={content['benefits']} />}
+        
+        {/* Wins Section */}
+        {content['wins'] && (
+          <section id="wins" className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{content['wins'].headline}</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {content['wins'].items.map((item, idx) => (
+                  <div key={idx} className="bg-muted/30 rounded-lg p-6 text-center">
+                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      {item.icon === 'clock' && (
+                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      )}
+                      {item.icon === 'flask' && (
+                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                      )}
+                      {item.icon === 'globe' && (
+                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      )}
+                      {item.icon === 'shield' && (
+                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                      )}
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
         
         {/* Comparison */}
         {content['comparison'] && (
@@ -160,14 +252,14 @@ function App() {
         
         {/* FAQ */}
         {content['faq'] && (
-          <>
+          <section id="faq" className="bg-muted/30">
             <FAQSection faq={{ ...content['faq'], showContactSection: false }} />
             <div className="text-center pb-8">
               <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
                 Shop Synthetic Scent Beads
               </a>
             </div>
-          </>
+          </section>
         )}
         
         <SiteFooter config={config} />

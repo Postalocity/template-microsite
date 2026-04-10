@@ -24,7 +24,7 @@
   },
   "seo": {
     "title": "Synthetic Doe Estrus Scent | 30+ Day Release | Odin's",
-    "description": "Biodegradable synthetic doe estrus beads: month-long continuous release, CWD-safe, legal nationwide. Starting at $17.95 — use code HUNT2026. Shop now.",
+    "description": "Biodegradable synthetic doe estrus beads: month-long continuous release, CWD-safe, legal nationwide. Starting at $14.95 — use code HUNT2026. Shop now.",
     "keywords": [
       "doe estrus scent",
       "synthetic doe estrus",
@@ -102,7 +102,7 @@
       },
       "ctas": [
         {
-          "text": "Shop Now — Starting at $13.99",
+          "text": "Shop Now — Starting at $14.95",
           "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
           "variant": "primary"
         },
@@ -141,11 +141,11 @@
     },
     "products": {
       "headline": "Available Doe Estrus Products",
-      "intro": "Odin's synthetic doe estrus products start at $17.95 per 3-oz bottle of scent beads. Use promo code HUNT2026 for savings and enjoy free shipping on orders over $79.",
+      "intro": "Odin's synthetic doe estrus products start at $14.95 per 3-oz bottle of scent beads. Use promo code HUNT2026 for savings and enjoy free shipping on orders over $79.",
       "items": [
-        { "name": "Doe Estrus Deer Attractant & Rut Cue Scent Beads", "description": "Synthetic estrus pheromone that ignites buck rutting behavior. Extended-duration formula maintains effectiveness for weeks.", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png", "href": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads" },
-        { "name": "Dominant Buck Deer Attractant & Territorial Challenge Scent Beads", "description": "Synthetic territorial scent that signals dominance and attracts rival bucks.", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DominantBuck_6b892f84-2d31-4f74-8ede-095bead9ebd8.png", "href": "https://www.odinsinnovations.com/products/dominant-buck-scent-beads" },
-        { "name": "Whitetail Deer Scrape Blend Scent Beads", "description": "Synthetic rut-attractant to boost scrape activity and trigger buck territory responses.", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_ScrapeBlend_703616b9-6936-41c1-bc6b-6dc7136bc1ff.png", "href": "https://www.odinsinnovations.com/products/scrape-blend-scent-beads" }
+        { "name": "Doe Estrus Deer Attractant & Rut Cue Scent Beads", "description": "Synthetic estrus pheromone that ignites buck rutting behavior. Extended-duration formula maintains effectiveness for weeks.", "price": "From $14.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png", "href": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads" },
+        { "name": "Dominant Buck Deer Attractant & Territorial Challenge Scent Beads", "description": "Synthetic territorial scent that signals dominance and attracts rival bucks.", "price": "From $14.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DominantBuck_6b892f84-2d31-4f74-8ede-095bead9ebd8.png", "href": "https://www.odinsinnovations.com/products/dominant-buck-scent-beads" },
+        { "name": "Whitetail Deer Scrape Blend Scent Beads", "description": "Synthetic rut-attractant to boost scrape activity and trigger buck territory responses.", "price": "From $14.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_ScrapeBlend_703616b9-6936-41c1-bc6b-6dc7136bc1ff.png", "href": "https://www.odinsinnovations.com/products/scrape-blend-scent-beads" }
       ],
       "cta": "Shop the full collection: https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
     },
@@ -175,7 +175,7 @@
           "scents": ["Earth", "Pine", "Vanilla"]
         }
       ],
-      "price": "From $17.95",
+      "price": "From $14.95",
       "cta": "Shop All Scent Beads",
       "ctaHref": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
     },

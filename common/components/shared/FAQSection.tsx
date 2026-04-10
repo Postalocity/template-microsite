@@ -7,7 +7,7 @@ import { DEFAULT_PRICING } from "@/utils/pricing";
 
 const defaultFaqs = [];
 
-const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: string }> }) => {
+const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: string }>; items?: Array<{ question: string; answer: string }> }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -22,9 +22,15 @@ const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: s
     return `$${basePrice.toFixed(2)}/${units} (1-page B&W, single-sided, envelope + postage)`;
   }, [pricing]);
 
-  // Handle both direct faqs array or wrapped { faq: { section, faqs } } format
+  // Handle both formats: { faqs: [{q, a}] } or { items: [{question, answer}] }
   const faqData = faqContent?.faqs ? faqContent : (faqContent as any)?.faq;
-  const faqs = faqData?.faqs ?? defaultFaqs;
+  // Support both 'items' and 'faqs' arrays
+  const rawFaqs = faqData?.items ?? faqData?.faqs ?? defaultFaqs;
+  // Normalize to {q, a} format
+  const faqs = rawFaqs.map((faq: any) => ({
+    q: faq.q || faq.question || '',
+    a: faq.a || faq.answer || ''
+  }));
   
   // Process FAQ answers to replace placeholders
   const processAnswer = (answer: string) => {

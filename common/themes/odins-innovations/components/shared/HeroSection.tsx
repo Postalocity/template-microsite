@@ -52,7 +52,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.5) 0%, hsl(0 0% 0% / 0.9) 100%)' 
+              background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.35) 0%, hsl(0 0% 0% / 0.65) 100%)' 
             }} 
           />
         </div>
@@ -72,7 +72,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.5) 0%, hsl(0 0% 0% / 0.9) 100%)' 
+              background: 'linear-gradient(to bottom, hsl(0 0% 0% / 0.35) 0%, hsl(0 0% 0% / 0.65) 100%)' 
             }} 
           />
         </div>
@@ -125,8 +125,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.25 }}
-              className="font-body text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl"
-              style={{ color: 'hsl(var(--hero-subtitle))' }}
+              className="font-body text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl text-white"
             >
               {processText(hero.subhead)}
             </motion.p>
