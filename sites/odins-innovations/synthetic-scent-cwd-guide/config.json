@@ -221,7 +221,7 @@
         ],
         [
           "Shelf Life & Storage",
-          "Requires refrigeration, spoilage risk",
+          "Refrigeration or Freezing Recommended",
           "Indefinite; no special requirements"
         ],
         [
@@ -276,8 +276,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-DAflar0S.js",
+    "js": "index-C20QtpUK.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-DAflar0S.js' | asset_url }}"
+    "jsUrl": "{{ 'index-C20QtpUK.js' | asset_url }}"
   }
 }
