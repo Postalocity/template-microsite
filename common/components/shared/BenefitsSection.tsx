@@ -86,9 +86,9 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                         </CardDescription>
                       )}
 {benefit.detail && (
-                      <CardDescription className="text-base mt-2 font-medium" style={{ color: 'hsl(var(--accent))' }}>
+                      <p className="text-base mt-2 font-medium text-[hsl(45,100%,50%)]">
                         {processText(benefit.detail)}
-                      </CardDescription>
+                      </p>
                     )}
                       {benefit.metrics && (
                         <div className="text-base font-semibold text-primary mt-4">
@@ -126,9 +126,8 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                       </CardDescription>
                     )}
                     {benefit.detail && (
-                      <CardDescription 
-                        className="text-base mt-2 font-medium"
-                        style={{ color: 'hsl(var(--accent))' }}
+                      <p 
+                        className="text-base mt-2 font-medium text-[hsl(45,100%,50%)]"
                         dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(benefit.detail)) }}
                       />
                     )}
