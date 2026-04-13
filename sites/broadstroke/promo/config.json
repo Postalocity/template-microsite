@@ -42,7 +42,7 @@
   "navigation": {
     "links": [
       {
-        "label": "View Product Options",
+        "label": "Browse Products",
         "href": "https://www.broadstrokepromos.com/",
         "variant": "primary"
       },
@@ -138,7 +138,7 @@
       },
       "ctas": [
         {
-          "text": "View Product Options",
+          "text": "Browse Products",
           "href": "https://www.broadstrokepromos.com/",
           "variant": "primary"
         },
@@ -198,7 +198,7 @@
         "title": "Why Wichita Businesses Choose Broadstroke<br />for Promotional Products",
         "description": "See the difference professional concierge service makes.",
         "cta": {
-          "text": "View Product Options",
+          "text": "Browse Products",
           "href": "https://www.broadstrokepromos.com/"
         }
       },
@@ -275,7 +275,7 @@
         "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on what items are available.",
         "finishingNote": "All promotional products include professional customization services—screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available.",
         "cta": {
-          "text": "View Product Options",
+          "text": "Browse Products",
           "href": "https://www.broadstrokepromos.com/"
         }
       },
@@ -351,7 +351,7 @@
         "title": "How It Works",
         "description": "Promo orders are facilitated from product selection, through artwork approval, to customer in-hand with a focus on quality products, affordable prices, and quick turnarounds to ensure your team can place orders with the confidence they'll arrive on time and as expected.",
         "cta": {
-          "text": "View Product Options",
+          "text": "Browse Products",
           "href": "https://www.broadstrokepromos.com/"
         }
       },
@@ -412,7 +412,7 @@
         "buttonText": "Get Free Estimate",
         "href": "mailto:promoinfo@broadstrokeinc.com",
         "secondaryButton": {
-          "text": "View Product Options",
+          "text": "Browse Products",
           "href": "https://www.broadstrokepromos.com/"
         }
       },
@@ -427,7 +427,7 @@
       "buttonText": "Get Free Estimate",
       "href": "mailto:promoinfo@broadstrokeinc.com",
       "secondaryButton": {
-        "text": "View Product Options",
+        "text": "Browse Products",
         "href": "https://www.broadstrokepromos.com/"
       }
     },
