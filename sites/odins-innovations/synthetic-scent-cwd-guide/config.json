@@ -196,13 +196,13 @@
         ],
         [
           "CWD/Prion Risk",
-          "Potential exposure within captive herds for 18+ months",
+          "CWD prions can be present for 16 months to 4 years before symptoms appear in the infected deer. USDA Testing procedures will not always detect their presence during the incubation period.",
           "Zero — no biological material"
         ],
         [
           "Regulatory Status",
           "Restricted or banned in multiple states",
-          "Legal in all 50 states"
+          "Legal in all 50 states and Canada"
         ],
         [
           "Batch Consistency",
@@ -276,8 +276,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-CD3gytlP.js",
+    "js": "index-BLFSRndv.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-CD3gytlP.js' | asset_url }}"
+    "jsUrl": "{{ 'index-BLFSRndv.js' | asset_url }}"
   }
 }
