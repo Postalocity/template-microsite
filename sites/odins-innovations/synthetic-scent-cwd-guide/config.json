@@ -226,8 +226,8 @@
         ],
         [
           "Environmental Impact",
-          "Potential non-biobased waste",
-          "USDA BioPreferred; fully biodegradable"
+          "Some come with single use plastic accessories.",
+          "No risk of introducing disease. Better Than You Found It™"
         ],
         [
           "Reapplication Frequency",
@@ -276,8 +276,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-C20QtpUK.js",
+    "js": "index-7tQH8ioZ.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-C20QtpUK.js' | asset_url }}"
+    "jsUrl": "{{ 'index-7tQH8ioZ.js' | asset_url }}"
   }
 }
