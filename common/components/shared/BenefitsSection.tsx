@@ -6,7 +6,6 @@ import { getGridLayoutClasses, getColumnSpanClass, getColumnClass } from "../../
 import { sanitizeHtml } from "../../utils/sanitize-html";
 import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { useFormattedPricing } from "@/utils/pricing";
-import { useBrand } from "@/contexts";
 
 interface BenefitsSectionProps {
   benefits: BenefitsContent;
@@ -16,10 +15,6 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const { short, full, withEnvelope } = useFormattedPricing();
-  const brand = useBrand();
-  
-  // Only show promo hall banner on the promo site
-  const isPromoSite = brand?.brand?.slug === 'promo';
   
   // Process text with pricing placeholders - handles undefined safely
   const processText = (text: string | undefined) => {
@@ -148,55 +143,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           })}
         </div>
 
-        {/* Promo Hall Visual Banner - After benefit cards (only for promo site) */}
-        {isPromoSite && benefits.benefits.length > 0 && benefits.benefits[0].icon && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="relative w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden mt-12 group cursor-pointer"
-          >
-            {/* Background Image - Zoomed and shifted right to crop left edge */}
-            <div 
-              className="absolute inset-0 bg-cover transition-transform duration-700 group-hover:scale-110"
-              style={{ 
-                backgroundImage: `url('/promo/images/promo-hall.png')`,
-                backgroundPosition: '75% center',
-                backgroundSize: '130%'
-              }}
-            />
-            
-            {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
-            
-            {/* Content */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                Visit Our Onsite Promo Showroom
-              </h3>
-              <p className="text-white/90 text-base md:text-lg max-w-xl mb-6">
-                See and touch products before ordering. Team members provide expert recommendations based on your preferences.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a
-                  href="https://www.broadstrokepromos.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all transform hover:scale-105"
-                >
-                  Browse Products
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </a>
-                <a
-                  href="mailto:promoinfo@broadstrokeinc.com?subject=Request a Promo Showroom Showing"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white border border-white/40 rounded-lg font-medium hover:bg-white/30 transition-all"
-                >
-                  Request a Showing
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        )}
+
       </div>
     </section>
   );
