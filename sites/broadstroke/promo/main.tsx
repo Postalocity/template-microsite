@@ -97,12 +97,6 @@ const brandConfig = {
   },
   "testimonials": [
     {
-      "quote": "Broadstroke has been instrumental in helping us create quality branded merchandise for our restaurants. Their team understands our brand and consistently delivers products that our customers love. The promo showroom made it easy to see and feel the quality before ordering.",
-      "attribution": "Danielle Hampton",
-      "title": "Director of Marketing",
-      "company": "Doc's Restaurant Group"
-    },
-    {
       "quote": "The team at Broadstroke made ordering promotional products for our company simple and stress-free. From sample approvals to the final delivery, everything was handled professionally. The branded apparel they created for our team looks fantastic!",
       "attribution": "Kilian Power",
       "title": "Owner",
