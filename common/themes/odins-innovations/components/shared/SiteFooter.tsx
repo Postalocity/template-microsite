@@ -68,9 +68,11 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   ];
 
   const companyLinks = content?.companyLinks || brandFooter?.companyLinks || [
-    { label: 'Become a Dealer', href: 'https://www.odinsinnovations.com/pages/become-a-dealer' },
-    { label: 'Testimonials', href: 'https://www.odinsinnovations.com/pages/testimonials' },
-    { label: 'News', href: 'https://www.odinsinnovations.com/blogs/in-the-field' },
+    { label: 'About Us', href: 'https://www.odinsinnovations.com/pages/about-us' },
+    { label: 'Press Releases', href: 'https://www.odinsinnovations.com/blogs/press-releases' },
+    { label: 'How to Use Videos', href: 'https://www.odinsinnovations.com/pages/how-to-use' },
+    { label: 'Field Test Reports', href: 'https://www.odinsinnovations.com/pages/field-test-reports' },
+    { label: 'Industry Publications', href: 'https://www.odinsinnovations.com/pages/industry-publications' },
   ];
 
   // Support links from brand config
