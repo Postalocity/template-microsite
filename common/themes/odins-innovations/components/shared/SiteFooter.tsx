@@ -153,7 +153,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             <ul className="space-y-2 text-sm">
               {companyLinks.map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
                     {link.label}
                   </a>
                 </li>
