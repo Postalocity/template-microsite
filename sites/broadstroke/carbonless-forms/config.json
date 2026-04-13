@@ -35,7 +35,7 @@
     ],
     "ogTitle": "Custom Carbonless Forms — Broadstroke, Inc.",
     "ogDescription": "Print. Mail. Promo. One Call.",
-    "ogImage": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=1200&h=630&fit=crop",
+    "ogImage": "/carbonless-forms/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/carbonless-forms"
   },
@@ -72,7 +72,7 @@
       },
       "subhead": "High-quality 2-, 3-, and 4-part NCR forms with advanced customization, finishing services, and seamless integration with mailing and fulfillment — backed by 45+ years of expertise.",
       "background": {
-        "image": "https://images.unsplash.com/photo-OQMZwNd3ThU?w=1920&h=1080&fit=crop",
+        "image": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1920&q=80",
         "overlay": true
       },
       "ctas": [
@@ -142,25 +142,25 @@
           "icon": "receipt",
           "title": "Invoices & Work Orders",
           "description": "Multi-part forms that keep your office, customer, and field teams aligned with clean, instant duplicates.",
-          "image": "https://images.unsplash.com/photo-iOjbCnBLLGQ?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
         },
         {
           "icon": "clipboard-list",
           "title": "Inspection & Service Forms",
           "description": "Durable forms for field service, inspections, and maintenance documentation that stand up to daily use.",
-          "image": "https://images.unsplash.com/photo-eXcF6L9pEug?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80"
         },
         {
           "icon": "package-check",
           "title": "Delivery & Shipping Forms",
           "description": "POD forms, bills of lading, and delivery receipts with integrated tracking fields and barcodes.",
-          "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
         },
         {
           "icon": "stethoscope",
           "title": "Medical & Healthcare Forms",
           "description": "HIPAA-compliant forms for patient intake, prescriptions, and medical documentation with proper handling.",
-          "image": "https://images.unsplash.com/photo-7dCggEDzr8w?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
         }
       ]
     },
