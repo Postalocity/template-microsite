@@ -8,6 +8,8 @@ interface TestimonialData {
   attribution: string;
   title?: string;
   company?: string;
+  image?: string;
+  imageAlt?: string;
 }
 
 const TestimonialsSection = () => {
@@ -69,6 +71,32 @@ const TestimonialsSection = () => {
                   )}
                 </div>
               </motion.div>
+
+              {/* Testimonial Image - Display if available */}
+              {testimonial.image && (
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : undefined}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="max-w-2xl mx-auto mb-12"
+                >
+                  <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
+                    {imageErrors[0] ? (
+                      <div className="w-full h-full flex items-center justify-center bg-muted">
+                        <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+                      </div>
+                    ) : (
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.imageAlt || "Customer testimonial image"}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                        onError={() => handleImageError(0)}
+                      />
+                    )}
+                  </div>
+                </motion.div>
+              )}
 
               {/* Product showcase - portrait display matching source image aspect ratio */}
               <motion.div
