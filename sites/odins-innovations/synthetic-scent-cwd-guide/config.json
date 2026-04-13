@@ -196,7 +196,7 @@
         ],
         [
           "CWD/Prion Risk",
-          "CWD prions can be present for 16 months to 4 years before symptoms appear in the infected deer. USDA Testing procedures will not always detect their presence during the incubation period.",
+          "CWD prions incubate 16 months to 4 years; USDA testing cannot reliably detect during this period.",
           "Zero — no biological material"
         ],
         [
@@ -276,8 +276,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-BLFSRndv.js",
+    "js": "index-DAflar0S.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-BLFSRndv.js' | asset_url }}"
+    "jsUrl": "{{ 'index-DAflar0S.js' | asset_url }}"
   }
 }
