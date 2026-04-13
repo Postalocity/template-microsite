@@ -132,7 +132,7 @@
       ],
       "scienceSection": {
         "title": "University Testing Confirms Performance",
-        "description": "Scent beads outside in the natural elements were tested at a University Chemical Laboratory. Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
+        "description": "Scent beads that had been left outside in the natural elements were tested at a University Chemical Laboratory. Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
         "highlight": "52% original scent concentration still releasing after 27 days"
       }
     },
@@ -276,8 +276,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-ByllF8Ud.js",
+    "js": "index-CD3gytlP.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-ByllF8Ud.js' | asset_url }}"
+    "jsUrl": "{{ 'index-CD3gytlP.js' | asset_url }}"
   }
 }
