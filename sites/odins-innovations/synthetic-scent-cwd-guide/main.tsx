@@ -111,7 +111,7 @@ function App() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">State Restrictions</h3>
-                      <p className="text-sm text-muted-foreground">Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived materials and is legal for use in any state including Canada.</p>
+                      <p className="text-sm text-muted-foreground">Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived materials and is legal for use in any state and Canada.</p>
                     </div>
                   </div>
                 </div>
