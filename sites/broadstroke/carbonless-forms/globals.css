@@ -1,0 +1,11 @@
+@import "../../../common/globals.css";
+
+/* Carbonless Forms - Brand-Specific Customizations */
+
+/* Primary is darker blue (200, 80%, 30%) */
+:root {
+  --primary: 200 80% 30%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 45 100% 50%;
+  --accent-foreground: 45 100% 20%;
+}
