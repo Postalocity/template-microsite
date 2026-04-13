@@ -237,31 +237,39 @@
       ]
     },
     "faq": {
-      "headline": "Frequently Asked Questions",
+      "headline": "Regulatory Compliance concerning CWD",
       "items": [
         {
-          "question": "What is CWD and why does it threaten natural deer urine products?",
-          "answer": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. It is always fatal in cervids — deer, elk, and moose — with no vaccine, treatment, or cure. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. Odin's Innovations manufactures CWD safe scents with zero animal-derived material — eliminating prion risk entirely."
+          "question": "Is synthetic deer scent legal in all 50 states?",
+          "answer": "Yes. Odin's synthetic scents are legal in all 50 states and Canada. Because our products contain zero animal-derived ingredients, they are not subject to natural urine importation or usage bans, and do not require ATA certification or RT-QuIC testing."
         },
         {
-          "question": "Will this be the Category 2 that I am looking for?",
-          "answer": "Odin's synthetic scent beads qualify as Category 2 compliant products in jurisdictions that categorize hunting attractants. Because they contain zero animal-derived material and hold USDA BioPreferred certification, they meet the strictest regulatory standards across all 50 states and Canada. Unlike natural urine products that face increasing restrictions due to CWD concerns, Odin's synthetic formulations provide a compliant solution regardless of local category classifications."
+          "question": "Which states ban natural deer urine?",
+          "answer": "As of 2026, at least 14 states restrict or ban natural cervid urine due to CWD concerns, up from 4 states in 2015. Regulations vary—some states ban possession, others ban importation, and some require certification. Check your state's wildlife agency for current rules."
         },
         {
-          "question": "Are synthetic scents actually effective?",
-          "answer": "Yes. Odin's synthetic formulations are engineered to precise molecular specifications and refined over 10+ years of field use. The 2021 acquisition of Hunter's Kloak provided a library of 21 proprietary scents now manufactured by a specialty fragrance laboratory. University laboratory testing confirmed 52% of original scent output still releasing after 27 days of continuous air exposure. The polymer releases scent molecule-by-molecule and pauses when submerged, resuming without dilution when dry."
+          "question": "Is deer urine legal to use in my state for hunting?",
+          "answer": "There is no single federal standard—regulations are a state-by-state patchwork. Check your state's Department of Natural Resources for current rules. You may find outright bans, ATA/RHSA certification requirements, RT-QuIC testing mandates, or county-level restrictions in CWD management zones. The simplest path to guaranteed compliance: use synthetic scents, which are legal everywhere."
         },
         {
-          "question": "Are Odin's products biodegradable and safe for the environment?",
-          "answer": "Yes. Odin's synthetic scent beads use a plant-based polymer that biodegrades naturally — comparable to organic material like a banana peel — with no plastic residue. Products hold USDA BioPreferred certification through independent laboratory verification of biobased content. No unhealthy chemicals are used (DEET-free citronella option available). Rain, heavy dew, and snow do not degrade scent output."
+          "question": "What is CWD and why does it matter for deer scent products?",
+          "answer": "Chronic Wasting Disease is a fatal neurological disease affecting deer, elk, and moose. CWD prions can be transmitted through bodily fluids, including urine. As CWD continues to spread, state wildlife agencies are increasingly restricting or banning natural cervid urine for hunting. Synthetic scents like Odin's eliminate this transmission pathway."
         },
         {
-          "question": "How long does Odin's synthetic scent last?",
-          "answer": "Scent beads provide continuous release for 30+ days. University testing showed 52% original concentration still releasing after 27 days. The polymer is unaffected by rain or snow — moisture simply pauses release without diluting the remaining scent. This reduces reapplication visits and site disturbance."
+          "question": "Can deer urine spread chronic wasting disease (CWD)?",
+          "answer": "Research on this question is ongoing, with different studies producing different conclusions. Odin's uses 100% synthetic formulations specifically to eliminate any possibility of CWD transmission through our products. If you'd like to learn more, contact your state's Wildlife Disease Ecologist."
         },
         {
-          "question": "What scent options does Odin offer?",
-          "answer": "Odin's synthetic platform enables multiple profiles including doe estrus, dominant buck, scrape blend, food scents (acorn, persimmon, apple, peanut butter, cherry), cover scents, earth, and species-specific options for hogs and bears. This variety would be impossible with natural urine which is limited to what can be collected from captive herds."
+          "question": "Do I need ATA/RHSA certification to use synthetic deer scent?",
+          "answer": "No. These are testing protocols established by the industry to mitigate the risks from the spread of CWD. It only applies to products made from natural cervid urine collected from captive herds. Because synthetic scents contain no animal-derived ingredients, they do not pose any risk so certification is not required."
+        },
+        {
+          "question": "Can CWD prions be present but not detected?",
+          "answer": "Yes. Most CWD research suggests incubation periods ranging from 16 months to four years, with an average of approximately two years. Infected animals can appear completely healthy during this entire period while actively shedding infectious prions through saliva, urine, and feces."
+        },
+        {
+          "question": "Is there a risk from urine with undetected CWD prions?",
+          "answer": "Yes. Natural deer urine poured on the ground (any environmental surface) would create a contamination source that could remain infectious for years to decades, with prions binding to soil and plant material where they continue to pose transmission risks to grazing deer. Prions bind so tightly to soil particles that contaminated ground becomes a persistent source of infection."
         }
       ]
     },
@@ -276,8 +284,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-7tQH8ioZ.js",
+    "js": "index-DVVNHak0.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-7tQH8ioZ.js' | asset_url }}"
+    "jsUrl": "{{ 'index-DVVNHak0.js' | asset_url }}"
   }
 }
