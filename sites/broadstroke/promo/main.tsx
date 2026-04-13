@@ -18,7 +18,7 @@ import config from './config.json';
 const brandConfig = {
   "id": "broadstroke",
   "name": "Broadstroke",
-  "slug": "broadstroke",
+  "slug": "promo",
   "domain": "broadstrokeinc.com",
   "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
   "googleAnalyticsId": "G-9HXQD6LYZ4",
