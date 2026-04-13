@@ -16,21 +16,15 @@ const TestimonialsSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const ctx = useBrand();
-  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
   
   // Use brand testimonials if available
   const brandTestimonials = ctx.brand.testimonials as TestimonialData[] | undefined;
-  const testimonial = brandTestimonials?.[0];
-  const hasTestimonial = !!testimonial;
+  const hasTestimonials = brandTestimonials && brandTestimonials.length > 0;
 
-  const handleImageError = (index: number) => {
-    setImageErrors(prev => ({ ...prev, [index]: true }));
+  const handleImageError = (key: string) => {
+    setImageErrors(prev => ({ ...prev, [key]: true }));
   };
-
-  // Build attribution line safely - no "undefined" rendering
-  const attributionLine = [testimonial?.title, testimonial?.company]
-    .filter(Boolean)
-    .join(", ");
 
   return (
     <section className="section-padding bg-section-alt" ref={ref} aria-labelledby="testimonials-heading">
@@ -44,105 +38,76 @@ const TestimonialsSection = () => {
             transition={{ duration: 0.4 }}
             className="text-xl sm:text-2xl font-bold uppercase tracking-wider text-foreground mb-8 text-center"
           >
-            {hasTestimonial ? "Trusted by Our Clients" : "What Our Clients Say"}
+            {hasTestimonials ? "Trusted by Our Clients" : "What Our Clients Say"}
           </motion.h2>
 
-          {hasTestimonial ? (
-            <>
-              {/* Testimonial - high emphasis cameo */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : undefined}
-                transition={{ duration: 0.6 }}
-                className="text-center mb-12"
-              >
-                <Quote className="w-10 h-10 text-foreground mx-auto mb-3" aria-hidden="true" />
-                <blockquote className="text-xl sm:text-2xl font-medium text-foreground leading-relaxed max-w-3xl mx-auto mb-6 italic">
-                  "{testimonial.quote}"
-                </blockquote>
-                <div className="text-center">
-                  <p className="font-bold text-lg text-foreground">
-                    {testimonial.attribution}
-                  </p>
-                  {attributionLine && (
-                    <p className="text-base text-muted-foreground">
-                      {attributionLine}
-                    </p>
-                  )}
-                </div>
-              </motion.div>
+          {hasTestimonials ? (
+            <div className="space-y-16">
+              {brandTestimonials.map((testimonial, index) => {
+                // Build attribution line safely - no "undefined" rendering
+                const attributionLine = [testimonial.title, testimonial.company]
+                  .filter(Boolean)
+                  .join(", ");
+                
+                const imageKey = `testimonial-${index}`;
+                const hasImageError = imageErrors[imageKey];
+                const hasImage = testimonial.image && !hasImageError;
 
-              {/* Testimonial Image - Display if available */}
-              {testimonial.image && (
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={inView ? { opacity: 1, y: 0 } : undefined}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="max-w-2xl mx-auto mb-12"
-                >
-                  <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
-                    {imageErrors[0] ? (
-                      <div className="w-full h-full flex items-center justify-center bg-muted">
-                        <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : undefined}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    className="text-center"
+                  >
+                    {/* Testimonial Quote */}
+                    <div className="mb-8">
+                      <Quote className="w-10 h-10 text-foreground mx-auto mb-3" aria-hidden="true" />
+                      <blockquote className="text-xl sm:text-2xl font-medium text-foreground leading-relaxed max-w-3xl mx-auto mb-6 italic">
+                        "{testimonial.quote}"
+                      </blockquote>
+                      <div className="text-center">
+                        <p className="font-bold text-lg text-foreground">
+                          {testimonial.attribution}
+                        </p>
+                        {attributionLine && (
+                          <p className="text-base text-muted-foreground">
+                            {attributionLine}
+                          </p>
+                        )}
                       </div>
-                    ) : (
-                      <img
-                        src={testimonial.image}
-                        alt={testimonial.imageAlt || "Customer testimonial image"}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                        onError={() => handleImageError(0)}
-                      />
+                    </div>
+
+                    {/* Testimonial Image - Display if available */}
+                    {testimonial.image && (
+                      <div className="max-w-2xl mx-auto">
+                        <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
+                          {hasImageError ? (
+                            <div className="w-full h-full flex items-center justify-center bg-muted">
+                              <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+                            </div>
+                          ) : (
+                            <img
+                              src={testimonial.image}
+                              alt={testimonial.imageAlt || `Testimonial from ${testimonial.attribution}`}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                              loading="lazy"
+                              onError={() => handleImageError(imageKey)}
+                            />
+                          )}
+                        </div>
+                      </div>
                     )}
-                  </div>
-                </motion.div>
-              )}
 
-              {/* Product showcase - portrait display matching source image aspect ratio */}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : undefined}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto mb-8"
-              >
-                {/* Image 1 */}
-                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
-                  {imageErrors[0] ? (
-                    <div className="w-full h-full flex items-center justify-center bg-muted">
-                      <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
-                    </div>
-                  ) : (
-                    <img
-                      src="/commercial-printing/images/talent-on-parade-booklet-4.jpg"
-                      alt="Talent On Parade Des Moines booklet - printed by Broadstroke"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      style={{ objectPosition: 'center center', transform: 'scale(1.3)' }}
-                      loading="lazy"
-                      onError={() => handleImageError(0)}
-                    />
-                  )}
-                </div>
-                {/* Image 2 */}
-                <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
-                  {imageErrors[1] ? (
-                    <div className="w-full h-full flex items-center justify-center bg-muted">
-                      <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
-                    </div>
-                  ) : (
-                    <img
-                      src="/commercial-printing/images/talent-on-parade-booklet-7.jpg"
-                      alt="Talent On Parade Des Moines booklet detail - printed by Broadstroke"
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      style={{ objectPosition: 'center center', transform: 'scale(1.3)' }}
-                      loading="lazy"
-                      onError={() => handleImageError(1)}
-                    />
-                  )}
-                </div>
-              </motion.div>
-
-
-            </>
+                    {/* Divider between testimonials */}
+                    {index < brandTestimonials.length - 1 && (
+                      <div className="mt-16 pt-16 border-t border-border/30" />
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
           ) : (
             /* Fallback when no testimonial data available */
             <div className="text-center py-16">
