@@ -270,6 +270,14 @@
         {
           "question": "Is there a risk from urine with undetected CWD prions?",
           "answer": "Yes. Natural deer urine poured on the ground (any environmental surface) would create a contamination source that could remain infectious for years to decades, with prions binding to soil and plant material where they continue to pose transmission risks to grazing deer. Prions bind so tightly to soil particles that contaminated ground becomes a persistent source of infection."
+        },
+        {
+          "question": "Why not use natural urine scents?",
+          "answer": "Natural urine breaks down rapidly into ammonia and other off odors that can actually alarm deer. Natural scents vary from batch to batch, requires refrigeration, and has a short effective life. Synthetic scents avoid spoilage, maintain a consistent aroma profile, last 30+ days, and carry zero CWD risk."
+        },
+        {
+          "question": "What is synthetic doe in estrus scent?",
+          "answer": "Synthetic doe estrus scent is a hunting attractant that replicates the pheromone signature a whitetail doe releases during her estrus (breeding) cycle. It signals to mature bucks that a receptive doe is nearby, drawing them to your hunting location. Odin's uses 100% synthetic formulations—no natural deer urine—ensuring consistent potency and zero risk of CWD transmission."
         }
       ]
     },
@@ -284,8 +292,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-BV_FD1U9.js",
+    "js": "index-Byff9PwX.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-BV_FD1U9.js' | asset_url }}"
+    "jsUrl": "{{ 'index-Byff9PwX.js' | asset_url }}"
   }
 }
