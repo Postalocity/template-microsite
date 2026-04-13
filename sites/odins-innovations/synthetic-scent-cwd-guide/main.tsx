@@ -26,7 +26,7 @@ const ikbConfig = {
       'synthetic-scent-cwd-guide': 'HUNT2026',
     },
     approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
-    blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
+    blocklistedContent: ['video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
   },
 };
 
@@ -249,6 +249,9 @@ function App() {
             </div>
           </section>
         )}
+        
+        {/* Testimonials */}
+        <TestimonialsSection />
         
         {/* FAQ */}
         {content['faq'] && (
