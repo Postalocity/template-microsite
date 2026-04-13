@@ -88,13 +88,18 @@ const TestimonialsSection = () => {
                               <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
                             </div>
                           ) : (
-                            <img
-                              src={testimonial.image}
-                              alt={testimonial.imageAlt || `Testimonial from ${testimonial.attribution}`}
-                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                              loading="lazy"
-                              onError={() => handleImageError(imageKey)}
-                            />
+                            <>
+                              {/* Image */}
+                              <img
+                                src={testimonial.image}
+                                alt={testimonial.imageAlt || `Testimonial from ${testimonial.attribution}`}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                loading="lazy"
+                                onError={() => handleImageError(imageKey)}
+                              />
+                              {/* Dark Vellum Overlay */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 pointer-events-none" />
+                            </>
                           )}
                         </div>
                       </div>
