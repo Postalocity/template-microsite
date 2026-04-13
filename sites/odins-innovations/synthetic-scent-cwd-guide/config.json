@@ -102,7 +102,7 @@
     },
     "why-odins": {
       "headline": "Why Odin's Synthetic Deer Scent Outperforms Natural Urine",
-      "body": "State restrictions limit natural urine materials. Odin's is legal for use in every state and in Canada. Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance."
+      "body": "Odin's is legal for use in every state and in Canada. Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified."
     },
     "how-it-works": {
       "headline": "The Science Behind Scent Bead Technology",
@@ -276,8 +276,8 @@
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-hCUkzb0j.js",
+    "js": "index-ByllF8Ud.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-hCUkzb0j.js' | asset_url }}"
+    "jsUrl": "{{ 'index-ByllF8Ud.js' | asset_url }}"
   }
 }

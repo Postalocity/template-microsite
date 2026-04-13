@@ -134,8 +134,8 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['why-odins'].headline}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">{content['why-odins'].body}</p>
               <div className="text-center">
-                <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
-                  Shop Synthetic Scent Beads
+                <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                  Shop Rut Scents
                 </a>
               </div>
             </div>
