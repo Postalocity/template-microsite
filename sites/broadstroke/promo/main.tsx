@@ -89,6 +89,16 @@ function App() {
         <BenefitsSection benefits={content.benefits} />
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
+        <div className="text-center pb-12 -mt-8">
+          <a
+            href="https://www.broadstrokepromos.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all transform hover:scale-105"
+          >
+            Browse Products
+          </a>
+        </div>
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         <TestimonialsSection />

@@ -158,20 +158,20 @@
         {
           "icon": "shirt",
           "title": "Sample Orders",
-          "description": "Sample orders available to ensure quality standards and color matches prior to full order placement.",
-          "detail": "Avoid potential issues on large orders by viewing physical samples first."
+          "description": "View physical samples before committing to large orders.",
+          "detail": "Sample orders available to ensure quality standards and color matches prior to full order placement."
         },
         {
           "icon": "users",
           "title": "Product Expertise",
-          "description": "Team members have years of industry experience and strong vendor relationships.",
-          "detail": "Avoid inferior products and supply chain issues."
+          "description": "Navigate our catalog with expert guidance from experienced team members.",
+          "detail": "Team members have years of industry experience and strong vendor relationships."
         },
         {
           "icon": "sparkles",
           "title": "Finishing Touches",
-          "description": "Elevate your welcome kits, gifts, and giveaways with artfully arranged baskets and wrapping. Personalization on individual items.",
-          "detail": "Present a polished appearance for positive first impressions."
+          "description": "Premium packaging and presentation for gifts and welcome kits.",
+          "detail": "Elevate your welcome kits, gifts, and giveaways with artfully arranged baskets and wrapping. Personalization on individual items."
         },
         {
           "icon": "palette",
@@ -216,7 +216,7 @@
         {
           "icon": "edit",
           "feature": "Design Services",
-          "ourSolution": "Full design services included",
+          "ourSolution": "Free logo placement and adjustments. Full design services available for artwork needs.",
           "traditionalApproach": "Basic logo placement only"
         },
         {
@@ -272,7 +272,7 @@
     "services": {
       "section": {
         "title": "Promotional Products & Apparel —<br />in Wichita, KS and Nationwide",
-        "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on what items are available.",
+        "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on the newest products and latest trends.",
         "finishingNote": "All promotional products include professional customization services—screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available.",
         "cta": {
           "text": "Browse Products",
@@ -283,7 +283,7 @@
         {
           "icon": "shirt",
           "title": "Apparel & Uniforms",
-          "description": "T-shirts, polos, jackets, activewear, hats, workwear, bags, and accessories. Custom customization with screen printing or embroidery. Screen-printed apparel has a minimum of 24 pieces; embroidery has no minimum.",
+          "description": "T-shirts, polos, jackets, activewear, hats, workwear, bags, and accessories. Customization with screen printing or embroidery. Screen-printed apparel has a minimum of 24 pieces; embroidery has no minimum.",
           "image": "/promo/images/categories/apparel.jpg",
           "href": "https://www.broadstrokepromos.com/t-shirts.html"
         },
@@ -332,9 +332,9 @@
         {
           "icon": "home",
           "title": "Home & Auto",
-          "description": "Promotional items for the home and vehicle including keychains, tools, emergency kits, and lifestyle accessories.",
+          "description": "Blankets, candles, coasters, cutting boards & charcuterie boards, playing cards & games, cleaning supplies, tools, emergency kits, and sunshades. Keep your brand top of mind at home and on the road.",
           "image": "/promo/images/categories/headwear.jpg",
-          "href": "https://www.broadstrokepromos.com/accessories.html"
+          "href": "https://www.broadstrokepromos.com/homeauto.html"
         },
         {
           "icon": "gift",

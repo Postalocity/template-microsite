@@ -85,11 +85,11 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                           {processText(benefit.description)}
                         </CardDescription>
                       )}
-                      {benefit.detail && (
-                        <CardDescription className="text-base mt-2 font-medium text-primary/80">
-                          {processText(benefit.detail)}
-                        </CardDescription>
-                      )}
+{benefit.detail && (
+                      <CardDescription className="text-base mt-2 font-medium" style={{ color: 'hsl(var(--accent))' }}>
+                        {processText(benefit.detail)}
+                      </CardDescription>
+                    )}
                       {benefit.metrics && (
                         <div className="text-base font-semibold text-primary mt-4">
                           {processText(benefit.metrics)}
@@ -127,7 +127,8 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                     )}
                     {benefit.detail && (
                       <CardDescription 
-                        className="text-base mt-2"
+                        className="text-base mt-2 font-medium"
+                        style={{ color: 'hsl(var(--accent))' }}
                         dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(benefit.detail)) }}
                       />
                     )}
@@ -162,7 +163,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
             />
             
             {/* Dark Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
             
             {/* Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
@@ -172,15 +173,23 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
               <p className="text-white/90 text-base md:text-lg max-w-xl mb-6">
                 See and touch products before ordering. Team members provide expert recommendations based on your preferences.
               </p>
-              <a
-                href="https://www.broadstrokepromos.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all transform hover:scale-105"
-              >
-                Browse Products
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <a
+                  href="https://www.broadstrokepromos.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all transform hover:scale-105"
+                >
+                  Browse Products
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a
+                  href="mailto:promoinfo@broadstrokeinc.com?subject=Request a Promo Showroom Showing"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-white/20 text-white border border-white/40 rounded-lg font-medium hover:bg-white/30 transition-all"
+                >
+                  Request a Showing
+                </a>
+              </div>
             </div>
           </motion.div>
         )}
