@@ -97,12 +97,6 @@ const brandConfig = {
   },
   "testimonials": [
     {
-      "quote": "The team at Broadstroke made ordering promotional products for our company simple and stress-free. From sample approvals to the final delivery, everything was handled professionally. The branded apparel they created for our team looks fantastic!",
-      "attribution": "Kilian Power",
-      "title": "Owner",
-      "company": "Kilian Power"
-    },
-    {
       "quote": "The promo team at Broadstroke is great to work with. We've done apparel orders with them for years that have our logo on them and knew they also offered full design services, so they were the first place we turned to when we needed custom t-shirt artwork for an International Lineman Rodeo we had a team competing in. We not only got the service and shirt quality we've come to expect from Broadstroke, but they created a cool design for our shirts that our team was excited to wear and swap with other participants at the Rodeo.",
       "attribution": "Lineman Rodeo Team",
       "title": "",
