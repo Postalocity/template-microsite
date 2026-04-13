@@ -72,7 +72,7 @@
       },
       "subhead": "High-quality 2-, 3-, and 4-part NCR forms with advanced customization, finishing services, and seamless integration with mailing and fulfillment — backed by 45+ years of expertise.",
       "background": {
-        "image": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=1920&h=1080&fit=crop",
+        "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&h=1080&fit=crop",
         "overlay": true
       },
       "ctas": [
@@ -142,25 +142,25 @@
           "icon": "receipt",
           "title": "Invoices & Work Orders",
           "description": "Multi-part forms that keep your office, customer, and field teams aligned with clean, instant duplicates.",
-          "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1554224154-26032ffc0d89?w=800&h=600&fit=crop"
         },
         {
           "icon": "clipboard-list",
           "title": "Inspection & Service Forms",
           "description": "Durable forms for field service, inspections, and maintenance documentation that stand up to daily use.",
-          "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&h=600&fit=crop"
         },
         {
           "icon": "package-check",
           "title": "Delivery & Shipping Forms",
           "description": "POD forms, bills of lading, and delivery receipts with integrated tracking fields and barcodes.",
-          "image": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?w=800&h=600&fit=crop"
         },
         {
           "icon": "stethoscope",
           "title": "Medical & Healthcare Forms",
           "description": "HIPAA-compliant forms for patient intake, prescriptions, and medical documentation with proper handling.",
-          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&h=600&fit=crop"
         }
       ]
     },
