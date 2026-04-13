@@ -66,8 +66,8 @@
       }
     ],
     "cta": {
-      "text": "Shop Synthetic Scent Beads",
-      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      "text": "Synthetic Scent Beads",
+      "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
     }
   },
   "content": {
@@ -84,8 +84,8 @@
       },
       "ctas": [
         {
-          "text": "Shop Now — Starting at $14.95",
-          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
+          "text": "Now — Starting at $14.95",
+          "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026",
           "variant": "primary"
         },
         {
@@ -277,15 +277,15 @@
       "finalCTA": {
         "headline": "Ready for consistent, compliant results?",
         "buttonText": "Scent Beads",
-        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+        "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
     }
   },
   "shopifyAssets": {
     "css": "index-_Z6FowEC.css",
-    "js": "index-D7vQU3gB.js",
+    "js": "index-BV_FD1U9.js",
     "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-D7vQU3gB.js' | asset_url }}"
+    "jsUrl": "{{ 'index-BV_FD1U9.js' | asset_url }}"
   }
 }

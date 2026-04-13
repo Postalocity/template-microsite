@@ -119,8 +119,8 @@ function App() {
               
               {/* CTA */}
               <div className="text-center">
-                <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
-                  Shop CWD-Safe Synthetic Scents
+                <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                  CWD-Safe Synthetic Scents
                 </a>
               </div>
             </div>
@@ -242,7 +242,7 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
               <div className="text-center mt-8">
-                <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
                   See Why Hunters Choose Synthetic
                 </a>
               </div>
@@ -255,8 +255,8 @@ function App() {
           <section id="faq" className="bg-muted/30">
             <FAQSection faq={{ ...content['faq'], showContactSection: false }} />
             <div className="text-center pb-8">
-              <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
-                Shop Synthetic Scent Beads
+              <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                Synthetic Scent Beads
               </a>
             </div>
           </section>
