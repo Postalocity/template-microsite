@@ -266,7 +266,7 @@ const App = () => {
   return (
     <IKBProvider config={ikbConfig}>
       <BrandProvider brand={brandConfig} contact={contactConfig} social={socialConfig}>
-        <SiteNavigation cta={navCta} />
+        <SiteNavigation config={config} cta={navCta} />
         <HeroSection hero={content.hero} promoCode={promoCode} />
         <ServicesSection services={content.services} />
         <BenefitsSection benefits={content.benefits} />
