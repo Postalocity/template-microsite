@@ -6,6 +6,7 @@ import { getGridLayoutClasses, getColumnSpanClass, getColumnClass } from "../../
 import { sanitizeHtml } from "../../utils/sanitize-html";
 import { Card, CardHeader, CardTitle, CardDescription } from "../ui/card";
 import { useFormattedPricing } from "@/utils/pricing";
+import { useBrand } from "@/contexts";
 
 interface BenefitsSectionProps {
   benefits: BenefitsContent;
@@ -15,6 +16,10 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   const { short, full, withEnvelope } = useFormattedPricing();
+  const brand = useBrand();
+  
+  // Only show promo hall banner on the promo site
+  const isPromoSite = brand?.brand?.slug === 'promo';
   
   // Process text with pricing placeholders - handles undefined safely
   const processText = (text: string | undefined) => {
@@ -143,8 +148,8 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           })}
         </div>
 
-        {/* Promo Hall Visual Banner - After benefit cards (only for Broadstroke) */}
-        {benefits.benefits.length > 0 && benefits.benefits[0].icon && (
+        {/* Promo Hall Visual Banner - After benefit cards (only for promo site) */}
+        {isPromoSite && benefits.benefits.length > 0 && benefits.benefits[0].icon && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
