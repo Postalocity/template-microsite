@@ -25,7 +25,7 @@
     "keywords": ["hunting mosquito repellent", "citronella hunting", "deer hunting mosquito repellent", "long lasting mosquito repellent outdoor", "citronella for hunting blinds", "mosquito barrier hunting"],
     "ogTitle": "Citronella Mosquito Barrier for Hunting",
     "ogDescription": "Synthetic oil-based formula for consistent protection around stands and blinds. DEET-free, game-safe.",
-    "ogImage": "/hunting-mosquito-repellent/images/og-image.png",
+    "ogImage": "/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/hunting-mosquito-repellent"
   },
@@ -48,7 +48,7 @@
       },
       "subhead": "Synthetic, oil-based formula that creates a protective perimeter barrier on foliage. DEET-free and game-safe.",
       "background": {
-        "image": "/hunting-mosquito-repellent/images/hero.jpg",
+        "image": "/images/hero.jpg",
         "alt": "Hunting mosquito repellent in the field",
         "overlay": true
       },
