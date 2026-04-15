@@ -65,29 +65,56 @@ const defaultDifferentials = [
   },
 ];
 
-// Map icon string names to Lucide components
+// Map icon string names to Lucide components - CONSISTENT MAPPING
 const iconMap: Record<string, React.FC> = {
-  shield: Shield,
-  flag: Flag,
-  ribbon: Award,
-  stopwatch: Clock,
-  leaf: Leaf,
-  cloud: Cloud,
-  "check-circle": CheckCircle,
+  // Duration/Long-lasting → Clock
   clock: Clock,
-  water: Droplets,
-  "test-tube": TestTube,
-  recycle: Recycle,
-  "map-pin": MapPin,
-  star: Star,
-  calendar: Calendar,
-  temperature: Thermometer,
-  deer: TreeDeciduous,
-  bug: Bug,
+  stopwatch: Clock,
+  timer: Clock,
+  hour: Clock,
+  longlasting: Clock,
+  duration: Clock,
+  
+  // Rain/Weather/Water → Droplets
   droplet: Droplets,
-  tree: TreeDeciduous,
-  eye: Eye,
+  water: Droplets,
+  rain: Droplets,
+  weather: Droplets,
+  wet: Droplets,
+  
+  // Protection/EPA → ShieldCheck
+  shield: ShieldCheck,
   "shield-check": ShieldCheck,
+  epa: ShieldCheck,
+  protection: ShieldCheck,
+  registered: ShieldCheck,
+  
+  // USA/Legal → Flag
+  flag: Flag,
+  usa: Flag,
+  legal: Flag,
+  
+  // Natural/Eco → Leaf
+  leaf: Leaf,
+  natural: Leaf,
+  biodegradable: Leaf,
+  eco: Leaf,
+  
+  // Verified → CheckCircle
+  "check-circle": CheckCircle,
+  verified: CheckCircle,
+  complete: CheckCircle,
+  check: CheckCircle,
+  
+  // Sensing/Detection → Eye
+  eye: Eye,
+  sensing: Eye,
+  detection: Eye,
+  radar: Eye,
+  
+  // Temperature → Thermometer
+  temperature: Thermometer,
+  heat: Thermometer,
 };
 
 const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
