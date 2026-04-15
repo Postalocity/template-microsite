@@ -1,0 +1,40 @@
+{
+  "id": "odins-innovations",
+  "name": "Odin's Innovations",
+  "slug": "odins-innovations",
+  "domain": "odinsinnovations.com",
+  "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+  "googleAnalyticsId": "G-XXXXXXXXXX",
+  "urls": {
+    "app": "https://www.odinsinnovations.com",
+    "website": "https://www.odinsinnovations.com",
+    "blog": "https://www.odinsinnovations.com/blog",
+    "shop": "https://www.odinsinnovations.com/collections",
+    "contact": "https://www.odinsinnovations.com/pages/contact-us"
+  },
+  "colors": {
+    "primary": { "h": 30, "s": 80, "l": 35 },
+    "accent": { "h": 145, "s": 45, "l": 38 }
+  },
+  "assets": {
+    "logo": "/assets/odins-innovations/logo.png",
+    "favicon": "/assets/odins-innovations/favicon.ico",
+    "ogImage": "/assets/odins-innovations/og-image.png",
+    "hero": {
+      "default": "/assets/odins-innovations/hero.jpg",
+      "variants": [
+        "/assets/odins-innovations/hero1.jpg",
+        "/assets/odins-innovations/hero2.jpg",
+        "/assets/odins-innovations/odins-innovations-hero.jpg"
+      ],
+      "background": "/assets/odins-innovations/hero-bg.jpg"
+    }
+  },
+  "social": {
+    "website": "https://www.odinsinnovations.com"
+  },
+  "contact": {
+    "phone": "316-393-0440",
+    "email": "paul@odinsinnovations.com"
+  }
+}

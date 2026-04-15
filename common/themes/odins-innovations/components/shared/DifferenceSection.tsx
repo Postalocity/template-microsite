@@ -71,8 +71,106 @@ const OdinsIconFlag = () => (
   </svg>
 );
 
-// Map icon names to components
+// Additional Standard Icons
+
+const OdinsIconClock = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="50" cy="50" r="40" />
+    <path d="M50 25v25l15 15" />
+  </svg>
+);
+
+const OdinsIconWater = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 85c20-25 40-40 40-60 0-15-10-25-25-25s-25 10-25 25c0 20 10 40 30 60z" />
+    <path d="M50 85V45" />
+  </svg>
+);
+
+const OdinsIconTestTube = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M35 15h30M50 15v40L30 85h40L50 55V15" />
+    <path d="M40 50h20M38 60h24M35 70h30" />
+  </svg>
+);
+
+const OdinsIconRecycle = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M30 70L15 85l15-5 5 15 30-35-15-5-5-20-20 20z" />
+    <path d="M50 25l-5 20 20 20 20-25-15-15z" />
+    <path d="M55 45l20-20-5-5-20 20z" />
+  </svg>
+);
+
+const OdinsIconMapPin = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 85c-20 0-35-15-35-35 0-25 35-50 35-50s35 25 35 50c0 20-15 35-35 35z" />
+    <circle cx="50" cy="50" r="12" />
+  </svg>
+);
+
+const OdinsIconStar = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 15l10 30h35l-25 20 10 35-30-20-30 20 10-35-25-20h35z" />
+  </svg>
+);
+
+const OdinsIconCalendar = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <rect x="15" y="20" width="70" height="70" rx="5" />
+    <path d="M15 40h70M35 10v15M65 10v15" />
+  </svg>
+);
+
+const OdinsIconTemperature = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 85V35" />
+    <circle cx="50" cy="50" r="30" />
+    <circle cx="50" cy="50" r="8" />
+  </svg>
+);
+
+const OdinsIconDeer = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M30 60c-5-10-5-20 0-25M70 60c5-10 5-20 0-25" />
+    <path d="M50 35c-15 0-25 10-25 25 0 15 10 25 25 35 15-10 25-20 25-35 0-15-10-25-25-25z" />
+    <path d="M35 30l-5-10M65 30l5-10" />
+  </svg>
+);
+
+const OdinsIconBug = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <ellipse cx="50" cy="50" rx="35" ry="25" />
+    <path d="M15 50c0-20 15-30 35-30M85 50c0-20-15-30-35-30" />
+    <circle cx="30" cy="35" r="5" /><circle cx="70" cy="35" r="5" />
+    <path d="M50 75v15M35 85l15-10M65 85l-15-10" />
+  </svg>
+);
+
+const OdinsIconDroplet = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 85c-25-30-50-45-50-60 0-15 15-25 50-25s50 10 50 25c0 15-25 30-50 60z" />
+  </svg>
+);
+
+const OdinsIconTree = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 15L20 55h60L50 15z" />
+    <path d="M50 55v45M50 85l-20 10M50 85l20 10" />
+  </svg>
+);
+
+const OdinsIconEye = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <ellipse cx="50" cy="50" rx="40" ry="25" />
+    <circle cx="50" cy="50" r="18" />
+    <circle cx="50" cy="50" r="8" />
+  </svg>
+);
+
+// Map icon names to components - STANDARD ICONS FOR ALL ODIN'S SITES
 const iconMap: Record<string, React.FC> = {
+  // Core icons
   shield: OdinsIconShield,
   flag: OdinsIconFlag,
   ribbon: OdinsIconRibbon,
@@ -80,6 +178,20 @@ const iconMap: Record<string, React.FC> = {
   leaf: OdinsIconLeaf,
   "check-circle": OdinsIconCheck,
   cloud: OdinsIconCloud,
+  // Additional standard icons
+  clock: OdinsIconClock,
+  water: OdinsIconWater,
+  "test-tube": OdinsIconTestTube,
+  recycle: OdinsIconRecycle,
+  "map-pin": OdinsIconMapPin,
+  star: OdinsIconStar,
+  calendar: OdinsIconCalendar,
+  temperature: OdinsIconTemperature,
+  deer: OdinsIconDeer,
+  bug: OdinsIconBug,
+  droplet: OdinsIconDroplet,
+  tree: OdinsIconTree,
+  eye: OdinsIconEye,
 };
 
 // Helper to check if value is an image URL
