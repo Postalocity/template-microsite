@@ -152,7 +152,7 @@ function App() {
                   description: 'The milder scent profile avoids the strong chemical odors DEET produces — odors deer can detect at distance.'
                 },
                 {
-                  icon: 'stopwatch',
+                  icon: 'clock',
                   title: 'Long-Lasting Barrier',
                   description: 'With potential duration up to 720 hours, it dramatically reduces reapplication compared to traditional options that last ~20 minutes.'
                 },
@@ -177,7 +177,7 @@ function App() {
               },
               differences: [
                 {
-                  icon: 'water',
+                  icon: 'cloud',
                   title: 'Rainproof oil-based formula',
                   description: 'Stays effective after moisture'
                 },
@@ -187,7 +187,7 @@ function App() {
                   description: 'Up to 150 feet and skin chemistry cues'
                 },
                 {
-                  icon: 'stopwatch',
+                  icon: 'clock',
                   title: 'Reduced reapplication',
                   description: 'During long sits in stands or blinds'
                 },
@@ -222,7 +222,7 @@ function App() {
                   description: 'Mosquitoes detect carbon dioxide from breath over 150 feet away'
                 },
                 {
-                  icon: 'water',
+                  icon: 'droplet',
                   title: 'Lactic Acid & Octenol',
                   description: 'Medium-range cues from skin and sweat increase during physical activity'
                 },
@@ -305,7 +305,7 @@ function App() {
                   description: 'Enclosed and semi-enclosed blinds concentrate the scent zone for stronger barrier performance.'
                 },
                 {
-                  icon: 'stopwatch',
+                  icon: 'clock',
                   title: 'Long-Lasting Results',
                   description: 'Users report returning days or weeks later with significantly reduced insect presence.'
                 },

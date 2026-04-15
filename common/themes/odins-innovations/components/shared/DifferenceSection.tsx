@@ -2,199 +2,29 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { sanitizeHtml } from "@/utils/sanitize-html";
 import { useBrand, useBrandName } from "@/contexts";
+// Use Lucide icons - clean and consistent
+import { 
+  Shield, 
+  Flag, 
+  Award, 
+  Clock, 
+  Leaf, 
+  Cloud, 
+  CheckCircle, 
+  TestTube, 
+  Recycle, 
+  MapPin, 
+  Star, 
+  Calendar, 
+  Thermometer, 
+  Droplets,
+  Eye,
+  Bug,
+  TreeDeciduous,
+  ShieldCheck 
+} from 'lucide-react';
 
-// Odin's style SVG icons - stroke-based outlines matching BenefitsSection
-const OdinsIconShield = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 85c15-5 25-20 25-40V25L50 15 25 25v20c0 20 10 35 25 40z" />
-    <path d="M35 45l10 10 20-20" />
-  </svg>
-);
-
-const OdinsIconRibbon = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M44.18 67.51L30 89.72l-4.44-12.19-12.93 1.1 14.19-22.18a28.86 28.86 0 0 0 13.79 10.08 26.93 26.93 0 0 0 3 .85Zm43.19 11.12l-12.93-1.1L70 89.72 55.81 67.51l.63-.13a26.76 26.76 0 0 0 2.94-.85 28.8 28.8 0 0 0 13.8-10.08Z" />
-    <path d="M78.92 39.19a28.82 28.82 0 0 1-3.61 14 30 30 0 0 1-1.74 2.73 5 5 0 0 1-.39.52 28.8 28.8 0 0 1-13.79 10.09 26.76 26.76 0 0 1-2.94.85l-.63.13a29 29 0 0 1-11.63 0l-.62-.13a26.93 26.93 0 0 1-3-.85 28.86 28.86 0 0 1-13.75-10.08c-.13-.17-.26-.34-.38-.52q-.93-1.32-1.74-2.73a28.92 28.92 0 1 1 54.22-14Z" />
-    <path d="m56.95 42.84 1.63 9.55L50 47.88l-8.58 4.51 1.64-9.55-6.95-6.77 9.6-1.39 4.29-8.7 4.29 8.7 9.6 1.39-6.94 6.77z" />
-  </svg>
-);
-
-const OdinsIconStopwatch = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <circle cx="60.82" cy="54.12" r="4.26" />
-    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28" />
-    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4" />
-    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84" />
-  </svg>
-);
-
-const OdinsIconLeaf = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 85c20-10 30-30 30-50 0-15-10-25-30-25s-30 10-30 25c0 20 10 40 30 50z" />
-    <path d="M50 85V35" />
-    <path d="M35 50c5-5 15-5 30 0" />
-  </svg>
-);
-
-const OdinsIconCloud = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M25 60c-5 0-10-5-10-10s5-10 10-10h5c2-15 15-25 30-20 12 3 20 15 20 25v5h5c8 0 15 7 15 15s-7 15-15 15H25z" />
-    <path d="M30 70l-10 10m20-5l-5 15m25-10l5 10" />
-  </svg>
-);
-
-const OdinsIconCheck = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <circle cx="50" cy="50" r="35" />
-    <path d="M35 50l10 10 20-20" />
-  </svg>
-);
-
-const OdinsIconFlag = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    {/* Flag field - centered without pole */}
-    <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1" />
-    <path d="M15 35h70M15 45h70M15 55h70M15 65h70" />
-    {/* Canton (blue field with stars) */}
-    <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2" />
-    {/* Stars pattern */}
-    <circle cx="22" cy="32" r="2" fill="currentColor" />
-    <circle cx="30" cy="32" r="2" fill="currentColor" />
-    <circle cx="38" cy="32" r="2" fill="currentColor" />
-    <circle cx="26" cy="38" r="2" fill="currentColor" />
-    <circle cx="34" cy="38" r="2" fill="currentColor" />
-    <circle cx="22" cy="44" r="2" fill="currentColor" />
-    <circle cx="30" cy="44" r="2" fill="currentColor" />
-    <circle cx="38" cy="44" r="2" fill="currentColor" />
-    <circle cx="26" cy="50" r="2" fill="currentColor" />
-    <circle cx="34" cy="50" r="2" fill="currentColor" />
-  </svg>
-);
-
-// Additional Standard Icons
-
-const OdinsIconClock = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <circle cx="50" cy="50" r="40" />
-    <path d="M50 25v25l15 15" />
-  </svg>
-);
-
-const OdinsIconWater = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 85c20-25 40-40 40-60 0-15-10-25-25-25s-25 10-25 25c0 20 10 40 30 60z" />
-    <path d="M50 85V45" />
-  </svg>
-);
-
-const OdinsIconTestTube = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M35 15h30M50 15v40L30 85h40L50 55V15" />
-    <path d="M40 50h20M38 60h24M35 70h30" />
-  </svg>
-);
-
-const OdinsIconRecycle = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M30 70L15 85l15-5 5 15 30-35-15-5-5-20-20 20z" />
-    <path d="M50 25l-5 20 20 20 20-25-15-15z" />
-    <path d="M55 45l20-20-5-5-20 20z" />
-  </svg>
-);
-
-const OdinsIconMapPin = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 85c-20 0-35-15-35-35 0-25 35-50 35-50s35 25 35 50c0 20-15 35-35 35z" />
-    <circle cx="50" cy="50" r="12" />
-  </svg>
-);
-
-const OdinsIconStar = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 15l10 30h35l-25 20 10 35-30-20-30 20 10-35-25-20h35z" />
-  </svg>
-);
-
-const OdinsIconCalendar = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <rect x="15" y="20" width="70" height="70" rx="5" />
-    <path d="M15 40h70M35 10v15M65 10v15" />
-  </svg>
-);
-
-const OdinsIconTemperature = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 85V35" />
-    <circle cx="50" cy="50" r="30" />
-    <circle cx="50" cy="50" r="8" />
-  </svg>
-);
-
-const OdinsIconDeer = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M30 60c-5-10-5-20 0-25M70 60c5-10 5-20 0-25" />
-    <path d="M50 35c-15 0-25 10-25 25 0 15 10 25 25 35 15-10 25-20 25-35 0-15-10-25-25-25z" />
-    <path d="M35 30l-5-10M65 30l5-10" />
-  </svg>
-);
-
-const OdinsIconBug = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <ellipse cx="50" cy="50" rx="35" ry="25" />
-    <path d="M15 50c0-20 15-30 35-30M85 50c0-20-15-30-35-30" />
-    <circle cx="30" cy="35" r="5" /><circle cx="70" cy="35" r="5" />
-    <path d="M50 75v15M35 85l15-10M65 85l-15-10" />
-  </svg>
-);
-
-const OdinsIconDroplet = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 85c-25-30-50-45-50-60 0-15 15-25 50-25s50 10 50 25c0 15-25 30-50 60z" />
-  </svg>
-);
-
-const OdinsIconTree = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 15L20 55h60L50 15z" />
-    <path d="M50 55v45M50 85l-20 10M50 85l20 10" />
-  </svg>
-);
-
-const OdinsIconEye = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <ellipse cx="50" cy="50" rx="40" ry="25" />
-    <circle cx="50" cy="50" r="18" />
-    <circle cx="50" cy="50" r="8" />
-  </svg>
-);
-
-// Map icon names to components - STANDARD ICONS FOR ALL ODIN'S SITES
-const iconMap: Record<string, React.FC> = {
-  // Core icons
-  shield: OdinsIconShield,
-  flag: OdinsIconFlag,
-  ribbon: OdinsIconRibbon,
-  stopwatch: OdinsIconStopwatch,
-  leaf: OdinsIconLeaf,
-  "check-circle": OdinsIconCheck,
-  cloud: OdinsIconCloud,
-  // Additional standard icons
-  clock: OdinsIconClock,
-  water: OdinsIconWater,
-  "test-tube": OdinsIconTestTube,
-  recycle: OdinsIconRecycle,
-  "map-pin": OdinsIconMapPin,
-  star: OdinsIconStar,
-  calendar: OdinsIconCalendar,
-  temperature: OdinsIconTemperature,
-  deer: OdinsIconDeer,
-  bug: OdinsIconBug,
-  droplet: OdinsIconDroplet,
-  tree: OdinsIconTree,
-  eye: OdinsIconEye,
-};
-
-// Helper to check if value is an image URL
+// Helper to check if value is an image URL (PNG)
 const isImageUrl = (value?: string): boolean => {
   return !!value && (value.startsWith('http') || value.startsWith('/') || value.startsWith('./'));
 };
@@ -234,6 +64,31 @@ const defaultDifferentials = [
     description: "Polymer matrix breaks down naturally. No environmental residue.",
   },
 ];
+
+// Map icon string names to Lucide components
+const iconMap: Record<string, React.FC> = {
+  shield: Shield,
+  flag: Flag,
+  ribbon: Award,
+  stopwatch: Clock,
+  leaf: Leaf,
+  cloud: Cloud,
+  "check-circle": CheckCircle,
+  clock: Clock,
+  water: Droplets,
+  "test-tube": TestTube,
+  recycle: Recycle,
+  "map-pin": MapPin,
+  star: Star,
+  calendar: Calendar,
+  temperature: Thermometer,
+  deer: TreeDeciduous,
+  bug: Bug,
+  droplet: Droplets,
+  tree: TreeDeciduous,
+  eye: Eye,
+  "shield-check": ShieldCheck,
+};
 
 const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
   const ref = useRef(null);
