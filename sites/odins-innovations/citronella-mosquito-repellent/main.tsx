@@ -157,7 +157,7 @@ function App() {
                   description: 'With potential duration up to 720 hours, it dramatically reduces reapplication compared to traditional options that last ~20 minutes.'
                 },
                 {
-                  icon: 'shield',
+                  icon: 'shield-check',
                   title: 'EPA-Registered Biopesticide',
                   description: 'Formulated with EPA-registered biopesticide (citronellal and geraniol), it masks the CO2, lactic acid, and octenol cues mosquitoes use to locate hosts.'
                 }
