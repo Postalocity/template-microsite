@@ -1,158 +1,112 @@
-# Odin's Innovations - Standard Icon Mapping
+# Odin's Innovations - Icon Mapping & Usage Guide
 
-## 🎯 Consistent Icon Usage Rules
+## Brand Icon Assets
 
-Use this mapping to ensure icons are consistent across all Odin's pages:
+All custom SVG icons are stored in `common/assets/odins-innovations/` with both light and dark variants.
 
-| Concept | Use Instead of | Icon Name | Type |
-|---------|----------------|----------|------|
-| **Long-lasting/Duration** | clock, stopwatch, timer, hour | `clock` | SVG |
-| **Rain/Weather/Water** | cloud, water, rain | `droplet` | SVG |
-| **EPA/Protection** | shield | `shield-check` | SVG |
-| **USA/Legal** | flag | `flag` | SVG |
-| **Natural/Eco** | leaf, recycle | `leaf` | SVG |
-| **Verified/Complete** | check, check-circle | `check-circle` | SVG |
-| **Detection/Sensing** | eye, radar | `eye` | SVG |
-| **Temperature** | thermometer | `temperature` | SVG |
-| **Product/Items** | bead, droplet | `droplet` | SVG |
+### Available Icons
 
----
+| Icon | Light Version | Dark Version | Usage |
+|------|--------------|--------------|-------|
+| **50 States** | `icon-50-states.svg` | `icon-50-states-white.svg` | Legal/USA |
+| **30+ Days** | `icon-long-lasting.svg` | `icon-long-lasting-white.svg` | Duration/Time |
+| **Chemistry** | `icon-chemistry.svg` | `icon-chemistry-white.svg` | Molecules/Skin |
 
-## 📋 By Section
+### Icon Specifications
 
-### Benefits / Why Odin's
-| Feature | Icon | Concept |
-|---------|------|---------|
-| 30+ Days | `clock` | Duration |
-| Weatherproof | `droplet` | Rain/Water |
-| Field Tested | `check-circle` | Verified |
-| Biodegradable | `leaf` | Natural |
-| EPA-Registered | `shield-check` | Protection |
-| Made in USA | `flag` | Legal |
+**50 States Flag Icon:**
+- ViewBox: `0 0 100 100`
+- Light: `stroke="currentColor"` (inherits text color)
+- Dark: `stroke="white"` (white on dark bg)
+- Stroke width: 2px
+- Features: Flag outline, stripes, stars in canton
 
-### How It Works Steps
-| Step Type | Icon | Concept |
-|-----------|------|----------|
-| Duration | `clock` | Time |
-| Application | `droplet` | Liquid |
-| Setup | `check-circle` | Step |
+**30+ Days Clock Icon:**
+- ViewBox: `0 0 100 100`
+- Light: `stroke="currentColor"`
+- Dark: `stroke="white"`
+- Stroke width: 3px (thicker for visibility)
+- Features: Clock face, hands, decorative marks
 
-### Detection/Science
-| Feature | Icon | Concept |
-|---------|------|---------|
-| CO2 Detection | `eye` | Sensing |
-| Lactic Acid | `droplet` | Moisture/Sweat |
-| Body Heat | `temperature` | Temperature |
+**Chemistry Molecule Icon:**
+- ViewBox: `0 0 100 100`
+- Light: `stroke="currentColor"`
+- Dark: `stroke="white"`
+- Stroke width: 2px
+- Features: 3 connected circles (molecule structure)
 
-### Trust Badges Section
-| Badge | Icon | Concept |
-|-------|------|---------|
-| EPA-Registered | `shield-check` | Verified Protection |
-| Made in USA | `flag` | USA |
-| Legal in All States | `map-pin` | Location |
-| 30-Day Guarantee | `clock` | Duration |
+## Lucide Icon Usage
 
----
-
-## 🖼️ PNG Images (When to use)
-
-Use PNG benefit images when you want branded icons:
-
-| Use PNG | When |
-|---------|------|
-| `benefit-30days.png` | Hero/benefits section wants brand-specific |
-| `benefit-weatherproof.png` | Hero/benefits section wants brand-specific |
-| `benefit-field-tested.png` | Hero/benefits section wants brand-specific |
-| `benefit-biodegradable.png` | Hero/benefits section wants brand-specific |
-
----
-
-## 🔧 Icon Mapping Code
+Standard Lucide icons should use `strokeWidth={1.5}` for elegant, refined appearance:
 
 ```javascript
-const iconMap = {
-  // Duration/Long-lasting
-  longlasting: Clock,
-  duration: Clock,
-  clock: Clock,
-  stopwatch: Clock,
-  timer: Clock,
-  hour: Clock,
-  
-  // Weather/Rain/Water
-  weather: Droplets,
-  rain: Droplets,
-  water: Droplets,
-  droplet: Droplets,
-  wet: Droplets,
-  
-  // Protection/EPA
-  epa: ShieldCheck,
-  protection: ShieldCheck,
-  registered: ShieldCheck,
-  shieldcheck: ShieldCheck,
-  
-  // USA/Legal
-  usa: Flag,
-  legal: Flag,
-  flag: Flag,
-  
-  // Natural/Eco
-  natural: Leaf,
-  eco: Leaf,
-  biodegradable: Leaf,
-  leaf: Leaf,
-  
-  // Verified
-  verified: CheckCircle,
-  complete: CheckCircle,
-  checkcircle: CheckCircle,
-  
-  // Sensing
-  sensing: Eye,
-  detection: Eye,
-  eye: Eye,
-  
-  // Temperature
-  temperature: Thermometer,
-  heat: Thermometer,
-  
-  // Product
-  product: Droplets,
-  liquid: Droplets,
-  droplet: Droplets,
-};
+import { Bug, Leaf, Clock, ShieldCheck, Droplets, Wind, Thermometer, CheckCircle, Cloud, Package } from 'lucide-react';
+
+// Light background - dark color
+<Bug className="w-8 h-8" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
+<Leaf className="w-8 h-8" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
+<Clock className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
+
+// Dark background - light color  
+<Droplets className="w-10 h-10 text-green-400" strokeWidth={1.5} />
+<Wind className="w-10 h-10 text-green-400" strokeWidth={1.5} />
+<Package className="w-10 h-10 text-green-400" strokeWidth={1.5} />
 ```
 
----
+## Color Guidelines
 
-## ✅ Correct Usage Examples
+| Background Type | Icon Color | Text Color | Example |
+|----------------|-----------|-----------|---------|
+| Light (#f8f9fa) | #2d5a3d (green) | #1a1a1a (dark) | Introduction |
+| Dark (#1a1d29) | #4ade80 (green-400) or white | #ffffff | Why Odin's |
+| White (#fff) | #2d5a3d | #1a1a1a | Detection |
+| Dark (#242835) | white | #ffffff | Application |
+
+## Icon Sizes
+
+- **Small icons**: `w-8 h-8` (32px) - Used in 4-column grids
+- **Medium icons**: `w-10 h-10` (40px) - Used in 3-column grids
+- **Large icons**: `w-12 h-12` (48px) - Brand SVGs
+
+## Section Background Alternation
+
+All Odin's sites should alternate backgrounds for visual flow:
+
+1. Hero → Full image
+2. Section 1 → Light (#f8f9fa)
+3. Section 2 → Dark (#1a1d29)
+4. Section 3 → Light (#fff)
+5. Section 4 → Dark (#242835)
+6. Section 5 → Light (#f5f5f5)
+7. Section 6 → Dark (#1e212b)
+8. Trust Badges → Light (#f8f9fa)
+9. FAQ → Light/accordion
+10. CTA → Brand color (#2d5a3d)
+
+## Brand Config Reference
 
 ```javascript
-// CORRECT - Long lasting
-{ icon: 'clock', title: '30+ Days Protection' }
-
-// CORRECT - Rain/Weather
-{ icon: 'droplet', title: 'Rainproof Formula' }
-
-// CORRECT - EPA Registered  
-{ icon: 'shield-check', title: 'EPA-Registered Biopesticide' }
-
-// CORRECT - Detection
-{ icon: 'eye', title: 'CO2 Detection' }
+icons: {
+  lucide: {
+    bug: { component: 'Bug', color: '#2d5a3d', strokeWidth: 1.5 },
+    leaf: { component: 'Leaf', color: '#2d5a3d', strokeWidth: 1.5 },
+    clock: { component: 'Clock', color: '#2d5a3d', strokeWidth: 1.5 },
+    'shield-check': { component: 'ShieldCheck', color: '#2d5a3d', strokeWidth: 1.5 },
+    droplets: { component: 'Droplets', color: '#4ade80', strokeWidth: 1.5 },
+    wind: { component: 'Wind', color: '#2d5a3d', strokeWidth: 1.5 },
+    thermometer: { component: 'Thermometer', color: '#2d5a3d', strokeWidth: 1.5 },
+    'check-circle': { component: 'CheckCircle', color: '#2d5a3d', strokeWidth: 1.5 },
+    cloud: { component: 'Cloud', color: '#2d5a3d', strokeWidth: 1.5 },
+    package: { component: 'Package', color: '#4ade80', strokeWidth: 1.5 },
+  },
+  brand: {
+    '50-states': { light: '/icon-50-states.svg', dark: '/icon-50-states-white.svg' },
+    '30-days': { light: '/icon-long-lasting.svg', dark: '/icon-long-lasting-white.svg' },
+    chemistry: { light: '/icon-chemistry.svg', dark: '/icon-chemistry-white.svg' }
+  }
+}
 ```
 
----
+## SVG Path Data
 
-## ❌ Incorrect Examples
-
-```javascript
-// WRONG - Don't use clock for weather
-{ icon: 'clock', title: 'Rainproof' }
-
-// WRONG - Don't use shield for EPA (use shield-check)
-{ icon: 'shield', title: 'EPA-Registered' }
-
-// WRONG - Don't use eye for rain
-{ icon: 'eye', title: 'Detects Moisture' }
-```
+All brand icons use consistent path data for uniformity across sites. The icons are designed at 100x100 viewBox for easy scaling.

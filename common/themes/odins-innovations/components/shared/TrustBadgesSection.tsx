@@ -56,12 +56,21 @@ const OdinsIconCheckCircle = () => (
 );
 
 // Map badge names to Odin's style icons
-const badgeIconMap: Record<string, React.FC> = {
+const badgeIconMap: Record<string, React.FC | string> = {
   "made in usa": OdinsIconRibbon,
   "50 state legal": OdinsIconFlag,
+  "50-states": OdinsIconFlag,
   "field tested": OdinsIconCheckCircle,
   "30+ day scent": OdinsIconStopwatch,
-  "weatherproof": OdinsIconRaindrop,
+  "30days": OdinsIconStopwatch,
+  // Rain/Weather - ALL use Shopify PNG brand asset
+  "weatherproof": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
+  "rainproof": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
+  "droplet": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
+  "water": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
+  "rain": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
+  "cloud": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
+  "wet": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
   "check-circle": OdinsIconCheckCircle,
 };
 
@@ -110,25 +119,30 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
   }
 
   return (
-    <section className="section-sm" style={{ background: 'hsl(220 15% 10%)' }}>
+    <section className="section-sm" style={{ background: '#f8f9fa' }}>
       <div className="section-container">
         <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
           {signals.map((signal, index) => {
-            const IconComponent = badgeIconMap[signal.icon.toLowerCase()] || OdinsIconCheckCircle;
+            const iconValue = badgeIconMap[signal.icon.toLowerCase()];
+            const isImageUrl = typeof iconValue === 'string' && (iconValue.startsWith('http') || iconValue.startsWith('/'));
+            const IconComponent = !isImageUrl ? (iconValue as React.FC || OdinsIconCheckCircle) : null;
             return (
               <div 
                 key={index}
-                className="flex items-center gap-2.5 px-4 py-2.5 lg:px-5 lg:py-3"
+                className="flex items-center gap-2.5 px-4 py-2.5 lg:px-5 lg:py-3 bg-white rounded shadow-sm"
                 style={{ 
-                  border: '1px solid hsl(145 45% 38% / 0.2)',
-                  background: 'hsl(145 45% 38% / 0.03)'
+                  border: '1px solid #e5e5e5'
                 }}
               >
-                {/* Odin's style SVG icon */}
-                <div style={{ color: 'hsl(145 45% 55%)' }}>
-                  <IconComponent />
+                {/* Odin's style SVG icon or image */}
+                <div style={{ color: '#2d5a3d' }}>
+                  {isImageUrl ? (
+                    <img src={iconValue as string} alt={signal.name} className="w-5 h-5 object-contain" />
+                  ) : (
+                    <IconComponent />
+                  )}
                 </div>
-                <span className="font-body text-xs lg:text-sm font-semibold uppercase-tracked" style={{ color: 'white' }}>
+                <span className="font-body text-xs lg:text-sm font-semibold uppercase-tracked" style={{ color: '#1a1a1a' }}>
                   {signal.name}
                 </span>
               </div>
