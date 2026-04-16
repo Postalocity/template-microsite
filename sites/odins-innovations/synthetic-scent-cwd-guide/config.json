@@ -293,8 +293,8 @@
   },
   "shopifyAssets": {
     "css": "index-Z4lXu2Rq.css",
-    "js": "index-CW9UBiVQ.js",
+    "js": "index-s91amS-L.js",
     "cssUrl": "{{ 'index-Z4lXu2Rq.css' | asset_url }}",
-    "jsUrl": "{{ 'index-CW9UBiVQ.js' | asset_url }}"
+    "jsUrl": "{{ 'index-s91amS-L.js' | asset_url }}"
   }
 }

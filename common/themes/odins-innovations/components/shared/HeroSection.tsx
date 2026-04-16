@@ -115,7 +115,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             {/* Highlight term */}
             <h2 
               className="font-display text-3xl sm:text-4xl md:text-5xl text-white/80 mb-8"
-              style={{ lineHeight: 1.1 }}
+              style={{ lineHeight: 1.1, whiteSpace: 'pre-line' }}
             >
               {hero.headline.highlightTerm}
             </h2>
