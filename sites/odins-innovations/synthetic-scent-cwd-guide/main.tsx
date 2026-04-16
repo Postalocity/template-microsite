@@ -7,7 +7,7 @@
 
 import { createRoot } from 'react-dom/client';
 import { useState } from 'react';
-import { BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -47,81 +47,7 @@ function App() {
         promoCode={promoCode}
       >
         <SiteNavigation config={config} />
-        
-        {/* Custom Hero - Shopify Homepage Style */}
-        <header
-          id="hero"
-          className="relative min-h-[85vh] flex items-center overflow-hidden"
-        >
-          {/* Background Image */}
-          <div className="absolute inset-0">
-            <img
-              src={content.hero.background.image}
-              alt={content.hero.headline.alt}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-            {/* Overlay for text readability - consistent velum */}
-            <div 
-              className="absolute inset-0" 
-              style={{ 
-                background: 'linear-gradient(to right, hsl(0 0% 0% / 0.3) 0%, hsl(0 0% 0% / 0.5) 50%, hsl(0 0% 0% / 0.7) 100%)' 
-              }} 
-            />
-          </div>
-
-          {/* Content - Right Aligned */}
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-2xl ml-auto text-right">
-              {/* Top Subtitle / Name */}
-              <p className="text-white/90 text-lg uppercase tracking-wider mb-2 font-medium">
-                CWD-Safe Synthetic Scents
-              </p>
-              
-              {/* Main Headline */}
-              <h1 
-                className="font-display text-5xl sm:text-6xl md:text-7xl text-white mb-4"
-                style={{ lineHeight: 1.1, letterSpacing: '-0.02em' }}
-              >
-                {content.hero.headline.main}
-              </h1>
-              
-              {/* Highlight Term */}
-              <h2 
-                className="font-display text-3xl sm:text-4xl md:text-5xl text-white/90 mb-6"
-                style={{ lineHeight: 1.2 }}
-              >
-                {content.hero.headline.highlightTerm?.replace(/\\n/g, '\n').split('\n').map((line, i, arr) => (
-                  <span key={i} className="block">
-                    {line}
-                  </span>
-                ))}
-              </h2>
-              
-              {/* Subtitle / Description */}
-              <p className="text-lg sm:text-xl text-white/80 mb-8 max-w-xl ml-auto">
-                {content.hero.subhead}
-              </p>
-              
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-end">
-                {content.hero.ctas.map((cta, idx) => (
-                  <a
-                    key={idx}
-                    href={cta.href}
-                    className={
-                      cta.variant === 'primary' 
-                        ? 'btn-accent text-base px-8 py-4' 
-                        : 'btn-outline-dark text-base px-8 py-4'
-                    }
-                  >
-                    {cta.text}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </header>
+        <HeroSection hero={content.hero} />
         
         {/* What Is CWD Section */}
         {content['what-is-cwd'] && (
@@ -359,7 +285,7 @@ function App() {
         
         {/* Comparison */}
         {content['comparison'] && (
-          <section id="comparison" className="py-20 bg-muted/30">
+          <section id="comparison" className="py-20 bg-[#f8f6f3]">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
