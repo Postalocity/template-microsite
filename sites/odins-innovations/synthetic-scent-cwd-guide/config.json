@@ -79,7 +79,7 @@
       },
       "subhead": "100% synthetic attractants engineered for consistent results without risk of regulatory compliance or disease.",
       "background": {
-        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hero2.jpg?v=1704915494",
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsTestimonial_NoahCraddock_240x240-gigapixel-hq-scale-6_00x_938dbb16-ed3f-420a-a7d4-79f73cf5e2ce.jpg?v=1704829106",
         "overlay": true
       },
       "ctas": [
@@ -292,9 +292,9 @@
     }
   },
   "shopifyAssets": {
-    "css": "index-CXJOjXck.css",
-    "js": "index-B3xHs2uS.js",
-    "cssUrl": "{{ 'index-CXJOjXck.css' | asset_url }}",
-    "jsUrl": "{{ 'index-B3xHs2uS.js' | asset_url }}"
+    "css": "index-4Bh1k4aY.css",
+    "js": "index-w5wF-bG9.js",
+    "cssUrl": "{{ 'index-4Bh1k4aY.css' | asset_url }}",
+    "jsUrl": "{{ 'index-w5wF-bG9.js' | asset_url }}"
   }
 }
