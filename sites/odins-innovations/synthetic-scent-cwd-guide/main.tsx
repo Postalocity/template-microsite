@@ -191,7 +191,7 @@ function App() {
                     {step.image ? (
                       /* Step with image - side-by-side layout */
                       <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                        <div className="sm:w-24 sm:h-24 w-full h-32 flex-shrink-0 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 rounded-lg flex items-center justify-center overflow-hidden">
+                        <div className="sm:w-24 sm:h-24 w-full h-32 flex-shrink-0 rounded-lg flex items-center justify-center overflow-hidden">
                           <img
                             src={step.image}
                             alt={step.title}
