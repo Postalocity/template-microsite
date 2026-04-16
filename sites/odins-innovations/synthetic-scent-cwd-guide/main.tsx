@@ -6,6 +6,7 @@
  */
 
 import { createRoot } from 'react-dom/client';
+import { useState } from 'react';
 import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
@@ -36,6 +37,7 @@ const promoCode = 'HUNT2026';
 function App() {
   const { content } = config;
   const navCta = config.navigation?.cta;
+  const [zoomImage, setZoomImage] = useState<string | null>(null);
   return (
     <IKBProvider ikb={ikbConfig}>
       <BrandProvider
@@ -133,6 +135,39 @@ function App() {
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['why-odins'].headline}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">{content['why-odins'].body}</p>
+              
+              {/* USDA BioPreferred Certification Badge */}
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                <div className="bg-white rounded-xl p-6 shadow-lg">
+                  <img 
+                    src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
+                    alt="USDA Certified Biobased Product - 42%"
+                    className="w-48 h-auto"
+                  />
+                </div>
+                <div className="text-left max-w-md">
+                  <p className="text-lg text-stone-700 mb-2">
+                    <strong>USDA BioPreferred® Certified</strong>
+                  </p>
+                  <p className="text-stone-600 mb-4">
+                    Our biodegradable polymer contains 42% certified biobased content. 
+                    Both beaded and liquid products are USDA BioPreferred Certified.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 text-sm">
+                    <span className="text-stone-500">Certified Under:</span>
+                    <span className="font-medium text-stone-700">LC BioPlastics LLC</span>
+                    <a 
+                      href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2"
+                    >
+                      View Details →
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
               <div className="text-center">
                 <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
                   Shop Rut Scents
@@ -224,10 +259,12 @@ function App() {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       )}
-                      {item.icon === 'globe' && (
-                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                      {item.icon === '50-states' && (
+                        <img 
+                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-50-states.svg" 
+                          alt="Legal in all 50 states"
+                          className="w-8 h-8"
+                        />
                       )}
                       {item.icon === 'shield' && (
                         <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -258,58 +295,6 @@ function App() {
             </div>
           </section>
         )}
-        
-        {/* USDA BioPreferred Certification */}
-        <section id="usda-biopreferred" className="py-20 bg-[#f5f5f0]">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              {/* Eyebrow */}
-              <p className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">
-                USDA BioPreferred® Certified
-              </p>
-              
-              {/* USDA Badge - Hero Element */}
-              <div className="bg-white rounded-2xl p-8 shadow-lg inline-block mb-8">
-                <img 
-                  src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
-                  alt="USDA Certified Biobased Product - 42%"
-                  className="w-56 md:w-64 h-auto"
-                />
-              </div>
-              
-              {/* Main Headline */}
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">
-                42% Certified Biobased Content
-              </h2>
-              
-              {/* Description */}
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Odin's scent beads have earned the USDA Certified Biobased Product Label. 
-                Our biodegradable polymer contains renewable biological content, 
-                third-party verified by the USDA's BioPreferred Program.
-              </p>
-              
-              {/* Certification Info Card */}
-              <div className="bg-white rounded-xl p-6 shadow-md max-w-lg mx-auto">
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-                  <div className="text-center sm:text-left">
-                    <p className="text-sm font-medium text-stone-500 mb-1">Certified Under</p>
-                    <p className="font-semibold text-stone-800">LC BioPlastics LLC</p>
-                    <p className="text-sm text-stone-600">USDA BioPreferred® Program</p>
-                  </div>
-                  <a 
-                    href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2 whitespace-nowrap"
-                  >
-                    View Certification Details →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         
         {/* Stamped.io Reviews - Success Stories from the Field */}
         <section id="reviews" className="py-20 bg-white">
