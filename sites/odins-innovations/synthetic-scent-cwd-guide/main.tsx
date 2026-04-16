@@ -309,6 +309,14 @@ function App() {
             {/* Stamped.io Reviews Widget - Rut Scents Products */}
             {/* Loads automatically via Shopify's Stamped.io app integration */}
             <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-ids="8376463163681,8140144017697,8376465326369,8376463425825,8140148375841"></div>
+            
+            {/* Hide Product/Site Reviews tabs since no site reviews */}
+            <style dangerouslySetInnerHTML={{__html: `
+              .stamped-widget-buttons,
+              .stamped-full-page-tabs {
+                display: none !important;
+              }
+            `}} />
           </div>
         </section>
         
