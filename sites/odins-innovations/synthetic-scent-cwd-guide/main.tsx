@@ -183,7 +183,16 @@ function App() {
               {content['how-it-works'].scienceSection && (
                 <div className="bg-primary/5 border-2 border-primary/20 rounded-xl p-8 md:p-12">
                   <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">{content['how-it-works'].scienceSection.title}</h3>
-                  <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-8">{content['how-it-works'].scienceSection.description}</p>
+                  <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                    <img 
+                      src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
+                      alt="USDA Certified Biobased Product - Lab Verified"
+                      className="w-32 h-auto rounded-lg shadow-md"
+                    />
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                      {content['how-it-works'].scienceSection.description}
+                    </p>
+                  </div>
                   <div className="bg-primary/10 rounded-lg p-6 text-center">
                     <p className="text-xl md:text-2xl font-bold text-primary">{content['how-it-works'].scienceSection.highlight}</p>
                   </div>
