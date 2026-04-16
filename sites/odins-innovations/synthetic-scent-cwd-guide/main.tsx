@@ -311,7 +311,21 @@ function App() {
           </div>
         </section>
         
-        {/* FAQ - Stamped.io Reviews widget is added in shopify.html template */}
+        {/* Stamped.io Reviews - Success Stories from the Field */}
+        <section id="reviews" className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
+            </div>
+            
+            {/* Stamped.io Reviews Widget - Rut Scents Products */}
+            {/* Loads automatically via Shopify's Stamped.io app integration */}
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-ids="8376463163681,8140144017697,8376465326369,8376463425825,8140148375841"></div>
+          </div>
+        </section>
+        
+        {/* FAQ */}
         {content['faq'] && (
           <section id="faq" className="bg-muted/30">
             <FAQSection faq={{ ...content['faq'], showContactSection: false }} />

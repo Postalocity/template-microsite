@@ -186,24 +186,10 @@
 
     <!-- Your built CSS + JS - Filenames must match uploaded assets -->
     {{ 'index-CXCfENnH.css' | asset_url | stylesheet_tag }}
-    <script type="module" src="{{ 'index-QtRrZNQE.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'index-EyJFYjVm.js' | asset_url }}"></script>
   </head>
   <body>
     <div id="root"></div>
-    
-    <!-- Stamped.io Reviews Widget - Success Stories from the Field -->
-    <section id="reviews" class="py-20 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
-          <p class="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
-        </div>
-        
-        <!-- Stamped.io Reviews Widget - Rut Scents Products -->
-        <!-- Shows reviews for specific rut scent products linked on this page -->
-        <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-ids="8376463163681,8140144017697,8376465326369,8376463425825,8140148375841"></div>
-      </div>
-    </section>
 
     {{ content_for_footer }}
   </body>
