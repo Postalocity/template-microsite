@@ -115,9 +115,14 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             {/* Highlight term */}
             <h2 
               className="font-display text-3xl sm:text-4xl md:text-5xl text-white/80 mb-8"
-              style={{ lineHeight: 1.1, whiteSpace: 'pre-line' }}
+              style={{ lineHeight: 1.1 }}
             >
-              {hero.headline.highlightTerm}
+              {hero.headline.highlightTerm?.replace(/\\n/g, '\n').split('\n').map((line, i, arr) => (
+                <span key={i} className="block">
+                  {line}
+                  {i < arr.length - 1 && <br />}
+                </span>
+              ))}
             </h2>
 
             {/* Subhead */}
