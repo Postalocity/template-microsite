@@ -308,7 +308,7 @@ function App() {
             
             {/* Stamped.io Reviews Widget - Rut Scents Products */}
             {/* Loads automatically via Shopify's Stamped.io app integration */}
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-product-ids="8376463163681,8140144017697,8376465326369,8376463425825,8140148375841"></div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-product-brand="Odin's Innovations"></div>
             
             {/* Hide Product/Site Reviews tabs since no site reviews */}
             <style dangerouslySetInnerHTML={{__html: `
