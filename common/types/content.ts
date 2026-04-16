@@ -18,6 +18,7 @@ export interface HeroContent {
   background: {
     image?: string;
     alt?: string;
+    overlay?: boolean | 'light' | 'dark'; // true = dark, 'light' = white bg, 'dark' = dark bg, false = no overlay
     // Phase 3: Video background support
     video?: {
       src: string;

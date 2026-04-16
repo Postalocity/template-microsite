@@ -54,13 +54,22 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             alt={hero.background.alt || `${hero.headline?.main || 'Mailing service'} background`}
             width={1920}
             height={1080}
-            className="w-full h-full object-cover opacity-30 mix-blend-lighten"
+            className="w-full h-full object-cover"
+            style={{ 
+              opacity: hero.background.overlay === 'light' ? 1 : 0.3,
+              mixBlendMode: hero.background.overlay === 'light' ? 'normal' : 'lighten'
+            }}
             loading="eager"
             onError={(e) => {
               e.currentTarget.parentElement?.remove();
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-hero/60 via-hero/40 to-hero/90" />
+          {hero.background.overlay !== 'light' && (
+            <div className="absolute inset-0 bg-gradient-to-b from-hero/60 via-hero/40 to-hero/90" />
+          )}
+          {hero.background.overlay === 'light' && (
+            <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/50 to-white/80" />
+          )}
         </div>
       )}
 
@@ -107,14 +116,18 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             </motion.div>
           )}
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-hero-foreground mb-6">
+          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 ${
+            hero.background.overlay === 'light' ? 'text-gray-900' : 'text-hero-foreground'
+          }`}>
             {hero.headline.main}{' '}
-            <span className="gradient-text">
+            <span className={hero.background.overlay === 'light' ? 'text-primary' : 'gradient-text'}>
               {hero.headline.highlightTerm}
             </span>
           </h1>
 
-          <p className="text-lg sm:text-xl text-hero-subtitle leading-relaxed mb-10 max-w-2xl">
+          <p className={`text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl ${
+            hero.background.overlay === 'light' ? 'text-gray-700' : 'text-hero-subtitle'
+          }`}>
             {processText(hero.subhead)}
           </p>
 

@@ -131,10 +131,10 @@
         "alt": "Nationwide custom carbonless and NCR multipart forms with precision finishing and variable data"
       },
       "subhead": "High-quality 2-, 3-, and 4-part NCR forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment — with some of the most affordable prices for carbonless forms in the United States.",
-      "background": {
-        "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80",
-        "overlay": true
-      },
+"background": {
+         "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsTestimonial_NoahCraddock_240x240-gigapixel-hq-scale-6_00x_938dbb16-ed3f-420a-a7d4-79f73cf5e2ce.jpg?v=1704829106",
+         "overlay": "light"
+       },
 "ctas": [
          {
            "text": "Order Now",
