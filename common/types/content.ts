@@ -33,6 +33,12 @@ export interface HeroContent {
     text: string;
     largeFont?: boolean;
   };
+  // Logo to display above headline (centered)
+  logo?: {
+    src: string;
+    alt: string;
+    height?: number; // Height in pixels (default: 80)
+  };
 }
 
 export interface SiteConfig {

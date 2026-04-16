@@ -71,6 +71,23 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="max-w-3xl"
         >
+          {/* Logo - Centered above headline */}
+          {hero.logo && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-8 flex justify-center"
+            >
+              <img
+                src={hero.logo.src}
+                alt={hero.logo.alt}
+                style={{ height: `${hero.logo.height || 80}px`, width: 'auto' }}
+                className="object-contain drop-shadow-lg"
+              />
+            </motion.div>
+          )}
+
           {/* Professional Label */}
           {hero.professionalLabel && (
             <motion.div

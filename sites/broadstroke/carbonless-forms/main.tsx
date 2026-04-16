@@ -258,18 +258,6 @@ const App = () => {
     <IKBProvider config={ikbConfig}>
       <BrandProvider brand={brandConfig} contact={contactConfig} social={socialConfig}>
         <SiteNavigation config={config} cta={navCta} />
-        
-        {/* CarbonlessUSA Logo - Centered above hero */}
-        <div className="bg-background pt-8 pb-4">
-          <div className="container mx-auto px-4 text-center">
-            <img 
-              src="https://broadstrokeinc.com/wp-content/uploads/CarbonlessUSA-logo.png" 
-              alt="CarbonlessUSA.com"
-              className="h-16 md:h-20 mx-auto"
-            />
-          </div>
-        </div>
-        
         <HeroSection hero={content.hero} />
         <BenefitsSection benefits={content.benefits} />
         <ServicesSection services={content.services} />

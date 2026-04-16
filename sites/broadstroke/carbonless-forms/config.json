@@ -50,22 +50,77 @@
         "href": "#benefits"
       },
       {
-        "label": "How It Works",
-        "href": "#how-it-works"
+        "label": "Products",
+        "href": "#services"
       },
       {
-        "label": "Services",
-        "href": "#services"
+        "label": "How It Works",
+        "href": "#how-it-works"
       },
       {
         "label": "FAQ",
         "href": "#faq"
       }
     ],
+    "serviceLinks": [
+      {
+        "label": "Print",
+        "href": "https://broadstrokeinc.com/commercial-printing"
+      },
+      {
+        "label": "Mail",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup"
+      },
+      {
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com"
+      },
+      {
+        "label": "Technology",
+        "href": "https://aobts.com/"
+      },
+      {
+        "label": "Promo",
+        "href": "https://www.broadstrokepromos.com/"
+      },
+      {
+        "label": "Wide Format",
+        "href": "https://broadstrokeinc.com/wide-format"
+      },
+      {
+        "label": "Business Forms",
+        "href": "https://broadstrokeinc.com/carbonless-forms"
+      }
+    ],
+    "companyLinks": [
+      {
+        "label": "About",
+        "href": "https://broadstrokeinc.com/about"
+      },
+      {
+        "label": "Our Work",
+        "href": "https://broadstrokeinc.com/our-work"
+      },
+      {
+        "label": "Blog",
+        "href": "https://broadstrokeinc.com/about/blogs"
+      },
+      {
+        "label": "Careers",
+        "href": "https://broadstrokeinc.com/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact"
+      }
+    ],
     "cta": {
-      "text": "Order Now",
-      "href": "https://broadstrokeinc.com/business-forms/#order-form",
-      "target": "_blank"
+      "text": "Get Free Estimate",
+      "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms"
     }
   },
   "content": {
@@ -80,18 +135,23 @@
         "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80",
         "overlay": true
       },
-      "ctas": [
-        {
-          "text": "Order Now",
-          "href": "https://broadstrokeinc.com/business-forms/#order-form",
-          "variant": "primary"
-        },
-        {
-          "text": "Get Free Estimate",
-          "href": "https://broadstrokeinc.com/contact/",
-          "variant": "outline"
-        }
-      ]
+"ctas": [
+         {
+           "text": "Order Now",
+           "href": "https://broadstrokeinc.com/business-forms/#order-form",
+           "variant": "primary"
+         },
+         {
+           "text": "Get Free Estimate",
+           "href": "https://broadstrokeinc.com/contact/",
+           "variant": "outline"
+         }
+       ],
+       "logo": {
+         "src": "https://broadstrokeinc.com/wp-content/uploads/CarbonlessUSA-logo.png",
+         "alt": "CarbonlessUSA.com",
+         "height": 80
+       }
     },
     "benefits": {
       "section": {
