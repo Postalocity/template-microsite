@@ -74,12 +74,12 @@
     "hero": {
       "headline": {
         "main": "Synthetic Deer Scent and CWD",
-        "highlightTerm": "LEGAL EVERYWHERE — Effective for 30+ Days",
+        "highlightTerm": "Effective for 30 + Days\nLegal Everywhere",
         "alt": "Odin's synthetic scent beads in a deer scrape"
       },
       "subhead": "100% synthetic attractants engineered for consistent results without risk of regulatory compliance or disease.",
       "background": {
-        "image": "https://www.odinsinnovations.com/cdn/shop/files/hero1.jpg",
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hero2.jpg?v=1704915494",
         "overlay": true
       },
       "ctas": [
@@ -102,7 +102,7 @@
     },
     "why-odins": {
       "headline": "Why Odin's Synthetic Deer Scent Outperforms Natural Urine",
-      "body": "Odin's is legal for use in every state and in Canada. Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified."
+      "body": "Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified.\n\nOdin's is legal for use in every state and in Canada."
     },
     "how-it-works": {
       "headline": "The Science Behind Scent Bead Technology",
@@ -132,8 +132,9 @@
       ],
       "scienceSection": {
         "title": "University Testing Confirms Performance",
-        "description": "Scent beads that had been left outside in the natural elements were tested at a University Chemical Laboratory. Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
-        "highlight": "52% original scent concentration still releasing after 27 days"
+        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using Gas Chromatography-Mass Spectrometry). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
+        "highlight": "52% original scent concentration still releasing after 27 days",
+        "chartImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Scent_Chart_with_Description_full_size.jpg"
       }
     },
     "benefits": {
@@ -291,9 +292,9 @@
     }
   },
   "shopifyAssets": {
-    "css": "index-_Z6FowEC.css",
-    "js": "index-Byff9PwX.js",
-    "cssUrl": "{{ 'index-_Z6FowEC.css' | asset_url }}",
-    "jsUrl": "{{ 'index-Byff9PwX.js' | asset_url }}"
+    "css": "index-Z4lXu2Rq.css",
+    "js": "index-CW9UBiVQ.js",
+    "cssUrl": "{{ 'index-Z4lXu2Rq.css' | asset_url }}",
+    "jsUrl": "{{ 'index-CW9UBiVQ.js' | asset_url }}"
   }
 }

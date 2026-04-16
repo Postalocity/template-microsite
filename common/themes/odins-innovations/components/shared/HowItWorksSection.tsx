@@ -20,29 +20,30 @@ interface HowItWorksSectionProps {
 }
 
 // Odin's style SVG icons (replacing Lucide and emoji)
+// Using w-8 h-8 to match DifferenceSection icon sizes
 const OdinsIconBeaker = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M35 20h30M50 20v35L30 80h40L50 55V20" />
     <path d="M40 45h20M38 55h24M35 65h30" />
   </svg>
 );
 
 const OdinsIconCloud = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M25 60c-5 0-10-5-10-10s5-10 10-10h5c2-15 15-25 30-20 12 3 20 15 20 25v5h5c8 0 15 7 15 15s-7 15-15 15H25z" />
     <path d="M30 70l-10 10m20-5l-5 15m25-10l5 10" />
   </svg>
 );
 
 const OdinsIconClock = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
     <circle cx="50" cy="50" r="35" />
     <path d="M50 25v25l15 15" />
   </svg>
 );
 
 const OdinsIconMicroscope = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-5 h-5" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
     <circle cx="45" cy="35" r="20" />
     <path d="M60 50l25 25M35 55v30M25 85h50" />
     <path d="M50 15v10" />
@@ -50,9 +51,19 @@ const OdinsIconMicroscope = () => (
 );
 
 const OdinsIconFileCheck = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-5 h-5" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
     <path d="M20 15h50l20 20v60H20z" />
     <path d="M70 15v20h20M35 45l10 10 20-20" />
+  </svg>
+);
+
+// Water/Rainproof icon for weather resistant step
+const OdinsIconWater = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+    <path d="M50 10c-15 20-30 35-30 55 0 15 10 25 30 25s30-10 30-25c0-20-15-35-30-55z" fill="currentColor" fillOpacity="0.1"/>
+    <path d="M50 10c-15 20-30 35-30 55 0 15 10 25 30 25s30-10 30-25c0-20-15-35-30-55z" />
+    <path d="M35 50c0 10 7 15 15 15s15-5 15-15" />
+    <path d="M40 35h20M45 25h10" strokeOpacity="0.5"/>
   </svg>
 );
 
@@ -132,6 +143,8 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
     description: step.description,
     icon: idx === 0 ? <OdinsIconBeaker /> : 
           idx === 1 ? <OdinsIconCloud /> :
+          idx === 2 ? <OdinsIconClock /> :
+          idx === 3 ? <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" alt="Weather Resistant" className="w-8 h-8 object-contain" loading="lazy" /> :
           <OdinsIconClock />
   })) || [];
 
@@ -218,7 +231,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                     }}
                   >
                     <div 
-                      className="w-12 h-12 mx-auto mb-4 flex items-center justify-center"
+                      className="w-16 h-16 mx-auto mb-4 flex items-center justify-center"
                       style={{ 
                         background: 'hsl(145 45% 38% / 0.15)',
                         border: '1px solid hsl(145 45% 38% / 0.3)',

@@ -119,7 +119,7 @@ function App() {
               
               {/* CTA */}
               <div className="text-center">
-                <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                <a href="https://www.archerybusiness.com/2023/11/28/best-deer-attractant-scent-for-hunting-2024/" className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
                   CWD-Safe Synthetic Scents
                 </a>
               </div>
@@ -242,7 +242,7 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
               <div className="text-center mt-8">
-                <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
+                <a href="https://www.odinsinnovations.com/pages/testimonials" className="btn-accent text-base px-8 py-3 inline-block">
                   See Why Hunters Choose Synthetic
                 </a>
               </div>
@@ -250,7 +250,34 @@ function App() {
           </section>
         )}
         
-        {/* Testimonials */}
+        {/* USDA BioPreferred Certification */}
+        <section id="usda-biopreferred" className="py-16 bg-green-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-green-800">USDA BioPreferred® Certified</h2>
+              <p className="text-lg text-green-700 mb-6">
+                Odin's scent beads have earned the USDA Certified Biobased Product Label, confirming that our biodegradable polymer contains renewable biological content. Third-party laboratory verified by the USDA's BioPreferred Program.
+              </p>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-green-200 max-w-sm">
+                  <p className="font-semibold text-green-800 mb-2">Certified Under</p>
+                  <p className="text-green-700">LC BioPlastics LLC</p>
+                  <p className="text-sm text-green-600 mt-2">USDA BioPreferred® Program</p>
+                </div>
+                <a 
+                  href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-outline border-green-600 text-green-700 hover:bg-green-100"
+                >
+                  View Certification Details
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* Testimonials - Success Stories */}
         <TestimonialsSection />
         
         {/* FAQ */}

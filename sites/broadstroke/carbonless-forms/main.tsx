@@ -106,6 +106,10 @@ const brandConfig = {
     "taglineSecondary": "No project is too big or too small",
     "links": [
       {
+        "label": "Send Your Files",
+        "href": "https://broadstrokeinc.com/business-forms/#file-upload"
+      },
+      {
         "label": "Print",
         "href": "https://broadstrokeinc.com/commercial-printing/"
       },
@@ -205,7 +209,7 @@ const ikbConfig = {
   },
 };
 
-const navCta = { text: 'Get Free Estimate', href: 'https://broadstrokeinc.com/contact/?service=carbonless-forms' };
+const navCta = { text: 'Order Now', href: 'https://broadstrokeinc.com/business-forms/#order-form' };
 
 // Types
 interface Content {

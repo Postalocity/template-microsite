@@ -43,6 +43,30 @@ const defaultTestimonials: Testimonial[] = [
     author: "Jordan Edwards",
     location: "Central Kansas",
     title: "Loyal Customers Swear by the Results!"
+  },
+  {
+    quote: "Odin's Innovations products kept these bucks around all season. I highly recommend it.",
+    author: "Mike Ruddle, President",
+    location: "Central Plains Outfitters, Central Kansas",
+    title: "Make Them Come To You"
+  },
+  {
+    quote: "Your product arrived and was exactly as described. I put it in a low traffic area and saw more deer than previous years. Overall, I was very pleased with the product, and I continue to recommend it to others.",
+    author: "Nick Owens",
+    location: "Missouri",
+    title: "Recommend to Anyone"
+  },
+  {
+    quote: "Product worked all season long! Even after heavy rain, the scent was still bringing deer in.",
+    author: "Randy & Tony, Team Full Assignment",
+    location: "Michigan",
+    title: "Product Worked All Season Long"
+  },
+  {
+    quote: "We have tried other products with limited success. But with Odin's, whenever we set it up, the deer showed up… even using the lure. I was also able to collect this fine buck!",
+    author: "Chris",
+    location: "Silverhill, Alabama",
+    title: "Odin's Scents Made All The Difference"
   }
 ];
 
@@ -63,10 +87,10 @@ const TestimonialsSection = ({ testimonials = defaultTestimonials }: Testimonial
             Field Reports
           </p>
           <h2 className="mb-6 text-foreground">
-            What Hunters Are Saying
+            Success Stories from the Field
           </h2>
           <p className="font-body text-lg text-muted-foreground leading-relaxed">
-            Real results from hunters who put Odin&apos;s to the test in the field.
+            Real results from hunters who put Odin&apos;s to the test in the field. For hundreds more reviews, visit our product pages.
           </p>
         </div>
 

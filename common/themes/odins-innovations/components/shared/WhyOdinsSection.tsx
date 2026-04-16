@@ -200,7 +200,19 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
                     ) : point.icon === 'ribbon' ? (
                       <OdinsIconRibbon />
                     ) : point.icon === 'cloud' ? (
-                      <OdinsIconCloud />
+                      <img 
+                        src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" 
+                        alt="Weatherproof" 
+                        className="w-8 h-8 object-contain"
+                        loading="lazy"
+                      />
+                    ) : point.icon === 'rainproof' || point.icon === 'weatherproof' || point.icon === 'droplet' ? (
+                      <img 
+                        src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" 
+                        alt="Rainproof" 
+                        className="w-8 h-8 object-contain"
+                        loading="lazy"
+                      />
                     ) : point.icon === 'package' ? (
                       <OdinsIconPackage />
                     ) : (

@@ -23,18 +23,22 @@
     }
   },
   "seo": {
-    "title": "Custom Carbonless Forms & NCR Forms Printing — Broadstroke, Inc.",
-    "description": "Nationwide custom carbonless forms and NCR multipart printing. 2-, 3-, and 4-part options with precision finishing, variable data, and concierge service that reclaims hours weekly.",
+    "title": "Custom Carbonless Forms | NCR 2-Part, 3-Part, 4-Part Printing - Broadstroke",
+    "description": "Nationwide custom carbonless forms printing. 2, 3, and 4-part NCR forms with sequential numbering, variable data, and fast turnaround. Free estimates.",
     "keywords": [
       "custom carbonless forms",
-      "NCR forms printing",
-      "multipart carbonless forms",
-      "carbonless business forms",
-      "custom NCR forms",
-      "NCR multipart forms printing"
+      "NCR forms",
+      "carbonless forms printing",
+      "2 part carbonless forms",
+      "3 part carbonless forms",
+      "4 part carbonless forms",
+      "multipart forms",
+      "NCR printing",
+      "sequential numbering forms",
+      "business forms printing"
     ],
-    "ogTitle": "Custom Carbonless Forms — Broadstroke, Inc.",
-    "ogDescription": "Print. Mail. Promo. One Call.",
+    "ogTitle": "Custom Carbonless Forms | NCR Printing - Broadstroke",
+    "ogDescription": "Custom 2, 3, and 4-part carbonless forms with precision printing and finishing. Get a free estimate.",
     "ogImage": "/carbonless-forms/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/carbonless-forms"
@@ -59,15 +63,16 @@
       }
     ],
     "cta": {
-      "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms"
+      "text": "Order Now",
+      "href": "https://broadstrokeinc.com/business-forms/#order-form",
+      "target": "_blank"
     }
   },
   "content": {
     "hero": {
       "headline": {
-        "main": "Custom Carbonless Forms",
-        "highlightTerm": "One Call. Done.",
+        "main": "Custom Carbonless NCR Forms",
+        "highlightTerm": "45+ Years Experience",
         "alt": "Nationwide custom carbonless and NCR multipart forms with precision finishing and variable data"
       },
       "subhead": "High-quality 2-, 3-, and 4-part NCR forms with advanced customization, finishing services, and seamless integration with mailing and fulfillment — backed by 45+ years of expertise.",
@@ -77,8 +82,8 @@
       },
       "ctas": [
         {
-          "text": "Request Free Estimate",
-          "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms",
+          "text": "Order Now",
+          "href": "https://broadstrokeinc.com/business-forms/#order-form",
           "variant": "primary"
         },
         {
@@ -169,8 +174,8 @@
         "title": "Why Businesses Choose Broadstroke<br />for Carbonless Forms",
         "description": "See the difference professional concierge service makes.",
         "cta": {
-          "text": "Get Free Estimate",
-          "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms"
+          "text": "Order Now",
+          "href": "https://broadstrokeinc.com/business-forms/#order-form"
         }
       },
       "columns": {
@@ -273,11 +278,15 @@
       ]
     },
     "footer": {
+      "fileUpload": {
+        "text": "Send Your Files",
+        "href": "https://broadstrokeinc.com/business-forms/#file-upload"
+      },
       "finalCTA": {
         "headline": "Ready to streamline your form documentation?",
         "description": "Get custom carbonless forms with concierge service, quality finishing, and optional distribution.",
-        "buttonText": "Get Free Estimate",
-        "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms",
+        "buttonText": "Order Now",
+        "href": "https://broadstrokeinc.com/business-forms/#order-form",
         "secondaryButton": {
           "text": "Call 316-262-3333",
           "href": "tel:316-262-3333"
