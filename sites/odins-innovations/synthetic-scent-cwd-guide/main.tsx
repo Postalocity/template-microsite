@@ -119,7 +119,7 @@ function App() {
               
               {/* CTA */}
               <div className="text-center">
-                <a href="https://www.archerybusiness.com/2023/11/28/best-deer-attractant-scent-for-hunting-2024/" className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
                   CWD-Safe Synthetic Scents
                 </a>
               </div>
