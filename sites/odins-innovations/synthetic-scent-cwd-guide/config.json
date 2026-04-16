@@ -166,7 +166,7 @@
       "headline": "Odin's Innovations Wins On",
       "items": [
         {
-          "icon": "clock",
+          "icon": "long-lasting",
           "title": "Longest Release Duration",
           "description": "30+ days of continuous scent vs. frequent reapplication required by natural urine"
         },
@@ -176,7 +176,7 @@
           "description": "University laboratory confirmed 52% scent concentration after 27 days of continuous air exposure"
         },
         {
-          "icon": "globe",
+          "icon": "50-states",
           "title": "All 50 States + Canada",
           "description": "Legal everywhere natural urine is restricted or banned. No regulatory compliance issues"
         },
@@ -292,9 +292,9 @@
     }
   },
   "shopifyAssets": {
-    "css": "index-DbGTVmeZ.css",
-    "js": "index-BA2MKvvX.js",
-    "cssUrl": "{{ 'index-DbGTVmeZ.css' | asset_url }}",
-    "jsUrl": "{{ 'index-BA2MKvvX.js' | asset_url }}"
+    "css": "index-CXJOjXck.css",
+    "js": "index-B3xHs2uS.js",
+    "cssUrl": "{{ 'index-CXJOjXck.css' | asset_url }}",
+    "jsUrl": "{{ 'index-B3xHs2uS.js' | asset_url }}"
   }
 }

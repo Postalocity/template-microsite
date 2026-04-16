@@ -248,11 +248,13 @@ function App() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {content['wins'].items.map((item, idx) => (
                   <div key={idx} className="bg-muted/30 rounded-lg p-6 text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                      {item.icon === 'clock' && (
-                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                      {item.icon === 'long-lasting' && (
+                        <img 
+                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841" 
+                          alt="Longest release duration"
+                          className="w-8 h-8"
+                        />
                       )}
                       {item.icon === 'flask' && (
                         <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
