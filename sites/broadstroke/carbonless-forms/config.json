@@ -72,10 +72,10 @@
     "hero": {
       "headline": {
         "main": "Custom Carbonless NCR Forms",
-        "highlightTerm": "45+ Years Experience",
+        "highlightTerm": "Since 2003",
         "alt": "Nationwide custom carbonless and NCR multipart forms with precision finishing and variable data"
       },
-      "subhead": "High-quality 2-, 3-, and 4-part NCR forms with advanced customization, finishing services, and seamless integration with mailing and fulfillment — backed by 45+ years of expertise.",
+      "subhead": "High-quality 2-, 3-, and 4-part NCR forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment — with some of the most affordable prices for carbonless forms in the United States.",
       "background": {
         "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80",
         "overlay": true
@@ -87,8 +87,8 @@
           "variant": "primary"
         },
         {
-          "text": "See How It Works",
-          "href": "#how-it-works",
+          "text": "Get Free Estimate",
+          "href": "https://broadstrokeinc.com/contact/",
           "variant": "outline"
         }
       ]
@@ -105,37 +105,49 @@
           "description": "Choose the perfect multipart configuration for your documentation needs.",
           "detail": "From simple duplicates to comprehensive 4-part sets for complex workflows."
         },
-        {
-          "icon": "printer",
-          "title": "Precision Printing",
-          "description": "Advanced equipment ensures clean transfer and perfect alignment on every form.",
-          "detail": "Strict quality control catches alignment issues before production runs."
-        },
+{
+           "icon": "printer",
+           "title": "Precision Printing",
+           "description": "Advanced equipment ensures proper transfer and alignment on every form.",
+           "detail": "Quality control checks alignment before production runs."
+         },
         {
           "icon": "file-digit",
           "title": "Variable Data",
           "description": "Sequential numbering, barcodes, and custom data fields available.",
           "detail": "Track forms, manage inventory, and streamline record-keeping with integrated variable data printing."
         },
-        {
-          "icon": "package",
-          "title": "Professional Finishing",
-          "description": "Numbering, padding, and packaging that prepares forms for immediate use.",
-          "detail": "Crisp edge padding, clean numbering, and protective packaging for storage or shipping."
-        },
-        {
-          "icon": "truck",
-          "title": "Integrated Fulfillment",
-          "description": "Optional mailing and distribution through our Postalocity platform.",
-          "detail": "Forms can be automatically distributed to multiple locations or mailed directly to end users."
-        },
-        {
-          "icon": "headset",
-          "title": "Dedicated Support",
-          "description": "One team manages your project from design through delivery.",
-          "detail": "No juggling multiple vendors. Your dedicated contact handles everything, saving you hours weekly."
-        }
-      ]
+{
+           "icon": "package",
+           "title": "Professional Finishing",
+           "description": "Numbering, padding, and packaging that prepares forms for immediate use.",
+           "detail": "Edge padding, sequential numbering, and protective packaging for storage or shipping."
+         },
+         {
+           "icon": "truck",
+           "title": "Integrated Fulfillment",
+           "description": "Optional shipping and distribution services available.",
+           "detail": "Forms can be distributed to multiple locations or shipped directly to end users."
+         },
+{
+           "icon": "headset",
+           "title": "Support",
+           "description": "Our team manages your project from design through delivery.",
+           "detail": "Work directly with our team throughout your project."
+         }
+      ],
+"ctas": [
+         {
+           "text": "Order Now",
+           "href": "https://broadstrokeinc.com/business-forms/#order-form",
+           "variant": "primary"
+         },
+         {
+           "text": "Get Free Estimate",
+           "href": "https://broadstrokeinc.com/contact/",
+           "variant": "outline"
+         }
+       ]
     },
     "services": {
       "section": {
@@ -167,7 +179,19 @@
           "description": "HIPAA-compliant forms for patient intake, prescriptions, and medical documentation with proper handling.",
           "image": "/carbonless-forms/images/vitaly-gariev-8WYkI3cEZm8-unsplash.jpg"
         }
-      ]
+      ],
+       "ctas": [
+         {
+           "text": "Order Now",
+           "href": "https://broadstrokeinc.com/business-forms/#order-form",
+           "variant": "primary"
+         },
+         {
+           "text": "Get Free Estimate",
+           "href": "https://broadstrokeinc.com/contact/",
+           "variant": "outline"
+         }
+       ]
     },
     "comparison": {
       "section": {
@@ -182,25 +206,25 @@
         "traditional": "Other Form Printers",
         "ourSolution": "Broadstroke"
       },
-      "rows": [
-        {
-          "icon": "users",
-          "feature": "Support",
-          "ourSolution": "One dedicated team from design through delivery",
-          "traditionalApproach": "Different contacts for design, printing, and finishing"
-        },
-        {
-          "icon": "ruler",
-          "feature": "Alignment Control",
-          "ourSolution": "Inspection for clean transfer and perfect alignment",
-          "traditionalApproach": "Ship direct without quality review"
-        },
-        {
-          "icon": "barcode",
-          "feature": "Variable Data",
-          "ourSolution": "Sequential numbering, barcodes, custom fields included",
-          "traditionalApproach": "Additional charges for numbering and customization"
-        },
+"rows": [
+         {
+           "icon": "users",
+           "feature": "Support",
+           "ourSolution": "One team from design through delivery",
+           "traditionalApproach": "Different contacts for design, printing, and finishing"
+         },
+         {
+           "icon": "align-center",
+           "feature": "Alignment Control",
+           "ourSolution": "Quality inspection for proper alignment",
+           "traditionalApproach": "Ship direct without quality review"
+         },
+         {
+           "icon": "hashtag",
+           "feature": "Variable Data",
+           "ourSolution": "Sequential numbering, barcodes, custom fields available",
+           "traditionalApproach": "Additional charges for numbering and customization"
+         },
         {
           "icon": "package",
           "feature": "Finishing",
@@ -227,23 +251,23 @@
         "title": "How It Works",
         "description": "Custom carbonless form production with concierge service that saves you hours — from initial design through professional finishing and optional distribution."
       },
-      "steps": [
-        {
-          "number": "01",
-          "title": "Design",
-          "description": "Share your form requirements, branding, and layout needs. We'll recommend the best paper options and finishing for your specific use case. Digital proofs provided for approval."
-        },
-        {
-          "number": "02",
-          "title": "Produce",
-          "description": "Advanced printing with micro-encapsulated NCR coatings for clean, consistent transfer. Quality control inspection ensures proper alignment and clean impressions across all parts."
-        },
-        {
-          "number": "03",
-          "title": "Finish & Deliver",
-          "description": "Professional finishing including sequential numbering, crisp padding, and protective packaging. Optional integration with our mailing platform for automatic distribution to multiple locations."
-        }
-      ]
+"steps": [
+         {
+           "number": "01",
+           "title": "Design",
+           "description": "Share your form requirements, branding, and layout needs. We'll recommend finishing options for your specific use case. Digital proofs provided for approval."
+         },
+         {
+           "number": "02",
+           "title": "Produce",
+           "description": "Advanced printing with micro-encapsulated NCR coatings for consistent transfer. Quality control ensures proper alignment across all parts."
+         },
+         {
+           "number": "03",
+           "title": "Finish & Deliver",
+           "description": "Professional finishing including sequential numbering, padding, and protective packaging. Optional shipping to multiple locations."
+         }
+       ]
     },
     "faq": {
       "section": {
@@ -251,10 +275,10 @@
         "description": ""
       },
       "faqs": [
-        {
-          "q": "What is the difference between 2-part, 3-part, and 4-part carbonless forms?",
-          "a": "2-part forms create one duplicate (original + 1 copy), 3-part creates two duplicates (original + 2 copies), and 4-part creates three duplicates (original + 3 copies). The best option depends on how many departments or recipients need simultaneous copies. Many businesses use 2-part for customer receipts, 3-part for invoicing (customer, accounting, file), and 4-part for complex workflows requiring multiple department copies."
-        },
+{
+           "q": "How do I know how many parts my carbonless form should be?",
+           "a": "Your carbonless form will produce an original and the number of duplicates you need for recipient or business purposes. 2-part forms create one duplicate (original + 1 copy), 3-part creates two duplicates (original + 2 copies), and 4-part creates three duplicates (original + 3 copies). The best option depends on how many departments or recipients need simultaneous copies. Many businesses use 2-part for customer receipts, 3-part for invoicing (customer, accounting, file), and 4-part for complex workflows requiring multiple department copies."
+         },
         {
           "q": "How does carbonless paper work without traditional carbon sheets?",
           "a": "Carbonless paper uses micro-encapsulated dye coatings. The back of each sheet (except the bottom) is coated with microscopic dye capsules, while the front of the underlying sheet has a reactive clay coating. When pressure is applied from writing or impact printing, the capsules burst and release dye that reacts with the clay, creating a permanent copy. This technology eliminates the mess of traditional carbon paper while providing clean, consistent duplicates."
@@ -263,18 +287,18 @@
           "q": "Can you add sequential numbering to carbonless forms?",
           "a": "Yes, sequential numbering is one of our most popular add-ons. We can print sequential numbers on each form set for tracking, accounting, and record-keeping purposes. Numbers can be placed in multiple locations on the form, and we can start at any number you specify. This is particularly valuable for invoices, work orders, and inspection forms that require tracking."
         },
-        {
-          "q": "What finishing options are available for carbonless forms?",
-          "a": "We offer several professional finishing options: sequential numbering (crash numbering or digital), edge padding with chipboard backer (typically 50 sets per pad), loose sets in protective packaging, and hole drilling for binder insertion. Custom packaging and kitting services are also available for projects requiring multiple form types bundled together."
-        },
+{
+           "q": "What finishing options are available for carbonless forms?",
+           "a": "We offer several professional finishing options: sequential numbering (digitally printed), loose sets in protective packaging, and hole drilling for binder insertion. All forms are edge glued unless specified by customer to not edge glue; forms may also be block padded with chipboard backer (typically 50 sets per pad). Custom packaging and kitting services are also available for projects requiring multiple form types bundled together."
+         },
         {
           "q": "How long does carbonless form production take?",
           "a": "Standard production time is typically 7-10 business days after artwork approval, including finishing services. Rush production is available for time-sensitive projects (additional fees may apply). Projects requiring complex variable data or specialized finishing may require additional time. We'll provide a clear timeline with your estimate."
         },
-        {
-          "q": "Do you offer integration with mailing services?",
-          "a": "Yes, through our Postalocity platform, we can integrate carbonless form production with mailing and fulfillment services. This is ideal for businesses that need forms automatically distributed to multiple locations or mailed directly to end users. We can also kit forms with other printed materials and handle the entire distribution process."
-        }
+{
+           "q": "What fulfillment services do you offer?",
+           "a": "We can integrate carbonless form production with fulfillment services. We can ship forms automatically distributed to multiple locations or directly to end users. We can also kit forms with other printed materials and handle the entire distribution process with kitting available."
+         }
       ]
     },
     "footer": {
@@ -292,7 +316,7 @@
           "href": "tel:316-262-3333"
         }
       },
-      "tagline": "Custom carbonless forms backed by 45+ years of printing expertise.",
+      "tagline": "Custom carbonless forms from CarbonlessUSA.com, serving businesses since 2003.",
       "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
     }
   }
