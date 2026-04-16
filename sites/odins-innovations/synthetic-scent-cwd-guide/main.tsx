@@ -299,7 +299,7 @@ function App() {
         )}
         
         {/* Stamped.io Reviews - Success Stories from the Field */}
-        <section id="reviews" className="py-20 bg-white">
+        <section id="reviews" className="py-20 bg-stone-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
