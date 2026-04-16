@@ -186,7 +186,7 @@
 
     <!-- Your built CSS + JS - Filenames must match uploaded assets -->
     {{ 'index-CXCfENnH.css' | asset_url | stylesheet_tag }}
-    <script type="module" src="{{ 'index-Dya2GLmx.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'index-3rR1yelS.js' | asset_url }}"></script>
   </head>
   <body>
     <div id="root"></div>
@@ -200,18 +200,16 @@
         </div>
         
         <!-- Stamped.io Reviews Widget -->
-        <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-image="true" data-take="6" data-fill-empty="false" data-random="false" data-with-photos="false" data-lang="en"></div>
-        <script>
-          // Stamped.io Widget Loader
-          window.StampedFn = window.StampedFn || function() {
-            (window.StampedFn.q = window.StampedFn.q || []).push(arguments);
-          };
-          StampedFn('init', {
-            apiKey: 'YOUR_API_KEY', // Replace with your Stamped.io API key
-            storeUrl: 'odinsinnovations.com'
-          });
-        </script>
-        <script async src="https://cdn1.stamped.io/files/widget.min.js"></script>
+        <!-- This widget loads automatically via Shopify's Stamped.io app integration -->
+        <div id="stamped-reviews-widget" 
+             data-widget-type="full-page" 
+             data-product-image="true" 
+             data-take="6"
+             data-fill-empty="false"
+             data-random="false"
+             data-with-photos="false"
+             data-lang="en">
+        </div>
       </div>
     </section>
 
