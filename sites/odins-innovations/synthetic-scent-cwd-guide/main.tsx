@@ -6,7 +6,7 @@
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -311,10 +311,7 @@ function App() {
           </div>
         </section>
         
-        {/* Testimonials - Success Stories */}
-        <TestimonialsSection />
-        
-        {/* FAQ */}
+        {/* FAQ - Stamped.io Reviews widget is added in shopify.html template */}
         {content['faq'] && (
           <section id="faq" className="bg-muted/30">
             <FAQSection faq={{ ...content['faq'], showContactSection: false }} />

@@ -185,11 +185,35 @@
     <meta name="format-detection" content="telephone=no" />
 
     <!-- Your built CSS + JS - Filenames must match uploaded assets -->
-    {{ 'index-DbGTVmeZ.css' | asset_url | stylesheet_tag }}
-    <script type="module" src="{{ 'index-BA2MKvvX.js' | asset_url }}"></script>
+    {{ 'index-CXCfENnH.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index-Dya2GLmx.js' | asset_url }}"></script>
   </head>
   <body>
     <div id="root"></div>
+    
+    <!-- Stamped.io Reviews Widget - Success Stories from the Field -->
+    <section id="reviews" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
+          <p class="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
+        </div>
+        
+        <!-- Stamped.io Reviews Widget -->
+        <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-image="true" data-take="6" data-fill-empty="false" data-random="false" data-with-photos="false" data-lang="en"></div>
+        <script>
+          // Stamped.io Widget Loader
+          window.StampedFn = window.StampedFn || function() {
+            (window.StampedFn.q = window.StampedFn.q || []).push(arguments);
+          };
+          StampedFn('init', {
+            apiKey: 'YOUR_API_KEY', // Replace with your Stamped.io API key
+            storeUrl: 'odinsinnovations.com'
+          });
+        </script>
+        <script async src="https://cdn1.stamped.io/files/widget.min.js"></script>
+      </div>
+    </section>
 
     {{ content_for_footer }}
   </body>
