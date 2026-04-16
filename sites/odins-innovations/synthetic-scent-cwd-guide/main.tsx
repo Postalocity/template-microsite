@@ -255,9 +255,21 @@ function App() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-green-800">USDA BioPreferred® Certified</h2>
-              <p className="text-lg text-green-700 mb-6">
-                Odin's scent beads have earned the USDA Certified Biobased Product Label, confirming that our biodegradable polymer contains renewable biological content. Third-party laboratory verified by the USDA's BioPreferred Program.
-              </p>
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                <img 
+                  src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
+                  alt="USDA Certified Biobased Product Label"
+                  className="w-48 h-auto rounded-lg shadow-md"
+                />
+                <div className="text-left max-w-md">
+                  <p className="text-lg text-green-700 mb-4">
+                    Odin's scent beads have earned the USDA Certified Biobased Product Label, confirming that our biodegradable polymer contains renewable biological content.
+                  </p>
+                  <p className="text-green-600 text-sm">
+                    Third-party laboratory verified by the USDA's BioPreferred Program.
+                  </p>
+                </div>
+              </div>
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
                 <div className="bg-white rounded-lg p-6 shadow-sm border border-green-200 max-w-sm">
                   <p className="font-semibold text-green-800 mb-2">Certified Under</p>
