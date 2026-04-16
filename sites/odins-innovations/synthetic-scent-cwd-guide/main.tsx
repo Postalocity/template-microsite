@@ -260,39 +260,52 @@ function App() {
         )}
         
         {/* USDA BioPreferred Certification */}
-        <section id="usda-biopreferred" className="py-16 bg-green-50">
+        <section id="usda-biopreferred" className="py-20 bg-[#f5f5f0]">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-green-800">USDA BioPreferred® Certified</h2>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+            <div className="max-w-3xl mx-auto text-center">
+              {/* Eyebrow */}
+              <p className="text-sm font-semibold text-stone-500 uppercase tracking-wider mb-4">
+                USDA BioPreferred® Certified
+              </p>
+              
+              {/* USDA Badge - Hero Element */}
+              <div className="bg-white rounded-2xl p-8 shadow-lg inline-block mb-8">
                 <img 
                   src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
-                  alt="USDA Certified Biobased Product Label"
-                  className="w-48 h-auto rounded-lg shadow-md"
+                  alt="USDA Certified Biobased Product - 42%"
+                  className="w-56 md:w-64 h-auto"
                 />
-                <div className="text-left max-w-md">
-                  <p className="text-lg text-green-700 mb-4">
-                    Odin's scent beads have earned the USDA Certified Biobased Product Label, confirming that our biodegradable polymer contains renewable biological content.
-                  </p>
-                  <p className="text-green-600 text-sm">
-                    Third-party laboratory verified by the USDA's BioPreferred Program.
-                  </p>
-                </div>
               </div>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-green-200 max-w-sm">
-                  <p className="font-semibold text-green-800 mb-2">Certified Under</p>
-                  <p className="text-green-700">LC BioPlastics LLC</p>
-                  <p className="text-sm text-green-600 mt-2">USDA BioPreferred® Program</p>
+              
+              {/* Main Headline */}
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">
+                42% Certified Biobased Content
+              </h2>
+              
+              {/* Description */}
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto mb-8 leading-relaxed">
+                Odin's scent beads have earned the USDA Certified Biobased Product Label. 
+                Our biodegradable polymer contains renewable biological content, 
+                third-party verified by the USDA's BioPreferred Program.
+              </p>
+              
+              {/* Certification Info Card */}
+              <div className="bg-white rounded-xl p-6 shadow-md max-w-lg mx-auto">
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="text-center sm:text-left">
+                    <p className="text-sm font-medium text-stone-500 mb-1">Certified Under</p>
+                    <p className="font-semibold text-stone-800">LC BioPlastics LLC</p>
+                    <p className="text-sm text-stone-600">USDA BioPreferred® Program</p>
+                  </div>
+                  <a 
+                    href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2 whitespace-nowrap"
+                  >
+                    View Certification Details →
+                  </a>
                 </div>
-                <a 
-                  href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline border-green-600 text-green-700 hover:bg-green-100"
-                >
-                  View Certification Details
-                </a>
               </div>
             </div>
           </div>
