@@ -1,0 +1,270 @@
+{
+  "site": {
+    "id": "broadstroke",
+    "name": "Mailing Services — Broadstroke, Inc.",
+    "slug": "mailing",
+    "domain": "broadstrokeinc.com",
+    "basename": "broadstroke-mailing",
+    "contact": {
+      "email": "info@broadstrokeinc.com",
+      "phone": "316-262-3333",
+      "address": "820 W 2nd St N, Wichita, KS 67203"
+    }
+  },
+  "branding": {
+    "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+    "logo": "/logo.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 30
+    }
+  },
+  "seo": {
+    "title": "Mailing Services — Broadstroke, Inc.",
+    "description": "One-stop mailing solutions in Wichita KS: EDDM, presort, certified mail, list management, fulfillment, and Postalocity automated mailing platform with free estimates, fast turnaround, and proven ROI for businesses, municipalities, and agencies.",
+    "keywords": [
+      "mailing services Wichita",
+      "EDDM mailing Kansas",
+      "bulk mailing services",
+      "presort mailing",
+      "certified mail Wichita",
+      "Postalocity automated mailing",
+      "direct mail list management",
+      "government utility mail services",
+      "address verification NCOA"
+    ],
+    "ogTitle": "Mailing Services — Broadstroke, Inc.",
+    "ogDescription": "Print, mail, promo & fulfillment made simple.",
+    "ogImage": "/mailing/images/og-image.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://broadstrokeinc.com/mailing",
+    "googleAnalyticsId": "G-9HXQD6LYZ4"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "text": "Get Free Estimate",
+      "href": "https://broadstrokeinc.com/contact/?service=mailing"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Mailing Services Solutions",
+        "highlightTerm": "One Call. Done.",
+        "alt": "Professional direct mail and automated mailing services in Wichita KS with Postalocity platform for businesses, municipalities, and government entities"
+      },
+      "subhead": "Commercial mailing services — EDDM, presort, certified mail, list management, fulfillment, and the Postalocity automated mailing platform — all handled with concierge service from Broadstroke, Inc. in Wichita, KS. Reclaim hours weekly while maintaining 100% processing accuracy.",
+      "background": {
+        "image": "/mailing/images/mailing-hero.jpg",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Request Free Estimate",
+          "href": "https://broadstrokeinc.com/contact/?service=mailing",
+          "variant": "primary"
+        },
+        {
+          "text": "See How It Works",
+          "href": "#how-it-works",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Mailing Services — Reclaim Hours Weekly with Concierge Service",
+        "description": "Skip the coordination headaches. One team manages your entire project from list development through USPS submission. With 45+ years of experience since 1979 and the Postalocity automated mailing platform, Broadstroke, Inc. delivers reliable results for businesses, advertising agencies, municipalities, utilities, and government entities across the United States."
+      },
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Reclaim Hours Weekly on Manual Tasks",
+          "description": "Automate repetitive mailing processes with Postalocity and our in-house team. Instead of handling addressing, sorting, and verification yourself, upload your data once and let our systems manage the rest — freeing your staff for higher-value work while maintaining full visibility through real-time tracking.",
+          "detail": "Concierge service eliminates multiple vendor coordination."
+        },
+        {
+          "icon": "file-check",
+          "title": "Enhanced Address Accuracy and Reduced Returns",
+          "description": "Our address verification process checks National Change of Address history for four full years — twice the industry standard of 18 months. Combined with CASS certification and 100% processing accuracy through high-speed commercial inserters, this approach minimizes undeliverable mail and improves campaign performance for client statements, invoices, and direct mail.",
+          "detail": "Backed by 45+ years of documented mailroom expertise."
+        },
+        {
+          "icon": "users",
+          "title": "Specialized Support for Government and Municipal Needs",
+          "description": "Broadstroke, Inc. serves as the preferred partner for cities, counties, parishes, and utilities nationwide. From utility bills and Change of Value Notices to Agricultural Use Surveys, tax mailings, and community updates, our team handles every format — postcards, self-mailers, letters, and newsletters — with secure, error-free processing.",
+          "detail": "Proven track record with institutional clients."
+        },
+        {
+          "icon": "truck",
+          "title": "One-Stop Concierge for Full-Spectrum Mailing",
+          "description": "Whether you need Every Door Direct Mail for local saturation, presort for marketing mail, or certified mail for legal communications, one phone call covers list management, design, printing, sorting, fulfillment, and prompt USPS submission. Integrate seamlessly with our printing, promotional products, and large-format services.",
+          "detail": "No more piecing together multiple providers."
+        },
+        {
+          "icon": "package",
+          "title": "Postalocity Automated Mailing Platform",
+          "description": "Our flagship SaaS solution automates statements, invoices, and direct mail while preserving your exact quality standards. High-speed digital printers and inserters ensure 100% accuracy, USPS-compliant formatting, and drastically reduced returned mail — all accessible through a secure online portal with proofing and tracking.",
+          "detail": "Starting at $1.31 per page for basic automated pieces (single-sided B&W, including envelope and postage)."
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Wichita Businesses Choose Broadstroke for Mailing Services",
+        "description": "See the difference professional concierge service and deep automation make compared to traditional approaches. Competitor analysis highlights how local and national providers often require more manual effort, shorter verification windows, or fragmented service models."
+      },
+      "columns": {
+        "traditional": "Traditional Mail Houses / National Platforms",
+        "ourSolution": "Broadstroke, Inc."
+      },
+      "rows": [
+        {
+          "icon": "file-check",
+          "feature": "Address Verification Depth",
+          "ourSolution": "Four-year National Change of Address history verification plus full CASS certification. This extended look-back period catches more moves and updates than the standard 18-month window used by most competitors, directly reducing returned mail and improving deliverability for high-volume campaigns.",
+          "traditionalApproach": "Most local mail houses and national platforms limit verification to 18 months. This shorter window can result in higher undeliverable rates, especially for government notices or utility mailings where recipient data changes over time."
+        },
+        {
+          "icon": "users",
+          "feature": "Government and Municipal Specialization",
+          "ourSolution": "Dedicated expertise in utility bills, Change of Value Notices, Agricultural Use Surveys, tax mailings, and certified mail for cities, counties, and parishes. Our team understands compliance needs and delivers consistent, secure processing with concierge oversight — all integrated with broader print and promo capabilities.",
+          "traditionalApproach": "Local competitors like Handy Mailing or Quik Print focus primarily on commercial direct mail and EDDM. National automation platforms often lack tailored workflows for public-sector requirements, forcing municipalities to manage multiple vendors."
+        },
+        {
+          "icon": "clock",
+          "feature": "Operational Efficiency Through Automation",
+          "ourSolution": "Postalocity SaaS platform routes mail through high-speed commercial printers and inserters with 100% accuracy. Clients reclaim hours weekly by eliminating manual stuffing, sealing, and tracking steps while receiving real-time USPS submission proof and delivery updates.",
+          "traditionalApproach": "DIY or basic mail houses require manual data uploads, separate design tools, and physical handling. Even API-focused platforms like Lob or Postalytics may demand technical resources many Wichita businesses do not have, leading to longer setup times."
+        },
+        {
+          "icon": "package",
+          "feature": "One-Stop Concierge Integration",
+          "ourSolution": "Full-spectrum service covers list building, EDDM, presort, certified mail, fulfillment, and distribution — all under one roof in Wichita. Combine with commercial printing, promotional products, apparel, and large-format graphics without coordinating separate suppliers.",
+          "traditionalApproach": "Local shops such as Summit Printing or Docuplex handle mailing but often require clients to source printing or design elsewhere. National providers fragment services across print, mail, and fulfillment, increasing administrative time and error risk."
+        },
+        {
+          "icon": "shield",
+          "feature": "Processing Accuracy and Compliance",
+          "ourSolution": "Every list receives expert change-of-address processing, USPS formatting validation, and secure handling. Our 45+ year history (founded 1979 with strategic mergers) includes documented quality controls that support advertising agencies, healthcare, financial institutions, and government clients nationwide.",
+          "traditionalApproach": "Many competitors advertise basic presort or EDDM but lack the extended verification, in-house commercial inserters, or institutional-grade compliance processes that prevent costly errors in regulated mailings."
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Mailing Services — Wichita KS",
+        "description": "Full-service mailing solutions for businesses that demand quality, accuracy, and convenience. Broadstroke, Inc. combines 45+ years of experience with the Postalocity automated mailing platform to handle every step — from list management through prompt USPS submission."
+      },
+      "services": [
+        {
+          "icon": "file-text",
+          "title": "Lists That Work — Targeted List Management",
+          "description": "Build custom lists from carrier routes or purchase demographic data by age, household income, and home value. We expertly process every list for change-of-address updates to maximize deliverability and control postage costs. Clients and advertising agencies rely on our accuracy to achieve stronger response rates without wasted mailings."
+        },
+        {
+          "icon": "map-pin",
+          "title": "Every Door Direct Mail (EDDM)",
+          "description": "Reach entire carrier routes with no mailing list or permit required. EDDM offers the lowest postage rates for local saturation campaigns and allows larger format pieces. Ideal for community-focused promotions, our team handles design, printing, and submission so you focus on results rather than logistics."
+        },
+        {
+          "icon": "sort-desc",
+          "title": "Mail Sorting and Presort Services",
+          "description": "We sort and handle all mail classes — First-Class, Marketing Mail (formerly Standard), Nonprofit, and EDDM — to secure optimal rates regardless of size, weight, or destination. In-house processing ensures efficient preparation and prompt submission to USPS while maintaining full tracking visibility."
+        },
+        {
+          "icon": "shield-check",
+          "title": "Certified Mail Services",
+          "description": "Avoid post office lines and limited online label accountability. Our automated system walks you through certified mail for legal and time-sensitive documents. Integrated with Postalocity, this service provides legal proof of mailing and delivery tracking with concierge support when needed."
+        },
+        {
+          "icon": "building",
+          "title": "Utility, City, County, and Government Mail",
+          "description": "Specialized handling for municipalities, utilities, and public entities. We manage utility bills, repair updates, community events, Change of Value Notices, tax mailings, and more in postcards, self-mailers, letters, or newsletters. Secure, accurate processing supports compliance and community communication needs."
+        },
+        {
+          "icon": "cpu",
+          "title": "Postalocity Automated Mailing Platform",
+          "description": "Send statements, invoices, and direct mail on schedule through high-speed digital printers and inserters with 100% accuracy. The platform verifies addresses against USPS standards, reduces returned mail, and provides real-time proof and tracking. Accessible online with secure upload, proofing, and automation that eliminates traditional mailroom operations."
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Mailing Services FAQ",
+        "description": "Answers to common questions about EDDM, presort, Postalocity automation, and concierge mailing support from Broadstroke, Inc. in Wichita, KS."
+      },
+      "faqs": [
+        {
+          "q": "What is the difference between EDDM and traditional presort mailing?",
+          "a": "Every Door Direct Mail (EDDM) targets entire carrier routes without needing a mailing list or permit, making it ideal for local saturation at the lowest postage rates. Presort services use your targeted list and sort mail to qualify for discounted rates on First-Class or Marketing Mail. Broadstroke handles both with concierge service, including list management and address verification."
+        },
+        {
+          "q": "How does Postalocity reduce manual work for statements and invoices?",
+          "a": "Postalocity automates the entire workflow — from secure data upload to printing, folding, inserting, sealing, and USPS submission. High-speed commercial equipment ensures 100% accuracy while meeting USPS formatting standards. Clients reclaim hours weekly by eliminating manual preparation steps and gain real-time tracking without managing a physical mailroom."
+        },
+        {
+          "q": "What makes your address verification process more effective than standard services?",
+          "a": "We verify address history through the National Change of Address program for four full years instead of the typical 18 months. Combined with CASS certification, this deeper check reduces returned mail and improves delivery rates for utility bills, government notices, and marketing campaigns."
+        },
+        {
+          "q": "Do you support mailing for government and municipal clients?",
+          "a": "Yes. Broadstroke, Inc. is a trusted partner for cities, counties, parishes, and utilities nationwide. We handle Change of Value Notices, Agricultural Use Surveys, tax mailings, utility bills, and certified mail with secure, compliant processes and concierge oversight."
+        },
+        {
+          "q": "Can I integrate mailing services with printing and promotional products?",
+          "a": "Absolutely. As a full-service provider, we manage end-to-end projects — design, printing, mailing, fulfillment, and promotional items — with one point of contact. This one-stop concierge model eliminates coordination across multiple vendors."
+        },
+        {
+          "q": "How does Broadstroke ensure accuracy for high-volume mailings?",
+          "a": "Every piece routes through our commercial printers and inserters with built-in 100% accuracy verification. Lists receive expert change-of-address processing, and all mail meets USPS standards before prompt submission. Our 45+ year history supports consistent results for businesses and institutions."
+        },
+        {
+          "q": "What is included in fulfillment and distribution services?",
+          "a": "We produce, pack, and ship printed materials, apparel, giveaways, or other items you provide. Whether for direct mail campaigns or broader distribution, our team handles the logistics so you receive professional results without managing warehousing or shipping details."
+        },
+        {
+          "q": "How do I get started with a free estimate for mailing services?",
+          "a": "Contact our team at 316-262-3333 or orders@broadstrokeinc.com. Provide details about your project — list size, format, or automation needs — and we will deliver a customized estimate focused on efficiency, accuracy, and convenience. Use promo code mail2026 for Postalocity platform signup at https://prod.postalocity.com/login.html?signUp=true&promo=mail2026."
+        }
+      ]
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready to simplify your print, mail & promo?",
+        "buttonText": "Get Free Estimate",
+        "href": "https://broadstrokeinc.com/contact/?service=mailing"
+      },
+      "tagline": "Print. Mail. Promo. One Call."
+    }
+  },
+  "footer": {
+    "finalCTA": {
+      "headline": "Ready to simplify your print, mail & promo?",
+      "buttonText": "Get Free Estimate",
+      "href": "https://broadstrokeinc.com/contact/?service=mailing"
+    },
+    "tagline": "Print. Mail. Promo. One Call."
+  }
+}
