@@ -46,6 +46,16 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
+          {benefits.section.logo && (
+            <div className="mb-6 flex justify-center">
+              <img 
+                src={benefits.section.logo.src} 
+                alt={benefits.section.logo.alt}
+                style={{ height: benefits.section.logo.height || 80 }}
+                className="object-contain"
+              />
+            </div>
+          )}
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-foreground">
             {benefits.section.title}
           </h2>
@@ -143,7 +153,24 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           })}
         </div>
 
-
+        {/* CTAs - rendered within section */}
+        {benefits.ctas && benefits.ctas.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-4 mt-8">
+            {benefits.ctas.map((cta, idx) => (
+              <a
+                key={idx}
+                href={cta.href}
+                className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg transition-all shadow-lg ${
+                  cta.variant === 'primary' 
+                    ? 'bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90' 
+                    : 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10'
+                }`}
+              >
+                {cta.text}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

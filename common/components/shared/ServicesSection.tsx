@@ -56,7 +56,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
             const cardContent = (
               <div 
                 className={`relative h-full overflow-hidden rounded-xl group cursor-pointer ${
-                  hasImage ? 'aspect-[4/3]' : ''
+                  hasImage ? 'aspect-[16/5]' : ''
                 }`}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
@@ -143,23 +143,40 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
           })}
         </div>
 
-        {/* CTA Button */}
-        {services.section.cta && (
+        {/* CTAs - support both single cta and ctas array */}
+        {(services.section.cta || (services.section.ctas && services.section.ctas.length > 0)) && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-12 text-center"
+            className="mt-12 flex flex-wrap justify-center gap-4"
           >
-            <a
-              href={services.section.cta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
-            >
-              {services.section.cta.text}
-              <ArrowRight className="w-4 h-4" />
-            </a>
+            {/* Single CTA (legacy support) */}
+            {services.section.cta && (
+              <a
+                href={services.section.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              >
+                {services.section.cta.text}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
+            {/* Multiple CTAs array */}
+            {services.section.ctas?.map((cta, idx) => (
+              <a
+                key={idx}
+                href={cta.href}
+                className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg transition-all shadow-lg ${
+                  cta.variant === 'primary' 
+                    ? 'bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90' 
+                    : 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10'
+                }`}
+              >
+                {cta.text}
+              </a>
+            ))}
           </motion.div>
         )}
 

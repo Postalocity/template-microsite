@@ -18,7 +18,6 @@ export interface HeroContent {
   background: {
     image?: string;
     alt?: string;
-    overlay?: boolean | 'light' | 'dark'; // true = dark, 'light' = white bg, 'dark' = dark bg, false = no overlay
     // Phase 3: Video background support
     video?: {
       src: string;
@@ -98,6 +97,11 @@ export interface BenefitsContent {
   section: {
     title: string;
     description: string;
+    logo?: {
+      src: string;
+      alt: string;
+      height?: number;
+    };
   };
   benefits: Benefit[];
 }
@@ -318,6 +322,11 @@ export interface DifferenceContent {
   section: {
     title: string;
     description?: string;
+    ctas?: Array<{
+      text: string;
+      href: string;
+      variant?: string;
+    }>;
   };
   background?: string;
   differences: {

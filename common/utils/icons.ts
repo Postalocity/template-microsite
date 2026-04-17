@@ -92,6 +92,15 @@ import {
   Layout,
   Type,
   Layers,
+  FileDigit,
+  Receipt,
+  ClipboardList,
+  PackageCheck,
+  Stethoscope,
+  Ruler,
+  Binary,
+  Scissors,
+  Leaf,
 } from 'lucide-react';
 
 const iconMap: Record<string, LucideIcon> = {
@@ -186,6 +195,15 @@ const iconMap: Record<string, LucideIcon> = {
   'layout': Layout,
   'type': Type,
   'layers': Layers,
+  'file-digit': FileDigit,
+  'receipt': Receipt,
+  'clipboard-list': ClipboardList,
+  'package-check': PackageCheck,
+  'stethoscope': Stethoscope,
+  'ruler': Ruler,
+  'binary': Binary,
+  'scissors': Scissors,
+  'leaf': Leaf,
 };
 
 export function getIcon(iconName: string): LucideIcon {

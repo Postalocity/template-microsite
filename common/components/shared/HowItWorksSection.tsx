@@ -131,7 +131,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
           className="text-center mt-10 text-lg font-semibold text-foreground"
         >
           <Check className="inline w-5 h-5 text-secondary mr-2" />
-          Promo orders are facilitated from product selection, through artwork approval, to customer in-hand with a focus on quality products, affordable prices, and quick turnarounds to ensure your team can place orders with the confidence they'll arrive on time and as expected.
+          Carbonless forms are produced from design approval through professional printing, quality control, and finishing to ensure accurate, clean multi-part forms delivered when you need them for your business documentation.
         </motion.p>
       </div>
     </section>

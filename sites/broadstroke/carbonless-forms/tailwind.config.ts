@@ -7,23 +7,6 @@ export default {
     "./main.tsx",
     "../../../common/components/**/*.{js,ts,jsx,tsx}",
   ],
-  safelist: [
-    // Grid column classes for dynamic grid layouts
-    "grid-cols-1",
-    "grid-cols-2",
-    "grid-cols-3",
-    "grid-cols-6",
-    "md:grid-cols-2",
-    "md:grid-cols-3",
-    "md:grid-cols-6",
-    "lg:grid-cols-2",
-    "lg:grid-cols-3",
-    "lg:grid-cols-6",
-    // Column span classes
-    "md:col-span-1",
-    "md:col-span-2",
-    "md:col-start-2",
-  ],
   prefix: "",
   theme: {
     container: {

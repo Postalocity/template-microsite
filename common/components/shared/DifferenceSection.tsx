@@ -109,12 +109,14 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
               </span>
             </div>
           )}
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-            <span className="text-primary">{sectionTitle}</span>
-          </h2>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            {sectionDescription}
-          </p>
+          <h2 
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
+            dangerouslySetInnerHTML={{ __html: sectionTitle }}
+          />
+          <p 
+            className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+            dangerouslySetInnerHTML={{ __html: sectionDescription }}
+          />
         </motion.div>
 
         {/* Cards with dramatic effects */}
@@ -165,14 +167,24 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
           ))}
         </div>
 
-        {/* Bottom decorative element */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-16 text-center"
-        >
-        </motion.div>
+        {/* CTAs - rendered within section */}
+        {difference?.section?.ctas && difference.section.ctas.length > 0 && (
+          <div className="flex flex-wrap justify-center gap-4 mt-12">
+            {difference.section.ctas.map((cta, idx) => (
+              <a
+                key={idx}
+                href={cta.href}
+                className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg transition-all shadow-lg ${
+                  cta.variant === 'primary' 
+                    ? 'bg-white text-primary border-2 border-white hover:bg-white/90' 
+                    : 'border-2 border-white/30 text-white hover:bg-white/10'
+                }`}
+              >
+                {cta.text}
+              </a>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

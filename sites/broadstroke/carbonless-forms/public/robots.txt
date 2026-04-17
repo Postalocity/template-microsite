@@ -1,13 +1,4 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
+User-agent: *
 Allow: /
 
 User-agent: GPTBot
@@ -20,9 +11,6 @@ User-agent: claude-ai
 Allow: /
 
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: *
 Allow: /
 
 Sitemap: https://broadstrokeinc.com/carbonless-forms/sitemap.xml
