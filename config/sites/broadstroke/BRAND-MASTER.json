@@ -1,0 +1,141 @@
+{
+  "_description": "Broadstroke Brand Master Configuration - Navigation & Shared Settings",
+  "_usage": "Copy navigation and companyLinks sections into site-specific configs",
+  "_lastUpdated": "2026-04-17",
+  
+  "brand": {
+    "id": "broadstroke",
+    "name": "Broadstroke, Inc.",
+    "slug": "broadstroke",
+    "domain": "broadstrokeinc.com",
+    "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+    "contact": {
+      "phone": "316-262-3333",
+      "email": "orders@broadstrokeinc.com",
+      "address": {
+        "street": "820 W 2nd St N",
+        "city": "Wichita",
+        "state": "KS",
+        "zip": "67203"
+      },
+      "hours": {
+        "weekdays": "8:00 AM - 5:00 PM CST"
+      }
+    },
+    "social": {
+      "linkedin": "https://www.linkedin.com/company/broadstrokeinc",
+      "facebook": "https://www.facebook.com/Broadstrokeinc",
+      "instagram": "https://www.instagram.com/broadstrokeinc",
+      "tiktok": "https://www.tiktok.com/@broadstrokeinc",
+      "pinterest": "https://www.pinterest.com/broadstrokeinc/",
+      "youtube": "https://www.youtube.com/channel/UCd7KyDkDwi9hsA1ozODFQQQ"
+    }
+  },
+
+  "navigation": {
+    "serviceLinks": [
+      {
+        "label": "Business Forms",
+        "href": "https://broadstrokeinc.com/carbonless-forms",
+        "description": "Custom carbonless forms printing"
+      },
+      {
+        "label": "Print",
+        "href": "https://broadstrokeinc.com/commercial-printing",
+        "description": "Commercial printing services"
+      },
+      {
+        "label": "Mail",
+        "href": "https://broadstrokeinc.com/mailing",
+        "description": "Mailing services and Postalocity"
+      },
+      {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup",
+        "description": "Mail pickup services"
+      },
+      {
+        "label": "Shipping & Fulfillment",
+        "href": "https://broadstrokeinc.com/mailing",
+        "description": "Shipping and fulfillment services"
+      },
+      {
+        "label": "Technology",
+        "href": "https://aobts.com/",
+        "description": "Technology solutions"
+      },
+      {
+        "label": "Promo",
+        "href": "https://www.broadstrokepromos.com/",
+        "description": "Promotional products"
+      },
+      {
+        "label": "Wide Format",
+        "href": "https://broadstrokeinc.com/wide-format",
+        "description": "Large format printing"
+      }
+    ],
+    "companyLinks": [
+      {
+        "label": "About",
+        "href": "https://broadstrokeinc.com/about"
+      },
+      {
+        "label": "Our Work",
+        "href": "https://broadstrokeinc.com/our-work"
+      },
+      {
+        "label": "Blog",
+        "href": "https://broadstrokeinc.com/about/blogs"
+      },
+      {
+        "label": "Careers",
+        "href": "https://broadstrokeinc.com/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact"
+      }
+    ],
+    "cta": {
+      "text": "Get Free Estimate",
+      "hrefTemplate": "https://broadstrokeinc.com/contact/?service={{service}}"
+    }
+  },
+
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 30
+    },
+    "accent": {
+      "h": 45,
+      "s": 100,
+      "l": 50
+    }
+  },
+
+  "seoDefaults": {
+    "googleAnalyticsId": "G-9HXQD6LYZ4",
+    "twitterCard": "summary_large_image",
+    "ogImage": "/images/og-image.png"
+  },
+
+  "promoCodes": {
+    "postalocity": "bank2026",
+    "printing": "print2026",
+    "mailing": "mail2026",
+    "promo": "promo2026",
+    "large-format": "lf2026",
+    "carbonless-forms": "forms2026"
+  },
+
+  "urls": {
+    "app": "https://prod.postalocity.com/login.html",
+    "website": "https://www.broadstrokeinc.com",
+    "blog": "https://broadstrokeinc.com/about/blogs/",
+    "contact": "https://broadstrokeinc.com/contact/",
+    "faq": "https://broadstrokeinc.com/resources/"
+  }
+}
