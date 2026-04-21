@@ -88,6 +88,12 @@
         "alt": "Professional promotional products and custom apparel with screen printing and embroidery displayed for businesses in Wichita KS" 
       },
       "subhead": "Looking for a specific item or just browsing for ideas? Your one-stop shop for promotional products and business gifts. With thousands of selections, we offer branded merchandise to fulfill all of your needs.",
+      "logo": {
+        "src": "/promo/images/Broadstroke_Icon_Promo.png",
+        "alt": "Broadstroke Promotional Products",
+        "height": 80,
+        "align": "left"
+      },
       "background": { 
         "image": "/promo/images/promo-hero.jpg", 
         "overlay": true 

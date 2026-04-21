@@ -33,11 +33,12 @@ export interface HeroContent {
     text: string;
     largeFont?: boolean;
   };
-  // Logo to display above headline (centered)
+  // Logo to display above headline
   logo?: {
     src: string;
     alt: string;
     height?: number; // Height in pixels (default: 80)
+    align?: 'left' | 'center'; // Logo alignment (default: center)
   };
 }
 
