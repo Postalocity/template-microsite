@@ -84,7 +84,7 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
   // Allow config to override title/description, with brand-aware defaults
   const sectionTitle = difference?.section?.title || brandDifference?.section?.title || `The ${brandName} Difference`;
   const sectionDescription = difference?.section?.description || brandDifference?.section?.description || "Discover why businesses trust our service";
-  const badgeText = difference?.section?.description ? undefined : `Why Choose ${brandName}`;
+  const badgeText = `Why Choose ${brandName}`;
 
   return (
     <section
@@ -111,8 +111,9 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
           )}
           <h2 
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight"
-            dangerouslySetInnerHTML={{ __html: sectionTitle }}
-          />
+          >
+            <span className="text-primary" dangerouslySetInnerHTML={{ __html: sectionTitle }} />
+          </h2>
           <p 
             className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
             dangerouslySetInnerHTML={{ __html: sectionDescription }}
