@@ -357,6 +357,29 @@
         }
       ]
     },
+    "difference": {
+      "section": {
+        "title": "Why Choose Broadstroke",
+        "description": "The Broadstroke Difference — Businesses in the Wichita area, Kansas, and nationwide trust Broadstroke because we deliver more than just quality promotional products and apparel — we provide a true one-stop concierge solution for print, mail, and promo."
+      },
+      "differences": [
+        {
+          "icon": "zap",
+          "title": "Operational Efficiency",
+          "description": "One experienced team handles everything from design to printing, mailing, and promotions. No more juggling multiple vendors—our concierge approach coordinates every step of your project seamlessly."
+        },
+        {
+          "icon": "package",
+          "title": "Comprehensive Promotional Experience",
+          "description": "Product expertise, trusted vendor relationships, in-house design, and quality review—from viewing real samples to digital proofs to final delivery. We ensure you get high-quality items that elevate your brand."
+        },
+        {
+          "icon": "shield",
+          "title": "Proven Local Expertise",
+          "description": "Serving Wichita since 1964 with over 60 years of experience. We know the local market, understand your needs, and serve businesses of all sizes across industries."
+        }
+      ]
+    },
     "faq": {
       "section": {
         "title": "Promotional Products FAQ",
