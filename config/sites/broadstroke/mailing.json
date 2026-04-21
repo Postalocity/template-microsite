@@ -84,6 +84,11 @@
   },
   "content": {
     "hero": {
+      "logo": {
+        "src": "/mailing/images/Broadstroke_Mailing_Icon.png",
+        "alt": "Broadstroke Mailing Services",
+        "align": "left"
+      },
       "headline": {
         "main": "Mailing Services Solutions",
         "highlightTerm": "One Call. Done.",
