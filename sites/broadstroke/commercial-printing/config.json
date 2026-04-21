@@ -122,7 +122,7 @@
     ],
     "cta": {
       "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/contact/?service=commercial-printing"
+      "href": "https://broadstrokeinc.com/print-wide-format-contact/"
     }
   },
   "content": {
@@ -140,7 +140,7 @@
       "ctas": [
         {
           "text": "Request Free Estimate",
-          "href": "https://broadstrokeinc.com/contact/?service=commercial-printing",
+          "href": "https://broadstrokeinc.com/print-wide-format-contact/",
           "variant": "primary"
         },
         {
@@ -148,7 +148,13 @@
           "href": "#how-it-works",
           "variant": "outline"
         }
-      ]
+      ],
+      "logo": {
+        "src": "/commercial-printing/images/Broadstroke_Icons_Printing.png",
+        "alt": "Broadstroke Commercial Printing",
+        "height": 80,
+        "align": "left"
+      }
     },
     "benefits": {
       "section": {
@@ -328,6 +334,24 @@
         }
       ]
     },
+    "testimonials": [
+      {
+        "quote": "We've had a great working relationship with Broadstroke for almost 30 years. Communication with them is always quick and easy, and they consistently produce our products on or before the requested deadlines. Their work quality is also exceptional. Highly recommend!",
+        "attribution": "Eric McCluer",
+        "title": "Owner",
+        "company": "Talent On Parade, LLC",
+        "images": [
+          {
+            "src": "/commercial-printing/images/talent-on-parade-booklet-4.jpg",
+            "alt": "Talent On Parade Des Moines booklet - printed by Broadstroke"
+          },
+          {
+            "src": "/commercial-printing/images/talent-on-parade-booklet-7.jpg",
+            "alt": "Talent On Parade Des Moines booklet detail - printed by Broadstroke"
+          }
+        ]
+      }
+    ],
     "faq": {
       "section": {
         "title": "Commercial Printing FAQ",
@@ -365,7 +389,7 @@
         "headline": "Ready to simplify your commercial printing projects?",
         "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
         "buttonText": "Get Free Estimate",
-        "href": "https://broadstrokeinc.com/contact/?service=commercial-printing"
+        "href": "https://broadstrokeinc.com/print-wide-format-contact/"
       },
       "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
       "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
@@ -376,7 +400,7 @@
       "headline": "Ready to simplify your commercial printing projects?",
       "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
       "buttonText": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/contact/?service=commercial-printing"
+      "href": "https://broadstrokeinc.com/print-wide-format-contact/"
     },
     "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
     "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."

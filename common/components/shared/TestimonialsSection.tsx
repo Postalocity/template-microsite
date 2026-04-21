@@ -3,6 +3,11 @@ import { motion, useInView } from "framer-motion";
 import { Quote, ImageOff } from "lucide-react";
 import { useBrand } from "@/contexts";
 
+interface TestimonialImage {
+  src: string;
+  alt: string;
+}
+
 interface TestimonialData {
   quote: string;
   attribution: string;
@@ -10,6 +15,7 @@ interface TestimonialData {
   company?: string;
   image?: string;
   imageAlt?: string;
+  images?: TestimonialImage[]; // Multiple product showcase images
 }
 
 const TestimonialsSection = () => {
@@ -79,8 +85,46 @@ const TestimonialsSection = () => {
                       </div>
                     </div>
 
-                    {/* Testimonial Image - Display if available */}
-                    {testimonial.image && (
+                    {/* Testimonial Images - Multiple product showcase images in grid */}
+                    {testimonial.images && testimonial.images.length > 0 ? (
+                      <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={inView ? { opacity: 1, y: 0 } : undefined}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className={`grid gap-4 sm:gap-6 max-w-3xl mx-auto mb-8 ${
+                          testimonial.images.length === 1
+                            ? "grid-cols-1"
+                            : "grid-cols-1 md:grid-cols-2"
+                        }`}
+                      >
+                        {testimonial.images.map((img, imgIndex) => {
+                          const imgKey = `testimonial-${index}-img-${imgIndex}`;
+                          const imgHasError = imageErrors[imgKey];
+                          return (
+                            <div key={imgIndex} className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
+                              {imgHasError ? (
+                                <div className="w-full h-full flex items-center justify-center bg-muted">
+                                  <ImageOff className="w-12 h-12 text-muted-foreground" aria-hidden="true" />
+                                </div>
+                              ) : (
+                                <>
+                                  <img
+                                    src={img.src}
+                                    alt={img.alt}
+                                    className="w-full h-full object-contain bg-white transition-transform duration-500 group-hover:scale-105"
+                                    loading="lazy"
+                                    onError={() => handleImageError(imgKey)}
+                                  />
+                                  {/* Dark Vellum Overlay */}
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 pointer-events-none" />
+                                </>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </motion.div>
+                    ) : testimonial.image ? (
+                      /* Single image fallback */
                       <div className="max-w-2xl mx-auto">
                         <div className="relative group overflow-hidden rounded-xl shadow-card aspect-[4/3]">
                           {hasImageError ? (
@@ -89,7 +133,6 @@ const TestimonialsSection = () => {
                             </div>
                           ) : (
                             <>
-                              {/* Image */}
                               <img
                                 src={testimonial.image}
                                 alt={testimonial.imageAlt || `Testimonial from ${testimonial.attribution}`}
@@ -97,13 +140,12 @@ const TestimonialsSection = () => {
                                 loading="lazy"
                                 onError={() => handleImageError(imageKey)}
                               />
-                              {/* Dark Vellum Overlay */}
                               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/20 pointer-events-none" />
                             </>
                           )}
                         </div>
                       </div>
-                    )}
+                    ) : null}
 
                     {/* Divider between testimonials */}
                     {index < brandTestimonials.length - 1 && (

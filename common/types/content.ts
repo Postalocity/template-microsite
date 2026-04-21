@@ -103,6 +103,15 @@ export interface BenefitsContent {
       alt: string;
       height?: number;
     };
+    cta?: {
+      text: string;
+      href: string;
+    };
+    ctas?: Array<{
+      text: string;
+      href: string;
+      variant?: string;
+    }>;
   };
   benefits: Benefit[];
 }

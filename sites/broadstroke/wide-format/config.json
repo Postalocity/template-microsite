@@ -23,17 +23,17 @@
     }
   },
   "seo": {
-    "title": "Wide Format Printing Services — Large Format Graphics, Vehicle Wraps & Signage — Broadstroke, Inc.",
-    "description": "One-stop wide format printing solutions in Wichita KS: large format graphics, vehicle wraps, custom signage & banners with concierge service, professional installation, and seamless integration with commercial printing, automated mailing via Postalocity, and promotional products.",
+    "title": "Wide Format Printing Services — Large Format Graphics & Signage — Broadstroke, Inc.",
+    "description": "One-stop wide format printing solutions in Wichita KS: large format graphics, vehicle graphics, custom signage & banners with concierge service, professional installation, and seamless integration with commercial printing and promotional products.",
     "keywords": [
       "wide format printing Wichita",
       "large format printing Wichita KS",
-      "vehicle wraps Wichita KS",
+      "vehicle graphics Wichita KS",
       "custom signage Wichita",
       "large format graphics Kansas"
     ],
     "ogTitle": "Wide Format Printing Services — Broadstroke, Inc.",
-    "ogDescription": "Professional wide format printing, vehicle wraps, and signage with one-call concierge convenience in Wichita, KS.",
+    "ogDescription": "Professional wide format printing, vehicle graphics, and signage with one-call concierge convenience in Wichita, KS.",
     "ogImage": "/wide-format/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/wide-format",
@@ -126,9 +126,9 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Go Big or Go Home",
+        "main": "Go Big or Go Home —",
         "highlightTerm": "Make an Impression",
-        "alt": "Wide format printing services in Wichita KS with vehicle wraps, signage, and large format graphics"
+        "alt": "Wide format printing services in Wichita KS with vehicle graphics, signage, and large format graphics"
       },
       "subhead": "Eye-catching materials and designs that grab the attention of potential customers. Wide format, or large format, printing refers to print that is larger than traditional print sizes. Often more durable, these graphics can be applied to various mediums for outdoor or indoor usage.",
       "background": {
@@ -157,7 +157,14 @@
     "benefits": {
       "section": {
         "title": "Wide Format Printing Benefits",
-        "description": "Skip the coordination headaches of working with multiple vendors. One experienced team manages your entire wide format project from design through professional installation."
+        "description": "Skip the coordination headaches of working with multiple vendors. One experienced team manages your entire wide format project from design through professional installation.",
+        "ctas": [
+          {
+            "text": "Request Free Estimate",
+            "href": "https://broadstrokeinc.com/print-wide-format-contact/",
+            "variant": "primary"
+          }
+        ]
       },
       "benefits": [
         {
@@ -168,9 +175,9 @@
         },
         {
           "icon": "truck",
-          "title": "Professional Vehicle Wrap Installation",
-          "description": "Experienced installers provide flawless results, including after-hours service to minimize fleet downtime.",
-          "detail": "From simple decals to full truck wraps."
+          "title": "Professional Installation",
+          "description": "Experienced installers provide flawless results for vehicle graphics, signage, and all wide format applications.",
+          "detail": "From simple decals to full signage installations."
         },
         {
           "icon": "trending-up",
@@ -181,7 +188,7 @@
         {
           "icon": "package",
           "title": "Seamless Integration",
-          "description": "Combine wide format graphics with commercial printing, Postalocity automated mailing, and promotional products under one roof.",
+          "description": "Combine wide format graphics with commercial printing, mailings, and promotional products under one roof.",
           "detail": "Complete marketing campaigns managed by a single team."
         }
       ]
@@ -189,7 +196,14 @@
     "comparison": {
       "section": {
         "title": "Why Wichita Businesses Choose Broadstroke for Wide Format Printing",
-        "description": "See the difference true one-stop concierge service makes compared to graphics-only or specialized providers."
+        "description": "See the difference true one-stop concierge service makes compared to graphics-only or specialized providers.",
+        "ctas": [
+          {
+            "text": "Request Free Estimate",
+            "href": "https://broadstrokeinc.com/print-wide-format-contact/",
+            "variant": "primary"
+          }
+        ]
       },
       "columns": {
         "traditional": "Traditional or Specialized Shops",
@@ -199,7 +213,7 @@
         {
           "icon": "users",
           "feature": "Project Coordination",
-          "ourSolution": "Single team with one point of contact",
+          "ourSolution": "One point of contact manages your job from concept to installation",
           "traditionalApproach": "Multiple vendors to manage"
         },
         {
@@ -210,9 +224,9 @@
         },
         {
           "icon": "truck",
-          "feature": "Installation",
-          "ourSolution": "Experienced in-house team with after-hours options",
-          "traditionalApproach": "Varies by provider, often outsourced"
+          "feature": "Installation Coordination",
+          "ourSolution": "Broadstroke coordinates professional installation through trusted partners, managed by your single point of contact",
+          "traditionalApproach": "You arrange and manage installation separately"
         },
         {
           "icon": "shield",
@@ -231,13 +245,20 @@
     "services": {
       "section": {
         "title": "Wide Format Printing Services — Wichita KS",
-        "description": "Full-service large format solutions including vehicle graphics, signage, banners, and custom applications with professional installation."
+        "description": "Full-service large format solutions including vehicle graphics, signage, banners, and custom applications with professional installation.",
+        "ctas": [
+          {
+            "text": "Request Free Estimate",
+            "href": "https://broadstrokeinc.com/print-wide-format-contact/",
+            "variant": "primary"
+          }
+        ]
       },
       "services": [
         {
           "icon": "truck",
-          "title": "Vehicle Graphics & Wraps",
-          "description": "High-quality fleet graphics, full truck wraps, partial wraps, door graphics, decals, and logos with flawless professional installation and after-hours availability. Four-hour work and turn for simple jobs like DOT numbers, website, phone number, or logo graphics and decals."
+          "title": "Vehicle Graphics & Decals",
+          "description": "High-quality fleet graphics, partial wraps, door graphics, decals, and logos with professional installation."
         },
         {
           "icon": "package",
@@ -286,7 +307,7 @@
         {
           "number": "03",
           "title": "Install",
-          "description": "Professional installation by our experienced team, including after-hours service for vehicle wraps to minimize fleet downtime. Pickup and shipping also available."
+          "description": "Professional installation coordinated through trusted partners, managed by your Broadstroke contact. Pickup and shipping also available."
         }
       ]
     },
@@ -299,12 +320,12 @@
         {
           "icon": "zap",
           "title": "Operational Efficiency",
-          "description": "Eliminate the need to manage separate designers, printers, and installers. One dedicated team coordinates every step of your wide format project from concept through installation."
+          "description": "Eliminate the need to manage separate designers, printers, and installers. A dedicated team coordinates every step of your wide format project from concept through installation."
         },
         {
           "icon": "package",
           "title": "Integrated Marketing Capability",
-          "description": "Combine wide format graphics with commercial printing, Postalocity automated mailing, and promotional products under one roof. Coordinated campaigns managed by a single concierge team."
+          "description": "Combine wide format graphics with commercial printing, mailings, and promotional products under one roof. Coordinated campaigns managed by a single concierge team."
         },
         {
           "icon": "shield",
@@ -313,6 +334,11 @@
         }
       ]
     },
+    "trustSignals": [
+      "60+ Years of Experience",
+      "Professional Installation Coordination",
+      "In-House Design Team"
+    ],
     "faq": {
       "section": {
         "title": "Wide Format Printing FAQ",
@@ -324,8 +350,8 @@
           "a": "Both terms describe oversized printing used for banners, vehicle graphics, signage, and displays. Broadstroke applies either term to durable, high-impact materials produced on advanced equipment for indoor and outdoor use."
         },
         {
-          "q": "Do you offer vehicle wrap installation in Wichita?",
-          "a": "Yes. Our experienced installation team handles partial graphics, full wraps, and after-hours service for fleets that require minimal downtime."
+          "q": "Do you offer vehicle graphics installation in Wichita?",
+          "a": "Yes. Our experienced installation team handles vehicle graphics, partial wraps, door decals, and fleet logos with professional results."
         },
         {
           "q": "What substrates can you print on for wide format projects?",
@@ -337,7 +363,7 @@
         },
         {
           "q": "Can wide format graphics be integrated with other marketing services?",
-          "a": "Absolutely. The same concierge team that produces large-format graphics also manages commercial printing and Postalocity automated mailing, enabling coordinated campaigns with single-point accountability."
+          "a": "Absolutely. The same concierge team that produces large-format graphics also manages commercial printing, mailings, and promotional materials, enabling coordinated campaigns with single-point accountability."
         },
         {
           "q": "Do you provide design support for wide format projects?",

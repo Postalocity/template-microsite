@@ -154,12 +154,31 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
         </div>
 
         {/* CTAs - rendered within section */}
-        {benefits.ctas && benefits.ctas.length > 0 && (
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            {benefits.ctas.map((cta, idx) => (
+        {(benefits.section.ctas && benefits.section.ctas.length > 0 || benefits.section.cta) && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-10 flex flex-wrap justify-center gap-4"
+          >
+            {/* Single CTA (legacy support) */}
+            {benefits.section.cta && (
+              <a
+                href={benefits.section.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-lg font-bold hover:bg-primary/90 transition-colors shadow-lg"
+              >
+                {benefits.section.cta.text}
+              </a>
+            )}
+            {/* Multiple CTAs array */}
+            {benefits.section.ctas?.map((cta, idx) => (
               <a
                 key={idx}
                 href={cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg transition-all shadow-lg ${
                   cta.variant === 'primary' 
                     ? 'bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90' 
@@ -169,7 +188,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
                 {cta.text}
               </a>
             ))}
-          </div>
+          </motion.div>
         )}
       </div>
     </section>
