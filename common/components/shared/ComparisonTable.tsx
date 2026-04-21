@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Check, X } from "lucide-react";
+import { Check, X, ArrowRight } from "lucide-react";
 import envelopeSample from "@/assets/envelope-sample.svg";
 import { useFormattedPricing } from "@/utils/pricing";
 import { getIcon } from "@/utils/icons";
@@ -13,6 +13,11 @@ interface ComparisonData {
       text: string;
       href: string;
     };
+    ctas?: Array<{
+      text: string;
+      href: string;
+      variant?: string;
+    }>;
   };
   columns: {
     ourSolution: string;
@@ -173,6 +178,32 @@ const ComparisonTable = ({ comparison }: ComparisonTableProps) => {
                   {comparison.section.cta.text}
                   <Check className="w-4 h-4" />
                 </a>
+              </motion.div>
+            )}
+            {/* Multiple CTAs array */}
+            {comparison.section.ctas && comparison.section.ctas.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="mt-10 flex flex-wrap justify-center gap-4"
+              >
+                {comparison.section.ctas.map((cta, idx) => (
+                  <a
+                    key={idx}
+                    href={cta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg transition-all shadow-lg ${
+                      cta.variant === 'primary'
+                        ? 'bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90'
+                        : 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10'
+                    }`}
+                  >
+                    {cta.text}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                ))}
               </motion.div>
             )}
           </div>

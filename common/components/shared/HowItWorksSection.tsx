@@ -131,7 +131,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
           className="text-center mt-10 text-lg font-semibold text-foreground"
         >
           <Check className="inline w-5 h-5 text-secondary mr-2" />
-          Carbonless forms are produced from design approval through professional printing, quality control, and finishing to ensure accurate, clean multi-part forms delivered when you need them for your business documentation.
+          {sectionDesc}
         </motion.p>
       </div>
     </section>

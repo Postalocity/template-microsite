@@ -113,6 +113,12 @@ export interface Service {
   description: string;
   image?: string;
   href?: string;
+  cta?: CTA;
+  logo?: {
+    src: string;
+    alt: string;
+    height?: number;
+  };
 }
 
 export interface ServicesContent {
@@ -156,6 +162,7 @@ export interface ComparisonContent {
       text: string;
       href: string;
     };
+    ctas?: CTA[];
   };
   columns: {
     ourSolution: string;

@@ -6,19 +6,27 @@
     "slug": "promo",
     "domain": "broadstrokeinc.com",
     "basename": "/promo",
-    "contact": { 
-      "email": "promoinfo@broadstrokeinc.com", 
-      "phone": "316-247-5348", 
-      "address": "820 W 2nd St N, Wichita KS 67203" 
+    "contact": {
+      "email": "promoinfo@broadstrokeinc.com",
+      "phone": "316-247-5348",
+      "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
-  "branding": { 
-    "tagline": "Print. Mail. Promo. One Call.", 
-    "logo": "/logo.png" 
+  "branding": {
+    "tagline": "Print. Mail. Promo. One Call.",
+    "logo": "/logo.png"
   },
-  "theme": { 
-    "primary": { "h": 200, "s": 80, "l": 40 },
-    "accent": { "h": 45, "s": 100, "l": 50 }
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 40
+    },
+    "accent": {
+      "h": 45,
+      "s": 100,
+      "l": 50
+    }
   },
   "seo": {
     "title": "Promotional Products & Apparel — Broadstroke, Inc.",
@@ -45,31 +53,82 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "Products", "href": "https://www.broadstrokepromos.com/" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Products",
+        "href": "https://www.broadstrokepromos.com/"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "serviceLinks": [
-      { "label": "Business Forms", "href": "https://broadstrokeinc.com/carbonless-forms" },
-      { "label": "Print", "href": "https://broadstrokeinc.com/commercial-printing" },
-      { "label": "Mail", "href": "https://broadstrokeinc.com/mailing" },
-      { "label": "Mail Pickup", "href": "https://broadstrokeinc.com/mail-pickup" },
-      { "label": "Shipping & Fulfillment", "href": "https://broadstrokeinc.com/mailing" },
-      { "label": "Technology", "href": "https://aobts.com/" },
-      { "label": "Promo", "href": "https://www.broadstrokepromos.com/" },
-      { "label": "Wide Format", "href": "https://broadstrokeinc.com/wide-format" }
+      {
+        "label": "Business Forms",
+        "href": "https://broadstrokeinc.com/carbonless-forms"
+      },
+      {
+        "label": "Print",
+        "href": "https://broadstrokeinc.com/commercial-printing"
+      },
+      {
+        "label": "Mail",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup"
+      },
+      {
+        "label": "Shipping & Fulfillment",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Technology",
+        "href": "https://aobts.com/"
+      },
+      {
+        "label": "Promo",
+        "href": "/promo"
+      },
+      {
+        "label": "Wide Format",
+        "href": "https://broadstrokeinc.com/wide-format"
+      }
     ],
     "companyLinks": [
-      { "label": "About", "href": "https://broadstrokeinc.com/about" },
-      { "label": "Our Work", "href": "https://broadstrokeinc.com/our-work" },
-      { "label": "Blog", "href": "https://broadstrokeinc.com/about/blogs" },
-      { "label": "Careers", "href": "https://broadstrokeinc.com/careers" },
-      { "label": "Contact", "href": "https://broadstrokeinc.com/contact" }
+      {
+        "label": "About",
+        "href": "https://broadstrokeinc.com/about"
+      },
+      {
+        "label": "Our Work",
+        "href": "https://broadstrokeinc.com/our-work"
+      },
+      {
+        "label": "Blog",
+        "href": "https://broadstrokeinc.com/about/blogs"
+      },
+      {
+        "label": "Careers",
+        "href": "https://broadstrokeinc.com/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact"
+      }
     ],
-    "cta": { 
-      "text": "Browse Products", 
-      "href": "https://www.broadstrokepromos.com/" 
+    "cta": {
+      "text": "Browse Products",
+      "href": "https://www.broadstrokepromos.com/"
     }
   },
   "promoCode": "HUNT2026",
@@ -82,10 +141,10 @@
       "In-House Design Team"
     ],
     "hero": {
-      "headline": { 
-        "main": "Promotional Products & Apparel Solutions", 
-        "highlightTerm": "One-Stop Shop.", 
-        "alt": "Professional promotional products and custom apparel with screen printing and embroidery displayed for businesses in Wichita KS" 
+      "headline": {
+        "main": "Promotional Products & Apparel Solutions",
+        "highlightTerm": "One-Stop Shop.",
+        "alt": "Professional promotional products and custom apparel with screen printing and embroidery displayed for businesses in Wichita KS"
       },
       "subhead": "Looking for a specific item or just browsing for ideas? Your one-stop shop for promotional products and business gifts. With thousands of selections, we offer branded merchandise to fulfill all of your needs.",
       "logo": {
@@ -93,24 +152,24 @@
         "alt": "Broadstroke Promotional Products",
         "align": "left"
       },
-      "background": { 
-        "image": "/promo/images/promo-hero.jpg", 
-        "overlay": true 
+      "background": {
+        "image": "/promo/images/promo-hero.jpg",
+        "overlay": true
       },
       "ctas": [
-        { 
-          "text": "Browse Products", 
-          "href": "https://www.broadstrokepromos.com/", 
-          "variant": "primary" 
+        {
+          "text": "Browse Products",
+          "href": "https://www.broadstrokepromos.com/",
+          "variant": "primary"
         },
-        { 
-          "text": "See How It Works", 
-          "href": "#how-it-works", 
-          "variant": "outline" 
+        {
+          "text": "See How It Works",
+          "href": "#how-it-works",
+          "variant": "outline"
         }
       ]
     },
-    "benefits": { 
+    "benefits": {
       "section": {
         "title": "Reclaim Hours Weekly with Concierge Service",
         "description": "Skip the coordination headaches. One team manages your entire promotional products project from design to delivery."
@@ -142,7 +201,7 @@
         }
       ]
     },
-    "comparison": { 
+    "comparison": {
       "section": {
         "title": "Why Wichita Businesses Choose Broadstroke<br />for Promotional Products",
         "description": "See the difference professional concierge service makes."
@@ -190,11 +249,14 @@
         }
       ]
     },
-    "services": { 
+    "services": {
       "section": {
         "title": "Promotional Products & Apparel —<br />in Wichita, KS and Nationwide",
         "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on the newest products and latest trends.",
-        "cta": { "text": "Browse Products", "href": "https://www.broadstrokepromos.com/" },
+        "cta": {
+          "text": "Browse Products",
+          "href": "https://www.broadstrokepromos.com/"
+        },
         "finishingNote": "All promotional products include professional customization services—screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available."
       },
       "services": [
@@ -348,11 +410,11 @@
       ]
     },
     "footer": {
-      "finalCTA": { 
-        "headline": "Ready to simplify your promotional products projects?", 
+      "finalCTA": {
+        "headline": "Ready to simplify your promotional products projects?",
         "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
-        "buttonText": "Get Free Estimate", 
-        "href": "https://broadstrokeinc.com/promo-contact/" 
+        "buttonText": "Get Free Estimate",
+        "href": "https://broadstrokeinc.com/promo-contact/"
       },
       "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
       "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."

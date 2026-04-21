@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ComparisonContent } from "../../types/content";
 import { getIcon } from "../../utils/icons";
+import { ArrowRight } from "lucide-react";
 
 interface ComparisonSectionProps {
   comparison: ComparisonContent;
@@ -76,6 +77,43 @@ const ComparisonSection = ({ comparison }: ComparisonSectionProps) => {
             </tbody>
           </table>
         </div>
+
+        {/* CTAs - support both single cta and ctas array */}
+        {(comparison.section.cta || (comparison.section.ctas && comparison.section.ctas.length > 0)) && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-10 flex flex-wrap justify-center gap-4"
+          >
+            {comparison.section.cta && (
+              <a
+                href={comparison.section.cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors"
+              >
+                {comparison.section.cta.text}
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            )}
+            {comparison.section.ctas?.map((cta, idx) => (
+              <a
+                key={idx}
+                href={cta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-lg transition-all shadow-lg ${
+                  cta.variant === 'primary'
+                    ? 'bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90'
+                    : 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10'
+                }`}
+              >
+                {cta.text}
+              </a>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );

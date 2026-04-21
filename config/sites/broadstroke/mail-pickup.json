@@ -36,7 +36,16 @@
   "seo": {
     "title": "Mail Pickup Services — Broadstroke, Inc.",
     "description": "Daily mail pickup services in Wichita KS with presort postage, certified mail support, flats handling and full concierge integration. Reclaim operational time with one-stop print, mail and promo delivery. Free estimates and 45+ years expertise.",
-    "keywords": ["mail pickup services", "mail pickup Wichita", "daily mail pickup", "presort mail pickup", "certified mail pickup", "EDDM pickup Wichita", "bulk mail services Kansas", "mailroom pickup service"],
+    "keywords": [
+      "mail pickup services",
+      "mail pickup Wichita",
+      "daily mail pickup",
+      "presort mail pickup",
+      "certified mail pickup",
+      "EDDM pickup Wichita",
+      "bulk mail services Kansas",
+      "mailroom pickup service"
+    ],
     "ogTitle": "Mail Pickup Services — Broadstroke, Inc.",
     "ogDescription": "Convenient daily mail collection with expert presort processing, print and promo delivery — all handled by one Wichita team.",
     "ogImage": "/mail-pickup/images/og-image.png",
@@ -45,29 +54,83 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Services", "href": "#services" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "serviceLinks": [
-      { "label": "Business Forms", "href": "https://broadstrokeinc.com/carbonless-forms" },
-      { "label": "Print", "href": "https://broadstrokeinc.com/commercial-printing" },
-      { "label": "Mail", "href": "https://broadstrokeinc.com/mailing" },
-      { "label": "Mail Pickup", "href": "https://broadstrokeinc.com/mail-pickup" },
-      { "label": "Shipping & Fulfillment", "href": "https://broadstrokeinc.com/mailing" },
-      { "label": "Technology", "href": "https://aobts.com/" },
-      { "label": "Promo", "href": "https://www.broadstrokepromos.com/" },
-      { "label": "Wide Format", "href": "https://broadstrokeinc.com/wide-format" }
+      {
+        "label": "Business Forms",
+        "href": "https://broadstrokeinc.com/carbonless-forms"
+      },
+      {
+        "label": "Print",
+        "href": "https://broadstrokeinc.com/commercial-printing"
+      },
+      {
+        "label": "Mail",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup"
+      },
+      {
+        "label": "Shipping & Fulfillment",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Technology",
+        "href": "https://aobts.com/"
+      },
+      {
+        "label": "Promo",
+        "href": "/promo"
+      },
+      {
+        "label": "Wide Format",
+        "href": "https://broadstrokeinc.com/wide-format"
+      }
     ],
     "companyLinks": [
-      { "label": "About", "href": "https://broadstrokeinc.com/about" },
-      { "label": "Our Work", "href": "https://broadstrokeinc.com/our-work" },
-      { "label": "Blog", "href": "https://broadstrokeinc.com/about/blogs" },
-      { "label": "Careers", "href": "https://broadstrokeinc.com/careers" },
-      { "label": "Contact", "href": "https://broadstrokeinc.com/contact" }
+      {
+        "label": "About",
+        "href": "https://broadstrokeinc.com/about"
+      },
+      {
+        "label": "Our Work",
+        "href": "https://broadstrokeinc.com/our-work"
+      },
+      {
+        "label": "Blog",
+        "href": "https://broadstrokeinc.com/about/blogs"
+      },
+      {
+        "label": "Careers",
+        "href": "https://broadstrokeinc.com/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact"
+      }
     ],
-    "cta": { "text": "Get Free Estimate", "href": "https://broadstrokeinc.com/mailing-contact/" }
+    "cta": {
+      "text": "Get Free Estimate",
+      "href": "https://broadstrokeinc.com/mailing-contact/"
+    }
   },
   "content": {
     "hero": {
@@ -82,8 +145,16 @@
         "overlay": true
       },
       "ctas": [
-        { "text": "Request Free Estimate", "href": "https://broadstrokeinc.com/mailing-contact/", "variant": "primary" },
-        { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
+        {
+          "text": "Request Free Estimate",
+          "href": "https://broadstrokeinc.com/mailing-contact/",
+          "variant": "primary"
+        },
+        {
+          "text": "See How It Works",
+          "href": "#how-it-works",
+          "variant": "outline"
+        }
       ]
     },
     "benefits": {

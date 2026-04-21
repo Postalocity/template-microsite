@@ -23,24 +23,25 @@
     }
   },
   "seo": {
-    "title": "Custom Carbonless Forms | NCR 2-Part, 3-Part, 4-Part Printing - Broadstroke",
-    "description": "Nationwide custom carbonless forms printing. 2, 3, and 4-part NCR forms with sequential numbering, variable data, and fast turnaround. Free estimates.",
+    "title": "Custom Carbonless Forms — Nationwide Distribution",
+    "description": "Nationwide custom carbonless forms printing. 2, 3, and 4-part multipart forms with sequential numbering, variable data, and fast turnaround. Free estimates.",
     "keywords": [
       "custom carbonless forms",
-      "NCR forms",
       "carbonless forms printing",
       "2 part carbonless forms",
       "3 part carbonless forms",
       "4 part carbonless forms",
       "multipart forms",
-      "NCR printing",
+      "carbonless printing",
       "sequential numbering forms",
       "business forms printing"
     ],
-    "ogTitle": "Custom Carbonless Forms | NCR Printing - Broadstroke",
+    "ogTitle": "Custom Carbonless Forms | Carbonless Printing - Broadstroke",
     "ogDescription": "Custom 2, 3, and 4-part carbonless forms with precision printing and finishing. Get a free estimate.",
     "ogImage": "/carbonless-forms/images/og-image.png",
     "twitterCard": "summary_large_image",
+    "twitterTitle": "Custom Carbonless Forms — Broadstroke, Inc. | Your One-Stop-Shop for Print, Mail & Promo",
+    "twitterDescription": "CarbonlessUSA.com is now part of Broadstroke — bringing you the same quality carbonless forms you trust, now with access to comprehensive print, mail, and promotional services. High-quality 2, 3, and 4-part carbonless forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment.",
     "canonical": "https://broadstrokeinc.com/carbonless-forms",
     "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
@@ -90,7 +91,7 @@
       },
       {
         "label": "Promo",
-        "href": "https://www.broadstrokepromos.com/"
+        "href": "/promo"
       },
       {
         "label": "Wide Format",
@@ -121,17 +122,17 @@
     ],
     "cta": {
       "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms"
+      "href": "https://broadstrokeinc.com/business-forms-contact/"
     }
   },
   "content": {
     "hero": {
       "headline": {
-        "main": "Custom Carbonless NCR Forms",
-        "highlightTerm": "Since 2003",
-        "alt": "Nationwide custom carbonless and NCR multipart forms with precision finishing and variable data"
+        "main": "Custom Carbonless Forms",
+        "highlightTerm": "Nationwide Distribution",
+        "alt": "Nationwide custom carbonless and multipart forms with precision finishing and variable data"
       },
-      "subhead": "High-quality 2, 3, and 4-part NCR forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment — with some of the most affordable prices for carbonless forms in the United States.",
+      "subhead": "CarbonlessUSA.com is now part of Broadstroke — bringing you the same quality carbonless forms you trust, now with access to comprehensive print, mail, and promotional services. High-quality 2, 3, and 4-part carbonless forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment.",
       "background": {
         "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80",
         "overlay": true
@@ -139,19 +140,20 @@
       "ctas": [
         {
           "text": "Order Now",
-          "href": "https://broadstrokeinc.com/business-forms/#order-form",
+          "href": "https://broadstrokeinc.com/business-forms-new-order",
           "variant": "primary"
         },
         {
           "text": "Get Free Estimate",
-          "href": "https://broadstrokeinc.com/contact/",
+          "href": "https://broadstrokeinc.com/business-forms-contact/",
           "variant": "outline"
         }
       ],
       "logo": {
         "src": "/carbonless-forms/images/Gemini_no_star.png",
         "alt": "Carbonless Forms by Broadstroke",
-        "height": 80
+        "height": 80,
+        "align": "left"
       }
     },
     "benefits": {
@@ -171,29 +173,19 @@
           "description": "2, 3, and 4 part options allow for multiple copies to be distributed for different purposes."
         },
         {
-          "icon": "scissors",
+          "icon": "palette",
+          "title": "Printing Options",
+          "description": "Multiple color print choices in either pre-collated standard sequence or unique color sequence that meets your needs."
+        },
+        {
+          "icon": "ruler",
           "title": "Finishing Options",
-          "description": "Hole drilling, numbering, perforation, & scoring for enhanced functionality and organization of your forms."
-        },
-        {
-          "icon": "folder-open",
-          "title": "Post-press Finishing",
-          "description": "Wrap around covers & folding options for protection and convenient packaging of your forms."
-        },
-        {
-          "icon": "file-digit",
-          "title": "Variable Data",
-          "description": "Custom information printed on each form, such as names, addresses, or order details."
+          "description": "Hole drilling, numbering, perforation, wrap around covers, and folding options for enhanced functionality, protection, and convenient packaging of your forms."
         },
         {
           "icon": "truck",
           "title": "Distribution",
           "description": "Efficiently delivered to the right locations, neatly organized for quick and easy access by your team or customers."
-        },
-        {
-          "icon": "palette",
-          "title": "Printing Options",
-          "description": "Multiple color print choices & various paper weights for a high-quality look that meets your specific needs."
         },
         {
           "icon": "headset",
@@ -209,12 +201,12 @@
       "ctas": [
         {
           "text": "Order Now",
-          "href": "https://broadstrokeinc.com/business-forms/#order-form",
+          "href": "https://broadstrokeinc.com/business-forms-new-order",
           "variant": "primary"
         },
         {
           "text": "Get Free Estimate",
-          "href": "https://broadstrokeinc.com/contact/",
+          "href": "https://broadstrokeinc.com/business-forms-contact/",
           "variant": "outline"
         }
       ]
@@ -226,12 +218,12 @@
         "ctas": [
           {
             "text": "Order Now",
-            "href": "https://broadstrokeinc.com/business-forms/#order-form",
+            "href": "https://broadstrokeinc.com/business-forms-new-order",
             "variant": "primary"
           },
           {
             "text": "Get Free Estimate",
-            "href": "https://broadstrokeinc.com/contact/",
+            "href": "https://broadstrokeinc.com/business-forms-contact/",
             "variant": "outline"
           }
         ]
@@ -265,16 +257,24 @@
     },
     "comparison": {
       "section": {
-        "title": "Why Businesses Choose<br />Carbonless USA",
+        "title": "Why Businesses Choose<br />Broadstroke",
         "description": "See the difference professional concierge service makes.",
-        "cta": {
-          "text": "Order Now",
-          "href": "https://broadstrokeinc.com/business-forms/#order-form"
-        }
+        "ctas": [
+          {
+            "text": "Order Now",
+            "href": "https://broadstrokeinc.com/business-forms-new-order",
+            "variant": "primary"
+          },
+          {
+            "text": "Get Free Estimate",
+            "href": "https://broadstrokeinc.com/business-forms-contact/",
+            "variant": "outline"
+          }
+        ]
       },
       "columns": {
         "traditional": "Other Form Printers",
-        "ourSolution": "Carbonless USA by Broadstroke"
+        "ourSolution": "Broadstroke"
       },
       "rows": [
         {
@@ -283,22 +283,16 @@
           "ourSolution": "One team from design through delivery",
           "traditionalApproach": "Different contacts for design, printing, and finishing"
         },
-          {
-            "icon": "ruler",
-            "feature": "Alignment Control",
-            "ourSolution": "Quality inspection for proper alignment",
-            "traditionalApproach": "Ship direct without quality review"
-          },
-          {
-            "icon": "binary",
-            "feature": "Variable Data",
-          "ourSolution": "Sequential numbering in 4 positions, custom data fields, barcodes, alphanumeric codes (additional charge)",
-          "traditionalApproach": "Basic numbering front-only, limited customization options"
+        {
+          "icon": "ruler",
+          "feature": "Alignment Control",
+          "ourSolution": "Every order carefully inspected before delivery",
+          "traditionalApproach": "Ship direct without quality review"
         },
         {
           "icon": "package",
           "feature": "Finishing",
-          "ourSolution": "Professional padding, optional numbering (additional charge), and protective packaging",
+          "ourSolution": "Professional padding, optional numbering available, and protective packaging",
           "traditionalApproach": "Ship loose sheets, charge extra for finishing"
         },
         {
@@ -317,20 +311,8 @@
     },
     "difference": {
       "section": {
-        "title": "Why Businesses Choose<br />Carbonless USA",
-        "description": "Organizations nationwide trust Carbonless USA by Broadstroke for custom carbonless forms because we deliver more than just printing — we provide a true one-stop concierge solution.",
-        "ctas": [
-          {
-            "text": "Order Now",
-            "href": "https://broadstrokeinc.com/business-forms/#order-form",
-            "variant": "primary"
-          },
-          {
-            "text": "Get Free Estimate",
-            "href": "https://broadstrokeinc.com/contact/",
-            "variant": "outline"
-          }
-        ]
+        "title": "Why Businesses Choose<br />Broadstroke",
+        "description": "Organizations nationwide trust Broadstroke for custom carbonless forms because we deliver more than just printing — we provide a true one-stop concierge solution."
       },
       "differences": [
         {
@@ -340,8 +322,8 @@
         },
         {
           "icon": "shield",
-          "title": "Proven Quality",
-          "description": "Serving businesses since 2003 with strict quality control. Every form set is inspected for proper alignment."
+          "title": "Quality You Expect",
+          "description": "We care about your print jobs and give them a personal touch. Every form is produced with attention to detail for clean, consistent duplicates."
         },
         {
           "icon": "package",
@@ -354,23 +336,23 @@
       "section": {
         "id": "how-it-works",
         "title": "How It Works",
-        "description": "Custom carbonless form production with concierge service that saves you hours — from initial design through professional finishing and optional distribution."
+        "description": "Carbonless forms are produced from design approval through professional printing, quality control, and finishing to ensure accurate multi-part forms delivered when you need them for your business documentation."
       },
       "steps": [
         {
           "number": "01",
           "title": "Design",
-          "description": "Share your form requirements, branding, and layout needs. We'll recommend finishing options for your specific use case. Digital proofs provided for approval."
+          "description": "Share your form requirements, branding, and layout needs. We'll recommend finishing options for your specific use. Digital proofs provided for approval."
         },
         {
           "number": "02",
           "title": "Produce",
-          "description": "Advanced printing with micro-encapsulated NCR coatings for consistent transfer. Quality control ensures proper alignment across all parts."
+          "description": "Advanced printing with carbonless paper for consistent transfer. Quality control ensures proper alignment across all parts."
         },
         {
           "number": "03",
           "title": "Finish & Deliver",
-          "description": "Professional finishing including optional sequential numbering (additional charge), padding, and protective packaging. Optional shipping to multiple locations."
+          "description": "Professional finishing including optional sequential numbering, padding, and protective packaging. Optional shipping to multiple locations available."
         }
       ]
     },
@@ -382,7 +364,7 @@
       "faqs": [
         {
           "q": "How do I know how many parts my carbonless form should be?",
-          "a": "Your carbonless form will produce an original and the number of duplicates you need for recipient or business purposes. 2 part forms create one duplicate (original + 1 copy), 3 part creates two duplicates (original + 2 copies), and 4-part creates three duplicates (original + 3 copies). The best option depends on how many departments or recipients need simultaneous copies. Many businesses use 2 part for customer receipts, 3 part for invoicing (customer, accounting, file), and 4-part for complex workflows requiring multiple department copies."
+          "a": "Your carbonless form will produce an original and the number of duplicates you need for recipient or business purposes. The best option depends on how many departments or recipients need simultaneous copies. Many businesses use 2 part for customer receipts, 3 part for invoicing (customer, accounting, file), and 4-part for complex workflows requiring multiple department copies."
         },
         {
           "q": "How does carbonless paper work without traditional carbon sheets?",
@@ -394,7 +376,7 @@
         },
         {
           "q": "What finishing options are available for carbonless forms?",
-          "a": "We offer several professional finishing options: sequential numbering (digitally printed, additional charge), loose sets in protective packaging, and hole drilling for binder insertion. All forms are edge glued unless specified by customer to not edge glue; forms may also be block padded with chipboard backer (typically 50 sets per pad). Custom packaging and kitting services are also available for projects requiring multiple form types bundled together."
+          "a": "We offer several professional finishing options: sequential numbering (digitally printed, available), loose sets in protective packaging, and hole drilling for binder insertion. All forms are edge glued unless specified by customer to not edge glue; forms may also be block padded with chipboard backer (typically 50 sets per pad). Custom packaging and kitting services are also available for projects requiring multiple form types bundled together."
         },
         {
           "q": "How long does carbonless form production take?",
@@ -415,13 +397,13 @@
         "headline": "Ready to streamline your form documentation?",
         "description": "Get custom carbonless forms with concierge service, quality finishing, and optional distribution.",
         "buttonText": "Order Now",
-        "href": "https://broadstrokeinc.com/business-forms/#order-form",
+        "href": "https://broadstrokeinc.com/business-forms-new-order",
         "secondaryButton": {
           "text": "Get Free Estimate",
-          "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms"
+          "href": "https://broadstrokeinc.com/business-forms-contact/"
         }
       },
-      "tagline": "Custom carbonless forms from CarbonlessUSA.com by Broadstroke, serving businesses since 2003.",
+      "tagline": "Custom carbonless forms from CarbonlessUSA.com by Broadstroke, serving businesses since 1964.",
       "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
     }
   },
@@ -434,13 +416,13 @@
       "headline": "Ready to streamline your form documentation?",
       "description": "Get custom carbonless forms with concierge service, quality finishing, and optional distribution.",
       "buttonText": "Order Now",
-      "href": "https://broadstrokeinc.com/business-forms/#order-form",
+      "href": "https://broadstrokeinc.com/business-forms-new-order",
       "secondaryButton": {
         "text": "Get Free Estimate",
-        "href": "https://broadstrokeinc.com/contact/?service=carbonless-forms"
+        "href": "https://broadstrokeinc.com/business-forms-contact/"
       }
     },
-    "tagline": "Custom carbonless forms from CarbonlessUSA.com by Broadstroke, serving businesses since 2003.",
+    "tagline": "Custom carbonless forms from CarbonlessUSA.com by Broadstroke, serving businesses since 1964.",
     "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
   }
 }

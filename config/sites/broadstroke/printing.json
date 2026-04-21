@@ -42,27 +42,78 @@
   },
   "navigation": {
     "links": [
-      { "label": "Benefits", "href": "#benefits" },
-      { "label": "Services", "href": "#services" },
-      { "label": "Process", "href": "#how-it-works" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "Process",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "serviceLinks": [
-      { "label": "Business Forms", "href": "https://broadstrokeinc.com/carbonless-forms" },
-      { "label": "Print", "href": "https://broadstrokeinc.com/commercial-printing" },
-      { "label": "Mail", "href": "https://broadstrokeinc.com/mailing" },
-      { "label": "Mail Pickup", "href": "https://broadstrokeinc.com/mail-pickup" },
-      { "label": "Shipping & Fulfillment", "href": "https://broadstrokeinc.com/mailing" },
-      { "label": "Technology", "href": "https://aobts.com/" },
-      { "label": "Promo", "href": "https://www.broadstrokepromos.com/" },
-      { "label": "Wide Format", "href": "https://broadstrokeinc.com/wide-format" }
+      {
+        "label": "Business Forms",
+        "href": "https://broadstrokeinc.com/carbonless-forms"
+      },
+      {
+        "label": "Print",
+        "href": "https://broadstrokeinc.com/commercial-printing"
+      },
+      {
+        "label": "Mail",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup"
+      },
+      {
+        "label": "Shipping & Fulfillment",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Technology",
+        "href": "https://aobts.com/"
+      },
+      {
+        "label": "Promo",
+        "href": "/promo"
+      },
+      {
+        "label": "Wide Format",
+        "href": "https://broadstrokeinc.com/wide-format"
+      }
     ],
     "companyLinks": [
-      { "label": "About", "href": "https://broadstrokeinc.com/about" },
-      { "label": "Our Work", "href": "https://broadstrokeinc.com/our-work" },
-      { "label": "Blog", "href": "https://broadstrokeinc.com/about/blogs" },
-      { "label": "Careers", "href": "https://broadstrokeinc.com/careers" },
-      { "label": "Contact", "href": "https://broadstrokeinc.com/contact" }
+      {
+        "label": "About",
+        "href": "https://broadstrokeinc.com/about"
+      },
+      {
+        "label": "Our Work",
+        "href": "https://broadstrokeinc.com/our-work"
+      },
+      {
+        "label": "Blog",
+        "href": "https://broadstrokeinc.com/about/blogs"
+      },
+      {
+        "label": "Careers",
+        "href": "https://broadstrokeinc.com/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact"
+      }
     ],
     "cta": {
       "text": "Get Free Estimate",
@@ -84,12 +135,12 @@
       "ctas": [
         {
           "text": "Get Free Quote",
-          "href": "https://broadstrokeinc.com/contact/",
+          "href": "https://broadstrokeinc.com/contact/?service=printing",
           "variant": "primary"
         },
         {
           "text": "View Our Work",
-          "href": "https://broadstrokeinc.com/about/our-work/",
+          "href": "https://broadstrokeinc.com/our-work/",
           "variant": "outline"
         }
       ]
@@ -269,7 +320,7 @@
         },
         {
           "label": "Promo",
-          "href": "https://www.broadstrokepromos.com/"
+          "href": "/promo"
         },
         {
           "label": "Contact",

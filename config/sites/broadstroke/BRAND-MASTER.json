@@ -2,7 +2,6 @@
   "_description": "Broadstroke Brand Master Configuration - Navigation & Shared Settings",
   "_usage": "Copy navigation and companyLinks sections into site-specific configs",
   "_lastUpdated": "2026-04-17",
-  
   "brand": {
     "id": "broadstroke",
     "name": "Broadstroke, Inc.",
@@ -31,7 +30,6 @@
       "youtube": "https://www.youtube.com/channel/UCd7KyDkDwi9hsA1ozODFQQQ"
     }
   },
-
   "navigation": {
     "serviceLinks": [
       {
@@ -66,7 +64,7 @@
       },
       {
         "label": "Promo",
-        "href": "https://www.broadstrokepromos.com/",
+        "href": "/promo",
         "description": "Promotional products"
       },
       {
@@ -102,7 +100,6 @@
       "hrefTemplate": "https://broadstrokeinc.com/contact/?service={{service}}"
     }
   },
-
   "theme": {
     "primary": {
       "h": 200,
@@ -115,13 +112,11 @@
       "l": 50
     }
   },
-
   "seoDefaults": {
     "googleAnalyticsId": "G-9HXQD6LYZ4",
     "twitterCard": "summary_large_image",
     "ogImage": "/images/og-image.png"
   },
-
   "promoCodes": {
     "postalocity": "bank2026",
     "printing": "print2026",
@@ -130,7 +125,6 @@
     "large-format": "lf2026",
     "carbonless-forms": "forms2026"
   },
-
   "urls": {
     "app": "https://prod.postalocity.com/login.html",
     "website": "https://www.broadstrokeinc.com",

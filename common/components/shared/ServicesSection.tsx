@@ -105,14 +105,44 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
                 ) : (
                   /* Fallback to icon card if no image */
                   <div className="h-full bg-card p-6 rounded-xl border border-border hover:shadow-lg transition-shadow">
-                    <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                      <Icon className="w-8 h-8 text-primary" />
-                    </div>
+                    {/* Logo replaces icon when present */}
+                    {service.logo ? (
+                      <div className="mb-4">
+                        <img
+                          src={service.logo.src}
+                          alt={service.logo.alt}
+                          style={{ height: service.logo.height || 70 }}
+                          className="object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                        <Icon className="w-8 h-8 text-primary" />
+                      </div>
+                    )}
                     <h3 className="text-lg font-bold mb-2">{service.title}</h3>
                     <p 
                       className="text-muted-foreground text-sm"
                       dangerouslySetInnerHTML={{ __html: sanitizeHtml(processText(service.description)) }}
                     />
+                    {/* Per-service CTA button */}
+                    {service.cta && (
+                      <div className="mt-4">
+                        <a
+                          href={service.cta.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold rounded-lg transition-all ${
+                            service.cta.variant === 'primary'
+                              ? 'bg-primary text-primary-foreground border-2 border-primary hover:bg-primary/90'
+                              : 'border-2 border-foreground/30 text-foreground hover:bg-foreground/10'
+                          }`}
+                        >
+                          {service.cta.text}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </a>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

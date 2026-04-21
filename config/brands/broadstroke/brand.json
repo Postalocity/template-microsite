@@ -20,8 +20,16 @@
     "alt": "Broadstroke - Print, Mail, Promo"
   },
   "colors": {
-    "primary": { "h": 200, "s": 80, "l": 40 },
-    "accent": { "h": 45, "s": 100, "l": 50 }
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 40
+    },
+    "accent": {
+      "h": 45,
+      "s": 100,
+      "l": 50
+    }
   },
   "testimonials": [
     {
@@ -87,21 +95,60 @@
     "tagline": "Your one-stop-shop for all things print, mail and promo.",
     "taglineSecondary": "No project is too big or too small",
     "links": [
-      { "label": "Print", "href": "https://broadstrokeinc.com/commercial-printing/" },
-      { "label": "Mail", "href": "https://broadstrokeinc.com/mailing/" },
-      { "label": "Mail Pickup", "href": "https://broadstrokeinc.com/mail-pickup/" },
-      { "label": "Promo", "href": "https://www.broadstrokepromos.com/" },
-      { "label": "Wide Format", "href": "https://broadstrokeinc.com/wide-format/" },
-      { "label": "Postalocity", "href": "https://www.postalocity.com/" },
-      { "label": "Business Forms", "href": "https://broadstrokeinc.com/business-forms/" },
-      { "label": "Technology", "href": "https://broadstrokeinc.com/technology/" }
+      {
+        "label": "Print",
+        "href": "https://broadstrokeinc.com/commercial-printing/"
+      },
+      {
+        "label": "Mail",
+        "href": "https://broadstrokeinc.com/mailing/"
+      },
+      {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup/"
+      },
+      {
+        "label": "Promo",
+        "href": "/promo"
+      },
+      {
+        "label": "Wide Format",
+        "href": "https://broadstrokeinc.com/wide-format/"
+      },
+      {
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/"
+      },
+      {
+        "label": "Business Forms",
+        "href": "https://broadstrokeinc.com/business-forms/"
+      },
+      {
+        "label": "Technology",
+        "href": "https://broadstrokeinc.com/technology/"
+      }
     ],
     "companyLinks": [
-      { "label": "About", "href": "https://broadstrokeinc.com/about/" },
-      { "label": "Our Work", "href": "https://broadstrokeinc.com/our-work/" },
-      { "label": "Blog", "href": "https://broadstrokeinc.com/about/blogs/" },
-      { "label": "Careers", "href": "https://broadstrokeinc.com/careers/" },
-      { "label": "Contact", "href": "https://broadstrokeinc.com/contact/" }
+      {
+        "label": "About",
+        "href": "https://broadstrokeinc.com/about/"
+      },
+      {
+        "label": "Our Work",
+        "href": "https://broadstrokeinc.com/our-work/"
+      },
+      {
+        "label": "Blog",
+        "href": "https://broadstrokeinc.com/about/blogs/"
+      },
+      {
+        "label": "Careers",
+        "href": "https://broadstrokeinc.com/careers/"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact/"
+      }
     ]
   }
 }
