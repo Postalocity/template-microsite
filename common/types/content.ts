@@ -37,7 +37,7 @@ export interface HeroContent {
   logo?: {
     src: string;
     alt: string;
-    height?: number; // Height in pixels (default: 80)
+    height?: number; // Height in pixels (default: 120)
     align?: 'left' | 'center'; // Logo alignment (default: center)
   };
 }
