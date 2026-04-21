@@ -1,0 +1,244 @@
+{
+  "version": "Broadstroke Microsite Config — Mail Pickup Services",
+  "instructions": {
+    "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
+    "promoCodes": {
+      "postalocity": "bank2026",
+      "printing": "print2026",
+      "mailing": "mail2026",
+      "promo": "promo2026",
+      "large-format": "lf2026"
+    }
+  },
+  "site": {
+    "id": "mail-pickup",
+    "name": "Mail Pickup Services — Broadstroke, Inc.",
+    "slug": "mail-pickup",
+    "domain": "broadstrokeinc.com",
+    "basename": "/mail-pickup",
+    "contact": {
+      "email": "orders@broadstrokeinc.com",
+      "phone": "316-262-3333",
+      "address": "820 W 2nd St N, Wichita KS 67203"
+    }
+  },
+  "branding": {
+    "tagline": "Print. Mail. Promo. One Call.",
+    "logo": "/logo.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 30
+    }
+  },
+  "seo": {
+    "title": "Mail Pickup Services — Broadstroke, Inc.",
+    "description": "Daily mail pickup services in Wichita KS with presort postage, certified mail support, flats handling and full concierge integration. Reclaim operational time with one-stop print, mail and promo delivery. Free estimates and 45+ years expertise.",
+    "keywords": ["mail pickup services", "mail pickup Wichita", "daily mail pickup", "presort mail pickup", "certified mail pickup", "EDDM pickup Wichita", "bulk mail services Kansas", "mailroom pickup service"],
+    "ogTitle": "Mail Pickup Services — Broadstroke, Inc.",
+    "ogDescription": "Convenient daily mail collection with expert presort processing, print and promo delivery — all handled by one Wichita team.",
+    "ogImage": "/mail-pickup/images/og-image.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://broadstrokeinc.com/mail-pickup"
+  },
+  "navigation": {
+    "links": [
+      { "label": "Benefits", "href": "#benefits" },
+      { "label": "How It Works", "href": "#how-it-works" },
+      { "label": "Services", "href": "#services" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "cta": { "text": "Get Free Estimate", "href": "https://broadstrokeinc.com/mailing-contact/" }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Mail Pickup Services",
+        "highlightTerm": "One Call. Done.",
+        "alt": "Daily scheduled mail pickup with professional presort processing and integrated print and promotional product delivery"
+      },
+      "subhead": "Broadstroke, Inc. provides reliable daily mail pickup for businesses in Wichita and surrounding areas. As a full-service print, mail, and promotional products company with 45+ years of experience, we handle collection, presort postage application, sorting, and prompt USPS submission — all while delivering completed print or promo orders during the same visit.",
+      "background": {
+        "image": "/mail-pickup/images/mail-pickup-hero.jpg",
+        "overlay": true
+      },
+      "ctas": [
+        { "text": "Request Free Estimate", "href": "https://broadstrokeinc.com/mailing-contact/", "variant": "primary" },
+        { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "Mail Pickup Services — Reclaim Operational Time with Concierge Service",
+        "description": "Broadstroke's daily mail pickup eliminates the need for separate post office runs while integrating seamlessly with commercial printing, design, and promotional product fulfillment. One team manages your entire outbound mail workflow, supporting accuracy, compliance, and efficiency for businesses of all sizes."
+      },
+      "benefits": [
+        {
+          "icon": "clock",
+          "title": "Daily Scheduled Collection",
+          "description": "Broadstroke provides consistent daily pickup at your location, removing the logistics of transporting mail to the post office. This concierge approach supports streamlined operations and allows internal teams to focus on core business activities rather than mailroom tasks.",
+          "detail": "Trays supplied as needed for presort-ready mail."
+        },
+        {
+          "icon": "file-check",
+          "title": "Expert Presort Postage Application",
+          "description": "We apply presort rates to eligible pieces with no additional markup, helping organizations qualify for discounted postage while maintaining USPS compliance. Mail with pre-applied postage is accepted when properly sealed and separated.",
+          "detail": "Professional sorting for letters, flats, parcels, and all mail classes."
+        },
+        {
+          "icon": "truck",
+          "title": "Integrated Print and Promo Delivery",
+          "description": "Receive completed commercial printing or branded promotional products during the same daily visit. This one-stop convenience reduces vendor coordination and supports efficient project timelines.",
+          "detail": "45+ years of integrated service excellence."
+        },
+        {
+          "icon": "shield",
+          "title": "Comprehensive Mail Class Support",
+          "description": "From certified mail documentation and international pieces to EDDM, nonprofit, and priority mail, Broadstroke handles the full range of USPS classes with expert preparation and tracking options.",
+          "detail": "National Association of Presort Mailers (NAPM) member."
+        },
+        {
+          "icon": "package",
+          "title": "Postalocity Automation Integration",
+          "description": "Combine daily pickup with Broadstroke's Postalocity SaaS platform for online address verification, high-speed printing, insertion, and real-time USPS tracking — ideal for statements, invoices, and direct mail campaigns.",
+          "detail": "Reduces returned mail through USPS-compliant addressing."
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Wichita Businesses Choose Broadstroke for Mail Pickup Services",
+        "description": "Broadstroke's concierge model combines daily pickup with full print and promo integration — a level of service not typically available from local shipping centers or in-house mail handling."
+      },
+      "columns": {
+        "traditional": "Traditional Approach (e.g., UPS Store, 47th Mail & Print, Quik Print, or Self-Dropoff)",
+        "ourSolution": "Broadstroke Mail Pickup + Concierge Service"
+      },
+      "rows": [
+        {
+          "icon": "clock",
+          "feature": "Collection Method",
+          "ourSolution": "Daily scheduled pickup at your location with trays provided",
+          "traditionalApproach": "Self-transport to post office or limited drop-off services"
+        },
+        {
+          "icon": "file-check",
+          "feature": "Postage & Sorting",
+          "ourSolution": "Expert presort application, full mail class handling, and compliance guidance with no extra rates on eligible pieces",
+          "traditionalApproach": "Retail rates or basic metering with limited presort expertise"
+        },
+        {
+          "icon": "truck",
+          "feature": "Print/Promo Integration",
+          "ourSolution": "Completed print jobs and promotional products delivered during the same pickup visit",
+          "traditionalApproach": "Separate vendor coordination and pickup required"
+        },
+        {
+          "icon": "shield",
+          "feature": "Certified & International Mail",
+          "ourSolution": "Full preparation options, proof of mailing, tracking, and signature notifications via Postalocity or in-house support",
+          "traditionalApproach": "Basic forms and limited documentation support"
+        },
+        {
+          "icon": "package",
+          "feature": "Overall Coordination",
+          "ourSolution": "One team manages print, mail pickup, presort, and promo with 45+ years of Wichita-based expertise",
+          "traditionalApproach": "Multiple vendors or internal staff time required for each step"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Mail Pickup Services — Wichita KS",
+        "description": "Broadstroke offers comprehensive daily mail pickup tailored to your specific needs, backed by professional mailroom equipment, NAPM membership, and seamless integration with Postalocity automation."
+      },
+      "services": [
+        {
+          "icon": "envelope",
+          "title": "Standard Letters & Envelopes",
+          "description": "Daily collection of prepared mail pieces with presort postage application where applicable. We supply trays and ensure proper separation for maximum rate optimization."
+        },
+        {
+          "icon": "file-text",
+          "title": "Flats & Large Envelopes",
+          "description": "One or hundreds of flats collected daily. Pieces must be sealed with tape over metal clasps for machine compatibility. Same- or next-day processing and USPS submission."
+        },
+        {
+          "icon": "shield-check",
+          "title": "Certified Mail",
+          "description": "Sealed certified pieces accepted with provided forms and labels. Full preparation available through Postalocity, including proof of mailing, USPS tracking, and optional signature notification."
+        },
+        {
+          "icon": "globe",
+          "title": "International Mail",
+          "description": "International pieces kept separate during pickup with appropriate postage applied. Expert handling ensures compliance with USPS international requirements."
+        },
+        {
+          "icon": "package",
+          "title": "Parcels, Priority & All Mail Classes",
+          "description": "Priority, first-class, standard/marketing mail, nonprofit, and EDDM supported. Our mailroom sorts and prepares every class for best available rates and handling."
+        },
+        {
+          "icon": "cloud",
+          "title": "Postalocity Hybrid Workflows",
+          "description": "Online upload and automation through Postalocity combined with physical daily pickup for any hybrid or high-volume needs. Address verification and real-time tracking included."
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Mail Pickup Services FAQ",
+        "description": "Common questions about Broadstroke's daily mail pickup, presort processing, and concierge integration for Wichita-area businesses."
+      },
+      "faqs": [
+        {
+          "q": "What types of mail does Broadstroke pick up daily?",
+          "a": "Broadstroke collects standard letters, flats and large envelopes, parcels, priority mail, certified mail, international mail, EDDM, nonprofit, and marketing mail. Our professional mailroom staff handles sorting and presort postage application for eligible pieces."
+        },
+        {
+          "q": "Do I need to prepare mail in a specific way before pickup?",
+          "a": "For presort postage, separate pieces needing postage from pre-metered items. Flats and large envelopes should be sealed with tape over metal clasps. Handwritten addresses must use black ink and allow proper space at the bottom to qualify for presort rates. We provide guidance on USPS-compliant formatting."
+        },
+        {
+          "q": "Can Broadstroke deliver print or promotional product orders during mail pickup?",
+          "a": "Yes. A key convenience of our service is the ability to deliver completed commercial printing or branded promotional items on the same daily visit, eliminating extra trips and vendor coordination."
+        },
+        {
+          "q": "How does Postalocity integrate with mail pickup services?",
+          "a": "Postalocity automates document upload, address verification, high-speed printing, folding, stuffing, and insertion with 100% accuracy checks. Broadstroke then provides physical daily pickup and USPS submission for hybrid workflows, combining digital efficiency with concierge handling."
+        },
+        {
+          "q": "Is support available for certified mail?",
+          "a": "Yes. We accept sealed certified pieces and provide forms and mailing labels. For complete automation, Postalocity handles printing, addressing, insertion, proof of mailing, USPS tracking, and optional signature notifications."
+        },
+        {
+          "q": "Who is eligible for Broadstroke mail pickup services?",
+          "a": "Businesses of all sizes in the Wichita area and surrounding regions that generate regular outbound mail benefit from our service. We serve utilities, healthcare practices, financial institutions, real estate firms, municipalities, ad agencies, and more."
+        },
+        {
+          "q": "Does Broadstroke charge extra rates for presort postage?",
+          "a": "No. We apply presort rates to eligible pieces with no additional markup and pass along the discounted pricing. Mail with pre-applied postage is accepted when properly sealed and separated from pieces requiring our postage application."
+        },
+        {
+          "q": "How does Broadstroke maintain USPS compliance and best rates?",
+          "a": "As a member of the National Association of Presort Mailers (NAPM), Broadstroke stays current with USPS standards and innovations. Our team ensures proper addressing, sorting, tray preparation, and documentation to support rate optimization and reduce returned mail."
+        }
+      ]
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready to simplify your print, mail & promo operations?",
+        "buttonText": "Get Free Estimate",
+        "href": "https://broadstrokeinc.com/mailing-contact/"
+      },
+      "tagline": "Print. Mail. Promo. One Call."
+    }
+  },
+  "notes": {
+    "staticSections": "These are auto-generated - don't include in Grok output: howItWorks, difference, trustSignals",
+    "heroAlt": "Always add hero.background.alt with descriptive text",
+    "ctaText": "Always use 'Get Free Estimate' for header/footer CTAs"
+  }
+}
