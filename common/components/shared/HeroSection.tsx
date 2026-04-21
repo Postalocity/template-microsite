@@ -82,7 +82,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
               <img
                 src={hero.logo.src}
                 alt={hero.logo.alt}
-                style={{ height: `${hero.logo.height || 80}px`, width: 'auto' }}
+                style={{ height: `${hero.logo.height || 120}px`, width: 'auto' }}
                 className="object-contain drop-shadow-lg"
               />
             </motion.div>
