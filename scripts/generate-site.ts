@@ -1613,10 +1613,12 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
       urls: ctx.brand.urls,
       logo: ctx.brand.logo,
       colors: brandColors,
-      howItWorks: ctx.brand.howItWorks,
-      difference: ctx.brand.difference,
-      testimonials: ctx.brand.testimonials,
-      trustSignals: ctx.brand.trustSignals,
+      // Use site-specific howItWorks/difference/testimonials if available, otherwise fall back to brand
+      howItWorks: (expandedContent as Record<string, unknown>)?.howItWorks as typeof ctx.brand.howItWorks || ctx.brand.howItWorks,
+      difference: (expandedContent as Record<string, unknown>)?.difference as typeof ctx.brand.difference || ctx.brand.difference,
+      testimonials: (expandedContent as Record<string, unknown>)?.testimonials as typeof ctx.brand.testimonials || ctx.brand.testimonials,
+      // Use site-specific trustSignals if available, otherwise fall back to brand
+      trustSignals: (expandedContent as Record<string, unknown>)?.trustSignals as typeof ctx.brand.trustSignals || ctx.brand.trustSignals,
       footer: ctx.brand.footer,
     },
     contact: {
