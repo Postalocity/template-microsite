@@ -1,0 +1,113 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="https://www.broadstrokeinc.com/" />
+
+    <meta charset="UTF-8" />
+    <title>Promotional Products & Apparel — Broadstroke, Inc.</title>
+    <meta name="description" content="One-stop promotional products and apparel solutions in Wichita KS: custom branded merchandise with screen printing, embroidery, free estimates, fast turnaround & proven brand impact." />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="https://broadstrokeinc.com/promo/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="Promotional Products & Apparel — Broadstroke, Inc." />
+    <meta property="og:description" content="Print, mail, promo & fulfillment made simple." />
+    <meta property="og:image" content="/promo/images/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="Promotional Products & Apparel — Broadstroke, Inc." />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="/promo/images/og-image.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="promotional products Wichita, promo products Kansas, custom promotional products Wichita KS, branded merchandise Wichita, promotional apparel Wichita, promotional products near me Wichita, custom t-shirts Wichita, screen printing Wichita, embroidery Wichita KS, corporate gifts Wichita, trade show giveaways Wichita, promotional items Kansas" />
+    <meta name="author" content="Promotional Products & Apparel — Broadstroke, Inc." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HXQD6LYZ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9HXQD6LYZ4', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Promotional Products & Apparel — Broadstroke, Inc.",
+          "url": "{{ canonical_url }}",
+          "description": "Looking for a specific item or just browsing for ideas? Your one-stop shop for promotional products and business gifts. With thousands of selections, we offer branded merchandise to fulfill all of your needs.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Promotional Products & Apparel — Broadstroke, Inc.",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.broadstrokeinc.com" },
+            { "@type": "ListItem", "position": 2, "name": "Promotional Products & Apparel — Broadstroke, Inc.", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "316-262-3333",
+            "contactType": "customer service",
+            "email": "info@broadstrokeinc.com"
+          }
+        },
+        { "@type": "FAQPage", "mainEntity": [] }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Promotional Products & Apparel — Broadstroke, Inc." />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>

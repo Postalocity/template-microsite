@@ -17,7 +17,8 @@
     "logo": "/logo.png" 
   },
   "theme": { 
-    "primary": { "h": 200, "s": 80, "l": 30 } 
+    "primary": { "h": 200, "s": 80, "l": 40 },
+    "accent": { "h": 45, "s": 100, "l": 50 }
   },
   "seo": {
     "title": "Promotional Products & Apparel — Broadstroke, Inc.",
@@ -67,11 +68,28 @@
       { "label": "Contact", "href": "https://broadstrokeinc.com/contact" }
     ],
     "cta": { 
-      "text": "Get Free Estimate", 
-      "href": "https://broadstrokeinc.com/contact/?service=promo" 
+      "text": "Browse Products", 
+      "href": "https://www.broadstrokepromos.com/" 
     }
   },
+  "promoCode": "HUNT2026",
   "content": {
+    "testimonials": [
+      {
+        "quote": "The promo team at Broadstroke is great to work with. We've done apparel orders with them for years that have our logo on them and knew they also offered full design services, so they were the first place we turned to when we needed custom t-shirt artwork for an International Lineman Rodeo we had a team competing in. We not only got the service and shirt quality we've come to expect from Broadstroke, but they created a cool design for our shirts that our team was excited to wear and swap with other participants at the Rodeo.",
+        "attribution": "Lineman Rodeo Team",
+        "title": "",
+        "company": "International Lineman Rodeo",
+        "image": "/promo/images/lineman-rodeo-tshirt.jpeg",
+        "imageAlt": "International Lineman Rodeo 2025 Kansas custom t-shirt designed by Broadstroke"
+      }
+    ],
+    "trustSignals": [
+      "Onsite Promo Showroom and Sample Orders",
+      "Product Expertise & Vendor Relationships",
+      "Professional Wrapping & Arrangements",
+      "In-House Design Team"
+    ],
     "hero": {
       "headline": { 
         "main": "Promotional Products & Apparel Solutions", 
@@ -85,8 +103,8 @@
       },
       "ctas": [
         { 
-          "text": "Request Free Estimate", 
-          "href": "https://broadstrokeinc.com/contact/?service=promo", 
+          "text": "Browse Products", 
+          "href": "https://www.broadstrokepromos.com/", 
           "variant": "primary" 
         },
         { 
@@ -179,39 +197,73 @@
     "services": { 
       "section": {
         "title": "Promotional Products & Apparel —<br />in Wichita, KS and Nationwide",
-        "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on what items are available.",
-        "finishingNote": "All promotional products include professional decoration services—screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available."
+        "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on the newest products and latest trends.",
+        "cta": { "text": "Browse Products", "href": "https://www.broadstrokepromos.com/" },
+        "finishingNote": "All promotional products include professional customization services—screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available."
       },
       "services": [
         {
           "icon": "shirt",
-          "title": "Apparel & Bags",
-          "description": "T-shirts, polos, jackets, activewear, headwear, workwear, bags, and accessories. Custom decoration with screen printing or embroidery."
+          "title": "Apparel & Uniforms",
+          "description": "T-shirts, polos, jackets, activewear, hats, workwear, bags, and accessories. Customization with screen printing or embroidery. Screen-printed apparel has a minimum of 24 pieces; embroidery has no minimum.",
+          "image": "/promo/images/categories/bakery-spread.jpg",
+          "href": "https://www.broadstrokepromos.com/t-shirts.html"
+        },
+        {
+          "icon": "calendar",
+          "title": "Trade Show & Signage",
+          "description": "Tablecloths, pop-up banners, tabletop banners, backdrops, wall kits, tents, and displays. Make a statement at events with coordinated materials.",
+          "image": "/promo/images/categories/tradeshow-materials.jpg",
+          "href": "https://www.broadstrokepromos.com/office-tradeshows-events.htm"
+        },
+        {
+          "icon": "smartphone",
+          "title": "Office & Tech",
+          "description": "USB drives, power banks, phone accessories, writing instruments, notepads, journals, sticky notes, mousepads, clipboards, lanyards, name badges, and stress relievers.",
+          "image": "/promo/images/categories/magnetic-notebook.jpg",
+          "href": "https://www.broadstrokepromos.com/office.htm"
+        },
+        {
+          "icon": "award",
+          "title": "Awards & Trophies",
+          "description": "Trophies, plaques, vases, emblems, pins, and medals. Custom engraved in-house with no minimum order quantity.",
+          "image": "/promo/images/categories/AdobeStock_672191208.jpeg",
+          "href": "https://www.broadstrokepromos.com/awards-recognition-trophies.htm"
+        },
+        {
+          "icon": "shopping-bag",
+          "title": "Bags & Totes",
+          "description": "Backpacks, tote bags, duffels, coolers, and luggage. Perfect for events, giveaways, and employee gifts.",
+          "image": "/promo/images/categories/bags-totes.jpg",
+          "href": "https://www.broadstrokepromos.com/bags.html"
         },
         {
           "icon": "coffee",
           "title": "Drinkware",
-          "description": "Branded mugs, tumblers, water bottles, and drinkware that keeps your logo visible daily. Laser engraving and full-color printing available."
-        },
-        {
-          "icon": "award",
-          "title": "Awards & Gifts",
-          "description": "Executive gifts, trophies, plaques, emblems, pins, medals, and vases for recognition programs and special occasions."
-        },
-        {
-          "icon": "calendar",
-          "title": "Tradeshows & Events",
-          "description": "Everything you need for successful events—booth displays, table covers, banners, giveaways, and promotional items that attract attention."
+          "description": "Branded mugs, tumblers, water bottles, and drinkware that keeps your logo visible daily. Laser engraving and full-color printing available.",
+          "image": "/promo/images/categories/coffee-mug.jpg",
+          "href": "https://www.broadstrokepromos.com/drinkware.htm"
         },
         {
           "icon": "zap",
           "title": "Sports & Outdoors",
-          "description": "Camping gear, balls, gameday accessories, outdoor & fitness items, golf products, and team spirit merchandise."
+          "description": "Coolers, beverage insulators, umbrellas, blankets, chairs, golf, games, and team spirit. Be brand ready for outdoor activities or the big game.",
+          "image": "/promo/images/categories/16in-beach-ball.jpg",
+          "href": "https://www.broadstrokepromos.com/fun-outdoors.htm"
         },
         {
-          "icon": "smartphone",
-          "title": "Tech & Office",
-          "description": "USB drives, power banks, phone accessories, desk accessories, and business essentials that combine utility with brand visibility."
+          "icon": "home",
+          "title": "Home & Auto",
+          "description": "Blankets, candles, coasters, cutting boards & charcuterie boards, playing cards & games, cleaning supplies, tools, emergency kits, and sunshades. Keep your brand top of mind at home and on the road.",
+          "image": "/promo/images/categories/sherpa-fleece-blanket.png",
+          "href": "https://www.broadstrokepromos.com/homeauto.html"
+        },
+        {
+          "icon": "gift",
+          "title": "Client & Team Gifts",
+          "description": "Executive gifts, recognition awards, welcome kits, and appreciation packages. Elevated presentation with professional wrapping and arrangements.",
+          "image": "/promo/images/categories/20191011_115126.jpg",
+          "href": "https://www.broadstrokepromos.com/executive-gifts.htm"
         }
       ]
     },

@@ -734,9 +734,9 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
  */
 
 import { createRoot } from 'react-dom/client';
-${usesBrandTheme ? `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, ProductsSection } from '@/themes/${brandId}/components/shared';
+${usesBrandTheme ? `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/themes/${brandId}/components/shared';
 import SiteNavigation from '@/themes/${brandId}/components/shared/SiteNavigation';
-import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, ProductsSection } from '@/components/shared';
+import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';`}
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -816,7 +816,7 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
-        {content.products && <ProductsSection content={content.products} />}
+        {/* ProductsSection - disabled (not exported in shared components) */}
         <ServicesSection services={content.services} />
         <BenefitsSection benefits={content.benefits} />
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
