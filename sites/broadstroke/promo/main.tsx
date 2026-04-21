@@ -1,6 +1,6 @@
 /**
  * Promotional Products & Apparel — Broadstroke, Inc. - Generated from template-microsite
- * Generated at: 2026-04-21T15:13:53.072Z
+ * Generated at: 2026-04-21T15:16:47.026Z
  * Brand: Broadstroke
  */
 
@@ -92,11 +92,11 @@ function App() {
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
-        {/* Optional Sections - disabled by default, uncomment to enable: */}
+        {/* Optional Sections - only render if testimonials exist */}
+        {content.testimonials && content.testimonials.length > 0 && <TestimonialsSection />}
         {/* {content.about?.enabled && <AboutSection about={content.about} />} */}
         {/* {content.reviews?.enabled && <ReviewsSection reviews={content.reviews} />} */}
         {/* {content.caseStudies?.enabled && <CaseStudiesSection caseStudies={content.caseStudies} />} */}
-        <TestimonialsSection />
         <FAQSection faq={content.faq} />
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
