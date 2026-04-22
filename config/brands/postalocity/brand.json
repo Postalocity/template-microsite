@@ -19,8 +19,16 @@
     "alt": "Postalocity - Direct Mail Automation"
   },
   "colors": {
-    "primary": { "h": 38, "s": 92, "l": 55 },
-    "accent": { "h": 45, "s": 100, "l": 50 }
+    "primary": {
+      "h": 38,
+      "s": 92,
+      "l": 55
+    },
+    "accent": {
+      "h": 45,
+      "s": 100,
+      "l": 50
+    }
   },
   "howItWorks": {
     "section": {
@@ -42,7 +50,7 @@
       {
         "number": "3",
         "title": "We Print & Process",
-        "description": "Professional printing, folding, stuffing into envelopes, and sealing—all automated."
+        "description": "Professional printing, folding, stuffing into envelopes, and sealing\u2014all automated."
       },
       {
         "number": "4",
@@ -60,7 +68,7 @@
       {
         "icon": "mail",
         "title": "Every Mailer Includes an Envelope",
-        "description": "We use real envelopes—not loose paper sealed with a sticker. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
+        "description": "We use real envelopes\u2014not loose paper sealed with a sticker. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
       },
       {
         "icon": "eye",
@@ -70,17 +78,29 @@
       {
         "icon": "zap",
         "title": "Skip USPS Drop Boxes & Cutoffs",
-        "description": "Bypass post office drop-off times and waiting in line. We automate the process—eliminating missed cutoffs and potentially days in delivery time."
+        "description": "Bypass post office drop-off times and waiting in line. We automate the process\u2014eliminating missed cutoffs and potentially days in delivery time."
       }
     ]
   },
   "footer": {
     "tagline": "Automate Your Direct Mail",
     "links": [
-      { "label": "Services", "href": "https://www.postalocity.com/how-we-help/" },
-      { "label": "Pricing", "href": "https://www.postalocity.com/pricing/" },
-      { "label": "Resources", "href": "https://www.postalocity.com/resources/" },
-      { "label": "Contact", "href": "https://www.postalocity.com/contact/" }
+      {
+        "label": "Services",
+        "href": "https://www.postalocity.com/how-we-help/"
+      },
+      {
+        "label": "Pricing",
+        "href": "https://www.postalocity.com/pricing/"
+      },
+      {
+        "label": "Resources",
+        "href": "https://www.postalocity.com/resources/"
+      },
+      {
+        "label": "Contact",
+        "href": "https://www.postalocity.com/contact/"
+      }
     ]
   }
 }

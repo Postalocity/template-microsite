@@ -1127,6 +1127,11 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
   const domainParts = site.domain?.split('.') || [];
   const brandName = brandContext?.brand?.name || (domainParts[0] ? domainParts[0].charAt(0).toUpperCase() + domainParts[0].slice(1) : 'Brand');
   const brandWebsite = brandContext?.brand?.urls?.website || (site.domain ? `https://www.${site.domain}` : '');
+  const brandSocial = brandContext?.social || {};
+  const brandTwitterHandle = (brandSocial as any)?.twitterHandle || '';
+  const brandSameAs = Object.entries(brandSocial)
+    .filter(([key, val]) => key !== 'twitterHandle' && typeof val === 'string' && val.length > 0)
+    .map(([, val]) => val as string);
 
   // Parse address once for schema
   const addressParts = parseAddress(site.contact?.address || '');
@@ -1159,7 +1164,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <meta property="twitter:title" content="${config.seo?.twitterTitle || `${site.name} | ${config.branding.tagline}`}" />
     <meta property="twitter:description" content="${processPricingPlaceholders(config.seo?.twitterDescription || config.content?.hero?.subhead || '')}" />
     <meta property="twitter:image" content="${ogImage}" />
-    <meta name="twitter:site" content="@broadstrokeinc" />
+    <meta name="twitter:site" content="${brandTwitterHandle}" />
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="${(config.seo?.keywords || [site.name, config.branding.tagline]).join(', ')}" />
@@ -1226,14 +1231,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
            "name": "${brandName}",
            "url": "${brandWebsite}",
            "logo": "${canonicalUrl}/logo.png",
-           "sameAs": [
-             "https://www.linkedin.com/company/broadstrokeinc",
-             "https://www.facebook.com/Broadstrokeinc",
-             "https://www.instagram.com/broadstrokeinc",
-             "https://www.tiktok.com/@broadstrokeinc",
-             "https://www.pinterest.com/broadstrokeinc/",
-             "https://www.youtube.com/channel/UCd7KyDkDwi9hsA1ozODFQQQ"
-           ],
+           "sameAs": ${brandSameAs.length > 0 ? JSON.stringify(brandSameAs, null, 12) : '[]'},
            "contactPoint": {
              "@type": "ContactPoint",
              "telephone": "${site.contact?.phone || ''}",
