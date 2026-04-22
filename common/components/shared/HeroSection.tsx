@@ -51,11 +51,12 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
         <div className="absolute inset-0">
           <img
             src={hero.background.image}
-            alt={hero.background.alt || `${hero.headline?.main || 'Mailing service'} background`}
+            alt={hero.background?.alt || `${hero.headline?.main || 'Service'} background`}
             width={1920}
             height={1080}
             className="w-full h-full object-cover opacity-30 mix-blend-lighten"
             loading="eager"
+            fetchPriority="high"
             onError={(e) => {
               e.currentTarget.parentElement?.remove();
             }}

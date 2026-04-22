@@ -145,7 +145,8 @@
       "subhead": "High-quality digital and offset printing with dedicated concierge service — one experienced team handles everything from design through finishing and optional mailing. Free estimates, quick turnaround, no project too big or small.",
       "background": {
         "image": "/commercial-printing/images/commercial-printing-hero.jpg",
-        "overlay": true
+        "overlay": true,
+        "alt": "Commercial printing press producing brochures and business cards at Broadstroke facility in Wichita KS"
       },
       "ctas": [
         {

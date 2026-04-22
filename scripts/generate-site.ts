@@ -1148,6 +1148,10 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <meta property="og:title" content="${config.seo?.ogTitle || `${site.name} | ${config.branding.tagline}`}" />
     <meta property="og:description" content="${processPricingPlaceholders(config.seo?.ogDescription || config.content?.hero?.subhead || '')}" />
     <meta property="og:image" content="${ogImage}" />
+    <meta property="og:site_name" content="${brandName}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -1155,10 +1159,11 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <meta property="twitter:title" content="${config.seo?.twitterTitle || `${site.name} | ${config.branding.tagline}`}" />
     <meta property="twitter:description" content="${processPricingPlaceholders(config.seo?.twitterDescription || config.content?.hero?.subhead || '')}" />
     <meta property="twitter:image" content="${ogImage}" />
+    <meta name="twitter:site" content="@broadstrokeinc" />
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="${(config.seo?.keywords || [site.name, config.branding.tagline]).join(', ')}" />
-    <meta name="author" content="${site.name}" />
+    <meta name="author" content="${brandName}" />
     <meta name="robots" content="${config.seo?.robots || 'index, follow'}" />
     <meta name="theme-color" content="#664400" />
 
@@ -1168,7 +1173,9 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=${config.seo?.googleAnalyticsId || 'G-XXXXXXXXXX'}"></script>
@@ -1186,106 +1193,106 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     {
       "@context": "https://schema.org",
       "@graph": [
-        {
-          "@type": "WebSite",
-          "name": "${site.name}",
-          "url": "${canonicalUrl}",
-          "description": "${config.content?.hero?.subhead}",
-          "publisher": {
-            "@type": "Organization",
-            "name": "${site.name}",
-            "url": "${canonicalUrl}"
-          }
-        },
-        {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "${brandWebsite}"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "${site.name}",
-              "item": "${canonicalUrl}"
-            }
-          ]
-        },
-        {
-          "@type": "Organization",
-          "name": "${brandName}",
-          "url": "${canonicalUrl}",
-          "logo": "${canonicalUrl}/logo.png",
-          "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "${site.contact?.phone || ''}",
-            "contactType": "customer service",
-            "email": "${site.contact?.email || ''}"
-          },
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "${addressParts.streetAddress}",
-            "addressLocality": "${addressParts.addressLocality}",
-            "addressRegion": "${addressParts.addressRegion}",
-            "postalCode": "${addressParts.postalCode}",
-            "addressCountry": "US"
-          }
-        },
-        {
-          "@type": "LocalBusiness",
-          "name": "${site.name}",
-          "description": "${config.content?.hero?.subhead}",
-          "url": "${canonicalUrl}",
-          "telephone": "${site.contact?.phone || ''}",
-          "email": "${site.contact?.email || ''}",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "${addressParts.streetAddress}",
-            "addressLocality": "${addressParts.addressLocality}",
-            "addressRegion": "${addressParts.addressRegion}",
-            "postalCode": "${addressParts.postalCode}",
-            "addressCountry": "US"
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-              "opens": "09:00",
-              "closes": "17:00"
-            }
-          ],
-          "priceRange": "${config.seo?.priceRange || '$$'}",
-          "areaServed": {
-            "@type": "GeoCircle",
-            "geoMidpoint": {
-              "@type": "GeoCoordinates",
-              "latitude": "${site.location?.latitude || '37.6872'}",
-              "longitude": "${site.location?.longitude || '-97.3325'}"
-            },
-            "geoRadius": "5000"
-          }
-        },
-        {
-          "@type": "Product",
-          "name": "Automated Mailing Service",
-          "description": "Upload PDFs or connect via API to automate mailing. Starting at $1.31/letter. Single-sided, B&W envelope, postage included.",
-          "image": "${canonicalUrl}/og-image.png",
-          "brand": {
-            "@type": "Brand",
-            "name": "${brandName}"
-          },
-          "offers": {
-            "@type": "Offer",
-            "price": "1.31",
-            "priceCurrency": "USD",
-            "availability": "https://schema.org/InStock",
-            "url": "${canonicalUrl}",
-            "priceValidUntil": "2027-12-31"
-          }
-        },
+         {
+           "@type": "WebSite",
+           "name": "${site.name}",
+           "url": "${canonicalUrl}",
+           "description": "${config.content?.hero?.subhead}",
+           "publisher": {
+             "@type": "Organization",
+             "name": "${brandName}",
+             "url": "${brandWebsite}"
+           }
+         },
+         {
+           "@type": "BreadcrumbList",
+           "itemListElement": [
+             {
+               "@type": "ListItem",
+               "position": 1,
+               "name": "Home",
+               "item": "${brandWebsite}"
+             },
+             {
+               "@type": "ListItem",
+               "position": 2,
+               "name": "${site.name}",
+               "item": "${canonicalUrl}"
+             }
+           ]
+         },
+         {
+           "@type": "Organization",
+           "name": "${brandName}",
+           "url": "${brandWebsite}",
+           "logo": "${canonicalUrl}/logo.png",
+           "sameAs": [
+             "https://www.linkedin.com/company/broadstrokeinc",
+             "https://www.facebook.com/Broadstrokeinc",
+             "https://www.instagram.com/broadstrokeinc",
+             "https://www.tiktok.com/@broadstrokeinc",
+             "https://www.pinterest.com/broadstrokeinc/",
+             "https://www.youtube.com/channel/UCd7KyDkDwi9hsA1ozODFQQQ"
+           ],
+           "contactPoint": {
+             "@type": "ContactPoint",
+             "telephone": "${site.contact?.phone || ''}",
+             "contactType": "customer service",
+             "email": "${site.contact?.email || ''}"
+           },
+           "address": {
+             "@type": "PostalAddress",
+             "streetAddress": "${addressParts.streetAddress}",
+             "addressLocality": "${addressParts.addressLocality}",
+             "addressRegion": "${addressParts.addressRegion}",
+             "postalCode": "${addressParts.postalCode}",
+             "addressCountry": "US"
+           }
+         },
+         {
+           "@type": "LocalBusiness",
+           "name": "${brandName}",
+           "description": "${config.content?.hero?.subhead}",
+           "url": "${canonicalUrl}",
+           "telephone": "${site.contact?.phone || ''}",
+           "email": "${site.contact?.email || ''}",
+           "image": "${ogImage}",
+           "address": {
+             "@type": "PostalAddress",
+             "streetAddress": "${addressParts.streetAddress}",
+             "addressLocality": "${addressParts.addressLocality}",
+             "addressRegion": "${addressParts.addressRegion}",
+             "postalCode": "${addressParts.postalCode}",
+             "addressCountry": "US"
+           },
+           "openingHoursSpecification": [
+             {
+               "@type": "OpeningHoursSpecification",
+               "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+               "opens": "08:00",
+               "closes": "17:00"
+             }
+           ],
+           "priceRange": "${config.seo?.priceRange || '$$'}",
+           "areaServed": {
+             "@type": "Country",
+             "name": "US"
+           }
+         },
+         {
+           "@type": "Service",
+           "name": "${config.seo?.serviceSchema?.name || site.name}",
+           "description": "${config.seo?.serviceSchema?.description || config.content?.hero?.subhead || ''}",
+           "provider": {
+             "@type": "LocalBusiness",
+             "name": "${brandName}"
+           },
+           "areaServed": {
+             "@type": "Country",
+             "name": "US"
+           },
+           "serviceType": "${config.seo?.serviceSchema?.serviceType || site.id}"
+         },
         {
           "@type": "FAQPage",
           "mainEntity": [
@@ -1295,7 +1302,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
                 "name": "${faq.q.replace(/"/g, '\\"')}",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "${faq.a.replace(/"/g, '\\"')}"
+                  "text": "${faq.a.replace(/<[^>]*>/g, '').replace(/"/g, '\\"')}"
                 }
               }`).join(',\n            ')}
           ]

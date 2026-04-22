@@ -135,7 +135,8 @@
       "subhead": "CarbonlessUSA.com is now part of Broadstroke — bringing you the same quality carbonless forms you trust, now with access to comprehensive print, mail, and promotional services. High-quality 2, 3, and 4-part carbonless forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment.",
       "background": {
         "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80",
-        "overlay": true
+        "overlay": true,
+        "alt": "Custom carbonless forms printing with precision multi-part form production at Broadstroke"
       },
       "ctas": [
         {

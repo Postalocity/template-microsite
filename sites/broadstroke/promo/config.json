@@ -97,7 +97,7 @@
       },
       {
         "label": "Promo",
-        "href": "https://www.broadstrokepromos.com/"
+        "href": "/promo"
       },
       {
         "label": "Wide Format",
@@ -153,7 +153,8 @@
       },
       "background": {
         "image": "/promo/images/promo-hero.jpg",
-        "overlay": true
+        "overlay": true,
+        "alt": "Custom promotional products and branded apparel display at Broadstroke showroom in Wichita KS"
       },
       "ctas": [
         {

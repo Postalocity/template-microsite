@@ -133,7 +133,8 @@
       "subhead": "Eye-catching materials and designs that grab the attention of potential customers. Wide format, or large format, printing refers to print that is larger than traditional print sizes. Often more durable, these graphics can be applied to various mediums for outdoor or indoor usage.",
       "background": {
         "image": "https://broadstrokeinc.com/wp-content/uploads/dreamstime_m_165870781.jpg",
-        "overlay": true
+        "overlay": true,
+        "alt": "Wide format printed vehicle graphics and large signage displayed outdoors"
       },
       "ctas": [
         {

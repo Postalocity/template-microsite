@@ -1,6 +1,6 @@
 /**
  * Wide Format Printing Services — Broadstroke, Inc. - Generated from template-microsite
- * Generated at: 2026-04-21T21:39:36.911Z
+ * Generated at: 2026-04-22T14:24:21.557Z
  * Brand: Broadstroke
  */
 

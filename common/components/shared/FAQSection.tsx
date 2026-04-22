@@ -47,7 +47,7 @@ const FAQSection = (faqContent?: { section?: any; faqs?: Array<{ q: string; a: s
           className="text-center mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Frequently Asked Questions
+            {faqContent?.section?.title || 'Frequently Asked Questions'}
           </h2>
         </motion.div>
 
