@@ -1127,6 +1127,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
   const domainParts = site.domain?.split('.') || [];
   const brandName = brandContext?.brand?.name || (domainParts[0] ? domainParts[0].charAt(0).toUpperCase() + domainParts[0].slice(1) : 'Brand');
   const brandWebsite = brandContext?.brand?.urls?.website || (site.domain ? `https://www.${site.domain}` : '');
+  const brandGoogleAnalyticsId = brandContext?.brand?.googleAnalyticsId || 'G-XXXXXXXXXX';
   const brandSocial = brandContext?.social || {};
   const brandTwitterHandle = (brandSocial as any)?.twitterHandle || '';
   const brandSameAs = Object.entries(brandSocial)
@@ -1183,12 +1184,12 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=${config.seo?.googleAnalyticsId || 'G-XXXXXXXXXX'}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${config.seo?.googleAnalyticsId || brandGoogleAnalyticsId}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${config.seo?.googleAnalyticsId || 'G-XXXXXXXXXX'}', {
+      gtag('config', '${config.seo?.googleAnalyticsId || brandGoogleAnalyticsId}', {
         page_path: window.location.pathname,
       });
     </script>
@@ -1383,7 +1384,9 @@ function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): s
   // Get brand website URL
   const domainParts = site.domain?.split('.') || [];
   const brandWebsite = brandContext?.brand?.urls?.website || (site.domain ? `https://www.${site.domain}` : '');
+  const brandGoogleAnalyticsId = brandContext?.brand?.googleAnalyticsId || 'G-XXXXXXXXXX';
   const canonicalUrl = config.canonicalDomain || (seo as any)?.canonical || `https://${site.domain}${site.basename}`;
+  const gaId = (seo as any)?.googleAnalyticsId || brandGoogleAnalyticsId;
 
   // Get ogImage from config - use full CDN URL if available, otherwise fallback to asset_url
   const ogImageUrl = (seo as any)?.ogImage || "{{ 'og-image.png' | asset_url }}";
@@ -1436,12 +1439,12 @@ function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): s
     ${fonts}
 
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=${(seo as any)?.googleAnalyticsId || 'G-XXXXXXXXXX'}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${gaId}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${(seo as any)?.googleAnalyticsId || 'G-XXXXXXXXXX'}', { page_path: window.location.pathname });
+      gtag('config', '${gaId}', { page_path: window.location.pathname });
     </script>
 
     <!-- JSON-LD Structured Data -->
