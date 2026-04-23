@@ -114,7 +114,21 @@
     },
     "blinds": {
       "headline": "Citronella in Hunting Blinds",
-      "body": "Enclosed or semi-enclosed blinds concentrate the scent zone for stronger barrier performance. Hang a mesh bag of Citronella Scent Beads from the ceiling or corner while applying liquid to surrounding foliage or ground. Users report returning days or weeks later with reduced insect presence. One mesh bag can support consistent results across an entire season with minimal maintenance."
+      "body": "Blinds concentrate the scent zone for stronger barrier performance.",
+      "features": [
+        {
+          "title": "Enclosed Performance",
+          "description": "Blinds concentrate the scent zone for stronger barrier performance."
+        },
+        {
+          "title": "Long-Lasting Results",
+          "description": "Return days or weeks later with reduced insect presence."
+        },
+        {
+          "title": "Minimal Maintenance",
+          "description": "Consistent results across multiple visits with minimal effort."
+        }
+      ]
     },
     "turkey": {
       "headline": "Perfect for Turkey Season and Early Bow Season",
@@ -221,6 +235,32 @@
         {
           "label": "All Scent Beads",
           "href": "https://www.odinsinnovations.com/collections/scent-beads"
+        }
+      ]
+    },
+    "features": {
+      "headline": "Mosquito Control for Hunting",
+      "subtitle": "Peak protection when you need it most",
+      "features": [
+        {
+          "title": "Peak Season Protection",
+          "description": "Peak mosquito activity coincides with spring hunting seasons.",
+          "icon": "shield"
+        },
+        {
+          "title": "Scent-Safe Formula",
+          "description": "Milder scent avoids strong DEET odors deer can detect.",
+          "icon": "leaf"
+        },
+        {
+          "title": "Long-Lasting Barrier",
+          "description": "Up to 720 hours of protection vs 20-minute alternatives.",
+          "icon": "clock"
+        },
+        {
+          "title": "EPA-Registered",
+          "description": "Formulated with EPA-registered biopesticide compounds.",
+          "icon": "check"
         }
       ]
     }

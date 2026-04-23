@@ -817,6 +817,39 @@ function App() {
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
         
+        {/* Features Section */}
+        {content.features && (
+          <section id="features" className="section-padding" style={{ background: '#f8f9fa' }}>
+            <div className="section-container">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
+                  {content.features.headline}
+                </h2>
+                <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
+                  {content.features.subtitle}
+                </p>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                {content.features.features?.map((feature: {title: string; description: string; icon?: string}, idx: number) => (
+                  <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center" style={{ color: '#2d5a3d' }}>
+                      <svg className="w-10 h-10" strokeWidth="1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>
+                      {feature.title}
+                    </h3>
+                    <p className="font-body text-sm" style={{ color: '#666' }}>
+                      {feature.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+        
         {/* Dynamic content sections - only render if data exists */}
         {content.introduction && (
           <section id="introduction" className="section-padding" style={{ background: '#f8f9fa' }}>
