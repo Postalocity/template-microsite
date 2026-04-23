@@ -93,7 +93,6 @@ function App() {
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
-        <FAQSection faq={content.faq} />
         
         {/* Stamped.io Reviews - Real Customer Testimonials */}
         <section id="reviews" className="py-16 bg-muted/30">
@@ -108,6 +107,7 @@ function App() {
           </div>
         </section>
 
+        <FAQSection faq={content.faq} />
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
       </BrandProvider>
