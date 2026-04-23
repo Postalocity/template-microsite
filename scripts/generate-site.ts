@@ -734,9 +734,9 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
  */
 
 import { createRoot } from 'react-dom/client';
-${usesBrandTheme ? `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/themes/${brandId}/components/shared';
+${usesBrandTheme ? `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/themes/${brandId}/components/shared';
 import SiteNavigation from '@/themes/${brandId}/components/shared/SiteNavigation';
-import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection } from '@/components/shared';
+import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';`}
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -816,19 +816,173 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
-        {/* ProductsSection - disabled (not exported in shared components) */}
-        <ServicesSection services={content.services} />
-        <BenefitsSection benefits={content.benefits} />
+        
+        {/* Dynamic content sections - only render if data exists */}
+        {content.introduction && (
+          <section id="introduction" className="section-padding" style={{ background: '#f8f9fa' }}>
+            <div className="section-container">
+              <div className="text-center max-w-3xl mx-auto">
+                <p className="font-body text-lg sm:text-xl leading-relaxed" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content.introduction.body}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {content['why-odins'] && (
+          <section id="why-odins" className="section-padding" style={{ background: '#1a1d29' }}>
+            <div className="section-container">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
+                  {content['why-odins'].headline}
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {content['why-odins'].items?.map((item: string, idx: number) => (
+                  <div key={idx} className="p-6 rounded-lg text-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <p className="font-body text-white">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {content.detection && (
+          <section id="detection" className="section-padding" style={{ background: '#f5f5f5' }}>
+            <div className="section-container">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content.detection.headline}
+                </h2>
+                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Understanding the three-stage targeting process
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                {['CO₂ Detection', 'Skin Chemistry', 'Body Heat'].map((stage, idx) => (
+                  <div key={idx} className="text-center p-6">
+                    <div className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: 'hsl(var(--primary))' }}>
+                      STAGE {String(idx + 1).padStart(2, '0')}
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2">{stage}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {content.application && (
+          <section id="application" className="section-padding" style={{ background: '#1a1d29' }}>
+            <div className="section-container">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
+                  {content.application.headline}
+                </h2>
+                {content.application.note && (
+                  <p className="font-body text-sm text-gray-400 italic">{content.application.note}</p>
+                )}
+              </div>
+              <div className="max-w-3xl mx-auto space-y-6">
+                {content.application.steps?.map((step: string, idx: number) => (
+                  <div key={idx} className="flex items-start gap-4 p-4 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)' }}>
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg flex-shrink-0" style={{ background: 'hsl(var(--primary))', color: 'white' }}>
+                      {idx + 1}
+                    </div>
+                    <p className="font-body text-white text-lg">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {content.blinds && (
+          <section id="blinds" className="section-padding" style={{ background: '#f5f5f5' }}>
+            <div className="section-container">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content.blinds.headline}
+                </h2>
+                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                  {content.blinds.body}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {content.layered && (
+          <section id="layered" className="section-padding" style={{ background: '#1e212b' }}>
+            <div className="section-container">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
+                  {content.layered.headline}
+                </h2>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                {['Weatherproof Formula', 'Polymer Technology', 'Easy Storage'].map((item, idx) => (
+                  <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <h3 className="font-display text-xl uppercase mb-2 text-white">{item}</h3>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {content.turkey && (
+          <section id="turkey" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
+            <div className="section-container">
+              <div className="text-center">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content.turkey.headline}
+                </h2>
+                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                  {content.turkey.body}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+        
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
-        {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
-        {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
-        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
-        {/* Optional Sections - only render if testimonials exist */}
-        {content.testimonials && content.testimonials.length > 0 && <TestimonialsSection />}
-        {/* {content.about?.enabled && <AboutSection about={content.about} />} */}
-        {/* {content.reviews?.enabled && <ReviewsSection reviews={content.reviews} />} */}
-        {/* {content.caseStudies?.enabled && <CaseStudiesSection caseStudies={content.caseStudies} />} */}
-        <FAQSection faq={content.faq} />
+        
+        {content.howItWorks && (
+          <section id="how-it-works" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
+            <div className="section-container">
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content.howItWorks.headline}
+                </h2>
+                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                  {content.howItWorks.body}
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {content.faq && <FAQSection faq={content.faq} />}
+        
+        {content.footer?.finalCTA && (
+          <section className="section-md" style={{ background: '#2d5a3d' }}>
+            <div className="section-container text-center">
+              <h2 className="text-2xl font-bold mb-4 text-white">
+                {content.footer.finalCTA.headline}
+              </h2>
+              <a
+                href={content.footer.finalCTA.href}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-900 font-semibold rounded hover:bg-gray-100 transition"
+              >
+                {content.footer.finalCTA.buttonText}
+              </a>
+            </div>
+          </section>
+        )}
+        
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
       </BrandProvider>

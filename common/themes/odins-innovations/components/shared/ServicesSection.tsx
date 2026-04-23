@@ -49,36 +49,12 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
   const sectionDesc = services?.section?.description || "Targeted formulas for every phase of the hunt.";
   const items = services?.services || services?.items || [];
 
-  // Default services with Odin's category images instead of Lucide icons
-  const defaultServices: ServiceItem[] = [
-    { 
-      title: "Doe Estrus", 
-      description: "Synthetic rut cue for peak-season activity", 
-      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380" 
-    },
-    { 
-      title: "Dominant Buck", 
-      description: "Territorial challenge scent", 
-      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380" 
-    },
-    { 
-      title: "Scrape Blend", 
-      description: "Doe Estrus + Dominant Buck combination", 
-      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380" 
-    },
-    { 
-      title: "Food Scents", 
-      description: "Apple, Acorn, Persimmon & Sweet Corn", 
-      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Food_Scents.png?v=1762888380" 
-    },
-    { 
-      title: "Cover Scents", 
-      description: "Earth, Pine & Vanilla to mask human odor", 
-      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Cover_Scents.png?v=1762888625" 
-    },
-  ];
+  // Return null if no services provided - don't show hardcoded defaults
+  if (items.length === 0) {
+    return null;
+  }
 
-  const displayItems = items.length > 0 ? items : defaultServices;
+  const displayItems = items;
 
   return (
     <section

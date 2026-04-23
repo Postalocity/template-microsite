@@ -1,11 +1,5 @@
 {
-  "version": "Odin's Innovations Microsite Config — Hunting Mosquito Repellent (Merged Final)",
-  "instructions": {
-    "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
-    "promoCodes": {
-      "default": "HUNT2026"
-    }
-  },
+  "version": "Odin's Innovations - Hunting Mosquito Repellent (Synced from Live)",
   "site": {
     "id": "hunting-mosquito-repellent",
     "name": "Hunting Mosquito Repellent",
@@ -30,23 +24,12 @@
   },
   "seo": {
     "title": "Citronella Mosquito Repellent | 30+ Day Protection | Odin's",
-    "description": "Odin's citronella hunting mosquito repellent creates a rainproof protective barrier on foliage. DEET-free, masks CO₂ and lactic acid cues. Up to 720-hour sustained release. Perfect for turkey, deer, and early bow season. Pairs with scent beads for reduced reapplication time.",
-    "keywords": [
-      "hunting mosquito repellent",
-      "citronella hunting",
-      "deer hunting mosquito repellent",
-      "mosquito repellent for turkey hunting",
-      "DEET free mosquito repellent hunting",
-      "citronella in hunting blind",
-      "long lasting mosquito repellent hunting",
-      "bug repellent citronella",
-      "insect repellent for deer hunting"
-    ],
-    "ogTitle": "Citronella Hunting Mosquito Repellent — Up to 720 Hours Barrier",
+    "description": "Citronella mosquito repellent for hunting: 30+ days protection, rainproof, milder scent than DEET, EPA-registered. Starting at $14.95 — use code HUNT2026. Shop now.",
+    "ogTitle": "Citronella Hunting Mosquito Repellent — 30+ Day Protection",
     "ogDescription": "Synthetic oil-based liquid and biodegradable polymer beads engineered for consistent, weatherproof protection around stands and blinds without strong chemical odors.",
     "ogImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hero.jpg?v=1776346221",
     "twitterCard": "summary_large_image",
-    "canonical": "https://www.odinsinnovations.com/hunting-mosquito-repellent"
+    "canonical": "https://www.odinsinnovations.com/pages/hunting-mosquito-repellent"
   },
   "navigation": {
     "links": [
@@ -56,7 +39,7 @@
       },
       {
         "label": "How to Use",
-        "href": "#how-to-use"
+        "href": "#application"
       },
       {
         "label": "How It Works",
