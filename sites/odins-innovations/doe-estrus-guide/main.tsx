@@ -85,7 +85,7 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
-        {content['the-odins-difference'] && <WhyOdinsSection content={content['the-odins-difference']} />}
+        {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         {content.products && <ProductsSection content={content.products} />}
         <SignatureScentBeadsSection content={content.signatureScents} />
         <BenefitsSection benefits={content.benefits} />
