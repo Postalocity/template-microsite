@@ -13,7 +13,7 @@
   },
   "branding": {
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
-    "logo": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Headshot_logo.png"
+    "logo": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png"
   },
   "theme": {
     "primary": {
@@ -24,10 +24,18 @@
   },
   "seo": {
     "title": "Synthetic Doe Estrus Scent | 30+ Day Release | Odin's",
-    "description": "Synthetic doe estrus beads: 30+ days continuous release, CWD-safe, legal in all 50 states. Starting at $13.99 — use code HUNT2026. Shop now.",
+    "description": "Biodegradable synthetic doe estrus beads: month-long continuous release, CWD-safe, legal nationwide. Starting at $17.95 — use code HUNT2026. Shop now.",
     "keywords": [
       "doe estrus scent",
       "synthetic doe estrus",
+      "deer attractant",
+      "rut lure",
+      "hunting scent",
+      "whitetail deer attractant",
+      "deer pheromone beads",
+      "month long deer scent",
+      "extended duration scent",
+      "biodegradable deer attractant",
       "doe estrus scent beads",
       "best doe estrus scent",
       "best synthetic doe estrus for rut",
@@ -45,7 +53,7 @@
       "deer attractant beads",
       "CWD safe deer scent"
     ],
-    "ogTitle": "Synthetic Doe Estrus Scent Beads — 30+ Days of Attraction",
+    "ogTitle": "Biodegradable Doe Estrus Scent — Month-Long Rut Attraction",
     "ogDescription": "Weatherproof synthetic attractants for consistent whitetail performance. CWD-safe, biodegradable, legal everywhere.",
     "ogImage": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png",
     "twitterCard": "summary_large_image",
@@ -80,10 +88,10 @@
     "hero": {
       "headline": {
         "main": "Doe Estrus Scent Beads",
-        "highlightTerm": "Effective for 30+ Days — Legal Everywhere",
+        "highlightTerm": "30+ Days — Legal Everywhere",
         "alt": "Odin's synthetic doe estrus scent beads deployed in a deer scrape"
       },
-      "subhead": "100% synthetic attractants engineered for consistent results without risk of regulatory compliance or disease.",
+      "subhead": "Weatherproof results. Zero reapplication. Legal everywhere.",
       "background": {
         "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsInnov_Doe_Estrus.jpg?v=1775502265",
         "overlay": true
@@ -106,8 +114,8 @@
       ]
     },
     "why-odins": {
-      "headline": "Why Synthetic Doe Estrus Scent Beads Outperform Natural Urine",
-      "body": "Natural urine varies by batch. It soaks in, dilutes with rain, and degrades fast. Worse, it can carry CWD risk. Odin's synthetic beads fix every problem: identical concentration in every bottle, 30+ days continuous release (52% still active after 27 days), rainproof — moisture can't wash it away, no special storage needed, legal in all 50 states, CWD-safe, biodegradable polymer, zero trace left behind."
+      "headline": "Why Synthetic Beads Outperform Natural Urine",
+      "body": "Natural urine varies by batch. It soaks in, dilutes with rain, and degrades fast. Worse, it can carry CWD risk. Odin's synthetic beads fix every problem: identical concentration in every bottle, over a month of consistent performance, rainproof formula, no special storage needed, legal nationwide, CWD-safe, and biodegradable with zero trace left behind."
     },
     "how-it-works": {
       "headline": "How Biodegradable Scent Bead Technology Works",
@@ -119,75 +127,52 @@
     },
     "how-to-use": {
       "headline": "How to Use Odin's Doe Estrus Scent Beads and Liquid",
-      "beads": "Sprinkle approximately 3 oz of synthetic doe estrus scent beads evenly across a 4' x 4' area in natural travel lanes, existing scrapes, or mock scrapes. The beads maintain continuous release for 30+ days regardless of weather conditions. Ideal placement includes areas visible to trail cameras for ongoing documentation with minimal site disturbance.",
+      "beads": "Sprinkle approximately 3 oz of synthetic doe estrus scent beads evenly across a 4' x 4' area in natural travel lanes, existing scrapes, or mock scrapes. The beads maintain weeks of continuous release regardless of weather conditions. Ideal placement includes areas visible to trail cameras for ongoing documentation with minimal site disturbance.",
       "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7–10 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
     },
     "benefits": {
-      "section": {
-        "title": "Benefits of Odin's Synthetic Scent Beads",
-        "description": ""
-      },
       "headline": "Benefits of Odin's Synthetic Scent Beads",
       "items": [
-        {
-          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
-          "title": "30+ Days of Scent",
-          "description": "Lab and field tested, regardless of weather. Continuous release for over a month."
-        },
-        {
-          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
-          "title": "Weatherproof",
-          "description": "Rainproof formula that won't wash away. Works in rain, snow, and dew."
-        },
-        {
-          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
-          "title": "Field Tested",
-          "description": "Proven effectiveness in real hunting conditions across multiple seasons."
-        },
-        {
-          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
-          "title": "100% Biodegradable",
-          "description": "Plant-based polymer breaks down naturally. No environmental residue."
-        }
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png", "title": "30+ Days of Scent", "description": "Lab and field tested, regardless of weather. Continuous release for over a month." },
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png", "title": "Weatherproof", "description": "Rainproof formula that won't wash away. Works in rain, snow, and dew." },
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png", "title": "Field Tested", "description": "Proven effectiveness in real hunting conditions across multiple seasons." },
+        { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png", "title": "100% Biodegradable", "description": "Plant-based polymer breaks down naturally. No environmental residue." }
       ]
     },
     "products": {
+      "headline": "Available Doe Estrus Products",
+      "intro": "Odin's synthetic doe estrus products start at $17.95 per 3-oz bottle of scent beads. Use promo code HUNT2026 for savings and enjoy free shipping on orders over $79.",
+      "items": [
+        { "name": "Doe Estrus Deer Attractant & Rut Cue Scent Beads", "description": "Synthetic estrus pheromone that ignites buck rutting behavior. Extended-duration formula maintains effectiveness for weeks.", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png", "href": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads" },
+        { "name": "Dominant Buck Deer Attractant & Territorial Challenge Scent Beads", "description": "Synthetic territorial scent that signals dominance and attracts rival bucks.", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DominantBuck_6b892f84-2d31-4f74-8ede-095bead9ebd8.png", "href": "https://www.odinsinnovations.com/products/dominant-buck-scent-beads" },
+        { "name": "Whitetail Deer Scrape Blend Scent Beads", "description": "Synthetic rut-attractant to boost scrape activity and trigger buck territory responses.", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_ScrapeBlend_703616b9-6936-41c1-bc6b-6dc7136bc1ff.png", "href": "https://www.odinsinnovations.com/products/scrape-blend-scent-beads" }
+      ],
+      "cta": "Shop the full collection: https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    },
+    "signatureScents": {
       "headline": "Signature Scent Beads",
-      "intro": "Three powerful scent categories engineered for every hunting scenario. Each formula delivers 30+ days of continuous release with zero reapplication needed.",
+      "intro": "Three powerful scent categories engineered for every hunting scenario. Each formula delivers consistent performance with minimal reapplication needed.",
       "categories": [
         {
           "name": "Food Scents",
           "description": "Attract deer to your location with irresistible food-based aromas. Perfect for pre-season conditioning and keeping deer in your area.",
           "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Food_Scents.png?v=1762888380",
           "href": "https://www.odinsinnovations.com/collections/food-scents",
-          "scents": [
-            "Apple",
-            "Acorn",
-            "Persimmon",
-            "Sweet Corn"
-          ]
+          "scents": ["Apple", "Acorn", "Persimmon", "Sweet Corn"]
         },
         {
           "name": "Rut Scents",
           "description": "Trigger dominant buck behavior during the rut with synthetic estrus and territorial challenge formulas. Maximum effectiveness when it matters most.",
           "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380",
           "href": "https://www.odinsinnovations.com/collections/rut-scents",
-          "scents": [
-            "Doe Estrus",
-            "Dominant Buck",
-            "Scrape Blend"
-          ]
+          "scents": ["Doe Estrus", "Dominant Buck", "Scrape Blend"]
         },
         {
           "name": "Cover Scents",
           "description": "Mask your presence and blend into the environment. Essential for close-range encounters and staying undetected.",
           "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Cover_Scents.png?v=1762888625",
           "href": "https://www.odinsinnovations.com/collections/cover-scents",
-          "scents": [
-            "Earth",
-            "Pine",
-            "Vanilla"
-          ]
+          "scents": ["Earth", "Pine", "Vanilla"]
         }
       ],
       "price": "From $17.95",
@@ -269,7 +254,7 @@
         },
         {
           "question": "How long does Odin's doe estrus scent last?",
-          "answer": "30+ days continuous release. University testing confirmed 52% concentration still active after 27 days."
+          "answer": "More than a month of continuous release. University testing confirms consistent concentration even after four weeks of field exposure."
         },
         {
           "question": "Is synthetic deer scent legal where natural urine is banned?",
@@ -296,23 +281,6 @@
         "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
-    },
-    "howItWorks": {
-      "section": {
-        "title": "How Biodegradable Scent Bead Technology Works",
-        "description": ""
-      },
-      "headline": "How Biodegradable Scent Bead Technology Works",
-      "body": "Plant-based polymer beads absorb synthetic scent and release it molecule-by-molecule when exposed to air. Lab testing confirms 52% concentration still releasing after 27 days. Set it once. Check your trail camera for weeks. No returns needed. Rain, snow, and dew simply protect the internal scent until air exposure resumes. Beads biodegrade naturally when done."
-    },
-    "whenToUse": {
-      "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
-      "body": "Pre-rut (Early–Mid October): Use scrape blends to condition areas. Save pure doe estrus for later. Seeking Phase (Late Oct–Early Nov): Deploy in travel corridors and scrape lines. Peak Rut (Mid–Late Nov): Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer. Post-Rut (Dec–Jan): Maintain setups near food sources. Southern hunters: shift 1–2 months later."
-    },
-    "howToUse": {
-      "headline": "How to Use Odin's Doe Estrus Scent Beads and Liquid",
-      "beads": "Sprinkle approximately 3 oz of synthetic doe estrus scent beads evenly across a 4' x 4' area in natural travel lanes, existing scrapes, or mock scrapes. The beads maintain continuous release for 30+ days regardless of weather conditions. Ideal placement includes areas visible to trail cameras for ongoing documentation with minimal site disturbance.",
-      "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7–10 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
     }
   },
   "footer": {
@@ -323,93 +291,10 @@
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
   },
-  "brand": {
-    "id": "odins-innovations",
-    "name": "Odin's Innovations",
-    "slug": "odins-innovations",
-    "domain": "odinsinnovations.com",
-    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
-    "googleAnalyticsId": "G-XXXXXXXXXX",
-    "urls": {
-      "app": "https://www.odinsinnovations.com",
-      "website": "https://www.odinsinnovations.com",
-      "blog": "https://www.odinsinnovations.com/blog",
-      "shop": "https://www.odinsinnovations.com/collections/scent-beads",
-      "contact": "https://www.odinsinnovations.com/pages/contact-us"
-    },
-    "logo": {
-      "url": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png",
-      "faviconUrl": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553",
-      "filename": "odins-logo.png",
-      "alt": "Odin's Innovations - Synthetic Scent Beads"
-    },
-    "colors": {
-      "primary": {
-        "h": 0,
-        "s": 0,
-        "l": 10
-      },
-      "accent": {
-        "h": 45,
-        "s": 100,
-        "l": 50
-      }
-    }
-  },
-  "contact": {
-    "phone": "316-393-0440",
-    "email": "paul@odinsinnovations.com",
-    "address": {
-      "street": "",
-      "city": "",
-      "state": "",
-      "zip": ""
-    }
-  },
-  "social": {
-    "website": "https://www.odinsinnovations.com"
-  },
-  "ikb": {
-    "rules": {
-      "trustSignals": [
-        "NCOA Verified 2024",
-        "CASS Certified 2024",
-        "ISO 9001 Documented Processes 2023"
-      ],
-      "promoCodes": {
-        "doe-estrus-guide": "HUNT2026"
-      },
-      "approvedSections": ["hero", "howItWorks", "features", "faq", "cta", "footer", "trustSignals", "difference", "pricing"],
-      "blocklistedContent": ["testimonial", "testimonials", "video", "live-chat", "team", "experts", "award", "awards", "review", "reviews"],
-      "blocklistedPhrases": ["millions of customers", "award-winning", "industry-leading", "guaranteed delivery", "100% accurate"]
-    },
-    "pricing": {
-      "basePrice": 1.31,
-      "currency": "USD",
-      "units": "letter",
-      "addOns": {
-        "certified-mail": 4.50,
-        "return-receipt": 3.35,
-        "ncoa-verification": 0.05,
-        "address-verification": 0.02
-      }
-    },
-    "proofOptions": {
-      "standard": [{"id": "usps-photo", "name": "USPS Photo", "description": "Photo of mailpiece delivered by carrier", "tier": "included" }],
-      "upgrades": [
-        {"id": "certified-mail", "name": "Certified Mail", "description": "Track and confirm delivery with signature", "tier": "optional", "additionalCost": 4.15 },
-        {"id": "electronic-return-receipt", "name": "Electronic Return Receipt", "description": "Digital signature confirmation via email", "tier": "optional", "additionalCost": 3.50 }
-      ]
-    },
-    "terminology": {
-      "mailClasses": {
-        "first-class": {"name": "First-Class Mail", "description": "Standard USPS mail service", "hasTracking": true, "hasCertificate": false, "allowsPersonalData": true, "useCases": ["letters", "invoices"] },
-        "marketing-mail": {"name": "Marketing Mail", "description": "Cost-effective bulk mailing", "hasTracking": false, "hasCertificate": false, "allowsPersonalData": true, "useCases": ["promotional"] }
-      },
-      "certifications": {
-        "ncov": {"name": "NCOA", "fullName": "National Change of Address", "description": "Address verification service" },
-        "cass": {"name": "CASS", "fullName": "Coding Accuracy Support System", "description": "USPS-certified address standardization" }
-      }
-    }
+  "shopifyAssets": {
+    "css": "index-DjwAjgwS.css",
+    "js": "index-2hgtT8Ce.js",
+    "cssUrl": "{{ 'index-DjwAjgwS.css' | asset_url }}",
+    "jsUrl": "{{ 'index-2hgtT8Ce.js' | asset_url }}"
   }
 }
