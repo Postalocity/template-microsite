@@ -322,5 +322,94 @@
       "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  },
+  "brand": {
+    "id": "odins-innovations",
+    "name": "Odin's Innovations",
+    "slug": "odins-innovations",
+    "domain": "odinsinnovations.com",
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "googleAnalyticsId": "G-XXXXXXXXXX",
+    "urls": {
+      "app": "https://www.odinsinnovations.com",
+      "website": "https://www.odinsinnovations.com",
+      "blog": "https://www.odinsinnovations.com/blog",
+      "shop": "https://www.odinsinnovations.com/collections/scent-beads",
+      "contact": "https://www.odinsinnovations.com/pages/contact-us"
+    },
+    "logo": {
+      "url": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png",
+      "faviconUrl": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553",
+      "filename": "odins-logo.png",
+      "alt": "Odin's Innovations - Synthetic Scent Beads"
+    },
+    "colors": {
+      "primary": {
+        "h": 0,
+        "s": 0,
+        "l": 10
+      },
+      "accent": {
+        "h": 45,
+        "s": 100,
+        "l": 50
+      }
+    }
+  },
+  "contact": {
+    "phone": "316-393-0440",
+    "email": "paul@odinsinnovations.com",
+    "address": {
+      "street": "",
+      "city": "",
+      "state": "",
+      "zip": ""
+    }
+  },
+  "social": {
+    "website": "https://www.odinsinnovations.com"
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "NCOA Verified 2024",
+        "CASS Certified 2024",
+        "ISO 9001 Documented Processes 2023"
+      ],
+      "promoCodes": {
+        "doe-estrus-guide": "HUNT2026"
+      },
+      "approvedSections": ["hero", "howItWorks", "features", "faq", "cta", "footer", "trustSignals", "difference", "pricing"],
+      "blocklistedContent": ["testimonial", "testimonials", "video", "live-chat", "team", "experts", "award", "awards", "review", "reviews"],
+      "blocklistedPhrases": ["millions of customers", "award-winning", "industry-leading", "guaranteed delivery", "100% accurate"]
+    },
+    "pricing": {
+      "basePrice": 1.31,
+      "currency": "USD",
+      "units": "letter",
+      "addOns": {
+        "certified-mail": 4.50,
+        "return-receipt": 3.35,
+        "ncoa-verification": 0.05,
+        "address-verification": 0.02
+      }
+    },
+    "proofOptions": {
+      "standard": [{"id": "usps-photo", "name": "USPS Photo", "description": "Photo of mailpiece delivered by carrier", "tier": "included" }],
+      "upgrades": [
+        {"id": "certified-mail", "name": "Certified Mail", "description": "Track and confirm delivery with signature", "tier": "optional", "additionalCost": 4.15 },
+        {"id": "electronic-return-receipt", "name": "Electronic Return Receipt", "description": "Digital signature confirmation via email", "tier": "optional", "additionalCost": 3.50 }
+      ]
+    },
+    "terminology": {
+      "mailClasses": {
+        "first-class": {"name": "First-Class Mail", "description": "Standard USPS mail service", "hasTracking": true, "hasCertificate": false, "allowsPersonalData": true, "useCases": ["letters", "invoices"] },
+        "marketing-mail": {"name": "Marketing Mail", "description": "Cost-effective bulk mailing", "hasTracking": false, "hasCertificate": false, "allowsPersonalData": true, "useCases": ["promotional"] }
+      },
+      "certifications": {
+        "ncov": {"name": "NCOA", "fullName": "National Change of Address", "description": "Address verification service" },
+        "cass": {"name": "CASS", "fullName": "Coding Accuracy Support System", "description": "USPS-certified address standardization" }
+      }
+    }
   }
 }
