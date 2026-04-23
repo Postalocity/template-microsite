@@ -5,7 +5,7 @@
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -93,7 +93,6 @@ function App() {
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
-        <TestimonialsSection />
         <FAQSection faq={content.faq} />
         
         {/* Stamped.io Reviews - Real Customer Testimonials */}
