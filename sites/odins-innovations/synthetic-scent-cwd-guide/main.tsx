@@ -6,7 +6,8 @@
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
+import { useState } from 'react';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -36,6 +37,7 @@ const promoCode = 'HUNT2026';
 function App() {
   const { content } = config;
   const navCta = config.navigation?.cta;
+  const [zoomImage, setZoomImage] = useState<string | null>(null);
   return (
     <IKBProvider ikb={ikbConfig}>
       <BrandProvider
@@ -58,64 +60,43 @@ function App() {
                 <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-8">{content['what-is-cwd'].intro}</p>
               )}
               
-              {/* Key Points Cards */}
-              <div className="grid md:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
-                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                      </svg>
+              {/* Key Points Cards - Dynamic from config */}
+              {content['what-is-cwd'].cards && (
+                <div className="grid md:grid-cols-2 gap-6 mb-10 max-w-4xl mx-auto">
+                  {content['what-is-cwd'].cards.map((card, idx) => (
+                    <div key={idx} className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                          {card.icon === 'warning-red' && (
+                            <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                          )}
+                          {card.icon === 'flask-amber' && (
+                            <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                            </svg>
+                          )}
+                          {card.icon === 'clock-orange' && (
+                            <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          )}
+                          {card.icon === 'ban-red' && (
+                            <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                            </svg>
+                          )}
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-1">{card.title}</h3>
+                          <p className="text-sm text-muted-foreground">{card.description}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">100% Fatal</h3>
-                      <p className="text-sm text-muted-foreground">Caused by misfolded proteins (prions) that attack the nervous system. No treatment or cure exists.</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-                
-                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">Spreads Through Bodily Fluids</h3>
-                      <p className="text-sm text-muted-foreground">Prions transmit via urine, saliva, feces, and contaminated environments. Even trace amounts can infect healthy deer.</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">18+ Month Incubation</h3>
-                      <p className="text-sm text-muted-foreground">CWD can incubate for over 18 months without symptoms. Urine from seemingly healthy herds may contain infectious prions.</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">State Restrictions</h3>
-                      <p className="text-sm text-muted-foreground">Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived materials and is legal for use in any state and Canada.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              )}
               
               {/* CTA */}
               <div className="text-center">
@@ -133,6 +114,39 @@ function App() {
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['why-odins'].headline}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">{content['why-odins'].body}</p>
+              
+              {/* USDA BioPreferred Certification Badge */}
+              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+                <div className="bg-white rounded-xl p-6 shadow-lg">
+                  <img 
+                    src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
+                    alt="USDA Certified Biobased Product - 42%"
+                    className="w-48 h-auto"
+                  />
+                </div>
+                <div className="text-left max-w-md">
+                  <p className="text-lg text-stone-700 mb-2">
+                    <strong>USDA BioPreferred® Certified</strong>
+                  </p>
+                  <p className="text-stone-600 mb-4">
+                    Our biodegradable polymer contains 42% certified biobased content. 
+                    Both beaded and liquid products are USDA BioPreferred Certified.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 text-sm">
+                    <span className="text-stone-500">Certified Under:</span>
+                    <span className="font-medium text-stone-700">LC BioPlastics LLC</span>
+                    <a 
+                      href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2"
+                    >
+                      View Details →
+                    </a>
+                  </div>
+                </div>
+              </div>
+              
               <div className="text-center">
                 <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
                   Shop Rut Scents
@@ -156,7 +170,7 @@ function App() {
                     {step.image ? (
                       /* Step with image - side-by-side layout */
                       <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                        <div className="sm:w-24 sm:h-24 w-full h-32 flex-shrink-0 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/30 dark:to-blue-900/20 rounded-lg flex items-center justify-center overflow-hidden">
+                        <div className="sm:w-24 sm:h-24 w-full h-32 flex-shrink-0 rounded-lg flex items-center justify-center overflow-hidden">
                           <img
                             src={step.image}
                             alt={step.title}
@@ -213,21 +227,25 @@ function App() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {content['wins'].items.map((item, idx) => (
                   <div key={idx} className="bg-muted/30 rounded-lg p-6 text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
-                      {item.icon === 'clock' && (
-                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                      {item.icon === 'long-lasting' && (
+                        <img 
+                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841" 
+                          alt="Longest release duration"
+                          className="w-8 h-8"
+                        />
                       )}
                       {item.icon === 'flask' && (
                         <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       )}
-                      {item.icon === 'globe' && (
-                        <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                      {item.icon === '50-states' && (
+                        <img 
+                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-50-states.svg" 
+                          alt="Legal in all 50 states"
+                          className="w-8 h-8"
+                        />
                       )}
                       {item.icon === 'shield' && (
                         <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -246,7 +264,7 @@ function App() {
         
         {/* Comparison */}
         {content['comparison'] && (
-          <section id="comparison" className="py-20 bg-muted/30">
+          <section id="comparison" className="py-20 bg-[#f8f6f3]">
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
@@ -259,47 +277,27 @@ function App() {
           </section>
         )}
         
-        {/* USDA BioPreferred Certification */}
-        <section id="usda-biopreferred" className="py-16 bg-green-50">
+        {/* Stamped.io Reviews - Success Stories from the Field */}
+        <section id="reviews" className="py-20 bg-stone-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-green-800">USDA BioPreferred® Certified</h2>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-                <img 
-                  src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
-                  alt="USDA Certified Biobased Product Label"
-                  className="w-48 h-auto rounded-lg shadow-md"
-                />
-                <div className="text-left max-w-md">
-                  <p className="text-lg text-green-700 mb-4">
-                    Odin's scent beads have earned the USDA Certified Biobased Product Label, confirming that our biodegradable polymer contains renewable biological content.
-                  </p>
-                  <p className="text-green-600 text-sm">
-                    Third-party laboratory verified by the USDA's BioPreferred Program.
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
-                <div className="bg-white rounded-lg p-6 shadow-sm border border-green-200 max-w-sm">
-                  <p className="font-semibold text-green-800 mb-2">Certified Under</p>
-                  <p className="text-green-700">LC BioPlastics LLC</p>
-                  <p className="text-sm text-green-600 mt-2">USDA BioPreferred® Program</p>
-                </div>
-                <a 
-                  href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-outline border-green-600 text-green-700 hover:bg-green-100"
-                >
-                  View Certification Details
-                </a>
-              </div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
             </div>
+            
+            {/* Stamped.io Reviews Widget - Rut Scents Products */}
+            {/* Loads automatically via Shopify's Stamped.io app integration */}
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-product-brand="Odin's Innovations"></div>
+            
+            {/* Hide Product/Site Reviews tabs since no site reviews */}
+            <style dangerouslySetInnerHTML={{__html: `
+              .stamped-widget-buttons,
+              .stamped-full-page-tabs {
+                display: none !important;
+              }
+            `}} />
           </div>
         </section>
-        
-        {/* Testimonials - Success Stories */}
-        <TestimonialsSection />
         
         {/* FAQ */}
         {content['faq'] && (

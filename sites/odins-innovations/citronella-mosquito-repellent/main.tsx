@@ -198,50 +198,50 @@ const IconChemistry = () => (
 );
 
 // Section 1: Introduction - LIGHT BACKGROUND
-const IntroductionSection = () => (
-  <section className="section-padding" style={{ background: '#f8f9fa' }}>
-    <div className="section-container">
-      <div className="text-center mb-12">
-        <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
-          Mosquito Control for Hunting
-        </h2>
-        <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-          Peak protection when you need it most
-        </p>
+const IntroductionSection = ({ content }: { content: any }) => {
+  const features = content?.introduction?.features || [];
+  
+  const renderIcon = (iconName: string) => {
+    switch (iconName) {
+      case 'bug':
+        return <Bug className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+      case 'leaf':
+        return <Leaf className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+      case 'clock':
+        return <IconLongLasting />;
+      case 'shield-check':
+        return <ShieldCheck className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+      default:
+        return <Bug className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+    }
+  };
+  
+  return (
+    <section className="section-padding" style={{ background: '#f8f9fa' }}>
+      <div className="section-container">
+        <div className="text-center mb-12">
+          <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
+            Mosquito Control for Hunting
+          </h2>
+          <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
+            Peak protection when you need it most
+          </p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature: any, idx: number) => (
+            <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
+              <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                {renderIcon(feature.icon)}
+              </div>
+              <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{feature.title}</h3>
+              <p className="font-body text-sm" style={{ color: '#666' }}>{feature.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Bug className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>Peak Season Protection</h3>
-          <p className="font-body text-sm" style={{ color: '#666' }}>Peak mosquito activity coincides with spring hunting seasons.</p>
-        </div>
-        <div className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Leaf className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>Scent-Safe Formula</h3>
-          <p className="font-body text-sm" style={{ color: '#666' }}>Milder scent avoids strong DEET odors deer can detect.</p>
-        </div>
-        <div className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <IconLongLasting />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>Long-Lasting Barrier</h3>
-          <p className="font-body text-sm" style={{ color: '#666' }}>Up to 720 hours of protection vs 20-minute alternatives.</p>
-        </div>
-        <div className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <ShieldCheck className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>EPA-Registered</h3>
-          <p className="font-body text-sm" style={{ color: '#666' }}>Formulated with EPA-registered biopesticide compounds.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // Section 2: Why Odin's - DARK BACKGROUND
 const WhyOdinsSection = ({ content }: { content: any }) => (
@@ -457,7 +457,7 @@ function App() {
         <HeroSection hero={content.hero} />
         
         {/* Section 1: Introduction - LIGHT */}
-        <IntroductionSection />
+        <IntroductionSection content={content} />
         
         {/* Section 2: Why Odin's - DARK */}
         {content['why-odins'] && <WhyOdinsSection content={content['why-odins']} />}

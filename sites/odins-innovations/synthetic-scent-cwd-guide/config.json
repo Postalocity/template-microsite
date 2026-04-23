@@ -79,7 +79,7 @@
       },
       "subhead": "100% synthetic attractants engineered for consistent results without risk of regulatory compliance or disease.",
       "background": {
-        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hero2.jpg?v=1704915494",
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsTestimonial_NoahCraddock_240x240-gigapixel-hq-scale-6_00x_938dbb16-ed3f-420a-a7d4-79f73cf5e2ce.jpg?v=1704829106",
         "overlay": true
       },
       "ctas": [
@@ -98,7 +98,29 @@
     "what-is-cwd": {
       "headline": "What is CWD and why does it compromise natural deer urine?",
       "intro": "CWD is a fatal, contagious neurodegenerative disorder affecting cervids (deer, elk, moose, reindeer). It is 100% fatal with no vaccine, treatment or cure.",
-      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents with zero animal-derived material — eliminating prion risk entirely. Odin's is legal for use in every state and in Canada."
+      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents with zero animal-derived material — eliminating prion risk entirely. Odin's is legal for use in every state and in Canada.",
+      "cards": [
+        {
+          "icon": "warning-red",
+          "title": "100% Fatal",
+          "description": "Caused by misfolded proteins (prions) that attack the nervous system. No treatment or cure exists."
+        },
+        {
+          "icon": "flask-amber",
+          "title": "Spreads Through Bodily Fluids",
+          "description": "Prions transmit via urine, saliva, feces, and contaminated environments. Even trace amounts can infect healthy deer."
+        },
+        {
+          "icon": "clock-orange",
+          "title": "18+ Month Incubation",
+          "description": "CWD can incubate for over 18 months without symptoms. Urine from seemingly healthy herds may contain infectious prions."
+        },
+        {
+          "icon": "ban-red",
+          "title": "State Restrictions",
+          "description": "Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived materials and is legal for use in any state and Canada."
+        }
+      ]
     },
     "why-odins": {
       "headline": "Why Odin's Synthetic Deer Scent Outperforms Natural Urine",
@@ -166,7 +188,7 @@
       "headline": "Odin's Innovations Wins On",
       "items": [
         {
-          "icon": "clock",
+          "icon": "long-lasting",
           "title": "Longest Release Duration",
           "description": "30+ days of continuous scent vs. frequent reapplication required by natural urine"
         },
@@ -176,7 +198,7 @@
           "description": "University laboratory confirmed 52% scent concentration after 27 days of continuous air exposure"
         },
         {
-          "icon": "globe",
+          "icon": "50-states",
           "title": "All 50 States + Canada",
           "description": "Legal everywhere natural urine is restricted or banned. No regulatory compliance issues"
         },
@@ -292,9 +314,9 @@
     }
   },
   "shopifyAssets": {
-    "css": "index-Z4lXu2Rq.css",
-    "js": "index-s91amS-L.js",
-    "cssUrl": "{{ 'index-Z4lXu2Rq.css' | asset_url }}",
-    "jsUrl": "{{ 'index-s91amS-L.js' | asset_url }}"
+    "css": "index-4Bh1k4aY.css",
+    "js": "index-w5wF-bG9.js",
+    "cssUrl": "{{ 'index-4Bh1k4aY.css' | asset_url }}",
+    "jsUrl": "{{ 'index-w5wF-bG9.js' | asset_url }}"
   }
 }

@@ -49,7 +49,29 @@
       ]
     },
     "introduction": {
-      "body": "Mosquitoes and biting insects coincide with peak spring and early fall hunting seasons. Odin's Citronella Mosquito & Insect Repellent provides hunters with a practical, scent-smart solution. The synthetic, oil-based liquid creates a protective perimeter barrier when applied to foliage, brush, or ground cover around stands or blinds. With potential duration of up to 720 hours of continuous exposure, the formula supports reduced reapplication time compared to traditional options that last approximately 20 minutes. Formulated with a proprietary blend of plant-derived compounds including citronellal and geraniol (an EPA-registered biopesticide), it masks the CO₂, lactic acid, and octenol cues mosquitoes use to locate hosts. The milder scent profile avoids the strong chemical odors associated with DEET that deer can detect at distance. Pairs effectively with Odin's Citronella Scent Beads for layered coverage and is legal in all 50 states."
+      "body": "Mosquitoes and biting insects coincide with peak spring and early fall hunting seasons. Odin's Citronella Mosquito & Insect Repellent provides hunters with a practical, scent-smart solution. The synthetic, oil-based liquid creates a protective perimeter barrier when applied to foliage, brush, or ground cover around stands or blinds. With potential duration of up to 720 hours of continuous exposure, the formula supports reduced reapplication time compared to traditional options that last approximately 20 minutes. Formulated with a proprietary blend of plant-derived compounds including citronellal and geraniol (an EPA-registered biopesticide), it masks the CO₂, lactic acid, and octenol cues mosquitoes use to locate hosts. The milder scent profile avoids the strong chemical odors associated with DEET that deer can detect at distance. Pairs effectively with Odin's Citronella Scent Beads for layered coverage and is legal in all 50 states.",
+      "features": [
+        {
+          "icon": "bug",
+          "title": "Peak Season Protection",
+          "description": "Peak mosquito activity coincides with spring hunting seasons."
+        },
+        {
+          "icon": "leaf",
+          "title": "Scent-Safe Formula",
+          "description": "Milder scent avoids strong DEET odors deer can detect."
+        },
+        {
+          "icon": "clock",
+          "title": "Long-Lasting Barrier",
+          "description": "Up to 720 hours of protection vs 20-minute alternatives."
+        },
+        {
+          "icon": "shield-check",
+          "title": "EPA-Registered",
+          "description": "Formulated with EPA-registered biopesticide compounds."
+        }
+      ]
     },
     "why-odins": {
       "headline": "Why Choose Odin's Citronella for Hunters — Professional Performance Standards",
