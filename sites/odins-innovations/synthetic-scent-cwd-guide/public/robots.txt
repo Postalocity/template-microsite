@@ -1,16 +1,4 @@
 User-agent: *
 Allow: /
 
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: claude-ai
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-Sitemap: https://odinsinnovations.com/synthetic-scent-cwd-guide/sitemap.xml
+Sitemap: https://www.odinsinnovations.com/pages/synthetic-scent-cwd-guide/sitemap.xml

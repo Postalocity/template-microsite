@@ -8,6 +8,23 @@ export default {
     "../../../common/components/**/*.{js,ts,jsx,tsx}",
     "../../../common/themes/odins-innovations/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    "text-with-icons",
+    "text-with-icons__blocks",
+    "text-with-icons__block",
+    "text-with-icons__block-icon",
+    "text-with-icons__block-title",
+    "text-with-icons__block-text",
+    "text-with-icons__button",
+    "has-3-per-row",
+    "page-width",
+    "shopify-section",
+    "index-section",
+    "icon",
+    "icon-tcwi-ribbon",
+    "icon-tcwi-package",
+    "icon-tcwi-stopwatch",
+  ],
   prefix: "",
   theme: {
     container: {

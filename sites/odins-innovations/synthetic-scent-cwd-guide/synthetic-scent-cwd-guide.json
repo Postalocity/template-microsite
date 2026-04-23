@@ -97,33 +97,7 @@
     },
     "what-is-cwd": {
       "headline": "What Is CWD and Why Does It Threaten Natural Deer Urine Products?",
-      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. It is always fatal in cervids — deer, elk, and moose — with no vaccine, treatment, or cure. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents and synthetic deer attractant with zero animal-derived material — eliminating prion risk entirely while delivering lab-consistent aromatic profiles.",
-      "cards": [
-        {
-          "icon": "warning",
-          "iconColor": "red",
-          "title": "Always Fatal",
-          "description": "CWD is a transmissible spongiform encephalopathy caused by misfolded proteins (prions). It is 100% fatal in cervids with no vaccine, treatment, or cure."
-        },
-        {
-          "icon": "beaker",
-          "iconColor": "amber",
-          "title": "Spreads Through Bodily Fluids",
-          "description": "Prions transmit via urine, saliva, feces, and contaminated environments. Even trace amounts can infect healthy deer."
-        },
-        {
-          "icon": "clock",
-          "iconColor": "orange",
-          "title": "18+ Month Incubation",
-          "description": "CWD can incubate for over 18 months without symptoms. Urine from seemingly healthy herds may contain infectious prions."
-        },
-        {
-          "icon": "ban",
-          "iconColor": "red",
-          "title": "State Restrictions",
-          "description": "Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived material."
-        }
-      ]
+      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. It is always fatal in cervids — deer, elk, and moose — with no vaccine, treatment, or cure. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents and synthetic deer attractant with zero animal-derived material — eliminating prion risk entirely while delivering lab-consistent aromatic profiles."
     },
     "why-odins": {
       "headline": "Why Odin's Synthetic Deer Scent Outperforms Natural Urine",
