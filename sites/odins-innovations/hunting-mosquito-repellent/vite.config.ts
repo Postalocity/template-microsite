@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  base: '/synthetic-scent-cwd-guide',
+  base: '/hunting-mosquito-repellent',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../../../common'),

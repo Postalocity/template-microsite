@@ -734,6 +734,7 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
  */
 
 import { createRoot } from 'react-dom/client';
+import { Shield, Leaf, Clock, Check } from 'lucide-react';
 ${usesBrandTheme ? `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/themes/${brandId}/components/shared';
 import SiteNavigation from '@/themes/${brandId}/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/components/shared';
@@ -750,55 +751,28 @@ const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
 
-// IKB configuration with promo codes
-const ikbConfig = {
+// IKB configuration with promo codes - dynamic based on site
+const ikbConfig = ${JSON.stringify({
   rules: {
-    trustSignals: [
-      'NCOA Verified 2024',
-      'CASS Certified 2024',
-      'ISO 9001 Documented Processes 2023',
+    trustSignals: config.content?.features?.trustSignals || [
+      'EPA-Registered Biopesticide',
+      'Made in USA',
+      'Legal in All 50 States',
     ],
     promoCodes: {
-      'credit-repair': 'cr2026',
-      'debt-collection': 'debt2026',
-      'healthcare-billing': 'hb2026',
-      'healthcare-mailing-services': 'hm2026',
-      'postcard': 'pc2026',
-      'self-storage': 'pm2026',
+      'hunting-mosquito-repellent': 'HUNT2026',
+      'citronella-mosquito-repellent': 'HUNT2026',
     },
-    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
+    approvedSections: ['hero', 'features', 'introduction', 'why-odins', 'detection', 'application', 'blinds', 'layered', 'turkey', 'comparison', 'howItWorks', 'faq', 'footer', 'trustSignals'],
     blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
-    blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
+    blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading'],
   },
   pricing: {
-    basePrice: 1.31,
+    basePrice: 14.95,
     currency: 'USD',
-    units: 'letter',
-    addOns: {
-      'certified-mail': 4.50,
-      'return-receipt': 3.35,
-      'ncoa-verification': 0.05,
-      'address-verification': 0.02,
-    },
+    units: 'bottle',
   },
-  proofOptions: {
-    standard: [{ id: 'usps-photo', name: 'USPS Photo', description: 'Photo of mailpiece delivered by carrier', tier: 'included' }],
-    upgrades: [
-      { id: 'certified-mail', name: 'Certified Mail', description: 'Track and confirm delivery with signature', tier: 'optional', additionalCost: 4.15 },
-      { id: 'electronic-return-receipt', name: 'Electronic Return Receipt', description: 'Digital signature confirmation via email', tier: 'optional', additionalCost: 3.50 },
-    ],
-  },
-  terminology: {
-    mailClasses: {
-      'first-class': { name: 'First-Class Mail', description: 'Standard USPS mail service', hasTracking: true, hasCertificate: false, allowsPersonalData: true, useCases: ['letters', 'invoices'] },
-      'marketing-mail': { name: 'Marketing Mail', description: 'Cost-effective bulk mailing', hasTracking: false, hasCertificate: false, allowsPersonalData: true, useCases: ['promotional'] },
-    },
-    certifications: {
-      'ncov': { name: 'NCOA', fullName: 'National Change of Address', description: 'Address verification service' },
-      'cass': { name: 'CASS', fullName: 'Coding Accuracy Support System', description: 'USPS-certified address standardization' },
-    },
-  },
-};
+})};
 
 // Get promo code from IKB for the service
 const promoCode = ikbConfig.rules.promoCodes['${site.slug}'] || '2026';
@@ -830,21 +804,29 @@ function App() {
                 </p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {content.features.features?.map((feature: {title: string; description: string; icon?: string}, idx: number) => (
-                  <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
-                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center" style={{ color: '#2d5a3d' }}>
-                      <svg className="w-10 h-10" strokeWidth="1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                {content.features.features?.map((feature: {title: string; description: string; icon?: string}, idx: number) => {
+                  // Map feature titles to Lucide icons
+                  const iconMap: Record<string, React.ElementType> = {
+                    'Peak Season Protection': Shield,
+                    'Scent-Safe Formula': Leaf,
+                    'Long-Lasting Barrier': Clock,
+                    'EPA-Registered': Check,
+                  };
+                  const IconComponent = iconMap[feature.title] || Check;
+                  return (
+                    <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
+                      <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center" style={{ color: '#2d5a3d' }}>
+                        <IconComponent className="w-10 h-10" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>
+                        {feature.title}
+                      </h3>
+                      <p className="font-body text-sm" style={{ color: '#666' }}>
+                        {feature.description}
+                      </p>
                     </div>
-                    <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>
-                      {feature.title}
-                    </h3>
-                    <p className="font-body text-sm" style={{ color: '#666' }}>
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </section>

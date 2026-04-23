@@ -3,10 +3,17 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Check, X, Trophy } from 'lucide-react';
 
+interface TableRow {
+  feature?: string;
+  odins?: string;
+  traditional?: string;
+  [key: string]: string | undefined;
+}
+
 interface TableComparisonProps {
   comparison: {
     headline: string;
-    table: string[][];
+    table: string[][] | TableRow[];
     summary?: string;
   };
 }
@@ -19,8 +26,29 @@ const ComparisonTable = ({ comparison }: TableComparisonProps) => {
     return null;
   }
 
-  const [headerRow, ...dataRows] = comparison.table;
-  const odinsColumn = headerRow.length - 1; // Last column is Odin's
+  // Normalize table to string[][] format
+  // Handle object format: { feature, odins, traditional } or { feature, [key]: value }
+  // Handle array format: [["header1", "header2"], ["row1-col1", "row1-col2"], ...]
+  let headerRow: string[];
+  let dataRows: string[][];
+
+  if (Array.isArray(comparison.table[0])) {
+    // Already in string[][] format
+    [headerRow, ...dataRows] = comparison.table as string[][];
+  } else {
+    // Object format - convert to string[][]
+    const objRows = comparison.table as TableRow[];
+    // Get keys from first row (excluding common feature names)
+    const keys = Object.keys(objRows[0]).filter(k => k !== 'feature' && k !== 'Attribute');
+    headerRow = ['Attribute', ...keys.map(k => k.charAt(0).toUpperCase() + k.slice(1))];
+    dataRows = objRows.map(row => {
+      const cells: string[] = [row.feature || row.Attribute || ''];
+      keys.forEach(k => cells.push(row[k] || ''));
+      return cells;
+    });
+  }
+  
+  const odinsColumn = headerRow.length - 1; // Last column is typically Odin's
 
   // Check if cell indicates a positive/negative value
   const renderCell = (cell: string, cellIndex: number, rowIndex: number) => {

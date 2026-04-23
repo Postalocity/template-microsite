@@ -13,4 +13,4 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Sitemap: https://odinsinnovations.com/synthetic-scent-cwd-guide/sitemap.xml
+Sitemap: https://odinsinnovations.com/hunting-mosquito-repellent/sitemap.xml

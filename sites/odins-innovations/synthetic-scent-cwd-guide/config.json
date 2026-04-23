@@ -1,13 +1,14 @@
 {
   "site": {
-    "id": "synthetic-scent-cwd-guide",
+    "id": "odins-innovations",
     "name": "CWD & Synthetic Scent Guide",
     "slug": "synthetic-scent-cwd-guide",
     "domain": "odinsinnovations.com",
-    "basename": "/pages/synthetic-scent-cwd-guide",
+    "basename": "odins-innovations-synthetic-scent-cwd-guide",
     "contact": {
       "email": "paul@odinsinnovations.com",
-      "phone": "316-393-0440"
+      "phone": "316-393-0440",
+      "address": ", ,  "
     }
   },
   "branding": {
@@ -40,7 +41,8 @@
     "ogDescription": "Compliant synthetic attractants engineered for 30+ days of weather-resistant performance with zero biological risk.",
     "ogImage": "./og-image.png",
     "twitterCard": "summary_large_image",
-    "canonical": "https://www.odinsinnovations.com/synthetic-scent-cwd-guide"
+    "canonical": "https://www.odinsinnovations.com/synthetic-scent-cwd-guide",
+    "googleAnalyticsId": "G-XXXXXXXXXX"
   },
   "navigation": {
     "links": [
@@ -138,6 +140,10 @@
       }
     },
     "benefits": {
+      "section": {
+        "title": "Benefits of Odin's Synthetic Scent Beads",
+        "description": ""
+      },
       "headline": "Benefits of Odin's Synthetic Scent Beads",
       "items": [
         {
@@ -188,6 +194,10 @@
       ]
     },
     "comparison": {
+      "section": {
+        "title": "Synthetic vs Natural Deer Scent — Direct Comparison",
+        "description": ""
+      },
       "headline": "Synthetic vs Natural Deer Scent — Direct Comparison",
       "table": [
         [
@@ -238,6 +248,10 @@
       ]
     },
     "faq": {
+      "section": {
+        "title": "Regulatory Compliance concerning CWD",
+        "description": ""
+      },
       "headline": "Regulatory Compliance concerning CWD",
       "items": [
         {
@@ -289,12 +303,51 @@
         "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    },
+    "howItWorks": {
+      "section": {
+        "title": "The Science Behind Scent Bead Technology",
+        "description": ""
+      },
+      "headline": "The Science Behind Scent Bead Technology",
+      "body": "Odin's proprietary biodegradable polymer system delivers consistent, long-lasting scent release through controlled molecular diffusion.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Synthetic Scent Formulations",
+          "description": "Odin's has 21 unique scents formulated to provide a toolkit for hunters of all kinds and for many different times a year"
+        },
+        {
+          "number": "02",
+          "title": "Proprietary Biopolymer",
+          "description": "Designed to absorb synthetic scents for a controlled release and then biodegrade. Better than you found it™"
+        },
+        {
+          "number": "03",
+          "title": "Weatherproof Performance",
+          "description": "Rain, snow, and heavy dew won't wash away the scent. Use our weatherproof technology in any conditions",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png"
+        },
+        {
+          "number": "04",
+          "title": "Controlled Molecular Release",
+          "description": "A prescribed amount of scent is infused into each polymer bead. Due to the design, the scent molecules are released over an extended period. Applying science to create innovative products for you!"
+        }
+      ],
+      "scienceSection": {
+        "title": "University Testing Confirms Performance",
+        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using Gas Chromatography-Mass Spectrometry). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
+        "highlight": "52% original scent concentration still releasing after 27 days",
+        "chartImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Scent_Chart_with_Description_full_size.jpg"
+      }
     }
   },
-  "shopifyAssets": {
-    "css": "index-DH7BhuRD.css",
-    "js": "index-Cj2GNscf.js",
-    "cssUrl": "{{ 'index-DH7BhuRD.css' | asset_url }}",
-    "jsUrl": "{{ 'index-Cj2GNscf.js' | asset_url }}"
+  "footer": {
+    "finalCTA": {
+      "headline": "Ready for consistent, compliant results?",
+      "buttonText": "Scent Beads",
+      "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
+    },
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
   }
 }
