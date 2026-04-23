@@ -1,0 +1,124 @@
+# Microsite Generator Enforcement Workflow
+# Prevents drift between source config and generated files
+name: Microsite Generator Enforcement
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  block-direct-edits:
+    name: Block Direct Edits to Generated Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for direct edits to sites/* files
+        run: |
+          # Files that should ONLY be modified via generator, not direct edit
+          BLOCKED_PATTERNS=(
+            "sites/*/config.json"
+            "sites/*/main.tsx"
+            "sites/*/index.html"
+            "sites/*/shopify.html"
+          )
+          
+          for pattern in "${BLOCKED_PATTERNS[@]}"; do
+            CHANGES=$(git diff --name-only HEAD -- "$pattern" 2>/dev/null)
+            if [ -n "$CHANGES" ]; then
+              echo "❌ ERROR: Direct edit detected matching: $pattern"
+              echo "Modified files:"
+              echo "$CHANGES"
+              echo ""
+              echo "These files are GENERATED from config/sites/*.json"
+              echo "Make changes in: config/sites/[brand]/[service].json"
+              echo "Then regenerate using: npx tsx scripts/generate-site.ts --brand [brand] --service [service]"
+              exit 1
+            fi
+          done
+          echo "✅ No direct edits to generated files detected"
+
+  verify-source-config:
+    name: Verify Source Config Exists
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check all site configs exist
+        run: |
+          for brand_dir in config/sites/*; do
+            BRAND=$(basename "$brand_dir")
+            for config in "$brand_dir"/*.json; do
+              SERVICE=$(basename "$config" .json)
+              if [ ! -f "sites/$BRAND/$SERVICE/config.json" ]; then
+                echo "⚠️  Missing generated: sites/$BRAND/$SERVICE/config.json"
+                echo "Run: npx tsx scripts/generate-site.ts --brand $BRAND --service $SERVICE"
+              fi
+            done
+          done
+
+  build-all-sites:
+    name: Build All Sites
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Build each site
+        run: |
+          for brand_dir in config/sites/*; do
+            BRAND=$(basename "$brand_dir")
+            for config in "$brand_dir"/*.json; do
+              SERVICE=$(basename "$config" .json)
+              echo "Building $BRAND/$SERVICE..."
+              cd "sites/$BRAND/$SERVICE"
+              npm install --silent 2>/dev/null
+              npm run build
+              if [ $? -ne 0 ]; then
+                echo "❌ Build failed: $BRAND/$SERVICE"
+                exit 1
+              fi
+              cd - > /dev/null
+            done
+          done
+          echo "✅ All sites built successfully"
+
+  content-drift-detection:
+    name: Detect Content Drift
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check for content differences
+        run: |
+          # For each site, check if generated content matches expected structure
+          for brand_dir in config/sites/*; do
+            BRAND=$(basename "$brand_dir")
+            for config in "$brand_dir"/*.json; do
+              SERVICE=$(basename "$config" .json)
+              
+              # Check if main.tsx references content correctly
+              if grep -q "content.products" "sites/$BRAND/$SERVICE/main.tsx" 2>/dev/null; then
+                if ! grep -q '"products"' "$config" 2>/dev/null; then
+                  echo "⚠️  $BRAND/$SERVICE: main.tsx uses content.products but config has none"
+                fi
+              fi
+              
+              if grep -q "content.services" "sites/$BRAND/$SERVICE/main.tsx" 2>/dev/null; then
+                if ! grep -q '"services"' "$config" 2>/dev/null; then
+                  echo "⚠️  $BRAND/$SERVICE: main.tsx uses content.services but config has none"
+                fi
+              fi
+            done
+          done
+          echo "✅ Content drift check complete"
