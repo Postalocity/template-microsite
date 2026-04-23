@@ -95,6 +95,20 @@ function App() {
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         <TestimonialsSection />
         <FAQSection faq={content.faq} />
+        
+        {/* Stamped.io Reviews - Real Customer Testimonials */}
+        <section id="reviews" className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What Hunters Are Saying</h2>
+            <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+              Real results from hunters who put Odin's to the test in the field.
+            </p>
+            {/* Stamped.io Widget */}
+            <div id="stamped-main-widget" className="stamped-main-widget" data-widget-type="full-page" data-product-ids="" data-fill-empty="false" data-per-page="10"></div>
+            <script async type="text/javascript" src="https://cdn.stamped.io/widget.js"></script>
+          </div>
+        </section>
+
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
       </BrandProvider>
