@@ -52,7 +52,7 @@ const brandConfig = {
     contact: "https://www.odinsinnovations.com/pages/contact-us"
   },
   logo: {
-    url: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png",
+    filename: "odins-logo.png",
     alt: "Odin's Innovations - Citronella Mosquito Repellent"
   },
   colors: {
@@ -199,7 +199,7 @@ const IconChemistry = () => (
 
 // Section 1: Introduction - LIGHT BACKGROUND
 const IntroductionSection = () => (
-  <section id="introduction" className="section-padding" style={{ background: '#f8f9fa' }}>
+  <section className="section-padding" style={{ background: '#f8f9fa' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
@@ -245,7 +245,7 @@ const IntroductionSection = () => (
 
 // Section 2: Why Odin's - DARK BACKGROUND
 const WhyOdinsSection = ({ content }: { content: any }) => (
-  <section id="why-odins" className="section-padding" style={{ background: '#1a1d29' }}>
+  <section className="section-padding" style={{ background: '#1a1d29' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -298,7 +298,7 @@ const WhyOdinsSection = ({ content }: { content: any }) => (
 
 // Section 3: Detection Process - LIGHT BACKGROUND
 const DetectionSection = ({ content }: { content: any }) => (
-  <section id="how-it-works" className="section-padding" style={{ background: '#fff' }}>
+  <section className="section-padding" style={{ background: '#fff' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
@@ -340,7 +340,7 @@ const DetectionSection = ({ content }: { content: any }) => (
 
 // Section 4: Application Guide - DARK BACKGROUND
 const ApplicationSection = ({ content }: { content: any }) => (
-  <section id="how-to-use" className="section-padding" style={{ background: '#242835' }}>
+  <section className="section-padding" style={{ background: '#242835' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -366,7 +366,7 @@ const ApplicationSection = ({ content }: { content: any }) => (
 
 // Section 5: Hunting Blinds - LIGHT BACKGROUND
 const BlindsSection = ({ content }: { content: any }) => (
-  <section id="blinds" className="section-padding" style={{ background: '#f5f5f5' }}>
+  <section className="section-padding" style={{ background: '#f5f5f5' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
@@ -402,7 +402,7 @@ const BlindsSection = ({ content }: { content: any }) => (
 
 // Section 6: Layered Strategy - DARK BACKGROUND
 const LayeredSection = ({ content }: { content: any }) => (
-  <section id="layered" className="section-padding" style={{ background: '#1e212b' }}>
+  <section className="section-padding" style={{ background: '#1e212b' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -462,16 +462,16 @@ function App() {
         {/* Section 2: Why Odin's - DARK */}
         {content['why-odins'] && <WhyOdinsSection content={content['why-odins']} />}
         
-        {/* Section 3: How to Use - DARK (MOVED UP for conversion) */}
-        {content.application && <ApplicationSection content={content.application} />}
-        
-        {/* Section 4: How It Works - LIGHT (MOVED DOWN - science after ease) */}
+        {/* Section 3: Detection - LIGHT */}
         {content.detection && <DetectionSection content={content.detection} />}
+        
+        {/* Section 4: Application - DARK */}
+        {content.application && <ApplicationSection content={content.application} />}
         
         {/* Section 5: Blinds - LIGHT */}
         {content.blinds && <BlindsSection content={content.blinds} />}
         
-        {/* Section 6: Layered Strategy - DARK */}
+        {/* Section 6: Layered - DARK */}
         {content.layered && <LayeredSection content={content.layered} />}
         
         {/* Trust Badges */}

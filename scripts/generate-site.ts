@@ -734,7 +734,7 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
  */
 
 import { createRoot } from 'react-dom/client';
-import { Shield, Leaf, Clock, Check } from 'lucide-react';
+import { Bug, Leaf, Clock, Check } from 'lucide-react';
 ${usesBrandTheme ? `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/themes/${brandId}/components/shared';
 import SiteNavigation from '@/themes/${brandId}/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/components/shared';
@@ -805,9 +805,9 @@ function App() {
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {content.features.features?.map((feature: {title: string; description: string; icon?: string}, idx: number) => {
-                  // Map feature titles to Lucide icons
+                  // Map feature titles to Lucide icons (matching live site)
                   const iconMap: Record<string, React.ElementType> = {
-                    'Peak Season Protection': Shield,
+                    'Peak Season Protection': Bug,  // Uses bug icon, not shield
                     'Scent-Safe Formula': Leaf,
                     'Long-Lasting Barrier': Clock,
                     'EPA-Registered': Check,

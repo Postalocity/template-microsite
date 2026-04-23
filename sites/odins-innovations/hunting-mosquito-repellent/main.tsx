@@ -1,11 +1,11 @@
 /**
  * Hunting Mosquito Repellent - Generated from template-microsite
- * Generated at: 2026-04-23T17:54:47.779Z
+ * Generated at: 2026-04-23T18:34:17.977Z
  * Brand: Odin's Innovations
  */
 
 import { createRoot } from 'react-dom/client';
-import { Shield, Leaf, Clock, Check } from 'lucide-react';
+import { Bug, Leaf, Clock, Check } from 'lucide-react';
 import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
@@ -54,9 +54,9 @@ function App() {
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {content.features.features?.map((feature: {title: string; description: string; icon?: string}, idx: number) => {
-                  // Map feature titles to Lucide icons
+                  // Map feature titles to Lucide icons (matching live site)
                   const iconMap: Record<string, React.ElementType> = {
-                    'Peak Season Protection': Shield,
+                    'Peak Season Protection': Bug,  // Uses bug icon, not shield
                     'Scent-Safe Formula': Leaf,
                     'Long-Lasting Barrier': Clock,
                     'EPA-Registered': Check,
