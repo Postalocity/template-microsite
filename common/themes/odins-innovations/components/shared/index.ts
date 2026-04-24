@@ -16,3 +16,6 @@ export { default as ProductsSection } from './ProductsSection';
 export { default as SignatureScentBeadsSection } from './SignatureScentBeadsSection';
 export { default as TrustBarSection } from './TrustBarSection';
 export { default as StampedReviewsSection } from './StampedReviewsSection';
+
+// Brand configuration for consistent icons and styling across all Odin's sites
+export { odinsBrandConfig, odinsIcons, odinsColors } from '../../config/brand';
