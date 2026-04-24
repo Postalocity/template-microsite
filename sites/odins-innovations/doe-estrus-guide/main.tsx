@@ -90,13 +90,17 @@ function App() {
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
         {/* Section 2: Products (dark) */}
-        {content.products && <ProductsSection content={content.products} />}
+        <div style={{ background: '#1a1d29' }}>
+          {content.products && <ProductsSection content={content.products} />}
+        </div>
         
         {/* Section 3: Signature Scents (light) */}
         <SignatureScentBeadsSection content={content.signatureScents} />
         
         {/* Section 4: Benefits (dark) */}
-        <BenefitsSection benefits={content.benefits} />
+        <div style={{ background: '#1a1d29' }}>
+          <BenefitsSection benefits={content.benefits} />
+        </div>
         
         {/* Section 5: Wins On (light) */}
         {content['wins'] && (
