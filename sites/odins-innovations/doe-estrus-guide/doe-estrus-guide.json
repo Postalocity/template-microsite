@@ -332,6 +332,26 @@
     "the-odins-difference": {
       "headline": "The Odin's Difference",
       "body": ""
+    },
+    "wins": {
+      "headline": "Odin's Innovations Wins On",
+      "items": [
+        {
+          "icon": "long-lasting",
+          "title": "Longest Release Duration",
+          "description": "30+ days of continuous scent vs. frequent reapplication required by natural urine"
+        },
+        {
+          "icon": "flask",
+          "title": "Lab Tested Performance",
+          "description": "University laboratory confirmed 52% scent concentration after 27 days of continuous air exposure"
+        },
+        {
+          "icon": "50-states",
+          "title": "All 50 States + Canada",
+          "description": "Legal everywhere natural urine is restricted or banned. No regulatory compliance issues"
+        }
+      ]
     }
   },
   "footer": {
