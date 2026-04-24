@@ -12,6 +12,7 @@ import {
   TrustBadgesSection,
   SiteNavigation,
   SiteFooter,
+  StampedReviewsSection,
 } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
@@ -483,6 +484,13 @@ function App() {
           ]} 
         />
         
+        {/* Stamped.io Reviews - Real Customer Testimonials */}
+        <StampedReviewsSection 
+          title="What Hunters Are Saying"
+          subtitle="Field Reports"
+          description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages."
+        />
+
         {/* FAQ Section */}
         {content.faq && <FAQSection faq={content.faq} />}
         
