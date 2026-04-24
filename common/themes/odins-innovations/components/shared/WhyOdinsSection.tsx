@@ -237,16 +237,16 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
             ))}
           </div>
 
-          {/* CTA - SEE WHY HUNTERS CHOOSE SYNTHETIC */}
+          {/* Bottom CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-12 text-center"
           >
-            <a 
-              href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded hover:bg-primary/90 transition"
+            <a
+              href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition shadow-lg hover:shadow-xl"
             >
               SEE WHY HUNTERS CHOOSE SYNTHETIC
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
