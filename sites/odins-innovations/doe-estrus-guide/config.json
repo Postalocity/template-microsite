@@ -185,12 +185,13 @@
       "categories": [
         {
           "name": "Food Scents",
-          "description": "Attract deer to your location with irresistible food-based aromas. Perfect for pre-season conditioning and keeping deer in your area.",
+          "description": "AVAILABLE DEER SCENTS: Attract deer to your location with irresistible food-based aromas. Perfect for pre-season conditioning and keeping deer in your area.",
           "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Food_Scents.png?v=1762888380",
           "href": "https://www.odinsinnovations.com/collections/food-scents",
           "scents": [
-            "Apple",
             "Acorn",
+            "Apple",
+            "Pear",
             "Persimmon",
             "Sweet Corn"
           ]
@@ -213,8 +214,7 @@
           "href": "https://www.odinsinnovations.com/collections/cover-scents",
           "scents": [
             "Earth",
-            "Pine",
-            "Vanilla"
+            "Citronella"
           ]
         }
       ],
