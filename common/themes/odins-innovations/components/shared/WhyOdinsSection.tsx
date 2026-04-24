@@ -237,26 +237,7 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
             ))}
           </div>
 
-          {/* CTA: See Why Hunters Choose Synthetic */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-10 text-center"
-          >
-            <a 
-              href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
-              className="inline-flex items-center gap-2 px-8 py-4 font-display font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90"
-              style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}
-            >
-              SEE WHY HUNTERS CHOOSE SYNTHETIC
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-              </svg>
-            </a>
-          </motion.div>
-
-          {/* Bottom CTA - Ready to Hunt Smarter */}
+          {/* Bottom CTA */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
