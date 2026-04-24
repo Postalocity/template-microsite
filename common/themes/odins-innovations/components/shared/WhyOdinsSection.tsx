@@ -237,37 +237,22 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
             ))}
           </div>
 
-          {/* Bottom CTA */}
+          {/* CTA - SEE WHY HUNTERS CHOOSE SYNTHETIC */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-12 text-center"
           >
-            <div 
-              className="inline-block p-8"
-              style={{ 
-                background: 'hsl(var(--primary))',
-                clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)'
-              }}
+            <a 
+              href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-semibold rounded hover:bg-primary/90 transition"
             >
-              <p className="font-display text-xl uppercase text-white mb-2">
-                Ready to Hunt Smarter?
-              </p>
-              <p className="font-body text-white/80 text-sm mb-4 pr-6">
-                Join thousands of hunters who trust Odin's Innovations
-              </p>
-              <a
-                href="#products"
-                className="inline-block px-6 py-3 font-display font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90"
-                style={{ 
-                  background: 'hsl(var(--accent))',
-                  color: 'hsl(var(--foreground))'
-                }}
-              >
-                Shop Now
-              </a>
-            </div>
+              SEE WHY HUNTERS CHOOSE SYNTHETIC
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
           </motion.div>
         </motion.div>
       </div>
