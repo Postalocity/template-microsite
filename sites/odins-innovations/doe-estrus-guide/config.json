@@ -102,12 +102,12 @@
       },
       "ctas": [
         {
-          "text": "Shop Now \u2014 Starting at $13.99",
+          "text": "Shop Now \u2014 Starting at $14.95",
           "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
           "variant": "primary"
         },
         {
-          "text": "See How It Works",
+          "text": "How It Works",
           "href": "#how-it-works",
           "variant": "outline"
         }
