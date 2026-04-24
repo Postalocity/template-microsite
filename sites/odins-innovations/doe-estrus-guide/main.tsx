@@ -108,6 +108,26 @@ function App() {
         </section>
 
         <FAQSection faq={content.faq} />
+        
+        {/* Newsletter Signup */}
+        <section id="newsletter" className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Join Our Newsletter</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Join our newsletter for special member offers and announcements.
+            </p>
+            <a 
+              href="https://www.odinsinnovations.com/pages/newsletter-signup" 
+              className="btn-primary inline-flex items-center gap-2"
+            >
+              Subscribe Now
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+        </section>
+        
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
       </BrandProvider>
