@@ -80,15 +80,15 @@
       }
     ],
     "cta": {
-      "text": "Shop Now",
-      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      "text": "Shop All Products",
+      "href": "https://www.odinsinnovations.com/collections/all"
     }
   },
   "content": {
     "hero": {
       "headline": {
-        "main": "Doe Estrus Scent Beads",
-        "highlightTerm": "30+ Days — Legal Everywhere",
+        "main": "DOE ESTRUS\nSCENT BEADS",
+        "highlightTerm": "Effective for 30 + Days\nLegal Everywhere",
         "alt": "Odin's synthetic doe estrus scent beads deployed in a deer scrape"
       },
       "subhead": "Weatherproof results. Zero reapplication. Legal everywhere.",
@@ -317,12 +317,12 @@
       "finalCTA": {
         "headline": "Ready for consistent, low-maintenance results?",
         "buttonText": "Shop Doe Estrus Scent Beads",
-        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+        "href": "https://www.odinsinnovations.com/collections/rut-scents"
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
     },
     "the-difference": {
-      "headline": "Why Synthetic Beads Outperform Natural Urine",
+      "headline": "Why Synthetic Beads\nOutperform Natural Liquid Urine",
       "body": "Natural urine varies by batch. It soaks in, dilutes with rain, and degrades fast. Worse, it can carry CWD risk. Odin's synthetic beads fix every problem: identical concentration in every bottle, over a month of consistent performance, rainproof formula, no special storage needed, legal nationwide, CWD-safe, and biodegradable with zero trace left behind."
     },
     "the-odins-difference": {
@@ -349,5 +349,10 @@
     "js": "index-2hgtT8Ce.js",
     "cssUrl": "{{ 'index-DjwAjgwS.css' | asset_url }}",
     "jsUrl": "{{ 'index-2hgtT8Ce.js' | asset_url }}"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/odinsinnovations",
+    "facebook": "https://www.facebook.com/theodinsinnovations/",
+    "youtube": "https://www.youtube.com/@odinsinnovations2589"
   }
 }

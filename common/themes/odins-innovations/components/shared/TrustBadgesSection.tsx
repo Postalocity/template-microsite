@@ -136,9 +136,9 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
                 }}
               >
                 {/* Odin's style SVG icon or image */}
-                <div style={{ color: '#59c084' }}>
+                <div style={{ color: 'white' }}>
                   {isImageUrl ? (
-                    <img src={iconValue as string} alt={signal.name} className="w-5 h-5 object-contain" />
+                    <img src={iconValue as string} alt={signal.name} className="w-5 h-5 object-contain brightness-0 invert" />
                   ) : (
                     <IconComponent />
                   )}
