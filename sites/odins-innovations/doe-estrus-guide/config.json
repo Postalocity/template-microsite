@@ -91,7 +91,7 @@
         "highlightTerm": "Effective for 30 + Days\nLegal Everywhere",
         "alt": "Odin's synthetic doe estrus scent beads deployed in a deer scrape"
       },
-      "subhead": "Weatherproof synthetic pheromones that deliver 30+ days of peak rut attraction without reapplication, legal in all 50 states with zero CWD risk.",
+      "subhead": "Weatherproof results. Zero reapplication. Legal everywhere.",
       "background": {
         "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsInnov_Doe_Estrus.jpg?v=1775502265",
         "overlay": true
@@ -102,22 +102,16 @@
       },
       "ctas": [
         {
-          "text": "Shop All Products",
-          "href": "https://www.odinsinnovations.com/collections/all",
+          "text": "Shop Now — Starting at $13.99",
+          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
           "variant": "primary"
         },
         {
-          "text": "How It Works",
+          "text": "See How It Works",
           "href": "#how-it-works",
           "variant": "outline"
         }
       ]
-    },
-    "how-it-works": {
-      "headline": "How SCENT BEADS WORK",
-      "body": "Plant-based beads absorb the synthetic scent and release it gradually when exposed to air. Set it once. Check your trail camera for weeks—no reapplication needed.",
-      "video": "https://youtu.be/mRcfYfploNg",
-      "videoHeadline": "See It In Action"
     },
     "when-to-use": {
       "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
@@ -129,6 +123,10 @@
       "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7–10 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
     },
     "benefits": {
+      "section": {
+        "title": "Benefits of Odin's Synthetic Scent Beads",
+        "description": ""
+      },
       "headline": "Benefits of Odin's Synthetic Scent Beads",
       "items": [
         {
@@ -155,7 +153,7 @@
     },
     "products": {
       "headline": "Available Doe Estrus Products",
-      "intro": "Odin's synthetic doe estrus products start at $17.95 per 3-oz bottle of scent beads and enjoy free shipping on orders over $79.",
+      "intro": "Odin's synthetic doe estrus products start at $17.95 per 3-oz bottle of scent beads. Use promo code HUNT2026 for savings and enjoy free shipping on orders over $79.",
       "items": [
         {
           "name": "Doe Estrus Deer Attractant & Rut Cue Scent Beads",
@@ -187,20 +185,19 @@
       "categories": [
         {
           "name": "Food Scents",
-          "description": "Food-based aromas that attract and condition deer. Acorn, Apple, Pear, Persimmon, Sweet Corn.",
+          "description": "Attract deer to your location with irresistible food-based aromas. Perfect for pre-season conditioning and keeping deer in your area.",
           "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Food_Scents.png?v=1762888380",
           "href": "https://www.odinsinnovations.com/collections/food-scents",
           "scents": [
-            "Acorn",
             "Apple",
-            "Pear",
+            "Acorn",
             "Persimmon",
             "Sweet Corn"
           ]
         },
         {
           "name": "Rut Scents",
-          "description": "Synthetic pheromones that trigger dominant buck behavior during peak rut season.",
+          "description": "Trigger dominant buck behavior during the rut with synthetic estrus and territorial challenge formulas. Maximum effectiveness when it matters most.",
           "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380",
           "href": "https://www.odinsinnovations.com/collections/rut-scents",
           "scents": [
@@ -211,12 +208,13 @@
         },
         {
           "name": "Cover Scents",
-          "description": "Mask your presence and blend into the environment for close-range encounters.",
+          "description": "Mask your presence and blend into the environment. Essential for close-range encounters and staying undetected.",
           "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Cover_Scents.png?v=1762888625",
           "href": "https://www.odinsinnovations.com/collections/cover-scents",
           "scents": [
             "Earth",
-            "Citronella"
+            "Pine",
+            "Vanilla"
           ]
         }
       ],
@@ -238,17 +236,17 @@
         ],
         [
           "Consistency",
-          "Variation from batch to batch",
+          "Variable by batch",
           "Identical molecular specification every unit"
         ],
         [
           "Duration",
-          "Rapid degradation and dilution and soaks into the ground",
-          "30+ days continuous, even release"
+          "Rapid degradation and dilution",
+          "30+ days continuous release"
         ],
         [
           "Weather Resistance",
-          "Dilutes with moisture",
+          "Soaks in and dilutes with moisture",
           "Unaffected by rain, snow, dew"
         ],
         [
@@ -268,13 +266,13 @@
         ],
         [
           "Environmental Impact",
-          "Biological waste and single use plastic accessories",
-          "Biodegradable polymer, USDA BioPreferred Certified Every 30-days"
+          "Biological waste",
+          "Biodegradable polymer, USDA BioPreferred"
         ],
         [
           "Reapplication Frequency",
           "Frequent",
-          "Set once and maintain"
+          "Reduced — set once and maintain"
         ]
       ]
     },
@@ -286,64 +284,36 @@
       "headline": "Frequently Asked Questions",
       "items": [
         {
-          "question": "What is synthetic doe in estrus scent?",
-          "answer": "Synthetic doe estrus scent is a hunting attractant that replicates the pheromone signature a whitetail doe releases during her estrus (breeding) cycle. It signals to mature bucks that a receptive doe is nearby, drawing them to your hunting location. Odin's uses 100% synthetic formulations—no natural deer urine—ensuring consistent potency and zero risk of CWD transmission."
+          "question": "What is doe estrus scent?",
+          "answer": "A synthetic replica of whitetail doe pheromones during estrus. Zero natural urine, zero CWD risk."
         },
         {
-          "question": "When should I start using doe in estrus scent?",
-          "answer": "Begin using doe estrus when bucks in your area enter the seeking phase—typically late October in Northern states and sometimes twice in SE States. Using it too early, before local does are actually entering estrus, may spook mature bucks. Peak effectiveness is during the main rut in November. In Southern states, adjust timing to match local breeding dates, which may be as late as January or February. Use Odin's Scrape Blend prior to the actual rut."
+          "question": "Is synthetic doe estrus as effective as natural urine?",
+          "answer": "Yes. Engineered to precise specs with 10 seasons of field testing — no batch-to-batch variability."
         },
         {
-          "question": "Is deer urine legal to use in my state for hunting?",
-          "answer": "Maybe. There is no single, centralized consumer-facing resource that definitively covers the legality of natural cervid urine across all U.S. states. The regulatory landscape is a fragmented, state-by-state patchwork with no federal oversight body governing cervid urine production or use."
-        },
-        {
-          "question": "How to use doe estrus scent beads instead of liquid?",
-          "answer": "Odin's scent beads are designed to be dispersed on the ground in the area to which you want to attract your deer. Spread out the beads in a 4' X 4' area and they will release the scent for 30-days. When using a typical liquid scent, you pour it on the ground. Then, next time you go out you replace the liquid again."
-        },
-        {
-          "question": "Where are the Odin's products made?",
-          "answer": "Everything is made in the United States! The scents, the polymer beads, the blending and packaging, too."
-        },
-        {
-          "question": "When is the doe estrus scent most effective?",
-          "answer": "Peak rut refers to the period when the highest percentage of does in a given area are entering estrus simultaneously. This population-level peak typically spans 10–14 days and is driven by photoperiod—declining daylight triggers hormonal cascades across the doe population. It's not a single-day event, which is why sustained scent presence through Odin's 30-day beads outperforms single-application and quickly depreciating products."
-        },
-        {
-          "question": "Where should I place doe estrus scent?",
-          "answer": "In scrapes, mock scrapes, or hang in mesh bags along travel corridors, bedding edges, and near stand sites."
-        },
-        {
-          "question": "Is synthetic doe estrus as effective as real doe urine?",
-          "answer": "Yes. Our synthetic formulations are engineered to precise molecular specifications by a specialty fragrance laboratory and have been field-tested over 10 hunting seasons. Unlike natural urine, which varies in concentration from sample to sample and degrades after bottling, synthetic estrous delivers identical pheromone concentration every time."
-        },
-        {
-          "question": "How do you know the natural deer urine was collected during the estrus cycle?",
-          "answer": "We don't know....the results from your hunt would certainly imply the answer. An individual doe's estrus—the period during which she is receptive to breeding—typically lasts approximately 24–48 hours, with many sources narrowing it to around 24–30 hours. If she is not bred during that cycle, she will recycle roughly 28 days later. A figure of 36 hours is a reasonable midpoint estimate for a single doe's receptive window."
-        },
-        {
-          "question": "Why not use natural urine scents?",
-          "answer": "Natural urine breaks down rapidly into ammonia and other off odors that can actually alarm him. Natural scents vary from batch to batch, requires refrigeration, and has a short effective life. Synthetic scents avoid spoilage, maintain a consistent aroma profile, last 30+ days, and carry zero CWD risk."
-        },
-        {
-          "question": "How do I know a synthetic scent is actually accurate?",
-          "answer": "Field performance is the only proof that matters — and Odin's has more of it than anyone. Our synthetic formulations were first introduced in 2018, making them the longest field-proven synthetic scents on the market. Deer knows when something's not quite right, and seven-plus seasons of documented results confirm our scents pass that test. The growth in synthetic adoption isn't driven by regulation alone — it's driven by hunters finding products that actually work. Look for field-tested performance history, not just a 'synthetic' label."
-        },
-        {
-          "question": "Can I use dominant buck scent and doe estrus together?",
-          "answer": "Absolutely. Using both together creates the most compelling scenario for a mature buck: the scent of a rival male with a receptive doe. Odin's Scrape Blend combines both in a single product for exactly this purpose. You can also deploy them separately—dominant buck on one side of your setup, doe estrus on the other—to create directional scent fields."
-        },
-        {
-          "question": "How do I set up a trail back to my tree stand?",
-          "answer": "Hunters have shared a lot of creative approaches: (1) squirt the liquid on the bottom of your boots as you walk in, (2) squirt it on your eBike tires, (3) squirt the liquid on foliage as you traverse, letting the wind carry the scent, and (4) sprinkle a small amount of beads 5–10 feet apart on the path."
+          "question": "When should I start using doe estrus scent beads?",
+          "answer": "Late October through November for northern states. Use scrape blends earlier; shift 1–2 months later for southern latitudes."
         },
         {
           "question": "How long does Odin's doe estrus scent last?",
-          "answer": "Odin's scent beads release scent continuously for 30+ days. University laboratory testing confirmed that after 27 days, our biodegradable polymer was still releasing 52% of its original scent concentration. The beads are also impervious to moisture—rain, snow, and heavy dew will not wash the scent away. The liquid formula lasts 7–10 days per application."
+          "answer": "More than a month of continuous release. University testing confirms consistent concentration even after four weeks of field exposure."
+        },
+        {
+          "question": "Is synthetic deer scent legal where natural urine is banned?",
+          "answer": "Yes. No cervid-derived ingredients means full legality in all 50 states."
+        },
+        {
+          "question": "What is CWD and why does it matter for scent products?",
+          "answer": "Chronic Wasting Disease is a fatal deer condition transmitted through bodily fluids. Synthetic scents eliminate all risk."
         },
         {
           "question": "Are Odin's scent beads biodegradable?",
-          "answer": "Yes. Odin's scent beads are the only scent or attractant available that is made from a plant-based biodegradable polymer that breaks down completely when left on the ground. Exactly how long it takes to fully biodegrade depends on the elements.....a good point of reference is how long it might take for a banana peel to degrade."
+          "answer": "Yes. Plant-based polymer breaks down naturally, like organic matter."
+        },
+        {
+          "question": "Where are Odin's products made?",
+          "answer": "100% USA — scents, polymer, blending, and packaging."
         }
       ]
     },
@@ -357,50 +327,38 @@
     },
     "the-difference": {
       "headline": "Why Synthetic Beads\nOutperform Natural Liquid Urine",
-      "body": "Odin's scent beads are a specially designed biodegradable polymer bead into which we infuse synthetic scent. Each bead then contains scent molecules inside that release at a controlled rate over 30+ days. The beads are weather-resistant — rain, dew, snow, and temperature swings do not degrade performance. They are non toxic, not consumed, and will biodegrade – leaving your hunting area BETTER THAN YOU FOUND IT™ ."
+      "body": "Natural urine varies by batch. It soaks in, dilutes with rain, and degrades fast. Worse, it can carry CWD risk. Odin's synthetic beads fix every problem: identical concentration in every bottle, over a month of consistent performance, rainproof formula, no special storage needed, legal nationwide, CWD-safe, and biodegradable with zero trace left behind."
     },
     "the-odins-difference": {
       "headline": "The Odin's Difference",
       "body": ""
     },
-    "wins": {
-      "headline": "Odin's Innovations Wins On",
-      "items": [
-        {
-          "icon": "long-lasting",
-          "title": "Longest Release Duration",
-          "description": "30+ days of continuous scent vs. frequent reapplication required by natural urine"
-        },
-        {
-          "icon": "flask",
-          "title": "Lab Tested Performance",
-          "description": "University laboratory confirmed 52% scent concentration after 27 days of continuous air exposure"
-        },
-        {
-          "icon": "50-states",
-          "title": "All 50 States + Canada",
-          "description": "Legal everywhere natural urine is restricted or banned. No regulatory compliance issues"
-        }
-      ]
+    "howItWorks": {
+      "section": {
+        "title": "How SCENT BEADS WORK",
+        "description": ""
+      },
+      "headline": "How SCENT BEADS WORK",
+      "body": "Plant-based beads absorb the synthetic scent and release it gradually when exposed to air. Set it once. Check your trail camera for weeks—no reapplication needed.",
+      "video": "https://youtu.be/mRcfYfploNg",
+      "videoHeadline": "See It In Action"
+    },
+    "whenToUse": {
+      "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
+      "body": "Pre-rut (Early–Mid October): Use scrape blends to condition areas. Save pure doe estrus for later. Seeking Phase (Late Oct–Early Nov): Deploy in travel corridors and scrape lines. Peak Rut (Mid–Late Nov): Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer. Post-Rut (Dec–Jan): Maintain setups near food sources. Southern hunters: shift 1–2 months later."
+    },
+    "howToUse": {
+      "headline": "How to Use Odin's Doe Estrus Scent Beads and Liquid",
+      "beads": "Sprinkle approximately 3 oz of synthetic doe estrus scent beads evenly across a 4' x 4' area in natural travel lanes, existing scrapes, or mock scrapes. The beads maintain weeks of continuous release regardless of weather conditions. Ideal placement includes areas visible to trail cameras for ongoing documentation with minimal site disturbance.",
+      "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7–10 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
     }
   },
   "footer": {
     "finalCTA": {
       "headline": "Ready for consistent, low-maintenance results?",
       "buttonText": "Shop Doe Estrus Scent Beads",
-      "href": "https://www.odinsinnovations.com/collections/rut-scents"
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
-  },
-  "shopifyAssets": {
-    "css": "index-DjwAjgwS.css",
-    "js": "index-2hgtT8Ce.js",
-    "cssUrl": "{{ 'index-DjwAjgwS.css' | asset_url }}",
-    "jsUrl": "{{ 'index-2hgtT8Ce.js' | asset_url }}"
-  },
-  "social": {
-    "instagram": "https://www.instagram.com/odinsinnovations",
-    "facebook": "https://www.facebook.com/odinsinnovations",
-    "youtube": "https://www.youtube.com/@odinsinnovations"
   }
 }

@@ -351,8 +351,55 @@
     "jsUrl": "{{ 'index-2hgtT8Ce.js' | asset_url }}"
   },
   "social": {
+    "website": "https://www.odinsinnovations.com",
     "instagram": "https://www.instagram.com/odinsinnovations",
     "facebook": "https://www.facebook.com/theodinsinnovations/",
     "youtube": "https://www.youtube.com/@odinsinnovations2589"
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent"
+      ],
+      "promoCodes": {
+        "doe-estrus-guide": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 17.95,
+      "currency": "USD",
+      "units": "bottle"
+    }
   }
 }
