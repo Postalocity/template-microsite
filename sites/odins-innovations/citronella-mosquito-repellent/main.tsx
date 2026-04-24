@@ -187,16 +187,7 @@ const IconLongLastingWhite = () => (
   </svg>
 );
 
-const IconChemistry = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12">
-    <circle cx="50" cy="35" r="8" fill="currentColor" fillOpacity="0.2"/>
-    <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
-    <circle cx="65" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
-    <path d="M45 42L38 54" />
-    <path d="M55 42L62 54" />
-    <path d="M41 60H59" />
-  </svg>
-);
+
 
 // Section 1: Introduction - LIGHT BACKGROUND
 const IntroductionSection = ({ content }: { content: any }) => {
@@ -321,7 +312,7 @@ const DetectionSection = ({ content }: { content: any }) => (
         <div className="text-center p-6" style={{ borderTop: '4px solid #2d5a3d' }}>
           <div className="text-sm font-bold mb-2 text-green-700">STAGE 02</div>
           <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <IconChemistry />
+            <Beaker className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
           </div>
           <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>Skin Chemistry</h3>
           <p className="font-body text-sm" style={{ color: '#666' }}>Lactic acid & octenol from skin and sweat during physical activity.</p>
