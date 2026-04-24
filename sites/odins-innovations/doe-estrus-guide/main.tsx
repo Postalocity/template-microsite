@@ -89,6 +89,24 @@ function App() {
         {content.products && <ProductsSection content={content.products} />}
         <SignatureScentBeadsSection content={content.signatureScents} />
         <BenefitsSection benefits={content.benefits} />
+        
+        {/* Odin's Innovations Wins On */}
+        {content['wins'] && (
+          <section id="wins" className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{content['wins'].headline}</h2>
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {content['wins'].items.map((item, idx) => (
+                  <div key={idx} className="text-center p-6">
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground">{item.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+        
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
