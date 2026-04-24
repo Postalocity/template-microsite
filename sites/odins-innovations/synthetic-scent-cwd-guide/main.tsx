@@ -66,24 +66,24 @@ function App() {
                   {content['what-is-cwd'].cards.map((card, idx) => (
                     <div key={idx} className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
                       <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
                           {card.icon === 'warning-red' && (
-                            <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#dc2626" strokeWidth={1.5}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                             </svg>
                           )}
                           {card.icon === 'flask-amber' && (
-                            <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#d97706" strokeWidth={1.5}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                             </svg>
                           )}
                           {card.icon === 'clock-orange' && (
-                            <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#ea580c" strokeWidth={1.5}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                           )}
                           {card.icon === 'ban-red' && (
-                            <svg className="w-6 h-6 text-red-600 dark:text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#dc2626" strokeWidth={1.5}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                             </svg>
                           )}
@@ -227,16 +227,16 @@ function App() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {content['wins'].items.map((item, idx) => (
                   <div key={idx} className="bg-muted/30 rounded-lg p-6 text-center">
-                    <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
                       {item.icon === 'long-lasting' && (
                         <img 
                           src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841" 
                           alt="Longest release duration"
-                          className="w-8 h-8"
+                          className="w-12 h-12"
                         />
                       )}
                       {item.icon === 'flask' && (
-                        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       )}
@@ -244,11 +244,11 @@ function App() {
                         <img 
                           src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-50-states.svg" 
                           alt="Legal in all 50 states"
-                          className="w-8 h-8"
+                          className="w-12 h-12"
                         />
                       )}
                       {item.icon === 'shield' && (
-                        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                       )}
