@@ -87,20 +87,6 @@ function App() {
         <HeroSection hero={content.hero} />
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
-        {/* CTA: See Why Hunters Choose Synthetic */}
-        <div className="py-8 text-center" style={{ background: 'hsl(var(--background))' }}>
-          <a 
-            href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
-            className="inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90 rounded"
-            style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}
-          >
-            SEE WHY HUNTERS CHOOSE SYNTHETIC
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </a>
-        </div>
-        
         {content.products && <ProductsSection content={content.products} />}
         <SignatureScentBeadsSection content={content.signatureScents} />
         <BenefitsSection benefits={content.benefits} />
@@ -146,6 +132,21 @@ function App() {
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
+        
+        {/* CTA: See Why Hunters Choose Synthetic - inside The Odin's Difference section area */}
+        <div className="py-8 text-center" style={{ background: 'hsl(220 15% 12%)' }}>
+          <a 
+            href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
+            className="inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90 rounded"
+            style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}
+          >
+            SEE WHY HUNTERS CHOOSE SYNTHETIC
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+        </div>
+        
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
         {/* Stamped.io Reviews - Real Customer Testimonials */}
