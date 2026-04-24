@@ -19,16 +19,16 @@ const isImageUrl = (value?: string): boolean => {
   return !!value && (value.startsWith('http') || value.startsWith('/') || value.startsWith('./'));
 };
 
-// Odin's style SVG icons - Standardized: w-12 h-12 (48px), strokeWidth=2
+// Odin's style SVG icons - Standardized: w-12 h-12 (48px), strokeWidth=3 (matches citronella)
 const OdinsIconShield = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#2d5a3d' }}>
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
     <path d="M50 85c15-5 25-20 25-40V25L50 15 25 25v20c0 20 10 35 25 40z" />
     <path d="M35 45l10 10 20-20" />
   </svg>
 );
 
 const OdinsIconStopwatch = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#2d5a3d' }}>
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
     <circle cx="60.82" cy="54.12" r="4.26" />
     <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28" />
     <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4" />
@@ -37,13 +37,10 @@ const OdinsIconStopwatch = () => (
 );
 
 const OdinsIconFlag = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#2d5a3d' }}>
-    {/* Flag field - centered without pole */}
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
     <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1" />
     <path d="M15 35h70M15 45h70M15 55h70M15 65h70" />
-    {/* Canton (blue field with stars) */}
     <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2" />
-    {/* Stars pattern */}
     <circle cx="22" cy="32" r="2" fill="currentColor" />
     <circle cx="30" cy="32" r="2" fill="currentColor" />
     <circle cx="38" cy="32" r="2" fill="currentColor" />
@@ -57,8 +54,19 @@ const OdinsIconFlag = () => (
   </svg>
 );
 
+// Beaker/lab flask icon for "Lab-Tested" (replaces ribbon)
+const OdinsIconBeaker = () => (
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
+    <path d="M30 15h40v5l-8 25v25c0 8-6 15-12 15s-12-7-12-15V45L30 20v-5z" />
+    <path d="M30 20h40" strokeOpacity="0.5" />
+    <path d="M42 55c0 4 3 8 8 8s8-4 8-8" strokeOpacity="0.6" />
+    <circle cx="45" cy="35" r="3" fill="currentColor" fillOpacity="0.3" />
+    <circle cx="55" cy="30" r="2" fill="currentColor" fillOpacity="0.3" />
+  </svg>
+);
+
 const OdinsIconRibbon = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#2d5a3d' }}>
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
     <path d="M44.18 67.51L30 89.72l-4.44-12.19-12.93 1.1 14.19-22.18a28.86 28.86 0 0 0 13.79 10.08 26.93 26.93 0 0 0 3 .85Zm43.19 11.12l-12.93-1.1L70 89.72 55.81 67.51l.63-.13a26.76 26.76 0 0 0 2.94-.85 28.8 28.8 0 0 0 13.8-10.08Z" />
     <path d="M78.92 39.19a28.82 28.82 0 0 1-3.61 14 30 30 0 0 1-1.74 2.73 5 5 0 0 1-.39.52 28.8 28.8 0 0 1-13.79 10.09 26.76 26.76 0 0 1-2.94.85l-.63.13a29 29 0 0 1-11.63 0l-.62-.13a26.93 26.93 0 0 1-3-.85 28.86 28.86 0 0 1-13.75-10.08c-.13-.17-.26-.34-.38-.52q-.93-1.32-1.74-2.73a28.92 28.92 0 1 1 54.22-14Z" />
     <path d="m56.95 42.84 1.63 9.55L50 47.88l-8.58 4.51 1.64-9.55-6.95-6.77 9.6-1.39 4.29-8.7 4.29 8.7 9.6 1.39-6.94 6.77z" />
@@ -66,14 +74,14 @@ const OdinsIconRibbon = () => (
 );
 
 const OdinsIconCloud = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#2d5a3d' }}>
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
     <path d="M25 60c-5 0-10-5-10-10s5-10 10-10h5c2-15 15-25 30-20 12 3 20 15 20 25v5h5c8 0 15 7 15 15s-7 15-15 15H25z" />
     <path d="M30 70l-10 10m20-5l-5 15m25-10l5 10" />
   </svg>
 );
 
 const OdinsIconPackage = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: '#2d5a3d' }}>
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
     <path d="M50 89.87L15.33 69.86V30.08l34.78-19.95 34.56 19.95v39.78L50 89.87z" />
     <path d="M67.33 50.78V40.09L32.76 20.14m-17.43 9.94L50 50.09" />
     <path d="M50 89.87V50.09l34.67-20.01" />
@@ -85,7 +93,7 @@ const defaultIcons = [
   <OdinsIconShield key="shield" />,
   <OdinsIconStopwatch key="stopwatch" />,
   // Note: Biodegradable uses image instead of SVG
-  <OdinsIconRibbon key="ribbon" />,
+  <OdinsIconBeaker key="beaker" />,
   <OdinsIconCloud key="cloud" />,
   <OdinsIconPackage key="package" />
 ];
@@ -197,8 +205,8 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
                       <OdinsIconFlag />
                     ) : point.icon === 'stopwatch' ? (
                       <OdinsIconStopwatch />
-                    ) : point.icon === 'ribbon' ? (
-                      <OdinsIconRibbon />
+                    ) : point.icon === 'beaker' || point.icon === 'flask' || point.icon === 'ribbon' ? (
+                      <OdinsIconBeaker />
                     ) : point.icon === 'cloud' ? (
                       <img 
                         src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" 
