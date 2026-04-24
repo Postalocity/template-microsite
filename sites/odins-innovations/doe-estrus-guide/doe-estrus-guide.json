@@ -349,9 +349,23 @@
       "finalCTA": {
         "headline": "Ready for consistent, low-maintenance results?",
         "buttonText": "Shop Doe Estrus Scent Beads",
-        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+        "href": "https://www.odinsinnovations.com/collections/rut-scents"
       },
-      "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+      "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+      "links": [
+        {
+          "label": "Hunter's Kloak FAQ's",
+          "href": "https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"
+        },
+        {
+          "label": "Shop",
+          "href": "https://www.odinsinnovations.com/collections/rut-scents"
+        },
+        {
+          "label": "Contact",
+          "href": "https://www.odinsinnovations.com/pages/contact-us"
+        }
+      ]
     },
     "the-difference": {
       "headline": "Why Synthetic Beads Outperform Natural Liquid Urine",
@@ -386,7 +400,7 @@
     "finalCTA": {
       "headline": "Ready for consistent, low-maintenance results?",
       "buttonText": "Shop Doe Estrus Scent Beads",
-      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      "href": "https://www.odinsinnovations.com/collections/rut-scents"
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
   },
@@ -395,5 +409,10 @@
     "js": "index-2hgtT8Ce.js",
     "cssUrl": "{{ 'index-DjwAjgwS.css' | asset_url }}",
     "jsUrl": "{{ 'index-2hgtT8Ce.js' | asset_url }}"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/odinsinnovations",
+    "facebook": "https://www.facebook.com/odinsinnovations",
+    "youtube": "https://www.youtube.com/@odinsinnovations"
   }
 }
