@@ -89,14 +89,18 @@ function App() {
         {/* Section 1: Why Synthetic (light) */}
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
-        {/* Section 2: Products (subtle light gray) */}
-        {content.products && <ProductsSection content={content.products} background="#f0f0f0" />}
+        {/* Section 2: Products (dark) */}
+        <div style={{ background: '#1a1d29' }}>
+          {content.products && <ProductsSection content={content.products} />}
+        </div>
         
-        {/* Section 3: Signature Scents (slightly darker gray) */}
-        <SignatureScentBeadsSection content={content.signatureScents} background="#e5e5e5" />
+        {/* Section 3: Signature Scents (light) */}
+        <SignatureScentBeadsSection content={content.signatureScents} />
         
-        {/* Section 4: Benefits (back to light gray) */}
-        <BenefitsSection benefits={content.benefits} background="#f0f0f0" />
+        {/* Section 4: Benefits (dark) */}
+        <div style={{ background: '#1a1d29' }}>
+          <BenefitsSection benefits={content.benefits} />
+        </div>
         
         {/* Section 5: Wins On (dark - citronella style) */}
         {content['wins'] && (
