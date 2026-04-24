@@ -85,15 +85,22 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
+        
+        {/* Section 1: Why Synthetic (light) */}
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
+        {/* Section 2: Products (dark) */}
         {content.products && <ProductsSection content={content.products} />}
+        
+        {/* Section 3: Signature Scents (light) */}
         <SignatureScentBeadsSection content={content.signatureScents} />
+        
+        {/* Section 4: Benefits (dark) */}
         <BenefitsSection benefits={content.benefits} />
         
-        {/* Odin's Innovations Wins On */}
+        {/* Section 5: Wins On (light) */}
         {content['wins'] && (
-          <section id="wins" className="py-20 bg-background">
+          <section id="wins" className="py-20" style={{ background: '#f8f9fa' }}>
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{content['wins'].headline}</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -130,11 +137,15 @@ function App() {
         )}
         
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        
+        {/* Section 6: How It Works (dark) */}
         {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
+        
+        {/* Section 7: The Odin's Difference (already dark bg in component) + CTA */}
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         
-        {/* CTA: See Why Hunters Choose Synthetic - inside The Odin's Difference section area */}
-        <div className="pb-8 text-center" style={{ background: 'hsl(220 15% 12%)' }}>
+        {/* CTA: See Why Hunters Choose Synthetic */}
+        <div className="pb-8 text-center" style={{ background: '#1a1d29' }}>
           <a 
             href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
             className="inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90 rounded"
@@ -149,11 +160,11 @@ function App() {
         
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
-        {/* Stamped.io Reviews - Real Customer Testimonials */}
-        <section id="reviews" className="py-16 bg-muted/30">
+        {/* Section 8: Reviews (dark) */}
+        <section id="reviews" className="py-16" style={{ background: '#1a1d29' }}>
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What Hunters Are Saying</h2>
-            <p className="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">What Hunters Are Saying</h2>
+            <p className="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-8">
               Real results from hunters who put Odin's to the test in the field.
             </p>
             {/* Stamped.io Widget */}
@@ -162,13 +173,14 @@ function App() {
           </div>
         </section>
 
+        {/* Section 9: FAQ (light) */}
         <FAQSection faq={content.faq} />
         
-        {/* Newsletter Signup */}
-        <section id="newsletter" className="py-16 bg-muted/30">
+        {/* Section 10: Newsletter (dark) */}
+        <section id="newsletter" className="py-16" style={{ background: '#1a1d29' }}>
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Join Our Newsletter</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Join Our Newsletter</h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-8">
               Join our newsletter for special member offers and announcements.
             </p>
             <a 
