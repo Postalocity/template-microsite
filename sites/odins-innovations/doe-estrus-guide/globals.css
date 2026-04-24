@@ -2,7 +2,7 @@
  * Clean, bold, product-focused. Let the product speak.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -58,8 +58,8 @@
     --radius: 0;
 
     /* === TYPOGRAPHY === */
-    /* Oswald: Bold, condensed display font - headlines (replaces Agency FB) */
-    --font-display: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+    /* Agency FB: Bold, professional display font - headlines */
+    --font-display: 'Agency FB', 'Arial Narrow', system-ui, sans-serif;
     /* Montserrat: Clean, modern, highly readable - body */
     --font-body: 'Montserrat', system-ui, sans-serif;
     
@@ -168,23 +168,12 @@
   }
   
   /* Display typography: Oswald - condensed, bold, professional */
-  h1, h2, h3, .font-display {
-    font-family: var(--font-display) !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.02em !important;
-    line-height: 1.1 !important;
-    text-transform: uppercase !important;
-  }
-  
-  /* Force proper spacing on all text elements to override theme */
-  #root h1, #root h2, #root h3,
-  #root p, #root span, #root div,
-  #root a, #root button, #root li {
-    letter-spacing: normal !important;
-  }
-  
-  #root h1, #root h2, #root h3 {
-    letter-spacing: 0.02em !important;
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    text-transform: uppercase;
   }
   
   h4, h5, h6 {
@@ -215,12 +204,8 @@
 }
 
 @layer utilities {
-  .font-display { font-family: var(--font-display) !important; }
-  .font-body { font-family: var(--font-body) !important; }
-  
-  /* Override Shopify theme scrunched text */
-  .letter-spacing-normal { letter-spacing: normal !important; }
-  .letter-spacing-wide { letter-spacing: 0.05em !important; }
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
   
   .text-fluid-xs { font-size: var(--text-xs); }
   .text-fluid-sm { font-size: var(--text-sm); }
@@ -540,9 +525,7 @@
   width: 50px;
   height: 50px;
   color: #ffffff;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
+  fill: currentColor;
 }
 
 .text-with-icons__block-icon svg {
