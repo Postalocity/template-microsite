@@ -134,7 +134,7 @@ function App() {
         {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
         
         {/* CTA: See Why Hunters Choose Synthetic - inside The Odin's Difference section area */}
-        <div className="py-8 text-center" style={{ background: 'hsl(220 15% 12%)' }}>
+        <div className="pb-8 text-center" style={{ background: 'hsl(220 15% 12%)' }}>
           <a 
             href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
             className="inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90 rounded"
