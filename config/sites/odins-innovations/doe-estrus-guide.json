@@ -24,7 +24,7 @@
   },
   "seo": {
     "title": "Synthetic Doe Estrus Scent | 30+ Day Release | Odin's",
-    "description": "Biodegradable synthetic doe estrus beads: month-long continuous release, CWD-safe, legal nationwide. Starting at $17.95 \u2014 use code HUNT2026. Shop now.",
+    "description": "Biodegradable synthetic doe estrus beads: month-long continuous release, CWD-safe, legal nationwide. Starting at $17.95 — use code HUNT2026. Shop now.",
     "keywords": [
       "doe estrus scent",
       "synthetic doe estrus",
@@ -53,7 +53,7 @@
       "deer attractant beads",
       "CWD safe deer scent"
     ],
-    "ogTitle": "Biodegradable Doe Estrus Scent \u2014 Month-Long Rut Attraction",
+    "ogTitle": "Biodegradable Doe Estrus Scent — Month-Long Rut Attraction",
     "ogDescription": "Weatherproof synthetic attractants for consistent whitetail performance. CWD-safe, biodegradable, legal everywhere.",
     "ogImage": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png",
     "twitterCard": "summary_large_image",
@@ -88,7 +88,7 @@
     "hero": {
       "headline": {
         "main": "Doe Estrus Scent Beads",
-        "highlightTerm": "30+ Days \u2014 Legal Everywhere",
+        "highlightTerm": "30+ Days — Legal Everywhere",
         "alt": "Odin's synthetic doe estrus scent beads deployed in a deer scrape"
       },
       "subhead": "Weatherproof results. Zero reapplication. Legal everywhere.",
@@ -102,7 +102,7 @@
       },
       "ctas": [
         {
-          "text": "Shop Now \u2014 Starting at $13.99",
+          "text": "Shop Now — Starting at $13.99",
           "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
           "variant": "primary"
         },
@@ -113,18 +113,14 @@
         }
       ]
     },
-    "how-it-works": {
-      "headline": "How Biodegradable Scent Bead Technology Works",
-      "body": "Plant-based polymer beads absorb synthetic scent and release it molecule-by-molecule when exposed to air. Lab testing confirms 52% concentration still releasing after 27 days. Set it once. Check your trail camera for weeks. No returns needed. Rain, snow, and dew simply protect the internal scent until air exposure resumes. Beads biodegrade naturally when done."
-    },
     "when-to-use": {
       "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
-      "body": "Pre-rut (Early\u2013Mid October): Use scrape blends to condition areas. Save pure doe estrus for later. Seeking Phase (Late Oct\u2013Early Nov): Deploy in travel corridors and scrape lines. Peak Rut (Mid\u2013Late Nov): Apply 3 oz per 4'\u00d74' zone. Pair with food-scent beads to anchor deer. Post-Rut (Dec\u2013Jan): Maintain setups near food sources. Southern hunters: shift 1\u20132 months later."
+      "body": "Pre-rut (Early–Mid October): Use scrape blends to condition areas. Save pure doe estrus for later. Seeking Phase (Late Oct–Early Nov): Deploy in travel corridors and scrape lines. Peak Rut (Mid–Late Nov): Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer. Post-Rut (Dec–Jan): Maintain setups near food sources. Southern hunters: shift 1–2 months later."
     },
     "how-to-use": {
       "headline": "How to Use Odin's Doe Estrus Scent Beads and Liquid",
       "beads": "Sprinkle approximately 3 oz of synthetic doe estrus scent beads evenly across a 4' x 4' area in natural travel lanes, existing scrapes, or mock scrapes. The beads maintain weeks of continuous release regardless of weather conditions. Ideal placement includes areas visible to trail cameras for ongoing documentation with minimal site disturbance.",
-      "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7\u201310 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
+      "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7–10 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
     },
     "benefits": {
       "headline": "Benefits of Odin's Synthetic Scent Beads",
@@ -252,7 +248,7 @@
         [
           "CWD Risk",
           "Potential prion transmission",
-          "Zero \u2014 no animal ingredients"
+          "Zero — no animal ingredients"
         ],
         [
           "Legal Status",
@@ -272,7 +268,7 @@
         [
           "Reapplication Frequency",
           "Frequent",
-          "Reduced \u2014 set once and maintain"
+          "Reduced — set once and maintain"
         ]
       ]
     },
@@ -289,11 +285,11 @@
         },
         {
           "question": "Is synthetic doe estrus as effective as natural urine?",
-          "answer": "Yes. Engineered to precise specs with 10 seasons of field testing \u2014 no batch-to-batch variability."
+          "answer": "Yes. Engineered to precise specs with 10 seasons of field testing — no batch-to-batch variability."
         },
         {
           "question": "When should I start using doe estrus scent beads?",
-          "answer": "Late October through November for northern states. Use scrape blends earlier; shift 1\u20132 months later for southern latitudes."
+          "answer": "Late October through November for northern states. Use scrape blends earlier; shift 1–2 months later for southern latitudes."
         },
         {
           "question": "How long does Odin's doe estrus scent last?",
@@ -313,7 +309,7 @@
         },
         {
           "question": "Where are Odin's products made?",
-          "answer": "100% USA \u2014 scents, polymer, blending, and packaging."
+          "answer": "100% USA — scents, polymer, blending, and packaging."
         }
       ]
     },
@@ -332,6 +328,12 @@
     "the-odins-difference": {
       "headline": "The Odin's Difference",
       "body": ""
+    },
+    "howItWorks": {
+      "headline": "How SCENT BEADS WORK",
+      "body": "Plant-based beads absorb the synthetic scent and release it gradually when exposed to air. Set it once. Check your trail camera for weeks—no reapplication needed.",
+      "video": "https://youtu.be/mRcfYfploNg",
+      "videoHeadline": "See It In Action"
     }
   },
   "footer": {
