@@ -28,8 +28,9 @@ import {
 } from 'lucide-react';
 
 // Custom SVG Icon Components - Odin's Brand
+// Standardized size: w-12 h-12 (48px) with strokeWidth="2"
 const Icon50States = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12" style={{ color: '#2d5a3d' }}>
     <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1"/>
     <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
     <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2"/>
@@ -47,7 +48,7 @@ const Icon50States = () => (
 );
 
 const IconLongLasting = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12" style={{ color: '#2d5a3d' }}>
     <circle cx="60.82" cy="54.12" r="4.26"/>
     <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
     <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
@@ -57,7 +58,7 @@ const IconLongLasting = () => (
 
 // Chemistry/Molecule icon for skin chemistry detection (Lactic Acid & Octenol)
 const IconChemistry = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-8 h-8">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12" style={{ color: '#2d5a3d' }}>
     <circle cx="50" cy="35" r="8" fill="currentColor" fillOpacity="0.2"/>
     <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
     <circle cx="65" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
@@ -68,8 +69,9 @@ const IconChemistry = () => (
 );
 
 // Custom Rainproof/Raindrop Icon - Odin's Brand
+// Standardized size: w-12 h-12 (48px) with strokeWidth="2"
 const IconRainproof = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-10 h-10">
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12" style={{ color: '#2d5a3d' }}>
     <path d="M50 10c-10 20-30 35-30 55 0 20 15 35 30 35s30-15 30-35c0-20-20-35-30-55z" fill="currentColor" fillOpacity="0.1"/>
     <path d="M50 10c-10 20-30 35-30 55 0 20 15 35 30 35s30-15 30-35c0-20-20-35-30-55z" />
     <path d="M40 55c0 10 5 15 10 15s10-5 10-15" />
@@ -268,30 +270,37 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
                   {/* Glow effect on hover */}
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400/0 via-amber-400/5 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                  {/* Icon container */}
+                  {/* Icon container - Standardized: w-14 h-14 container */}
                   <div className="relative mb-6">
-                    <div className="relative w-16 h-16 rounded-xl bg-secondary/20 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                    <div className="relative w-14 h-14 rounded-xl bg-secondary/20 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                       {isImage ? (
-                        <img src={iconValue as string} alt={item.title} className="w-14 h-14 object-contain" loading="lazy" />
+                        <img src={iconValue as string} alt={item.title} className="w-12 h-12 object-contain" loading="lazy" />
                       ) : (
                         (() => {
-                          // Explicit icon rendering to avoid component reference issues
-                          // Using default strokeWidth (2) to match custom SVGs throughout theme
+                          // Standardized icon sizing:
+                          // - Lucide icons: w-10 h-10, strokeWidth={1.5}, color=#2d5a3d
+                          // - Custom SVGs: w-12 h-12, strokeWidth=2
+                          // - Image icons: w-12 h-12
                           switch(item.icon) {
-                            case 'bug': return <Bug className="w-8 h-8" />;
-                            case 'leaf': return <Leaf className="w-8 h-8" />;
-                            case 'shield-check': return <ShieldCheck className="w-8 h-8" />;
-                            case 'shield': return <Shield className="w-8 h-8" />;
-                            case 'wind': return <Wind className="w-8 h-8" />;
-                            case 'temperature': return <Thermometer className="w-8 h-8" />;
-                            case 'check-circle': return <CheckCircle className="w-8 h-8" />;
+                            case 'bug': return <Bug className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'leaf': return <Leaf className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'shield-check': return <ShieldCheck className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'shield': return <Shield className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'wind': return <Wind className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'temperature': return <Thermometer className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'check-circle': return <CheckCircle className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
                             case 'clock':
                             case '30days':
+                            case '30-days':
+                            case 'long-lasting':
                               return <IconLongLasting />;
                             case '50-states':
+                            case '50states':
                               return <Icon50States />;
                             case 'chemistry':
                             case 'molecule':
+                            case 'beaker':
+                            case 'flask':
                               return <IconChemistry />;
                             case 'cloud':
                             case 'droplet':
@@ -303,7 +312,7 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
                             case 'weatherproof':
                               return <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" alt={item.title} className="w-12 h-12 object-contain" loading="lazy" />;
                             default:
-                              return <Shield className="w-8 h-8" />;
+                              return <Shield className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
                           }
                         })()
                       )}
