@@ -58,8 +58,8 @@ const OdinsIconCheckCircle = () => (
 // Map badge names to Odin's style icons
 const badgeIconMap: Record<string, React.FC | string> = {
   "made in usa": OdinsIconRibbon,
-  "50 state legal": OdinsIconFlag,
-  "50-states": OdinsIconFlag,
+  "50 state legal": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-50-states.svg",
+  "50-states": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-50-states.svg",
   "field tested": OdinsIconCheckCircle,
   "30+ day scent": OdinsIconStopwatch,
   "30days": OdinsIconStopwatch,
@@ -119,7 +119,7 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
   }
 
   return (
-    <section className="section-sm" style={{ background: '#f8f9fa' }}>
+    <section className="section-sm" style={{ background: '#16181d' }}>
       <div className="section-container">
         <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
           {signals.map((signal, index) => {
@@ -129,20 +129,21 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
             return (
               <div 
                 key={index}
-                className="flex items-center gap-2.5 px-4 py-2.5 lg:px-5 lg:py-3 bg-white rounded shadow-sm"
+                className="flex items-center gap-2.5 px-4 py-2.5 lg:px-5 lg:py-3"
                 style={{ 
-                  border: '1px solid #e5e5e5'
+                  border: '1px solid rgba(53, 141, 90, 0.2)',
+                  background: 'rgba(53, 141, 90, 0.03)',
                 }}
               >
                 {/* Odin's style SVG icon or image */}
-                <div style={{ color: '#2d5a3d' }}>
+                <div style={{ color: '#59c084' }}>
                   {isImageUrl ? (
                     <img src={iconValue as string} alt={signal.name} className="w-5 h-5 object-contain" />
                   ) : (
                     <IconComponent />
                   )}
                 </div>
-                <span className="font-body text-xs lg:text-sm font-semibold uppercase-tracked" style={{ color: '#1a1a1a' }}>
+                <span className="font-body text-xs lg:text-sm font-semibold uppercase-tracked" style={{ color: 'white' }}>
                   {signal.name}
                 </span>
               </div>

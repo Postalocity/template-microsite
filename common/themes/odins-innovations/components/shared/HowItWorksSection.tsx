@@ -6,6 +6,8 @@ interface HowItWorksSectionProps {
   howItWorks?: {
     headline?: string;
     body?: string;
+    video?: string;
+    videoHeadline?: string;
     section?: {
       id?: string;
       title?: string;
@@ -19,51 +21,11 @@ interface HowItWorksSectionProps {
   };
 }
 
-// Odin's style SVG icons (replacing Lucide and emoji)
-// Using w-8 h-8 to match DifferenceSection icon sizes
-const OdinsIconBeaker = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M35 20h30M50 20v35L30 80h40L50 55V20" />
-    <path d="M40 45h20M38 55h24M35 65h30" />
-  </svg>
-);
-
-const OdinsIconCloud = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M25 60c-5 0-10-5-10-10s5-10 10-10h5c2-15 15-25 30-20 12 3 20 15 20 25v5h5c8 0 15 7 15 15s-7 15-15 15H25z" />
-    <path d="M30 70l-10 10m20-5l-5 15m25-10l5 10" />
-  </svg>
-);
-
-const OdinsIconClock = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <circle cx="50" cy="50" r="35" />
-    <path d="M50 25v25l15 15" />
-  </svg>
-);
-
 const OdinsIconMicroscope = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-6 h-6" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
     <circle cx="45" cy="35" r="20" />
     <path d="M60 50l25 25M35 55v30M25 85h50" />
     <path d="M50 15v10" />
-  </svg>
-);
-
-const OdinsIconFileCheck = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M20 15h50l20 20v60H20z" />
-    <path d="M70 15v20h20M35 45l10 10 20-20" />
-  </svg>
-);
-
-// Water/Rainproof icon for weather resistant step
-const OdinsIconWater = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-8 h-8" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
-    <path d="M50 10c-15 20-30 35-30 55 0 15 10 25 30 25s30-10 30-25c0-20-15-35-30-55z" fill="currentColor" fillOpacity="0.1"/>
-    <path d="M50 10c-15 20-30 35-30 55 0 15 10 25 30 25s30-10 30-25c0-20-15-35-30-55z" />
-    <path d="M35 50c0 10 7 15 15 15s15-5 15-15" />
-    <path d="M40 35h20M45 25h10" strokeOpacity="0.5"/>
   </svg>
 );
 
@@ -71,7 +33,6 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  // Check if using new format (headline + body) or old format (section + steps)
   const isNewFormat = howItWorks?.headline && howItWorks?.body;
   const isOldFormat = howItWorks?.section && howItWorks?.steps && howItWorks.steps.length > 0;
 
@@ -81,79 +42,31 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
 
   const sectionId = howItWorks?.section?.id || "how-it-works";
 
-  // Lab verification badge component
-  const LabBadge = () => (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.5, delay: 0.6 }}
-      className="mt-12 inline-flex items-center gap-3 px-6 py-3"
-      style={{ 
-        background: 'hsl(220 15% 12%)',
-        border: '2px solid hsl(145 45% 38%)',
-        clipPath: 'polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%)'
-      }}
-    >
-      <div 
-        className="p-2"
-        style={{ 
-          background: 'hsl(145 45% 38% / 0.2)',
-          color: 'white'
-        }}
-      >
-        <OdinsIconMicroscope />
-      </div>
-      <div>
-        <div className="font-display text-sm font-bold uppercase" style={{ color: 'white' }}>
-          3rd Party Verified
-        </div>
-        <div className="font-body text-xs" style={{ color: 'hsl(145 45% 38%)' }}>
-          Mississippi State University Testing
-        </div>
-      </div>
-      <div style={{ color: 'white' }}>
-        <OdinsIconFileCheck />
-      </div>
-    </motion.div>
-  );
-
-  // 3-step timeline steps (using Odin's SVG icons instead of Lucide/emoji)
-  const timelineSteps = isNewFormat ? [
+// 3-step data using Odin's brand PNG icons
+  const timelineSteps = [
     { 
-      number: "01", 
-      title: "Advanced Formulation", 
-      description: "Proprietary biopolymer matrix captures and preserves natural estrous compounds at the molecular level.",
-      icon: <OdinsIconBeaker />
+      title: "Apply Once", 
+      description: "Sprinkle beads in your scrape or hang from a drag. No special equipment needed.",
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png"
     },
     { 
-      number: "02", 
-      title: "Weatherproof Protection", 
-      description: "Durable shell withstands rain, snow, and extreme temperatures while maintaining scent integrity.",
-      icon: <OdinsIconCloud />
+      title: "Weatherproof", 
+      description: "Rain and snow don't wash away the scent—they protect it until air exposes it.",
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png"
     },
     { 
-      number: "03", 
-      title: "Sustained Release", 
-      description: "Gradual diffusion technology releases scent continuously for 30+ days—no reapplication needed.",
-      icon: <OdinsIconClock />
+      title: "Weeks of Scent", 
+      description: "One setup lasts 30+ days. Beats re-scenting every time you hunt.",
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841"
     }
-  ] : howItWorks?.steps?.map((step, idx) => ({
-    number: step.number || `0${idx + 1}`,
-    title: step.title,
-    description: step.description,
-    icon: idx === 0 ? <OdinsIconBeaker /> : 
-          idx === 1 ? <OdinsIconCloud /> :
-          idx === 2 ? <OdinsIconClock /> :
-          idx === 3 ? <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" alt="Weather Resistant" className="w-8 h-8 object-contain" loading="lazy" /> :
-          <OdinsIconClock />
-  })) || [];
+  ];
 
   return (
     <section
       id={sectionId}
       ref={ref}
       className="section-padding"
-      style={{ background: 'hsl(var(--muted))' }}
+      style={{ background: '#f8f9fa' }}
     >
       <div className="section-container">
         <motion.div
@@ -163,121 +76,136 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
           className="max-w-5xl mx-auto"
         >
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <span 
-              className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
-              style={{ 
-                background: 'hsl(var(--secondary) / 0.1)',
-                color: 'hsl(var(--secondary))',
-                clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
-              }}
-            >
-              The Science
-            </span>
+          <div className="text-center mb-12">
             <h2 
               className="font-display text-4xl md:text-5xl uppercase mb-4"
-              style={{ color: 'hsl(var(--foreground))' }}
-            >
-              {isNewFormat ? howItWorks?.headline : howItWorks?.section?.title}
-            </h2>
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              {isNewFormat ? "" : howItWorks?.section?.description}
-            </p>
-          </div>
-
-          {/* 3-Step Timeline */}
-          <div className="relative">
-            {/* Timeline connector line */}
-            <div 
-              className="hidden md:block absolute top-24 left-0 right-0 h-1"
-              style={{ 
-                background: 'linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--secondary)) 100%)'
-              }}
+              style={{ color: '#1a1a1a' }}
+              dangerouslySetInnerHTML={{ __html: (isNewFormat ? howItWorks?.headline : howItWorks?.section?.title || '').replace(/\n/g, '<br />') }}
             />
+            {isNewFormat && howItWorks?.body && (
+              <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
+                {howItWorks.body}
+              </p>
+            )}
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
-              {timelineSteps.map((step, index) => (
-                <motion.div
-                  key={step.number}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.15 }}
-                  className="relative"
+          {/* Video Section */}
+          {howItWorks?.video && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-16"
+            >
+              <div className="text-center mb-6">
+                <h3 
+                  className="font-display text-2xl md:text-3xl uppercase"
+                  style={{ color: '#1a1a1a' }}
                 >
-                  {/* Step number circle */}
-                  <div 
-                    className="relative z-10 w-20 h-20 mx-auto mb-6 flex flex-col items-center justify-center"
-                    style={{ 
-                      background: 'hsl(220 15% 12%)',
-                      border: '3px solid hsl(145 45% 38%)',
-                      clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)'
-                    }}
-                  >
-                    <span 
-                      className="font-display text-2xl font-bold"
-                      style={{ color: 'white' }}
-                    >
-                      {step.number}
-                    </span>
-                  </div>
+                  {howItWorks?.videoHeadline || "See How Simple It Is"}
+                </h3>
+              </div>
+              <div className="max-w-3xl mx-auto">
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
+                  <iframe
+                    src={(() => {
+                      const videoUrl = howItWorks.video;
+                      if (videoUrl.includes('youtu.be/')) {
+                        const videoId = videoUrl.split('youtu.be/')[1]?.split('?')[0];
+                        return `https://www.youtube.com/embed/${videoId}`;
+                      } else if (videoUrl.includes('watch?v=')) {
+                        const videoId = videoUrl.split('watch?v=')[1]?.split('&')[0];
+                        return `https://www.youtube.com/embed/${videoId}`;
+                      }
+                      return videoUrl;
+                    })()}
+                    title="How to Use Odin's Doe Estrus Scent Beads"
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </motion.div>
+          )}
 
-                  {/* Content card */}
-                  <div 
-                    className="p-6 text-center"
-                    style={{ 
-                      background: 'hsl(220 15% 12%)',
-                      borderTop: '4px solid hsl(145 45% 38%)',
-                      boxShadow: '0 4px 20px rgba(0,0,0,0.4)'
-                    }}
-                  >
-                    <div 
-                      className="w-16 h-16 mx-auto mb-4 flex items-center justify-center"
-                      style={{ 
-                        background: 'hsl(145 45% 38% / 0.15)',
-                        border: '1px solid hsl(145 45% 38% / 0.3)',
-                        color: 'white',
-                        clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
-                      }}
-                    >
-                      {step.icon}
-                    </div>
-                    <h3 
-                      className="font-display text-xl uppercase mb-3"
-                      style={{ color: 'white' }}
-                    >
-                      {step.title}
-                    </h3>
-                    <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                      {step.description}
-                    </p>
+          {/* 3-Step Cards - modeled after BenefitsSection */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {timelineSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="text-center"
+              >
+                {/* Icon - same size as BenefitsSection */}
+                {step.icon && (
+                  <div className="mb-4 flex justify-center">
+                    <img 
+                      src={step.icon} 
+                      alt={step.title}
+                      className={`w-32 h-32 object-contain ${index === 2 ? 'hue-rotate-[70deg] saturate-[1.5]' : ''}`}
+                      loading="lazy"
+                    />
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                )}
+
+                {/* Title */}
+                <h3 
+                  className="font-display text-xl uppercase mb-2"
+                  style={{ color: '#1a1a1a' }}
+                >
+                  {step.title}
+                </h3>
+
+                {/* Description */}
+                <p className="font-body text-sm" style={{ color: '#555' }}>
+                  {step.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
 
-          {/* Lab Certificate Badge */}
-          <div className="text-center">
-            <LabBadge />
-          </div>
-
-          {/* Full article content (if available) */}
-          {isNewFormat && howItWorks?.body && (
+          {/* Verification + Body Section - removed for now */}
+          {/* {isNewFormat && howItWorks?.body && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-16 p-8"
+              className="p-8 text-center"
               style={{ 
-                background: 'white',
-                borderLeft: '4px solid hsl(var(--primary))'
+                background: '#f8f9fa',
+                border: '1px solid #e5e5e5',
+                borderRadius: '12px'
               }}
             >
-              <div className="prose prose-lg max-w-none font-body text-muted-foreground leading-relaxed whitespace-pre-wrap">
+              <div className="inline-flex items-center gap-2 mb-6">
+                <div 
+                  className="p-2"
+                  style={{ 
+                    background: '#2d5a3d',
+                    borderRadius: '8px'
+                  }}
+                >
+                  <OdinsIconMicroscope />
+                </div>
+                <div className="text-left">
+                  <div className="font-display text-sm font-bold uppercase" style={{ color: '#1a1a1a' }}>
+                    3rd Party Verified
+                  </div>
+                  <div className="font-body text-xs" style={{ color: '#2d5a3d' }}>
+                    Mississippi State University Testing
+                  </div>
+                </div>
+              </div>
+              
+              <div className="font-body text-base leading-relaxed max-w-3xl mx-auto" style={{ color: '#1a1a1a' }}>
                 {howItWorks.body}
               </div>
             </motion.div>
-          )}
+          )} */}
         </motion.div>
       </div>
     </section>

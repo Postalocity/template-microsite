@@ -120,7 +120,7 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
       description: "Polymer matrix breaks down naturally. No environmental residue or contamination."
     },
     {
-      icon: "ribbon",
+      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
       title: "Lab-Tested Formula",
       description: "Third-party verified at Mississippi State University for consistent potency."
     }
@@ -157,9 +157,8 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
             <h2 
               className="font-display text-4xl md:text-5xl uppercase mb-6"
               style={{ color: 'hsl(var(--foreground))' }}
-            >
-              {content.headline}
-            </h2>
+              dangerouslySetInnerHTML={{ __html: content.headline.replace(/\n/g, '<br />') }}
+            />
             <div className="prose prose-lg max-w-3xl mx-auto">
               <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
                 {content.body}
@@ -183,20 +182,13 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
                 }}
               >
                 <div className="flex items-start gap-4">
-                  {/* Icon - Now uses Odin's SVGs */}
-                  <div 
-                    className="flex-shrink-0 w-14 h-14 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                    style={{ 
-                      background: 'hsl(var(--secondary) / 0.1)',
-                      color: 'hsl(var(--secondary))',
-                      clipPath: 'polygon(20% 0, 100% 0, 100% 80%, 80% 100%, 0 100%, 0 20%)'
-                    }}
-                  >
+                  {/* Icon - No background, renders at full size */}
+                  <div className="flex-shrink-0 flex items-center justify-center">
                     {point.icon && isImageUrl(point.icon) ? (
                       <img 
                         src={point.icon} 
                         alt="" 
-                        className="w-12 h-12 object-contain"
+                        className="w-14 h-14 object-contain"
                         loading="lazy"
                       />
                     ) : point.icon === 'shield' ? (
@@ -211,14 +203,14 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
                       <img 
                         src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" 
                         alt="Weatherproof" 
-                        className="w-12 h-12 object-contain"
+                        className="w-14 h-14 object-contain"
                         loading="lazy"
                       />
                     ) : point.icon === 'rainproof' || point.icon === 'weatherproof' || point.icon === 'droplet' ? (
                       <img 
                         src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" 
                         alt="Rainproof" 
-                        className="w-12 h-12 object-contain"
+                        className="w-14 h-14 object-contain"
                         loading="lazy"
                       />
                     ) : point.icon === 'package' ? (

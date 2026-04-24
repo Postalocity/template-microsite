@@ -89,50 +89,59 @@ function App() {
         {/* Section 1: Why Synthetic (light) */}
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
-        {/* Section 2: Products (dark) */}
-        <div style={{ background: '#1a1d29' }}>
-          {content.products && <ProductsSection content={content.products} />}
-        </div>
+        {/* Section 2: Products (subtle light gray) */}
+        {content.products && <ProductsSection content={content.products} background="#f0f0f0" />}
         
-        {/* Section 3: Signature Scents (light) */}
-        <SignatureScentBeadsSection content={content.signatureScents} />
+        {/* Section 3: Signature Scents (slightly darker gray) */}
+        <SignatureScentBeadsSection content={content.signatureScents} background="#e5e5e5" />
         
-        {/* Section 4: Benefits (dark) */}
-        <div style={{ background: '#1a1d29' }}>
-          <BenefitsSection benefits={content.benefits} />
-        </div>
+        {/* Section 4: Benefits (back to light gray) */}
+        <BenefitsSection benefits={content.benefits} background="#f0f0f0" />
         
-        {/* Section 5: Wins On (light) */}
+        {/* Section 5: Wins On (dark - citronella style) */}
         {content['wins'] && (
-          <section id="wins" className="py-20" style={{ background: '#f8f9fa' }}>
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{content['wins'].headline}</h2>
+          <section id="wins" className="section-padding" style={{ background: '#1a1d29' }}>
+            <div className="section-container">
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-white text-center">
+                {content['wins'].headline}
+              </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {content['wins'].items.map((item, idx) => (
-                  <div key={idx} className="bg-muted/30 rounded-lg p-6 text-center">
-                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                  <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
                       {item.icon === 'long-lasting' && (
-                        <img 
-                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841" 
-                          alt="Longest release duration"
-                          className="w-12 h-12"
-                        />
+                        <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2.5" className="w-12 h-12">
+                          <circle cx="60.82" cy="54.12" r="4.26"/>
+                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
+                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
+                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
+                        </svg>
                       )}
                       {item.icon === 'flask' && (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       )}
                       {item.icon === '50-states' && (
-                        <img 
-                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-50-states.svg" 
-                          alt="Legal in all 50 states"
-                          className="w-12 h-12"
-                        />
+                        <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2" className="w-12 h-12">
+                          <path d="M15 25h70v50H15z" fill="white" fillOpacity="0.1"/>
+                          <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
+                          <path d="M15 25h30v30H15z" fill="white" fillOpacity="0.2"/>
+                          <circle cx="22" cy="32" r="2" fill="white"/>
+                          <circle cx="30" cy="32" r="2" fill="white"/>
+                          <circle cx="38" cy="32" r="2" fill="white"/>
+                          <circle cx="26" cy="38" r="2" fill="white"/>
+                          <circle cx="34" cy="38" r="2" fill="white"/>
+                          <circle cx="22" cy="44" r="2" fill="white"/>
+                          <circle cx="30" cy="44" r="2" fill="white"/>
+                          <circle cx="38" cy="44" r="2" fill="white"/>
+                          <circle cx="26" cy="50" r="2" fill="white"/>
+                          <circle cx="34" cy="50" r="2" fill="white"/>
+                        </svg>
                       )}
                     </div>
-                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <h3 className="font-display text-xl uppercase mb-2 text-white">{item.title}</h3>
+                    <p className="font-body text-sm text-gray-400">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -143,13 +152,13 @@ function App() {
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         
         {/* Section 6: How It Works (dark) */}
-        {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
+        {content['how-it-works'] ? <HowItWorksSection howItWorks={content['how-it-works']} /> : <HowItWorksSection />}
         
         {/* Section 7: The Odin's Difference (already dark bg in component) + CTA */}
-        {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
+        {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} /> : <DifferenceSection />}
         
         {/* CTA: See Why Hunters Choose Synthetic */}
-        <div className="pb-8 text-center" style={{ background: '#1a1d29' }}>
+        <div className="pb-8 text-center" style={{ background: '#333333' }}>
           <a 
             href="https://www.odinsinnovations.com/pages/benefits-of-synthetic-scents" 
             className="inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90 rounded"
@@ -164,11 +173,11 @@ function App() {
         
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
-        {/* Section 8: Reviews (dark) */}
-        <section id="reviews" className="py-16" style={{ background: '#1a1d29' }}>
+        {/* Section 8: Reviews (light gray) */}
+        <section id="reviews" className="py-16" style={{ background: '#f8f9fa' }}>
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">What Hunters Are Saying</h2>
-            <p className="text-lg text-gray-400 text-center max-w-2xl mx-auto mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">What Hunters Are Saying</h2>
+            <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-8">
               Real results from hunters who put Odin's to the test in the field.
             </p>
             {/* Stamped.io Widget */}
@@ -180,7 +189,8 @@ function App() {
         {/* Section 9: FAQ (light) */}
         <FAQSection faq={content.faq} />
         
-        {/* Section 10: Newsletter (dark) */}
+        {/* Section 10: Newsletter (hidden - not online yet) */}
+        {/* 
         <section id="newsletter" className="py-16" style={{ background: '#1a1d29' }}>
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Join Our Newsletter</h2>
@@ -198,6 +208,7 @@ function App() {
             </a>
           </div>
         </section>
+        */}
         
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}

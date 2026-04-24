@@ -19,9 +19,10 @@ interface BenefitsSectionProps {
     items?: Array<string | BenefitItem>;
     benefits?: Array<string | BenefitItem>;
   };
+  background?: string;
 }
 
-const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
+const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   
@@ -51,7 +52,7 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
       ref={ref}
       id="benefits"
       className="section-padding"
-      style={{ background: hasImages ? 'hsl(var(--background))' : 'hsl(220 15% 12%)' }}
+      style={{ background: background || (hasImages ? 'hsl(var(--background))' : 'hsl(220 15% 12%)') }}
     >
       <div className="section-container">
         {/* Section Header */}

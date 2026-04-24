@@ -231,6 +231,14 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
                   </svg>
                 </a>
               )}
+              {ctx.social?.youtube && (
+                <a href={ctx.social.youtube} target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.7)' }}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M2.5 6.5C2.5 4.84315 3.84315 3.5 5.5 3.5H18.5C20.1569 3.5 21.5 4.84315 21.5 6.5V17.5C21.5 19.1569 20.1569 20.5 18.5 20.5H5.5C3.84315 20.5 2.5 19.1569 2.5 17.5V6.5Z"/>
+                    <path d="M10 9.5L15 12L10 14.5V9.5Z" fill="black"/>
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
         </div>

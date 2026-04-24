@@ -20,6 +20,7 @@ interface SignatureScentBeadsSectionProps {
     cta?: string;
     ctaHref?: string;
   };
+  background?: string;
 }
 
 const defaultCategories: Category[] = [
@@ -46,7 +47,7 @@ const defaultCategories: Category[] = [
   }
 ];
 
-const SignatureScentBeadsSection = ({ content }: SignatureScentBeadsSectionProps) => {
+const SignatureScentBeadsSection = ({ content, background }: SignatureScentBeadsSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -62,7 +63,7 @@ const SignatureScentBeadsSection = ({ content }: SignatureScentBeadsSectionProps
       id="signature-scents"
       ref={ref}
       className="section-padding"
-      style={{ background: 'hsl(var(--background))' }}
+      style={{ background: background || 'hsl(var(--background))' }}
     >
       <div className="section-container">
         <motion.div
@@ -94,7 +95,7 @@ const SignatureScentBeadsSection = ({ content }: SignatureScentBeadsSectionProps
           </div>
 
           {/* Three Category Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="grid md:grid-cols-3 gap-6 mb-12 items-stretch">
             {categories.map((category, index) => (
               <motion.a
                 key={category.name}
@@ -102,7 +103,7 @@ const SignatureScentBeadsSection = ({ content }: SignatureScentBeadsSectionProps
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.2 + index * 0.15 }}
-                className="group block overflow-hidden transition-all duration-300 hover:-translate-y-2"
+                className="group flex flex-col overflow-hidden transition-all duration-300 hover:-translate-y-2 h-full"
                 style={{ 
                   background: 'white',
                   boxShadow: '0 4px 20px rgba(0,0,0,0.08)'

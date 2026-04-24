@@ -20,9 +20,10 @@ interface ProductsSectionProps {
     cta: string;
     featured?: Product;
   };
+  background?: string;
 }
 
-const ProductsSection = ({ content }: ProductsSectionProps) => {
+const ProductsSection = ({ content, background }: ProductsSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -100,7 +101,7 @@ const ProductsSection = ({ content }: ProductsSectionProps) => {
                   {/* Product Image */}
                   <div 
                     className="aspect-square md:aspect-auto md:min-h-[400px] flex items-center justify-center p-8"
-                    style={{ background: 'hsl(var(--muted))' }}
+style={{ background: background || 'hsl(var(--muted))' }}
                   >
                     {featured.image ? (
                       <img 

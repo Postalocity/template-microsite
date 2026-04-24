@@ -21,9 +21,11 @@ interface FAQSectionProps {
     categories?: string[];
     showContactSection?: boolean;
   };
+  background?: string;
+  dark?: boolean;
 }
 
-const FAQSection = ({ faq }: FAQSectionProps) => {
+const FAQSection = ({ faq, background, dark }: FAQSectionProps) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -44,7 +46,7 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
       id="faq"
       ref={ref}
       className="section-padding"
-      style={{ background: 'hsl(var(--background))' }}
+      style={{ background: background || 'hsl(var(--background))' }}
     >
       <div className="section-container">
         <motion.div
@@ -67,7 +69,7 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
             </span>
             <h2 
               className="font-display text-4xl md:text-5xl uppercase mb-4"
-              style={{ color: 'hsl(var(--foreground))' }}
+              style={{ color: dark ? 'white' : 'hsl(var(--foreground))' }}
             >
               {title}
             </h2>
@@ -87,7 +89,9 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className="overflow-hidden"
                   style={{
-                    background: openIndex === index ? 'white' : 'hsl(var(--muted) / 0.5)',
+                    background: openIndex === index 
+                      ? (dark ? 'hsl(220 15% 18%)' : 'white') 
+                      : (dark ? 'hsl(220 15% 14%)' : 'hsl(var(--muted) / 0.5)'),
                     borderLeft: openIndex === index ? '4px solid hsl(var(--primary))' : '4px solid transparent',
                     boxShadow: openIndex === index ? '0 2px 8px rgba(0,0,0,0.06)' : 'none'
                   }}
@@ -109,7 +113,7 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
                       </div>
                       <span 
                         className="font-body text-base font-semibold pr-8 text-left leading-relaxed"
-                        style={{ color: 'hsl(var(--foreground))' }}
+                        style={{ color: dark ? 'white' : 'hsl(var(--foreground))' }}
                       >
                         {question}
                       </span>
@@ -136,7 +140,7 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
                       exit={{ opacity: 0, height: 0 }}
                       className="px-6 pb-5 pl-[72px]"
                     >
-                      <p className="font-body text-base leading-relaxed text-muted-foreground">
+                      <p className={`font-body text-base leading-relaxed ${dark ? 'text-gray-300' : 'text-muted-foreground'}`}>
                         {answer}
                       </p>
                     </motion.div>
@@ -154,11 +158,11 @@ const FAQSection = ({ faq }: FAQSectionProps) => {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-12 p-8 text-center"
               style={{ 
-                background: 'hsl(var(--muted))',
+                background: dark ? 'hsl(220 15% 14%)' : 'hsl(var(--muted))',
                 borderLeft: '4px solid hsl(var(--accent))'
               }}
             >
-              <p className="font-body text-muted-foreground mb-4">
+              <p className={`font-body mb-4 ${dark ? 'text-gray-400' : 'text-muted-foreground'}`}>
                 Still have questions? We're here to help.
               </p>
               <a
