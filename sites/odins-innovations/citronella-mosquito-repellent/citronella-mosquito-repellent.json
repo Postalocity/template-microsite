@@ -45,7 +45,7 @@
       "background": { "image": "/hunting-mosquito-repellent/images/hero.jpg", "overlay": true },
       "ctas": [
         { "text": "Shop Now — $14.95", "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026", "variant": "primary" },
-        { "text": "See How It Works", "href": "https://www.youtube.com/watch?v=0KIwdPYHqJA", "target": "_blank", "variant": "outline" }
+        { "text": "See How It Works", "href": "https://www.youtube.com/watch?v=zMhrq_FhIEg", "target": "_blank", "variant": "outline" }
       ]
     },
     "introduction": {

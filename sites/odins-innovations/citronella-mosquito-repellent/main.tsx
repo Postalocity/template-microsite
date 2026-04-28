@@ -235,9 +235,9 @@ const IntroductionSection = ({ content }: { content: any }) => {
   };
   
   return (
-    <section className="section-padding" style={{ background: '#f8f9fa' }}>
-      <div className="section-container">
-        <div className="text-center mb-12">
+     <section id="how-it-works" className="section-padding" style={{ background: '#f8f9fa' }}>
+       <div className="section-container">
+         <div className="text-center mb-12">
           <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
             Mosquito Control for Hunting
           </h2>
@@ -265,7 +265,7 @@ const IntroductionSection = ({ content }: { content: any }) => {
 const WhyOdinsSection = ({ content }: { content: any }) => {
   const cards = content?.cards;
   return (
-  <section className="section-padding" style={{ background: '#1a1d29' }}>
+  <section id="why-odins" className="section-padding" style={{ background: '#1a1d29' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -302,7 +302,7 @@ const WhyOdinsSection = ({ content }: { content: any }) => {
 
 // Section 3: Detection Process - LIGHT BACKGROUND
 const DetectionSection = ({ content }: { content: any }) => (
-  <section className="section-padding" style={{ background: '#fff' }}>
+  <section id="detection" className="section-padding" style={{ background: '#fff' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
@@ -344,7 +344,7 @@ const DetectionSection = ({ content }: { content: any }) => (
 
 // Section 4: Application Guide - DARK BACKGROUND
 const ApplicationSection = ({ content }: { content: any }) => (
-  <section className="section-padding" style={{ background: '#242835' }}>
+  <section id="application" className="section-padding" style={{ background: '#242835' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -372,7 +372,7 @@ const ApplicationSection = ({ content }: { content: any }) => (
 const BlindsSection = ({ content }: { content: any }) => {
   const cards = content?.cards;
   return (
-  <section className="section-padding" style={{ background: '#f5f5f5' }}>
+  <section id="blinds" className="section-padding" style={{ background: '#f5f5f5' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
@@ -405,7 +405,7 @@ const BlindsSection = ({ content }: { content: any }) => {
 const LayeredSection = ({ content }: { content: any }) => {
   const cards = content?.cards;
   return (
-  <section className="section-padding" style={{ background: '#1e212b' }}>
+  <section id="layered" className="section-padding" style={{ background: '#1e212b' }}>
     <div className="section-container">
       <div className="text-center mb-12">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">

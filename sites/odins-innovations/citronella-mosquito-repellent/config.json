@@ -1,5 +1,5 @@
 {
-  "version": "Odin's Innovations Microsite Config — Hunting Mosquito Repellent (Merged Final)",
+  "version": "Odin's Innovations Microsite Config \u2014 Hunting Mosquito Repellent (Merged Final)",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {
@@ -29,8 +29,8 @@
     }
   },
   "seo": {
-    "title": "Hunting Mosquito Repellent — Citronella Liquid & Beads | DEET-Free, Scent-Smart",
-    "description": "Odin's citronella hunting mosquito repellent creates a rainproof protective barrier on foliage. DEET-free, masks CO₂ and lactic acid cues. Up to 720-hour sustained release. Perfect for turkey, deer, and early bow season. Pairs with scent beads for reduced reapplication time.",
+    "title": "Hunting Mosquito Repellent \u2014 Citronella Liquid & Beads | DEET-Free, Scent-Smart",
+    "description": "Odin's citronella hunting mosquito repellent creates a rainproof protective barrier on foliage. DEET-free, masks CO\u2082 and lactic acid cues. Up to 720-hour sustained release. Perfect for turkey, deer, and early bow season. Pairs with scent beads for reduced reapplication time.",
     "keywords": [
       "hunting mosquito repellent",
       "citronella hunting",
@@ -42,7 +42,7 @@
       "bug repellent citronella",
       "insect repellent for deer hunting"
     ],
-    "ogTitle": "Citronella Hunting Mosquito Repellent — Up to 720 Hours Barrier",
+    "ogTitle": "Citronella Hunting Mosquito Repellent \u2014 Up to 720 Hours Barrier",
     "ogDescription": "Synthetic oil-based liquid and biodegradable polymer beads engineered for consistent, weatherproof protection around stands and blinds without strong chemical odors.",
     "ogImage": "/hunting-mosquito-repellent/images/og-image.png",
     "twitterCard": "summary_large_image",
@@ -52,7 +52,7 @@
     "links": [
       {
         "label": "Why Odin's",
-        "href": "#why-odins"
+        "href": "#layered"
       },
       {
         "label": "How It Works",
@@ -85,20 +85,20 @@
       },
       "ctas": [
         {
-          "text": "Shop Now — $14.95",
+          "text": "Shop Now \u2014 $14.95",
           "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026",
           "variant": "primary"
         },
         {
           "text": "See How It Works",
-          "href": "https://www.youtube.com/watch?v=0KIwdPYHqJA",
+          "href": "https://www.youtube.com/watch?v=zMhrq_FhIEg",
           "variant": "outline",
           "target": "_blank"
         }
       ]
     },
     "introduction": {
-      "body": "Mosquitoes and biting insects coincide with peak spring and early fall hunting seasons. Odin's Citronella Mosquito & Insect Repellent provides hunters with a practical, scent-smart solution. The synthetic, oil-based liquid creates a protective perimeter barrier when applied to foliage, brush, or ground cover around stands or blinds. With potential duration of up to 720 hours of continuous exposure, the formula supports reduced reapplication time compared to traditional options that last approximately 20 minutes. Formulated with a proprietary blend of plant-derived compounds including citronellal and geraniol (an EPA-registered biopesticide), it masks the CO₂, lactic acid, and octenol cues mosquitoes use to locate hosts. The milder scent profile avoids the strong chemical odors associated with DEET that deer can detect at distance. Pairs effectively with Odin's Citronella Scent Beads for layered coverage and is legal in all 50 states.",
+      "body": "Mosquitoes and biting insects coincide with peak spring and early fall hunting seasons. Odin's Citronella Mosquito & Insect Repellent provides hunters with a practical, scent-smart solution. The synthetic, oil-based liquid creates a protective perimeter barrier when applied to foliage, brush, or ground cover around stands or blinds. With potential duration of up to 720 hours of continuous exposure, the formula supports reduced reapplication time compared to traditional options that last approximately 20 minutes. Formulated with a proprietary blend of plant-derived compounds including citronellal and geraniol (an EPA-registered biopesticide), it masks the CO\u2082, lactic acid, and octenol cues mosquitoes use to locate hosts. The milder scent profile avoids the strong chemical odors associated with DEET that deer can detect at distance. Pairs effectively with Odin's Citronella Scent Beads for layered coverage and is legal in all 50 states.",
       "features": [
         {
           "icon": "bug",
@@ -123,14 +123,14 @@
       ]
     },
     "why-odins": {
-      "headline": "Why Choose Odin's Citronella for Hunters — Professional Performance Standards",
+      "headline": "Why Choose Odin's Citronella for Hunters \u2014 Professional Performance Standards",
       "items": [
         "Rainproof oil-based liquid adheres to foliage for sustained release even after moisture",
-        "Masks long-range CO₂ detection (up to 150 feet) and medium-range skin chemistry cues",
+        "Masks long-range CO\u2082 detection (up to 150 feet) and medium-range skin chemistry cues",
         "Reduces reapplication frequency during extended stationary sits",
-        "No harsh chemical signature detectable by game — milder plant-derived scent",
+        "No harsh chemical signature detectable by game \u2014 milder plant-derived scent",
         "Biodegradable polymer technology leaves minimal trace; compatible with attractant scents such as Berry, Pear, or Scrape Blend",
-        "Deploy around your position rather than on skin or clothing — no residue on camo, calls, or gear"
+        "Deploy around your position rather than on skin or clothing \u2014 no residue on camo, calls, or gear"
       ],
       "cards": [
         {
@@ -162,23 +162,23 @@
       ]
     },
     "detection": {
-      "headline": "How Mosquitoes Locate Hosts — Three-Stage Targeting Process",
-      "body": "Mosquitoes use a sophisticated multi-stage system. Stage 1 (long range): CO₂ from breath detected from over 150 feet away. Stage 2 (medium range): lactic acid and octenol from skin and sweat, with output increasing during physical activity such as hiking to setups. Stage 3 (close range): body heat and moisture. Odin's Citronella disrupts Stages 1 and 2 by masking these chemical signatures through consistent vapor release from treated surfaces."
+      "headline": "How Mosquitoes Locate Hosts \u2014 Three-Stage Targeting Process",
+      "body": "Mosquitoes use a sophisticated multi-stage system. Stage 1 (long range): CO\u2082 from breath detected from over 150 feet away. Stage 2 (medium range): lactic acid and octenol from skin and sweat, with output increasing during physical activity such as hiking to setups. Stage 3 (close range): body heat and moisture. Odin's Citronella disrupts Stages 1 and 2 by masking these chemical signatures through consistent vapor release from treated surfaces."
     },
     "how-it-works": {
-      "headline": "How Citronella Liquid & Beads Work — Sustained Release Technology",
-      "body": "The proprietary blend of citronellal, geraniol, and other plant-derived compounds masks chemical cues rather than relying on direct kill or rapid evaporation. The oil-based liquid adheres to foliage for immediate rainproof barrier performance. The complementary beads use the same biodegradable polymer technology as Odin's hunting scent products to encapsulate compounds for controlled diffusion. This delivers sustained, hands-free protection for the equivalent of 30 days of continuous exposure — not 30 minutes.",
+      "headline": "How Citronella Liquid & Beads Work \u2014 Sustained Release Technology",
+      "body": "The proprietary blend of citronellal, geraniol, and other plant-derived compounds masks chemical cues rather than relying on direct kill or rapid evaporation. The oil-based liquid adheres to foliage for immediate rainproof barrier performance. The complementary beads use the same biodegradable polymer technology as Odin's hunting scent products to encapsulate compounds for controlled diffusion. This delivers sustained, hands-free protection for the equivalent of 30 days of continuous exposure \u2014 not 30 minutes.",
       "video": "https://youtu.be/zMhrq_FhIEg",
       "videoHeadline": "See Odin's Citronella Scent Beads in Action"
     },
     "application": {
-      "headline": "Application Guide — Reduce Reapplication Time in the Field",
+      "headline": "Application Guide \u2014 Reduce Reapplication Time in the Field",
       "steps": [
         "Spray the liquid lightly on trees, brush, or ground cover to form a protective perimeter ring around your position",
         "Focus on downwind sides and entry paths for optimal barrier establishment",
-        "For mobile turkey hunting or scouting, place 2–3 tablespoons of Citronella Scent Beads in a sheer mesh bag and hang from clothing",
+        "For mobile turkey hunting or scouting, place 2\u20133 tablespoons of Citronella Scent Beads in a sheer mesh bag and hang from clothing",
         "Combine liquid on foliage with beads for immediate perimeter support plus continuous slow-release",
-        "Reapply based on heavy rainfall or extended coverage needs — typically far less often than short-duration alternatives"
+        "Reapply based on heavy rainfall or extended coverage needs \u2014 typically far less often than short-duration alternatives"
       ],
       "note": "Pro tip: Apply while deploying attractants to integrate with overall scent management strategy."
     },
@@ -206,7 +206,7 @@
     },
     "turkey": {
       "headline": "Perfect for Turkey Season and Early Bow Season",
-      "body": "Spring turkey season (April–May) and early bow season (August–September) overlap with peak mosquito activity. These periods require effective insect control without introducing strong chemical odors or frequent reapplication. Deploy 2–3 tablespoons of beads in a mesh bag for mobile setups or apply liquid to foliage near stationary positions. The combination supports efficient time use while aligning with scent-conscious approaches."
+      "body": "Spring turkey season (April\u2013May) and early bow season (August\u2013September) overlap with peak mosquito activity. These periods require effective insect control without introducing strong chemical odors or frequent reapplication. Deploy 2\u20133 tablespoons of beads in a mesh bag for mobile setups or apply liquid to foliage near stationary positions. The combination supports efficient time use while aligning with scent-conscious approaches."
     },
     "comparison": {
       "headline": "Citronella vs Traditional Mosquito Control Options",
@@ -223,7 +223,7 @@
         },
         {
           "feature": "Odor Profile for Game",
-          "odins": "Mild plant-derived — no strong chemical signature",
+          "odins": "Mild plant-derived \u2014 no strong chemical signature",
           "traditional": "DEET often detectable by deer at distance"
         },
         {
@@ -239,7 +239,7 @@
       ]
     },
     "layered": {
-      "headline": "Layered Strategy — Citronella Liquid + Scent Beads",
+      "headline": "Layered Strategy \u2014 Citronella Liquid + Scent Beads",
       "body": "For maximum operational efficiency, combine the liquid for rapid perimeter establishment with Citronella Scent Beads for 30+ days of continuous slow-release using the same biodegradable polymer technology. Seal unused beads in a Ziplock bag to preserve potency for future deployments. This approach reduces overall time spent on insect control while supporting consistent field conditions across deer, turkey, waterfowl, camping, and outdoor living scenarios.",
       "cards": [
         {
@@ -265,7 +265,7 @@
       "items": [
         {
           "q": "What is the best bug repellent for deer hunting?",
-          "a": "The best bug repellent for deer hunting is one that effectively repels mosquitoes without alerting game. Odin's citronella scent beads are DEET-free, scent-smart, and deploy around your position rather than on your body — creating a repellent zone without contaminating your clothing or skin with detectable chemicals."
+          "a": "The best bug repellent for deer hunting is one that effectively repels mosquitoes without alerting game. Odin's citronella scent beads are DEET-free, scent-smart, and deploy around your position rather than on your body \u2014 creating a repellent zone without contaminating your clothing or skin with detectable chemicals."
         },
         {
           "q": "Can deer smell DEET mosquito spray?",
@@ -285,7 +285,7 @@
         },
         {
           "q": "How does Odin's Citronella help?",
-          "a": "Odin's Citronella doesn't kill mosquitoes — it makes you invisible to them. The active compounds (citronellal, citronellol, and geraniol) mask the CO₂ and lactic acid signatures mosquitoes use to locate you. Unlike a candle that dissipates quickly or a spray that evaporates in 20 minutes, Odin's biodegradable polymer beads release these compounds continuously — the same slow-release technology we use in our hunting scent products. You're deploying a sustained repellent zone, not reapplying every 20 minutes."
+          "a": "Odin's Citronella doesn't kill mosquitoes \u2014 it makes you invisible to them. The active compounds (citronellal, citronellol, and geraniol) mask the CO\u2082 and lactic acid signatures mosquitoes use to locate you. Unlike a candle that dissipates quickly or a spray that evaporates in 20 minutes, Odin's biodegradable polymer beads release these compounds continuously \u2014 the same slow-release technology we use in our hunting scent products. You're deploying a sustained repellent zone, not reapplying every 20 minutes."
         },
         {
           "q": "How do mosquitoes find you in the first place?",
@@ -293,7 +293,7 @@
         },
         {
           "q": "What can I use to keep mosquitoes away while turkey hunting?",
-          "a": "Put 2–3 tablespoons of Citronella beads in a sheer bag and hang it from your clothing. If you're in a stationary position, squirt some Citronella liquid on the foliage near you to add more scent barrier around your setup."
+          "a": "Put 2\u20133 tablespoons of Citronella beads in a sheer bag and hang it from your clothing. If you're in a stationary position, squirt some Citronella liquid on the foliage near you to add more scent barrier around your setup."
         },
         {
           "q": "Does citronella work in a hunting blind?",
@@ -301,7 +301,7 @@
         },
         {
           "q": "Why do Odin's citronella beads last longer than sprays or candles?",
-          "a": "Traditional citronella products — candles, sprays, and lotions — rely on evaporation to disperse active compounds, which is why they wear off in 20 minutes to a few hours. Odin's biodegradable polymer beads encapsulate the citronella compounds and release them gradually through controlled diffusion. The result is sustained, hands-free mosquito protection for the equivalent of 30 days, not 30 minutes."
+          "a": "Traditional citronella products \u2014 candles, sprays, and lotions \u2014 rely on evaporation to disperse active compounds, which is why they wear off in 20 minutes to a few hours. Odin's biodegradable polymer beads encapsulate the citronella compounds and release them gradually through controlled diffusion. The result is sustained, hands-free mosquito protection for the equivalent of 30 days, not 30 minutes."
         },
         {
           "q": "How long do Odin's citronella beads last?",
@@ -309,15 +309,15 @@
         },
         {
           "q": "Can I reuse the citronella beads?",
-          "a": "Yes! The equivalent of 30 days is 720 hours. If the beads are in a mesh bag, put the bag in a Ziplock — roll it tight and seal it — and they'll be ready next time you need them. They don't lose potency when not exposed to air."
+          "a": "Yes! The equivalent of 30 days is 720 hours. If the beads are in a mesh bag, put the bag in a Ziplock \u2014 roll it tight and seal it \u2014 and they'll be ready next time you need them. They don't lose potency when not exposed to air."
         },
         {
           "q": "When would I need mosquito protection for 30 days?",
-          "a": "Customers have hung a mesh bag of Citronella beads in their hunting blind, come back the next day or next week, and found zero mosquitoes waiting. Another customer hangs them in his garage workshop — no mosquitoes to bother him while he works. The 30-day life means you deploy once and forget about it."
+          "a": "Customers have hung a mesh bag of Citronella beads in their hunting blind, come back the next day or next week, and found zero mosquitoes waiting. Another customer hangs them in his garage workshop \u2014 no mosquitoes to bother him while he works. The 30-day life means you deploy once and forget about it."
         },
         {
           "q": "What if the mosquitoes are really bad?",
-          "a": "If the beads and the liquid don't do it… go inside and drink a beer."
+          "a": "If the beads and the liquid don't do it\u2026 go inside and drink a beer."
         }
       ]
     },
@@ -347,7 +347,7 @@
         },
         {
           "youtubeId": "q6uMhhL4Rec",
-          "title": "Citronella Review — Mountain Archery Fest"
+          "title": "Citronella Review \u2014 Mountain Archery Fest"
         }
       ],
       "cta": {

@@ -52,7 +52,7 @@
     "links": [
       {
         "label": "Why Odin's",
-        "href": "#why-odins"
+        "href": "#layered"
       },
       {
         "label": "How It Works",
@@ -91,7 +91,7 @@
         },
         {
           "text": "See How It Works",
-          "href": "https://www.youtube.com/watch?v=0KIwdPYHqJA",
+          "href": "https://www.youtube.com/watch?v=zMhrq_FhIEg",
           "target": "_blank",
           "variant": "outline"
         }
