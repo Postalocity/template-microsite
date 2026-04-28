@@ -1845,6 +1845,9 @@ function App() {
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
 
+        {/* Trust Badges */}
+        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+
         {/* Section 1: Benefits */}
         <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
 
@@ -1877,22 +1880,38 @@ function App() {
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
               {content.deployment.title}
             </h2>
-            <div className="max-w-3xl mx-auto">
-              <ol className="space-y-6">
-                {content.deployment.steps.map((step, idx) => (
-                  <li key={idx} className="flex gap-4">
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
-                      {idx + 1}
-                    </span>
-                    <p className="font-body text-base text-gray-300 leading-relaxed pt-1">{step}</p>
-                  </li>
-                ))}
-              </ol>
-              {content.deployment.note && (
-                <p className="mt-8 font-body text-sm text-gray-400 italic border-l-2 pl-4" style={{ borderColor: 'hsl(var(--accent))' }}>
-                  {content.deployment.note}
-                </p>
-              )}
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                  <ol className="space-y-6">
+                    {content.deployment.steps.map((step, idx) => (
+                      <li key={idx} className="flex gap-4">
+                        <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                          {idx + 1}
+                        </span>
+                        <p className="font-body text-base text-gray-300 leading-relaxed pt-1">{step}</p>
+                      </li>
+                    ))}
+                  </ol>
+                  {content.deployment.note && (
+                    <p className="mt-8 font-body text-sm text-gray-400 italic border-l-2 pl-4" style={{ borderColor: 'hsl(var(--accent))' }}>
+                      {content.deployment.note}
+                    </p>
+                  )}
+                </div>
+                <div className="flex justify-center">
+                  <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <iframe 
+                      src="https://www.youtube.com/embed/q9X9zGL8elM" 
+                      title="How to Deploy Dominant Buck Scent" 
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -1909,9 +1928,21 @@ function App() {
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
               {content.effectiveness.title}
             </h2>
-            <p className="font-body text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
-              {content.effectiveness.body}
-            </p>
+            <div className="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
+              <div className="flex-1">
+                <p className="font-body text-lg text-muted-foreground leading-relaxed">
+                  {content.effectiveness.body}
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <img 
+                  src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/longer_lasting_deer_scent.jpg?v=1776353659" 
+                  alt="Longer lasting synthetic deer scent performance" 
+                  className="rounded-lg shadow-lg w-full max-w-sm object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -1923,10 +1954,24 @@ function App() {
         {/* Section 8: Comparison */}
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
 
-        {/* Section 9: Trust Badges */}
-        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+        {/* Section 10: Reviews */}
+        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who put Odin's to the test in the field.</p>
+            </div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations"></div>
+            <style dangerouslySetInnerHTML={{__html: \`
+              .stamped-widget-buttons,
+              .stamped-full-page-tabs {
+                display: none !important;
+              }
+            \`}} />
+          </div>
+        </section>
 
-        {/* Section 10: FAQ */}
+        {/* Section 11: FAQ */}
         <FAQSection faq={content.faq} />
 
         <SiteFooter config={config} />

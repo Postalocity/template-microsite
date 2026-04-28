@@ -105,7 +105,7 @@ const WhenToUseSection = ({ content }: WhenToUseSectionProps) => {
             </h3>
 
             {/* Calendar Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               {seasons.map((season, index) => (
                 <motion.div
                   key={season.name}
@@ -119,46 +119,26 @@ const WhenToUseSection = ({ content }: WhenToUseSectionProps) => {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
                   }}
                 >
-                  {/* Season Image Placeholder */}
-                  {season.image ? (
-                    <div className="h-32 overflow-hidden">
-                      <img 
-                        src={season.image} 
-                        alt={season.name}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  ) : (
-                    <div 
-                      className="h-24 flex items-center justify-center"
-                      style={{ background: `${season.color || 'hsl(var(--primary))'}15` }}
-                    >
-                      <span 
-                        className="font-display text-4xl font-bold"
-                        style={{ color: season.color || 'hsl(var(--primary))', opacity: 0.3 }}
-                      >
-                        {index + 1}
-                      </span>
-                    </div>
-                  )}
-
-                  <div className="p-5">
-                    <div 
-                      className="inline-block px-3 py-1 mb-3 font-body text-xs font-bold uppercase"
-                      style={{ 
-                        background: season.color || 'hsl(var(--primary))',
-                        color: 'white'
-                      }}
-                    >
-                      {season.months}
-                    </div>
-                    <h4 
-                      className="font-display text-xl uppercase mb-2"
-                      style={{ color: 'hsl(var(--foreground))' }}
+                  {/* Season Header */}
+                  <div 
+                    className="flex flex-col items-center justify-center py-6"
+                    style={{ background: `${season.color || 'hsl(var(--primary))'}15` }}
+                  >
+                    <span 
+                      className="font-display text-2xl font-bold uppercase mb-1"
+                      style={{ color: season.color || 'hsl(var(--primary))' }}
                     >
                       {season.name}
-                    </h4>
+                    </span>
+                    <span 
+                      className="font-body text-sm font-semibold uppercase tracking-wider"
+                      style={{ color: season.color || 'hsl(var(--primary))', opacity: 0.7 }}
+                    >
+                      {season.months}
+                    </span>
+                  </div>
+
+                  <div className="p-5">
                     <p className="font-body text-sm text-muted-foreground leading-relaxed">
                       {season.description}
                     </p>

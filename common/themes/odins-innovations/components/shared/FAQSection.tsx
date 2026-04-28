@@ -141,7 +141,7 @@ const FAQSection = ({ faq, background, dark }: FAQSectionProps) => {
                       className="px-6 pb-5 pl-[72px]"
                     >
                       <p className={`font-body text-base leading-relaxed ${dark ? 'text-gray-300' : 'text-muted-foreground'}`}>
-                        {answer}
+                        <span dangerouslySetInnerHTML={{ __html: answer }} />
                       </p>
                     </motion.div>
                   )}

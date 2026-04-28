@@ -12,7 +12,6 @@ import {
   TrustBadgesSection,
   SiteNavigation,
   SiteFooter,
-  StampedReviewsSection,
 } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
@@ -53,6 +52,8 @@ const brandConfig = {
     contact: "https://www.odinsinnovations.com/pages/contact-us"
   },
   logo: {
+    url: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png",
+    faviconUrl: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553",
     filename: "odins-logo.png",
     alt: "Odin's Innovations - Citronella Mosquito Repellent"
   },
@@ -93,6 +94,31 @@ const brandConfig = {
         description: 'Molecule icon - Skin chemistry detection'
       }
     }
+  },
+  footer: {
+    tagline: "Synthetic. Long-Lasting. Legal Everywhere.",
+    description: "100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.",
+    links: [
+      { label: "Scent Beads", href: "https://www.odinsinnovations.com/collections/scent-beads" },
+      { label: "Liquid Scents", href: "https://www.odinsinnovations.com/collections/liquid-scents" },
+      { label: "Hunter's Kloak", href: "https://www.odinsinnovations.com/collections/all-hunters-kloak" },
+      { label: "Find a Dealer", href: "https://www.odinsinnovations.com/pages/find-a-dealer" }
+    ],
+    companyLinks: [
+      { label: "About Us", href: "https://www.odinsinnovations.com/pages/about-us" },
+      { label: "Press Releases", href: "https://www.odinsinnovations.com/blogs/press-releases" },
+      { label: "Field Test Reports", href: "https://www.odinsinnovations.com/blogs/field-test-reports" },
+      { label: "Industry Publications", href: "https://www.odinsinnovations.com/blogs/in-the-field" }
+    ],
+    supportLinks: [
+      { label: "Odin's Instructions", href: "https://www.odinsinnovations.com/pages/odins-instructions" },
+      { label: "Kloak Mister Instructions", href: "https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions" },
+      { label: "Rut Rouser Instructions", href: "https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions" },
+      { label: "Hunter's Kloak FAQ", href: "https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs" },
+      { label: "Contact Us", href: "https://www.odinsinnovations.com/pages/contact-us" },
+      { label: "Return/Exchange Policy", href: "https://www.odinsinnovations.com/pages/return-exchange-policy" }
+    ],
+    logoSize: "extra-large"
   }
 };
 
@@ -236,7 +262,9 @@ const IntroductionSection = ({ content }: { content: any }) => {
 };
 
 // Section 2: Why Odin's - DARK BACKGROUND
-const WhyOdinsSection = ({ content }: { content: any }) => (
+const WhyOdinsSection = ({ content }: { content: any }) => {
+  const cards = content?.cards;
+  return (
   <section className="section-padding" style={{ background: '#1a1d29' }}>
     <div className="section-container">
       <div className="text-center mb-12">
@@ -244,49 +272,33 @@ const WhyOdinsSection = ({ content }: { content: any }) => (
           {content?.headline || "Why Choose Odin's"}
         </h2>
         <p className="font-body text-lg max-w-2xl mx-auto text-gray-400">
-          Professional performance standards for serious hunters
+          {content?.subtitle || "Professional performance standards for serious hunters"}
         </p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Droplets className="w-10 h-10 text-green-400" strokeWidth={1.5} />
+        {(cards || []).map((card: any, idx: number) => (
+          <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+              {card.image ? (
+                <img src={card.image} alt={card.title} className="w-14 h-14 object-contain" loading="lazy" />
+              ) : (<>
+                {card.icon === 'droplets' && <Droplets className="w-10 h-10 text-green-400" strokeWidth={1.5} />}
+                {card.icon === 'wind' && <Wind className="w-10 h-10 text-green-400" strokeWidth={1.5} />}
+                {card.icon === 'clock' && <IconLongLastingWhite />}
+                {card.icon === 'leaf' && <Leaf className="w-10 h-10 text-green-400" strokeWidth={1.5} />}
+                {card.icon === '50-states' && <Icon50StatesWhite />}
+                {card.icon === 'shield-check' && <ShieldCheck className="w-10 h-10 text-green-400" strokeWidth={1.5} />}
+              </>)}
+            </div>
+            <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
+            <p className="font-body text-sm text-gray-400">{card.description}</p>
           </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">Rainproof Formula</h3>
-          <p className="font-body text-sm text-gray-400">Stays effective after moisture exposure.</p>
-        </div>
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Wind className="w-10 h-10 text-green-400" strokeWidth={1.5} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">Masks CO2 Detection</h3>
-          <p className="font-body text-sm text-gray-400">Up to 150 feet protection from breath detection.</p>
-        </div>
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <IconLongLastingWhite />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">30+ Day Duration</h3>
-          <p className="font-body text-sm text-gray-400">Reduced reapplication during long sits.</p>
-        </div>
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Leaf className="w-10 h-10 text-green-400" strokeWidth={1.5} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">Plant-Derived Scent</h3>
-          <p className="font-body text-sm text-gray-400">No harsh chemical signature detectable by game.</p>
-        </div>
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Icon50StatesWhite />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">Legal in 50 States</h3>
-          <p className="font-body text-sm text-gray-400">100% synthetic formula - legal everywhere.</p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
-);
+  );
+};
 
 // Section 3: Detection Process - LIGHT BACKGROUND
 const DetectionSection = ({ content }: { content: any }) => (
@@ -357,7 +369,9 @@ const ApplicationSection = ({ content }: { content: any }) => (
 );
 
 // Section 5: Hunting Blinds - LIGHT BACKGROUND
-const BlindsSection = ({ content }: { content: any }) => (
+const BlindsSection = ({ content }: { content: any }) => {
+  const cards = content?.cards;
+  return (
   <section className="section-padding" style={{ background: '#f5f5f5' }}>
     <div className="section-container">
       <div className="text-center mb-12">
@@ -366,34 +380,31 @@ const BlindsSection = ({ content }: { content: any }) => (
         </h2>
       </div>
       <div className="grid md:grid-cols-3 gap-8">
-        <div className="bg-white rounded-lg p-6 shadow-md text-center">
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Cloud className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
+        {(cards || []).map((card: any, idx: number) => (
+          <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center">
+            <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+              {card.image ? (
+                <img src={card.image} alt={card.title} className="w-14 h-14 object-contain" loading="lazy" />
+              ) : (<>
+                {card.icon === 'cloud' && <Cloud className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />}
+                {card.icon === 'clock' && <Clock className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />}
+                {card.icon === 'check-circle' && <CheckCircle className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />}
+              </>)}
+            </div>
+            <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{card.title}</h3>
+            <p className="font-body text-sm" style={{ color: '#666' }}>{card.description}</p>
           </div>
-          <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>Enclosed Performance</h3>
-          <p className="font-body text-sm" style={{ color: '#666' }}>Blinds concentrate the scent zone for stronger barrier performance.</p>
-        </div>
-        <div className="bg-white rounded-lg p-6 shadow-md text-center">
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Clock className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>Long-Lasting Results</h3>
-          <p className="font-body text-sm" style={{ color: '#666' }}>Return days or weeks later with reduced insect presence.</p>
-        </div>
-        <div className="bg-white rounded-lg p-6 shadow-md text-center">
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <CheckCircle className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>Minimal Maintenance</h3>
-          <p className="font-body text-sm" style={{ color: '#666' }}>Consistent results across multiple visits with minimal effort.</p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
-);
+  );
+};
 
 // Section 6: Layered Strategy - DARK BACKGROUND
-const LayeredSection = ({ content }: { content: any }) => (
+const LayeredSection = ({ content }: { content: any }) => {
+  const cards = content?.cards;
+  return (
   <section className="section-padding" style={{ background: '#1e212b' }}>
     <div className="section-container">
       <div className="text-center mb-12">
@@ -401,35 +412,30 @@ const LayeredSection = ({ content }: { content: any }) => (
           {content?.headline || "Layered Strategy"}
         </h2>
         <p className="font-body text-lg max-w-2xl mx-auto text-gray-400">
-          Maximum protection with liquid and beads combined
+          {content?.subtitle || "Maximum protection with liquid and beads combined"}
         </p>
       </div>
       <div className="grid md:grid-cols-3 gap-6">
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Droplets className="w-10 h-10 text-green-400" strokeWidth={1.5} />
+        {(cards || []).map((card: any, idx: number) => (
+          <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+            <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+              {card.image ? (
+                <img src={card.image} alt={card.title} className="w-14 h-14 object-contain" loading="lazy" />
+              ) : (<>
+                {card.icon === 'droplets' && <Droplets className="w-10 h-10 text-green-400" strokeWidth={1.5} />}
+                {card.icon === 'leaf' && <Leaf className="w-10 h-10 text-green-400" strokeWidth={1.5} />}
+                {card.icon === 'package' && <Package className="w-10 h-10 text-green-400" strokeWidth={1.5} />}
+              </>)}
+            </div>
+            <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
+            <p className="font-body text-sm text-gray-400">{card.description}</p>
           </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">Weatherproof Formula</h3>
-          <p className="font-body text-sm text-gray-400">Rainproof liquid maintains efficacy after moisture.</p>
-        </div>
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Leaf className="w-10 h-10 text-green-400" strokeWidth={1.5} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">Polymer Technology</h3>
-          <p className="font-body text-sm text-gray-400">Same biodegradable technology as hunting attractants.</p>
-        </div>
-        <div className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-          <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-            <Package className="w-10 h-10 text-green-400" strokeWidth={1.5} />
-          </div>
-          <h3 className="font-display text-xl uppercase mb-2 text-white">Easy Storage</h3>
-          <p className="font-body text-sm text-gray-400">Seal beads in Ziplock bag to preserve potency.</p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
-);
+  );
+};
 
 function App() {
   const { content } = config;
@@ -475,12 +481,22 @@ function App() {
           ]} 
         />
         
-        {/* Stamped.io Reviews - Real Customer Testimonials */}
-        <StampedReviewsSection 
-          title="What Hunters Are Saying"
-          subtitle="Field Reports"
-          description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages."
-        />
+        {/* Stamped.io Reviews - What Hunters Are Saying */}
+        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who put Odin's to the test in the field.</p>
+            </div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations"></div>
+            <style dangerouslySetInnerHTML={{__html: `
+              .stamped-widget-buttons,
+              .stamped-full-page-tabs {
+                display: none !important;
+              }
+            `}} />
+          </div>
+        </section>
 
         {/* FAQ Section */}
         {content.faq && <FAQSection faq={content.faq} />}

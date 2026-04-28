@@ -84,7 +84,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
             />
             {isNewFormat && howItWorks?.body && (
               <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                {howItWorks.body}
+                <span dangerouslySetInnerHTML={{ __html: howItWorks.body }} />
               </p>
             )}
           </div>
@@ -202,7 +202,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
               </div>
               
               <div className="font-body text-base leading-relaxed max-w-3xl mx-auto" style={{ color: '#1a1a1a' }}>
-                {howItWorks.body}
+                <span dangerouslySetInnerHTML={{ __html: howItWorks.body }} />
               </div>
             </motion.div>
           )} */}

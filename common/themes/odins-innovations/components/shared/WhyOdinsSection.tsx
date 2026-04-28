@@ -161,7 +161,7 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
             />
             <div className="prose prose-lg max-w-3xl mx-auto">
               <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
-                {content.body}
+                <span dangerouslySetInnerHTML={{ __html: content.body }} />
               </p>
             </div>
           </div>

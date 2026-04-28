@@ -36,16 +36,16 @@
       { "label": "Application", "href": "#application" },
       { "label": "FAQ", "href": "#faq" }
     ],
-    "cta": { "text": "Shop Citronella Liquid", "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026" }
+    "cta": { "text": "Shop Citronella", "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026" }
   },
   "content": {
     "hero": {
-      "headline": { "main": "Hunting Mosquito Repellent", "highlightTerm": "Citronella Barrier — Up to 720 Hours" },
+      "headline": { "main": "Hunting Mosquito Repellent", "highlightTerm": "Citronella Barrier<br />Up to 720 Hours" },
       "subhead": "Synthetic, oil-based liquid and biodegradable polymer beads engineered for consistent protective barriers on foliage while reducing reapplication time.",
       "background": { "image": "/hunting-mosquito-repellent/images/hero.jpg", "overlay": true },
       "ctas": [
         { "text": "Shop Now — $14.95", "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026", "variant": "primary" },
-        { "text": "See How It Works", "href": "#how-it-works", "variant": "outline" }
+        { "text": "See How It Works", "href": "https://www.youtube.com/watch?v=0KIwdPYHqJA", "target": "_blank", "variant": "outline" }
       ]
     },
     "introduction": {
@@ -142,15 +142,6 @@
     },
     "conclusion": {
       "body": "Odin's Citronella hunting mosquito repellent delivers a professional-grade option for maintaining consistent insect barriers with reduced reapplication time. The rainproof oil-based liquid and complementary biodegradable polymer beads support efficient time use in the field across turkey, deer, early bow season, camping, and outdoor living. Starting at $14.95 for the liquid (beads also available) with free shipping on qualifying orders and promo code HUNT2026."
-    },
-    "footer": {
-      "finalCTA": { "headline": "Ready for consistent mosquito control with reduced maintenance?", "buttonText": "Shop Citronella Liquid Now", "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026" },
-      "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
-      "quickLinks": [
-        { "label": "Citronella Liquid", "href": "https://www.odinsinnovations.com/products/citronella-liquid" },
-        { "label": "Citronella Scent Beads", "href": "https://www.odinsinnovations.com/products/citronella-scent-beads" },
-        { "label": "All Scent Beads", "href": "https://www.odinsinnovations.com/collections/scent-beads" }
-      ]
     }
   }
 }
