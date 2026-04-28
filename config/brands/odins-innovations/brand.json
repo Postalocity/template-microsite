@@ -66,8 +66,8 @@
     },
     "differences": [
       {
-        "icon": "shield",
-        "title": "Legal in All 50 States",
+      "icon": "50-states",
+      "title": "Legal in All 50 States",
         "description": "100% synthetic formula \u2014 not subject to natural urine or CWD restrictions."
       },
       {
@@ -105,15 +105,19 @@
     ],
     "companyLinks": [
       {
-        "label": "Become a Dealer",
-        "href": "https://www.odinsinnovations.com/pages/become-a-dealer"
+        "label": "About Us",
+        "href": "https://www.odinsinnovations.com/pages/about-us"
       },
       {
-        "label": "Testimonials",
-        "href": "https://www.odinsinnovations.com/pages/testimonials"
+        "label": "Press Releases",
+        "href": "https://www.odinsinnovations.com/blogs/press-releases"
       },
       {
-        "label": "News",
+        "label": "Field Test Reports",
+        "href": "https://www.odinsinnovations.com/blogs/field-test-reports"
+      },
+      {
+        "label": "Industry Publications",
         "href": "https://www.odinsinnovations.com/blogs/in-the-field"
       }
     ],

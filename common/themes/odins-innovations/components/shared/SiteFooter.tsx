@@ -1,41 +1,29 @@
 import { useBrand, useBrandName } from '@/contexts';
 import { Instagram, Mail, Phone } from 'lucide-react';
 
+interface FooterData {
+  finalCTA?: {
+    headline?: string;
+    description?: string;
+    buttonText?: string;
+    href?: string;
+  };
+  tagline?: string;
+  description?: string;
+  disclaimer?: string;
+  links?: Array<{ label: string; href: string }>;
+  quickLinks?: Array<{ label: string; href: string }>;
+  companyLinks?: Array<{ label: string; href: string }>;
+  supportLinks?: Array<{ label: string; href: string }>;
+  taglineSecondary?: string;
+}
+
 interface SiteFooterProps {
   config?: {
     content?: {
-      footer?: {
-        finalCTA?: {
-          headline?: string;
-          description?: string;
-          buttonText?: string;
-          href?: string;
-          promoCode?: string;
-          disclaimer?: string;
-        };
-        description?: string;
-        tagline?: string;
-        disclaimer?: string;
-        links?: Array<{ label: string; href: string }>;
-        quickLinks?: Array<{ label: string; href: string }>;
-        companyLinks?: Array<{ label: string; href: string }>;
-        supportLinks?: Array<{ label: string; href: string }>;
-      };
+      footer?: Partial<FooterData>;
     };
-    footer?: {
-      finalCTA?: {
-        headline?: string;
-        description?: string;
-        buttonText?: string;
-        href?: string;
-      };
-      tagline?: string;
-      description?: string;
-      links?: Array<{ label: string; href: string }>;
-      quickLinks?: Array<{ label: string; href: string }>;
-      companyLinks?: Array<{ label: string; href: string }>;
-      supportLinks?: Array<{ label: string; href: string }>;
-    };
+    footer?: Partial<FooterData>;
   };
 }
 
@@ -44,39 +32,44 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   const brandName = useBrandName();
   
   const content = config?.content?.footer || config?.footer;
-  const brandFooter = ctx.brand.footer;
+  const brandFooter = ctx.brand.footer as FooterData | undefined;
   
+  // Merge: brand footer as base, page config can override CTA and tagline
+  const footerData: FooterData = {
+    ...(brandFooter || {}),
+    ...(content || {}),
+  };
+
   const getCTAUrl = () => {
     const baseUrl = ctx.brand.urls.app.replace(/\?.*$/, '');
     const promo = ctx.promoCode;
     return promo ? `${baseUrl}?signUp=true&promo=${promo}` : `${baseUrl}?signUp=true`;
   };
-  
+
   const defaultCTA = {
-    headline: content?.finalCTA?.headline || 'Ready for Your Best Season?',
-    description: content?.finalCTA?.description || 'Order now and get consistent, weatherproof attraction that lasts 30+ days.',
-    buttonText: content?.finalCTA?.buttonText || 'Shop Scent Beads',
-    href: content?.finalCTA?.href || getCTAUrl(),
+    headline: footerData?.finalCTA?.headline || 'Ready for Your Best Season?',
+    description: footerData?.finalCTA?.description || 'Order now and get consistent, weatherproof attraction that lasts 30+ days.',
+    buttonText: footerData?.finalCTA?.buttonText || 'Shop Scent Beads',
+    href: footerData?.finalCTA?.href || getCTAUrl(),
   };
 
-  // Use brand config links, fallback to content config, then defaults
-  const quickLinks = content?.quickLinks || brandFooter?.links || [
+  // Use footerData for links, fallback to brandFooter, then defaults
+  const quickLinks = footerData?.quickLinks || footerData?.links || brandFooter?.links || [
     { label: 'Scent Beads', href: 'https://www.odinsinnovations.com/collections/scent-beads' },
     { label: 'Liquid Scents', href: 'https://www.odinsinnovations.com/collections/liquid-scents' },
     { label: "Hunter's Kloak", href: 'https://www.odinsinnovations.com/collections/all-hunters-kloak' },
     { label: 'Find a Dealer', href: 'https://www.odinsinnovations.com/pages/find-a-dealer' },
   ];
 
-  const companyLinks = content?.companyLinks || brandFooter?.companyLinks || [
+  const companyLinks = footerData?.companyLinks || brandFooter?.companyLinks || [
     { label: 'About Us', href: 'https://www.odinsinnovations.com/pages/about-us' },
     { label: 'Press Releases', href: 'https://www.odinsinnovations.com/blogs/press-releases' },
-    { label: 'How to Use Videos', href: 'https://www.odinsinnovations.com/pages/video' },
     { label: 'Field Test Reports', href: 'https://www.odinsinnovations.com/blogs/field-test-reports' },
     { label: 'Industry Publications', href: 'https://www.odinsinnovations.com/blogs/in-the-field' },
   ];
 
-  // Support links from brand config
-  const supportLinks = content?.supportLinks || brandFooter?.supportLinks;
+  // Support links from footerData or brand
+  const supportLinks = footerData?.supportLinks || brandFooter?.supportLinks;
 
   return (
     <footer 
@@ -103,9 +96,9 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
           >
             {defaultCTA.buttonText}
           </a>
-          {content?.disclaimer && (
+          {footerData?.disclaimer && (
             <p className="text-xs mt-6 italic" style={{ color: 'hsl(0 0% 100% / 0.4)' }}>
-              {content.disclaimer}
+              {footerData.disclaimer}
             </p>
           )}
         </div>
@@ -119,13 +112,13 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             <h3 className="text-lg font-bold mb-3" style={{ color: 'white' }}>
               {brandName}
             </h3>
-            {content?.description && (
+            {(footerData?.description || footerData?.tagline) && (
               <p className="text-sm leading-relaxed mb-3" style={{ color: 'hsl(0 0% 100% / 0.6)' }}>
-                {content.description}
+                {footerData.description || footerData.tagline}
               </p>
             )}
             <p className="text-xs italic" style={{ color: 'hsl(0 0% 100% / 0.4)' }}>
-              {content?.tagline || brandFooter?.tagline || ctx.brand.tagline}
+              {footerData?.tagline || brandFooter?.tagline || ctx.brand.tagline}
             </p>
           </div>
           
@@ -249,15 +242,15 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             © {new Date().getFullYear()} {brandName}. All rights reserved.
           </p>
           
-          {(content?.links || brandFooter?.links) && (content?.links || brandFooter?.links).length > 0 && (
-            <div className="flex flex-wrap gap-x-4 gap-y-2">
-              {(content?.links || brandFooter?.links).map((link: { label: string; href: string }) => (
-                <a key={link.href} href={link.href} target={link.label === 'Login' ? '_self' : '_blank'} rel="noopener noreferrer" className="text-xs transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.4)' }}>
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
+           {((footerData?.links || brandFooter?.links)?.length ?? 0) > 0 && (
+             <div className="flex flex-wrap gap-x-4 gap-y-2">
+               {(footerData?.links || brandFooter?.links)?.map((link: { label: string; href: string }) => (
+                 <a key={link.href} href={link.href} target={link.label === 'Login' ? '_self' : '_blank'} rel="noopener noreferrer" className="text-xs transition-colors hover:opacity-80" style={{ color: 'hsl(0 0% 100% / 0.4)' }}>
+                   {link.label}
+                 </a>
+               ))}
+             </div>
+           )}
         </div>
       </div>
     </footer>

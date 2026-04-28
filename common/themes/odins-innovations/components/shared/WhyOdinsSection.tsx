@@ -142,7 +142,7 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
           transition={{ duration: 0.6 }}
           className="max-w-6xl mx-auto"
         >
-          {/* Section Header */}
+{/* Section Header */}
           <div className="text-center mb-12">
             <span 
               className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
@@ -154,7 +154,7 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
             >
               The Difference
             </span>
-            <h2 
+<h2 
               className="font-display text-4xl md:text-5xl uppercase mb-6"
               style={{ color: 'hsl(var(--foreground))' }}
               dangerouslySetInnerHTML={{ __html: content.headline.replace(/\n/g, '<br />') }}

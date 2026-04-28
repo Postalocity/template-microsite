@@ -110,9 +110,7 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-hero-foreground mb-6">
             {hero.headline.main}{' '}
-            <span className="gradient-text">
-              {hero.headline.highlightTerm}
-            </span>
+            <span className="gradient-text" dangerouslySetInnerHTML={{ __html: hero.headline.highlightTerm?.replace(/\n/g, '<br />') || '' }} />
           </h1>
 
           <p className="text-lg sm:text-xl text-hero-subtitle leading-relaxed mb-10 max-w-2xl">

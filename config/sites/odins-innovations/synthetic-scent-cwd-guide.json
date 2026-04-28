@@ -36,7 +36,7 @@
       "biodegradable scents",
       "best synthetic deer scent"
     ],
-    "ogTitle": "Synthetic Deer Scent and CWD — Legal Everywhere",
+    "ogTitle": "Synthetic Deer Scent and CWD \u2014 Legal Everywhere",
     "ogDescription": "Compliant synthetic attractants engineered for 30+ days of weather-resistant performance with zero biological risk.",
     "ogImage": "./og-image.png",
     "twitterCard": "summary_large_image",
@@ -67,7 +67,7 @@
     ],
     "cta": {
       "text": "Synthetic Scent Beads",
-      "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
     }
   },
   "content": {
@@ -84,8 +84,8 @@
       },
       "ctas": [
         {
-          "text": "Now — Starting at $14.95",
-          "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026",
+          "text": "Now \u2014 Starting at $17.95",
+          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
           "variant": "primary"
         },
         {
@@ -98,7 +98,7 @@
     "what-is-cwd": {
       "headline": "What is CWD and why does it compromise natural deer urine?",
       "intro": "CWD is a fatal, contagious neurodegenerative disorder affecting cervids (deer, elk, moose, reindeer). It is 100% fatal with no vaccine, treatment or cure.",
-      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents with zero animal-derived material — eliminating prion risk entirely. Odin's is legal for use in every state and in Canada.",
+      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents with zero animal-derived material \u2014 eliminating prion risk entirely. Odin's is legal for use in every state and in Canada.",
       "cards": [
         {
           "icon": "warning-red",
@@ -124,7 +124,7 @@
     },
     "why-odins": {
       "headline": "Why Odin's Synthetic Deer Scent Outperforms Natural Urine",
-      "body": "Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified.\n\nOdin's is legal for use in every state and in Canada."
+      "body": "Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release \u2014 reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified.\n\nOdin's is legal for use in every state and in Canada."
     },
     "how-it-works": {
       "headline": "The Science Behind Scent Bead Technology",
@@ -138,7 +138,7 @@
         {
           "number": "02",
           "title": "Proprietary Biopolymer",
-          "description": "Designed to absorb synthetic scents for a controlled release and then biodegrade. Better than you found it™"
+          "description": "Designed to absorb synthetic scents for a controlled release and then biodegrade. Better than you found it\u2122"
         },
         {
           "number": "03",
@@ -154,7 +154,7 @@
       ],
       "scienceSection": {
         "title": "University Testing Confirms Performance",
-        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using Gas Chromatography-Mass Spectrometry). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
+        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using <a href=\"https://en.wikipedia.org/wiki/Gas_chromatography%E2%80%93mass_spectrometry\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary underline underline-offset-2 hover:opacity-80\">Gas Chromatography-Mass Spectrometry</a>). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
         "highlight": "52% original scent concentration still releasing after 27 days",
         "chartImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Scent_Chart_with_Description_full_size.jpg"
       }
@@ -210,7 +210,7 @@
       ]
     },
     "comparison": {
-      "headline": "Synthetic vs Natural Deer Scent — Direct Comparison",
+      "headline": "Synthetic vs Natural Deer Scent \u2014 Direct Comparison",
       "table": [
         [
           "Attribute",
@@ -220,7 +220,7 @@
         [
           "CWD/Prion Risk",
           "CWD prions incubate 16 months to 4 years; USDA testing cannot reliably detect during this period.",
-          "Zero — no biological material"
+          "Zero \u2014 no biological material"
         ],
         [
           "Regulatory Status",
@@ -250,12 +250,12 @@
         [
           "Environmental Impact",
           "Some come with single use plastic accessories.",
-          "No risk of introducing disease. Better Than You Found It™"
+          "No risk of introducing disease. Better Than You Found It\u2122"
         ],
         [
           "Reapplication Frequency",
           "High",
-          "Reduced — set once and maintain"
+          "Reduced \u2014 set once and maintain"
         ]
       ]
     },
@@ -263,28 +263,20 @@
       "headline": "Regulatory Compliance concerning CWD",
       "items": [
         {
-          "question": "Is synthetic deer scent legal in all 50 states?",
-          "answer": "Yes. Odin's synthetic scents are legal in all 50 states and Canada. Because our products contain zero animal-derived ingredients, they are not subject to natural urine importation or usage bans, and do not require ATA certification or RT-QuIC testing."
+          "question": "What is CWD and why does it matter for deer scent products?",
+          "answer": "Chronic Wasting Disease is a fatal neurological disease affecting deer, elk, and moose. CWD prions can be transmitted through bodily fluids, including urine. As CWD continues to spread, state wildlife agencies are increasingly restricting or banning natural cervid urine for hunting. Synthetic scents like Odin's eliminate this transmission pathway. Learn more about the USDA's efforts to provide a national approach to control CWD or check within your own State's Hunting and Fishing Regulatory units."
         },
         {
           "question": "Which states ban natural deer urine?",
-          "answer": "As of 2026, at least 14 states restrict or ban natural cervid urine due to CWD concerns, up from 4 states in 2015. Regulations vary—some states ban possession, others ban importation, and some require certification. Check your state's wildlife agency for current rules."
+          "answer": "As of 2026, at least 14 states restrict or ban natural cervid urine due to CWD concerns, up from 4 states in 2015. Regulations vary\u2014some states ban possession, others ban importation, and some require certification. Check your state's wildlife agency for current rules."
         },
         {
           "question": "Is deer urine legal to use in my state for hunting?",
-          "answer": "There is no single federal standard—regulations are a state-by-state patchwork. Check your state's Department of Natural Resources for current rules. You may find outright bans, ATA/RHSA certification requirements, RT-QuIC testing mandates, or county-level restrictions in CWD management zones. The simplest path to guaranteed compliance: use synthetic scents, which are legal everywhere."
-        },
-        {
-          "question": "What is CWD and why does it matter for deer scent products?",
-          "answer": "Chronic Wasting Disease is a fatal neurological disease affecting deer, elk, and moose. CWD prions can be transmitted through bodily fluids, including urine. As CWD continues to spread, state wildlife agencies are increasingly restricting or banning natural cervid urine for hunting. Synthetic scents like Odin's eliminate this transmission pathway."
+          "answer": "There is no single federal standard\u2014regulations are a state-by-state patchwork. Check your state's Department of Natural Resources for current rules. You may find outright bans, ATA/RHSA certification requirements, RT-QuIC testing mandates, or county-level restrictions in CWD management zones. The simplest path to guaranteed compliance: use synthetic scents, which are legal everywhere."
         },
         {
           "question": "Can deer urine spread chronic wasting disease (CWD)?",
           "answer": "Research on this question is ongoing, with different studies producing different conclusions. Odin's uses 100% synthetic formulations specifically to eliminate any possibility of CWD transmission through our products. If you'd like to learn more, contact your state's Wildlife Disease Ecologist."
-        },
-        {
-          "question": "Do I need ATA/RHSA certification to use synthetic deer scent?",
-          "answer": "No. These are testing protocols established by the industry to mitigate the risks from the spread of CWD. It only applies to products made from natural cervid urine collected from captive herds. Because synthetic scents contain no animal-derived ingredients, they do not pose any risk so certification is not required."
         },
         {
           "question": "Can CWD prions be present but not detected?",
@@ -299,18 +291,81 @@
           "answer": "Natural urine breaks down rapidly into ammonia and other off odors that can actually alarm deer. Natural scents vary from batch to batch, requires refrigeration, and has a short effective life. Synthetic scents avoid spoilage, maintain a consistent aroma profile, last 30+ days, and carry zero CWD risk."
         },
         {
-          "question": "What is synthetic doe in estrus scent?",
-          "answer": "Synthetic doe estrus scent is a hunting attractant that replicates the pheromone signature a whitetail doe releases during her estrus (breeding) cycle. It signals to mature bucks that a receptive doe is nearby, drawing them to your hunting location. Odin's uses 100% synthetic formulations—no natural deer urine—ensuring consistent potency and zero risk of CWD transmission."
+          "question": "Is synthetic deer scent legal in all 50 states?",
+          "answer": "Yes. Odin's synthetic scents are legal in all 50 states and Canada. Because our products contain zero animal-derived ingredients, they are not subject to natural urine importation or usage bans, and do not require ATA certification or RT-QuIC testing."
+        },
+        {
+          "question": "Do I need any certifications to use synthetic deer scent?",
+          "answer": "No. These are testing protocols established by the industry to mitigate the risks from the spread of CWD. It only applies to products made from natural cervid urine collected from captive herds. Because synthetic scents contain no animal-derived ingredients, they do not pose any risk, so certification is not required."
+        },
+        {
+          "question": "What makes Odin's different from other synthetic scents?",
+          "answer": "Two major differences: our proven history and our extensive library.\n\nWe developed 21 unique, proprietary synthetic formulations acquired through the Hunter's Kloak acquisition in 2021 and manufactured by an international specialty fragrance laboratory. We are proud to have 10-years of field experience demonstrating the scents work as they are intended. You can't rush to 10-years - and you can't fake it!\n\nAdd to that, our innovative biodegradable polymer delivery system and you have a solution better than any other on the market! The scents are infused into our patented biodegradable polymer bead that releases scent continuously for 30+ days and is impervious to rain and moisture. No other product combines synthetic accuracy, extended release, and full biodegradability."
+        },
+        {
+          "question": "Is synthetic deer scent legal where natural urine is banned?",
+          "answer": "Yes. When natural urine is banned, it is out of concern that prions that cause CWD may be present in urine and passed onto healthy deer in the area. Synthetic scents would not have any prions or any disease-causing elements or bacteria. Odin's synthetic scents are legal in all 50 states and Canada."
+        },
+        {
+          "question": "Are Odin's products really biodegradable?",
+          "answer": "Yes, the time varies by the environment. A good rule of thumb is the time it would take for a banana peel to biodegrade. We also certified our products \u2013 liquid and bead with infused scent - through the USDA's BioPreferred Program, which requires independent laboratory verification of biobased content."
         }
       ]
     },
     "footer": {
       "finalCTA": {
         "headline": "Ready for consistent, compliant results?",
-        "buttonText": "Scent Beads",
-        "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
+        "buttonText": "Shop Scent Beads",
+        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    }
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent",
+        "USDA BioPreferred"
+      ],
+      "promoCodes": {
+        "synthetic-scent-cwd-guide": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 17.95,
+      "currency": "USD",
+      "units": "bottle"
     }
   },
   "shopifyAssets": {

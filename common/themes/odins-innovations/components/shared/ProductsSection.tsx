@@ -6,10 +6,12 @@ import { Star, ArrowRight } from 'lucide-react';
 interface Product {
   name: string;
   description: string;
+  desc?: string;
   image?: string;
   badge?: string;
   price?: string;
   href?: string;
+  link?: string;
 }
 
 interface ProductsSectionProps {
@@ -137,7 +139,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                       {featured.name}
                     </h3>
                     <p className="font-body text-lg text-muted-foreground mb-6 leading-relaxed">
-                      {featured.description}
+                      {featured.desc || featured.description}
                     </p>
                     {featured.price && (
                       <div 
@@ -148,7 +150,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                       </div>
                     )}
                     <a
-                      href={featured.href || content.cta.split(': ')[1] || content.cta}
+                      href={featured.link || featured.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
                       className="inline-flex items-center gap-2 self-start px-8 py-4 font-display font-bold uppercase tracking-wide transition-all duration-300 hover:gap-4"
                       style={{ 
                         background: 'hsl(var(--secondary))',
@@ -198,7 +200,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                     {item.name}
                   </h4>
                   <p className="font-body text-sm text-muted-foreground mb-4">
-                    {item.description}
+                    {item.desc || item.description}
                   </p>
                   {item.price && (
                     <div 
@@ -209,7 +211,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                     </div>
                   )}
                   <a
-                    href={item.href || content.cta.split(': ')[1] || content.cta}
+                    href={item.link || item.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
                     className="inline-flex items-center gap-1 font-body text-sm font-semibold transition-all duration-300 group-hover:gap-2"
                     style={{ color: 'hsl(var(--secondary))' }}
                   >
@@ -229,7 +231,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
             className="text-center mt-12"
           >
             <a
-              href={content.cta.split(': ')[1] || content.cta}
+              href={content.cta ? content.cta.split(': ')[1] || content.cta : '#'}
               className="inline-flex items-center gap-2 px-10 py-5 font-display font-bold uppercase tracking-wide text-lg transition-all duration-300 hover:gap-4"
               style={{ 
                 background: 'hsl(var(--primary))',

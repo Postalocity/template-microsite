@@ -139,6 +139,8 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
                 <a
                   key={idx}
                   href={cta.href}
+                  target={cta.href.startsWith('http') ? '_blank' : undefined}
+                  rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className={
                     cta.variant === 'primary' 
                       ? 'btn-accent text-base px-8 py-4' 

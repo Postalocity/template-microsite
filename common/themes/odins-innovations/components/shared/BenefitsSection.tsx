@@ -22,6 +22,29 @@ interface BenefitsSectionProps {
   background?: string;
 }
 
+const benefitIcons = [
+  // clock - duration
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />,
+  // beaker/lab - tested
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />,
+  // refresh - reduces time
+  <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />,
+  // shield check - legal/safe
+  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />,
+  // leaf - biodegradable
+  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />,
+  // archive/box - shelf life
+  <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />,
+  // fire - performance
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />,
+  // bolt - fast acting
+  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />,
+  // map pin - location
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />,
+  // truck - shipping
+  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h3.75M3.375 14.25V5.625A1.875 1.875 0 015.25 3.75h9.75a1.875 1.875 0 011.875 1.875v6.375M16.5 14.25h3.375a1.125 1.125 0 011.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H16.5" />,
+];
+
 const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -109,55 +132,36 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
             ))}
           </div>
         ) : (
-          /* Fallback to original text-with-icons style */
-          <div id="shopify-section-template--21871768240417__efd9992a-3e38-43a5-b7df-532e3631d5c0" className="shopify-section index-section">
-            <div className="text-with-icons" data-section-id="template--21871768240417__efd9992a-3e38-43a5-b7df-532e3631d5c0" data-section-type="text-with-icons">
-              <div className="page-width">
-                <div className="text-with-icons__blocks has-3-per-row" data-block-count="3">
-                  {parsedItems.slice(0, 3).map((item, index) => (
-                    <motion.div 
-                      key={item.title}
-                      className="text-with-icons__block text-center"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                      <div className="text-with-icons__block-icon">
-                        {/* Default icons */}
-                        {index === 0 && (
-                          <svg aria-hidden="true" focusable="false" role="presentation" className="icon icon-tcwi-ribbon" viewBox="0 0 100 100">
-                            <path d="M44.18 67.51 30 89.72l-4.44-12.19-12.93 1.1 14.19-22.18a28.86 28.86 0 0 0 13.79 10.08 26.93 26.93 0 0 0 3 .85Zm43.19 11.12-12.93-1.1L70 89.72 55.81 67.51l.63-.13a26.76 26.76 0 0 0 2.94-.85 28.8 28.8 0 0 0 13.8-10.08Z"></path>
-                            <path d="M78.92 39.19a28.82 28.82 0 0 1-3.61 14 30 30 0 0 1-1.74 2.73 5 5 0 0 1-.39.52 28.8 28.8 0 0 1-13.79 10.09 26.76 26.76 0 0 1-2.94.85l-.63.13a29 29 0 0 1-11.63 0l-.62-.13a26.93 26.93 0 0 1-3-.85 28.86 28.86 0 0 1-13.75-10.08c-.13-.17-.26-.34-.38-.52q-.93-1.32-1.74-2.73a28.92 28.92 0 1 1 54.22-14Z"></path>
-                            <path d="m56.95 42.84 1.63 9.55L50 47.88l-8.58 4.51 1.64-9.55-6.95-6.77 9.6-1.39 4.29-8.7 4.29 8.7 9.6 1.39-6.94 6.77z"></path>
-                          </svg>
-                        )}
-                        {index === 1 && (
-                          <svg aria-hidden="true" focusable="false" role="presentation" className="icon icon-tcwi-package" viewBox="0 0 100 100">
-                            <path d="M50 89.87 15.33 69.86V30.08l34.78-19.95 34.56 19.95v39.78L50 89.87z"></path>
-                            <path d="M67.33 50.78V40.09L32.76 20.14m-17.43 9.94L50 50.09"></path>
-                            <path d="M50 89.87V50.09l34.67-20.01"></path>
-                          </svg>
-                        )}
-                        {index === 2 && (
-                          <svg aria-hidden="true" focusable="false" role="presentation" className="icon icon-tcwi-stopwatch" viewBox="0 0 100 100">
-                            <circle cx="60.82" cy="54.12" r="4.26"></circle>
-                            <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"></path>
-                            <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"></path>
-                            <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"></path>
-                          </svg>
-                        )}
-                      </div>
-                      <div className="text-with-icons__block-title">
-                        <h3>{item.title}</h3>
-                      </div>
-                      <div className="text-with-icons__block-text">
-                        <p>{item.description}</p>
-                      </div>
-                    </motion.div>
-                  ))}
+          /* Card-grid style */
+          <div className="grid md:grid-cols-3 gap-8">
+            {parsedItems.map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-lg p-6 shadow-md text-center"
+              >
+                <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                  {item.icon ? (
+                    <span className="text-2xl">{item.icon}</span>
+                  ) : (
+                    <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: 'hsl(var(--primary))' }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  )}
                 </div>
-              </div>
-            </div>
+                <h3
+                  className="font-display text-xl uppercase mb-2"
+                  style={{ color: 'hsl(var(--foreground))' }}
+                >
+                  {item.title}
+                </h3>
+                <p className="font-body text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
         )}
       </div>
