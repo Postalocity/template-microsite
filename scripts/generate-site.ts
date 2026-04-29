@@ -315,20 +315,12 @@ function copyFavicons(siteDir: string, brandId: string): void {
     fs.mkdirSync(publicDir, { recursive: true });
   }
   
-  // Try brand-specific favicon first, fallback to default
-  const brandFaviconPath = path.join(TEMPLATE_DIR, 'common/assets', brandId, 'favicon.ico');
-  const fallbackFaviconPath = path.join(TEMPLATE_DIR, 'common/assets/favicon.ico');
-  const faviconSource = fs.existsSync(brandFaviconPath) ? brandFaviconPath : fallbackFaviconPath;
-
-  if (fs.existsSync(faviconSource)) {
-    // ONLY copy if destination doesn't already exist
-    const faviconDest = path.join(publicDir, 'favicon.ico');
-    if (!fs.existsSync(faviconDest)) {
-      fs.copyFileSync(faviconSource, faviconDest);
-      console.log(`✓ Copied favicon from ${brandId} assets`);
-    } else {
-      console.log(`✓ Favicon already exists (preserving brand-specific asset)`);
-    }
+  // Skip local favicon copy — CDN favicon is used via <link> tag in index.html
+  // Local favicon.ico overrides the CDN URL in browsers
+  const faviconDest = path.join(publicDir, 'favicon.ico');
+  if (fs.existsSync(faviconDest)) {
+    fs.unlinkSync(faviconDest);
+    console.log('✓ Removed local favicon.ico (using CDN version)');
   }
   
   // Copy logo files (light and dark variants) - ONLY if they don't already exist
@@ -692,6 +684,10 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
     // Route Dominant Buck to its own template
     if (site.slug === 'dominant-buck-scent-guide') {
       return generateDominantBuckTemplate(config, brandContext, brandId);
+    }
+    // Route Scrape Scent Guide to its own template
+    if (site.slug === 'scrape-scent-guide') {
+      return generateScrapeScentTemplate(config, brandContext, brandId);
     }
     return generateOdinsInnovationsTemplate(config, brandContext, brandId);
   }
@@ -1987,6 +1983,319 @@ root.render(<App />);
 `;
 }
 
+function generateScrapeScentTemplate(config: SiteConfig, brandContext?: BrandContext, brandId?: string): string {
+  const { site } = config;
+  const brand = brandContext?.brand || {};
+  const contact = brandContext?.contact || {};
+  const social = brandContext?.social || {};
+  const ikb = config.ikb || brandContext?.ikb || {};
+
+  return `/**
+ * Odin's Innovations Scrape Scent Guide - Generated from template-microsite
+ * Generated at: ${new Date().toISOString()}
+ * Brand: Odin's Innovations
+ */
+
+import { createRoot } from 'react-dom/client';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, WhyOdinsSection, ProductsSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
+import FloatingCTA from '@/components/shared/FloatingCTA';
+import { BrandProvider } from '@/contexts/BrandContext';
+import { IKBProvider } from '@/contexts/IKBContext';
+import '@/themes/odins-innovations/globals.css';
+import config from './config.json';
+
+// Brand configuration
+const brandConfig = ${JSON.stringify(brand)};
+const contactConfig = ${JSON.stringify(contact)};
+const socialConfig = ${JSON.stringify(social)};
+
+// IKB configuration
+const ikbConfig = ${JSON.stringify(ikb)};
+
+// Get promo code
+const promoCode = ikbConfig.rules?.promoCodes?.['scrape-scent-guide'] || 'HUNT2026';
+
+function App() {
+  const { content } = config;
+  const navCta = config.navigation?.cta;
+  return (
+    <IKBProvider ikb={ikbConfig}>
+      <BrandProvider
+        brand={brandConfig}
+        contact={contactConfig}
+        social={socialConfig}
+        promoCode={promoCode}
+      >
+        <SiteNavigation config={config} />
+        <HeroSection hero={content.hero} />
+
+        {/* Trust Badges */}
+        {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+
+        {/* Section 1: Benefits */}
+        <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
+
+        {/* Section 2: Why Odin's */}
+        <WhyOdinsSection content={{
+          headline: content.whyOdins.title,
+          body: content.whyOdins.body,
+          points: content.whyOdins.points
+        }} />
+
+        {/* Section 3: How It Works — with YouTube videos */}
+        <section id="how-it-works" className="section-padding" style={{ background: '#1a1d29' }}>
+          <div className="section-container">
+            <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
+              {content.howItWorks.title}
+            </h2>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                <div>
+                  <ol className="space-y-6">
+                    {content.howItWorks.steps.map((step: string, idx: number) => (
+                      <li key={idx} className="flex gap-4">
+                        <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                          {idx + 1}
+                        </span>
+                        <p className="font-body text-base text-gray-300 leading-relaxed pt-1">{step}</p>
+                      </li>
+                    ))}
+                  </ol>
+                  {content.howItWorks.note && (
+                    <p className="mt-8 font-body text-sm text-gray-400 italic border-l-2 pl-4" style={{ borderColor: 'hsl(var(--accent))' }}>
+                      {content.howItWorks.note}
+                    </p>
+                  )}
+                </div>
+                <div className="flex flex-col gap-6">
+                  <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src="https://www.youtube.com/embed/6cWlyOmc4Sc"
+                      title="How to Build an Effective Mock Scrape with Odin's"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                  {content.fieldTest && (
+                    <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                      <iframe
+                        src="https://www.youtube.com/embed/JK0IvPqJrN4"
+                        title={content.fieldTest.subtitle || "Odin's Scrape Blend Field Test"}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4: Rut Timing */}
+        {content.rutTiming && (
+          <section id="rut-timing" className="section-padding" style={{ background: 'hsl(var(--muted))' }}>
+            <div className="section-container">
+              <div className="max-w-6xl mx-auto">
+                <div className="text-center mb-12">
+                  <span className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider" style={{ background: 'hsl(var(--accent) / 0.2)', color: 'hsl(var(--accent))', clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)' }}>
+                    Seasonal Guide
+                  </span>
+                  <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
+                    {content.rutTiming.title}
+                  </h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                  {content.rutTiming.phases.map((phase: { phase: string; months: string; description: string }, idx: number) => {
+                    const colors = ['hsl(35, 70%, 50%)', 'hsl(var(--secondary))', 'hsl(var(--primary))'];
+                    return (
+                      <div key={idx} className="relative overflow-hidden" style={{ background: 'white', borderTop: \`4px solid \${colors[idx]}\`, boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                        <div className="flex flex-col items-center justify-center py-6" style={{ background: \`\${colors[idx]}15\` }}>
+                          <span className="font-display text-2xl font-bold uppercase mb-1" style={{ color: colors[idx] }}>{phase.phase}</span>
+                          <span className="font-body text-sm font-semibold uppercase tracking-wider" style={{ color: colors[idx], opacity: 0.7 }}>{phase.months}</span>
+                        </div>
+                        <div className="p-5">
+                          <p className="font-body text-sm text-muted-foreground leading-relaxed" dangerouslySetInnerHTML={{ __html: phase.description }} />
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Section 5: Effectiveness — with proof image */}
+        {content.effectiveness && (
+          <section id="effectiveness" className="section-padding" style={{ background: '#1a1d29' }}>
+            <div className="section-container">
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center text-white">
+                {content.effectiveness.title}
+              </h2>
+              <div className="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
+                <div className="flex-1">
+                  <p className="font-body text-lg text-gray-300 leading-relaxed">
+                    {content.effectiveness.body}
+                  </p>
+                </div>
+                <div className="flex-shrink-0">
+                  <img
+                    src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/longer_lasting_deer_scent.jpg?v=1776353659"
+                    alt="Longer lasting synthetic deer scent performance"
+                    className="rounded-lg shadow-lg w-full max-w-sm object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Section 6+7: Synthetic vs Natural + Drippers vs Beads — redesigned two-panel */}
+        {(content.syntheticVsNatural || content.drippersVsBeads) && (
+          <section id="synthetic-vs-natural" className="section-padding" style={{ background: '#1a1d29' }}>
+            <div className="section-container">
+              {/* Section Header */}
+              <div className="text-center mb-12">
+                <span className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider" style={{ background: 'rgba(45,90,61,0.15)', color: 'hsl(var(--accent))', clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)' }}>
+                  Know the Difference
+                </span>
+                <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
+                  Why the Right Scent Matters
+                </h2>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-6 lg:gap-0 max-w-6xl mx-auto items-stretch">
+                {/* Panel 1 — Synthetic vs Natural */}
+                {content.syntheticVsNatural && (
+                  <div className="relative overflow-hidden rounded-lg" style={{ background: 'linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ height: '3px', background: 'linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)))' }} />
+                    <div className="p-6 lg:p-8">
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(45,90,61,0.15)' }}>
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'hsl(var(--accent))' }}>
+                            <path d="M9 3v8.5L6.5 19a2.5 2.5 0 004.5 1.5 2.5 2.5 0 004.5-1.5L13 11.5V3" />
+                            <path d="M9 3h6" />
+                          </svg>
+                        </div>
+                        <h3 className="font-display text-xl md:text-2xl uppercase text-white">
+                          {content.syntheticVsNatural.title}
+                        </h3>
+                      </div>
+                      <p className="font-body text-sm text-gray-300 leading-relaxed mb-5 [&_a]:underline [&_a]:decoration-amber-400/50 [&_a:hover]:decoration-amber-400" dangerouslySetInnerHTML={{ __html: content.syntheticVsNatural.body }} />
+                      <div className="rounded px-4 py-3" style={{ borderLeft: '3px solid hsl(var(--accent))', background: 'rgba(45,90,61,0.08)' }}>
+                        <p className="font-display text-sm font-bold uppercase tracking-wide" style={{ color: 'hsl(var(--accent))' }}>
+                          30 days vs 24–48 hours
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* VS Divider */}
+                <div className="hidden lg:flex flex-col items-center justify-center px-6" aria-hidden="true">
+                  <div style={{ width: '1px', height: '40%', background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent)' }} />
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center my-4" style={{ border: '2px solid hsl(var(--primary))', background: 'rgba(26,29,41,0.9)' }}>
+                    <span className="font-display text-sm font-bold" style={{ color: 'hsl(var(--accent))' }}>VS</span>
+                  </div>
+                  <div style={{ width: '1px', height: '40%', background: 'linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), transparent)' }} />
+                </div>
+
+                {/* Mobile VS Divider */}
+                <div className="flex lg:hidden items-center justify-center py-2" aria-hidden="true">
+                  <div className="flex-1" style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mx-4" style={{ border: '2px solid hsl(var(--primary))', background: 'rgba(26,29,41,0.9)' }}>
+                    <span className="font-display text-xs font-bold" style={{ color: 'hsl(var(--accent))' }}>VS</span>
+                  </div>
+                  <div className="flex-1" style={{ height: '1px', background: 'rgba(255,255,255,0.1)' }} />
+                </div>
+
+                {/* Panel 2 — Drippers vs Beads */}
+                {content.drippersVsBeads && (
+                  <div className="relative overflow-hidden rounded-lg" style={{ background: 'linear-gradient(145deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                    <div style={{ height: '3px', background: 'linear-gradient(90deg, hsl(var(--accent)), hsl(var(--primary)))' }} />
+                    <div className="p-6 lg:p-8">
+                      <div className="flex items-center gap-3 mb-5">
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(45,90,61,0.15)' }}>
+                          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: 'hsl(var(--accent))' }}>
+                            <path d="M12 22a7 7 0 005-2l3.5-3.5a2.83 2.83 0 00-4-4L13 16" />
+                            <path d="M12 22a7 7 0 01-5-2L3.5 17.5a2.83 2.83 0 014-4L11 16" />
+                            <path d="M12 22V16" />
+                          </svg>
+                        </div>
+                        <h3 className="font-display text-xl md:text-2xl uppercase text-white">
+                          {content.drippersVsBeads.title}
+                        </h3>
+                      </div>
+                      <p className="font-body text-sm text-gray-300 leading-relaxed mb-5">
+                        {content.drippersVsBeads.body}
+                      </p>
+                      <div className="rounded px-4 py-3" style={{ borderLeft: '3px solid hsl(var(--accent))', background: 'rgba(45,90,61,0.08)' }}>
+                        <p className="font-display text-sm font-bold uppercase tracking-wide" style={{ color: 'hsl(var(--accent))' }}>
+                          Nothing to clog. Nothing to freeze.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Bottom tagline bar */}
+              <div className="mt-10 text-center">
+                <p className="font-body text-xs uppercase tracking-[0.3em]" style={{ color: 'rgba(255,255,255,0.3)' }}>
+                  Synthetic &bull; Long-Lasting &bull; Legal Everywhere
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Section 8: Products */}
+        <div id="products" style={{ background: '#1a1d29' }}>
+          {content.products && <ProductsSection content={content.products} />}
+        </div>
+
+        {/* Section 9: Comparison */}
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+
+        {/* Section 10: Reviews */}
+        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who put Odin's to the test in the field.</p>
+            </div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations" data-take="10" data-per-page="10"></div>
+            <style dangerouslySetInnerHTML={{__html: \`
+              .stamped-widget-buttons,
+              .stamped-full-page-tabs {
+                display: none !important;
+              }
+            \`}} />
+          </div>
+        </section>
+
+        {/* Section 11: FAQ */}
+        <FAQSection faq={content.faq} />
+
+        <SiteFooter config={config} />
+        {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
+      </BrandProvider>
+    </IKBProvider>
+  );
+}
+
+// Initialize React
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
+`;
+}
+
 function generateViteConfig(serviceSlug: string, brandId?: string): string {
   const themeAlias = brandId && fs.existsSync(path.join(TEMPLATE_DIR, 'common/themes', brandId, 'globals.css'))
     ? `
@@ -2319,7 +2628,7 @@ function generateIndexHtml(config: SiteConfig, brandContext?: BrandContext): str
     <meta name="theme-color" content="#664400" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png" href="${brandContext.brand.logo.faviconUrl}" />` : `    <link rel="icon" type="image/x-icon" href="/favicon.ico" />`}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2578,7 +2887,7 @@ function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): s
     <meta name="theme-color" content="#664400" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png" href="${brandContext.brand.logo.faviconUrl}" />` : `    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />`}
 
     <!-- Fonts -->
     ${fonts}

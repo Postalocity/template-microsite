@@ -52,13 +52,12 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'linear-gradient(to right, hsl(0 0% 0% / 0.80) 0%, hsl(0 0% 0% / 0.25) 100%)' 
-            }} 
+              background: 'linear-gradient(to right, hsl(0 0% 0% / 0.85) 0%, hsl(0 0% 0% / 0.40) 100%)'             }} 
           />
         </div>
       )}
 
-      {/* Static Image Background (fallback) */}
+       {/* Static Image Background (fallback) */}
       {!hasVideo && hasImage && (
         <div className="absolute inset-0">
           <img
@@ -67,13 +66,13 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
             width={1920}
             height={1080}
             className="w-full h-full object-cover"
+            style={{ objectPosition: hero.background.objectPosition || 'center' }}
             loading="eager"
           />
           <div 
             className="absolute inset-0" 
             style={{ 
-              background: 'linear-gradient(to right, hsl(0 0% 0% / 0.80) 0%, hsl(0 0% 0% / 0.25) 100%)' 
-            }} 
+              background: 'linear-gradient(to right, hsl(0 0% 0% / 0.85) 0%, hsl(0 0% 0% / 0.40) 100%)'             }} 
           />
         </div>
       )}
@@ -135,21 +134,30 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
               transition={{ duration: 0.4, delay: 0.35 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              {hero.ctas.map((cta: CTA, idx: number) => (
-                <a
-                  key={idx}
-                  href={cta.href}
-                  target={cta.href.startsWith('http') ? '_blank' : undefined}
-                  rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className={
-                    cta.variant === 'primary' 
-                      ? 'btn-accent text-base px-8 py-4' 
-                      : 'btn-outline-dark text-base px-8 py-4'
-                  }
-                >
-                  {processText(cta.text)}
-                </a>
-              ))}
+              {hero.ctas.map((cta: CTA, idx: number) => {
+                const isHashLink = cta.href.startsWith('#');
+                const handleClick = isHashLink ? (e: React.MouseEvent) => {
+                  e.preventDefault();
+                  const el = document.querySelector(cta.href);
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                } : undefined;
+                return (
+                  <a
+                    key={idx}
+                    href={cta.href}
+                    onClick={handleClick}
+                    target={cta.href.startsWith('http') ? '_blank' : undefined}
+                    rel={cta.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className={
+                      cta.variant === 'primary' 
+                        ? 'btn-accent text-base px-8 py-4' 
+                        : 'btn-outline-dark text-base px-8 py-4'
+                    }
+                  >
+                    {processText(cta.text)}
+                  </a>
+                );
+              })}
             </motion.div>
           </motion.div>
         </div>

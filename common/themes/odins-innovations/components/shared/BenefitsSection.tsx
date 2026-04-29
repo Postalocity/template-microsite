@@ -115,7 +115,7 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
 
         {/* Benefits Grid with Images */}
         {hasImages ? (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {parsedItems.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -158,8 +158,25 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
                 className="bg-white rounded-lg p-6 shadow-md text-center"
               >
                 <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
-                  {item.icon ? (
-                    <span className="text-3xl">{item.icon}</span>
+                  {item.icon === 'blend' ? (
+                    <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: 'hsl(var(--primary))' }}>
+                      <circle cx="9" cy="9" r="7" />
+                      <circle cx="15" cy="15" r="7" />
+                    </svg>
+                  ) : item.icon === 'wind-arrow-down' ? (
+                    <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: 'hsl(var(--primary))' }}>
+                      <path d="M10 2v8" />
+                      <path d="M12.8 21.6A2 2 0 1 0 14 18H2" />
+                      <path d="M17.5 10a2.5 2.5 0 1 1 2 4H2" />
+                      <path d="m6 6 4 4 4-4" />
+                    </svg>
+                  ) : item.icon === 'eye-off' ? (
+                    <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: 'hsl(var(--primary))' }}>
+                      <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" />
+                      <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" />
+                      <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
+                      <path d="m2 2 20 20" />
+                    </svg>
                   ) : item.image ? (
                     <img src={item.image} alt="" className="w-20 h-20 object-contain" loading="lazy" />
                   ) : (
