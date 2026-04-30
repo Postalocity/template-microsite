@@ -1,7 +1,7 @@
 {
   "site": {
     "id": "broadstroke",
-    "name": "Custom Carbonless Forms — Broadstroke, Inc.",
+    "name": "Custom Carbonless Forms \u2014 Broadstroke, Inc.",
     "slug": "carbonless-forms",
     "domain": "broadstrokeinc.com",
     "basename": "broadstroke-carbonless-forms",
@@ -23,7 +23,7 @@
     }
   },
   "seo": {
-    "title": "Custom Carbonless Forms — Nationwide Distribution",
+    "title": "Custom Carbonless Forms \u2014 Nationwide Distribution",
     "description": "Nationwide custom carbonless forms printing. 2, 3, and 4-part multipart forms with sequential numbering, variable data, and fast turnaround. Free estimates.",
     "keywords": [
       "custom carbonless forms",
@@ -40,8 +40,8 @@
     "ogDescription": "Custom 2, 3, and 4-part carbonless forms with precision printing and finishing. Get a free estimate.",
     "ogImage": "/carbonless-forms/images/og-image.png",
     "twitterCard": "summary_large_image",
-    "twitterTitle": "Custom Carbonless Forms — Broadstroke, Inc. | Your One-Stop-Shop for Print, Mail & Promo",
-    "twitterDescription": "CarbonlessUSA.com is now part of Broadstroke — bringing you the same quality carbonless forms you trust, now with access to comprehensive print, mail, and promotional services. High-quality 2, 3, and 4-part carbonless forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment.",
+    "twitterTitle": "Custom Carbonless Forms \u2014 Broadstroke, Inc. | Your One-Stop-Shop for Print, Mail & Promo",
+    "twitterDescription": "CarbonlessUSA.com is now part of Broadstroke \u2014 bringing you the same quality carbonless forms you trust, now with access to comprehensive print, mail, and promotional services. High-quality 2, 3, and 4-part carbonless forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment.",
     "canonical": "https://broadstrokeinc.com/carbonless-forms",
     "googleAnalyticsId": "G-9HXQD6LYZ4"
   },
@@ -82,8 +82,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",
@@ -132,7 +133,7 @@
         "highlightTerm": "Nationwide Distribution",
         "alt": "Nationwide custom carbonless and multipart forms with precision finishing and variable data"
       },
-      "subhead": "CarbonlessUSA.com is now part of Broadstroke — bringing you the same quality carbonless forms you trust, now with access to comprehensive print, mail, and promotional services. High-quality 2, 3, and 4-part carbonless forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment.",
+      "subhead": "CarbonlessUSA.com is now part of Broadstroke \u2014 bringing you the same quality carbonless forms you trust, now with access to comprehensive print, mail, and promotional services. High-quality 2, 3, and 4-part carbonless forms with advanced customization, finishing services, and seamless integration with shipping and fulfillment.",
       "background": {
         "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1920&q=80",
         "overlay": true,
@@ -165,7 +166,19 @@
           "src": "https://broadstrokeinc.com/wp-content/uploads/CarbonlessUSA-logo.png",
           "alt": "CarbonlessUSA.com",
           "height": 80
-        }
+        },
+        "ctas": [
+          {
+            "text": "Order Now",
+            "href": "https://broadstrokeinc.com/business-forms-new-order",
+            "variant": "primary"
+          },
+          {
+            "text": "Get Free Estimate",
+            "href": "https://broadstrokeinc.com/business-forms-contact/",
+            "variant": "outline"
+          }
+        ]
       },
       "benefits": [
         {
@@ -214,8 +227,8 @@
     },
     "services": {
       "section": {
-        "title": "Carbonless Form Solutions —<br />2, 3, & 4-Part Options",
-        "description": "Custom carbonless forms designed for your specific workflow requirements. From invoices and work orders to medical forms and delivery receipts — we print, finish, and can even distribute.",
+        "title": "Carbonless Form Solutions \u2014<br />2, 3, & 4-Part Options",
+        "description": "Custom carbonless forms designed for your specific workflow requirements. From invoices and work orders to medical forms and delivery receipts \u2014 we print, finish, and can even distribute.",
         "ctas": [
           {
             "text": "Order Now",
@@ -313,7 +326,7 @@
     "difference": {
       "section": {
         "title": "Why Businesses Choose<br />Broadstroke",
-        "description": "Organizations nationwide trust Broadstroke for custom carbonless forms because we deliver more than just printing — we provide a true one-stop concierge solution."
+        "description": "Organizations nationwide trust Broadstroke for custom carbonless forms because we deliver more than just printing \u2014 we provide a true one-stop concierge solution."
       },
       "differences": [
         {

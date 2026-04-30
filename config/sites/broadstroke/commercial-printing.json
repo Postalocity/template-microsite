@@ -1,5 +1,5 @@
 {
-  "version": "Broadstroke Microsite Config — Commercial Printing",
+  "version": "Broadstroke Microsite Config \u2014 Commercial Printing",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {
@@ -12,7 +12,7 @@
   },
   "site": {
     "id": "commercial-printing",
-    "name": "Commercial Printing — Broadstroke, Inc.",
+    "name": "Commercial Printing \u2014 Broadstroke, Inc.",
     "slug": "commercial-printing",
     "domain": "broadstrokeinc.com",
     "basename": "/commercial-printing",
@@ -34,7 +34,7 @@
     }
   },
   "seo": {
-    "title": "Commercial Printing Services Wichita KS — Broadstroke, Inc.",
+    "title": "Commercial Printing Services Wichita KS \u2014 Broadstroke, Inc.",
     "description": "Trusted commercial printing in Wichita KS since 1964. Business cards, brochures, forms, wide format, offset & digital printing with full-service finishing and in-house mailing. Free estimates.",
     "keywords": [
       "commercial printing Wichita",
@@ -49,7 +49,7 @@
       "finishing services Wichita",
       "one-stop print mail services Wichita"
     ],
-    "ogTitle": "Commercial Printing Services — Broadstroke, Inc.",
+    "ogTitle": "Commercial Printing Services \u2014 Broadstroke, Inc.",
     "ogDescription": "One-stop commercial printing solutions in Wichita KS: quality printing with seamless design, finishing, mailing, and promo integration.",
     "ogImage": "/commercial-printing/images/og-image.png",
     "twitterCard": "summary_large_image",
@@ -92,8 +92,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",
@@ -142,7 +143,7 @@
         "highlightTerm": "Concierge Service",
         "alt": "Professional commercial printing services Wichita KS with concierge support and integrated finishing"
       },
-      "subhead": "High-quality digital and offset printing with dedicated concierge service — one experienced team handles everything from design through finishing and optional mailing. Free estimates, quick turnaround, no project too big or small.",
+      "subhead": "High-quality digital and offset printing with dedicated concierge service \u2014 one experienced team handles everything from design through finishing and optional mailing. Free estimates, quick turnaround, no project too big or small.",
       "background": {
         "image": "/commercial-printing/images/commercial-printing-hero.jpg",
         "overlay": true,
@@ -182,7 +183,7 @@
         {
           "icon": "file-check",
           "title": "Quality Assurance Built In",
-          "description": "Every project gets thorough review before production. Mistakes cost time and money — we catch them before you do.",
+          "description": "Every project gets thorough review before production. Mistakes cost time and money \u2014 we catch them before you do.",
           "detail": "Multi-point inspection process ensures accuracy."
         },
         {
@@ -194,7 +195,7 @@
         {
           "icon": "package",
           "title": "Full-Service Finishing",
-          "description": "Cutting, scoring, binding, UV coating, foil imprint, embossing, and more — all in-house.",
+          "description": "Cutting, scoring, binding, UV coating, foil imprint, embossing, and more \u2014 all in-house.",
           "detail": "Complete bindery and finishing services under one roof."
         }
       ]
@@ -261,9 +262,9 @@
     },
     "services": {
       "section": {
-        "title": "Commercially Printed Products —<br />in Wichita, KS and Nationwide",
+        "title": "Commercially Printed Products \u2014<br />in Wichita, KS and Nationwide",
         "description": "Full-service commercial printing for businesses that demand quality and reliability. We offer both digital and offset printing capabilities to match your quantity and quality requirements.",
-        "finishingNote": "Comprehensive finishing options are available for all printed products — including cutting, scoring, perforating, numbering, corner rounding, die cutting, custom foil imprint, embossing, folding, laminating (gloss, matte, soft touch), padding, UV coating, spot UV, spiral binding, wire binding, stapling, saddle stitched booklets with square folding, shrink wrapping, tabbing, and custom kitting or packaging."
+        "finishingNote": "Comprehensive finishing options are available for all printed products \u2014 including cutting, scoring, perforating, numbering, corner rounding, die cutting, custom foil imprint, embossing, folding, laminating (gloss, matte, soft touch), padding, UV coating, spot UV, spiral binding, wire binding, stapling, saddle stitched booklets with square folding, shrink wrapping, tabbing, and custom kitting or packaging."
       },
       "services": [
         {
@@ -325,7 +326,7 @@
     "difference": {
       "section": {
         "title": "The Broadstroke Difference",
-        "description": "Businesses in the Wichita area, Kansas, and nationwide trust Broadstroke for commercial printing because we deliver more than just printed materials — we provide a true one-stop concierge solution for print, mail, and promo."
+        "description": "Businesses in the Wichita area, Kansas, and nationwide trust Broadstroke for commercial printing because we deliver more than just printed materials \u2014 we provide a true one-stop concierge solution for print, mail, and promo."
       },
       "differences": [
         {
@@ -336,7 +337,7 @@
         {
           "icon": "package",
           "title": "Integrated Print-to-Mail Capability",
-          "description": "When your project includes mailing, it's handled as a single job with seamless workflow in-house. Whether it's a postcard, mailer, or mailing, every step of the process, including addressing and applying presort postage, is handled through our high-speed digital commercial printers and inserters, followed by distribution to USPS for delivery — all managed by one experienced team."
+          "description": "When your project includes mailing, it's handled as a single job with seamless workflow in-house. Whether it's a postcard, mailer, or mailing, every step of the process, including addressing and applying presort postage, is handled through our high-speed digital commercial printers and inserters, followed by distribution to USPS for delivery \u2014 all managed by one experienced team."
         },
         {
           "icon": "shield",
@@ -379,7 +380,7 @@
         },
         {
           "q": "Can printed materials be mailed in-house?",
-          "a": "Absolutely. Completed pieces move seamlessly into fulfillment, presort postage is applied and pieces are provided to USPS for delivery — all managed by the same concierge team."
+          "a": "Absolutely. Completed pieces move seamlessly into fulfillment, presort postage is applied and pieces are provided to USPS for delivery \u2014 all managed by the same concierge team."
         },
         {
           "q": "What types of finishing options are available?",
@@ -387,7 +388,7 @@
         },
         {
           "q": "How does the concierge model benefit commercial printing projects?",
-          "a": "You have a single dedicated point of contact that oversees the entire workflow on your behalf — from file review through production, finishing, and optional mailing. This eliminates coordination across multiple vendors and helps your organization reclaim operational time weekly."
+          "a": "You have a single dedicated point of contact that oversees the entire workflow on your behalf \u2014 from file review through production, finishing, and optional mailing. This eliminates coordination across multiple vendors and helps your organization reclaim operational time weekly."
         },
         {
           "q": "What is the process for obtaining a free estimate?",

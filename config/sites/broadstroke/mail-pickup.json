@@ -1,7 +1,7 @@
 {
   "site": {
     "id": "mail-pickup",
-    "name": "Mail Pickup Services — Broadstroke, Inc.",
+    "name": "Mail Pickup Services \u2014 Broadstroke, Inc.",
     "slug": "mail-pickup",
     "domain": "broadstrokeinc.com",
     "basename": "/mail-pickup",
@@ -23,7 +23,7 @@
     }
   },
   "seo": {
-    "title": "Mail Pickup Services — Broadstroke, Inc.",
+    "title": "Mail Pickup Services \u2014 Broadstroke, Inc.",
     "description": "Daily mail pickup services in Wichita KS with presort postage, certified mail support, flats handling and full concierge integration. Reclaim operational time with one-stop print, mail and promo delivery. Free estimates available.",
     "keywords": [
       "mail pickup services",
@@ -35,8 +35,8 @@
       "bulk mail services Kansas",
       "mailroom pickup service"
     ],
-    "ogTitle": "Mail Pickup Services — Broadstroke, Inc.",
-    "ogDescription": "Convenient daily mail collection with expert presort processing, print and promo delivery — all handled by one Wichita team.",
+    "ogTitle": "Mail Pickup Services \u2014 Broadstroke, Inc.",
+    "ogDescription": "Convenient daily mail collection with expert presort processing, print and promo delivery \u2014 all handled by one Wichita team.",
     "ogImage": "/mail-pickup/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/mail-pickup"
@@ -78,8 +78,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",
@@ -155,7 +156,7 @@
     },
     "benefits": {
       "section": {
-        "title": "Mail Pickup Services — Reclaim Operational Time with Concierge Service",
+        "title": "Mail Pickup Services \u2014 Reclaim Operational Time with Concierge Service",
         "description": "Broadstroke's daily mail pickup eliminates the need for separate post office runs while integrating seamlessly with commercial printing, design, and promotional product fulfillment. One team manages your entire outbound mail workflow, supporting accuracy, compliance, and efficiency for businesses of all sizes."
       },
       "benefits": [
@@ -188,7 +189,7 @@
     "comparison": {
       "section": {
         "title": "Why Wichita Businesses Choose Broadstroke for Mail Pickup Services",
-        "description": "Broadstroke's concierge model combines daily pickup with full print and promo integration — a level of service not typically available from local shipping centers or in-house mail handling."
+        "description": "Broadstroke's concierge model combines daily pickup with full print and promo integration \u2014 a level of service not typically available from local shipping centers or in-house mail handling."
       },
       "columns": {
         "traditional": "Traditional Approach (Self-Dropoff or Limited Services)",
@@ -223,14 +224,14 @@
     },
     "services": {
       "section": {
-        "title": "Mail Pickup Services — Wichita KS",
+        "title": "Mail Pickup Services \u2014 Wichita KS",
         "description": "Broadstroke offers comprehensive daily mail pickup tailored to your specific needs, backed by professional mailroom equipment and NAPM membership."
       },
       "services": [
         {
           "icon": "mail",
           "title": "Letters, Flats & Envelopes",
-          "description": "Daily collection of all mail pieces — from standard letters to large flats. We supply trays, ensure proper separation, and apply presort postage where applicable. Flats must be sealed with tape over metal clasps for machine compatibility. Same- or next-day processing and USPS submission."
+          "description": "Daily collection of all mail pieces \u2014 from standard letters to large flats. We supply trays, ensure proper separation, and apply presort postage where applicable. Flats must be sealed with tape over metal clasps for machine compatibility. Same- or next-day processing and USPS submission."
         },
         {
           "icon": "shield-check",
@@ -253,7 +254,7 @@
       "section": {
         "id": "how-it-works",
         "title": "Mail Pickup Workflow",
-        "description": "Simple daily mail pickup that saves you time — from collection through presort processing to prompt USPS delivery."
+        "description": "Simple daily mail pickup that saves you time \u2014 from collection through presort processing to prompt USPS delivery."
       },
       "steps": [
         {
@@ -276,18 +277,18 @@
     "difference": {
       "section": {
         "title": "The Broadstroke Difference",
-        "description": "Businesses in the Wichita Kansas area trust Broadstroke for mail pickup because we deliver more than just daily collection — we provide a true one-stop concierge solution for print, mail, and promo."
+        "description": "Businesses in the Wichita Kansas area trust Broadstroke for mail pickup because we deliver more than just daily collection \u2014 we provide a true one-stop concierge solution for print, mail, and promo."
       },
       "differences": [
         {
           "icon": "zap",
           "title": "Operational Efficiency",
-          "description": "One experienced team handles more than just mail pickup! Broadstroke offers everything from design to printing, mailing, and promotions. No more juggling multiple vendors—our concierge approach coordinates every step of your project seamlessly."
+          "description": "One experienced team handles more than just mail pickup! Broadstroke offers everything from design to printing, mailing, and promotions. No more juggling multiple vendors\u2014our concierge approach coordinates every step of your project seamlessly."
         },
         {
           "icon": "truck",
           "title": "Pickup, Print & Promo in One Visit",
-          "description": "When we pick up your mail, we can also deliver your completed print jobs or promotional products at the same time. It's the convenience of one stop, one team, one call—eliminating extra trips and vendor coordination."
+          "description": "When we pick up your mail, we can also deliver your completed print jobs or promotional products at the same time. It's the convenience of one stop, one team, one call\u2014eliminating extra trips and vendor coordination."
         },
         {
           "icon": "shield",
@@ -336,7 +337,7 @@
         "buttonText": "Get Free Estimate",
         "href": "https://broadstrokeinc.com/mailing-contact/"
       },
-      "tagline": "Daily Mail Pickup — We Come to You."
+      "tagline": "Daily Mail Pickup \u2014 We Come to You."
     }
   }
 }

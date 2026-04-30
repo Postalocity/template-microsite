@@ -29,8 +29,8 @@ type NavConfig = {
       href: string;
       variant?: string;
     };
-    serviceLinks?: Array<{ label: string; href: string }>;
-    companyLinks?: Array<{ label: string; href: string }>;
+    serviceLinks?: Array<{ label: string; href: string; target?: string }>;
+    companyLinks?: Array<{ label: string; href: string; target?: string }>;
   };
   branding?: {
     tagline?: string;
@@ -204,6 +204,8 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                       <a
                         key={link.href}
                         href={link.href}
+                        target={link.target}
+                        rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
                         className="block px-4 py-2.5 text-sm text-foreground hover:bg-muted transition-colors"
                       >
                         {link.label}
@@ -320,6 +322,8 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
                     <a
                       key={link.href}
                       href={link.href}
+                      target={link.target}
+                      rel={link.target === '_blank' ? 'noopener noreferrer' : undefined}
                       onClick={() => setMobileOpen(false)}
                       className="block py-2 text-sm text-foreground hover:text-primary transition-colors"
                     >

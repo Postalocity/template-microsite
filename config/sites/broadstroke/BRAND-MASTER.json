@@ -53,9 +53,10 @@
         "description": "Mail pickup services"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing",
-        "description": "Shipping and fulfillment services"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "description": "Postalocity \u2014 shipping and fulfillment services",
+        "target": "_blank"
       },
       {
         "label": "Technology",

@@ -1,5 +1,5 @@
 {
-  "version": "Broadstroke Config — Professional Printing Services",
+  "version": "Broadstroke Config \u2014 Professional Printing Services",
   "site": {
     "id": "printing",
     "name": "Professional Printing Services",
@@ -23,7 +23,7 @@
     }
   },
   "seo": {
-    "title": "Professional Printing Services — Broadstroke",
+    "title": "Professional Printing Services \u2014 Broadstroke",
     "description": "High-quality printing services in Wichita. Business cards, brochures, flyers, banners and more. Quick turnaround, free estimates.",
     "keywords": [
       "printing services Wichita",
@@ -33,7 +33,7 @@
       "banner printing",
       "wide format printing"
     ],
-    "ogTitle": "Professional Printing Services — Broadstroke",
+    "ogTitle": "Professional Printing Services \u2014 Broadstroke",
     "ogDescription": "High-quality printing services with quick turnaround. Free estimates on all projects.",
     "ogImage": "/printing/images/og-image.png",
     "twitterCard": "summary_large_image",
@@ -77,8 +77,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",

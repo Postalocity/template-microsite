@@ -56,7 +56,7 @@ const ServicesSection = ({ services }: ServicesSectionProps) => {
             const cardContent = (
               <div 
                 className={`relative h-full overflow-hidden rounded-xl group cursor-pointer ${
-                  hasImage ? 'aspect-[16/5]' : ''
+                  hasImage ? 'aspect-[4/3]' : ''
                 }`}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}

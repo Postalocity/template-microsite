@@ -12,6 +12,7 @@ export { default as QuantifiableBenefitsSection } from './QuantifiableBenefitsSe
 export { default as DifferenceSection } from './DifferenceSection';
 export { default as HowItWorksSection } from './HowItWorksSection';
 export { default as FloatingCTA } from './FloatingCTA';
+export { default as HighlightSection } from './HighlightSection';
 
 // Phase 1: P0 Critical Sections (Optional - add .enabled flag to config to use)
 export { default as AboutSection } from './AboutSection';
