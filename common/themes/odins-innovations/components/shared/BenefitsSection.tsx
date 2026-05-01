@@ -177,6 +177,11 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
                       <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" />
                       <path d="m2 2 20 20" />
                     </svg>
+                  ) : item.icon === 'ban' ? (
+                    <svg className="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} style={{ color: 'hsl(var(--primary))' }}>
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="m4.9 4.9 14.2 14.2" />
+                    </svg>
                   ) : item.image ? (
                     <img src={item.image} alt="" className="w-20 h-20 object-contain" loading="lazy" />
                   ) : (

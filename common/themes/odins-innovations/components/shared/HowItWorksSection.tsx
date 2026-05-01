@@ -43,7 +43,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
   const sectionId = howItWorks?.section?.id || "how-it-works";
 
 // 3-step data using Odin's brand PNG icons
-  const timelineSteps = [
+  const defaultSteps = [
     { 
       title: "Apply Once", 
       description: "Sprinkle beads in your scrape or hang from a drag. No special equipment needed.",
@@ -60,6 +60,15 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
       icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841"
     }
   ];
+
+  // Use config steps if available, otherwise fall back to defaults
+  const displaySteps = isOldFormat && howItWorks?.steps 
+    ? howItWorks.steps.map((step, i) => ({
+        title: step.title,
+        description: step.description,
+        icon: step.image || defaultSteps[i % defaultSteps.length]?.icon
+      }))
+    : defaultSteps;
 
   return (
     <section
@@ -131,14 +140,14 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
           )}
 
           {/* 3-Step Cards - modeled after BenefitsSection */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {timelineSteps.map((step, index) => (
+          <div className={`grid grid-cols-1 ${displaySteps.length > 3 ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-6 mb-12`}>
+            {displaySteps.map((step, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="bg-white rounded-lg p-6 shadow-md text-center"
               >
                 {/* Icon - same size as BenefitsSection */}
                 {step.icon && (

@@ -24,13 +24,16 @@ import {
   Zap,
   Bug,
   TreeDeciduous,
-  ShieldCheck 
+  ShieldCheck,
+  FlaskConicalOff,
+  Biohazard,
+  MilkOff 
 } from 'lucide-react';
 
 // Custom SVG Icon Components - Odin's Brand
-// Card icon size: w-14 h-14 (56px) with strokeWidth="2" - no background container
+// Custom SVG icon size: w-16 h-16 (64px) with strokeWidth="2" - no background container
 const Icon50States = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14" style={{ color: '#2d5a3d' }}>
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16" style={{ color: '#2d5a3d' }}>
     <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1"/>
     <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
     <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2"/>
@@ -47,8 +50,9 @@ const Icon50States = () => (
   </svg>
 );
 
+// Custom SVG icon size: w-16 h-16 (64px) with strokeWidth="2"
 const IconLongLasting = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14" style={{ color: '#2d5a3d' }}>
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16" style={{ color: '#2d5a3d' }}>
     <circle cx="60.82" cy="54.12" r="4.26"/>
     <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
     <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
@@ -58,7 +62,7 @@ const IconLongLasting = () => (
 
 // Chemistry/Molecule icon for skin chemistry detection (Lactic Acid & Octenol)
 const IconChemistry = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14" style={{ color: '#2d5a3d' }}>
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16" style={{ color: '#2d5a3d' }}>
     <circle cx="50" cy="35" r="8" fill="currentColor" fillOpacity="0.2"/>
     <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
     <circle cx="65" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
@@ -69,9 +73,8 @@ const IconChemistry = () => (
 );
 
 // Custom Rainproof/Raindrop Icon - Odin's Brand
-// Card icon size: w-14 h-14 (56px) with strokeWidth="2"
 const IconRainproof = () => (
-  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-14 h-14" style={{ color: '#2d5a3d' }}>
+  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-16 h-16" style={{ color: '#2d5a3d' }}>
     <path d="M50 10c-10 20-30 35-30 55 0 20 15 35 30 35s30-15 30-35c0-20-20-35-30-55z" fill="currentColor" fillOpacity="0.1"/>
     <path d="M50 10c-10 20-30 35-30 55 0 20 15 35 30 35s30-15 30-35c0-20-20-35-30-55z" />
     <path d="M40 55c0 10 5 15 10 15s10-5 10-15" />
@@ -147,12 +150,25 @@ const iconMap: Record<string, React.FC | string> = {
   weatherproof: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
   cloud: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png",
   
+  // USDA BioPreferred / ribbon → Shopify PNG brand asset
+  ribbon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337",
+  biopreferred: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337",
+  "usda-bio": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337",
+  
   // Protection/EPA → ShieldCheck
   shield: ShieldCheck,
   "shield-check": ShieldCheck,
   epa: ShieldCheck,
   protection: ShieldCheck,
   registered: ShieldCheck,
+  
+  // No toxic chemicals → FlaskConicalOff
+  "flask-conical-off": FlaskConicalOff,
+  "flask-conical": FlaskConicalOff,
+  "no-toxic": FlaskConicalOff,
+  "biohazard": Biohazard,
+  chemical: FlaskConicalOff,
+  chemicals: FlaskConicalOff,
   
   // Legal/flag → Flag (for other uses)
   flag: Flag,
@@ -191,7 +207,7 @@ const iconMap: Record<string, React.FC | string> = {
   fly: Bug,
 };
 
-const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
+const DifferenceSection = ({ difference, background }: DifferenceSectionProps & { background?: string }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   
@@ -218,12 +234,17 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
   const sectionTitle = difference?.section?.title || brandDifference?.section?.title || `The ${brandName} Difference`;
   const sectionDescription = difference?.section?.description || brandDifference?.section?.description || "Discover why businesses trust our service";
 
+  // Light backgrounds need dark text, dark backgrounds need white text
+  const isLightBg = background && background !== '#333333';
+  const headingColor = isLightBg ? 'text-slate-900' : 'text-white';
+  const descColor = isLightBg ? 'text-slate-600' : 'text-white/80';
+
   return (
     <section
       id="difference"
       className="section-padding"
       ref={ref}
-      style={{ background: '#333333' }}
+      style={{ background: background || '#333333' }}
     >
       <div className="section-container">
         {/* Section header */}
@@ -233,16 +254,16 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+          <h2 className={`text-4xl sm:text-5xl md:text-6xl font-bold ${headingColor} mb-6 tracking-tight`}>
             {sectionTitle}
           </h2>
-          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+          <p className={`${descColor} text-lg md:text-xl max-w-2xl mx-auto leading-relaxed`}>
             {sectionDescription}
           </p>
         </motion.div>
 
         {/* Cards with dramatic effects */}
-        <div className={`grid md:grid-cols-2 ${differentials.length <= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-3'} gap-8`}>
+        <div className={`grid md:grid-cols-2 gap-8`}>
           {differentials.map((item, i) => {
             // Resolve icon from iconMap or use item.icon directly
             const mappedIcon = iconMap[item.icon || ''];
@@ -255,31 +276,23 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
             return (
               <motion.div
                 key={item.title}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
-                className="group"
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group p-6 transition-all duration-300 hover:-translate-y-1"
+                style={{ 
+                  background: 'white',
+                  borderLeft: '4px solid hsl(var(--secondary))',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                }}
               >
-                <div
-                  className="relative bg-white/95 backdrop-blur-xl rounded-2xl p-8 h-full transition-all duration-500 hover:-translate-y-2"
-                  style={{
-                    boxShadow:
-                      "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1)",
-                  }}
-                >
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-amber-400/0 via-amber-400/5 to-amber-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                  {/* Icon - no background, icons render at full size */}
-                  <div className="relative mb-6 flex items-center justify-center">
+                <div className="flex items-start gap-4">
+                  {/* Icon on the left */}
+                  <div className="flex-shrink-0 flex items-center justify-center">
                     {isImage ? (
                       <img src={iconValue as string} alt={item.title} className="w-16 h-16 object-contain" loading="lazy" />
                     ) : (
                       (() => {
-                        // Icon sizing (no background container):
-                        // - Lucide icons: w-10 h-10, strokeWidth={1.5}, color=#2d5a3d
-                        // - Custom SVGs: w-14 h-14, strokeWidth=2
-                        // - Image icons: w-16 h-16
                           switch(item.icon) {
                             case 'bug': return <Bug className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
                             case 'leaf': return <Leaf className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
@@ -302,7 +315,6 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
                             case 'duration':
                             case '30days':
                             case '30-days':
-                            case '30-days':
                             case 'long-lasting':
                             case 'longlasting':
                               return <IconLongLasting />;
@@ -315,6 +327,20 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
                             case 'flask':
                             case 'flask-conical':
                               return <IconChemistry />;
+                            case 'ribbon':
+                            case 'biopreferred':
+                            case 'usda-bio':
+                              return <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337" alt={item.title} className="w-16 h-16 object-contain" loading="lazy" />;
+                            case 'flask-conical-off':
+                            case 'no-toxic':
+                            case 'chemical':
+                            case 'chemicals':
+                              return <FlaskConicalOff className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'biohazard':
+                              return <Biohazard className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                            case 'milk-off':
+                            case 'milkoff':
+                              return <MilkOff className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
                             case 'cloud':
                             case 'droplet':
                             case 'water':
@@ -325,30 +351,43 @@ const DifferenceSection = ({ difference }: DifferenceSectionProps) => {
                             case 'weatherproof':
                               return <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png" alt={item.title} className="w-16 h-16 object-contain" loading="lazy" />;
                             default:
-return <Shield className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
+                              return <Shield className="w-10 h-10" strokeWidth={1.5} style={{ color: '#2d5a3d' }} />;
                           }
                         })()
                       )}
                   </div>
 
                   {/* Content */}
-                  <div className="relative">
-                    <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 leading-tight group-hover:text-amber-700 transition-colors duration-300">
+                  <div className="flex-1">
+                    <h3 className="font-display text-lg uppercase mb-2" style={{ color: 'hsl(var(--foreground))' }}>
                       {item.title}
                     </h3>
-                    <p
-                      className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300"
-                      dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.description) }}
-                    />
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                      {item.description}
+                    </p>
                   </div>
-
-                  {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
+</div>
               </motion.div>
             );
           })}
         </div>
+
+        {/* Chart / proof image */}
+        {difference?.image && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="mt-12 max-w-3xl mx-auto"
+          >
+            <img
+              src={difference.image}
+              alt={sectionTitle}
+              className="w-full rounded-xl shadow-2xl"
+              loading="lazy"
+            />
+          </motion.div>
+        )}
       </div>
     </section>
   );

@@ -6,6 +6,8 @@ interface WhyOdinsSectionProps {
   content: {
     headline: string;
     body: string;
+    image?: string;
+    imageAlt?: string;
     points?: Array<{
       icon?: string;
       title: string;
@@ -98,9 +100,11 @@ const defaultIcons = [
   <OdinsIconPackage key="package" />
 ];
 
-const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
+const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { background?: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  const sectionBg = background || 'hsl(var(--background))';
 
   // Default points if none provided
   const defaultPoints = [
@@ -133,7 +137,7 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
       id="why-odins"
       ref={ref}
       className="section-padding"
-      style={{ background: 'hsl(var(--background))' }}
+      style={{ background: sectionBg }}
     >
       <div className="section-container">
         <motion.div
@@ -159,11 +163,29 @@ const WhyOdinsSection = ({ content }: WhyOdinsSectionProps) => {
               style={{ color: 'hsl(var(--foreground))' }}
               dangerouslySetInnerHTML={{ __html: content.headline.replace(/\n/g, '<br />') }}
             />
-            <div className="prose prose-lg max-w-3xl mx-auto">
-              <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
-                <span dangerouslySetInnerHTML={{ __html: content.body }} />
-              </p>
-            </div>
+            {content.image ? (
+                <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+                  <div className="flex-1">
+                    <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
+                      <span dangerouslySetInnerHTML={{ __html: content.body }} />
+                    </p>
+                  </div>
+                  <div className="flex-shrink-0">
+                    <img
+                      src={content.image}
+                      alt={content.imageAlt || content.headline}
+                      className="rounded-lg shadow-lg w-full max-w-lg object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="prose prose-lg max-w-3xl mx-auto">
+                  <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
+                    <span dangerouslySetInnerHTML={{ __html: content.body }} />
+                  </p>
+                </div>
+              )}
           </div>
 
           {/* Points Grid */}

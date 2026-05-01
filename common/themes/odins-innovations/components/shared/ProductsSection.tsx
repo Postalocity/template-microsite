@@ -20,6 +20,7 @@ interface ProductsSectionProps {
     intro: string;
     items: Product[];
     cta: string;
+    note?: string;
     featured?: Product;
   };
   background?: string;
@@ -138,9 +139,9 @@ style={{ background: background || 'hsl(var(--muted))' }}
                     >
                       {featured.name}
                     </h3>
-                    <p className="font-body text-lg text-muted-foreground mb-6 leading-relaxed">
-                      {featured.desc || featured.description}
-                    </p>
+                    <p className="font-body text-lg text-muted-foreground mb-6 leading-relaxed" 
+                      dangerouslySetInnerHTML={{ __html: featured.desc || featured.description }}
+                    />
                     {featured.price && (
                       <div 
                         className="font-display text-3xl font-bold mb-6"
@@ -151,6 +152,8 @@ style={{ background: background || 'hsl(var(--muted))' }}
                     )}
                     <a
                       href={featured.link || featured.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 self-start px-8 py-4 font-display font-bold uppercase tracking-wide transition-all duration-300 hover:gap-4"
                       style={{ 
                         background: 'hsl(var(--secondary))',
@@ -199,9 +202,9 @@ style={{ background: background || 'hsl(var(--muted))' }}
                   >
                     {item.name}
                   </h4>
-                  <p className="font-body text-sm text-muted-foreground mb-4">
-                    {item.desc || item.description}
-                  </p>
+                  <p className="font-body text-sm text-muted-foreground mb-4"
+                    dangerouslySetInnerHTML={{ __html: item.desc || item.description }}
+                  />
                   {item.price && (
                     <div 
                       className="font-display text-xl font-bold mb-4"
@@ -212,15 +215,37 @@ style={{ background: background || 'hsl(var(--muted))' }}
                   )}
                   <a
                     href={item.link || item.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-body text-sm font-semibold transition-all duration-300 group-hover:gap-2"
                     style={{ color: 'hsl(var(--secondary))' }}
                   >
-                    Learn More
+                    Shop Now
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </motion.div>
               ))}
             </div>
+          )}
+
+          {/* Free Shipping / Note */}
+          {content.note && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.4, delay: 0.45 }}
+              className="text-center mt-8"
+            >
+              <span 
+                className="inline-block px-6 py-2 font-body text-sm font-semibold rounded-full"
+                style={{ 
+                  background: 'hsl(var(--secondary) / 0.1)',
+                  color: 'hsl(var(--secondary))'
+                }}
+              >
+                🚚 {content.note}
+              </span>
+            </motion.div>
           )}
 
           {/* Main CTA */}
@@ -232,6 +257,8 @@ style={{ background: background || 'hsl(var(--muted))' }}
           >
             <a
               href={content.cta ? content.cta.split(': ')[1] || content.cta : '#'}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 font-display font-bold uppercase tracking-wide text-lg transition-all duration-300 hover:gap-4"
               style={{ 
                 background: 'hsl(var(--primary))',

@@ -696,6 +696,10 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
     if (site.slug === 'scrape-scent-guide') {
       return generateScrapeScentTemplate(config, brandContext, brandId);
     }
+    // Route Food Scent Deer Attractants to its own template
+    if (site.slug === 'food-scent-deer-attractants') {
+      return generateFoodScentTemplate(config, brandContext, brandId);
+    }
     return generateOdinsInnovationsTemplate(config, brandContext, brandId);
   }
   
@@ -2381,7 +2385,7 @@ function App() {
                   <img
                     src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/longer_lasting_deer_scent.jpg?v=1776353659"
                     alt="Longer lasting synthetic deer scent performance"
-                    className="rounded-lg shadow-lg w-full max-w-sm object-cover"
+                className="rounded-lg shadow-lg w-full max-w-lg object-cover"
                     loading="lazy"
                   />
                 </div>
@@ -2520,6 +2524,176 @@ function App() {
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
       </BrandProvider>
+    </IKBProvider>
+  );
+}
+
+// Initialize React
+const root = createRoot(document.getElementById('root'));
+ root.render(<App />);
+`;
+}
+
+function generateFoodScentTemplate(config: SiteConfig, brandContext?: BrandContext, brandId?: string): string {
+  const { site } = config;
+  const brand = brandContext?.brand || {};
+  const contact = brandContext?.contact || {};
+  const social = brandContext?.social || {};
+
+  return `/**
+ * ${site.name} - Generated from template-microsite
+ * Generated at: ${new Date().toISOString()}
+ * Brand: ${brand.name || "Odin's Innovations"}
+ */
+
+import { createRoot } from 'react-dom/client';
+import { HeroSection, BenefitsSection, WhyOdinsSection, DifferenceSection, ProductsSection, ComparisonTable, TrustBadgesSection, FAQSection, SiteFooter, SiteNavigation } from '@/themes/odins-innovations/components/shared';
+import FloatingCTA from '@/components/shared/FloatingCTA';
+import { BrandProvider } from '@/contexts/BrandContext';
+import { IKBProvider } from '@/contexts/IKBContext';
+import '@/themes/odins-innovations/globals.css';
+import config from './config.json';
+
+const brandConfig = ${JSON.stringify(brand)};
+const contactConfig = ${JSON.stringify(contact)};
+const socialConfig = ${JSON.stringify(social)};
+const ikbConfig = { rules: { promoCodes: { 'food-scent-deer-attractants': 'HUNT2026' } } };
+  const promoCode = ikbConfig.rules?.promoCodes?.['food-scent-deer-attractants'] || 'HUNT2026';
+
+  function App() {
+  const { content } = config;
+  const navCta = config.navigation?.cta;
+
+  return (
+    <IKBProvider ikb={ikbConfig}>
+    <BrandProvider
+      brand={brandConfig}
+      contact={contactConfig}
+      social={socialConfig}
+    >
+      <SiteNavigation config={config} />
+      <HeroSection hero={content.hero} />
+      {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+      <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
+      <ProductsSection content={content.products} />
+      <div style={{ background: 'hsl(30, 20%, 95%)' }}>
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+      </div>
+      <WhyOdinsSection content={content.outperforms} background="hsl(var(--muted))" />
+
+      {/* How to Deploy */}
+      <section id="deployment" className="section-padding" style={{ background: '#1a1d29' }}>
+        <div className="section-container">
+          <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
+            {content.deployment.title}
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <ol className="space-y-6">
+                  {content.deployment.steps.map((step: string, idx: number) => (
+                    <li key={idx} className="flex gap-4">
+                      <span className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center font-display font-bold text-sm" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                        {idx + 1}
+                      </span>
+                      <p className="font-body text-base text-gray-300 leading-relaxed pt-1">{step}</p>
+                    </li>
+                  ))}
+                </ol>
+                {content.deployment.note && (
+                  <p className="mt-8 font-body text-sm text-gray-400 italic border-l-2 pl-4" style={{ borderColor: 'hsl(var(--accent))' }}>
+                    {content.deployment.note}
+                  </p>
+                )}
+              </div>
+              <div className="flex flex-col gap-6">
+                {content.deployment.videos.map((video: { src: string; title: string }, idx: number) => (
+                  <div key={idx} className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                    <iframe
+                      src={video.src}
+                      title={video.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="w-full h-full"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <DifferenceSection difference={content.environmental} background="hsl(var(--muted))" />
+
+      {/* Baiting Laws and Scent Attractants */}
+      {content.baitingLaws && (
+      <section id="baiting-laws" className="section-padding" style={{ background: '#1a1d29' }}>
+        <div className="section-container">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-display text-4xl md:text-5xl uppercase mb-6 text-center text-white" dangerouslySetInnerHTML={{ __html: (content.baitingLaws.title || '').replace(' & ', ' &<br />') }} />
+            <p className="font-body text-lg leading-relaxed text-gray-300 text-center mb-12">
+              {content.baitingLaws.subtitle}
+            </p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="p-6" style={{ background: 'rgba(255,255,255,0.05)', borderLeft: '4px solid hsl(var(--accent))' }}>
+                <h3 className="font-display text-xl uppercase mb-3 text-white">Scent Attractants</h3>
+                <ul className="space-y-3 font-body text-sm text-gray-300">
+                  {(content.baitingLaws.scentPoints || []).map((point: string, i: number) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span style={{ color: 'hsl(var(--accent))' }}>✓</span>
+                    <span>{point}</span>
+                  </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-6" style={{ background: 'rgba(255,255,255,0.05)', borderLeft: '4px solid #ef4444' }}>
+                <h3 className="font-display text-xl uppercase mb-3 text-white">Traditional Bait (Corn, Feed)</h3>
+                <ul className="space-y-3 font-body text-sm text-gray-300">
+                  {(content.baitingLaws.baitPoints || []).map((point: string, i: number) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-red-400">✗</span>
+                    <span>{point}</span>
+                  </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            {content.baitingLaws.disclaimer && (
+            <div className="mt-10 p-6 rounded-lg text-center" style={{ background: 'rgba(255,255,255,0.08)' }}>
+              <p className="font-body text-sm text-gray-400">
+                <strong className="text-white">Important:</strong> {content.baitingLaws.disclaimer}
+              </p>
+            </div>
+            )}
+          </div>
+        </div>
+      </section>
+      )}
+
+      {/* Reviews */}
+      <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'What Hunters Are Saying'}</h2>
+            <p className="text-lg text-stone-600 max-w-2xl mx-auto">{content.reviews?.description || ''}</p>
+          </div>
+          <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations"></div>
+          <style dangerouslySetInnerHTML={{__html: \`
+            .stamped-widget-buttons,
+            .stamped-full-page-tabs {
+              display: none !important;
+            }
+          \`}} />
+        </div>
+      </section>
+
+      <FAQSection faq={content.faq} />
+
+      <SiteFooter config={config} />
+      {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
+    </BrandProvider>
     </IKBProvider>
   );
 }
