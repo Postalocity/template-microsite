@@ -98,6 +98,11 @@
     "what-is-cwd": {
       "headline": "What is CWD and why does it compromise natural deer urine?",
       "intro": "CWD is a fatal, contagious neurodegenerative disorder affecting cervids (deer, elk, moose, reindeer). It is 100% fatal with no vaccine, treatment or cure.",
+      "cta": {
+        "text": "CWD-Safe Synthetic Scents",
+        "href": "https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category",
+        "external": true
+      },
       "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents with zero animal-derived material \u2014 eliminating prion risk entirely. Odin's is legal for use in every state and in Canada.",
       "cards": [
         {
@@ -122,9 +127,22 @@
         }
       ]
     },
-    "why-odins": {
+"why-odins": {
       "headline": "Why Odin's Synthetic Deer Scent Outperforms Natural Urine",
-      "body": "Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release \u2014 reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified.\n\nOdin's is legal for use in every state and in Canada."
+      "body": "Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified.\n\nOdin's is legal for use in every state and in Canada.",
+      "usdaBioPreferred": {
+        "title": "USDA BioPreferred® Certified",
+        "description": "Our biodegradable polymer contains 42% certified biobased content. Both beaded and liquid products are USDA BioPreferred Certified.",
+        "certifiedUnder": "LC BioPlastics LLC",
+        "detailsLinkText": "View Details →",
+        "detailsUrl": "https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label",
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558",
+        "imageAlt": "USDA Certified Biobased Product - 42%"
+      },
+      "cta": {
+        "text": "Shop Rut Scents",
+        "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
+      }
     },
     "how-it-works": {
       "headline": "The Science Behind Scent Bead Technology",
@@ -211,6 +229,10 @@
     },
     "comparison": {
       "headline": "Synthetic vs Natural Deer Scent \u2014 Direct Comparison",
+      "cta": {
+        "text": "See Why Hunters Choose Synthetic",
+        "href": "https://www.odinsinnovations.com/pages/testimonials"
+      },
       "table": [
         [
           "Attribute",
@@ -261,6 +283,10 @@
     },
     "faq": {
       "headline": "Regulatory Compliance concerning CWD",
+      "cta": {
+        "text": "Synthetic Scent Beads",
+        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      },
       "items": [
         {
           "question": "What is CWD and why does it matter for deer scent products?",
@@ -311,6 +337,10 @@
           "answer": "Yes, the time varies by the environment. A good rule of thumb is the time it would take for a banana peel to biodegrade. We also certified our products \u2013 liquid and bead with infused scent - through the USDA's BioPreferred Program, which requires independent laboratory verification of biobased content."
         }
       ]
+    },
+    "reviews": {
+      "title": "Success Stories from the Field",
+      "subtitle": "Real results from hunters who trust Odin's synthetic scents."
     },
     "footer": {
       "finalCTA": {

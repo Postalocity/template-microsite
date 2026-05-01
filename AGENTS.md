@@ -45,6 +45,88 @@ These documents capture:
 **Never save to root** - Root directory is for essential files only:
 - `README.md`, `CHANGELOG.md`, `package.json`, `tsconfig.json`
 
+## 🚨 Generated Files Architecture
+
+### The Golden Rule
+**EDIT THE SOURCE, NOT THE OUTPUT.**
+
+All microsites are generated from templates. Manual edits to generated files are overwritten on next regeneration.
+
+| ❌ Edit This | ✅ Edit This Instead |
+|--------------|-----------------------|
+| `sites/*/main.tsx` | `config/sites/[brand]/[site].json` + `scripts/generate-site.ts` |
+| `sites/*/config.json` | `config/sites/[brand]/[site].json` |
+| `sites/*/index.html` | `scripts/generate-site.ts` template function |
+| `sites/*/vite.config.ts` | `scripts/generate-site.ts` → `generateViteConfig()` |
+| `sites/*/tailwind.config.ts` | `scripts/generate-site.ts` → `generateTailwindConfig()` |
+| `sites/*/postcss.config.js` | Copied from `common/` (read-only) |
+| `sites/*/globals.css` | `common/themes/[brand]/globals.css` (symlink/copy) |
+
+### Auto-Generated File Warnings
+All generated files now include a header warning:
+```
+⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+• EDIT THE SOURCE, NOT THE OUTPUT
+• To change content → edit config/sites/[brand]/[site].json, then regenerate
+• To change layout  → edit the template function in generate-site.ts
+• To add custom sections → create a new template function & add routing
+```
+
+### Source of Truth
+1. **Site Content**: `config/sites/[brand]/[site].json` — ALL content (text, URLs, images, section data)
+2. **Site Layout**: `scripts/generate-site.ts` — template functions per brand/site type
+3. **Shared Components**: `common/themes/[brand]/components/shared/` — reusable across sites
+4. **Brand Theme**: `common/themes/[brand]/globals.css` — colors, fonts, CSS variables
+
+### When a Site Needs Customization
+
+#### 1. Content Changes (90% of requests)
+Edit: `config/sites/[brand]/[site].json`
+Then: `npx tsx scripts/generate-site.ts --brand [brand] --service [site]`
+
+#### 2. Layout/Section Changes (9% of requests)
+Edit the template function in `scripts/generate-site.ts`:
+- Broadstroke sites → `generateBroadstrokeTemplate()`
+- Odin's sites → `generateOdinsInnovationsTemplate()` or specific:
+  - `generateCitronellaTemplate()`
+  - `generateCWDSiteTemplate()`
+  - `generateScrapeScentTemplate()`
+  - `generateDominantBuckTemplate()`
+  - `generateFoodScentTemplate()`
+
+#### 3. Custom Site Deviates (1% of requests — NEW SITE TYPE)
+When a site needs unique sections not in the brand template:
+1. Create a new template function: `function generateMySiteTemplate(config, brandContext, brandId)`
+2. Add routing in the switch/case block at the bottom of the file
+3. NEVER create custom components in `sites/[site]/` — always add to `common/themes/[brand]/components/shared/`
+
+### Centralized Styling Rule
+**ALL styling and components should be centralized under the brand theme for reuse.**
+
+| ❌ Don't | ✅ Do This Instead |
+|----------|---------------------|
+| Create `sites/xxx/MyComponent.tsx` | Add to `common/themes/[brand]/components/shared/` |
+| Inline CSS in generated main.tsx | Use CSS variables from `globals.css` |
+| Hardcode colors (#1a1d29, #2d5a3d) | Use `hsl(var(--primary))`, `hsl(var(--accent))`, etc. |
+| Create site-specific styles | Add to `common/themes/[brand]/` and reuse |
+
+### Pre-Commit Hook Defense
+The hook at `.git/hooks/pre-commit` blocks commits that modify generated files:
+```bash
+# This file is generated from config/sites/*.json
+# Make changes in: config/sites/[brand]/[service].json
+# Then regenerate: npx tsx scripts/generate-site.ts --brand [brand] --service [service]
+```
+
+**DO NOT bypass with `--no-verify`** — the hook exists for a reason. If you bypass it, manual edits will be overwritten on next regeneration.
+
+### Migration Path for Hardcoded Content
+If you find hardcoded text/URLs/colors in a generated `main.tsx`:
+1. Move the content to `config/sites/[brand]/[site].json` under appropriate key
+2. Update the template in `scripts/generate-site.ts` to read from `content.xxx`
+3. Regenerate: `npx tsx scripts/generate-site.ts --brand [brand] --service [site]`
+4. Verify build: `cd sites/[brand]/[site] && npm run build`
+
 ### Logging Guidelines
 
 **IMPORTANT**: Never use `console.log`, `console.warn`, or `console.error`. Use the framework logger instead.

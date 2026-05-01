@@ -27,6 +27,60 @@ const TEMPLATE_DIR = ROOT_DIR;
 import { processPricingPlaceholders } from '../common/utils/pricing';
 
 /**
+ * Generation warning comment for auto-generated files.
+ * Prepended to main.tsx and config.json to prevent manual edits.
+ */
+function getGenerationWarning(siteName: string, brandName: string, fileType: 'tsx' | 'json'): string {
+  const fileDesc = fileType === 'tsx' ? 'React component module' : 'runtime configuration';
+  const commentStyle = fileType === 'tsx'
+    ? { start: '/**', mid: ' *', end: ' */' }
+    : { start: '/*', mid: ' *', end: ' */' };
+  const { start, mid, end } = commentStyle;
+  const timestamp = new Date().toISOString();
+
+  return `${start}
+${mid} ============================================================================
+${mid} ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+${mid} ============================================================================
+${mid}
+${mid} File:      ${fileType === 'tsx' ? 'main.tsx' : 'config.json'}
+${mid} Type:      ${fileDesc}
+${mid} Site:      ${siteName}
+${mid} Brand:    ${brandName}
+${mid} Generated: ${timestamp}
+${mid} Generator: scripts/generate-site.ts
+${mid}
+${mid} ╔══════════════════════════════════════════════════════════════════════╗
+${mid} ║  EDIT THE SOURCE, NOT THE OUTPUT                                      ║
+${mid} ║                                                                      ║
+${mid} ║  To customize this site's content, edit:                              ║
+${mid} ║    config/sites/${brandName}/${siteName}.json                        ║
+${mid} ║                                                                      ║
+${mid} ║  To customize the site template, edit the generator function in:       ║
+${mid} ║    scripts/generate-site.ts                                          ║
+${mid} ║                                                                      ║
+${mid} ║  To add custom sections or deviate from the brand template,           ║
+${mid} ║  create a new template function (e.g., generateMySiteTemplate)       ║
+${mid} ║  and add routing in the switch/case block.                           ║
+${mid} ║                                                                      ║
+${mid} ║  To share styling or components across sites, add them to:            ║
+${mid} ║    common/themes/${brandName}/components/shared/                    ║
+${mid} ║  Never create site-specific component files in the generated site.    ║
+${mid} ║                                                                      ║
+${mid} ║  DO NOT bypass the pre-commit hook with --no-verify.                  ║
+${mid} ║  The hook exists to prevent manual edits to generated files.          ║
+${mid} ╚══════════════════════════════════════════════════════════════════════╝
+${end}`;
+}
+
+/**
+ * Source file reference for editing — maps generated files to their source.
+ */
+function getSourceReference(brandName: string, siteName: string): string {
+  return `Source: config/sites/${brandName}/${siteName}.json | Template: scripts/generate-site.ts`;
+}
+
+/**
  * TypeScript interfaces for type safety (Codex #11)
  */
 interface SiteInfo {
@@ -566,8 +620,21 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     const indexContent = generateIndexFile(config, brandContext, brandId);
     fs.writeFileSync(path.join(siteDir, 'main.tsx'), indexContent);
 
-    // Copy config.json
-    fs.writeFileSync(path.join(siteDir, 'config.json'), JSON.stringify(config, null, 2));
+    // Copy config.json with generation warning
+    const configWarning = getGenerationWarning(site.slug, brandId || 'unknown', 'json');
+    // JSON doesn't support comments, so we add a _generated metadata field
+    const configWithWarning = {
+      _generated: {
+        warning: 'AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/' + (brandId || 'unknown') + '/' + site.slug + '.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand ' + (brandId || 'unknown') + ' --service ' + site.slug,
+        source: 'config/sites/' + (brandId || 'unknown') + '/' + site.slug + '.json',
+        template: 'scripts/generate-site.ts',
+        generatedAt: new Date().toISOString(),
+        doNotEdit: true,
+        doNotBypassPreCommitHook: true
+      },
+      ...config
+    };
+    fs.writeFileSync(path.join(siteDir, 'config.json'), JSON.stringify(configWithWarning, null, 2));
 
     // Generate vite.config.ts
     const viteConfigContent = generateViteConfig(site.slug, brandId);
@@ -681,7 +748,7 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
   }
   if (brandId === 'odins-innovations') {
     // Route Citronella to its own template
-    if (site.slug === 'citronella-mosquito-repellent') {
+    if (site.slug === 'hunting-mosquito-repellent') {
       return generateCitronellaTemplate(config, brandContext, brandId);
     }
     // Route CWD guide to its own template
@@ -752,9 +819,24 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
   const usesBrandTheme = brandId && fs.existsSync(path.join(TEMPLATE_DIR, 'common/themes', brandId, 'globals.css'));
   
   return `/**
- * ${site.name} - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: ${brand.name}
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     ${brand.name}
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/${brandId || 'unknown'}/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/${brandId || 'brand'}/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -1072,9 +1154,24 @@ function generateBroadstrokeTemplate(config: SiteConfig, brandContext?: BrandCon
   };
 
   return `/**
- * ${site.name} - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: ${brand.name || 'Broadstroke'}
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     ${brand.name || 'Broadstroke'}
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/${brandId || 'broadstroke'}/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/${brandId || 'broadstroke'}/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -1185,9 +1282,24 @@ function generatePromoTemplate(config: SiteConfig, brandContext?: BrandContext, 
   };
 
   return `/**
- * ${site.name} - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: ${brand.name || 'Broadstroke'}
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     ${brand.name || 'Broadstroke'}
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/${brandId || 'broadstroke'}/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/${brandId || 'broadstroke'}/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -1254,9 +1366,24 @@ function generateOdinsInnovationsTemplate(config: SiteConfig, brandContext?: Bra
   const ikb = config.ikb || brandContext?.ikb || {};
   
   return `/**
- * ${site.name} - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: Odin's Innovations
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     Odin's Innovations
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -1423,10 +1550,25 @@ function generateCitronellaTemplate(config: SiteConfig, brandContext?: BrandCont
   const social = brandContext?.social || {};
   const ikb = config.ikb || brandContext?.ikb || {};
   
-  return `/**
- * Odin's Innovations Citronella Mosquito Repellent - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: Odin's Innovations
+return `/**
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     Odin's Innovations
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -1470,10 +1612,10 @@ function App() {
             <div className="section-container">
               <div className="text-center mb-12">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
-                  Mosquito Control for Hunting
+                  {content.introduction.headline}
                 </h2>
                 <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                  Peak protection when you need it most
+                  {content.introduction.subtitle}
                 </p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1523,7 +1665,7 @@ function App() {
                   {content['why-odins'].headline}
                 </h2>
                 <p className="font-body text-lg max-w-2xl mx-auto text-gray-400">
-                  Professional performance standards for serious hunters
+                  {content['why-odins'].subtitle}
                 </p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -1663,9 +1805,9 @@ function App() {
         
         {/* Stamped.io Reviews */}
         <StampedReviewsSection 
-          title="What Hunters Are Saying"
-          subtitle="Field Reports"
-          description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages."
+          title={content.reviews?.title}
+          subtitle={content.reviews?.subtitle}
+          description={content.reviews?.description}
         />
         
         {/* Comparison Table */}
@@ -1680,8 +1822,6 @@ function App() {
         
         {/* FAQ */}
         {content.faq && <FAQSection faq={content.faq} />}
-        
-        <SiteFooter config={config} />}
         
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
@@ -1704,10 +1844,24 @@ function generateCWDSiteTemplate(config: SiteConfig, brandContext?: BrandContext
   const ikb = config.ikb || brandContext?.ikb || {};
   
   return `/**
- * CWD & Synthetic Scent Guide - Odin's Innovations
- * Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: Odin's Innovations
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      synthetic-scent-cwd-guide
+ * Brand:     Odin's Innovations
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/synthetic-scent-cwd-guide.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -1728,7 +1882,7 @@ const socialConfig = ${JSON.stringify(social)};
 const ikbConfig = ${JSON.stringify(ikb)};
 
 // Get promo code from IKB for the service
-const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
+const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || config.ikb?.rules?.promoCodes?.['${site.slug}'] || '';
 
 function App() {
   const { content } = config;
@@ -1796,8 +1950,8 @@ function App() {
               
               {/* CTA */}
               <div className="text-center">
-                <a href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
-                  CWD-Safe Synthetic Scents
+                <a href={content['what-is-cwd'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
+                  {content['what-is-cwd'].cta?.text || 'Learn More'}
                 </a>
               </div>
             </div>
@@ -1815,37 +1969,36 @@ function App() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
                 <div className="bg-white rounded-xl p-6 shadow-lg">
                   <img 
-                    src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
-                    alt="USDA Certified Biobased Product - 42%"
+                    src={content['why-odins'].usdaBioPreferred?.imageUrl || 'https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558'} 
+                    alt={content['why-odins'].usdaBioPreferred?.imageAlt || 'USDA Certified Biobased Product'}
                     className="w-48 h-auto"
                   />
                 </div>
                 <div className="text-left max-w-md">
                   <p className="text-lg text-stone-700 mb-2">
-                    <strong>USDA BioPreferred® Certified</strong>
+                    <strong>{content['why-odins'].usdaBioPreferred?.title || 'USDA BioPreferred® Certified'}</strong>
                   </p>
                   <p className="text-stone-600 mb-4">
-                    Our biodegradable polymer contains 42% certified biobased content. 
-                    Both beaded and liquid products are USDA BioPreferred Certified.
+                    {content['why-odins'].usdaBioPreferred?.description || 'Our biodegradable polymer contains 42% certified biobased content. Both beaded and liquid products are USDA BioPreferred Certified.'}
                   </p>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 text-sm">
                     <span className="text-stone-500">Certified Under:</span>
-                    <span className="font-medium text-stone-700">LC BioPlastics LLC</span>
+                    <span className="font-medium text-stone-700">{content['why-odins'].usdaBioPreferred?.certifiedUnder || 'LC BioPlastics LLC'}</span>
                     <a 
-                      href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
+                      href={content['why-odins'].usdaBioPreferred?.detailsUrl || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2"
                     >
-                      View Details →
+                      {content['why-odins'].usdaBioPreferred?.detailsLinkText || 'View Details →'}
                     </a>
                   </div>
                 </div>
               </div>
               
               <div className="text-center">
-                <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
-                  Shop Rut Scents
+                <a href={content['why-odins'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
+                  {content['why-odins'].cta?.text || 'Shop Now'}
                 </a>
               </div>
             </div>
@@ -1976,8 +2129,8 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
               <div className="text-center mt-8">
-                <a href="https://www.odinsinnovations.com/pages/testimonials" className="btn-accent text-base px-8 py-3 inline-block">
-                  See Why Hunters Choose Synthetic
+                <a href={content['comparison'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
+                  {content['comparison'].cta?.text || 'See Why Hunters Choose Synthetic'}
                 </a>
               </div>
             </div>
@@ -1988,8 +2141,8 @@ function App() {
         <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'Success Stories from the Field'}</h2>
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto">{content.reviews?.subtitle || "Real results from hunters who trust Odin\\u2019s synthetic scents."}</p>
             </div>
             
             {/* Stamped.io Reviews Widget - Rut Scents Products */}
@@ -2011,8 +2164,8 @@ function App() {
           <section id="faq" className="bg-muted/30">
             <FAQSection faq={{ ...content['faq'], showContactSection: false }} />
             <div className="text-center pb-8">
-              <a href="https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
-                Synthetic Scent Beads
+              <a href={content['faq'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
+                {content['faq'].cta?.text || 'Shop Now'}
               </a>
             </div>
           </section>
@@ -2039,9 +2192,30 @@ function generateDominantBuckTemplate(config: SiteConfig, brandContext?: BrandCo
   const ikb = config.ikb || brandContext?.ikb || {};
   
   return `/**
- * ${site.name} - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: Odin's Innovations - Dominant Buck Scent Guide
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     Odin's Innovations
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
+ */
+
+import { createRoot } from 'react-dom/client';
+
+// ⚠️ DO NOT EDIT — This file is auto-generated. See source config and template.
+// Source: config/sites/odins-innovations/${site.slug}.json | Template: scripts/generate-site.ts
  */
 
 import { createRoot } from 'react-dom/client';
@@ -2228,10 +2402,25 @@ function generateScrapeScentTemplate(config: SiteConfig, brandContext?: BrandCon
   const social = brandContext?.social || {};
   const ikb = config.ikb || brandContext?.ikb || {};
 
-  return `/**
- * Odin's Innovations Scrape Scent Guide - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: Odin's Innovations
+return `/**
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      citronella-mosquito-repellent
+ * Brand:     Odin's Innovations
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/citronella-mosquito-repellent.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -2541,9 +2730,24 @@ function generateFoodScentTemplate(config: SiteConfig, brandContext?: BrandConte
   const social = brandContext?.social || {};
 
   return `/**
- * ${site.name} - Generated from template-microsite
- * Generated at: ${new Date().toISOString()}
- * Brand: ${brand.name || "Odin's Innovations"}
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     ${brand.name || "Odin's Innovations"}
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
