@@ -2216,9 +2216,6 @@ import { createRoot } from 'react-dom/client';
 
 // ⚠️ DO NOT EDIT — This file is auto-generated. See source config and template.
 // Source: config/sites/odins-innovations/${site.slug}.json | Template: scripts/generate-site.ts
- */
-
-import { createRoot } from 'react-dom/client';
 import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, HowItWorksSection, ProductsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
