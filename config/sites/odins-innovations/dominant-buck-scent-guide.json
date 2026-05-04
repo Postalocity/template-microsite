@@ -225,7 +225,8 @@
       "stamped": {
         "title": "Product Reviews",
         "subtitle": "Verified Buyers",
-        "description": "See what verified buyers are saying about Odin's Dominant Buck products."
+        "description": "See what verified buyers are saying about Odin's Dominant Buck products.",
+        "take": 6
       }
     },
      "faq": {
