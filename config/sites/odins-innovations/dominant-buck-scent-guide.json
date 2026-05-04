@@ -48,7 +48,7 @@
   "navigation": {
     "links": [
       { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Deployment", "href": "#deployment" },
+      { "label": "How To Use", "href": "#deployment" },
       { "label": "Why Odin's", "href": "#why-odins" },
       { "label": "Products", "href": "#products" },
       { "label": "FAQ", "href": "#faq" }
@@ -77,7 +77,7 @@
           "variant": "primary"
         },
         {
-          "text": "See Deployment Guide",
+          "text": "How to Use",
           "href": "#deployment",
           "variant": "outline"
         }
