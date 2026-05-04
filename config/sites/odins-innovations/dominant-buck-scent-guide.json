@@ -223,10 +223,9 @@
       "title": "What Hunters Are Saying",
       "description": "Real results from hunters who put Odin's to the test in the field.",
       "stamped": {
-        "widgetId": "stamped-reviews-widget",
-        "widgetType": "full-page",
-        "take": 6,
-        "productBrand": "Odin's Innovations"
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's Dominant Buck products."
       }
     },
      "faq": {
