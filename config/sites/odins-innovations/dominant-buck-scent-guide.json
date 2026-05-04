@@ -219,22 +219,15 @@
       ],
       "note": "Free shipping on orders over $50. Use promo code HUNT2026 at checkout."
     },
-    "testimonials": {
-      "title": "Hunter Results",
-      "quotes": [
-        {
-          "text": "Observed increased scrape activity over three weeks with the beads still releasing scent after multiple rain events.",
-          "author": "Mallory A., Kansas"
-        },
-        {
-          "text": "Daily buck visits on trail cam throughout October and November using Dominant Buck + Scrape Blend.",
-          "author": "Randy & Tony, Michigan"
-        },
-        {
-          "text": "Powerful, season-long scent that maintained integrity without daily reapplication.",
-          "author": "Grant Meyer"
-        }
-      ]
+    "reviews": {
+      "title": "What Hunters Are Saying",
+      "description": "Real results from hunters who put Odin's to the test in the field.",
+      "stamped": {
+        "widgetId": "stamped-reviews-widget",
+        "widgetType": "full-page",
+        "take": 6,
+        "productBrand": "Odin's Innovations"
+      }
     },
      "faq": {
        "title": "Frequently Asked Questions",
