@@ -1501,7 +1501,7 @@ function App() {
         {/* CTA: See Why Hunters Choose Synthetic */}
         <div className="pb-8 text-center" style={{ background: '#333333' }}>
           <a 
-            href="#comparison" 
+            href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" 
             className="inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90 rounded"
             style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}
           >
