@@ -34,7 +34,7 @@ const StampedReviewsSection = ({
           className="stamped-main-widget" 
           data-widget-type="full-page"
           data-fill-empty="false"
-          data-per-page="10"
+          data-take="6"
         ></div>
         
         {/* Stamped.io Script */}
