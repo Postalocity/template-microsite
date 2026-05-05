@@ -263,7 +263,7 @@ const DifferenceSection = ({ difference, background }: DifferenceSectionProps & 
         </motion.div>
 
         {/* Cards with dramatic effects */}
-        <div className={`grid md:grid-cols-2 gap-6 max-w-4xl mx-auto`}>
+        <div className={`grid md:grid-cols-3 gap-6 max-w-5xl mx-auto`}>
           {differentials.map((item, i) => {
             // Resolve icon from iconMap or use item.icon directly
             const mappedIcon = iconMap[item.icon || ''];
