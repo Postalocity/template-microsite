@@ -31,8 +31,9 @@ const ProductsSection = ({ content, background }: ProductsSectionProps) => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   // If no featured product, use first item
-  const featured = content.featured || content.items[0];
-  const otherProducts = content.items.filter(item => item.name !== featured?.name);
+  const items = content.items || content.featured?.items || content;
+  const featured = content.featured || items[0];
+  const otherProducts = items.filter(item => item.name !== featured?.name);
 
   return (
     <section
