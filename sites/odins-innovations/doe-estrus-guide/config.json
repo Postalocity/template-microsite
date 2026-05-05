@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/doe-estrus-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service doe-estrus-guide",
     "source": "config/sites/odins-innovations/doe-estrus-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-05T15:29:56.398Z",
+    "generatedAt": "2026-05-05T15:32:11.240Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -116,7 +116,7 @@
         },
         {
           "text": "How It Works",
-          "href": "#how-it-works",
+          "href": "https://www.youtube.com/watch?v=mRcfYfploNg",
           "variant": "outline"
         }
       ]
