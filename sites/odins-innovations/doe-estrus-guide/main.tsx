@@ -3,7 +3,7 @@
  *
  * Site:      doe-estrus-guide
  * Brand:     Odin's Innovations
- * Generated: 2026-05-05T15:07:33.373Z
+ * Generated: 2026-05-05T15:10:01.749Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -119,7 +119,11 @@ function App() {
           </section>
         )}
         
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        {content.comparison && (
+          <section id="comparison" className="py-20" style={{ background: '#f8f9fa' }}>
+            <ComparisonTable comparison={content.comparison} promoCode={promoCode} />
+          </section>
+        )}
         
         {/* Section 6: How It Works */}
         {content['how-it-works'] ? <HowItWorksSection howItWorks={content['how-it-works']} /> : <HowItWorksSection />}
