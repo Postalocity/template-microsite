@@ -17,7 +17,7 @@ const DeploymentSection = ({ headline, methods }: DeploymentSectionProps) => {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="deployment" className="section-padding" style={{ background: '#1a1d29' }}>
+    <section id="how-to-use" className="section-padding" style={{ background: '#1a1d29' }}>
       <div className="section-container">
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-white text-center">
           {headline}

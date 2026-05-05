@@ -214,7 +214,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                     </div>
                   )}
                   <a
-                    href={item.link || item.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
+                    href={item.url || item.link || item.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-body text-sm font-semibold transition-all duration-300 group-hover:gap-2"
