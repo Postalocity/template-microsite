@@ -3,7 +3,7 @@
  *
  * Site:      doe-estrus-guide
  * Brand:     Odin's Innovations
- * Generated: 2026-05-05T15:51:24.093Z
+ * Generated: 2026-05-05T15:59:42.881Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

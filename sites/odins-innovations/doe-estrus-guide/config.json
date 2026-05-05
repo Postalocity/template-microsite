@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/doe-estrus-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service doe-estrus-guide",
     "source": "config/sites/odins-innovations/doe-estrus-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-05T15:51:24.095Z",
+    "generatedAt": "2026-05-05T15:59:42.882Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -185,7 +185,7 @@
           "href": "https://www.odinsinnovations.com/products/scrape-blend-scent-beads"
         }
       ],
-      "cta": "Shop the full collection: https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      "cta": "Shop the full collection: https://www.odinsinnovations.com/collections/all"
     },
     "signatureScents": {
       "headline": "Signature Scent Beads",
