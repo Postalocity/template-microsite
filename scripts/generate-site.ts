@@ -1506,99 +1506,96 @@ function App() {
           </section>
         )}
         
-        {/* Section 7: How to Use */}
+        {/* Section 7: How to Use - Dark background with steps on left, video on right */}
         {content['how-to-use'] && (
-          <section id="how-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+          <section id="how-to-use" className="section-padding" style={{ background: '#1a1d29' }}>
             <div className="section-container">
-              {/* Section Header */}
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content['how-to-use'].headline}
-                </h2>
-                {content['how-to-use'].body && (
-                  <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                    {content['how-to-use'].body}
-                  </p>
-                )}
-              </div>
-
-              {/* Video Section */}
-              {(content['how-to-use'].video || content['how-it-works']?.video) && (
-                <div className="mb-12">
-                  <div className="text-center mb-6">
-                    <h3 className="font-display text-2xl md:text-3xl uppercase" style={{ color: '#1a1a1a' }}>
-                      {content['how-to-use'].videoHeadline || "See How to Use It"}
-                    </h3>
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
+                {content['how-to-use'].headline}
+              </h2>
+              <div className="max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                  {/* Left side: Steps */}
+                  <div className="space-y-6">
+                    {/* Scent Beads Card */}
+                    {content['how-to-use'].beads && (
+                      <div className="p-6 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <div className="flex items-start gap-4">
+                          {content['how-to-use'].beadsIcon && (
+                            <div className="flex-shrink-0">
+                              <img 
+                                src={content['how-to-use'].beadsIcon} 
+                                alt="Scent Beads"
+                                className="w-16 h-16 object-contain"
+                                loading="lazy"
+                              />
+                            </div>
+                          )}
+                          <div>
+                            <h3 className="font-display text-xl uppercase mb-2 text-white">
+                              {content['how-to-use'].beadsTitle || "Scent Beads"}
+                            </h3>
+                            <p className="font-body text-base text-gray-300 leading-relaxed">
+                              {content['how-to-use'].beads}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {/* Liquid Formula Card */}
+                    {content['how-to-use'].liquid && (
+                      <div className="p-6 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <div className="flex items-start gap-4">
+                          {content['how-to-use'].liquidIcon && (
+                            <div className="flex-shrink-0">
+                              <img 
+                                src={content['how-to-use'].liquidIcon} 
+                                alt="Liquid Formula"
+                                className="w-16 h-16 object-contain"
+                                loading="lazy"
+                              />
+                            </div>
+                          )}
+                          <div>
+                            <h3 className="font-display text-xl uppercase mb-2 text-white">
+                              {content['how-to-use'].liquidTitle || "Liquid Formula"}
+                            </h3>
+                            <p className="font-body text-base text-gray-300 leading-relaxed">
+                              {content['how-to-use'].liquid}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                  <div className="max-w-3xl mx-auto">
-                    <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
-                      <iframe
-                        src={(() => {
-                          const videoUrl = content['how-to-use']?.video || content['how-it-works']?.video || '';
-                          if (!videoUrl) return '';
-                          if (videoUrl.includes('youtu.be/')) {
-                            const videoId = videoUrl.split('youtu.be/')[1]?.split('?')[0];
-                            return 'https://www.youtube.com/embed/' + videoId;
-                          }
-                          if (videoUrl.includes('watch?v=')) {
-                            const videoId = videoUrl.split('watch?v=')[1]?.split('&')[0];
-                            return 'https://www.youtube.com/embed/' + videoId;
-                          }
-                          return videoUrl;
-                        })()}
-                        title="How to Use"
-                        className="absolute inset-0 w-full h-full"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      />
+                  {/* Right side: Video */}
+                  {(content['how-to-use'].video || content['how-it-works']?.video) && (
+                    <div className="flex justify-center">
+                      <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg bg-black">
+                        <iframe
+                          src={(() => {
+                            const videoUrl = content['how-to-use']?.video || content['how-it-works']?.video || '';
+                            if (!videoUrl) return '';
+                            if (videoUrl.includes('youtu.be/')) {
+                              const videoId = videoUrl.split('youtu.be/')[1]?.split('?')[0];
+                              return 'https://www.youtube.com/embed/' + videoId;
+                            }
+                            if (videoUrl.includes('watch?v=')) {
+                              const videoId = videoUrl.split('watch?v=')[1]?.split('&')[0];
+                              return 'https://www.youtube.com/embed/' + videoId;
+                            }
+                            return videoUrl;
+                          })()}
+                          title="How to Use"
+                          className="w-full h-full"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
-              )}
-
-              {/* Product Cards */}
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {content['how-to-use'].beads && (
-                  <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                    {content['how-to-use'].beadsIcon && (
-                      <div className="mb-4 flex justify-center">
-                        <img 
-                          src={content['how-to-use'].beadsIcon} 
-                          alt="Scent Beads"
-                          className="w-24 h-24 object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                    <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>
-                      {content['how-to-use'].beadsTitle || "Scent Beads"}
-                    </h3>
-                    <p className="font-body text-base text-muted-foreground leading-relaxed">
-                      {content['how-to-use'].beads}
-                    </p>
-                  </div>
-                )}
-                {content['how-to-use'].liquid && (
-                  <div className="bg-white p-8 rounded-lg shadow-md text-center">
-                    {content['how-to-use'].liquidIcon && (
-                      <div className="mb-4 flex justify-center">
-                        <img 
-                          src={content['how-to-use'].liquidIcon} 
-                          alt="Liquid Formula"
-                          className="w-24 h-24 object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                    <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>
-                      {content['how-to-use'].liquidTitle || "Liquid Formula"}
-                    </h3>
-                    <p className="font-body text-base text-muted-foreground leading-relaxed">
-                      {content['how-to-use'].liquid}
-                    </p>
-                  </div>
-                )}
               </div>
             </div>
           </section>
