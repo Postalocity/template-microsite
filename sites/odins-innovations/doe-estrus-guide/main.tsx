@@ -3,7 +3,7 @@
  *
  * Site:      doe-estrus-guide
  * Brand:     Odin's Innovations
- * Generated: 2026-05-05T15:36:30.343Z
+ * Generated: 2026-05-05T15:42:29.849Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -54,21 +54,35 @@ function App() {
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
         
-        {/* Section 1: Why Synthetic (light) */}
+        {/* Section 1: When to Use */}
+        {content['when-to-use'] && (
+          <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+            <div className="section-container">
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
+                {content['when-to-use'].headline}
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed whitespace-pre-wrap">
+                {content['when-to-use'].body}
+              </p>
+            </div>
+          </section>
+        )}
+        
+        {/* Section 2: Why Synthetic (light) */}
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
-        {/* Section 2: Products (dark) */}
+        {/* Section 10: Products (dark) */}
         <div style={{ background: '#1a1d29' }}>
           {content.products && <ProductsSection content={content.products} />}
         </div>
         
-        {/* Section 3: Signature Scents (light) */}
+        {/* Section 10: Signature Scents (light) */}
         <SignatureScentBeadsSection content={content.signatureScents} />
         
-        {/* Section 4: Benefits (warm sand) */}
+        {/* Section 10: Benefits (warm sand) */}
         <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
         
-        {/* Section 5: Wins On (dark - citronella style) */}
+        {/* Section 10: Wins On (dark - citronella style) */}
         {content['wins'] && (
           <section id="wins" className="section-padding" style={{ background: '#1a1d29' }}>
             <div className="section-container">
@@ -125,10 +139,31 @@ function App() {
           </section>
         )}
         
-        {/* Section 6: How It Works */}
+        {/* Section 10: How to Use */}
+        {content['how-to-use'] && (
+          <section id="how-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+            <div className="section-container">
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-center" style={{ color: 'hsl(var(--foreground))' }}>
+                {content['how-to-use'].headline}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Scent Beads</h3>
+                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].beads}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Liquid Formula</h3>
+                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].liquid}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {/* Section 10: How It Works */}
         {content['how-it-works'] ? <HowItWorksSection howItWorks={content['how-it-works']} /> : <HowItWorksSection />}
         
-        {/* Section 7: The Odin's Difference + CTA */}
+        {/* Section 10: The Odin's Difference + CTA */}
         {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} /> : <DifferenceSection />}
         
         {/* CTA: See Why Hunters Choose Synthetic */}
@@ -147,7 +182,7 @@ function App() {
         
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
-        {/* Section 8: Reviews - Success Stories from the Field */}
+        {/* Section 10: Reviews - Success Stories from the Field */}
         <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -164,7 +199,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 9: FAQ */}
+        {/* Section 10: FAQ */}
         <FAQSection faq={content.faq} />
         
         <SiteFooter config={config} />

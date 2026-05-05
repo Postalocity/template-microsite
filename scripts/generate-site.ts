@@ -1421,21 +1421,35 @@ function App() {
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
         
-        {/* Section 1: Why Synthetic (light) */}
+        {/* Section 1: When to Use */}
+        {content['when-to-use'] && (
+          <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+            <div className="section-container">
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
+                {content['when-to-use'].headline}
+              </h2>
+              <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed whitespace-pre-wrap">
+                {content['when-to-use'].body}
+              </p>
+            </div>
+          </section>
+        )}
+        
+        {/* Section 2: Why Synthetic (light) */}
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
-        {/* Section 2: Products (dark) */}
+        {/* Section 3: Products (dark) */}
         <div style={{ background: '#1a1d29' }}>
           {content.products && <ProductsSection content={content.products} />}
         </div>
         
-        {/* Section 3: Signature Scents (light) */}
+        {/* Section 4: Signature Scents (light) */}
         <SignatureScentBeadsSection content={content.signatureScents} />
         
-        {/* Section 4: Benefits (warm sand) */}
+        {/* Section 5: Benefits (warm sand) */}
         <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
         
-        {/* Section 5: Wins On (dark - citronella style) */}
+        {/* Section 6: Wins On (dark - citronella style) */}
         {content['wins'] && (
           <section id="wins" className="section-padding" style={{ background: '#1a1d29' }}>
             <div className="section-container">
@@ -1492,10 +1506,31 @@ function App() {
           </section>
         )}
         
-        {/* Section 6: How It Works */}
+        {/* Section 7: How to Use */}
+        {content['how-to-use'] && (
+          <section id="how-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+            <div className="section-container">
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-center" style={{ color: 'hsl(var(--foreground))' }}>
+                {content['how-to-use'].headline}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Scent Beads</h3>
+                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].beads}</p>
+                </div>
+                <div className="bg-white p-6 rounded-lg shadow-md">
+                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Liquid Formula</h3>
+                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].liquid}</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+        
+        {/* Section 8: How It Works */}
         {content['how-it-works'] ? <HowItWorksSection howItWorks={content['how-it-works']} /> : <HowItWorksSection />}
         
-        {/* Section 7: The Odin's Difference + CTA */}
+        {/* Section 9: The Odin's Difference + CTA */}
         {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} /> : <DifferenceSection />}
         
         {/* CTA: See Why Hunters Choose Synthetic */}
@@ -1514,7 +1549,7 @@ function App() {
         
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
-        {/* Section 8: Reviews - Success Stories from the Field */}
+        {/* Section 10: Reviews - Success Stories from the Field */}
         <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -1531,7 +1566,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 9: FAQ */}
+        {/* Section 11: FAQ */}
         <FAQSection faq={content.faq} />
         
         <SiteFooter config={config} />
@@ -1722,7 +1757,7 @@ function App() {
           </section>
         )}
         
-        {/* Section 3: Detection Process - LIGHT BACKGROUND */}
+        {/* Section 10: Detection Process - LIGHT BACKGROUND */}
         {content.detection && (
           <section className="section-padding" style={{ background: '#fff' }}>
             <div className="section-container">
@@ -1738,7 +1773,7 @@ function App() {
           </section>
         )}
         
-        {/* Section 4: Application Guide - DARK BACKGROUND */}
+        {/* Section 10: Application Guide - DARK BACKGROUND */}
         {content.application && (
           <section className="section-padding" style={{ background: '#242835' }}>
             <div className="section-container">
@@ -1764,7 +1799,7 @@ function App() {
           </section>
         )}
         
-        {/* Section 5: Hunting Blinds - LIGHT BACKGROUND */}
+        {/* Section 10: Hunting Blinds - LIGHT BACKGROUND */}
         {content.blinds && (
           <section className="section-padding" style={{ background: '#f5f5f5' }}>
             <div className="section-container">
@@ -1782,7 +1817,7 @@ function App() {
           </section>
         )}
         
-        {/* Section 6: Layered Strategy - DARK BACKGROUND */}
+        {/* Section 10: Layered Strategy - DARK BACKGROUND */}
         {content.layered && (
           <section className="section-padding" style={{ background: '#1e212b' }}>
             <div className="section-container">
@@ -2266,7 +2301,7 @@ function App() {
           body: content.howItWorks.body
         }} />
 
-        {/* Section 3: When To Use */}
+        {/* Section 10: When To Use */}
         <WhenToUseSection content={{
           headline: content.whenToUse.title,
           body: '',
@@ -2283,7 +2318,7 @@ function App() {
           })
         }} />
 
-        {/* Section 4: Deployment */}
+        {/* Section 10: Deployment */}
         <section id="deployment" className="section-padding" style={{ background: '#1a1d29' }}>
           <div className="section-container">
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
@@ -2325,13 +2360,13 @@ function App() {
           </div>
         </section>
 
-        {/* Section 5: Why Odin's */}
+        {/* Section 10: Why Odin's */}
         <WhyOdinsSection content={{
           headline: content.whyOdins.title,
           body: content.whyOdins.body
         }} />
 
-        {/* Section 6: Effectiveness */}
+        {/* Section 10: Effectiveness */}
         <section id="effectiveness" className="section-padding" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="section-container">
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
@@ -2355,12 +2390,12 @@ function App() {
           </div>
         </section>
 
-        {/* Section 7: Products */}
+        {/* Section 3: Products */}
         <div style={{ background: '#1a1d29' }}>
           {content.products && <ProductsSection content={content.products} />}
         </div>
 
-        {/* Section 8: Comparison */}
+        {/* Section 10: Comparison */}
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
 
         {/* Section 10: Reviews */}
@@ -2470,7 +2505,7 @@ function App() {
           points: content.whyOdins.points
         }} />
 
-        {/* Section 3: How It Works — with YouTube videos */}
+        {/* Section 8: How It Works — with YouTube videos */}
         <section id="how-it-works" className="section-padding" style={{ background: '#1a1d29' }}>
           <div className="section-container">
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
@@ -2524,7 +2559,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 4: Rut Timing */}
+        {/* Section 10: Rut Timing */}
         {content.rutTiming && (
           <section id="rut-timing" className="section-padding" style={{ background: 'hsl(var(--muted))' }}>
             <div className="section-container">
@@ -2558,7 +2593,7 @@ function App() {
           </section>
         )}
 
-        {/* Section 5: Effectiveness — with proof image */}
+        {/* Section 10: Effectiveness — with proof image */}
         {content.effectiveness && (
           <section id="effectiveness" className="section-padding" style={{ background: '#1a1d29' }}>
             <div className="section-container">
@@ -2683,12 +2718,12 @@ function App() {
           </section>
         )}
 
-        {/* Section 8: Products */}
+        {/* Section 3: Products */}
         <div id="products" style={{ background: '#1a1d29' }}>
           {content.products && <ProductsSection content={content.products} />}
         </div>
 
-        {/* Section 9: Comparison */}
+        {/* Section 10: Comparison */}
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
 
         {/* Section 10: Reviews */}

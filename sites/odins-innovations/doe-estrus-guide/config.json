@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/doe-estrus-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service doe-estrus-guide",
     "source": "config/sites/odins-innovations/doe-estrus-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-05T15:36:30.344Z",
+    "generatedAt": "2026-05-05T15:42:29.851Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
