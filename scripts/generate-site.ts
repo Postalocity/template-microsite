@@ -1387,7 +1387,7 @@ function generateOdinsInnovationsTemplate(config: SiteConfig, brandContext?: Bra
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
