@@ -115,7 +115,7 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
 
         {/* Benefits Grid with Images */}
         {hasImages ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {parsedItems.map((item, index) => (
               <motion.div
                 key={item.title}
