@@ -188,6 +188,8 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
               key={link.href}
               href={link.href}
               onClick={(e) => handleLinkClick(e, link.href)}
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="text-sm font-semibold tracking-wide uppercase transition-all hover:opacity-100"
               style={{ 
                 color: 'hsl(30 20% 20% / 0.9)',
@@ -254,6 +256,7 @@ const SiteNavigation = ({ config }: SiteNavigationProps) => {
           {cta ? (
             <a
               href={cta.href}
+              target={cta.href.startsWith('http') ? '_blank' : undefined}
               rel="noopener noreferrer"
               className="btn-accent text-sm px-6 py-3"
               style={{ 

@@ -3,7 +3,7 @@
  *
  * Site:      doe-estrus-guide
  * Brand:     Odin's Innovations
- * Generated: 2026-05-05T15:42:29.849Z
+ * Generated: 2026-05-05T15:51:24.093Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -71,18 +71,18 @@ function App() {
         {/* Section 2: Why Synthetic (light) */}
         {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
         
-        {/* Section 10: Products (dark) */}
+        {/* Section 3: Products (dark) */}
         <div style={{ background: '#1a1d29' }}>
           {content.products && <ProductsSection content={content.products} />}
         </div>
         
-        {/* Section 10: Signature Scents (light) */}
+        {/* Section 4: Signature Scents (light) */}
         <SignatureScentBeadsSection content={content.signatureScents} />
         
-        {/* Section 10: Benefits (warm sand) */}
+        {/* Section 5: Benefits (warm sand) */}
         <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
         
-        {/* Section 10: Wins On (dark - citronella style) */}
+        {/* Section 6: Wins On (dark - citronella style) */}
         {content['wins'] && (
           <section id="wins" className="section-padding" style={{ background: '#1a1d29' }}>
             <div className="section-container">
@@ -139,7 +139,7 @@ function App() {
           </section>
         )}
         
-        {/* Section 10: How to Use */}
+        {/* Section 7: How to Use */}
         {content['how-to-use'] && (
           <section id="how-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
             <div className="section-container">
@@ -160,16 +160,18 @@ function App() {
           </section>
         )}
         
-        {/* Section 10: How It Works */}
+        {/* Section 8: How It Works */}
         {content['how-it-works'] ? <HowItWorksSection howItWorks={content['how-it-works']} /> : <HowItWorksSection />}
         
-        {/* Section 10: The Odin's Difference + CTA */}
+        {/* Section 9: The Odin's Difference + CTA */}
         {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} /> : <DifferenceSection />}
         
         {/* CTA: See Why Hunters Choose Synthetic */}
         <div className="pb-8 text-center" style={{ background: '#333333' }}>
           <a 
-            href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" 
+            href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90 rounded"
             style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}
           >
@@ -199,7 +201,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 10: FAQ */}
+        {/* Section 11: FAQ */}
         <FAQSection faq={content.faq} />
         
         <SiteFooter config={config} />
