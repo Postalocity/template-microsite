@@ -1423,16 +1423,24 @@ function App() {
         
         {/* Section 1: When to Use */}
         {content['when-to-use'] && (
-          <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
-            <div className="section-container">
-              <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
-                {content['when-to-use'].headline}
-              </h2>
-              <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed whitespace-pre-wrap">
-                {content['when-to-use'].body}
-              </p>
-            </div>
-          </section>
+          content['when-to-use'].seasons ? (
+            <WhenToUseSection content={{
+              headline: content['when-to-use'].headline,
+              body: content['when-to-use'].body,
+              seasons: content['when-to-use'].seasons
+            }} />
+          ) : (
+            <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+              <div className="section-container">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content['when-to-use'].headline}
+                </h2>
+                <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed whitespace-pre-wrap">
+                  {content['when-to-use'].body}
+                </p>
+              </div>
+            </section>
+          )
         )}
         
         {/* Section 2: Why Synthetic (light) */}
@@ -1634,7 +1642,7 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
               <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
             </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-per-page="10" data-product-brand="Odin's Innovations"></div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
             <style dangerouslySetInnerHTML={{__html: \`
               .stamped-widget-buttons,
               .stamped-full-page-tabs {
@@ -2264,7 +2272,7 @@ function App() {
             
             {/* Stamped.io Reviews Widget - Rut Scents Products */}
             {/* Loads automatically via Shopify's Stamped.io app integration */}
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-product-brand="Odin's Innovations"></div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
             
             {/* Hide Product/Site Reviews tabs since no site reviews */}
             <style dangerouslySetInnerHTML={{__html: \`
@@ -2811,7 +2819,7 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
               <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who put Odin's to the test in the field.</p>
             </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations" data-take="10" data-per-page="10"></div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
             <style dangerouslySetInnerHTML={{__html: \`
               .stamped-widget-buttons,
               .stamped-full-page-tabs {

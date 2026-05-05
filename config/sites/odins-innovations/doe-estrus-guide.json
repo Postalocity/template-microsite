@@ -114,8 +114,34 @@
       ]
     },
     "when-to-use": {
-      "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
-      "body": "Pre-rut (Early–Mid October): Use scrape blends to condition areas. Save pure doe estrus for later. Seeking Phase (Late Oct–Early Nov): Deploy in travel corridors and scrape lines. Peak Rut (Mid–Late Nov): Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer. Post-Rut (Dec–Jan): Maintain setups near food sources. Southern hunters: shift 1–2 months later."
+      "headline": "When to Deploy Doe Estrus",
+      "body": "Maximize your success by timing your scent deployment with the whitetail rut phases. Each phase requires a different strategy for optimal results.",
+      "seasons": [
+        {
+          "name": "Pre-Rut",
+          "months": "Oct 1 - Oct 20",
+          "description": "Use scrape blends to condition areas. Save pure doe estrus for later when bucks are actively seeking.",
+          "color": "hsl(35, 70%, 50%)"
+        },
+        {
+          "name": "Seeking Phase",
+          "months": "Oct 21 - Nov 10",
+          "description": "Deploy in travel corridors and scrape lines. Bucks begin cruising for receptive does.",
+          "color": "hsl(var(--secondary))"
+        },
+        {
+          "name": "Peak Rut",
+          "months": "Nov 11 - Nov 25",
+          "description": "Prime time! Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer in the area.",
+          "color": "hsl(var(--primary))"
+        },
+        {
+          "name": "Late Rut",
+          "months": "Nov 26 - Dec 15",
+          "description": "Secondary rut activity. Focus on food sources. Last chance for mature buck movement.",
+          "color": "hsl(200, 40%, 50%)"
+        }
+      ]
     },
     "how-to-use": {
       "headline": "How to Use",
