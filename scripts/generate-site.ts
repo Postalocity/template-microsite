@@ -767,6 +767,10 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
     if (site.slug === 'food-scent-deer-attractants') {
       return generateFoodScentTemplate(config, brandContext, brandId);
     }
+    // Route Earth Cover Scent Beads to its own template
+    if (site.slug === 'earth-cover-scent-beads') {
+      return generateEarthCoverScentTemplate(config, brandContext, brandId);
+    }
     return generateOdinsInnovationsTemplate(config, brandContext, brandId);
   }
   
@@ -3017,6 +3021,91 @@ const ikbConfig = { rules: { promoCodes: { 'food-scent-deer-attractants': 'HUNT2
 
       <FAQSection faq={content.faq} />
 
+      <SiteFooter config={config} />
+      {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
+    </BrandProvider>
+    </IKBProvider>
+  );
+}
+
+// Initialize React
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
+`;
+}
+
+function generateEarthCoverScentTemplate(config: SiteConfig, brandContext?: BrandContext, brandId?: string): string {
+  const { site } = config;
+  const brand = brandContext?.brand || {};
+  const contact = brandContext?.contact || {};
+  const social = brandContext?.social || {};
+  
+  return `/**
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     ${brand.name || "Odin's Innovations"}
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
+ */
+
+import { createRoot } from 'react-dom/client';
+import { HeroSection, BenefitsSection, WhyOdinsSection, HowItWorksSection, ProductsSection, ComparisonTable, TrustBadgesSection, FAQSection, SiteFooter, SiteNavigation, DeploymentSection, MosquitoSection } from '@/themes/odins-innovations/components/shared';
+import FloatingCTA from '@/components/shared/FloatingCTA';
+import { BrandProvider } from '@/contexts/BrandContext';
+import { IKBProvider } from '@/contexts/IKBContext';
+import '@/themes/odins-innovations/globals.css';
+import config from './config.json';
+
+const brandConfig = ${JSON.stringify(brand)};
+const contactConfig = ${JSON.stringify(contact)};
+const socialConfig = ${JSON.stringify(social)};
+const ikbConfig = { rules: { promoCodes: { 'earth-cover-scent-beads': 'HUNT2026' } } };
+const promoCode = ikbConfig.rules?.promoCodes?.['earth-cover-scent-beads'] || 'HUNT2026';
+
+function App() {
+  const { content } = config;
+  const navCta = config.navigation?.cta;
+
+  return (
+    <IKBProvider ikb={ikbConfig}>
+    <BrandProvider
+      brand={brandConfig}
+      contact={contactConfig}
+      social={socialConfig}
+    >
+      <SiteNavigation config={config} />
+      <HeroSection hero={content.hero} />
+      {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
+      <WhyOdinsSection content={content['why-odins']} />
+      <HowItWorksSection howItWorks={content['how-it-works']} />
+      <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
+      
+      {/* How to Use Section */}
+      {content['how-to-use'] && <DeploymentSection headline={content['how-to-use'].headline} methods={content['how-to-use'].methods} />}
+      
+      <ProductsSection content={content.products} />
+      
+      <div style={{ background: 'hsl(30, 20%, 95%)' }}>
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+      </div>
+      
+      {/* Mosquito Protection Section */}
+      {content.mosquito && <MosquitoSection headline={content.mosquito.headline} body={content.mosquito.body} />}
+      
+      <FAQSection faq={content.faq} />
       <SiteFooter config={config} />
       {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
     </BrandProvider>
