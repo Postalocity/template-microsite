@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/doe-estrus-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service doe-estrus-guide",
     "source": "config/sites/odins-innovations/doe-estrus-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-04T20:12:06.367Z",
+    "generatedAt": "2026-05-05T14:50:17.840Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -363,7 +363,7 @@
     },
     "the-difference": {
       "headline": "Why Synthetic Beads\nOutperform Natural Liquid Urine",
-      "body": "Odin's scent beads are a specially designed biodegradable polymer bead into which we infuse synthetic scent. Each bead then contains scent molecules inside that release at a controlled rate over 30+ days. The beads are weather-resistant — rain, dew, snow, and temperature swings do not degrade performance. They are non toxic, not consumed, and will biodegrade – leaving your hunting area BETTER THAN YOU FOUND IT™ ."
+      "body": "Natural urine soaks into the ground, dilutes with rain and degrades starting immediately. Odin's scent beads are a specially designed biodegradable polymer bead into which we infuse synthetic scent. Each bead then contains scent molecules inside that release at a controlled rate over 30+ days. The beads are weather-resistant — rain, dew, snow, and temperature swings do not degrade performance. They are non toxic, not consumed, and will biodegrade — leaving your hunting area BETTER THAN YOU FOUND IT™ ."
     },
     "the-odins-difference": {
       "headline": "The Odin's Difference",
