@@ -1510,18 +1510,95 @@ function App() {
         {content['how-to-use'] && (
           <section id="how-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
             <div className="section-container">
-              <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-center" style={{ color: 'hsl(var(--foreground))' }}>
-                {content['how-to-use'].headline}
-              </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Scent Beads</h3>
-                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].beads}</p>
+              {/* Section Header */}
+              <div className="text-center mb-12">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content['how-to-use'].headline}
+                </h2>
+                {content['how-to-use'].body && (
+                  <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
+                    {content['how-to-use'].body}
+                  </p>
+                )}
+              </div>
+
+              {/* Video Section */}
+              {(content['how-to-use'].video || content['how-it-works']?.video) && (
+                <div className="mb-12">
+                  <div className="text-center mb-6">
+                    <h3 className="font-display text-2xl md:text-3xl uppercase" style={{ color: '#1a1a1a' }}>
+                      {content['how-to-use'].videoHeadline || "See How to Use It"}
+                    </h3>
+                  </div>
+                  <div className="max-w-3xl mx-auto">
+                    <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
+                      <iframe
+                        src={(() => {
+                          const videoUrl = content['how-to-use']?.video || content['how-it-works']?.video || '';
+                          if (!videoUrl) return '';
+                          if (videoUrl.includes('youtu.be/')) {
+                            const videoId = videoUrl.split('youtu.be/')[1]?.split('?')[0];
+                            return 'https://www.youtube.com/embed/' + videoId;
+                          }
+                          if (videoUrl.includes('watch?v=')) {
+                            const videoId = videoUrl.split('watch?v=')[1]?.split('&')[0];
+                            return 'https://www.youtube.com/embed/' + videoId;
+                          }
+                          return videoUrl;
+                        })()}
+                        title="How to Use"
+                        className="absolute inset-0 w-full h-full"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Liquid Formula</h3>
-                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].liquid}</p>
-                </div>
+              )}
+
+              {/* Product Cards */}
+              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {content['how-to-use'].beads && (
+                  <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                    {content['how-to-use'].beadsIcon && (
+                      <div className="mb-4 flex justify-center">
+                        <img 
+                          src={content['how-to-use'].beadsIcon} 
+                          alt="Scent Beads"
+                          className="w-24 h-24 object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>
+                      {content['how-to-use'].beadsTitle || "Scent Beads"}
+                    </h3>
+                    <p className="font-body text-base text-muted-foreground leading-relaxed">
+                      {content['how-to-use'].beads}
+                    </p>
+                  </div>
+                )}
+                {content['how-to-use'].liquid && (
+                  <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                    {content['how-to-use'].liquidIcon && (
+                      <div className="mb-4 flex justify-center">
+                        <img 
+                          src={content['how-to-use'].liquidIcon} 
+                          alt="Liquid Formula"
+                          className="w-24 h-24 object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>
+                      {content['how-to-use'].liquidTitle || "Liquid Formula"}
+                    </h3>
+                    <p className="font-body text-base text-muted-foreground leading-relaxed">
+                      {content['how-to-use'].liquid}
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </section>

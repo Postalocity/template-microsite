@@ -189,7 +189,7 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
           </div>
 
           {/* Points Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
             {points.map((point, index) => (
               <motion.div
                 key={point.title}
