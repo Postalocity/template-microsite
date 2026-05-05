@@ -1516,56 +1516,45 @@ function App() {
               <div className="max-w-5xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                   {/* Left side: Steps */}
-                  <div className="space-y-6">
-                    {/* Scent Beads Card */}
-                    {content['how-to-use'].beads && (
-                      <div className="p-6 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <div className="flex items-start gap-4">
-                          {content['how-to-use'].beadsIcon && (
-                            <div className="flex-shrink-0">
-                              <img 
-                                src={content['how-to-use'].beadsIcon} 
-                                alt="Scent Beads"
-                                className="w-16 h-16 object-contain"
-                                loading="lazy"
-                              />
-                            </div>
-                          )}
-                          <div>
+                  <div>
+                    <ol className="space-y-6">
+                      {/* Step 1: Scent Beads */}
+                      {content['how-to-use'].beads && (
+                        <li className="flex gap-4">
+                          <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                            1
+                          </span>
+                          <div className="flex-1">
                             <h3 className="font-display text-xl uppercase mb-2 text-white">
-                              {content['how-to-use'].beadsTitle || "Scent Beads"}
+                              {content['how-to-use'].beadsTitle || "Apply Scent Beads"}
                             </h3>
                             <p className="font-body text-base text-gray-300 leading-relaxed">
                               {content['how-to-use'].beads}
                             </p>
                           </div>
-                        </div>
-                      </div>
-                    )}
-                    {/* Liquid Formula Card */}
-                    {content['how-to-use'].liquid && (
-                      <div className="p-6 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <div className="flex items-start gap-4">
-                          {content['how-to-use'].liquidIcon && (
-                            <div className="flex-shrink-0">
-                              <img 
-                                src={content['how-to-use'].liquidIcon} 
-                                alt="Liquid Formula"
-                                className="w-16 h-16 object-contain"
-                                loading="lazy"
-                              />
-                            </div>
-                          )}
-                          <div>
+                        </li>
+                      )}
+                      {/* Step 2: Liquid Formula */}
+                      {content['how-to-use'].liquid && (
+                        <li className="flex gap-4">
+                          <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                            2
+                          </span>
+                          <div className="flex-1">
                             <h3 className="font-display text-xl uppercase mb-2 text-white">
-                              {content['how-to-use'].liquidTitle || "Liquid Formula"}
+                              {content['how-to-use'].liquidTitle || "Add Liquid Trail"}
                             </h3>
                             <p className="font-body text-base text-gray-300 leading-relaxed">
                               {content['how-to-use'].liquid}
                             </p>
                           </div>
-                        </div>
-                      </div>
+                        </li>
+                      )}
+                    </ol>
+                    {content['how-to-use'].note && (
+                      <p className="mt-8 font-body text-sm text-gray-400 italic border-l-2 pl-4" style={{ borderColor: 'hsl(var(--accent))' }}>
+                        {content['how-to-use'].note}
+                      </p>
                     )}
                   </div>
                   {/* Right side: Video */}
