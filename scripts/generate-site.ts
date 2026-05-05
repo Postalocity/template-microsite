@@ -1517,40 +1517,53 @@ function App() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                   {/* Left side: Steps */}
                   <div>
-                    <ol className="space-y-6">
-                      {/* Step 1: Scent Beads */}
-                      {content['how-to-use'].beads && (
-                        <li className="flex gap-4">
-                          <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
-                            1
-                          </span>
-                          <div className="flex-1">
-                            <h3 className="font-display text-xl uppercase mb-2 text-white">
-                              {content['how-to-use'].beadsTitle || "Apply Scent Beads"}
-                            </h3>
-                            <p className="font-body text-base text-gray-300 leading-relaxed">
-                              {content['how-to-use'].beads}
-                            </p>
-                          </div>
-                        </li>
-                      )}
-                      {/* Step 2: Liquid Formula */}
-                      {content['how-to-use'].liquid && (
-                        <li className="flex gap-4">
-                          <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
-                            2
-                          </span>
-                          <div className="flex-1">
-                            <h3 className="font-display text-xl uppercase mb-2 text-white">
-                              {content['how-to-use'].liquidTitle || "Add Liquid Trail"}
-                            </h3>
-                            <p className="font-body text-base text-gray-300 leading-relaxed">
-                              {content['how-to-use'].liquid}
-                            </p>
-                          </div>
-                        </li>
-                      )}
-                    </ol>
+                    {content['how-to-use'].steps && content['how-to-use'].steps.length > 0 ? (
+                      <ol className="space-y-6">
+                        {content['how-to-use'].steps.map((step, idx) => (
+                          <li key={idx} className="flex gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                              {idx + 1}
+                            </span>
+                            <p className="font-body text-base text-gray-300 leading-relaxed pt-2">{step}</p>
+                          </li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <ol className="space-y-6">
+                        {/* Step 1: Scent Beads */}
+                        {content['how-to-use'].beads && (
+                          <li className="flex gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                              1
+                            </span>
+                            <div className="flex-1">
+                              <h3 className="font-display text-xl uppercase mb-2 text-white">
+                                {content['how-to-use'].beadsTitle || "Apply Scent Beads"}
+                              </h3>
+                              <p className="font-body text-base text-gray-300 leading-relaxed">
+                                {content['how-to-use'].beads}
+                              </p>
+                            </div>
+                          </li>
+                        )}
+                        {/* Step 2: Liquid Formula */}
+                        {content['how-to-use'].liquid && (
+                          <li className="flex gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                              2
+                            </span>
+                            <div className="flex-1">
+                              <h3 className="font-display text-xl uppercase mb-2 text-white">
+                                {content['how-to-use'].liquidTitle || "Add Liquid Trail"}
+                              </h3>
+                              <p className="font-body text-base text-gray-300 leading-relaxed">
+                                {content['how-to-use'].liquid}
+                              </p>
+                            </div>
+                          </li>
+                        )}
+                      </ol>
+                    )}
                     {content['how-to-use'].note && (
                       <p className="mt-8 font-body text-sm text-gray-400 italic border-l-2 pl-4" style={{ borderColor: 'hsl(var(--accent))' }}>
                         {content['how-to-use'].note}
