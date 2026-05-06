@@ -1658,6 +1658,8 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
     customImports,
     customBody,
     customProviders,
+    customAppInit: `  const { content } = config;
+  const navCta = config.navigation?.cta;`,
   });
 }
 

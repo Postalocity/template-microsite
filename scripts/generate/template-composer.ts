@@ -34,6 +34,7 @@ export interface SiteTemplateConfig {
   customImports?: string;
   customBody?: string;
   customProviders?: string;
+  customAppInit?: string;
   themePath?: string;
   // Legacy fields for backward compatibility
   brandName?: string;
@@ -142,19 +143,19 @@ export function composeSiteTemplate(config: SiteTemplateConfig): string {
       </BrandProvider>
     </IKBProvider>`
       : '';
+    const appInit = config.customAppInit ?? '';
 
     const appCode = `
 function App() {
-  const { content } = config;
-  const navCta = config.navigation?.cta;
+${appInit}
   return (
-${providersOpen}
-${bodyContent}
-${providersClose}
+ ${providersOpen}
+ ${bodyContent}
+ ${providersClose}
   );
 }
 
-// Initialize React
+ // Initialize React
 const root = createRoot(document.getElementById('root'));
 root.render(<App />);
 `;
