@@ -3105,14 +3105,22 @@ function App() {
       {/* Mosquito Protection Section */}
       {content.mosquito && <MosquitoSection headline={content.mosquito.headline} body={content.mosquito.body} />}
       
-      {/* Reviews - Success Stories from the Field */}
-      <StampedReviewsSection 
-        title="What Hunters Are Saying" 
-        subtitle="Field Reports" 
-        description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages." 
-      />
-      
-      <FAQSection faq={content.faq} />
+{/* Reviews - Success Stories from the Field */}
+        <StampedReviewsSection 
+          title="What Hunters Are Saying" 
+          subtitle="Field Reports" 
+          description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages." 
+        />
+        
+        {/* Hide Stamped Product/Site Reviews tabs - inline style wins source order battle */}
+        <style dangerouslySetInnerHTML={{__html: \`
+          .stamped-widget-buttons,
+          .stamped-full-page-tabs {
+            display: none !important;
+          }
+        \`}} />
+        
+        <FAQSection faq={content.faq} />
       
       <SiteFooter config={config} />
       {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
