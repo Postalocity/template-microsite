@@ -39,30 +39,30 @@ export interface SiteTemplateConfig {
 /**
  * Generates the header warning comment for auto-generated files.
  */
-export function generateHeader(site: SiteInfo, brandName: string): string {
-  const timestamp = new Date().toISOString();
+export function generateHeader(site: SiteInfo, brandName: string, timestamp?: string): string {
+  const ts = timestamp ?? new Date().toISOString();
   return `/**
- * ============================================================================
- * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
- * ============================================================================
- *
- * File:      main.tsx
- * Site:      ${site.name}
- * Brand:     ${brandName}
- * Generated: ${timestamp}
- * Generator: scripts/generate-site.ts
- *
- * ╔══════════════════════════════════════════════════════════════════════╗
- * ║  EDIT THE SOURCE, NOT THE OUTPUT                                      ║
- * ║                                                                      ║
- * ║  To customize this site's content, edit:                              ║
- * ║    config/sites/${brandName}/${site.slug}.json                        ║
- * ║                                                                      ║
- * ║  To customize the site template, edit the generator function in:       ║
- * ║    scripts/generate-site.ts                                          ║
- * ║                                                                      ║
- * ╚══════════════════════════════════════════════════════════════════════╝
- */
+  * ============================================================================
+  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+  * ============================================================================
+  *
+  * File:      main.tsx
+  * Site:      ${site.name}
+  * Brand:     ${brandName}
+  * Generated: ${ts}
+  * Generator: scripts/generate-site.ts
+  *
+  * ╔══════════════════════════════════════════════════════════════════════╗
+  * ║  EDIT THE SOURCE, NOT THE OUTPUT                                      ║
+  * ║                                                                      ║
+  * ║  To customize this site's content, edit:                              ║
+  * ║    config/sites/${brandName}/${site.slug}.json                        ║
+  * ║                                                                      ║
+  * ║  To customize the site template, edit the generator function in:       ║
+  * ║    scripts/generate-site.ts                                          ║
+  * ║                                                                      ║
+  * ╚══════════════════════════════════════════════════════════════════════╝
+  */
 `;
 }
 
