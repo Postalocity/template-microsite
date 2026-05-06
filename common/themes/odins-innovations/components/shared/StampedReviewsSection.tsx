@@ -43,6 +43,14 @@ const StampedReviewsSection = ({
           src="https://cdn.stamped.io/widget.js"
         ></script>
         
+        {/* Hide Stamped Product/Site Reviews tabs - inline style wins source order battle */}
+        <style dangerouslySetInnerHTML={{__html: `
+          .stamped-widget-buttons,
+          .stamped-full-page-tabs {
+            display: none !important;
+          }
+        `}} />
+        
         {/* Link to more testimonials */}
         <div className="mt-12">
           <a 
