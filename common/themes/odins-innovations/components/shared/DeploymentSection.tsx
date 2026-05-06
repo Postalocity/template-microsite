@@ -25,10 +25,10 @@ const DeploymentSection = ({ headline, methods, videos }: DeploymentSectionProps
         </h2>
 
         {videos && videos.length > 0 ? (
-          /* Two-column layout: text left, videos right */
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
-            {/* Left: Methods text */}
-            <div ref={ref} className="space-y-6">
+          /* Two-column layout: text left, video right - video stays within text height */
+          <div className="grid lg:grid-cols-5 gap-6 lg:gap-10 items-start max-w-6xl mx-auto">
+            {/* Left: Methods text - 3 columns */}
+            <div ref={ref} className="lg:col-span-3 space-y-6">
               {methods.map((method, index) => (
                 <motion.div
                   key={method.title}
@@ -44,13 +44,13 @@ const DeploymentSection = ({ headline, methods, videos }: DeploymentSectionProps
               ))}
             </div>
 
-            {/* Right: Videos */}
-            <div className="space-y-6">
-              {videos.map((videoUrl, index) => (
-                <div key={index} className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            {/* Right: Video - 2 columns, sticky to stay in view */}
+            <div className="lg:col-span-2 lg:sticky lg:top-24">
+              {videos.length === 1 ? (
+                <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                   <iframe
-                    src={videoUrl}
-                    title={`How to Use - Video ${index + 1}`}
+                    src={videos[0]}
+                    title="How to Use - Video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     style={{
@@ -64,7 +64,29 @@ const DeploymentSection = ({ headline, methods, videos }: DeploymentSectionProps
                     }}
                   />
                 </div>
-              ))}
+              ) : (
+                <div className="space-y-4">
+                  {videos.map((videoUrl, index) => (
+                    <div key={index} className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                      <iframe
+                        src={videoUrl}
+                        title={`How to Use - Video ${index + 1}`}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{
+                          position: 'absolute',
+                          top: 0,
+                          left: 0,
+                          width: '100%',
+                          height: '100%',
+                          border: 'none',
+                          borderRadius: '8px'
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         ) : (
