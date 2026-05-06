@@ -26,7 +26,7 @@ const TEMPLATE_DIR = ROOT_DIR;
 // Import pricing utilities from centralized pricing module
 import { processPricingPlaceholders } from '../common/utils/pricing';
 import { composeSiteTemplate, type SiteInfo } from './generate/template-composer.js';
-import { validateSiteConfig } from './config-validator.js';
+import { validateSiteConfig } from './generate/config-validator.js';
 
 /**
  * Generation warning comment for auto-generated files.
@@ -1354,8 +1354,8 @@ function generateOdinsInnovationsTemplate(config: SiteConfig, brandContext?: Bra
   const contact = brandContext?.contact || {};
   const social = brandContext?.social || {};
   const ikb = config.ikb || brandContext?.ikb || {};
-  
-  return `/**
+
+  const customHeader = `/**
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
  *
  * Site:      ${site.slug}
@@ -1374,8 +1374,9 @@ function generateOdinsInnovationsTemplate(config: SiteConfig, brandContext?: Bra
  *   Never create site-specific component files in the generated site directory
  *
  * DO NOT bypass the pre-commit hook with --no-verify
- */
+ */`;
 
+  const customImports = `
 import { createRoot } from 'react-dom/client';
 import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
@@ -1396,19 +1397,17 @@ const ikbConfig = ${JSON.stringify(ikb)};
 
 // Get promo code from IKB for the service
 const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
+`;
 
-function App() {
-  const { content } = config;
-  const navCta = config.navigation?.cta;
-  return (
-    <IKBProvider ikb={ikbConfig}>
+  const customProviders = `    <IKBProvider ikb={ikbConfig}>
       <BrandProvider
         brand={brandConfig}
         contact={contactConfig}
         social={socialConfig}
         promoCode={promoCode}
-      >
-        <SiteNavigation config={config} />
+      >`;
+
+  const customBody = `        <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
         
         {/* Section 1: When to Use */}
@@ -1646,16 +1645,20 @@ function App() {
         <FAQSection faq={content.faq} />
         
         <SiteFooter config={config} />
-        {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
-      </BrandProvider>
-    </IKBProvider>
-  );
-}
+        {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}`;
 
-// Initialize React
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
-`;
+  return composeSiteTemplate({
+    brandId: brandId || 'odins-innovations',
+    site: {
+      name: site.name || site.slug,
+      slug: site.slug,
+      basename: site.basename || `/${site.slug}`,
+    },
+    customHeader,
+    customImports,
+    customBody,
+    customProviders,
+  });
 }
 
 function generateCitronellaTemplate(config: SiteConfig, brandContext?: BrandContext, brandId?: string): string {
