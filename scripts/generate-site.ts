@@ -83,7 +83,7 @@ function getSourceReference(brandName: string, siteName: string): string {
 /**
  * TypeScript interfaces for type safety (Codex #11)
  */
-interface SiteInfo {
+export interface SiteInfo {
   id?: string;
   name: string;
   slug: string;
