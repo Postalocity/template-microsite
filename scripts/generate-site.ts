@@ -3062,7 +3062,7 @@ function generateEarthCoverScentTemplate(config: SiteConfig, brandContext?: Bran
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, WhyOdinsSection, HowItWorksSection, ProductsSection, ComparisonTable, TrustBadgesSection, FAQSection, SiteFooter, SiteNavigation, DeploymentSection, MosquitoSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, WhyOdinsSection, HowItWorksSection, ProductsSection, ComparisonTable, TrustBadgesSection, FAQSection, SiteFooter, SiteNavigation, DeploymentSection, MosquitoSection, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -3096,7 +3096,7 @@ function App() {
       {/* How to Use Section */}
       {content['how-to-use'] && <DeploymentSection headline={content['how-to-use'].headline} methods={content['how-to-use'].methods} />}
       
-      <ProductsSection content={content.products} />
+      <ProductsSection content={content.products || content} />
       
       <div style={{ background: 'hsl(30, 20%, 95%)' }}>
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
@@ -3105,7 +3105,15 @@ function App() {
       {/* Mosquito Protection Section */}
       {content.mosquito && <MosquitoSection headline={content.mosquito.headline} body={content.mosquito.body} />}
       
+      {/* Reviews - Success Stories from the Field */}
+      <StampedReviewsSection 
+        title="What Hunters Are Saying" 
+        subtitle="Field Reports" 
+        description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages." 
+      />
+      
       <FAQSection faq={content.faq} />
+      
       <SiteFooter config={config} />
       {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
     </BrandProvider>

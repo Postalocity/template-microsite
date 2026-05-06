@@ -27,14 +27,13 @@ const StampedReviewsSection = ({
             {description}
           </p>
         </div>
-
-        {/* Stamped.io Reviews Widget */}
+        
+        {/* Stamped.io Reviews Widget - Exact HTML */}
         <div 
-          id="stamped-main-widget" 
-          className="stamped-main-widget" 
-          data-widget-type="full-page"
-          data-fill-empty="false"
-          data-take="6"
+          id="stamped-reviews-widget" 
+          data-widget-type="full-page" 
+          data-take="6" 
+          data-product-brand="Odin's Innovations"
         ></div>
         
         {/* Stamped.io Script */}
@@ -43,7 +42,7 @@ const StampedReviewsSection = ({
           type="text/javascript" 
           src="https://cdn.stamped.io/widget.js"
         ></script>
-
+        
         {/* Link to more testimonials */}
         <div className="mt-12">
           <a 

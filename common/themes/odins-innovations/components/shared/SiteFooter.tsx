@@ -135,6 +135,19 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
                   </a>
                 </li>
               ))}
+              {footerData?.shopAll && (
+                <li>
+                  <a 
+                    href={footerData.shopAll.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:opacity-80 font-semibold" 
+                    style={{ color: 'hsl(var(--accent))' }}
+                  >
+                    {footerData.shopAll.label} →
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
           

@@ -30,8 +30,9 @@ const ProductsSection = ({ content, background }: ProductsSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  // If no featured product, use first item
-  const items = content.items || content.featured?.items || content;
+  // Handle both flat items array and nested products.items structure
+  // If content is array, it's the items directly; if object, check for .items or .products
+  const items = Array.isArray(content) ? content : (content.items || (content.products && content.products.items) || content.featured?.items || []);
   const featured = content.featured || items[0];
   const otherProducts = items.filter(item => item.name !== featured?.name);
 
@@ -152,7 +153,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                       </div>
                     )}
                     <a
-                      href={featured.link || featured.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
+                      href={featured.url || featured.link || featured.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 self-start px-8 py-4 font-display font-bold uppercase tracking-wide transition-all duration-300 hover:gap-4"
