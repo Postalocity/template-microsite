@@ -26,6 +26,7 @@ const TEMPLATE_DIR = ROOT_DIR;
 // Import pricing utilities from centralized pricing module
 import { processPricingPlaceholders } from '../common/utils/pricing';
 import type { SiteInfo } from './generate/template-composer.js';
+import { validateSiteConfig } from './config-validator.js';
 
 /**
  * Generation warning comment for auto-generated files.
@@ -3833,7 +3834,9 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   console.log(`   Domain: ${ctx.brand.domain}`);
   
   // Load site-specific config
-  const siteConfig = loadSiteConfig(brandId, serviceId) as Record<string, unknown>;
+  const rawConfig = loadSiteConfig(brandId, serviceId) as Record<string, unknown>;
+  const validatedConfig = validateSiteConfig(rawConfig);
+  const siteConfig = validatedConfig as Record<string, unknown>;
   
   // Extract site info from site config
   const siteInfo = (siteConfig.site || {}) as { name?: string; slug?: string };
