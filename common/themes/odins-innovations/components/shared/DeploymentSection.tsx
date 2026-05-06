@@ -10,9 +10,10 @@ interface DeploymentMethod {
 interface DeploymentSectionProps {
   headline: string;
   methods: DeploymentMethod[];
+  videos?: string[];
 }
 
-const DeploymentSection = ({ headline, methods }: DeploymentSectionProps) => {
+const DeploymentSection = ({ headline, methods, videos }: DeploymentSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
@@ -22,6 +23,32 @@ const DeploymentSection = ({ headline, methods }: DeploymentSectionProps) => {
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-white text-center">
           {headline}
         </h2>
+
+        {/* Videos */}
+        {videos && videos.length > 0 && (
+          <div className={`grid gap-8 mb-12 ${videos.length === 1 ? 'max-w-2xl mx-auto' : 'md:grid-cols-2 max-w-5xl mx-auto'}`}>
+            {videos.map((videoUrl, index) => (
+              <div key={index} className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src={videoUrl}
+                  title={`How to Use - Video ${index + 1}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  style={{
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    border: 'none',
+                    borderRadius: '8px'
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
         <div ref={ref} className="max-w-4xl mx-auto space-y-8">
           {methods.map((method, index) => (
             <motion.div

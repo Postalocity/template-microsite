@@ -3094,7 +3094,7 @@ function App() {
       <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
       
       {/* How to Use Section */}
-      {content['how-to-use'] && <DeploymentSection headline={content['how-to-use'].headline} methods={content['how-to-use'].methods} />}
+      {content['how-to-use'] && <DeploymentSection headline={content['how-to-use'].headline} methods={content['how-to-use'].methods} videos={content['how-to-use'].videos} />}
       
       <ProductsSection content={content.products || content} />
       
