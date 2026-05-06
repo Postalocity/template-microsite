@@ -6,7 +6,22 @@
  * @module template-composer
  */
 
-import type { SiteInfo } from '../generate-site.js';
+/**
+ * SiteInfo interface - moved from generate-site.ts to reverse import direction
+ * generate-site.ts now imports SiteInfo FROM template-composer.ts
+ */
+export interface SiteInfo {
+  id?: string;
+  name: string;
+  slug: string;
+  domain?: string;
+  basename: string;
+  contact?: {
+    email: string;
+    phone: string;
+    address: string;
+  };
+}
 
 /**
  * Configuration for site template composition.
@@ -96,7 +111,6 @@ export function composeSiteTemplate(config: SiteTemplateConfig): string {
 
   // Minimal body placeholder - will be expanded in later tasks
   const body = `
-// Site body will be composed here
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(<div>Site: ${config.site.name}</div>);
 `;
@@ -107,3 +121,4 @@ ${ikb}
 ${body}
 `;
 }
+

@@ -11,7 +11,7 @@ import {
   composeSiteTemplate,
   type SiteTemplateConfig
 } from '../template-composer.js';
-import type { SiteInfo } from '../../generate-site.js';
+import type { SiteInfo } from '../template-composer.js';
 
 describe('template-composer', () => {
   const mockSite: SiteInfo = {

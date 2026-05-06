@@ -25,6 +25,7 @@ const TEMPLATE_DIR = ROOT_DIR;
 
 // Import pricing utilities from centralized pricing module
 import { processPricingPlaceholders } from '../common/utils/pricing';
+import type { SiteInfo } from './generate/template-composer.js';
 
 /**
  * Generation warning comment for auto-generated files.
@@ -78,22 +79,6 @@ ${end}`;
  */
 function getSourceReference(brandName: string, siteName: string): string {
   return `Source: config/sites/${brandName}/${siteName}.json | Template: scripts/generate-site.ts`;
-}
-
-/**
- * TypeScript interfaces for type safety (Codex #11)
- */
-export interface SiteInfo {
-  id?: string;
-  name: string;
-  slug: string;
-  domain?: string;
-  basename: string;
-  contact?: {
-    email: string;
-    phone: string;
-    address: string;
-  };
 }
 
 interface FAQ {
