@@ -25,7 +25,7 @@ const TEMPLATE_DIR = ROOT_DIR;
 
 // Import pricing utilities from centralized pricing module
 import { processPricingPlaceholders } from '../common/utils/pricing';
-import type { SiteInfo } from './generate/template-composer.js';
+import { composeSiteTemplate, type SiteInfo } from './generate/template-composer.js';
 import { validateSiteConfig } from './config-validator.js';
 
 /**

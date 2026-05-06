@@ -27,19 +27,24 @@ export interface SiteInfo {
  * Configuration for site template composition.
  */
 export interface SiteTemplateConfig {
-  site: SiteInfo;
-  brandName: string;
-  sections: string[];
-  themePath: string;
   brandId: string;
-  siteSlug: string;
+  site: SiteInfo;
+  sections?: Array<{ name: string; component: string; conditional?: string; importPath?: string; }> | string[];
+  customHeader?: string;
+  customImports?: string;
+  customBody?: string;
+  customProviders?: string;
+  themePath?: string;
+  // Legacy fields for backward compatibility
+  brandName?: string;
+  siteSlug?: string;
   ikbRules?: string[];
 }
 
 /**
  * Generates the header warning comment for auto-generated files.
  */
-export function generateHeader(site: SiteInfo, brandName: string, timestamp?: string): string {
+export function generateHeader(site: SiteInfo, brandName?: string, timestamp?: string): string {
   const ts = timestamp ?? new Date().toISOString();
   return `/**
   * ============================================================================
@@ -48,7 +53,7 @@ export function generateHeader(site: SiteInfo, brandName: string, timestamp?: st
   *
   * File:      main.tsx
   * Site:      ${site.name}
-  * Brand:     ${brandName}
+  * Brand:     ${brandName || 'Unknown'}
   * Generated: ${ts}
   * Generator: scripts/generate-site.ts
   *
@@ -69,15 +74,28 @@ export function generateHeader(site: SiteInfo, brandName: string, timestamp?: st
 /**
  * Generates import statements for sections and theme.
  */
-export function generateImports(sections: string[], themePath: string): string {
+export function generateImports(sections: string[] | Array<{ name: string; component: string; importPath?: string; conditional?: string; }> | undefined, themePath?: string): string {
+  if (!sections || sections.length === 0) {
+    return `import React from 'react';
+import ReactDOM from 'react-dom/client';
+${themePath ? `import '${themePath}';` : ''}
+`;
+  }
   const sectionImports = sections
-    .map((section) => `import ${section} from './sections/${section}.tsx';`)
+    .map((section) => {
+      if (typeof section === 'string') {
+        return `import ${section} from './sections/${section}.tsx';`;
+      }
+      const comp = section.component || section.name;
+      const path = section.importPath || `./sections/${section.name}.tsx`;
+      return `import ${comp} from '${path}';`;
+    })
     .join('\n');
 
   return `import React from 'react';
 import ReactDOM from 'react-dom/client';
 ${sectionImports}
-import '${themePath}';
+${themePath ? `import '${themePath}';` : ''}
 `;
 }
 
@@ -103,13 +121,49 @@ export function generateIKBConfig(
 
 /**
  * Composes the complete site template by combining header, imports, IKB config, and body.
+ * Supports flexible overrides via custom* fields for brand-specific skeletons.
  */
 export function composeSiteTemplate(config: SiteTemplateConfig): string {
-  const header = generateHeader(config.site, config.brandName);
-  const imports = generateImports(config.sections, config.themePath);
-  const ikb = generateIKBConfig(config.brandId, config.siteSlug, config.ikbRules);
+  const header = config.customHeader ?? generateHeader(config.site, config.brandName);
+  const imports = config.customImports ?? generateImports(config.sections, config.themePath);
+  const ikb = (config.customImports || config.ikbRules) 
+    ? '' // skip if custom imports include ikb, or no rules
+    : generateIKBConfig(config.brandId, config.siteSlug ?? config.site.slug, config.ikbRules);
 
-  // Minimal body placeholder - will be expanded in later tasks
+  const useCustom = !!(config.customBody || config.customProviders || config.customImports || config.customHeader);
+
+  if (useCustom) {
+    // Flexible custom assembly for complex brands like Odin's
+    const providersOpen = config.customProviders ?? '';
+    const bodyContent = config.customBody ?? '        <div>Site: ${config.site.name}</div>';
+    // Standard closing for IKB/BrandProvider pattern used in custom cases
+    const providersClose = config.customProviders 
+      ? `
+      </BrandProvider>
+    </IKBProvider>`
+      : '';
+
+    const appCode = `
+function App() {
+  const { content } = config;
+  const navCta = config.navigation?.cta;
+  return (
+${providersOpen}
+${bodyContent}
+${providersClose}
+  );
+}
+
+// Initialize React
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);
+`;
+
+    const parts = [header, imports, ikb, appCode].filter(Boolean);
+    return parts.join('\n');
+  }
+
+  // Default simple body for basic sites
   const body = `
 const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(<div>Site: ${config.site.name}</div>);
