@@ -136,7 +136,7 @@ export function composeSiteTemplate(config: SiteTemplateConfig): string {
   if (useCustom) {
     // Flexible custom assembly for complex brands like Odin's
     const providersOpen = config.customProviders ?? '';
-    const bodyContent = config.customBody ?? '        <div>Site: ${config.site.name}</div>';
+    const bodyContent = config.customBody ?? '        <div>Site: ' + (config.site?.name || 'Unknown') + '</div>';
     // Standard closing for IKB/BrandProvider pattern used in custom cases
     const providersClose = config.customProviders 
       ? `
@@ -166,7 +166,7 @@ root.render(<App />);
 
   // Default simple body for basic sites
   const body = `
-const root = ReactDOM.createRoot(document.getElementById('root')!);
+const root = createRoot(document.getElementById('root')); root.render(<div>Site: ' + (config.site?.name || 'Unknown') + '</div>);
 root.render(<div>Site: ${config.site.name}</div>);
 `;
 
