@@ -1,5 +1,5 @@
 {
-  "version": "Broadstroke Microsite Config \u2014 Mailing Services",
+  "version": "Broadstroke Microsite Config — Mailing Services",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {
@@ -12,7 +12,7 @@
   },
   "site": {
     "id": "mailing",
-    "name": "Mailing Services \u2014 Broadstroke, Inc.",
+    "name": "Mailing Services — Broadstroke, Inc.",
     "slug": "mailing",
     "domain": "broadstrokeinc.com",
     "basename": "/mailing",
@@ -23,7 +23,7 @@
     }
   },
   "branding": {
-    "tagline": "Print & Mail Services \u2014 Streamline Your Communications.",
+    "tagline": "Print & Mail Services — Streamline Your Communications.",
     "logo": "/logo.png"
   },
   "theme": {
@@ -34,7 +34,7 @@
     }
   },
   "seo": {
-    "title": "Mailing Services \u2014 EDDM, Presort, Certified Mail & Postalocity Automation",
+    "title": "Mailing Services — EDDM, Presort, Certified Mail & Postalocity Automation",
     "description": "Professional mailing services: EDDM, presort, certified mail, list management, and Postalocity automated platform. Expert print-to-mail solutions with concierge service for businesses, agencies, and government entities nationwide.",
     "keywords": [
       "mailing services Wichita",
@@ -47,12 +47,12 @@
       "government utility mail services",
       "address verification NCOA"
     ],
-    "ogTitle": "Mailing Services \u2014 EDDM, Presort, Certified Mail & Postalocity Automation",
+    "ogTitle": "Mailing Services — EDDM, Presort, Certified Mail & Postalocity Automation",
     "ogDescription": "Print, mail, promo & fulfillment made simple.",
     "ogImage": "/mailing/images/og-image.png",
     "twitterCard": "summary_large_image",
-    "twitterTitle": "Mailing Services \u2014 Broadstroke, Inc. | Your One-Stop-Shop for Print, Mail & Promo",
-    "twitterDescription": "Professional mailing services \u2014 EDDM, presort, certified mail, list management, and the Postalocity automated platform \u2014 all handled with concierge service from Broadstroke. Expert print-to-mail solutions that save you time and ensure accuracy.",
+    "twitterTitle": "Mailing Services — Broadstroke, Inc. | Your One-Stop-Shop for Print, Mail & Promo",
+    "twitterDescription": "Professional mailing services — EDDM, presort, certified mail, list management, and the Postalocity automated platform — all handled with concierge service from Broadstroke. Expert print-to-mail solutions that save you time and ensure accuracy.",
     "canonical": "https://broadstrokeinc.com/mailing"
   },
   "navigation": {
@@ -62,12 +62,12 @@
         "href": "#benefits"
       },
       {
-        "label": "How It Works",
-        "href": "#how-it-works"
-      },
-      {
         "label": "Services",
         "href": "#services"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
       },
       {
         "label": "FAQ",
@@ -77,7 +77,7 @@
     "serviceLinks": [
       {
         "label": "Business Forms",
-        "href": "/carbonless-forms"
+        "href": "https://broadstrokeinc.com/carbonless-forms"
       },
       {
         "label": "Print",
@@ -124,7 +124,7 @@
       },
       {
         "label": "Careers",
-        "href": "https://broadstrokeinc.com/careers"
+        "href": "https://broadstrokeinc.com/career"
       },
       {
         "label": "Contact",
@@ -133,7 +133,7 @@
     ],
     "cta": {
       "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/mailing-contact/"
+      "href": "https://broadstrokeinc.com/contact/?service=mailing"
     }
   },
   "content": {
@@ -149,7 +149,7 @@
         "highlightTerm": "Nationwide Print to USPS",
         "alt": "Professional direct mail and automated mailing services with Postalocity platform for businesses, municipalities, and government entities nationwide"
       },
-      "subhead": "Professional mailing services \u2014 EDDM, presort, certified mail, list management, and the Postalocity automated platform \u2014 all handled with concierge service from Broadstroke. Expert print-to-mail solutions that save you time and ensure accuracy.",
+      "subhead": "Professional mailing services — EDDM, presort, certified mail, list management, and the Postalocity automated platform — all handled with concierge service from Broadstroke. Expert print-to-mail solutions that save you time and ensure accuracy.",
       "background": {
         "image": "https://broadstrokeinc.com/wp-content/uploads/dreamstime_xxl_624854-scaled.jpg",
         "overlay": true,
@@ -170,20 +170,20 @@
     },
     "benefits": {
       "section": {
-        "title": "Mailing Services \u2014 Reclaim Hours Weekly with Concierge Service",
+        "title": "Mailing Services — Reclaim Hours Weekly with Concierge Service",
         "description": "Skip the coordination headaches. One team manages your entire project from list development through USPS submission. Broadstroke, Inc. delivers reliable results for businesses, advertising agencies, municipalities, utilities, and government entities across the United States."
       },
       "benefits": [
         {
           "icon": "clock",
           "title": "Reclaim Hours Weekly",
-          "description": "Stop spending staff time on folding, inserting, applying postage by hand, and post office runs. We handle all mail preparation \u2014 folding, letter inserting, postage application via meters and permits \u2014 in one stop. Upload your data once and our systems handle the rest, freeing your team for higher-value work.",
+          "description": "Stop spending staff time on folding, inserting, applying postage by hand, and post office runs. We handle all mail preparation — folding, letter inserting, postage application via meters and permits — in one stop. Upload your data once and our systems handle the rest, freeing your team for higher-value work.",
           "detail": "Results: less manual work, fewer errors, faster delivery."
         },
         {
           "icon": "trending-down",
           "title": "Fewer Returns, Better Results",
-          "description": "Stop wasting postage on undeliverable mail. Our verification catches address changes that standard services miss \u2014 reducing returns and ensuring your message reaches its target every time.",
+          "description": "Stop wasting postage on undeliverable mail. Our verification catches address changes that standard services miss — reducing returns and ensuring your message reaches its target every time.",
           "detail": "Result: improved ROI on every mailing campaign."
         },
         {
@@ -195,7 +195,7 @@
         {
           "icon": "truck",
           "title": "One Call, Done",
-          "description": "No more juggling designers, printers, and mail houses. One team handles list management, design, printing, and USPS submission \u2014 delivering professional results without the coordination headaches.",
+          "description": "No more juggling designers, printers, and mail houses. One team handles list management, design, printing, and USPS submission — delivering professional results without the coordination headaches.",
           "detail": "One point of contact from start to finish."
         }
       ]
@@ -204,7 +204,7 @@
       "section": {
         "id": "how-it-works",
         "title": "Mailing Services Workflow",
-        "description": "From list preparation through USPS delivery, our concierge-managed workflow ensures your mailings are accurate, compliant, and delivered on time \u2014 saving you hours and eliminating coordination headaches."
+        "description": "From list preparation through USPS delivery, our concierge-managed workflow ensures your mailings are accurate, compliant, and delivered on time — saving you hours and eliminating coordination headaches."
       },
       "steps": [
         {
@@ -215,7 +215,7 @@
         {
           "number": "02",
           "title": "Process",
-          "description": "We handle list verification, address validation, printing, folding, inserting, and sorting to meet USPS standards \u2014 all with quality checkpoints to ensure accuracy."
+          "description": "We handle list verification, address validation, printing, folding, inserting, and sorting to meet USPS standards — all with quality checkpoints to ensure accuracy."
         },
         {
           "number": "03",
@@ -227,18 +227,18 @@
     "difference": {
       "section": {
         "title": "The Broadstroke Difference",
-        "description": "Businesses nationwide trust Broadstroke for mailing services because we deliver more than just processed mail \u2014 we provide a true one-stop concierge solution for print, mail, and promo."
+        "description": "Businesses nationwide trust Broadstroke for mailing services because we deliver more than just processed mail — we provide a true one-stop concierge solution for print, mail, and promo."
       },
       "differences": [
         {
           "icon": "zap",
           "title": "Operational Efficiency",
-          "description": "One experienced team handles everything from list management to printing, mailing, and promotions. No more juggling multiple vendors\u2014our concierge approach coordinates every step of your project seamlessly."
+          "description": "One experienced team handles everything from list management to printing, mailing, and promotions. No more juggling multiple vendors—our concierge approach coordinates every step of your project seamlessly."
         },
         {
           "icon": "package",
           "title": "Comprehensive Mailing Experience",
-          "description": "USPS-certified processing, NCOA/CASS verification, in-house commercial inserters, and quality review \u2014 from list preparation to USPS submission. We ensure your mail reaches its target every time."
+          "description": "USPS-certified processing, NCOA/CASS verification, in-house commercial inserters, and quality review — from list preparation to USPS submission. We ensure your mail reaches its target every time."
         },
         {
           "icon": "shield",
@@ -285,8 +285,8 @@
     },
     "services": {
       "section": {
-        "title": "Mailing Services \u2014 Wichita KS",
-        "description": "Comprehensive mailing services designed to streamline your communications. From targeted list building and EDDM to certified mail and automated Postalocity delivery \u2014 one team handles it all with accuracy and efficiency."
+        "title": "Mailing Services — Wichita KS",
+        "description": "Comprehensive mailing services designed to streamline your communications. From targeted list building and EDDM to certified mail and automated Postalocity delivery — one team handles it all with accuracy and efficiency."
       },
       "services": [
         {
@@ -302,12 +302,12 @@
         {
           "icon": "mail",
           "title": "EDDM Every Door Direct Mail",
-          "description": "Reach entire neighborhoods without purchasing lists or permits. Every Door Direct Mail delivers your message to every address on selected carrier routes at reduced postage rates \u2014 ideal for local saturation at the lowest cost."
+          "description": "Reach entire neighborhoods without purchasing lists or permits. Every Door Direct Mail delivers your message to every address on selected carrier routes at reduced postage rates — ideal for local saturation at the lowest cost."
         },
         {
           "icon": "barcode",
           "title": "Processing & Distribution",
-          "description": "Our mail room handles all classes \u2014 First-Class, Marketing Mail, Nonprofit, EDDM, Certified Mail, and International Mail \u2014 with professional sorting, handling, packing, and shipping. Certified mail includes legal accountability with proof of mailing and delivery tracking for compliance requirements. No matter the size or destination, domestic or international, we get you the best rates and fastest delivery."
+          "description": "Our mail room handles all classes — First-Class, Marketing Mail, Nonprofit, EDDM, Certified Mail, and International Mail — with professional sorting, handling, packing, and shipping. Certified mail includes legal accountability with proof of mailing and delivery tracking for compliance requirements. No matter the size or destination, domestic or international, we get you the best rates and fastest delivery."
         },
         {
           "icon": "building",
@@ -317,12 +317,12 @@
         {
           "icon": "palette",
           "title": "Mail Piece Design",
-          "description": "You have about 33 seconds to convince recipients to respond. Our experienced design team creates compelling mail pieces that drive action \u2014 from concept through print-ready artwork that meets USPS specifications."
+          "description": "You have about 33 seconds to convince recipients to respond. Our experienced design team creates compelling mail pieces that drive action — from concept through print-ready artwork that meets USPS specifications."
         },
         {
           "icon": "cpu",
           "title": "Postalocity Automation Platform",
-          "description": "Automate statements, invoices, and direct mail on time, every time without losing quality. High-speed digital printers and inserters use automated verification to minimize errors while meeting USPS formatting standards \u2014 drastically reducing returned mail.",
+          "description": "Automate statements, invoices, and direct mail on time, every time without losing quality. High-speed digital printers and inserters use automated verification to minimize errors while meeting USPS formatting standards — drastically reducing returned mail.",
           "logo": {
             "src": "/mailing/images/postalocity-logo.png",
             "alt": "Postalocity Automated Mailing Platform",
@@ -375,7 +375,7 @@
         },
         {
           "q": "Can I integrate mailing services with printing and promotional products?",
-          "a": "Absolutely. As a full-service provider, we manage end-to-end projects \u2014 design, printing, mailing, fulfillment, and promotional items \u2014 with one point of contact. This one-stop concierge model eliminates coordination across multiple vendors."
+          "a": "Absolutely. As a full-service provider, we manage end-to-end projects — design, printing, mailing, fulfillment, and promotional items — with one point of contact. This one-stop concierge model eliminates coordination across multiple vendors."
         },
         {
           "q": "How does Broadstroke ensure accuracy for high-volume mailings?",
@@ -387,7 +387,7 @@
         },
         {
           "q": "How do I get started with a free estimate for mailing services?",
-          "a": "Contact our team at 316-262-3333 or orders@broadstrokeinc.com. Provide details about your project \u2014 list size, format, or automation needs \u2014 and we will deliver a customized estimate focused on efficiency, accuracy, and convenience."
+          "a": "Contact our team at 316-262-3333 or orders@broadstrokeinc.com. Provide details about your project — list size, format, or automation needs — and we will deliver a customized estimate focused on efficiency, accuracy, and convenience."
         }
       ]
     },

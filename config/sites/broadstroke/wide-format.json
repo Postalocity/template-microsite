@@ -1,5 +1,5 @@
 {
-  "version": "Broadstroke Microsite Config \u2014 Wide Format",
+  "version": "Broadstroke Microsite Config — Wide Format",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {
@@ -12,7 +12,7 @@
   },
   "site": {
     "id": "wide-format",
-    "name": "Wide Format Printing Services \u2014 Broadstroke, Inc.",
+    "name": "Wide Format Printing Services — Broadstroke, Inc.",
     "slug": "wide-format",
     "domain": "broadstrokeinc.com",
     "basename": "/wide-format",
@@ -34,7 +34,7 @@
     }
   },
   "seo": {
-    "title": "Wide Format Printing Services \u2014 Large Format Graphics & Signage \u2014 Broadstroke, Inc.",
+    "title": "Wide Format Printing Services — Large Format Graphics & Signage — Broadstroke, Inc.",
     "description": "One-stop wide format printing solutions in Wichita KS: large format graphics, vehicle graphics, custom signage & banners with concierge service, professional installation, and seamless integration with commercial printing and promotional products.",
     "keywords": [
       "wide format printing Wichita",
@@ -43,7 +43,7 @@
       "custom signage Wichita",
       "large format graphics Kansas"
     ],
-    "ogTitle": "Wide Format Printing Services \u2014 Broadstroke, Inc.",
+    "ogTitle": "Wide Format Printing Services — Broadstroke, Inc.",
     "ogDescription": "Professional wide format printing, vehicle graphics, and signage with one-call concierge convenience in Wichita, KS.",
     "ogImage": "/wide-format/images/og-image.png",
     "twitterCard": "summary_large_image",
@@ -56,16 +56,12 @@
         "href": "#benefits"
       },
       {
-        "label": "How It Works",
-        "href": "#how-it-works"
-      },
-      {
         "label": "Services",
         "href": "#services"
       },
       {
-        "label": "Comparison",
-        "href": "#comparison"
+        "label": "How It Works",
+        "href": "#how-it-works"
       },
       {
         "label": "FAQ",
@@ -122,7 +118,7 @@
       },
       {
         "label": "Careers",
-        "href": "https://broadstrokeinc.com/careers"
+        "href": "https://broadstrokeinc.com/career"
       },
       {
         "label": "Contact",
@@ -131,13 +127,13 @@
     ],
     "cta": {
       "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/print-wide-format-contact/"
+      "href": "https://broadstrokeinc.com/contact/?service=wide-format"
     }
   },
   "content": {
     "hero": {
       "headline": {
-        "main": "Go Big or Go Home \u2014",
+        "main": "Go Big or Go Home —",
         "highlightTerm": "Make an Impression",
         "alt": "Wide format printing services in Wichita KS with vehicle graphics, signage, and large format graphics"
       },
@@ -256,7 +252,7 @@
     },
     "services": {
       "section": {
-        "title": "Wide Format Printing Services \u2014 Wichita KS",
+        "title": "Wide Format Printing Services — Wichita KS",
         "description": "Full-service large format solutions including vehicle graphics, signage, banners, and custom applications with professional installation.",
         "ctas": [
           {
@@ -285,7 +281,7 @@
         {
           "icon": "scissors",
           "title": "Cut Vinyl & Custom Decals",
-          "description": "Cut vinyl lettering or logos, custom decals for windows and walls, door graphics, and roll decals \u2014 precise cutting and durable materials for any surface."
+          "description": "Cut vinyl lettering or logos, custom decals for windows and walls, door graphics, and roll decals — precise cutting and durable materials for any surface."
         },
         {
           "icon": "shield",
@@ -326,7 +322,7 @@
     "difference": {
       "section": {
         "title": "The Broadstroke Difference",
-        "description": "Businesses in the Wichita area and beyond trust Broadstroke for wide format printing because we deliver more than just large graphics \u2014 we provide a true one-stop concierge solution for print, mail, and promo."
+        "description": "Businesses in the Wichita area and beyond trust Broadstroke for wide format printing because we deliver more than just large graphics — we provide a true one-stop concierge solution for print, mail, and promo."
       },
       "differences": [
         {

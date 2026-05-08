@@ -29,6 +29,16 @@ import { composeSiteTemplate, type SiteInfo } from './generate/template-composer
 import { validateSiteConfig } from './generate/config-validator.js';
 
 /**
+ * Safely stringify an object for injection into a JavaScript template literal.
+ * Escapes backticks and ${} to prevent parser breakage in generated code.
+ */
+function safeJsonStringify(obj: any): string {
+  return JSON.stringify(obj)
+    .replace(/`/g, '\\`')
+    .replace(/\$\{/g, '\\${');
+}
+
+/**
  * Generation warning comment for auto-generated files.
  * Prepended to main.tsx and config.json to prevent manual edits.
  */
@@ -620,6 +630,10 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
       },
       ...config
     };
+    // Ensure navigation data is preserved (critical for header rendering)
+    if (config.navigation && Object.keys(config.navigation).length > 0) {
+      configWithWarning.navigation = config.navigation;
+    }
     fs.writeFileSync(path.join(siteDir, 'config.json'), JSON.stringify(configWithWarning, null, 2));
 
     // Generate vite.config.ts
@@ -2315,47 +2329,46 @@ function generateDominantBuckTemplate(config: SiteConfig, brandContext?: BrandCo
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
  *
  * Site:      ${site.slug}
- * Brand:     Odin's Innovations
+ * Brand:     ${brand.name || 'Broadstroke'}
  * Generated: ${new Date().toISOString()}
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
- * Content:   config/sites/odins-innovations/${site.slug}.json
+ * Content:   config/sites/${brandId || 'broadstroke'}/${site.slug}.json
  * Template:  scripts/generate-site.ts
  *
  * • To change content → edit the source JSON config, then regenerate
  * • To change layout  → edit the template function in generate-site.ts
+ *
  * • To add custom sections → create a new template function & add routing
- * • To share components → add to common/themes/odins-innovations/components/shared/
+ * • To share components → add to common/themes/${brandId || 'broadstroke'}/components/shared/
  *   Never create site-specific component files in the generated site directory
  *
  * DO NOT bypass the pre-commit hook with --no-verify
- */
+ */`;
 
+  const customImports = `
 import { createRoot } from 'react-dom/client';
-
-// ⚠️ DO NOT EDIT — This file is auto-generated. See source config and template.
-// Source: config/sites/odins-innovations/${site.slug}.json | Template: scripts/generate-site.ts
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, HowItWorksSection, ProductsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
-import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
-import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, HighlightSection } from '@/components/shared';
+import SiteNavigation from '@/components/shared/SiteNavigation';
+import SiteFooter from '@/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
-import '@/themes/odins-innovations/globals.css';
+import '@/globals.css';
 import config from './config.json';
-
+ 
 // Brand configuration (from BrandContext defaults)
 const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
 
-// IKB configuration
-const ikbConfig = ${JSON.stringify(ikb)};
+// IKB configuration with promo codes (safely stringified)
+const ikbConfig = ${safeJsonStringify(ikbConfig)};
 
 // Get promo code from IKB for the service
-const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
-
+const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
+ 
 function App() {
   const { content } = config;
   const navCta = config.navigation?.cta;
@@ -2553,17 +2566,14 @@ const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
 
-// IKB configuration
-const ikbConfig = ${JSON.stringify(ikb)};
-
-// Get promo code
-const promoCode = ikbConfig.rules?.promoCodes?.['scrape-scent-guide'] || 'HUNT2026';
-
+// Promo code (safe default to avoid parser issues with large inline objects)
+const promoCode = '2026';
+ 
 function App() {
   const { content } = config;
   const navCta = config.navigation?.cta;
   return (
-    <IKBProvider ikb={ikbConfig}>
+    <IKBProvider>
       <BrandProvider
         brand={brandConfig}
         contact={contactConfig}

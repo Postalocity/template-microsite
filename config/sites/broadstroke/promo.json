@@ -1,525 +1,525 @@
 {
-    "site": {
-        "id": "broadstroke",
-        "name": "Promotional Products & Apparel \u2014 Broadstroke, Inc.",
-        "slug": "promo",
-        "domain": "broadstrokeinc.com",
-        "basename": "broadstroke-promo",
-        "contact": {
-            "email": "info@broadstrokeinc.com",
-            "phone": "316-262-3333",
-            "address": "820 W 2nd St N, Wichita, KS 67203"
-        }
+  "site": {
+    "id": "broadstroke",
+    "name": "Promotional Products & Apparel — Broadstroke, Inc.",
+    "slug": "promo",
+    "domain": "broadstrokeinc.com",
+    "basename": "broadstroke-promo",
+    "contact": {
+      "email": "info@broadstrokeinc.com",
+      "phone": "316-262-3333",
+      "address": "820 W 2nd St N, Wichita, KS 67203"
+    }
+  },
+  "branding": {
+    "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
+    "logo": "/logo.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 40
     },
-    "branding": {
-        "tagline": "Your One-Stop-Shop for Print, Mail & Promo",
-        "logo": "/logo.png"
-    },
-    "theme": {
-        "primary": {
-            "h": 200,
-            "s": 80,
-            "l": 40
+    "accent": {
+      "h": 45,
+      "s": 100,
+      "l": 50
+    }
+  },
+  "seo": {
+    "title": "Promotional Products & Apparel — Broadstroke, Inc.",
+    "description": "One-stop promotional products and apparel solutions in Wichita KS: custom branded merchandise with screen printing, embroidery, free estimates, fast turnaround & proven brand impact.",
+    "keywords": [
+      "promotional products Wichita",
+      "promo products Kansas",
+      "custom promotional products Wichita KS",
+      "branded merchandise Wichita",
+      "promotional apparel Wichita",
+      "promotional products near me Wichita",
+      "custom t-shirts Wichita",
+      "screen printing Wichita",
+      "embroidery Wichita KS",
+      "corporate gifts Wichita",
+      "trade show giveaways Wichita",
+      "promotional items Kansas"
+    ],
+    "ogTitle": "Promotional Products & Apparel — Broadstroke, Inc.",
+    "ogDescription": "Print, mail, promo & fulfillment made simple.",
+    "ogImage": "/promo/images/og-image.png",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://broadstrokeinc.com/promo"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Products",
+        "href": "https://www.broadstrokepromos.com/"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "serviceLinks": [
+      {
+        "label": "Business Forms",
+        "href": "https://broadstrokeinc.com/carbonless-forms"
+      },
+      {
+        "label": "Print",
+        "href": "https://broadstrokeinc.com/commercial-printing"
+      },
+      {
+        "label": "Mail",
+        "href": "https://broadstrokeinc.com/mailing"
+      },
+      {
+        "label": "Mail Pickup",
+        "href": "https://broadstrokeinc.com/mail-pickup"
+      },
+      {
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
+      },
+      {
+        "label": "Technology",
+        "href": "https://aobts.com/"
+      },
+      {
+        "label": "Promo",
+        "href": "https://www.broadstrokepromos.com/"
+      },
+      {
+        "label": "Wide Format",
+        "href": "https://broadstrokeinc.com/wide-format"
+      }
+    ],
+    "companyLinks": [
+      {
+        "label": "About",
+        "href": "https://broadstrokeinc.com/about"
+      },
+      {
+        "label": "Our Work",
+        "href": "https://broadstrokeinc.com/our-work"
+      },
+      {
+        "label": "Blog",
+        "href": "https://broadstrokeinc.com/about/blogs"
+      },
+      {
+        "label": "Careers",
+        "href": "https://broadstrokeinc.com/career"
+      },
+      {
+        "label": "Contact",
+        "href": "https://broadstrokeinc.com/contact"
+      }
+    ],
+    "cta": {
+      "text": "Browse Products",
+      "href": "https://www.broadstrokepromos.com/"
+    }
+  },
+  "content": {
+    "testimonials": [],
+    "trustSignals": [
+      "Onsite Promo Showroom and Sample Orders",
+      "Product Expertise & Vendor Relationships",
+      "Professional Wrapping & Arrangements",
+      "In-House Design Team"
+    ],
+    "hero": {
+      "headline": {
+        "main": "Promotional Products & Apparel —",
+        "highlightTerm": "One-Stop Shop.",
+        "alt": "Professional promotional products and custom apparel with screen printing and embroidery displayed for businesses in Wichita KS"
+      },
+      "subhead": "Looking for a specific item or just browsing for ideas? Your one-stop shop for promotional products and business gifts. With thousands of selections, we offer branded merchandise to fulfill all of your needs.",
+      "logo": {
+        "src": "/promo/images/Broadstroke_Icon_Promo.png",
+        "alt": "Broadstroke Promotional Products",
+        "align": "left"
+      },
+      "background": {
+        "image": "/promo/images/promo-hall.png",
+        "overlay": true,
+        "alt": "Promotional products showroom hall at Broadstroke in Wichita KS"
+      },
+      "ctas": [
+        {
+          "text": "Browse Products",
+          "href": "https://www.broadstrokepromos.com/",
+          "variant": "primary"
         },
-        "accent": {
-            "h": 45,
-            "s": 100,
-            "l": 50
+        {
+          "text": "See How It Works",
+          "href": "#how-it-works",
+          "variant": "outline"
         }
+      ]
     },
-    "seo": {
-        "title": "Promotional Products & Apparel \u2014 Broadstroke, Inc.",
-        "description": "One-stop promotional products and apparel solutions in Wichita KS: custom branded merchandise with screen printing, embroidery, free estimates, fast turnaround & proven brand impact.",
-        "keywords": [
-            "promotional products Wichita",
-            "promo products Kansas",
-            "custom promotional products Wichita KS",
-            "branded merchandise Wichita",
-            "promotional apparel Wichita",
-            "promotional products near me Wichita",
-            "custom t-shirts Wichita",
-            "screen printing Wichita",
-            "embroidery Wichita KS",
-            "corporate gifts Wichita",
-            "trade show giveaways Wichita",
-            "promotional items Kansas"
-        ],
-        "ogTitle": "Promotional Products & Apparel \u2014 Broadstroke, Inc.",
-        "ogDescription": "Print, mail, promo & fulfillment made simple.",
-        "ogImage": "/promo/images/og-image.png",
-        "twitterCard": "summary_large_image",
-        "canonical": "https://broadstrokeinc.com/promo"
+    "highlight": {
+      "section": {
+        "title": "Visit Our Wichita Promo Showroom",
+        "description": "See samples in person, touch the fabrics, and work directly with our product experts to find the perfect promotional items for your brand.",
+        "background": {
+          "image": "/promo/images/promo-hall.png",
+          "overlay": true,
+          "alt": "Broadstroke promotional products showroom hall with product displays in Wichita KS"
+        },
+        "ctas": [
+          {
+            "text": "Schedule a Visit",
+            "href": "https://broadstrokeinc.com/promo-contact/",
+            "variant": "primary"
+          },
+          {
+            "text": "Browse Online",
+            "href": "https://www.broadstrokepromos.com/",
+            "variant": "outline"
+          }
+        ]
+      }
     },
-    "navigation": {
-        "links": [
-            {
-                "label": "Benefits",
-                "href": "#benefits"
-            },
-            {
-                "label": "Products",
-                "href": "https://www.broadstrokepromos.com/"
-            },
-            {
-                "label": "How It Works",
-                "href": "#how-it-works"
-            },
-            {
-                "label": "FAQ",
-                "href": "#faq"
-            }
-        ],
-        "serviceLinks": [
-            {
-                "label": "Business Forms",
-                "href": "https://broadstrokeinc.com/carbonless-forms"
-            },
-            {
-                "label": "Print",
-                "href": "https://broadstrokeinc.com/commercial-printing"
-            },
-            {
-                "label": "Mail",
-                "href": "https://broadstrokeinc.com/mailing"
-            },
-            {
-                "label": "Mail Pickup",
-                "href": "https://broadstrokeinc.com/mail-pickup"
-            },
-            {
-                "label": "Postalocity",
-                "href": "https://www.postalocity.com/",
-                "target": "_blank"
-            },
-            {
-                "label": "Technology",
-                "href": "https://aobts.com/"
-            },
-            {
-                "label": "Promo",
-                "href": "/promo"
-            },
-            {
-                "label": "Wide Format",
-                "href": "https://broadstrokeinc.com/wide-format"
-            }
-        ],
-        "companyLinks": [
-            {
-                "label": "About",
-                "href": "https://broadstrokeinc.com/about"
-            },
-            {
-                "label": "Our Work",
-                "href": "https://broadstrokeinc.com/our-work"
-            },
-            {
-                "label": "Blog",
-                "href": "https://broadstrokeinc.com/about/blogs"
-            },
-            {
-                "label": "Careers",
-                "href": "https://broadstrokeinc.com/careers"
-            },
-            {
-                "label": "Contact",
-                "href": "https://broadstrokeinc.com/contact"
-            }
-        ],
+    "benefits": {
+      "section": {
+        "title": "Order Confidently with Concierge Service",
+        "description": "Get the service and products you deserve. Broadstroke combines product expertise, trusted vendor relationships, in-house design, and attractive product packaging with a superior product review process—from viewing real samples to digital proofs of the final product and quality review—to ensure you get high-quality items that align and elevate your brand in the quantities you need, at the time you need it."
+      },
+      "benefits": [
+        {
+          "icon": "users",
+          "title": "Product Expertise",
+          "description": "Team members have years of industry experience and strong vendor relationships.",
+          "detail": "Avoid inferior products and supply chain issues."
+        },
+        {
+          "icon": "shirt",
+          "title": "Sample Orders",
+          "description": "Sample orders available to ensure quality standards and color matches prior to full order placement.",
+          "detail": "Avoid potential issues on large orders by viewing physical samples first."
+        },
+        {
+          "icon": "sparkles",
+          "title": "Finishing Touches",
+          "description": "Elevate your welcome kits, gifts, and giveaways with artfully arranged baskets and wrapping. Personalization on individual items.",
+          "detail": "Present a polished appearance for positive first impressions."
+        },
+        {
+          "icon": "clock",
+          "title": "Save Hours Every Week",
+          "description": "No more juggling multiple vendors. One experienced team handles everything from product selection to customization and fulfillment.",
+          "detail": "Eliminates coordination time between designers, suppliers, and shippers."
+        },
+        {
+          "icon": "palette",
+          "title": "Design Services Included",
+          "description": "Professional design team creates impactful branded merchandise that aligns with your marketing goals.",
+          "detail": "From logo placement to full product design, we handle the creative work."
+        },
+        {
+          "icon": "truck",
+          "title": "Fast Turnaround",
+          "description": "Quick production schedules with reliable delivery timelines. Rush orders available when you need them.",
+          "detail": "Standard and expedited production options to meet your deadlines."
+        }
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Why Wichita Businesses Choose Broadstroke<br />for Promotional Products",
+        "description": "See the difference professional concierge service makes."
+      },
+      "columns": {
+        "traditional": "Other Promo Suppliers",
+        "ourSolution": "Broadstroke"
+      },
+      "rows": [
+        {
+          "icon": "users",
+          "feature": "Dedicated Support",
+          "ourSolution": "Same team from product selection to delivery",
+          "traditionalApproach": "Different person at each stage"
+        },
+        {
+          "icon": "edit",
+          "feature": "Customized Logo Design",
+          "ourSolution": "Unlimited proofs with revisions until artwork approval",
+          "traditionalApproach": "Basic placement only, extra fees for changes"
+        },
+        {
+          "icon": "package",
+          "feature": "Fulfillment",
+          "ourSolution": "In-house kitting and shipping",
+          "traditionalApproach": "Third-party fulfillment required"
+        },
+        {
+          "icon": "link",
+          "feature": "Integration",
+          "ourSolution": "Seamless with print, mail, and wide format",
+          "traditionalApproach": "Standalone service only"
+        },
+        {
+          "icon": "shield",
+          "feature": "Quality Control",
+          "ourSolution": "Apparel reviewed by promo team before shipping",
+          "traditionalApproach": "Ship direct from manufacturer"
+        },
+        {
+          "icon": "shirt",
+          "feature": "Product Samples",
+          "ourSolution": "Samples onsite in Promo Showroom and free sample orders available",
+          "traditionalApproach": "Not available or charges for samples"
+        },
+        {
+          "icon": "award",
+          "feature": "Product Expertise",
+          "ourSolution": "Product knowledge and established relationships with trusted vendors",
+          "traditionalApproach": "Go-betweens for third party vendors"
+        },
+        {
+          "icon": "clipboard",
+          "feature": "Presentation",
+          "ourSolution": "Professional wrapping and arrangements available",
+          "traditionalApproach": "Products in original vendor packaging"
+        },
+        {
+          "icon": "wand",
+          "feature": "Personalization",
+          "ourSolution": "One-off items with personalization available",
+          "traditionalApproach": "Only offer a single standardized design"
+        },
+        {
+          "icon": "clock",
+          "feature": "Turnaround",
+          "ourSolution": "Fast, reliable production schedules",
+          "traditionalApproach": "Long lead times, delays common"
+        }
+      ]
+    },
+    "services": {
+      "section": {
+        "title": "Promotional Products & Apparel —<br />in Wichita, KS and Nationwide",
+        "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on the newest products and latest trends.",
         "cta": {
-            "text": "Browse Products",
-            "href": "https://www.broadstrokepromos.com/"
+          "text": "Browse Products",
+          "href": "https://www.broadstrokepromos.com/"
+        },
+        "finishingNote": "All promotional products include professional customization services—screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available."
+      },
+      "services": [
+        {
+          "icon": "shirt",
+          "title": "Apparel & Uniforms",
+          "description": "T-shirts, polos, jackets, activewear, hats, workwear, bags, and accessories. Customization with screen printing or embroidery. Screen-printed apparel has a minimum of 24 pieces; embroidery has no minimum.",
+          "image": "/promo/images/categories/bakery-spread.jpg",
+          "href": "https://www.broadstrokepromos.com/t-shirts.html"
+        },
+        {
+          "icon": "calendar",
+          "title": "Trade Show & Signage",
+          "description": "Tablecloths, pop-up banners, tabletop banners, backdrops, wall kits, tents, and displays. Make a statement at events with coordinated materials.",
+          "image": "/promo/images/categories/tradeshow-materials.jpg",
+          "href": "https://www.broadstrokepromos.com/office-tradeshows-events.htm"
+        },
+        {
+          "icon": "smartphone",
+          "title": "Office & Tech",
+          "description": "USB drives, power banks, phone accessories, writing instruments, notepads, journals, sticky notes, mousepads, clipboards, lanyards, name badges, and stress relievers.",
+          "image": "/promo/images/categories/magnetic-notebook.jpg",
+          "href": "https://www.broadstrokepromos.com/office-supplies.html"
+        },
+        {
+          "icon": "award",
+          "title": "Awards & Trophies",
+          "description": "Trophies, plaques, vases, emblems, pins, and medals. Custom engraved in-house with no minimum order quantity.",
+          "image": "/promo/images/categories/AdobeStock_672191208.jpeg",
+          "href": "https://www.broadstrokepromos.com/awards-recognition-trophies.htm"
+        },
+        {
+          "icon": "shopping-bag",
+          "title": "Bags & Totes",
+          "description": "Backpacks, tote bags, duffels, coolers, and luggage. Perfect for events, giveaways, and employee gifts.",
+          "image": "/promo/images/categories/bags-totes.jpg",
+          "href": "https://www.broadstrokepromos.com/bags.html"
+        },
+        {
+          "icon": "coffee",
+          "title": "Drinkware",
+          "description": "Branded mugs, tumblers, water bottles, and drinkware that keeps your logo visible daily. Laser engraving and full-color printing available.",
+          "image": "/promo/images/categories/coffee-mug.jpg",
+          "href": "https://www.broadstrokepromos.com/drinkware.htm"
+        },
+        {
+          "icon": "zap",
+          "title": "Sports & Outdoors",
+          "description": "Coolers, beverage insulators, umbrellas, blankets, chairs, golf, games, and team spirit. Be brand ready for outdoor activities or the big game.",
+          "image": "/promo/images/categories/16in-beach-ball.jpg",
+          "href": "https://www.broadstrokepromos.com/fun-outdoors.htm"
+        },
+        {
+          "icon": "home",
+          "title": "Home & Auto",
+          "description": "Blankets, candles, coasters, cutting boards & charcuterie boards, playing cards & games, cleaning supplies, tools, emergency kits, and sunshades. Keep your brand top of mind at home and on the road.",
+          "image": "/promo/images/categories/993-EV-Sherpa-Fleece-Blanket.jpg",
+          "href": "https://www.broadstrokepromos.com/homeauto.html"
+        },
+        {
+          "icon": "gift",
+          "title": "Client & Team Gifts",
+          "description": "Executive gifts, recognition awards, welcome kits, and appreciation packages. Elevated presentation with professional wrapping and arrangements.",
+          "image": "/promo/images/categories/20191011_115126.jpg",
+          "href": "https://www.broadstrokepromos.com/holiday-gifts.html"
         }
+      ]
     },
-    "content": {
-        "testimonials": [],
-        "trustSignals": [
-            "Onsite Promo Showroom and Sample Orders",
-            "Product Expertise & Vendor Relationships",
-            "Professional Wrapping & Arrangements",
-            "In-House Design Team"
-        ],
-        "hero": {
-            "headline": {
-                "main": "Promotional Products & Apparel \u2014",
-                "highlightTerm": "One-Stop Shop.",
-                "alt": "Professional promotional products and custom apparel with screen printing and embroidery displayed for businesses in Wichita KS"
-            },
-            "subhead": "Looking for a specific item or just browsing for ideas? Your one-stop shop for promotional products and business gifts. With thousands of selections, we offer branded merchandise to fulfill all of your needs.",
-            "logo": {
-                "src": "/promo/images/Broadstroke_Icon_Promo.png",
-                "alt": "Broadstroke Promotional Products",
-                "align": "left"
-            },
-            "background": {
-                "image": "/promo/images/promo-hall.png",
-                "overlay": true,
-                "alt": "Promotional products showroom hall at Broadstroke in Wichita KS"
-            },
-            "ctas": [
-                {
-                    "text": "Browse Products",
-                    "href": "https://www.broadstrokepromos.com/",
-                    "variant": "primary"
-                },
-                {
-                    "text": "See How It Works",
-                    "href": "#how-it-works",
-                    "variant": "outline"
-                }
-            ]
-        },
-        "highlight": {
-            "section": {
-                "title": "Visit Our Wichita Promo Showroom",
-                "description": "See samples in person, touch the fabrics, and work directly with our product experts to find the perfect promotional items for your brand.",
-                "background": {
-                    "image": "/promo/images/promo-hall.png",
-                    "overlay": true,
-                    "alt": "Broadstroke promotional products showroom hall with product displays in Wichita KS"
-                },
-                "ctas": [
-                    {
-                        "text": "Schedule a Visit",
-                        "href": "https://broadstrokeinc.com/promo-contact/",
-                        "variant": "primary"
-                    },
-                    {
-                        "text": "Browse Online",
-                        "href": "https://www.broadstrokepromos.com/",
-                        "variant": "outline"
-                    }
-                ]
-            }
-        },
-        "benefits": {
-            "section": {
-                "title": "Order Confidently with Concierge Service",
-                "description": "Get the service and products you deserve. Broadstroke combines product expertise, trusted vendor relationships, in-house design, and attractive product packaging with a superior product review process\u2014from viewing real samples to digital proofs of the final product and quality review\u2014to ensure you get high-quality items that align and elevate your brand in the quantities you need, at the time you need it."
-            },
-            "benefits": [
-                {
-                    "icon": "users",
-                    "title": "Product Expertise",
-                    "description": "Team members have years of industry experience and strong vendor relationships.",
-                    "detail": "Avoid inferior products and supply chain issues."
-                },
-                {
-                    "icon": "shirt",
-                    "title": "Sample Orders",
-                    "description": "Sample orders available to ensure quality standards and color matches prior to full order placement.",
-                    "detail": "Avoid potential issues on large orders by viewing physical samples first."
-                },
-                {
-                    "icon": "sparkles",
-                    "title": "Finishing Touches",
-                    "description": "Elevate your welcome kits, gifts, and giveaways with artfully arranged baskets and wrapping. Personalization on individual items.",
-                    "detail": "Present a polished appearance for positive first impressions."
-                },
-                {
-                    "icon": "clock",
-                    "title": "Save Hours Every Week",
-                    "description": "No more juggling multiple vendors. One experienced team handles everything from product selection to customization and fulfillment.",
-                    "detail": "Eliminates coordination time between designers, suppliers, and shippers."
-                },
-                {
-                    "icon": "palette",
-                    "title": "Design Services Included",
-                    "description": "Professional design team creates impactful branded merchandise that aligns with your marketing goals.",
-                    "detail": "From logo placement to full product design, we handle the creative work."
-                },
-                {
-                    "icon": "truck",
-                    "title": "Fast Turnaround",
-                    "description": "Quick production schedules with reliable delivery timelines. Rush orders available when you need them.",
-                    "detail": "Standard and expedited production options to meet your deadlines."
-                }
-            ]
-        },
-        "comparison": {
-            "section": {
-                "title": "Why Wichita Businesses Choose Broadstroke<br />for Promotional Products",
-                "description": "See the difference professional concierge service makes."
-            },
-            "columns": {
-                "traditional": "Other Promo Suppliers",
-                "ourSolution": "Broadstroke"
-            },
-            "rows": [
-                {
-                    "icon": "users",
-                    "feature": "Dedicated Support",
-                    "ourSolution": "Same team from product selection to delivery",
-                    "traditionalApproach": "Different person at each stage"
-                },
-                {
-                    "icon": "edit",
-                    "feature": "Customized Logo Design",
-                    "ourSolution": "Unlimited proofs with revisions until artwork approval",
-                    "traditionalApproach": "Basic placement only, extra fees for changes"
-                },
-                {
-                    "icon": "package",
-                    "feature": "Fulfillment",
-                    "ourSolution": "In-house kitting and shipping",
-                    "traditionalApproach": "Third-party fulfillment required"
-                },
-                {
-                    "icon": "link",
-                    "feature": "Integration",
-                    "ourSolution": "Seamless with print, mail, and wide format",
-                    "traditionalApproach": "Standalone service only"
-                },
-                {
-                    "icon": "shield",
-                    "feature": "Quality Control",
-                    "ourSolution": "Apparel reviewed by promo team before shipping",
-                    "traditionalApproach": "Ship direct from manufacturer"
-                },
-                {
-                    "icon": "shirt",
-                    "feature": "Product Samples",
-                    "ourSolution": "Samples onsite in Promo Showroom and free sample orders available",
-                    "traditionalApproach": "Not available or charges for samples"
-                },
-                {
-                    "icon": "award",
-                    "feature": "Product Expertise",
-                    "ourSolution": "Product knowledge and established relationships with trusted vendors",
-                    "traditionalApproach": "Go-betweens for third party vendors"
-                },
-                {
-                    "icon": "clipboard",
-                    "feature": "Presentation",
-                    "ourSolution": "Professional wrapping and arrangements available",
-                    "traditionalApproach": "Products in original vendor packaging"
-                },
-                {
-                    "icon": "wand",
-                    "feature": "Personalization",
-                    "ourSolution": "One-off items with personalization available",
-                    "traditionalApproach": "Only offer a single standardized design"
-                },
-                {
-                    "icon": "clock",
-                    "feature": "Turnaround",
-                    "ourSolution": "Fast, reliable production schedules",
-                    "traditionalApproach": "Long lead times, delays common"
-                }
-            ]
-        },
-        "services": {
-            "section": {
-                "title": "Promotional Products & Apparel \u2014<br />in Wichita, KS and Nationwide",
-                "description": "With thousands of selections, Broadstroke Promotions offers branded merchandise to fulfill all of your needs. Can't find what you're looking for? Reach out! The promo team specializes in developing relationships with vendors and staying current on the newest products and latest trends.",
-                "cta": {
-                    "text": "Browse Products",
-                    "href": "https://www.broadstrokepromos.com/"
-                },
-                "finishingNote": "All promotional products include professional customization services\u2014screen printing, embroidery, debossing, laser engraving, and full-color digital printing. Kitting, custom packaging, and fulfillment services are also available."
-            },
-            "services": [
-                {
-                    "icon": "shirt",
-                    "title": "Apparel & Uniforms",
-                    "description": "T-shirts, polos, jackets, activewear, hats, workwear, bags, and accessories. Customization with screen printing or embroidery. Screen-printed apparel has a minimum of 24 pieces; embroidery has no minimum.",
-                    "image": "/promo/images/categories/bakery-spread.jpg",
-                    "href": "https://www.broadstrokepromos.com/t-shirts.html"
-                },
-                {
-                    "icon": "calendar",
-                    "title": "Trade Show & Signage",
-                    "description": "Tablecloths, pop-up banners, tabletop banners, backdrops, wall kits, tents, and displays. Make a statement at events with coordinated materials.",
-                    "image": "/promo/images/categories/tradeshow-materials.jpg",
-                    "href": "https://www.broadstrokepromos.com/office-tradeshows-events.htm"
-                },
-                {
-                    "icon": "smartphone",
-                    "title": "Office & Tech",
-                    "description": "USB drives, power banks, phone accessories, writing instruments, notepads, journals, sticky notes, mousepads, clipboards, lanyards, name badges, and stress relievers.",
-                    "image": "/promo/images/categories/magnetic-notebook.jpg",
-                    "href": "https://www.broadstrokepromos.com/office.htm"
-                },
-                {
-                    "icon": "award",
-                    "title": "Awards & Trophies",
-                    "description": "Trophies, plaques, vases, emblems, pins, and medals. Custom engraved in-house with no minimum order quantity.",
-                    "image": "/promo/images/categories/AdobeStock_672191208.jpeg",
-                    "href": "https://www.broadstrokepromos.com/awards-recognition-trophies.htm"
-                },
-                {
-                    "icon": "shopping-bag",
-                    "title": "Bags & Totes",
-                    "description": "Backpacks, tote bags, duffels, coolers, and luggage. Perfect for events, giveaways, and employee gifts.",
-                    "image": "/promo/images/categories/bags-totes.jpg",
-                    "href": "https://www.broadstrokepromos.com/bags.html"
-                },
-                {
-                    "icon": "coffee",
-                    "title": "Drinkware",
-                    "description": "Branded mugs, tumblers, water bottles, and drinkware that keeps your logo visible daily. Laser engraving and full-color printing available.",
-                    "image": "/promo/images/categories/coffee-mug.jpg",
-                    "href": "https://www.broadstrokepromos.com/drinkware.htm"
-                },
-                {
-                    "icon": "zap",
-                    "title": "Sports & Outdoors",
-                    "description": "Coolers, beverage insulators, umbrellas, blankets, chairs, golf, games, and team spirit. Be brand ready for outdoor activities or the big game.",
-                    "image": "/promo/images/categories/16in-beach-ball.jpg",
-                    "href": "https://www.broadstrokepromos.com/fun-outdoors.htm"
-                },
-                {
-                    "icon": "home",
-                    "title": "Home & Auto",
-                    "description": "Blankets, candles, coasters, cutting boards & charcuterie boards, playing cards & games, cleaning supplies, tools, emergency kits, and sunshades. Keep your brand top of mind at home and on the road.",
-                    "image": "/promo/images/categories/993-EV-Sherpa-Fleece-Blanket.jpg",
-                    "href": "https://www.broadstrokepromos.com/homeauto.html"
-                },
-                {
-                    "icon": "gift",
-                    "title": "Client & Team Gifts",
-                    "description": "Executive gifts, recognition awards, welcome kits, and appreciation packages. Elevated presentation with professional wrapping and arrangements.",
-                    "image": "/promo/images/categories/20191011_115126.jpg",
-                    "href": "https://www.broadstrokepromos.com/executive-gifts.htm"
-                }
-            ]
-        },
-        "howItWorks": {
-            "section": {
-                "id": "how-it-works",
-                "title": "How It Works",
-                "description": "Promo orders are facilitated from product selection, through artwork approval, to customer in-hand with a focus on quality products, affordable prices, and quick turnarounds to ensure your team can place orders with the confidence they'll arrive on time and as expected.",
-                "cta": {
-                    "text": "View Product Options",
-                    "href": "https://www.broadstrokepromos.com/"
-                }
-            },
-            "steps": [
-                {
-                    "number": "01",
-                    "title": "Select",
-                    "description": "Browse our catalog at <a href='https://www.broadstrokepromos.com/' class='underline hover:opacity-80 transition-opacity'>broadstrokepromos.com</a> or visit our onsite Promo Showroom to view products in person. Team members provide expert recommendations based on your preferences and budget."
-                },
-                {
-                    "number": "02",
-                    "title": "Customize",
-                    "description": "Our design team creates or refines your artwork. We provide proofs showing brand or personalization placement before production begins. Sample orders available to ensure quality standards and color matches."
-                },
-                {
-                    "number": "03",
-                    "title": "Deliver",
-                    "description": "Most promotional products ship directly to you from our trusted vendors. Apparel orders are inspected by our team before delivery. Rush options available to meet tight deadlines."
-                }
-            ]
-        },
-        "difference": {
-            "section": {
-                "title": "Why Choose Broadstroke",
-                "description": "The Broadstroke Difference \u2014 Businesses in the Wichita area, Kansas, and nationwide trust Broadstroke because we deliver more than just quality promotional products and apparel \u2014 we provide a true one-stop concierge solution for print, mail, and promo."
-            },
-            "differences": [
-                {
-                    "icon": "zap",
-                    "title": "Operational Efficiency",
-                    "description": "One experienced team handles everything from design to printing, mailing, and promotions. No more juggling multiple vendors\u2014our concierge approach coordinates every step of your project seamlessly."
-                },
-                {
-                    "icon": "package",
-                    "title": "Comprehensive Promotional Experience",
-                    "description": "Product expertise, trusted vendor relationships, in-house design, and quality review\u2014from viewing real samples to digital proofs to final delivery. We ensure you get high-quality items that elevate your brand."
-                },
-                {
-                    "icon": "shield",
-                    "title": "Proven Local Expertise",
-                    "description": "Serving Wichita since 1964 with over 60 years of experience. We know the local market, understand your needs, and serve businesses of all sizes across industries."
-                }
-            ]
-        },
-        "faq": {
-            "section": {
-                "title": "Promotional Products FAQ",
-                "description": ""
-            },
-            "faqs": [
-                {
-                    "q": "What is the minimum order quantity for promotional items?",
-                    "a": "Minimum order quantities vary by product type. Some items are available with no minimums and can be personalized for your recipient! Apparel typically requires 12-24 pieces, and many items start at 24-50 pieces. Screen-printed apparel has a minimum order quantity of 24; embroidery has no minimum. Some premium gifts and tech items may have higher minimums. Contact us at <a href='mailto:promoinfo@broadstrokeinc.com' class='underline hover:opacity-80 transition-opacity'>promoinfo@broadstrokeinc.com</a> for specific product details\u2014we can help you find options that fit your budget and quantity needs."
-                },
-                {
-                    "q": "What customization options are available?",
-                    "a": "We offer multiple customization methods to match your product and design: screen printing and embroidery for apparel; laser engraving for metal and wood items; debossing and embossing for leather and premium products; full-color digital printing for complex designs; and pad printing for pens and small items. Our team recommends the best method for your specific project."
-                },
-                {
-                    "q": "How long does it take to receive promotional products?",
-                    "a": "Standard production time is typically 2-3 weeks after artwork approval (including shipping time). Rush production is available for many products (additional fees may apply). Around the holidays, it's best to order 1-2 months ahead to ensure availability and on-time delivery. Complex orders or large quantities may require additional time. We'll provide a clear timeline when you request your estimate."
-                },
-                {
-                    "q": "Can you help with product selection and design?",
-                    "a": "Absolutely. Our team provides product recommendations based on your goals, budget, and timeline. In-house designers create or refine your artwork to ensure optimal customization results. Whether you have existing brand guidelines or need creative development, we handle every detail to deliver impactful branded merchandise."
-                },
-                {
-                    "q": "Do you offer fulfillment and shipping services?",
-                    "a": "Yes. We provide complete fulfillment services including kitting, custom packaging, and shipping to multiple locations. Promotional products can be integrated with print and mail campaigns for cohesive marketing initiatives. Store and release programs are also available for ongoing employee or client gifting needs."
-                },
-                {
-                    "q": "What is the process for obtaining a free estimate?",
-                    "a": "Submit your details by email to <a href='mailto:promoinfo@broadstrokeinc.com' class='underline hover:opacity-80 transition-opacity'>promoinfo@broadstrokeinc.com</a>, or call <a href='tel:316-247-5348' class='underline hover:opacity-80 transition-opacity'>316-247-5348</a>. You can also submit your details through our <a href='https://broadstrokeinc.com/contact' class='underline hover:opacity-80 transition-opacity'>contact form</a>. A member of our team will review your project and provide a clear, no-obligation estimate with recommended products, branding and personalization options, and timelines."
-                }
-            ]
-        },
-        "footer": {
-            "quickLinks": [
-                {
-                    "label": "Print",
-                    "href": "https://broadstrokeinc.com/commercial-printing"
-                },
-                {
-                    "label": "Mail",
-                    "href": "https://broadstrokeinc.com/mailing"
-                },
-                {
-                    "label": "Mail Pickup",
-                    "href": "https://broadstrokeinc.com/mail-pickup"
-                },
-                {
-                    "label": "Promo",
-                    "href": "https://www.broadstrokepromos.com/"
-                },
-                {
-                    "label": "Wide Format",
-                    "href": "https://broadstrokeinc.com/wide-format"
-                },
-                {
-                    "label": "Postalocity",
-                    "href": "https://www.postalocity.com/"
-                },
-                {
-                    "label": "Business Forms",
-                    "href": "https://broadstrokeinc.com/carbonless-forms"
-                },
-                {
-                    "label": "Technology",
-                    "href": "https://aobts.com/"
-                }
-            ],
-            "finalCTA": {
-                "headline": "Ready to simplify your promotional products projects?",
-                "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
-                "buttonText": "Get Free Estimate",
-                "href": "https://broadstrokeinc.com/promo-contact/"
-            },
-            "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
-            "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
+    "howItWorks": {
+      "section": {
+        "id": "how-it-works",
+        "title": "How It Works",
+        "description": "Promo orders are facilitated from product selection, through artwork approval, to customer in-hand with a focus on quality products, affordable prices, and quick turnarounds to ensure your team can place orders with the confidence they'll arrive on time and as expected.",
+        "cta": {
+          "text": "View Product Options",
+          "href": "https://www.broadstrokepromos.com/"
         }
+      },
+      "steps": [
+        {
+          "number": "01",
+          "title": "Select",
+          "description": "Browse our catalog at <a href='https://www.broadstrokepromos.com/' class='underline hover:opacity-80 transition-opacity'>broadstrokepromos.com</a> or visit our onsite Promo Showroom to view products in person. Team members provide expert recommendations based on your preferences and budget."
+        },
+        {
+          "number": "02",
+          "title": "Customize",
+          "description": "Our design team creates or refines your artwork. We provide proofs showing brand or personalization placement before production begins. Sample orders available to ensure quality standards and color matches."
+        },
+        {
+          "number": "03",
+          "title": "Deliver",
+          "description": "Most promotional products ship directly to you from our trusted vendors. Apparel orders are inspected by our team before delivery. Rush options available to meet tight deadlines."
+        }
+      ]
+    },
+    "difference": {
+      "section": {
+        "title": "Why Choose Broadstroke",
+        "description": "The Broadstroke Difference — Businesses in the Wichita area, Kansas, and nationwide trust Broadstroke because we deliver more than just quality promotional products and apparel — we provide a true one-stop concierge solution for print, mail, and promo."
+      },
+      "differences": [
+        {
+          "icon": "zap",
+          "title": "Operational Efficiency",
+          "description": "One experienced team handles everything from design to printing, mailing, and promotions. No more juggling multiple vendors—our concierge approach coordinates every step of your project seamlessly."
+        },
+        {
+          "icon": "package",
+          "title": "Comprehensive Promotional Experience",
+          "description": "Product expertise, trusted vendor relationships, in-house design, and quality review—from viewing real samples to digital proofs to final delivery. We ensure you get high-quality items that elevate your brand."
+        },
+        {
+          "icon": "shield",
+          "title": "Proven Local Expertise",
+          "description": "Serving Wichita since 1964 with over 60 years of experience. We know the local market, understand your needs, and serve businesses of all sizes across industries."
+        }
+      ]
+    },
+    "faq": {
+      "section": {
+        "title": "Promotional Products FAQ",
+        "description": ""
+      },
+      "faqs": [
+        {
+          "q": "What is the minimum order quantity for promotional items?",
+          "a": "Minimum order quantities vary by product type. Some items are available with no minimums and can be personalized for your recipient! Apparel typically requires 12-24 pieces, and many items start at 24-50 pieces. Screen-printed apparel has a minimum order quantity of 24; embroidery has no minimum. Some premium gifts and tech items may have higher minimums. Contact us at <a href='mailto:promoinfo@broadstrokeinc.com' class='underline hover:opacity-80 transition-opacity'>promoinfo@broadstrokeinc.com</a> for specific product details—we can help you find options that fit your budget and quantity needs."
+        },
+        {
+          "q": "What customization options are available?",
+          "a": "We offer multiple customization methods to match your product and design: screen printing and embroidery for apparel; laser engraving for metal and wood items; debossing and embossing for leather and premium products; full-color digital printing for complex designs; and pad printing for pens and small items. Our team recommends the best method for your specific project."
+        },
+        {
+          "q": "How long does it take to receive promotional products?",
+          "a": "Standard production time is typically 2-3 weeks after artwork approval (including shipping time). Rush production is available for many products (additional fees may apply). Around the holidays, it's best to order 1-2 months ahead to ensure availability and on-time delivery. Complex orders or large quantities may require additional time. We'll provide a clear timeline when you request your estimate."
+        },
+        {
+          "q": "Can you help with product selection and design?",
+          "a": "Absolutely. Our team provides product recommendations based on your goals, budget, and timeline. In-house designers create or refine your artwork to ensure optimal customization results. Whether you have existing brand guidelines or need creative development, we handle every detail to deliver impactful branded merchandise."
+        },
+        {
+          "q": "Do you offer fulfillment and shipping services?",
+          "a": "Yes. We provide complete fulfillment services including kitting, custom packaging, and shipping to multiple locations. Promotional products can be integrated with print and mail campaigns for cohesive marketing initiatives. Store and release programs are also available for ongoing employee or client gifting needs."
+        },
+        {
+          "q": "What is the process for obtaining a free estimate?",
+          "a": "Submit your details by email to <a href='mailto:promoinfo@broadstrokeinc.com' class='underline hover:opacity-80 transition-opacity'>promoinfo@broadstrokeinc.com</a>, or call <a href='tel:316-247-5348' class='underline hover:opacity-80 transition-opacity'>316-247-5348</a>. You can also submit your details through our <a href='https://broadstrokeinc.com/contact' class='underline hover:opacity-80 transition-opacity'>contact form</a>. A member of our team will review your project and provide a clear, no-obligation estimate with recommended products, branding and personalization options, and timelines."
+        }
+      ]
     },
     "footer": {
-        "finalCTA": {
-            "headline": "Ready to simplify your promotional products projects?",
-            "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
-            "buttonText": "Get Free Estimate",
-            "href": "https://broadstrokeinc.com/promo-contact/"
+      "quickLinks": [
+        {
+          "label": "Print",
+          "href": "https://broadstrokeinc.com/commercial-printing"
         },
-        "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
-        "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
+        {
+          "label": "Mail",
+          "href": "https://broadstrokeinc.com/mailing"
+        },
+        {
+          "label": "Mail Pickup",
+          "href": "https://broadstrokeinc.com/mail-pickup"
+        },
+        {
+          "label": "Promo",
+          "href": "https://www.broadstrokepromos.com/"
+        },
+        {
+          "label": "Wide Format",
+          "href": "https://broadstrokeinc.com/wide-format"
+        },
+        {
+          "label": "Postalocity",
+          "href": "https://www.postalocity.com/"
+        },
+        {
+          "label": "Business Forms",
+          "href": "https://broadstrokeinc.com/carbonless-forms"
+        },
+        {
+          "label": "Technology",
+          "href": "https://aobts.com/"
+        }
+      ],
+      "finalCTA": {
+        "headline": "Ready to simplify your promotional products projects?",
+        "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
+        "buttonText": "Get Free Estimate",
+        "href": "https://broadstrokeinc.com/promo-contact/"
+      },
+      "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
+      "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
     }
+  },
+  "footer": {
+    "finalCTA": {
+      "headline": "Ready to simplify your promotional products projects?",
+      "description": "Choose concierge service with quick turnaround times and prices that fit your budget.",
+      "buttonText": "Get Free Estimate",
+      "href": "https://broadstrokeinc.com/promo-contact/"
+    },
+    "tagline": "Concierge service that's streamlined to meet your unique needs and enhance your brand.",
+    "secondaryTagline": "Your one-stop-shop for all things print, mail and promo."
+  }
 }
