@@ -47,11 +47,26 @@
   },
   "navigation": {
     "links": [
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "How To Use", "href": "#deployment" },
-      { "label": "Why Odin's", "href": "#why-odins" },
-      { "label": "Products", "href": "#products" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "How To Use",
+        "href": "#deployment"
+      },
+      {
+        "label": "Why Odin's",
+        "href": "#why-odins"
+      },
+      {
+        "label": "Products",
+        "href": "#products"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "cta": {
       "text": "Shop Dominant Buck",
@@ -67,8 +82,8 @@
       },
       "subhead": "Synthetic buck attractant engineered for lab-consistent performance and weatherproof attraction at scrapes and travel corridors.",
       "background": {
-"image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsInnov_Doe_Estrus.jpg?v=1775502265",
-      "overlay": true
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsInnov_Doe_Estrus.jpg?v=1775502265",
+        "overlay": true
       },
       "ctas": [
         {
@@ -83,18 +98,40 @@
         }
       ]
     },
-     "benefits": {
-       "title": "Why Hunters Choose Odin's Dominant Buck Scent",
-       "intro": "Dominant buck scent replicates the molecular profile associated with mature whitetail bucks during pre-rut and rut periods. Odin's 100% synthetic formulation maintains identical scent concentration in every deployment \u2014 a level of precision impossible with natural dominant buck urine.",
-       "items": [
-         { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png", "title": "30+ Days of Scent", "description": "Continuous release even after rain or heavy dew." },
-         { "title": "Legal in All 50 States", "description": "Free of CWD transmission risk. No biological material." },
-         { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png", "title": "100% Biodegradable", "description": "USDA BioPreferred Certified plant-based polymer. Nothing left behind." },
-         { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png", "title": "Lab-Tested Performance", "description": "Polymer beads still releasing 52% of original output after 27 days." },
-         { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841", "title": "Less Reapplication Time", "description": "Reduces reapplication time compared with traditional liquids." },
-         { "title": "Indefinite Shelf Life", "description": "No refrigeration or mold concerns." }
-       ]
-     },
+    "benefits": {
+      "title": "Why Hunters Choose Odin's Dominant Buck Scent",
+      "intro": "Dominant buck scent replicates the molecular profile associated with mature whitetail bucks during pre-rut and rut periods. Odin's 100% synthetic formulation maintains identical scent concentration in every deployment \u2014 a level of precision impossible with natural dominant buck urine.",
+      "items": [
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
+          "title": "30+ Days of Scent",
+          "description": "Continuous release even after rain or heavy dew."
+        },
+        {
+          "title": "Legal in All 50 States",
+          "description": "Free of CWD transmission risk. No biological material."
+        },
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
+          "title": "100% Biodegradable",
+          "description": "USDA BioPreferred Certified plant-based polymer. Nothing left behind."
+        },
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
+          "title": "Lab-Tested Performance",
+          "description": "Polymer beads still releasing 52% of original output after 27 days."
+        },
+        {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841",
+          "title": "Less Reapplication Time",
+          "description": "Reduces reapplication time compared with traditional liquids."
+        },
+        {
+          "title": "Indefinite Shelf Life",
+          "description": "No refrigeration or mold concerns."
+        }
+      ]
+    },
     "howItWorks": {
       "title": "How Dominant Buck Scent Works",
       "body": "Whitetail bucks communicate territorial boundaries through scent marking at scrapes, rubs, and travel corridors. Odin's Dominant Buck Scent replicates the <a href=\"https://www.odinsinnovations.com/collections/rut-scents\" target=\"_blank\" rel=\"noopener noreferrer\">pheromone</a> signature of a mature buck using a proprietary library of 21 synthetic formulations. The result is a consistent aromatic profile that hunters deploy to simulate the presence of an intruding buck. Because the formula is manufactured to precise molecular specification, every application delivers the same scent concentration \u2014 unlike natural urine that varies with the donor animal's age, health, diet, and hormonal state."
@@ -124,7 +161,7 @@
         {
           "icon": "flag",
           "title": "Legal in All 50 States",
-          "description": "100% synthetic formula — not subject to natural urine or CWD restrictions that ban traditional lures."
+          "description": "100% synthetic formula \u2014 not subject to natural urine or CWD restrictions that ban traditional lures."
         },
         {
           "icon": "stopwatch",
@@ -134,7 +171,7 @@
         {
           "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404",
           "title": "Weatherproof Performance",
-          "description": "Polymer beads pause release when submerged and resume when exposed to air — no dilution."
+          "description": "Polymer beads pause release when submerged and resume when exposed to air \u2014 no dilution."
         },
         {
           "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
@@ -229,55 +266,55 @@
         "take": 6
       }
     },
-     "faq": {
-       "title": "Frequently Asked Questions",
-       "items": [
-         {
-           "q": "When should I use dominant buck scent?",
-           "a": "Use dominant buck scent from early October through late November. It is most effective during the pre-rut when bucks are establishing territory and during the seeking phase when they are actively defending their area and pursuing does. Pair it with doe estrus for maximum effectiveness during peak rut and/or Odin's Scrape Blend."
-         },
-         {
-           "q": "What does dominant buck scent do?",
-           "a": "Dominant buck scent replicates the pheromone profile of a mature buck in rut when they experience a surge in testosterone. When a resident buck encounters this scent in his territory, it triggers a territorial response — he perceives a rival has moved into his area and will investigate the source. This is one of the most effective ways to draw mature bucks to a specific location during the pre-rut and rut."
-         },
-         {
-           "q": "Is synthetic buck urine as effective as natural?",
-           "a": "Yes. Odin's synthetic dominant buck scent is formulated to replicate the specific pheromone compounds that trigger territorial behavior, manufactured to precise molecular specifications. Unlike natural buck urine, which varies with every animal, synthetic delivers consistent concentration every time. The 30-day extended release provides sustained territorial pressure that a single application of natural urine cannot match."
-         },
-         {
-           "q": "Can I use dominant buck scent and doe estrus together?",
-           "a": "Absolutely. Using both together creates the most compelling scenario for a mature buck: the scent of a rival male with a receptive doe. Odin's Scrape Blend combines both in a single product for exactly this purpose. You can also deploy them separately — dominant buck on one side of your setup, doe estrus on the other — to create directional scent fields."
-         },
-         {
-           "q": "What attracts bucks in October?",
-           "a": "October is the transition period in many parts of the country. You may also have Doe Estrus and Dominant Buck available because any individual doe's peak is biologically a 24–48-hour window. \"Peak rut\" as commonly used refers to when the highest percentage of does are entering estrus simultaneously — typically spanning 10–14 days. Scrape Blend is perfect during this period, and you may add extra Doe Estrus or Dominant Buck depending on what you're reading in your area."
-         },
-         {
-           "q": "Are the scent beads biodegradable?",
-           "a": "Yes. The plant-based polymer is USDA BioPreferred Certified and leaves no plastic residue."
-         },
-         {
-           "q": "Can I use Dominant Buck Scent in states with urine restrictions?",
-           "a": "Yes. Because it contains no biological material, it is legal in all 50 states."
-         },
-         {
-           "q": "How long do the beads last?",
-           "a": "30+ days of continuous release with documented 52% output remaining after 27 days of exposure."
-         },
-         {
-           "q": "Was it easy to develop synthetic scents?",
-           "a": "Absolutely not. That's why Odin's partnered with an international leader in the scent and perfumer industry. It is serious chemistry that requires manufacturing expertise. It was a good investment — we can increase production to almost any level needed without compromising the aromatic profile. And our costs will not increase as a result of all the extra regulations, testing and facilities requirements of the USDA's <a href=\"https://www.aphis.usda.gov/livestock-poultry-disease/cervid/chronic-wasting/herd-certification\" target=\"_blank\" rel=\"noopener noreferrer\">Cervids: CWD Voluntary Herd Certification Program</a>."
-         },
-         {
-           "q": "Are synthetic scents more expensive than natural scent products?",
-           "a": "The R&D effort was an investment to provide the base to grow. With our development partners, we identified which exact compounds trigger the desired response — for deer, the aroma of estrus; for cover scents, the smell of a forest floor; for food scents, each food has a specific aroma. These efforts require advanced analytical chemistry and extensive field testing to verify effectiveness. You can't rush it. You can't cut corners to 'good enough.' We are proud to have 10 years of field experience demonstrating the scents work as intended."
-         },
-         {
-           "q": "Are the products biodegradable and environmentally safe?",
-           "a": "Yes. A core component of Odin's products is that they will not leave the beautiful places hunting takes us worse off than when we arrived. The plant-based polymer biodegrades — no plastic left behind, no unhealthy chemicals (even our Citronella is DEET free). The beads are certified through the <a href=\"https://www.biopreferred.gov/\" target=\"_blank\" rel=\"noopener noreferrer\">USDA BioPreferred Program</a>, a rigorous third-party verification of biobased content. The polymer is rain-proof — heavy dew, rain, and snow do not degrade scent output.<div style=\"display:flex;gap:16px;margin-top:16px;align-items:center;flex-wrap:wrap;\"><img src=\"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558\" alt=\"USDA Certified Biobased Product\" style=\"height:80px;width:auto;\" /><img src=\"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337\" alt=\"100% Biodegradable\" style=\"height:80px;width:auto;\" /></div>"
-         }
-       ]
-     },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "When should I use dominant buck scent?",
+          "a": "Use dominant buck scent from early October through late November. It is most effective during the pre-rut when bucks are establishing territory and during the seeking phase when they are actively defending their area and pursuing does. Pair it with doe estrus for maximum effectiveness during peak rut and/or Odin's Scrape Blend."
+        },
+        {
+          "q": "What does dominant buck scent do?",
+          "a": "Dominant buck scent replicates the pheromone profile of a mature buck in rut when they experience a surge in testosterone. When a resident buck encounters this scent in his territory, it triggers a territorial response \u2014 he perceives a rival has moved into his area and will investigate the source. This is one of the most effective ways to draw mature bucks to a specific location during the pre-rut and rut."
+        },
+        {
+          "q": "Is synthetic buck urine as effective as natural?",
+          "a": "Yes. Odin's synthetic dominant buck scent is formulated to replicate the specific pheromone compounds that trigger territorial behavior, manufactured to precise molecular specifications. Unlike natural buck urine, which varies with every animal, synthetic delivers consistent concentration every time. The 30-day extended release provides sustained territorial pressure that a single application of natural urine cannot match."
+        },
+        {
+          "q": "Can I use dominant buck scent and doe estrus together?",
+          "a": "Absolutely. Using both together creates the most compelling scenario for a mature buck: the scent of a rival male with a receptive doe. Odin's Scrape Blend combines both in a single product for exactly this purpose. You can also deploy them separately \u2014 dominant buck on one side of your setup, doe estrus on the other \u2014 to create directional scent fields."
+        },
+        {
+          "q": "What attracts bucks in October?",
+          "a": "October is the transition period in many parts of the country. You may also have Doe Estrus and Dominant Buck available because any individual doe's peak is biologically a 24\u201348-hour window. \"Peak rut\" as commonly used refers to when the highest percentage of does are entering estrus simultaneously \u2014 typically spanning 10\u201314 days. Scrape Blend is perfect during this period, and you may add extra Doe Estrus or Dominant Buck depending on what you're reading in your area."
+        },
+        {
+          "q": "Are the scent beads biodegradable?",
+          "a": "Yes. The plant-based polymer is USDA BioPreferred Certified and leaves no plastic residue."
+        },
+        {
+          "q": "Can I use Dominant Buck Scent in states with urine restrictions?",
+          "a": "Yes. Because it contains no biological material, it is legal in all 50 states."
+        },
+        {
+          "q": "How long do the beads last?",
+          "a": "30+ days of continuous release with documented 52% output remaining after 27 days of exposure."
+        },
+        {
+          "q": "Was it easy to develop synthetic scents?",
+          "a": "Absolutely not. That's why Odin's partnered with an international leader in the scent and perfumer industry. It is serious chemistry that requires manufacturing expertise. It was a good investment \u2014 we can increase production to almost any level needed without compromising the aromatic profile. And our costs will not increase as a result of all the extra regulations, testing and facilities requirements of the USDA's <a href=\"https://www.aphis.usda.gov/livestock-poultry-disease/cervid/chronic-wasting/herd-certification\" target=\"_blank\" rel=\"noopener noreferrer\">Cervids: CWD Voluntary Herd Certification Program</a>."
+        },
+        {
+          "q": "Are synthetic scents more expensive than natural scent products?",
+          "a": "The R&D effort was an investment to provide the base to grow. With our development partners, we identified which exact compounds trigger the desired response \u2014 for deer, the aroma of estrus; for cover scents, the smell of a forest floor; for food scents, each food has a specific aroma. These efforts require advanced analytical chemistry and extensive field testing to verify effectiveness. You can't rush it. You can't cut corners to 'good enough.' We are proud to have 10 years of field experience demonstrating the scents work as intended."
+        },
+        {
+          "q": "Are the products biodegradable and environmentally safe?",
+          "a": "Yes. A core component of Odin's products is that they will not leave the beautiful places hunting takes us worse off than when we arrived. The plant-based polymer biodegrades \u2014 no plastic left behind, no unhealthy chemicals (even our Citronella is DEET free). The beads are certified through the <a href=\"https://www.biopreferred.gov/\" target=\"_blank\" rel=\"noopener noreferrer\">USDA BioPreferred Program</a>, a rigorous third-party verification of biobased content. The polymer is rain-proof \u2014 heavy dew, rain, and snow do not degrade scent output.<div style=\"display:flex;gap:16px;margin-top:16px;align-items:center;flex-wrap:wrap;\"><img src=\"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558\" alt=\"USDA Certified Biobased Product\" style=\"height:80px;width:auto;\" /><img src=\"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337\" alt=\"100% Biodegradable\" style=\"height:80px;width:auto;\" /></div>"
+        }
+      ]
+    },
     "footer": {
       "finalCTA": {
         "headline": "Ready for consistent buck attractant performance?",
@@ -285,6 +322,52 @@
         "href": "https://www.odinsinnovations.com/products/dominant-buck-scent-beads?promo=HUNT2026"
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    }
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent"
+      ],
+      "promoCodes": {
+        "dominant-buck-scent-guide": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 14.95,
+      "currency": "USD",
+      "units": "bottle"
     }
   }
 }

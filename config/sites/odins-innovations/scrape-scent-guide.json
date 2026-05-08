@@ -346,5 +346,51 @@
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
     }
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent"
+      ],
+      "promoCodes": {
+        "scrape-scent-guide": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 14.95,
+      "currency": "USD",
+      "units": "bottle"
+    }
   }
 }

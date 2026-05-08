@@ -1,8 +1,10 @@
 {
-  "version": "Odin's Innovations Microsite Config — Earth & Cover Scents",
+  "version": "Odin's Innovations Microsite Config \u2014 Earth & Cover Scents",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
-    "promoCodes": { "default": "HUNT2026" }
+    "promoCodes": {
+      "default": "HUNT2026"
+    }
   },
   "site": {
     "id": "earth-cover-scent-beads",
@@ -10,58 +12,117 @@
     "slug": "earth-cover-scent-beads",
     "domain": "odinsinnovations.com",
     "basename": "/earth-cover-scent-beads",
-    "contact": { "email": "paul@odinsinnovations.com", "phone": "316-393-0440" }
+    "contact": {
+      "email": "paul@odinsinnovations.com",
+      "phone": "316-393-0440"
+    }
   },
-  "branding": { "tagline": "Synthetic. Long-Lasting. Legal Everywhere.", "logo": "/logo.png" },
-  "theme": { "primary": { "h": 30, "s": 80, "l": 35 } },
+  "branding": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "logo": "/logo.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 30,
+      "s": 80,
+      "l": 35
+    }
+  },
   "seo": {
-    "title": "Earth Cover Scent Beads — Synthetic Human Scent Control That Lasts 30+ Days",
+    "title": "Earth Cover Scent Beads \u2014 Synthetic Human Scent Control That Lasts 30+ Days",
     "description": "Earth scent beads and cover scent solutions for reliable human scent control. 100% synthetic, 30+ days continuous release, legal in all 50 states, biodegradable. Perfect for gear storage, stand sites, and trails.",
-    "keywords": ["earth scent beads", "cover scent", "earth cover scent", "scent elimination", "human scent control", "long lasting scent beads", "earth scent deer"],
-    "ogTitle": "Earth Cover Scent Beads — 30+ Days Consistent Masking",
+    "keywords": [
+      "earth scent beads",
+      "cover scent",
+      "earth cover scent",
+      "scent elimination",
+      "human scent control",
+      "long lasting scent beads",
+      "earth scent deer"
+    ],
+    "ogTitle": "Earth Cover Scent Beads \u2014 30+ Days Consistent Masking",
     "ogDescription": "Synthetic earth scent beads engineered for weatherproof human scent control. Reduce reapplication with 30+ day release beads and liquid.",
     "ogImage": "/earth-cover-scent-beads/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/earth-cover-scent-beads"
   },
-    "navigation": {
-      "links": [
-        { "label": "Why Odin's", "href": "#why-odins" },
-        { "label": "How It Works", "href": "#how-it-works" },
-        { "label": "How to Use", "href": "#how-to-use" },
-        { "label": "Products", "href": "#products" },
-        { "label": "FAQ", "href": "#faq" }
-      ],
-      "cta": { "text": "Shop Cover Scents", "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026" }
-    },
-    "content": {
-      "hero": {
-        "headline": { "main": "Earth Cover Scent Beads", "highlightTerm": "30+ Days — Consistent Masking", "alt": "Earth scent beads in forest floor application for human scent control" },
-        "subhead": "Synthetic cover scent engineered for reliable human scent control across gear storage, stand sites, and access trails.",
-        "background": { 
-          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/acton-crawford-NWcH4mbPRZg-unsplash.jpg?v=1778014873",
-          "overlay": true 
-        },
-        "ctas": [
-          { "text": "Shop Now — Starting at $17.95", "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026", "variant": "primary" },
-          { "text": "Explore How to Use", "href": "#how-to-use", "variant": "outline" }
-        ]
+  "navigation": {
+    "links": [
+      {
+        "label": "Why Odin's",
+        "href": "#why-odins"
       },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "How to Use",
+        "href": "#how-to-use"
+      },
+      {
+        "label": "Products",
+        "href": "#products"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "text": "Shop Cover Scents",
+      "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Earth Cover Scent Beads",
+        "highlightTerm": "30+ Days \u2014 Consistent Masking",
+        "alt": "Earth scent beads in forest floor application for human scent control"
+      },
+      "subhead": "Synthetic cover scent engineered for reliable human scent control across gear storage, stand sites, and access trails.",
+      "background": {
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/acton-crawford-NWcH4mbPRZg-unsplash.jpg?v=1778014873",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Shop Now \u2014 Starting at $17.95",
+          "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026",
+          "variant": "primary"
+        },
+        {
+          "text": "Explore How to Use",
+          "href": "#how-to-use",
+          "variant": "outline"
+        }
+      ]
+    },
     "why-odins": {
       "headline": "Earth Scents: One of Our Favorites",
-      "body": "When developing a deer cover scent, the R&D team at Odin's Innovations really nailed this one. Developing an earth cover scent was a passion project for a group that loved to hunt. It's personal. Extensive field testing confirmed the need for the 'Switzerland of aromas' — a scent common to all hunting spots: dirt. Every wooded area has unique elements from trees, flowers, or other contributors, but rich soil and forest floor remain universal."
+      "body": "When developing a deer cover scent, the R&D team at Odin's Innovations really nailed this one. Developing an earth cover scent was a passion project for a group that loved to hunt. It's personal. Extensive field testing confirmed the need for the 'Switzerland of aromas' \u2014 a scent common to all hunting spots: dirt. Every wooded area has unique elements from trees, flowers, or other contributors, but rich soil and forest floor remain universal."
     },
     "how-it-works": {
       "headline": "How Earth Cover Scent Works",
-      "body": "Odin's Earth Cover Scent replicates the smell of forest floor — decaying leaves, rich soil, and organic matter. This baseline scent of a whitetail's natural environment creates an olfactory backdrop that blends into surroundings. The synthetic formulation uses proprietary biodegradable polymer beads that release scent molecules at a controlled rate for 30+ days, regardless of rain, dew, or temperature fluctuations. Unlike sprays that evaporate in 2–4 hours or carbon clothing that saturates quickly, Odin's beads maintain continuous coverage throughout the season."
+      "body": "Odin's Earth Cover Scent replicates the smell of forest floor \u2014 decaying leaves, rich soil, and organic matter. This baseline scent of a whitetail's natural environment creates an olfactory backdrop that blends into surroundings. The synthetic formulation uses proprietary biodegradable polymer beads that release scent molecules at a controlled rate for 30+ days, regardless of rain, dew, or temperature fluctuations. Unlike sprays that evaporate in 2\u20134 hours or carbon clothing that saturates quickly, Odin's beads maintain continuous coverage throughout the season."
     },
     "benefits": {
       "headline": "Earth Cover Scents: Reliable Human Scent Control",
       "body": "Every experienced hunter knows a whitetail's nose is its primary defense. Human odor detection can occur at distances exceeding 400 yards in favorable conditions. Traditional scent elimination methods work temporarily. Odin's approach overlays a persistent natural earth aroma that masks human odor and helps presence blend into the environment. Legal in all 50 states, biodegradable, and Made in USA.",
       "items": [
-        { "title": "Consistent 30+ Day Release", "description": "Maintain coverage without frequent reapplication." },
-        { "title": "Weatherproof Performance", "description": "Field-tested resistance to rain and temperature changes." },
-        { "title": "Versatile Applications", "description": "Gear storage, perimeter defense, and trail treatment." }
+        {
+          "title": "Consistent 30+ Day Release",
+          "description": "Maintain coverage without frequent reapplication."
+        },
+        {
+          "title": "Weatherproof Performance",
+          "description": "Field-tested resistance to rain and temperature changes."
+        },
+        {
+          "title": "Versatile Applications",
+          "description": "Gear storage, perimeter defense, and trail treatment."
+        }
       ]
     },
     "how-to-use": {
@@ -89,11 +150,36 @@
       "headline": "Earth Scent vs. Food Scent Cover: When to Use Which",
       "body": "Earth Cover Scent functions as a pure masking aroma. In heavily hunted areas, it helps reduce unusual scent alerts. Acorn Cover Scent provides dual cover and mild attraction in mast season. Switch based on season and terrain. All Odin's scents remain true to the label.",
       "table": [
-        ["Feature", "Odin's Earth Cover", "Traditional Sprays", "Acorn Cover"],
-        ["Primary Role", "Masking", "Short-term masking", "Masking + mild attractant"],
-        ["Duration", "30+ days beads", "2–4 hours", "30+ days beads"],
-        ["Best Season", "Rut & late season", "Any", "Early / mast season"],
-        ["Weather Resistance", "High", "Low", "High"]
+        [
+          "Feature",
+          "Odin's Earth Cover",
+          "Traditional Sprays",
+          "Acorn Cover"
+        ],
+        [
+          "Primary Role",
+          "Masking",
+          "Short-term masking",
+          "Masking + mild attractant"
+        ],
+        [
+          "Duration",
+          "30+ days beads",
+          "2\u20134 hours",
+          "30+ days beads"
+        ],
+        [
+          "Best Season",
+          "Rut & late season",
+          "Any",
+          "Early / mast season"
+        ],
+        [
+          "Weather Resistance",
+          "High",
+          "Low",
+          "High"
+        ]
       ]
     },
     "mosquito": {
@@ -106,7 +192,7 @@
       "items": [
         {
           "name": "Earth Cover Scent Beads",
-          "price": "$17.95 – $34.95",
+          "price": "$17.95 \u2013 $34.95",
           "image": "//www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_Earth_c55ebd6e-febe-492c-a1aa-9f8bafa25dda.png?v=1688151828&width=600",
           "description": "3-oz and 12-oz sizes. 30+ days controlled release. Primary human scent control solution.",
           "url": "https://www.odinsinnovations.com/products/earth-cover-scent-beads"
@@ -130,19 +216,93 @@
     "faq": {
       "headline": "Cover Scent FAQs",
       "items": [
-        { "question": "What is the best cover scent for deer hunting?", "answer": "Earth scent is the most versatile cover scent because it replicates the natural background smell of the forest floor. Unlike food-based scents (which can attract attention) or carbon clothing (which saturates quickly), earth scent creates a neutral olfactory environment that deer interpret as 'normal.' Odin's Earth Cover Scent Beads deliver this earth aroma continuously for 30+ days through a controlled-release polymer system." },
-        { "question": "How do I eliminate human scent for deer hunting?", "answer": "Complete scent elimination is impossible—you're a living, breathing organism that continuously produces odor. The most effective approach combines three layers: (1) scent-free clothing storage with Odin's Earth Beads to prevent contamination, (2) scent-free detergent and shower products to reduce baseline odor, and (3) active cover scent deployment at your stand site. Odin's system handles layers 1 and 3 with a single product." },
-        { "question": "What is the best scent for deer hunting gear storage?", "answer": "Odin's Earth Cover Scent Beads. Put 2–3 tablespoons in a sheer bag and toss them in your clothing totes, boot bags, backpacks, and bow cases during the off-season. The beads release earth scent continuously, infusing your gear with a natural forest-floor aroma while preventing stale storage odors. When you pull your gear out in September, it smells like the woods—not your garage. This is a proactive year-round approach to scent management." },
-        { "question": "Can I use earth scent beads in my gear bag?", "answer": "Yes—this is one of the best uses. Put 2–3 tablespoons of Earth Cover Scent Beads in a sheer bag and throw them in your gear storage containers, clothing tote, boot bag, backpack, or bow case. The beads release earth scent continuously, infusing your gear with natural forest-floor aroma while preventing stale storage odors." },
-        { "question": "Is there a cover scent for spring turkey hunting?", "answer": "Yes, but it works differently than you might think. When turkey hunting, Odin's Citronella keeps mosquitoes from finding you in the first place, so you're not swatting, fidgting, and alerting birds to your presence. (If you would like more information on this, send us a note.)" },
-        { "question": "Do earth cover scents work better than sprays?", "answer": "Yes—whatever is being sprayed is aerosol and will evaporate in a short period. Earth cover scent beads are lasting 30-days – or 720 hours. Hang them by you or in your blind." },
-        { "question": "Are Odin's earth scent products synthetic?", "answer": "Yes. All Odin's products are 100% synthetic, containing no animal-derived ingredients. They deliver consistent scent concentration batch after batch. The synthetic formula also means no spoilage, no refrigeration required, and a multi-year shelf life." }
+        {
+          "question": "What is the best cover scent for deer hunting?",
+          "answer": "Earth scent is the most versatile cover scent because it replicates the natural background smell of the forest floor. Unlike food-based scents (which can attract attention) or carbon clothing (which saturates quickly), earth scent creates a neutral olfactory environment that deer interpret as 'normal.' Odin's Earth Cover Scent Beads deliver this earth aroma continuously for 30+ days through a controlled-release polymer system."
+        },
+        {
+          "question": "How do I eliminate human scent for deer hunting?",
+          "answer": "Complete scent elimination is impossible\u2014you're a living, breathing organism that continuously produces odor. The most effective approach combines three layers: (1) scent-free clothing storage with Odin's Earth Beads to prevent contamination, (2) scent-free detergent and shower products to reduce baseline odor, and (3) active cover scent deployment at your stand site. Odin's system handles layers 1 and 3 with a single product."
+        },
+        {
+          "question": "What is the best scent for deer hunting gear storage?",
+          "answer": "Odin's Earth Cover Scent Beads. Put 2\u20133 tablespoons in a sheer bag and toss them in your clothing totes, boot bags, backpacks, and bow cases during the off-season. The beads release earth scent continuously, infusing your gear with a natural forest-floor aroma while preventing stale storage odors. When you pull your gear out in September, it smells like the woods\u2014not your garage. This is a proactive year-round approach to scent management."
+        },
+        {
+          "question": "Can I use earth scent beads in my gear bag?",
+          "answer": "Yes\u2014this is one of the best uses. Put 2\u20133 tablespoons of Earth Cover Scent Beads in a sheer bag and throw them in your gear storage containers, clothing tote, boot bag, backpack, or bow case. The beads release earth scent continuously, infusing your gear with natural forest-floor aroma while preventing stale storage odors."
+        },
+        {
+          "question": "Is there a cover scent for spring turkey hunting?",
+          "answer": "Yes, but it works differently than you might think. When turkey hunting, Odin's Citronella keeps mosquitoes from finding you in the first place, so you're not swatting, fidgting, and alerting birds to your presence. (If you would like more information on this, send us a note.)"
+        },
+        {
+          "question": "Do earth cover scents work better than sprays?",
+          "answer": "Yes\u2014whatever is being sprayed is aerosol and will evaporate in a short period. Earth cover scent beads are lasting 30-days \u2013 or 720 hours. Hang them by you or in your blind."
+        },
+        {
+          "question": "Are Odin's earth scent products synthetic?",
+          "answer": "Yes. All Odin's products are 100% synthetic, containing no animal-derived ingredients. They deliver consistent scent concentration batch after batch. The synthetic formula also means no spoilage, no refrigeration required, and a multi-year shelf life."
+        }
       ]
     },
     "footer": {
-      "finalCTA": { "headline": "Ready for consistent human scent control?", "buttonText": "Shop Cover Scents Now", "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026" },
-      "shopAll": { "label": "Shop All Products", "href": "https://www.odinsinnovations.com/collections/all" },
+      "finalCTA": {
+        "headline": "Ready for consistent human scent control?",
+        "buttonText": "Shop Cover Scents Now",
+        "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026"
+      },
+      "shopAll": {
+        "label": "Shop All Products",
+        "href": "https://www.odinsinnovations.com/collections/all"
+      },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    }
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent"
+      ],
+      "promoCodes": {
+        "earth-cover-scent-beads": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 14.95,
+      "currency": "USD",
+      "units": "bottle"
     }
   }
 }

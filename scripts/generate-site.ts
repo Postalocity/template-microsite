@@ -39,6 +39,31 @@ function safeJsonStringify(obj: any): string {
 }
 
 /**
+ * Load IKB config from canonical JSON file for a given brand.
+ * Data lives in config/ikb/{brandId}/ikb.json — split into a single
+ * merged file that exactly matches the IKBConfig type expected by the runtime.
+ * 
+ * This replaces inline objects in template functions so that IKB data can be
+ * updated without touching the generator code.
+ */
+function loadIKBConfig(brandId: string): Record<string, unknown> {
+  const ikbPath = path.join(ROOT_DIR, 'config', 'ikb', brandId, 'ikb.json');
+  
+  if (!fs.existsSync(ikbPath)) {
+    console.warn(`[loadIKBConfig] No IKB config found for brand "${brandId}" at ${ikbPath}. Using empty config.`);
+    return { rules: { trustSignals: [], promoCodes: {}, approvedSections: [], blocklistedContent: [], blocklistedPhrases: [] }, pricing: { basePrice: 0, currency: 'USD' }, proofOptions: { standard: [], upgrades: [] } };
+  }
+  
+  try {
+    const raw = fs.readFileSync(ikbPath, 'utf-8');
+    return JSON.parse(raw) as Record<string, unknown>;
+  } catch (error) {
+    console.error(`[loadIKBConfig] Error loading IKB config for brand "${brandId}":`, error);
+    return { rules: { trustSignals: [], promoCodes: {}, approvedSections: [], blocklistedContent: [], blocklistedPhrases: [] }, pricing: { basePrice: 0, currency: 'USD' }, proofOptions: { standard: [], upgrades: [] } };
+  }
+}
+
+/**
  * Generation warning comment for auto-generated files.
  * Prepended to main.tsx and config.json to prevent manual edits.
  */
@@ -819,6 +844,27 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
   const contact = brandContext?.contact || fallbackContact;
   const social = brandContext?.social || fallbackSocial;
   
+  // Load IKB from site config or brand context, with hardcoded fallback
+  const ikb = (config as Record<string, unknown>)?.ikb
+    || brandContext?.ikb
+    || {
+      rules: {
+        trustSignals: ['EPA-Registered Biopesticide', 'Made in USA', 'Legal in All 50 States'],
+        promoCodes: {
+          'hunting-mosquito-repellent': 'HUNT2026',
+          'citronella-mosquito-repellent': 'HUNT2026',
+        },
+        approvedSections: ['hero', 'features', 'introduction', 'why-odins', 'detection', 'application', 'blinds', 'layered', 'turkey', 'comparison', 'howItWorks', 'faq', 'footer', 'trustSignals'],
+        blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
+        blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading'],
+      },
+      pricing: {
+        basePrice: 14.95,
+        currency: 'USD',
+        units: 'bottle',
+      },
+    };
+  
   // Check if brand has theme-specific components
   const usesBrandTheme = brandId && fs.existsSync(path.join(TEMPLATE_DIR, 'common/themes', brandId, 'globals.css'));
   
@@ -861,28 +907,8 @@ const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
 
-// IKB configuration with promo codes - dynamic based on site
-const ikbConfig = ${JSON.stringify({
-  rules: {
-    trustSignals: config.content?.features?.trustSignals || [
-      'EPA-Registered Biopesticide',
-      'Made in USA',
-      'Legal in All 50 States',
-    ],
-    promoCodes: {
-      'hunting-mosquito-repellent': 'HUNT2026',
-      'citronella-mosquito-repellent': 'HUNT2026',
-    },
-    approvedSections: ['hero', 'features', 'introduction', 'why-odins', 'detection', 'application', 'blinds', 'layered', 'turkey', 'comparison', 'howItWorks', 'faq', 'footer', 'trustSignals'],
-    blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
-    blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading'],
-  },
-  pricing: {
-    basePrice: 14.95,
-    currency: 'USD',
-    units: 'bottle',
-  },
-})};
+// IKB configuration (loaded from config, brand context, or defaults)
+const ikbConfig = ${JSON.stringify(ikb)};
 
 // Get promo code from IKB for the service
 const promoCode = ikbConfig.rules.promoCodes['${site.slug}'] || '2026';
@@ -1111,51 +1137,8 @@ function generateBroadstrokeTemplate(config: SiteConfig, brandContext?: BrandCon
   const contact = brandContext?.contact || {};
   const social = brandContext?.social || {};
 
-  // Broadstroke-specific IKB config
-  const ikbConfig = {
-    rules: {
-      trustSignals: ['NCOA Verified 2024', 'CASS Certified 2024', 'ISO 9001 Documented Processes 2023'],
-      promoCodes: {
-        'credit-repair': 'cr2026',
-        'debt-collection': 'debt2026',
-        'healthcare-billing': 'hb2026',
-        'healthcare-mailing-services': 'hm2026',
-        'postcard': 'pc2026',
-        'self-storage': 'pm2026',
-      },
-      approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
-      blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
-      blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
-    },
-    pricing: {
-      basePrice: 1.31,
-      currency: 'USD',
-      units: 'letter',
-      addOns: {
-        'certified-mail': 4.50,
-        'return-receipt': 3.35,
-        'ncoa-verification': 0.05,
-        'address-verification': 0.02,
-      },
-    },
-    proofOptions: {
-      standard: [{ id: 'usps-photo', name: 'USPS Photo', description: 'Photo of mailpiece delivered by carrier', tier: 'included' }],
-      upgrades: [
-        { id: 'certified-mail', name: 'Certified Mail', description: 'Track and confirm delivery with signature', tier: 'optional', additionalCost: 4.15 },
-        { id: 'electronic-return-receipt', name: 'Electronic Return Receipt', description: 'Digital signature confirmation via email', tier: 'optional', additionalCost: 3.50 },
-      ],
-    },
-    terminology: {
-      mailClasses: {
-        'first-class': { name: 'First-Class Mail', description: 'Standard USPS mail service', hasTracking: true, hasCertificate: false, allowsPersonalData: true, useCases: ['letters', 'invoices'] },
-        'marketing-mail': { name: 'Marketing Mail', description: 'Cost-effective bulk mailing', hasTracking: false, hasCertificate: false, allowsPersonalData: true, useCases: ['promotional'] },
-      },
-      certifications: {
-        'ncov': { name: 'NCOA', fullName: 'National Change of Address', description: 'Address verification service' },
-        'cass': { name: 'CASS', fullName: 'Coding Accuracy Support System', description: 'USPS-certified address standardization' },
-      },
-    },
-  };
+  // Load Broadstroke IKB config from canonical JSON source
+  const ikbConfig = loadIKBConfig('broadstroke');
 
   return `/**
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
@@ -1239,51 +1222,8 @@ function generatePromoTemplate(config: SiteConfig, brandContext?: BrandContext, 
   const contact = brandContext?.contact || {};
   const social = brandContext?.social || {};
 
-  // Promo-specific IKB config
-  const ikbConfig = {
-    rules: {
-      trustSignals: ['NCOA Verified 2024', 'CASS Certified 2024', 'ISO 9001 Documented Processes 2023'],
-      promoCodes: {
-        'credit-repair': 'cr2026',
-        'debt-collection': 'debt2026',
-        'healthcare-billing': 'hb2026',
-        'healthcare-mailing-services': 'hm2026',
-        'postcard': 'pc2026',
-        'self-storage': 'pm2026',
-      },
-      approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
-      blocklistedContent: ['testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
-      blocklistedPhrases: ['millions of customers', 'award-winning', 'industry-leading', 'guaranteed delivery', '100% accurate'],
-    },
-    pricing: {
-      basePrice: 1.31,
-      currency: 'USD',
-      units: 'letter',
-      addOns: {
-        'certified-mail': 4.50,
-        'return-receipt': 3.35,
-        'ncoa-verification': 0.05,
-        'address-verification': 0.02,
-      },
-    },
-    proofOptions: {
-      standard: [{ id: 'usps-photo', name: 'USPS Photo', description: 'Photo of mailpiece delivered by carrier', tier: 'included' }],
-      upgrades: [
-        { id: 'certified-mail', name: 'Certified Mail', description: 'Track and confirm delivery with signature', tier: 'optional', additionalCost: 4.15 },
-        { id: 'electronic-return-receipt', name: 'Electronic Return Receipt', description: 'Digital signature confirmation via email', tier: 'optional', additionalCost: 3.50 },
-      ],
-    },
-    terminology: {
-      mailClasses: {
-        'first-class': { name: 'First-Class Mail', description: 'Standard USPS mail service', hasTracking: true, hasCertificate: false, allowsPersonalData: true, useCases: ['letters', 'invoices'] },
-        'marketing-mail': { name: 'Marketing Mail', description: 'Cost-effective bulk mailing', hasTracking: false, hasCertificate: false, allowsPersonalData: true, useCases: ['promotional'] },
-      },
-      certifications: {
-        'ncov': { name: 'NCOA', fullName: 'National Change of Address', description: 'Address verification service' },
-        'cass': { name: 'CASS', fullName: 'Coding Accuracy Support System', description: 'USPS-certified address standardization' },
-      },
-    },
-  };
+  // Load Promo IKB config from canonical JSON source
+  const ikbConfig = loadIKBConfig('promo');
 
   return `/**
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
@@ -2324,30 +2264,29 @@ function generateDominantBuckTemplate(config: SiteConfig, brandContext?: BrandCo
   const contact = brandContext?.contact || {};
   const social = brandContext?.social || {};
   const ikb = config.ikb || brandContext?.ikb || {};
-  
+
   return `/**
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
  *
  * Site:      ${site.slug}
- * Brand:     ${brand.name || 'Broadstroke'}
+ * Brand:     Odin's Innovations
  * Generated: ${new Date().toISOString()}
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
- * Content:   config/sites/${brandId || 'broadstroke'}/${site.slug}.json
+ * Content:   config/sites/odins-innovations/${site.slug}.json
  * Template:  scripts/generate-site.ts
  *
  * • To change content → edit the source JSON config, then regenerate
  * • To change layout  → edit the template function in generate-site.ts
  *
  * • To add custom sections → create a new template function & add routing
- * • To share components → add to common/themes/${brandId || 'broadstroke'}/components/shared/
+ * • To share components → add to common/themes/odins-innovations/components/shared/
  *   Never create site-specific component files in the generated site directory
  *
  * DO NOT bypass the pre-commit hook with --no-verify
- */`;
+ */
 
-  const customImports = `
 import { createRoot } from 'react-dom/client';
 import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, HighlightSection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
@@ -2357,18 +2296,18 @@ import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
 import '@/globals.css';
 import config from './config.json';
- 
+
 // Brand configuration (from BrandContext defaults)
 const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
 
-// IKB configuration with promo codes (safely stringified)
-const ikbConfig = ${safeJsonStringify(ikbConfig)};
+// IKB configuration
+const ikbConfig = ${JSON.stringify(ikb)};
 
 // Get promo code from IKB for the service
 const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
- 
+
 function App() {
   const { content } = config;
   const navCta = config.navigation?.cta;
@@ -2395,7 +2334,12 @@ function App() {
           body: content.howItWorks.body
         }} />
 
-        {/* Section 10: When To Use */}
+        {/* Section 3: Products */}
+        <div style={{ background: '#1a1d29' }}>
+          {content.products && <ProductsSection content={content.products} />}
+        </div>
+
+        {/* Section 4: When To Use */}
         <WhenToUseSection content={{
           headline: content.whenToUse.title,
           body: '',
@@ -2412,7 +2356,7 @@ function App() {
           })
         }} />
 
-        {/* Section 10: Deployment */}
+        {/* Section 5: Deployment */}
         <section id="deployment" className="section-padding" style={{ background: '#1a1d29' }}>
           <div className="section-container">
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
@@ -2454,13 +2398,13 @@ function App() {
           </div>
         </section>
 
-        {/* Section 10: Why Odin's */}
+        {/* Section 6: Why Odin's */}
         <WhyOdinsSection content={{
           headline: content.whyOdins.title,
           body: content.whyOdins.body
         }} />
 
-        {/* Section 10: Effectiveness */}
+        {/* Section 7: Effectiveness */}
         <section id="effectiveness" className="section-padding" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="section-container">
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
@@ -2484,15 +2428,10 @@ function App() {
           </div>
         </section>
 
-        {/* Section 3: Products */}
-        <div style={{ background: '#1a1d29' }}>
-          {content.products && <ProductsSection content={content.products} />}
-        </div>
-
-        {/* Section 10: Comparison */}
+        {/* Section 8: Comparison */}
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
 
-        {/* Section 10: Reviews */}
+        {/* Section 9: Reviews */}
         <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
@@ -2509,7 +2448,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 11: FAQ */}
+        {/* Section 10: FAQ */}
         <FAQSection faq={content.faq} />
 
         <SiteFooter config={config} />
@@ -2855,6 +2794,7 @@ function generateFoodScentTemplate(config: SiteConfig, brandContext?: BrandConte
   const brand = brandContext?.brand || {};
   const contact = brandContext?.contact || {};
   const social = brandContext?.social || {};
+  const ikb = config.ikb || brandContext?.ikb || {};
 
   return `/**
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
@@ -2888,8 +2828,8 @@ import config from './config.json';
 const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
-const ikbConfig = { rules: { promoCodes: { 'food-scent-deer-attractants': 'HUNT2026' } } };
-  const promoCode = ikbConfig.rules?.promoCodes?.['food-scent-deer-attractants'] || 'HUNT2026';
+const ikbConfig = ${JSON.stringify(ikb)};
+const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
 
   function App() {
   const { content } = config;
@@ -3040,7 +2980,8 @@ function generateEarthCoverScentTemplate(config: SiteConfig, brandContext?: Bran
   const brand = brandContext?.brand || {};
   const contact = brandContext?.contact || {};
   const social = brandContext?.social || {};
-  
+  const ikb = config.ikb || brandContext?.ikb || {};
+
   return `/**
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
  *
@@ -3073,8 +3014,8 @@ import config from './config.json';
 const brandConfig = ${JSON.stringify(brand)};
 const contactConfig = ${JSON.stringify(contact)};
 const socialConfig = ${JSON.stringify(social)};
-const ikbConfig = { rules: { promoCodes: { 'earth-cover-scent-beads': 'HUNT2026' } } };
-const promoCode = ikbConfig.rules?.promoCodes?.['earth-cover-scent-beads'] || 'HUNT2026';
+const ikbConfig = ${JSON.stringify(ikb)};
+const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
 
 function App() {
   const { content } = config;
