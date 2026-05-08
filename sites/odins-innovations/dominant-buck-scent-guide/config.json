@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/dominant-buck-scent-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service dominant-buck-scent-guide",
+    "source": "config/sites/odins-innovations/dominant-buck-scent-guide.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-08T15:14:13.495Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "odins-innovations",
     "name": "Dominant Buck Scent Guide",
@@ -25,6 +33,7 @@
   "seo": {
     "title": "Dominant Buck Scent | Synthetic Buck Urine Attractant | Odin's Innovations",
     "description": "Odin's synthetic dominant buck scent delivers consistent pheromone profiles for increased buck activity at scrapes. 30+ day biodegradable scent beads, rain-proof, CWD-safe, field-tested over 10 seasons.",
+    "ogImage": "/dominant-buck-scent-guide/images/og-image.png",
     "keywords": [
       "dominant buck scent",
       "buck attractant scent",
@@ -35,7 +44,6 @@
     ],
     "ogTitle": "Dominant Buck Scent — Synthetic Buck Attractant That Lasts 30+ Days",
     "ogDescription": "Lab-consistent synthetic formula. 30+ days continuous release. Legal in every state. Biodegradable polymer beads.",
-    "ogImage": "/dominant-buck-scent-guide/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/dominant-buck-scent-guide",
     "googleAnalyticsId": "G-XXXXXXXXXX"
@@ -47,7 +55,7 @@
         "href": "#how-it-works"
       },
       {
-        "label": "Deployment",
+        "label": "How To Use",
         "href": "#deployment"
       },
       {
@@ -87,7 +95,7 @@
           "variant": "primary"
         },
         {
-          "text": "See Deployment Guide",
+          "text": "How to Use",
           "href": "#deployment",
           "variant": "outline"
         }
@@ -164,12 +172,12 @@
           "description": "Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."
         },
         {
-          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586",
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404",
           "title": "Weatherproof Performance",
           "description": "Polymer beads pause release when submerged and resume when exposed to air — no dilution."
         },
         {
-          "icon": "beaker",
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
           "title": "Lab-Tested Formula",
           "description": "52% of original scent output after 27 days of continuous exposure, verified by university testing."
         }
@@ -251,29 +259,38 @@
       ],
       "note": "Free shipping on orders over $50. Use promo code HUNT2026 at checkout."
     },
-    "testimonials": {
-      "title": "Hunter Results",
-      "quotes": [
-        {
-          "text": "Observed increased scrape activity over three weeks with the beads still releasing scent after multiple rain events.",
-          "author": "Mallory A., Kansas"
-        },
-        {
-          "text": "Daily buck visits on trail cam throughout October and November using Dominant Buck + Scrape Blend.",
-          "author": "Randy & Tony, Michigan"
-        },
-        {
-          "text": "Powerful, season-long scent that maintained integrity without daily reapplication.",
-          "author": "Grant Meyer"
-        }
-      ]
+    "reviews": {
+      "title": "What Hunters Are Saying",
+      "description": "Real results from hunters who put Odin's to the test in the field.",
+      "stamped": {
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's Dominant Buck products.",
+        "take": 6
+      }
     },
     "faq": {
       "title": "Frequently Asked Questions",
       "items": [
         {
-          "q": "How does dominant buck scent differ from doe estrus scent?",
-          "a": "Dominant buck scent replicates territorial markers of a mature buck to encourage investigation and competition at scrapes. Doe estrus focuses on breeding curiosity. Many hunters combine both in the Scrape Blend for complementary results."
+          "q": "When should I use dominant buck scent?",
+          "a": "Use dominant buck scent from early October through late November. It is most effective during the pre-rut when bucks are establishing territory and during the seeking phase when they are actively defending their area and pursuing does. Pair it with doe estrus for maximum effectiveness during peak rut and/or Odin's Scrape Blend."
+        },
+        {
+          "q": "What does dominant buck scent do?",
+          "a": "Dominant buck scent replicates the pheromone profile of a mature buck in rut when they experience a surge in testosterone. When a resident buck encounters this scent in his territory, it triggers a territorial response — he perceives a rival has moved into his area and will investigate the source. This is one of the most effective ways to draw mature bucks to a specific location during the pre-rut and rut."
+        },
+        {
+          "q": "Is synthetic buck urine as effective as natural?",
+          "a": "Yes. Odin's synthetic dominant buck scent is formulated to replicate the specific pheromone compounds that trigger territorial behavior, manufactured to precise molecular specifications. Unlike natural buck urine, which varies with every animal, synthetic delivers consistent concentration every time. The 30-day extended release provides sustained territorial pressure that a single application of natural urine cannot match."
+        },
+        {
+          "q": "Can I use dominant buck scent and doe estrus together?",
+          "a": "Absolutely. Using both together creates the most compelling scenario for a mature buck: the scent of a rival male with a receptive doe. Odin's Scrape Blend combines both in a single product for exactly this purpose. You can also deploy them separately — dominant buck on one side of your setup, doe estrus on the other — to create directional scent fields."
+        },
+        {
+          "q": "What attracts bucks in October?",
+          "a": "October is the transition period in many parts of the country. You may also have Doe Estrus and Dominant Buck available because any individual doe's peak is biologically a 24–48-hour window. \"Peak rut\" as commonly used refers to when the highest percentage of does are entering estrus simultaneously — typically spanning 10–14 days. Scrape Blend is perfect during this period, and you may add extra Doe Estrus or Dominant Buck depending on what you're reading in your area."
         },
         {
           "q": "Are the scent beads biodegradable?",
@@ -286,10 +303,6 @@
         {
           "q": "How long do the beads last?",
           "a": "30+ days of continuous release with documented 52% output remaining after 27 days of exposure."
-        },
-        {
-          "q": "Do I need to refrigerate the product?",
-          "a": "No. Synthetic formulations have indefinite shelf life with no refrigeration required."
         },
         {
           "q": "Was it easy to develop synthetic scents?",
@@ -321,5 +334,51 @@
       "href": "https://www.odinsinnovations.com/products/dominant-buck-scent-beads?promo=HUNT2026"
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent"
+      ],
+      "promoCodes": {
+        "dominant-buck-scent-guide": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 14.95,
+      "currency": "USD",
+      "units": "bottle"
+    }
   }
 }

@@ -1,8 +1,22 @@
 /**
- * CWD & Synthetic Scent Guide - Odin's Innovations
- * Generated from template-microsite
- * Generated at: 2026-04-08
- * Brand: Odin's Innovations
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      synthetic-scent-cwd-guide
+ * Brand:     Odin's Innovations
+ * Generated: 2026-05-08T15:14:14.813Z
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/synthetic-scent-cwd-guide.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
@@ -14,25 +28,16 @@ import { IKBProvider } from '@/contexts/IKBContext';
 import '@/themes/odins-innovations/globals.css';
 import config from './config.json';
 
-// Brand configuration
-const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":30,"s":80,"l":35},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"id":"how-it-works","title":"How It Works","description":"Simple deployment for extended results"},"steps":[{"number":"1","title":"Deploy the Beads","description":"Place a small amount of beads in mock scrapes, on drag lines, or around stands."},{"number":"2","title":"Natural Release","description":"The biodegradable polymer matrix releases lab-formulated attractants steadily for 30+ days."},{"number":"3","title":"Weatherproof Performance","description":"The formula resists washing away in rain and maintains effectiveness through temperature changes."},{"number":"4","title":"Consistent Results","description":"Lab-consistent results with no spoilage or freezing. Effective for deer, hogs, bears, and elk."}]},"difference":{"section":{"title":"Why Odin's","description":"The Odin's difference"},"differences":[{"icon":"shield","title":"CWD-Safe","description":"Zero biological material — no CWD risk."},{"icon":"clock","title":"30+ Day Release","description":"Continuous attraction for a full month."},{"icon":"globe","title":"Legal Everywhere","description":"Permitted in all 50 states."}]}};
-
+// Brand configuration (from BrandContext defaults)
+const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":30,"s":80,"l":35},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"title":"The Science Behind Scent Bead Technology","description":""},"headline":"The Science Behind Scent Bead Technology","body":"Odin's proprietary biodegradable polymer system delivers consistent, long-lasting scent release through controlled molecular diffusion.","steps":[{"number":"01","title":"Synthetic Scent Formulations","description":"Odin's has 21 unique scents formulated to provide a toolkit for hunters of all kinds and for many different times a year"},{"number":"02","title":"Proprietary Biopolymer","description":"Designed to absorb synthetic scents for a controlled release and then biodegrade. Better than you found it™"},{"number":"03","title":"Weatherproof Performance","description":"Rain, snow, and heavy dew won't wash away the scent. Use our weatherproof technology in any conditions","image":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png"},{"number":"04","title":"Controlled Molecular Release","description":"A prescribed amount of scent is infused into each polymer bead. Due to the design, the scent molecules are released over an extended period. Applying science to create innovative products for you!"}],"scienceSection":{"title":"University Testing Confirms Performance","description":"We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using Gas Chromatography-Mass Spectrometry). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.","highlight":"52% original scent concentration still releasing after 27 days","chartImage":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Scent_Chart_with_Description_full_size.jpg"}},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to natural urine or CWD restrictions."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
 const contactConfig = {"phone":"316-393-0440","email":"paul@odinsinnovations.com","address":{"street":"","city":"","state":"","zip":""}};
-const socialConfig = {"website":"https://www.odinsinnovations.com","facebook":"https://www.facebook.com/theodinsinnovations/","instagram":"https://www.instagram.com/odins.innovations/"};
+const socialConfig = {"website":"https://www.odinsinnovations.com","instagram":"https://www.instagram.com/odinsinnovations","facebook":"https://www.facebook.com/theodinsinnovations/","youtube":"https://www.youtube.com/@odinsinnovations2589"};
 
-// IKB configuration with promo codes
-const ikbConfig = {
-  rules: {
-    promoCodes: {
-      'synthetic-scent-cwd-guide': 'HUNT2026',
-    },
-    approvedSections: ['hero', 'howItWorks', 'features', 'faq', 'cta', 'footer', 'trustSignals', 'difference', 'pricing'],
-    blocklistedContent: ['video', 'live-chat', 'team', 'experts', 'award', 'awards', 'review', 'reviews'],
-  },
-};
+// IKB configuration
+const ikbConfig = {"rules":{"trustSignals":["Made in USA","50 State Legal","30+ Day Scent"],"promoCodes":{"synthetic-scent-cwd-guide":"HUNT2026"},"approvedSections":["hero","howItWorks","features","faq","cta","footer","trustSignals","difference","pricing"],"blocklistedContent":["testimonial","testimonials","live-chat","team","experts","award","awards","review","reviews"],"blocklistedPhrases":["millions of customers","award-winning","industry-leading","guaranteed delivery","100% accurate"]},"pricing":{"basePrice":14.95,"currency":"USD","units":"bottle"}};
 
-// Get promo code
-const promoCode = 'HUNT2026';
+// Get promo code from IKB for the service
+const promoCode = ikbConfig.rules?.promoCodes?.['synthetic-scent-cwd-guide'] || config.ikb?.rules?.promoCodes?.['synthetic-scent-cwd-guide'] || '';
 
 function App() {
   const { content } = config;
@@ -100,8 +105,8 @@ function App() {
               
               {/* CTA */}
               <div className="text-center">
-                <a href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
-                  CWD-Safe Synthetic Scents
+                <a href={content['what-is-cwd'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
+                  {content['what-is-cwd'].cta?.text || 'Learn More'}
                 </a>
               </div>
             </div>
@@ -119,37 +124,36 @@ function App() {
               <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
                 <div className="bg-white rounded-xl p-6 shadow-lg">
                   <img 
-                    src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558" 
-                    alt="USDA Certified Biobased Product - 42%"
+                    src={content['why-odins'].usdaBioPreferred?.imageUrl || 'https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558'} 
+                    alt={content['why-odins'].usdaBioPreferred?.imageAlt || 'USDA Certified Biobased Product'}
                     className="w-48 h-auto"
                   />
                 </div>
                 <div className="text-left max-w-md">
                   <p className="text-lg text-stone-700 mb-2">
-                    <strong>USDA BioPreferred® Certified</strong>
+                    <strong>{content['why-odins'].usdaBioPreferred?.title || 'USDA BioPreferred® Certified'}</strong>
                   </p>
                   <p className="text-stone-600 mb-4">
-                    Our biodegradable polymer contains 42% certified biobased content. 
-                    Both beaded and liquid products are USDA BioPreferred Certified.
+                    {content['why-odins'].usdaBioPreferred?.description || 'Our biodegradable polymer contains 42% certified biobased content. Both beaded and liquid products are USDA BioPreferred Certified.'}
                   </p>
                   <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 text-sm">
                     <span className="text-stone-500">Certified Under:</span>
-                    <span className="font-medium text-stone-700">LC BioPlastics LLC</span>
+                    <span className="font-medium text-stone-700">{content['why-odins'].usdaBioPreferred?.certifiedUnder || 'LC BioPlastics LLC'}</span>
                     <a 
-                      href="https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label"
+                      href={content['why-odins'].usdaBioPreferred?.detailsUrl || '#'}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2"
                     >
-                      View Details →
+                      {content['why-odins'].usdaBioPreferred?.detailsLinkText || 'View Details →'}
                     </a>
                   </div>
                 </div>
               </div>
               
               <div className="text-center">
-                <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
-                  Shop Rut Scents
+                <a href={content['why-odins'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
+                  {content['why-odins'].cta?.text || 'Shop Now'}
                 </a>
               </div>
             </div>
@@ -203,9 +207,7 @@ function App() {
                       alt="Longer Lasting Deer Scent - 30+ Days of Performance"
                       className="w-48 h-auto rounded-lg shadow-md"
                     />
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-                      {content['how-it-works'].scienceSection.description}
-                    </p>
+                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: content['how-it-works'].scienceSection.description }} />
                   </div>
                   <div className="bg-primary/10 rounded-lg p-6 text-center">
                     <p className="text-xl md:text-2xl font-bold text-primary">{content['how-it-works'].scienceSection.highlight}</p>
@@ -219,42 +221,55 @@ function App() {
         {/* Benefits */}
         {content['benefits'] && <BenefitsSection benefits={content['benefits']} />}
         
-        {/* Wins Section */}
+        {/* Wins Section (dark - citronella style) */}
         {content['wins'] && (
-          <section id="wins" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{content['wins'].headline}</h2>
+          <section id="wins" className="section-padding" style={{ background: '#1a1d29' }}>
+            <div className="section-container">
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-white text-center">
+                {content['wins'].headline}
+              </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {content['wins'].items.map((item, idx) => (
-                  <div key={idx} className="bg-muted/30 rounded-lg p-6 text-center">
-                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                  <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
                       {item.icon === 'long-lasting' && (
-                        <img 
-                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-long-lasting.svg?v=1776361841" 
-                          alt="Longest release duration"
-                          className="w-12 h-12"
-                        />
+                        <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2.5" className="w-12 h-12">
+                          <circle cx="60.82" cy="54.12" r="4.26"/>
+                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
+                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
+                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
+                        </svg>
                       )}
                       {item.icon === 'flask' && (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       )}
                       {item.icon === '50-states' && (
-                        <img 
-                          src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-50-states.svg" 
-                          alt="Legal in all 50 states"
-                          className="w-12 h-12"
-                        />
+                        <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2" className="w-12 h-12">
+                          <path d="M15 25h70v50H15z" fill="white" fillOpacity="0.1"/>
+                          <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
+                          <path d="M15 25h30v30H15z" fill="white" fillOpacity="0.2"/>
+                          <circle cx="22" cy="32" r="2" fill="white"/>
+                          <circle cx="30" cy="32" r="2" fill="white"/>
+                          <circle cx="38" cy="32" r="2" fill="white"/>
+                          <circle cx="26" cy="38" r="2" fill="white"/>
+                          <circle cx="34" cy="38" r="2" fill="white"/>
+                          <circle cx="22" cy="44" r="2" fill="white"/>
+                          <circle cx="30" cy="44" r="2" fill="white"/>
+                          <circle cx="38" cy="44" r="2" fill="white"/>
+                          <circle cx="26" cy="50" r="2" fill="white"/>
+                          <circle cx="34" cy="50" r="2" fill="white"/>
+                        </svg>
                       )}
                       {item.icon === 'shield' && (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
                       )}
                     </div>
-                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <h3 className="font-display text-xl uppercase mb-2 text-white">{item.title}</h3>
+                    <p className="font-body text-sm text-gray-400">{item.description}</p>
                   </div>
                 ))}
               </div>
@@ -269,8 +284,8 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
               <div className="text-center mt-8">
-                <a href="https://www.odinsinnovations.com/pages/testimonials" className="btn-accent text-base px-8 py-3 inline-block">
-                  See Why Hunters Choose Synthetic
+                <a href={content['comparison'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
+                  {content['comparison'].cta?.text || 'See Why Hunters Choose Synthetic'}
                 </a>
               </div>
             </div>
@@ -278,16 +293,16 @@ function App() {
         )}
         
         {/* Stamped.io Reviews - Success Stories from the Field */}
-        <section id="reviews" className="py-20 bg-stone-50">
+        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'Success Stories from the Field'}</h2>
+              <p className="text-lg text-stone-600 max-w-2xl mx-auto">{content.reviews?.subtitle || "Real results from hunters who trust Odin\u2019s synthetic scents."}</p>
             </div>
             
             {/* Stamped.io Reviews Widget - Rut Scents Products */}
             {/* Loads automatically via Shopify's Stamped.io app integration */}
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-product-brand="Odin's Innovations"></div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
             
             {/* Hide Product/Site Reviews tabs since no site reviews */}
             <style dangerouslySetInnerHTML={{__html: `
@@ -304,8 +319,8 @@ function App() {
           <section id="faq" className="bg-muted/30">
             <FAQSection faq={{ ...content['faq'], showContactSection: false }} />
             <div className="text-center pb-8">
-              <a href="https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026" className="btn-accent text-base px-8 py-3 inline-block">
-                Synthetic Scent Beads
+              <a href={content['faq'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
+                {content['faq'].cta?.text || 'Shop Now'}
               </a>
             </div>
           </section>
@@ -319,5 +334,5 @@ function App() {
 }
 
 // Initialize React
-const root = createRoot(document.getElementById('root')!);
+const root = createRoot(document.getElementById('root'));
 root.render(<App />);

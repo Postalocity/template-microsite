@@ -3,7 +3,7 @@
  *
  * Site:      food-scent-deer-attractants
  * Brand:     Odin's Innovations
- * Generated: 2026-05-04T13:46:22.781Z
+ * Generated: 2026-05-08T15:14:13.942Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -30,8 +30,8 @@ import config from './config.json';
 const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":30,"s":80,"l":35},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"id":"how-it-works","title":"How It Works","description":"Simple deployment for extended results"},"steps":[{"number":"1","title":"Deploy the Beads","description":"Place a small amount of beads in mock scrapes, on drag lines, or around stands."},{"number":"2","title":"Natural Release","description":"The biodegradable polymer matrix releases lab-formulated attractants steadily for 30+ days."},{"number":"3","title":"Weatherproof Performance","description":"The formula resists washing away in rain and maintains effectiveness through temperature changes."},{"number":"4","title":"Consistent Results","description":"Lab-consistent results with no spoilage or freezing. Effective for deer, hogs, bears, and elk."}]},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to natural urine or CWD restrictions."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"trustSignals":["Made in USA","50 State Legal","30+ Day Scent","USDA BioPreferred"],"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
 const contactConfig = {"phone":"316-393-0440","email":"paul@odinsinnovations.com","address":{"street":"","city":"","state":"","zip":""}};
 const socialConfig = {"website":"https://www.odinsinnovations.com","instagram":"https://www.instagram.com/odinsinnovations","facebook":"https://www.facebook.com/theodinsinnovations/","youtube":"https://www.youtube.com/@odinsinnovations2589"};
-const ikbConfig = { rules: { promoCodes: { 'food-scent-deer-attractants': 'HUNT2026' } } };
-  const promoCode = ikbConfig.rules?.promoCodes?.['food-scent-deer-attractants'] || 'HUNT2026';
+const ikbConfig = {"rules":{"trustSignals":["Made in USA","50 State Legal","30+ Day Scent"],"promoCodes":{"food-scent-deer-attractants":"HUNT2026"},"approvedSections":["hero","howItWorks","features","faq","cta","footer","trustSignals","difference","pricing"],"blocklistedContent":["testimonial","testimonials","live-chat","team","experts","award","awards","review","reviews"],"blocklistedPhrases":["millions of customers","award-winning","industry-leading","guaranteed delivery","100% accurate"]},"pricing":{"basePrice":14.95,"currency":"USD","units":"bottle"}};
+const promoCode = ikbConfig.rules?.promoCodes?.['food-scent-deer-attractants'] || 'HUNT2026';
 
   function App() {
   const { content } = config;
@@ -52,7 +52,7 @@ const ikbConfig = { rules: { promoCodes: { 'food-scent-deer-attractants': 'HUNT2
       <div style={{ background: 'hsl(30, 20%, 95%)' }}>
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
       </div>
-      <WhyOdinsSection content={content.outperforms} background="#f5f5f5" />
+      <WhyOdinsSection content={content.outperforms} background="hsl(var(--muted))" />
 
       {/* How to Deploy */}
       <section id="deployment" className="section-padding" style={{ background: '#1a1d29' }}>
@@ -98,7 +98,7 @@ const ikbConfig = { rules: { promoCodes: { 'food-scent-deer-attractants': 'HUNT2
         </div>
       </section>
 
-      <DifferenceSection difference={content.environmental} background="#f5f5f5" />
+      <DifferenceSection difference={content.environmental} background="hsl(var(--muted))" />
 
       {/* Baiting Laws and Scent Attractants */}
       {content.baitingLaws && (
@@ -152,7 +152,7 @@ const ikbConfig = { rules: { promoCodes: { 'food-scent-deer-attractants': 'HUNT2
             <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'What Hunters Are Saying'}</h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">{content.reviews?.description || ''}</p>
           </div>
-          <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
+          <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations"></div>
           <style dangerouslySetInnerHTML={{__html: `
             .stamped-widget-buttons,
             .stamped-full-page-tabs {

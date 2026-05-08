@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/hunting-mosquito-repellent.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service hunting-mosquito-repellent",
+    "source": "config/sites/odins-innovations/hunting-mosquito-repellent.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-08T15:14:12.606Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "odins-innovations",
     "name": "Hunting Mosquito Repellent",
@@ -13,7 +21,7 @@
   },
   "branding": {
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
-    "logo": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png"
+    "logo": "/logo.png"
   },
   "theme": {
     "primary": {
@@ -23,13 +31,24 @@
     }
   },
   "seo": {
-    "title": "Citronella Mosquito Repellent | 30+ Day Protection | Odin's",
-    "description": "Citronella mosquito repellent for hunting: 30+ days protection, rainproof, milder scent than DEET, EPA-registered. Starting at $14.95 — use code HUNT2026. Shop now.",
-    "ogTitle": "Citronella Hunting Mosquito Repellent — 30+ Day Protection",
+    "title": "Hunting Mosquito Repellent — Citronella Liquid & Beads | DEET-Free, Scent-Smart",
+    "description": "Odin's citronella hunting mosquito repellent creates a rainproof protective barrier on foliage. DEET-free, masks CO₂ and lactic acid cues. Up to 720-hour sustained release. Perfect for turkey, deer, and early bow season. Pairs with scent beads for reduced reapplication time.",
+    "ogImage": "/hunting-mosquito-repellent/images/og-image.png",
+    "keywords": [
+      "hunting mosquito repellent",
+      "citronella hunting",
+      "deer hunting mosquito repellent",
+      "mosquito repellent for turkey hunting",
+      "DEET free mosquito repellent hunting",
+      "citronella in hunting blind",
+      "long lasting mosquito repellent hunting",
+      "bug repellent citronella",
+      "insect repellent for deer hunting"
+    ],
+    "ogTitle": "Citronella Hunting Mosquito Repellent — Up to 720 Hours Barrier",
     "ogDescription": "Synthetic oil-based liquid and biodegradable polymer beads engineered for consistent, weatherproof protection around stands and blinds without strong chemical odors.",
-    "ogImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hero.jpg?v=1776346221",
     "twitterCard": "summary_large_image",
-    "canonical": "https://www.odinsinnovations.com/pages/hunting-mosquito-repellent",
+    "canonical": "https://www.odinsinnovations.com/hunting-mosquito-repellent",
     "googleAnalyticsId": "G-XXXXXXXXXX"
   },
   "navigation": {
@@ -39,12 +58,12 @@
         "href": "#why-odins"
       },
       {
-        "label": "How to Use",
-        "href": "#application"
-      },
-      {
         "label": "How It Works",
         "href": "#how-it-works"
+      },
+      {
+        "label": "Application",
+        "href": "#application"
       },
       {
         "label": "FAQ",
@@ -52,7 +71,7 @@
       }
     ],
     "cta": {
-      "text": "Shop Citronella Liquid",
+      "text": "Shop Citronella",
       "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026"
     }
   },
@@ -60,11 +79,11 @@
     "hero": {
       "headline": {
         "main": "Hunting Mosquito Repellent",
-        "highlightTerm": "Citronella Barrier — Up to 720 Hours"
+        "highlightTerm": "Citronella Barrier<br />Up to 720 Hours"
       },
       "subhead": "Synthetic, oil-based liquid and biodegradable polymer beads engineered for consistent protective barriers on foliage while reducing reapplication time.",
       "background": {
-        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hero.jpg?v=1776346221",
+        "image": "/hunting-mosquito-repellent/images/hero.jpg",
         "overlay": true
       },
       "ctas": [
@@ -115,21 +134,7 @@
     },
     "blinds": {
       "headline": "Citronella in Hunting Blinds",
-      "body": "Blinds concentrate the scent zone for stronger barrier performance.",
-      "features": [
-        {
-          "title": "Enclosed Performance",
-          "description": "Blinds concentrate the scent zone for stronger barrier performance."
-        },
-        {
-          "title": "Long-Lasting Results",
-          "description": "Return days or weeks later with reduced insect presence."
-        },
-        {
-          "title": "Minimal Maintenance",
-          "description": "Consistent results across multiple visits with minimal effort."
-        }
-      ]
+      "body": "Enclosed or semi-enclosed blinds concentrate the scent zone for stronger barrier performance. Hang a mesh bag of Citronella Scent Beads from the ceiling or corner while applying liquid to surrounding foliage or ground. Users report returning days or weeks later with reduced insect presence. One mesh bag can support consistent results across an entire season with minimal maintenance."
     },
     "turkey": {
       "headline": "Perfect for Turkey Season and Early Bow Season",
@@ -227,51 +232,11 @@
     },
     "footer": {
       "finalCTA": {
-        "headline": "Ready for consistent mosquito control with reduced maintenance?",
-        "buttonText": "Shop Citronella Liquid Now",
+        "headline": "Ready for easier mosquito control?",
+        "buttonText": "Shop Citronella",
         "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026"
       },
-      "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
-      "quickLinks": [
-        {
-          "label": "Citronella Liquid",
-          "href": "https://www.odinsinnovations.com/products/citronella-liquid"
-        },
-        {
-          "label": "Citronella Scent Beads",
-          "href": "https://www.odinsinnovations.com/products/citronella-scent-beads"
-        },
-        {
-          "label": "All Scent Beads",
-          "href": "https://www.odinsinnovations.com/collections/scent-beads"
-        }
-      ]
-    },
-    "features": {
-      "headline": "Mosquito Control for Hunting",
-      "subtitle": "Peak protection when you need it most",
-      "features": [
-        {
-          "title": "Peak Season Protection",
-          "description": "Peak mosquito activity coincides with spring hunting seasons.",
-          "icon": "shield"
-        },
-        {
-          "title": "Scent-Safe Formula",
-          "description": "Milder scent avoids strong DEET odors deer can detect.",
-          "icon": "leaf"
-        },
-        {
-          "title": "Long-Lasting Barrier",
-          "description": "Up to 720 hours of protection vs 20-minute alternatives.",
-          "icon": "clock"
-        },
-        {
-          "title": "EPA-Registered",
-          "description": "Formulated with EPA-registered biopesticide compounds.",
-          "icon": "check"
-        }
-      ]
+      "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
     },
     "howItWorks": {
       "section": {
@@ -284,24 +249,56 @@
   },
   "footer": {
     "finalCTA": {
-      "headline": "Ready for consistent mosquito control with reduced maintenance?",
-      "buttonText": "Shop Citronella Liquid Now",
+      "headline": "Ready for easier mosquito control?",
+      "buttonText": "Shop Citronella",
       "href": "https://www.odinsinnovations.com/products/citronella-liquid?promo=HUNT2026"
     },
-    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
-    "quickLinks": [
-      {
-        "label": "Citronella Liquid",
-        "href": "https://www.odinsinnovations.com/products/citronella-liquid"
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent"
+      ],
+      "promoCodes": {
+        "hunting-mosquito-repellent": "HUNT2026"
       },
-      {
-        "label": "Citronella Scent Beads",
-        "href": "https://www.odinsinnovations.com/products/citronella-scent-beads"
-      },
-      {
-        "label": "All Scent Beads",
-        "href": "https://www.odinsinnovations.com/collections/scent-beads"
-      }
-    ]
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 14.95,
+      "currency": "USD",
+      "units": "bottle"
+    }
   }
 }

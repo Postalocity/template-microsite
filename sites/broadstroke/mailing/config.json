@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/mailing.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service mailing",
+    "source": "config/sites/broadstroke/mailing.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-08T15:13:44.295Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "broadstroke",
     "name": "Mailing Services — Broadstroke, Inc.",
@@ -25,6 +33,7 @@
   "seo": {
     "title": "Mailing Services — EDDM, Presort, Certified Mail & Postalocity Automation",
     "description": "Professional mailing services: EDDM, presort, certified mail, list management, and Postalocity automated platform. Expert print-to-mail solutions with concierge service for businesses, agencies, and government entities nationwide.",
+    "ogImage": "/mailing/images/og-image.png",
     "keywords": [
       "mailing services Wichita",
       "EDDM mailing Kansas",
@@ -38,7 +47,6 @@
     ],
     "ogTitle": "Mailing Services — EDDM, Presort, Certified Mail & Postalocity Automation",
     "ogDescription": "Print, mail, promo & fulfillment made simple.",
-    "ogImage": "/mailing/images/og-image.png",
     "twitterCard": "summary_large_image",
     "twitterTitle": "Mailing Services — Broadstroke, Inc. | Your One-Stop-Shop for Print, Mail & Promo",
     "twitterDescription": "Professional mailing services — EDDM, presort, certified mail, list management, and the Postalocity automated platform — all handled with concierge service from Broadstroke. Expert print-to-mail solutions that save you time and ensure accuracy.",
@@ -52,12 +60,12 @@
         "href": "#benefits"
       },
       {
-        "label": "How It Works",
-        "href": "#how-it-works"
-      },
-      {
         "label": "Services",
         "href": "#services"
+      },
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
       },
       {
         "label": "FAQ",
@@ -67,7 +75,7 @@
     "serviceLinks": [
       {
         "label": "Business Forms",
-        "href": "/carbonless-forms"
+        "href": "https://broadstrokeinc.com/carbonless-forms"
       },
       {
         "label": "Print",
@@ -82,8 +90,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",
@@ -113,7 +122,7 @@
       },
       {
         "label": "Careers",
-        "href": "https://broadstrokeinc.com/careers"
+        "href": "https://broadstrokeinc.com/career"
       },
       {
         "label": "Contact",
@@ -122,7 +131,7 @@
     ],
     "cta": {
       "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/mailing-contact/"
+      "href": "https://broadstrokeinc.com/contact/?service=mailing"
     }
   },
   "content": {

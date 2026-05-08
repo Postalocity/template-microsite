@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/printing.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service printing",
+    "source": "config/sites/broadstroke/printing.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-08T15:13:44.745Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "broadstroke",
     "name": "Professional Printing Services",
@@ -25,6 +33,7 @@
   "seo": {
     "title": "Professional Printing Services — Broadstroke",
     "description": "High-quality printing services in Wichita. Business cards, brochures, flyers, banners and more. Quick turnaround, free estimates.",
+    "ogImage": "/printing/images/og-image.png",
     "keywords": [
       "printing services Wichita",
       "business printing",
@@ -35,7 +44,6 @@
     ],
     "ogTitle": "Professional Printing Services — Broadstroke",
     "ogDescription": "High-quality printing services with quick turnaround. Free estimates on all projects.",
-    "ogImage": "/printing/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/printing",
     "googleAnalyticsId": "G-9HXQD6LYZ4"
@@ -51,7 +59,7 @@
         "href": "#services"
       },
       {
-        "label": "Process",
+        "label": "How It Works",
         "href": "#how-it-works"
       },
       {
@@ -77,8 +85,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",
@@ -108,7 +117,7 @@
       },
       {
         "label": "Careers",
-        "href": "https://broadstrokeinc.com/careers"
+        "href": "https://broadstrokeinc.com/career"
       },
       {
         "label": "Contact",

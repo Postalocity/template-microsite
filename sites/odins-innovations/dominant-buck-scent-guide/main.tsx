@@ -1,29 +1,45 @@
 /**
- * Dominant Buck Scent Guide - Generated from template-microsite
- * Generated at: 2026-04-28T19:44:17.073Z
- * Brand: Odin's Innovations - Dominant Buck Scent Guide
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      dominant-buck-scent-guide
+ * Brand:     Odin's Innovations
+ * Generated: 2026-05-08T15:14:13.494Z
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/dominant-buck-scent-guide.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ *
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, HowItWorksSection, ProductsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
-import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
-import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, HighlightSection } from '@/components/shared';
+import SiteNavigation from '@/components/shared/SiteNavigation';
+import SiteFooter from '@/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
-import '@/themes/odins-innovations/globals.css';
+import '@/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
-const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":30,"s":80,"l":35},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"title":"How Dominant Buck Scent Works","body":"Whitetail bucks communicate territorial boundaries through scent marking at scrapes, rubs, and travel corridors. Odin's Dominant Buck Scent replicates the <a href=\"https://www.odinsinnovations.com/collections/rut-scents\" target=\"_blank\" rel=\"noopener noreferrer\">pheromone</a> signature of a mature buck using a proprietary library of 21 synthetic formulations. The result is a consistent aromatic profile that hunters deploy to simulate the presence of an intruding buck. Because the formula is manufactured to precise molecular specification, every application delivers the same scent concentration — unlike natural urine that varies with the donor animal's age, health, diet, and hormonal state."},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to natural urine or CWD restrictions."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"testimonials":{"title":"Hunter Results","quotes":[{"text":"Observed increased scrape activity over three weeks with the beads still releasing scent after multiple rain events.","author":"Mallory A., Kansas"},{"text":"Daily buck visits on trail cam throughout October and November using Dominant Buck + Scrape Blend.","author":"Randy & Tony, Michigan"},{"text":"Powerful, season-long scent that maintained integrity without daily reapplication.","author":"Grant Meyer"}]},"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
+const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":30,"s":80,"l":35},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"title":"How Dominant Buck Scent Works","body":"Whitetail bucks communicate territorial boundaries through scent marking at scrapes, rubs, and travel corridors. Odin's Dominant Buck Scent replicates the <a href=\"https://www.odinsinnovations.com/collections/rut-scents\" target=\"_blank\" rel=\"noopener noreferrer\">pheromone</a> signature of a mature buck using a proprietary library of 21 synthetic formulations. The result is a consistent aromatic profile that hunters deploy to simulate the presence of an intruding buck. Because the formula is manufactured to precise molecular specification, every application delivers the same scent concentration — unlike natural urine that varies with the donor animal's age, health, diet, and hormonal state."},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to natural urine or CWD restrictions."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
 const contactConfig = {"phone":"316-393-0440","email":"paul@odinsinnovations.com","address":{"street":"","city":"","state":"","zip":""}};
 const socialConfig = {"website":"https://www.odinsinnovations.com","instagram":"https://www.instagram.com/odinsinnovations","facebook":"https://www.facebook.com/theodinsinnovations/","youtube":"https://www.youtube.com/@odinsinnovations2589"};
 
 // IKB configuration
-const ikbConfig = {};
+const ikbConfig = {"rules":{"trustSignals":["Made in USA","50 State Legal","30+ Day Scent"],"promoCodes":{"dominant-buck-scent-guide":"HUNT2026"},"approvedSections":["hero","howItWorks","features","faq","cta","footer","trustSignals","difference","pricing"],"blocklistedContent":["testimonial","testimonials","live-chat","team","experts","award","awards","review","reviews"],"blocklistedPhrases":["millions of customers","award-winning","industry-leading","guaranteed delivery","100% accurate"]},"pricing":{"basePrice":14.95,"currency":"USD","units":"bottle"}};
 
 // Get promo code from IKB for the service
-const promoCode = ikbConfig.rules?.promoCodes?.['dominant-buck-scent-guide'] || 'HUNT2026';
+const promoCode = ikbConfig.rules?.promoCodes?.['dominant-buck-scent-guide'] || '2026';
 
 function App() {
   const { content } = config;
@@ -51,7 +67,12 @@ function App() {
           body: content.howItWorks.body
         }} />
 
-        {/* Section 3: When To Use */}
+        {/* Section 3: Products */}
+        <div style={{ background: '#1a1d29' }}>
+          {content.products && <ProductsSection content={content.products} />}
+        </div>
+
+        {/* Section 4: When To Use */}
         <WhenToUseSection content={{
           headline: content.whenToUse.title,
           body: '',
@@ -68,7 +89,7 @@ function App() {
           })
         }} />
 
-        {/* Section 4: Deployment */}
+        {/* Section 5: Deployment */}
         <section id="deployment" className="section-padding" style={{ background: '#1a1d29' }}>
           <div className="section-container">
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
@@ -110,13 +131,13 @@ function App() {
           </div>
         </section>
 
-        {/* Section 5: Why Odin's */}
+        {/* Section 6: Why Odin's */}
         <WhyOdinsSection content={{
           headline: content.whyOdins.title,
           body: content.whyOdins.body
         }} />
 
-        {/* Section 6: Effectiveness */}
+        {/* Section 7: Effectiveness */}
         <section id="effectiveness" className="section-padding" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="section-container">
             <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
@@ -140,22 +161,17 @@ function App() {
           </div>
         </section>
 
-        {/* Section 7: Products */}
-        <div style={{ background: '#1a1d29' }}>
-          {content.products && <ProductsSection content={content.products} />}
-        </div>
-
         {/* Section 8: Comparison */}
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
 
-        {/* Section 10: Reviews */}
+        {/* Section 9: Reviews */}
         <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
               <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who put Odin's to the test in the field.</p>
             </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations"></div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
             <style dangerouslySetInnerHTML={{__html: `
               .stamped-widget-buttons,
               .stamped-full-page-tabs {
@@ -165,7 +181,7 @@ function App() {
           </div>
         </section>
 
-        {/* Section 11: FAQ */}
+        {/* Section 10: FAQ */}
         <FAQSection faq={content.faq} />
 
         <SiteFooter config={config} />

@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/commercial-printing.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service commercial-printing",
+    "source": "config/sites/broadstroke/commercial-printing.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-08T15:13:43.851Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "broadstroke",
     "name": "Commercial Printing — Broadstroke, Inc.",
@@ -25,6 +33,7 @@
   "seo": {
     "title": "Commercial Printing Services Wichita KS — Broadstroke, Inc.",
     "description": "Trusted commercial printing in Wichita KS since 1964. Business cards, brochures, forms, wide format, offset & digital printing with full-service finishing and in-house mailing. Free estimates.",
+    "ogImage": "/commercial-printing/images/og-image.png",
     "keywords": [
       "commercial printing Wichita",
       "printing services Wichita KS",
@@ -40,7 +49,6 @@
     ],
     "ogTitle": "Commercial Printing Services — Broadstroke, Inc.",
     "ogDescription": "One-stop commercial printing solutions in Wichita KS: quality printing with seamless design, finishing, mailing, and promo integration.",
-    "ogImage": "/commercial-printing/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/commercial-printing",
     "googleAnalyticsId": "G-9HXQD6LYZ4"
@@ -52,8 +60,8 @@
         "href": "#benefits"
       },
       {
-        "label": "Products",
-        "href": "#products"
+        "label": "Services",
+        "href": "#services"
       },
       {
         "label": "How It Works",
@@ -82,8 +90,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",
@@ -113,7 +122,7 @@
       },
       {
         "label": "Careers",
-        "href": "https://broadstrokeinc.com/careers"
+        "href": "https://broadstrokeinc.com/career"
       },
       {
         "label": "Contact",
@@ -122,7 +131,7 @@
     ],
     "cta": {
       "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/print-wide-format-contact/"
+      "href": "https://broadstrokeinc.com/contact/?service=commercial-printing"
     }
   },
   "content": {

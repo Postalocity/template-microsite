@@ -3,7 +3,7 @@
  *
  * Site:      doe-estrus-guide
  * Brand:     Odin's Innovations
- * Generated: 2026-05-05T15:59:42.881Z
+ * Generated: 2026-05-08T15:14:13.048Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -20,7 +20,7 @@
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -56,16 +56,24 @@ function App() {
         
         {/* Section 1: When to Use */}
         {content['when-to-use'] && (
-          <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
-            <div className="section-container">
-              <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
-                {content['when-to-use'].headline}
-              </h2>
-              <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed whitespace-pre-wrap">
-                {content['when-to-use'].body}
-              </p>
-            </div>
-          </section>
+          content['when-to-use'].seasons ? (
+            <WhenToUseSection content={{
+              headline: content['when-to-use'].headline,
+              body: content['when-to-use'].body,
+              seasons: content['when-to-use'].seasons
+            }} />
+          ) : (
+            <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+              <div className="section-container">
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content['when-to-use'].headline}
+                </h2>
+                <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed whitespace-pre-wrap">
+                  {content['when-to-use'].body}
+                </p>
+              </div>
+            </section>
+          )
         )}
         
         {/* Section 2: Why Synthetic (light) */}
@@ -139,21 +147,97 @@ function App() {
           </section>
         )}
         
-        {/* Section 7: How to Use */}
+        {/* Section 7: How to Use - Dark background with steps on left, video on right */}
         {content['how-to-use'] && (
-          <section id="how-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+          <section id="how-to-use" className="section-padding" style={{ background: '#1a1d29' }}>
             <div className="section-container">
-              <h2 className="font-display text-4xl md:text-5xl uppercase mb-12 text-center" style={{ color: 'hsl(var(--foreground))' }}>
+              <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
                 {content['how-to-use'].headline}
               </h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Scent Beads</h3>
-                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].beads}</p>
-                </div>
-                <div className="bg-white p-6 rounded-lg shadow-md">
-                  <h3 className="font-display text-2xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>Liquid Formula</h3>
-                  <p className="font-body text-base text-muted-foreground leading-relaxed">{content['how-to-use'].liquid}</p>
+              <div className="max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                  {/* Left side: Steps */}
+                  <div>
+                    {content['how-to-use'].steps && content['how-to-use'].steps.length > 0 ? (
+                      <ol className="space-y-6">
+                        {content['how-to-use'].steps.map((step, idx) => (
+                          <li key={idx} className="flex gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                              {idx + 1}
+                            </span>
+                            <p className="font-body text-base text-gray-300 leading-relaxed pt-2">{step}</p>
+                          </li>
+                        ))}
+                      </ol>
+                    ) : (
+                      <ol className="space-y-6">
+                        {/* Step 1: Scent Beads */}
+                        {content['how-to-use'].beads && (
+                          <li className="flex gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                              1
+                            </span>
+                            <div className="flex-1">
+                              <h3 className="font-display text-xl uppercase mb-2 text-white">
+                                {content['how-to-use'].beadsTitle || "Apply Scent Beads"}
+                              </h3>
+                              <p className="font-body text-base text-gray-300 leading-relaxed">
+                                {content['how-to-use'].beads}
+                              </p>
+                            </div>
+                          </li>
+                        )}
+                        {/* Step 2: Liquid Formula */}
+                        {content['how-to-use'].liquid && (
+                          <li className="flex gap-4">
+                            <span className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-lg" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
+                              2
+                            </span>
+                            <div className="flex-1">
+                              <h3 className="font-display text-xl uppercase mb-2 text-white">
+                                {content['how-to-use'].liquidTitle || "Add Liquid Trail"}
+                              </h3>
+                              <p className="font-body text-base text-gray-300 leading-relaxed">
+                                {content['how-to-use'].liquid}
+                              </p>
+                            </div>
+                          </li>
+                        )}
+                      </ol>
+                    )}
+                    {content['how-to-use'].note && (
+                      <p className="mt-8 font-body text-sm text-gray-400 italic border-l-2 pl-4" style={{ borderColor: 'hsl(var(--accent))' }}>
+                        {content['how-to-use'].note}
+                      </p>
+                    )}
+                  </div>
+                  {/* Right side: Video */}
+                  {(content['how-to-use'].video || content['how-it-works']?.video) && (
+                    <div className="flex justify-center">
+                      <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg bg-black">
+                        <iframe
+                          src={(() => {
+                            const videoUrl = content['how-to-use']?.video || content['how-it-works']?.video || '';
+                            if (!videoUrl) return '';
+                            if (videoUrl.includes('youtu.be/')) {
+                              const videoId = videoUrl.split('youtu.be/')[1]?.split('?')[0];
+                              return 'https://www.youtube.com/embed/' + videoId;
+                            }
+                            if (videoUrl.includes('watch?v=')) {
+                              const videoId = videoUrl.split('watch?v=')[1]?.split('&')[0];
+                              return 'https://www.youtube.com/embed/' + videoId;
+                            }
+                            return videoUrl;
+                          })()}
+                          title="How to Use"
+                          className="w-full h-full"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -191,7 +275,7 @@ function App() {
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
               <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
             </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="10" data-per-page="10" data-product-brand="Odin's Innovations"></div>
+            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
             <style dangerouslySetInnerHTML={{__html: `
               .stamped-widget-buttons,
               .stamped-full-page-tabs {
@@ -206,11 +290,11 @@ function App() {
         
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
+
       </BrandProvider>
     </IKBProvider>
   );
 }
-
 // Initialize React
 const root = createRoot(document.getElementById('root'));
 root.render(<App />);

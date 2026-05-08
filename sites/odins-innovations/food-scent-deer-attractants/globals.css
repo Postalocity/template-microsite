@@ -572,3 +572,19 @@
 .text-with-icons__button {
   display: none;
 }
+
+
+/* Ensure stamped reviews widget takes full width */
+#stamped-reviews-widget {
+  width: 100%;
+  min-height: 400px;
+}
+
+/* Hide Stamped widget buttons */
+.stamped-widget-buttons {
+  display: none !important;
+}
+/* Hide Stamped widget buttons - CORRECT class name */
+.stamped-widget-buttons {
+  display: none !important;
+}

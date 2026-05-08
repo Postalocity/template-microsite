@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/wide-format.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service wide-format",
+    "source": "config/sites/broadstroke/wide-format.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-08T15:13:45.650Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "broadstroke",
     "name": "Wide Format Printing Services — Broadstroke, Inc.",
@@ -25,6 +33,7 @@
   "seo": {
     "title": "Wide Format Printing Services — Large Format Graphics & Signage — Broadstroke, Inc.",
     "description": "One-stop wide format printing solutions in Wichita KS: large format graphics, vehicle graphics, custom signage & banners with concierge service, professional installation, and seamless integration with commercial printing and promotional products.",
+    "ogImage": "/wide-format/images/og-image.png",
     "keywords": [
       "wide format printing Wichita",
       "large format printing Wichita KS",
@@ -34,7 +43,6 @@
     ],
     "ogTitle": "Wide Format Printing Services — Broadstroke, Inc.",
     "ogDescription": "Professional wide format printing, vehicle graphics, and signage with one-call concierge convenience in Wichita, KS.",
-    "ogImage": "/wide-format/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://broadstrokeinc.com/wide-format",
     "googleAnalyticsId": "G-9HXQD6LYZ4"
@@ -46,16 +54,12 @@
         "href": "#benefits"
       },
       {
-        "label": "How It Works",
-        "href": "#how-it-works"
-      },
-      {
         "label": "Services",
         "href": "#services"
       },
       {
-        "label": "Comparison",
-        "href": "#comparison"
+        "label": "How It Works",
+        "href": "#how-it-works"
       },
       {
         "label": "FAQ",
@@ -80,8 +84,9 @@
         "href": "https://broadstrokeinc.com/mail-pickup"
       },
       {
-        "label": "Shipping & Fulfillment",
-        "href": "https://broadstrokeinc.com/mailing"
+        "label": "Postalocity",
+        "href": "https://www.postalocity.com/",
+        "target": "_blank"
       },
       {
         "label": "Technology",
@@ -111,7 +116,7 @@
       },
       {
         "label": "Careers",
-        "href": "https://broadstrokeinc.com/careers"
+        "href": "https://broadstrokeinc.com/career"
       },
       {
         "label": "Contact",
@@ -120,7 +125,7 @@
     ],
     "cta": {
       "text": "Get Free Estimate",
-      "href": "https://broadstrokeinc.com/print-wide-format-contact/"
+      "href": "https://broadstrokeinc.com/contact/?service=wide-format"
     }
   },
   "content": {

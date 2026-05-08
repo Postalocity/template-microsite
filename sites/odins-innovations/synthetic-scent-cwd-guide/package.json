@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && npm run postbuild",
+    "build": "vite build",
     "preview": "vite preview",
-    "postbuild": "node ../../../scripts/update-shopify-assets.js"
+    "post-build": "node ../../../scripts/update-shopify-assets.js"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

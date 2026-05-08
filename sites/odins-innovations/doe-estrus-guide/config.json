@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/doe-estrus-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service doe-estrus-guide",
     "source": "config/sites/odins-innovations/doe-estrus-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-05T15:59:42.882Z",
+    "generatedAt": "2026-05-08T15:14:13.049Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -33,6 +33,7 @@
   "seo": {
     "title": "Synthetic Doe Estrus Scent | 30+ Day Release | Odin's",
     "description": "Biodegradable synthetic doe estrus beads: month-long continuous release, CWD-safe, legal nationwide. Starting at $17.95 — use code HUNT2026. Shop now.",
+    "ogImage": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png",
     "keywords": [
       "doe estrus scent",
       "synthetic doe estrus",
@@ -63,7 +64,6 @@
     ],
     "ogTitle": "Biodegradable Doe Estrus Scent — Month-Long Rut Attraction",
     "ogDescription": "Weatherproof synthetic attractants for consistent whitetail performance. CWD-safe, biodegradable, legal everywhere.",
-    "ogImage": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/pages/doe-estrus-guide",
     "googleAnalyticsId": "G-XXXXXXXXXX"
@@ -122,13 +122,49 @@
       ]
     },
     "when-to-use": {
-      "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
-      "body": "Pre-rut (Early–Mid October): Use scrape blends to condition areas. Save pure doe estrus for later. Seeking Phase (Late Oct–Early Nov): Deploy in travel corridors and scrape lines. Peak Rut (Mid–Late Nov): Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer. Post-Rut (Dec–Jan): Maintain setups near food sources. Southern hunters: shift 1–2 months later."
+      "headline": "When to Deploy Doe Estrus",
+      "body": "Maximize your success by timing your scent deployment with the whitetail rut phases. Each phase requires a different strategy for optimal results.",
+      "seasons": [
+        {
+          "name": "Pre-Rut",
+          "months": "Oct 1 - Oct 20",
+          "description": "Use scrape blends to condition areas. Save pure doe estrus for later when bucks are actively seeking.",
+          "color": "hsl(35, 70%, 50%)"
+        },
+        {
+          "name": "Seeking Phase",
+          "months": "Oct 21 - Nov 10",
+          "description": "Deploy in travel corridors and scrape lines. Bucks begin cruising for receptive does.",
+          "color": "hsl(var(--secondary))"
+        },
+        {
+          "name": "Peak Rut",
+          "months": "Nov 11 - Nov 25",
+          "description": "Prime time! Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer in the area.",
+          "color": "hsl(var(--primary))"
+        },
+        {
+          "name": "Late Rut",
+          "months": "Nov 26 - Dec 15",
+          "description": "Secondary rut activity. Focus on food sources. Last chance for mature buck movement.",
+          "color": "hsl(200, 40%, 50%)"
+        }
+      ]
     },
     "how-to-use": {
-      "headline": "How to Use Odin's Doe Estrus Scent Beads and Liquid",
-      "beads": "Sprinkle approximately 3 oz of synthetic doe estrus scent beads evenly across a 4' x 4' area in natural travel lanes, existing scrapes, or mock scrapes. The beads maintain weeks of continuous release regardless of weather conditions. Ideal placement includes areas visible to trail cameras for ongoing documentation with minimal site disturbance.",
-      "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7–10 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
+      "headline": "How to Use",
+      "body": "Get the most out of your synthetic scent with these simple application methods.",
+      "video": "https://youtu.be/mRcfYfploNg",
+      "videoHeadline": "See How to Use",
+      "steps": [
+        "Sprinkle approximately 3 oz of scent beads evenly across a 4' x 4' area",
+        "Place in natural travel lanes, existing scrapes, or mock scrapes",
+        "Position where visible to trail cameras for documentation with minimal disturbance",
+        "Apply liquid formula to create directional trails leading to bead deployments",
+        "Use on trails, brush, or boot soles for broader coverage",
+        "Reapply liquid every 7–10 days; beads last weeks regardless of weather"
+      ],
+      "note": "Combining both bead and liquid formats provides immediate and sustained performance."
     },
     "benefits": {
       "section": {
@@ -400,13 +436,49 @@
       ]
     },
     "whenToUse": {
-      "headline": "When to Deploy Doe Estrus Scent Beads for Operational Efficiency",
-      "body": "Pre-rut (Early–Mid October): Use scrape blends to condition areas. Save pure doe estrus for later. Seeking Phase (Late Oct–Early Nov): Deploy in travel corridors and scrape lines. Peak Rut (Mid–Late Nov): Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer. Post-Rut (Dec–Jan): Maintain setups near food sources. Southern hunters: shift 1–2 months later."
+      "headline": "When to Deploy Doe Estrus",
+      "body": "Maximize your success by timing your scent deployment with the whitetail rut phases. Each phase requires a different strategy for optimal results.",
+      "seasons": [
+        {
+          "name": "Pre-Rut",
+          "months": "Oct 1 - Oct 20",
+          "description": "Use scrape blends to condition areas. Save pure doe estrus for later when bucks are actively seeking.",
+          "color": "hsl(35, 70%, 50%)"
+        },
+        {
+          "name": "Seeking Phase",
+          "months": "Oct 21 - Nov 10",
+          "description": "Deploy in travel corridors and scrape lines. Bucks begin cruising for receptive does.",
+          "color": "hsl(var(--secondary))"
+        },
+        {
+          "name": "Peak Rut",
+          "months": "Nov 11 - Nov 25",
+          "description": "Prime time! Apply 3 oz per 4'×4' zone. Pair with food-scent beads to anchor deer in the area.",
+          "color": "hsl(var(--primary))"
+        },
+        {
+          "name": "Late Rut",
+          "months": "Nov 26 - Dec 15",
+          "description": "Secondary rut activity. Focus on food sources. Last chance for mature buck movement.",
+          "color": "hsl(200, 40%, 50%)"
+        }
+      ]
     },
     "howToUse": {
-      "headline": "How to Use Odin's Doe Estrus Scent Beads and Liquid",
-      "beads": "Sprinkle approximately 3 oz of synthetic doe estrus scent beads evenly across a 4' x 4' area in natural travel lanes, existing scrapes, or mock scrapes. The beads maintain weeks of continuous release regardless of weather conditions. Ideal placement includes areas visible to trail cameras for ongoing documentation with minimal site disturbance.",
-      "liquid": "Use the 4 oz oil-based liquid to create directional trails leading to bead deployments. Apply along trails, on brush, or as needed for broader initial coverage. The formula supports 7–10 days per application and can be used on boot soles or equipment. Combining both formats provides immediate and sustained performance with reduced overall effort."
+      "headline": "How to Use",
+      "body": "Get the most out of your synthetic scent with these simple application methods.",
+      "video": "https://youtu.be/mRcfYfploNg",
+      "videoHeadline": "See How to Use",
+      "steps": [
+        "Sprinkle approximately 3 oz of scent beads evenly across a 4' x 4' area",
+        "Place in natural travel lanes, existing scrapes, or mock scrapes",
+        "Position where visible to trail cameras for documentation with minimal disturbance",
+        "Apply liquid formula to create directional trails leading to bead deployments",
+        "Use on trails, brush, or boot soles for broader coverage",
+        "Reapply liquid every 7–10 days; beads last weeks regardless of weather"
+      ],
+      "note": "Combining both bead and liquid formats provides immediate and sustained performance."
     }
   },
   "footer": {
