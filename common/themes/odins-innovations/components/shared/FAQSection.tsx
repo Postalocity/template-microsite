@@ -34,7 +34,7 @@ const FAQSection = ({ faq, background, dark }: FAQSectionProps) => {
     return null;
   }
 
-  const items = faq.items || faq.faqs || [];
+  const items = faq.items || faq.faqs || faq.questions || [];
   const title = faq.headline || faq.title || "Frequently Asked Questions";
 
   if (items.length === 0) {

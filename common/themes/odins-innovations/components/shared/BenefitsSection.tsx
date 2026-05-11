@@ -106,16 +106,16 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
           >
             {benefits?.headline || benefits?.section?.title || "Why Hunters Choose Odin's"}
           </h2>
-          {benefits?.section?.description && (
-            <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-              {benefits.section.description}
+          {(benefits?.intro || benefits?.section?.description) && (
+            <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto">
+              {benefits?.intro || benefits?.section?.description}
             </p>
           )}
         </motion.div>
 
         {/* Benefits Grid with Images */}
         {hasImages ? (
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className={`grid gap-8 justify-items-center ${parsedItems.length <= 3 ? 'grid-cols-1 md:grid-cols-3 max-w-4xl mx-auto' : 'grid-cols-2 md:grid-cols-4'}`}>
             {parsedItems.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -129,7 +129,7 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-32 h-32 object-contain"
+                      className="w-36 h-36 md:w-44 md:h-44 object-contain"
                       loading="lazy"
                     />
                   </div>
@@ -140,7 +140,7 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
                 >
                   {item.title}
                 </h3>
-                <p className="font-body text-sm text-muted-foreground">
+                <p className="font-body text-sm text-muted-foreground max-w-xs mx-auto">
                   {item.description}
                 </p>
               </motion.div>

@@ -19,7 +19,7 @@ interface ProductsSectionProps {
     headline: string;
     intro: string;
     items: Product[];
-    cta: string;
+    cta: string | { text: string; href: string };
     note?: string;
     featured?: Product;
   };
@@ -105,14 +105,14 @@ const ProductsSection = ({ content, background }: ProductsSectionProps) => {
                 <div className="grid md:grid-cols-2 gap-0">
                   {/* Product Image */}
                   <div 
-                    className="aspect-square md:aspect-auto md:min-h-[400px] flex items-center justify-center p-8"
+                    className="aspect-square md:aspect-auto md:min-h-[360px] flex items-center justify-center p-6"
 style={{ background: background || 'hsl(var(--muted))' }}
                   >
                     {featured.image ? (
                       <img 
                         src={featured.image} 
                         alt={featured.name}
-                        className="max-w-full max-h-full object-contain"
+                        className="max-w-[340px] max-h-[340px] w-full object-contain"
                         loading="lazy"
                       />
                     ) : (
@@ -153,7 +153,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                       </div>
                     )}
                     <a
-                      href={featured.url || featured.link || featured.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
+                      href={featured.url || featured.link || featured.href || (content.cta ? (typeof content.cta === 'string' ? content.cta.split(': ')[1] || content.cta : content.cta.href) : '#')}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 self-start px-8 py-4 font-display font-bold uppercase tracking-wide transition-all duration-300 hover:gap-4"
@@ -216,7 +216,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                     </div>
                   )}
                   <a
-                    href={item.url || item.link || item.href || (content.cta ? content.cta.split(': ')[1] || content.cta : '#')}
+                    href={item.url || item.link || item.href || (content.cta ? (typeof content.cta === 'string' ? content.cta.split(': ')[1] || content.cta : content.cta.href) : '#')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 font-body text-sm font-semibold transition-all duration-300 group-hover:gap-2"
@@ -258,7 +258,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
             className="text-center mt-12"
           >
             <a
-              href={content.cta ? content.cta.split(': ')[1] || content.cta : '#'}
+              href={content.cta ? (typeof content.cta === 'string' ? content.cta.split(': ')[1] || content.cta : content.cta.href) : '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-10 py-5 font-display font-bold uppercase tracking-wide text-lg transition-all duration-300 hover:gap-4"
@@ -267,7 +267,7 @@ style={{ background: background || 'hsl(var(--muted))' }}
                 color: 'white'
               }}
             >
-              Shop All Products
+              {typeof content.cta === 'object' ? content.cta.text : 'Shop All Products'}
               <ArrowRight className="w-5 h-5" />
             </a>
           </motion.div>

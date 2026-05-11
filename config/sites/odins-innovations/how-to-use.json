@@ -1,0 +1,166 @@
+{
+  "version": "Odin's Innovations Microsite Config — How to Use",
+  "instructions": {
+    "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
+    "promoCodes": { "default": "HUNT2026" }
+  },
+  "site": {
+    "id": "how-to-use",
+    "name": "How to Use Odin's Scent Beads & Liquids",
+    "slug": "how-to-use",
+    "domain": "odinsinnovations.com",
+    "basename": "/how-to-use",
+    "contact": { "email": "paul@odinsinnovations.com", "phone": "316-393-0440" }
+  },
+  "branding": { "tagline": "Synthetic. Long-Lasting. Legal Everywhere.", "logo": "/logo.png" },
+  "theme": { "primary": { "h": 30, "s": 80, "l": 35 } },
+  "seo": {
+    "title": "How to Use Odin's Scent Beads & Liquids: The Complete Field Guide — 30+ Days Attraction",
+    "description": "Learn how to use synthetic scent beads and liquids for deer, hogs, bears, and elk. Trail camera setups, mock scrape deployment, seasonal calendar, and professional deployment tactics. 30+ days consistent release, legal in all 50 states, biodegradable.",
+    "keywords": ["how to use scent beads", "deer scent deployment", "trail camera scent", "seasonal scent calendar", "mock scrape setup", "synthetic scent beads", "long lasting scent beads", "doe estrus scent beads"],
+    "ogTitle": "How to Use Odin's Scent Beads & Liquids — Complete Field Guide",
+    "ogDescription": "Professional deployment guide for synthetic scent beads and liquids. 30+ days weatherproof attraction, trail camera optimization, seasonal calendar, and mock scrape tactics.",
+    "ogImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_Innovations_Lure_Scrape_Mock_Scents_Liquids_Beads.jpg?v=1778522753",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://www.odinsinnovations.com/how-to-use"
+  },
+  "navigation": {
+    "links": [
+      { "label": "Why Odin's", "href": "#why-odins" },
+      { "label": "Format Guide", "href": "#understanding-formats" },
+      { "label": "Seasonal Guide", "href": "#deployment-scenarios" },
+      { "label": "Seasonal Calendar", "href": "#seasonal-calendar" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "cta": { "text": "Shop Scents", "href": "https://www.odinsinnovations.com/collections/all?promo=HUNT2026" }
+  },
+  "content": {
+    "hero": {
+      "headline": { "main": "How to Use Odin's Scent Beads & Liquids", "highlightTerm": "Effective for 30+ Days — Legal Everywhere", "alt": "Odin's synthetic scent beads deployed in a deer scrape" },
+      "subhead": "Beads for 30-day attraction. Liquids for scent trails. Seasonal calendar, mock scrape setup, trail camera tactics, and advanced tips — all in one place.",
+      "background": { "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_Innovations_Lure_Scrape_Mock_Scents_Liquids_Beads.jpg?v=1778522753", "overlay": true },
+      "ctas": [
+        { "text": "Shop Now — Starting at $13.99", "href": "https://www.odinsinnovations.com/collections/all?promo=HUNT2026", "variant": "primary" },
+        { "text": "Seasonal Calendar", "href": "#seasonal-calendar", "variant": "outline" }
+      ]
+    },
+    "benefits": {
+      "title": "Understanding the Two Formats",
+      "beads": {
+        "headline": "Scent Beads",
+        "video": "https://www.youtube.com/watch?v=mRcfYfploNg",
+        "icon": "icon-long-lasting-white.svg",
+        "bullets": [
+          "Biodegradable polymer spheres infused with synthetic scent formulations",
+          "Each bead releases scent at a controlled rate over 30+ days",
+          "Weather-resistant — rain, dew, snow, and temperature swings do not degrade performance",
+          "Non-toxic, not consumed, biodegrade naturally after scent is exhausted",
+          "Application: Open the bottle and sprinkle 3 oz evenly across a 4' x 4' to 5' x 5' area",
+          "Sizes: 3 oz bottle ($17.95) for single-site; 12 oz bottle ($34.95) for multi-site or season-long use",
+          "Refresh every 30 days — just add fresh beads on top",
+          "Shelf life: Multi-year when stored sealed at room temperature — no refrigeration required"
+        ]
+      },
+      "liquids": {
+        "headline": "Liquid Scents",
+        "video": "https://www.youtube.com/watch?v=6cWlyOmc4Sc",
+        "icon": "icon-waterproof-light",
+        "bullets": [
+          "Oil-based formulations that adhere to any surface — branches, bushes, tree trunks",
+          "Each application releases scent for approximately 7 days",
+          "Complement beads — use for scent trails, licking branch treatment, tree marking, and boot/tire applications",
+          "Application: Squirt directly on trees, brush, licking branches, boot soles, or the ground",
+          "Squeeze bottle provides controlled, targeted application",
+          "Size: 4 oz bottle ($14.95)",
+          "Refresh every 7 days or after heavy rain",
+          "Pro tip: Coat e-bike tires or boot soles with liquid scent to create a scent trail leading to your bead deployment site"
+        ]
+      },
+      "keyPoints": [
+        { "title": "30+ days controlled release", "icon": "icon-long-lasting-white.svg" },
+        { "title": "Weather-resistant polymer", "icon": "icon-waterproof-light" },
+        { "title": "Biodegradable after use", "icon": "icon-chemistry-white.svg" },
+        { "title": "Legal in all 50 states", "icon": "icon-50-states-white.svg" }
+      ]
+    },
+    "why-odins": {
+      "headline": "Why Professional Hunters Choose Odin's",
+      "body": "Odin's synthetic scent beads deliver 30+ days of consistent, weatherproof attraction from a single application. Unlike natural urine that spoils in days and is banned in CWD states, Odin's polymer-encapsulated beads release lab-formulated scent steadily regardless of rain, heat, or freeze. One trip to your site gives you a full month of coverage — fewer visits mean less human pressure and more game activity on camera. 100% synthetic, 100% legal, 100% biodegradable."
+    },
+    "comparison": {
+      "headline": "Beads vs. Liquids — Professional Deployment Comparison",
+      "table": [
+        { "feature": "Duration", "Scent Beads": "30+ days", "Liquid Scents": "Approximately 7 days" },
+        { "feature": "Best For", "Scent Beads": "Set-and-forget sites, mock scrapes, trail cameras", "Liquid Scents": "Trails, licking branches, boot/tire marking" },
+        { "feature": "Reapplication", "Scent Beads": "Every 30 days — add fresh beads on top", "Liquid Scents": "Every 7 days or after heavy rain" }
+      ],
+      "summary": "Use beads for primary long-term attraction and liquids for supporting scent trails and immediate reinforcement."
+    },
+    "products": {
+      "headline": "Odin's Synthetic Scent Products",
+      "intro": "Scent beads for 30+ day set-and-forget attraction. Liquid scents for trails, branches, and immediate reinforcement. Both 100% synthetic, legal in all 50 states.",
+      "items": [
+        { "name": "Scrape Blend Scent Beads", "size": "3 oz / 12 oz", "use": "Mock scrapes & pre-rut", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_ScrapeBlend_703616b9-6936-41c1-bc6b-6dc7136bc1ff.png?v=1688151848", "url": "https://www.odinsinnovations.com/products/scrape-blend-scent-beads?promo=HUNT2026" },
+        { "name": "Doe Estrus Scent Beads", "size": "3 oz / 12 oz", "use": "Peak rut attraction", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png?v=1688151838", "url": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads?promo=HUNT2026" },
+        { "name": "Earth Cover Scent Beads", "size": "3 oz", "use": "Human odor masking", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_Earth_c55ebd6e-febe-492c-a1aa-9f8bafa25dda.png?v=1688151828", "url": "https://www.odinsinnovations.com/products/earth-cover-scent-beads?promo=HUNT2026" },
+        { "name": "Sweet Attractant Beads (Apple, Peanut Butter, etc.)", "size": "3 oz", "use": "Bears, hogs, late-season deer", "price": "From $17.95", "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_Apple_02ab9536-2c51-4620-b252-f18c890f9db0.png?v=1688151798", "url": "https://www.odinsinnovations.com/products/lure-scent-combo?promo=HUNT2026" },
+        { "name": "Liquid Scents (4 oz)", "size": "4 oz", "use": "Trails, branches, boots", "price": "$14.95", "image": "https://www.odinsinnovations.com/cdn/shop/files/OdinsInnov_Package_2023_4oz_Bottle_Liquid_v__300ppi_03_ScrapeBlend_v01_2500.png?v=1685477637", "url": "https://www.odinsinnovations.com/collections/liquid-scents?promo=HUNT2026" }
+      ],
+      "cta": { "text": "Shop All Scent Beads", "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" }
+    },
+    "deployment-scenarios": {
+      "title": "Deployment Scenarios",
+      "scenarios": [
+        { "title": "Trail Camera Setup", "text": "Sprinkle 3 oz of scent beads directly in front of your trail camera. Apply liquid scent to the nearest brush or branch and let the wind kick-start the area. The 30-day bead release means your camera captures a full month of game activity from a single visit — no need to revisit the site to refresh bait or scent." },
+        { "title": "Tree Stand / Ground Blind Hunting", "text": "Deploy beads in your target area. Apply liquid scent to trees along the expected approach route to create a scent trail guiding deer to the bead site. Add Earth Cover Scent beads in a 10-foot radius around your stand to mask your own odor." },
+        { "title": "Mock Scrape Creation", "text": "Find an overhanging limb 4–5 feet off the ground. Clear leaves to bare soil. Sprinkle 1–2 oz of Scrape Blend scent beads. Apply Scrape Blend or Dominant Buck liquid to the licking branch. The beads maintain attraction for 30 days." },
+        { "title": "Bear Bait Site Enhancement", "text": "Scatter 3–4 oz of sweet-scent beads around the bait container. Apply Anise, Berry, or Persimmon liquid on trees and logs within 20 yards." },
+        { "title": "Feral Hogs", "text": "Scatter Pear, Blackstrap Molasses, or Peanut Butter beads inside and around trap perimeters or known rooting areas." }
+      ]
+    },
+    "seasonal-calendar": {
+      "title": "Seasonal Deployment Calendar",
+      "description": "Adjust dates based on your region — northern states run approximately 2–4 weeks behind the timeline shown.",
+      "table": [
+        { "month": "March–April", "primary": "Citronella Beads", "secondary": "Earth Beads", "notes": "Turkey season prep. Mosquito control around blind. Gear treatment." },
+        { "month": "May–June", "primary": "Citronella Beads", "secondary": "Food scent beads + trail cameras", "notes": "Peak insect season. Pre-season scouting." },
+        { "month": "July–August", "primary": "Apple / Acorn / Corn Beads", "secondary": "Trail cameras", "notes": "Full trail camera deployment. 30-day beads = month of data per visit." },
+        { "month": "September", "primary": "Scrape Blend Beads", "secondary": "Earth Cover Scent", "notes": "Early season opens. Deploy mock scrapes." },
+        { "month": "October", "primary": "Scrape Blend + Dominant Buck", "secondary": "Doe Estrus (late Oct)", "notes": "Pre-rut. Transition to Doe Estrus." },
+        { "month": "November", "primary": "Doe Estrus Beads & Liquid", "secondary": "Dominant Buck", "notes": "Peak rut. Heaviest cover scent use." },
+        { "month": "December–January", "primary": "Doe Estrus (early Dec)", "secondary": "Food scent beads (late season)", "notes": "Transition to food scents." },
+        { "month": "Year-Round", "primary": "Bear/Hog: Sweet scents", "secondary": "Cherry, PB, Jelly Donut, Corn", "notes": "Sweet food scents work year-round for both species." }
+      ]
+    },
+    "advanced-tips": {
+      "title": "Advanced Tips",
+      "points": [
+        { "icon": "layers", "title": "Layering Multiple Scents", "text": "Doe Estrus beads + Earth Cover Scent beads around the stand. Dominant Buck on one side + Doe Estrus on the other to simulate a buck tending a doe." },
+        { "icon": "wind", "title": "Wind and Scent Placement", "text": "Deploy attractant beads downwind of expected deer approach. Place cover scent beads upwind of stand position." },
+        { "icon": "refresh-cw", "title": "Scent Refresh Protocol", "text": "Beads — refresh every 30 days or when scent output diminishes. Do not remove old beads — they biodegrade naturally. Liquid — refresh every 7 days or after heavy rain." }
+      ]
+    },
+    "faq": {
+      "title": "How to Use Odin's Products",
+      "questions": [
+        { "q": "What is the best strategy for selecting which scent(s) to use?", "a": "Use a tight-patterned shotgun, not a rifle – meaning, there may be a combination of attractants used to bring the best results. Bucks are actively seeking receptive does across an entire 10–14-day peak rut, so maintaining scent presence throughout that period maximizes your chances. Deploy doe estrus beads to release scent consistently over days or weeks rather than trying to time a single \"magic window.\" This is exactly why Odin's 30-day beads outperform single-application products—you're covering the full window, not guessing at one day." },
+        { "q": "Are Odin's products safe around children and pets?", "a": "Yes. Odin's products are non-toxic and contain no animal-derived ingredients. However, they are not intended for consumption. Store products out of reach of children and pets, as with any household product." },
+        { "q": "What makes Odin's different from other scent products?", "a": "Three key differences: (1) Duration — Odin's beads last 30 days vs. 24-36 hours for liquids that will soak into the ground. (2) Weather resistance — the polymer bead system is unaffected by rain, snow, or temperature changes. (3) Consistency — synthetic formulations deliver the same scent concentration every time, unlike natural products that vary with every batch." },
+        { "q": "How can I attract deer to a specific spot without using food bait?", "a": "Use Odin's lure scent beads the same way as if you were using actual food. You want to attract deer to a specific spot at which you are confident in making an ethical kill shot. Put down a 3-oz bottle of Odin's beads where you want the deer to stop. To create pattering, you can put just a few beads in a trail to lead them or squirt liquid on foliage along the trail." },
+        { "q": "Are there any special storage requirements for Odin's products?", "a": "No. No refrigeration, no cooler, no special conditions. There's nothing natural in the product that can initiate bacterial growth, spoil, or convert to ammonia. Store it in your garage, shed, or truck—wherever is convenient. If the beads aren't exposed to air, no scent is released and they stay as strong as the day they were made." },
+        { "q": "How should I store unused scent products?", "a": "Keep sealed bottles at room temperature in a dry location. The synthetic formula provides a multi-year shelf life with no degradation. No refrigeration is required, unlike natural urine products that degrade rapidly." },
+        { "q": "Are Odin's scent beads biodegradable?", "a": "Yes. Odin's scent beads are made from a plant-based biodegradable polymer that breaks down completely when left on the ground. How long it takes depends on environmental conditions—a good reference point is the time it takes for a banana peel to degrade." },
+        { "q": "Are Odin's products certified biodegradable?", "a": "Yes. We certified our products—both liquid and beads with infused scent—through the USDA's BioPreferred Program, which requires independent laboratory verification of biobased content. Odin's is the only scent or attractant on the market with this certification." },
+        { "q": "Where are Odin's products made?", "a": "Everything is made in the United States—the scents, the polymer beads, the blending and packaging." },
+        { "q": "How many scent beads should I use per application?", "a": "For standard deployment at a trail camera or stand site, use approximately 3 oz (smaller bottle) spread across a 4' x 4' area. For bear bait sites, use 3 oz of beads for the longer release of scent and the liquids to create a trail in which they will get on their paws and create well distributed trail and expanded area of attraction. Read the Inside Archery article <a href=\"https://www.odinsinnovations.com/blogs/in-the-field/inside-archery-a-bear-camp-story\" target=\"_blank\" rel=\"noopener noreferrer\">\"A Bear Camp Story\"</a> to see how multiple different scents add to success!" },
+        { "q": "Can I combine scent beads with liquid scent?", "a": "Yes—this is the optimal approach. Deploy beads at your primary attraction point for 30-day continuous scent, then use liquid to create scent trails leading to the bead site and to treat licking branches, tree trunks, and travel routes. The two formats complement each other: beads provide sustained base attraction while liquid at specific contact points provide targeted, high-intensity scent that are carried through the air." },
+        { "q": "Do I need to remove old beads before adding new ones?", "a": "No. Odin's beads are biodegradable and will naturally decompose after the scent is exhausted. Simply add fresh beads on top of old ones when refreshing." },
+        { "q": "What is the best deer attractant for trail cameras?", "a": "The best trail camera attractant draws deer consistently over an extended period without requiring frequent replenishment visits that will reintroduce your human scent. Odin's food scent beads release scent for 30+ days from a single deployment, giving you a full month of trail camera data from one visit. The liquid is good for creating a trail toward the camera and for squirting on foliage to let the wind carry a stronger scent. This approach also minimizes human scent disturbance at your camera site." }
+      ]
+    },
+    "footer": {
+      "finalCTA": { "headline": "Ready for consistent, low-maintenance scent deployment?", "buttonText": "Shop Scents — Starting at $13.99", "href": "https://www.odinsinnovations.com/collections/all?promo=HUNT2026" },
+      "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    }
+  }
+}

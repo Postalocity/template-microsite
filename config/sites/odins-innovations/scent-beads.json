@@ -111,31 +111,37 @@
             "benefits": [
                 {
                     "icon": "shield-check",
+                    "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
                     "title": "100% Synthetic \u2014 Legal Everywhere",
                     "description": "Not subject to natural urine or CWD restrictions. Legal in all 50 states."
                 },
                 {
                     "icon": "clock",
+                    "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
                     "title": "30+ Days of Continuous Release",
                     "description": "Steady attraction that lasts even after rain and through temperature changes."
                 },
                 {
                     "icon": "leaf",
+                    "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
                     "title": "Biodegradable & Eco-Friendly",
                     "description": "Polymer matrix breaks down naturally. No environmental residue."
                 },
                 {
                     "icon": "flask",
+                    "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
                     "title": "Lab-Consistent Results",
                     "description": "Every batch is lab-formulated. No spoilage, no freezing, no variability."
                 },
                 {
                     "icon": "map-pin",
+                    "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
                     "title": "Made in the USA",
                     "description": "Field-tested weather resistance with American manufacturing quality."
                 },
                 {
                     "icon": "paw",
+                    "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404",
                     "title": "Works for Multiple Species",
                     "description": "Effective for deer, hogs, bears, and elk across all seasons."
                 }

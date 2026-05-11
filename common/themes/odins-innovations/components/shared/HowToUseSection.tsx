@@ -1,238 +1,167 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Beaker, Droplets, MapPin, ArrowRight } from 'lucide-react';
+
+interface Step {
+  number: number;
+  title: string;
+  description: string;
+}
 
 interface HowToUseSectionProps {
   content: {
     headline: string;
-    body?: string;
-    beads: string;
-    liquid: string;
-    beadsImage?: string;
-    liquidImage?: string;
-    tips?: string[];
+    subhead?: string;
+    video?: string;
+    videoLabel?: string;
+    steps: Step[];
+    fieldNote?: string;
   };
 }
 
 const HowToUseSection = ({ content }: HowToUseSectionProps) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const isInView = useInView(ref, { once: true, margin: '-80px' });
+
+  const youtubeEmbedUrl = (() => {
+    if (!content.video) return '';
+    const url = content.video;
+    if (url.includes('youtu.be/')) {
+      const videoId = url.split('youtu.be/')[1]?.split('?')[0];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    if (url.includes('watch?v=')) {
+      const videoId = url.split('watch?v=')[1]?.split('&')[0];
+      return `https://www.youtube.com/embed/${videoId}`;
+    }
+    return url;
+  })();
 
   return (
     <section
       id="how-to-use"
       ref={ref}
       className="section-padding"
-      style={{ background: 'hsl(var(--muted))' }}
+      style={{ background: '#1a1d29' }}
     >
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="max-w-5xl mx-auto"
         >
           {/* Section Header */}
           <div className="text-center mb-12">
-            <span 
+            <span
               className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
-              style={{ 
+              style={{
                 background: 'hsl(var(--accent) / 0.2)',
                 color: 'hsl(var(--accent))',
-                clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+                clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)',
               }}
             >
               Application Guide
             </span>
-            <h2 
-              className="font-display text-4xl md:text-5xl uppercase mb-4"
-              style={{ color: 'hsl(var(--foreground))' }}
-            >
-              {content.headline}
-            </h2>
-            {content.body && (
-              <div className="prose prose-lg max-w-3xl mx-auto">
-                <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
-                  {content.body}
-                </p>
-              </div>
+            <h2
+              className="font-display text-4xl md:text-5xl uppercase mb-4 text-white"
+              dangerouslySetInnerHTML={{
+                __html: content.headline.replace(/\n/g, '<br />'),
+              }}
+            />
+            {content.subhead && (
+              <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto">
+                {content.subhead}
+              </p>
             )}
           </div>
-          
-          {/* Product Cards */}
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {/* Beads Instructions */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="overflow-hidden"
-              style={{ 
-                background: 'white',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.08)'
-              }}
-            >
-              {/* Image Area */}
-              <div 
-                className="h-48 flex items-center justify-center relative"
-                style={{ background: 'hsl(var(--primary) / 0.1)' }}
-              >
-                {content.beadsImage ? (
-                  <img 
-                    src={content.beadsImage} 
-                    alt="Scent Beads"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="text-center">
-                    <div 
-                      className="w-20 h-20 mx-auto mb-3 flex items-center justify-center"
-                      style={{ 
-                        background: 'hsl(var(--primary))',
-                        clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)'
-                      }}
-                    >
-                      <Beaker className="w-10 h-10 text-white" />
-                    </div>
-                    <span className="font-body text-sm text-muted-foreground">
-                      <em>Customer image placeholder</em>
-                    </span>
-                  </div>
-                )}
-                
-                {/* Badge */}
-                <div 
-                  className="absolute top-4 left-0 px-4 py-2 font-display text-sm font-bold uppercase"
-                  style={{ 
-                    background: 'hsl(var(--secondary))',
-                    color: 'white',
-                    clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%)'
+
+          {/* Two-Panel Layout: Steps Left + Video Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* Left Panel: Numbered Steps */}
+            <div className="space-y-0">
+              {content.steps.map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.5, delay: index * 0.12 }}
+                  className="flex gap-5 py-6 group"
+                  style={{
+                    borderBottom:
+                      index < content.steps.length - 1
+                        ? '1px solid rgba(255,255,255,0.08)'
+                        : 'none',
                   }}
                 >
-                  Best for Stand Sites
-                </div>
-              </div>
-
-              <div className="p-6">
-                <h3 
-                  className="font-display text-2xl uppercase mb-4 flex items-center gap-3"
-                  style={{ color: 'hsl(var(--foreground))' }}
-                >
-                  <Beaker className="w-6 h-6" style={{ color: 'hsl(var(--primary))' }} />
-                  Scent Beads
-                </h3>
-                <div className="prose prose-base">
-                  <p 
-                    className="font-body text-muted-foreground leading-relaxed whitespace-pre-wrap"
-                    dangerouslySetInnerHTML={{ 
-                      __html: content.beads.replace(/\n/g, '<br/>') 
+                  {/* Step Number */}
+                  <div
+                    className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-display text-xl font-bold transition-all duration-300 group-hover:scale-110"
+                    style={{
+                      background: 'hsl(var(--accent) / 0.15)',
+                      color: 'hsl(var(--accent))',
+                      border: '2px solid hsl(var(--accent) / 0.3)',
                     }}
-                  />
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Liquid Instructions */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="overflow-hidden"
-              style={{ 
-                background: 'white',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.08)'
-              }}
-            >
-              {/* Image Area */}
-              <div 
-                className="h-48 flex items-center justify-center relative"
-                style={{ background: 'hsl(var(--accent) / 0.1)' }}
-              >
-                {content.liquidImage ? (
-                  <img 
-                    src={content.liquidImage} 
-                    alt="Liquid Scent"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                ) : (
-                  <div className="text-center">
-                    <div 
-                      className="w-20 h-20 mx-auto mb-3 flex items-center justify-center"
-                      style={{ 
-                        background: 'hsl(var(--accent))',
-                        clipPath: 'polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%)'
-                      }}
-                    >
-                      <Droplets className="w-10 h-10 text-white" />
-                    </div>
-                    <span className="font-body text-sm text-muted-foreground">
-                      <em>Customer image placeholder</em>
-                    </span>
+                  >
+                    {step.number}
                   </div>
-                )}
-                
-                {/* Badge */}
-                <div 
-                  className="absolute top-4 left-0 px-4 py-2 font-display text-sm font-bold uppercase"
-                  style={{ 
-                    background: 'hsl(var(--primary))',
-                    color: 'white',
-                    clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 100%, 0 100%)'
+
+                  {/* Step Content */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-lg uppercase text-white mb-1">
+                      {step.title}
+                    </h3>
+                    <p className="font-body text-sm text-gray-400 leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+
+              {/* Field Note */}
+              {content.fieldNote && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: content.steps.length * 0.12 + 0.1 }}
+                  className="mt-6 p-4 border-l-4"
+                  style={{
+                    borderColor: 'hsl(var(--accent))',
+                    background: 'hsl(var(--accent) / 0.05)',
                   }}
                 >
-                  Quick Application
-                </div>
-              </div>
+                  <p className="font-body text-sm italic text-gray-400">
+                    {content.fieldNote}
+                  </p>
+                </motion.div>
+              )}
+            </div>
 
-              <div className="p-6">
-                <h3 
-                  className="font-display text-2xl uppercase mb-4 flex items-center gap-3"
-                  style={{ color: 'hsl(var(--foreground))' }}
-                >
-                  <Droplets className="w-6 h-6" style={{ color: 'hsl(var(--accent))' }} />
-                  Liquid Scent
-                </h3>
-                <div className="prose prose-base">
-                  <p 
-                    className="font-body text-muted-foreground leading-relaxed whitespace-pre-wrap"
-                    dangerouslySetInnerHTML={{ 
-                      __html: content.liquid.replace(/\n/g, '<br/>') 
-                    }}
+            {/* Right Panel: Video */}
+            {youtubeEmbedUrl && (
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="lg:sticky lg:top-24"
+              >
+                {content.videoLabel && (
+                  <p className="font-display text-sm uppercase tracking-wider mb-3 text-center lg:text-left" style={{ color: 'hsl(var(--accent))' }}>
+                    {content.videoLabel}
+                  </p>
+                )}
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <iframe
+                    src={youtubeEmbedUrl}
+                    title={content.videoLabel || 'How to Use Odin\'s Attractant Beads'}
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   />
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            )}
           </div>
-
-          {/* Pro Tips */}
-          {content.tips && content.tips.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="p-6"
-              style={{ 
-                background: 'hsl(var(--primary))',
-                clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)'
-              }}
-            >
-              <h4 className="font-display text-xl uppercase text-white mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5" />
-                Pro Tips
-              </h4>
-              <ul className="space-y-2">
-                {content.tips.map((tip, index) => (
-                  <li key={index} className="flex items-start gap-3 text-white/90">
-                    <ArrowRight className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: 'hsl(var(--accent))' }} />
-                    <span className="font-body text-sm">{tip}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          )}
         </motion.div>
       </div>
     </section>

@@ -796,6 +796,10 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
     if (site.slug === 'earth-cover-scent-beads') {
       return generateEarthCoverScentTemplate(config, brandContext, brandId);
     }
+    // Route How to Use guide to its own template
+    if (site.slug === 'how-to-use') {
+      return generateHowToUseTemplate(config, brandContext, brandId);
+    }
     return generateOdinsInnovationsTemplate(config, brandContext, brandId);
   }
   
@@ -1373,7 +1377,7 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
               seasons: content['when-to-use'].seasons
             }} />
           ) : (
-            <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+            <section id="when-to-use" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
               <div className="section-container">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
                   {content['when-to-use'].headline}
@@ -1386,16 +1390,14 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
           )
         )}
         
-        {/* Section 2: Why Synthetic (light) */}
-        {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
+        {/* Section 2: Why Synthetic (white) */}
+        {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} background="hsl(var(--background))" />}
         
-        {/* Section 3: Products (dark) */}
-        <div style={{ background: '#1a1d29' }}>
-          {content.products && <ProductsSection content={content.products} />}
-        </div>
+        {/* Section 3: Products (warm cream) */}
+        {content.products && <ProductsSection content={content.products} background="hsl(30, 20%, 95%)" />}
         
-        {/* Section 4: Signature Scents (light) */}
-        <SignatureScentBeadsSection content={content.signatureScents} />
+        {/* Section 4: Signature Scents (white) */}
+        <SignatureScentBeadsSection content={content.signatureScents} background="hsl(var(--background))" />
         
         {/* Section 5: Benefits (warm sand) */}
         <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
@@ -1452,7 +1454,7 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
         )}
         
         {content.comparison && (
-          <section id="comparison" className="py-20" style={{ background: '#f8f9fa' }}>
+          <section id="comparison" className="py-20" style={{ background: 'hsl(var(--background))' }}>
             <ComparisonTable comparison={content.comparison} promoCode={promoCode} />
           </section>
         )}
@@ -1558,7 +1560,7 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
         {content['how-it-works'] ? <HowItWorksSection howItWorks={content['how-it-works']} /> : <HowItWorksSection />}
         
         {/* Section 9: The Odin's Difference + CTA */}
-        {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} /> : <DifferenceSection />}
+        {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} background="hsl(30, 20%, 95%)" /> : <DifferenceSection background="hsl(30, 20%, 95%)" />}
         
         {/* CTA: See Why Hunters Choose Synthetic */}
         <div className="pb-8 text-center" style={{ background: '#333333' }}>
@@ -1578,8 +1580,8 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
         
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
-        {/* Section 10: Reviews - Success Stories from the Field */}
-        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+        {/* Section 10: Reviews */}
+        <section id="reviews" className="py-20" style={{ background: 'hsl(var(--background))' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
@@ -1596,7 +1598,7 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
         </section>
 
         {/* Section 11: FAQ */}
-        <FAQSection faq={content.faq} />
+        <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
         
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}`;
@@ -1975,7 +1977,7 @@ function App() {
         
         {/* What Is CWD Section */}
         {content['what-is-cwd'] && (
-          <section id="what-is-cwd" className="py-20 bg-muted/30">
+          <section id="what-is-cwd" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{content['what-is-cwd'].headline}</h2>
               
@@ -2032,9 +2034,9 @@ function App() {
           </section>
         )}
         
-        {/* Why Odin's Section */}
+        {/* Why Odin's Section (white) */}
         {content['why-odins'] && (
-          <section id="why-odins" className="py-20 bg-background">
+          <section id="why-odins" className="py-20" style={{ background: 'hsl(var(--background))' }}>
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['why-odins'].headline}</h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">{content['why-odins'].body}</p>
@@ -2079,17 +2081,17 @@ function App() {
           </section>
         )}
         
-        {/* How It Works - Custom Implementation with Science Section */}
+        {/* How It Works - Dark background with science section */}
         {content['how-it-works'] && (
-          <section id="how-it-works" className="py-20 bg-muted/30">
+          <section id="how-it-works" className="py-20" style={{ background: '#1a1d29' }}>
             <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{content['how-it-works'].headline}</h2>
-              <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">{content['how-it-works'].body}</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">{content['how-it-works'].headline}</h2>
+              <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-12">{content['how-it-works'].body}</p>
               
               {/* Steps Grid */}
               <div className="grid md:grid-cols-2 gap-6 mb-16">
                 {content['how-it-works'].steps?.map((step, idx) => (
-                  <div key={idx} className="bg-background rounded-lg p-8 shadow-sm border border-border/50">
+                  <div key={idx} className="rounded-lg p-8 shadow-sm" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     {step.image ? (
                       /* Step with image - side-by-side layout */
                       <div className="flex flex-col sm:flex-row gap-4 mb-4">
@@ -2103,30 +2105,30 @@ function App() {
                         </div>
                         <div className="flex-1">
                           <div className="text-3xl font-bold text-primary mb-2">{step.number}</div>
-                          <h3 className="text-lg font-semibold text-foreground mb-2">{step.title}</h3>
+                          <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
                         </div>
                       </div>
                     ) : (
                       /* Step without image - standard layout */
                       <div className="text-4xl font-bold text-primary mb-4">{step.number}</div>
                     )}
-                    {!step.image && <h3 className="text-xl font-semibold text-foreground mb-3">{step.title}</h3>}
-                    <p className="text-base text-muted-foreground">{step.description}</p>
+                    {!step.image && <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>}
+                    <p className="text-base text-gray-300">{step.description}</p>
                   </div>
                 ))}
               </div>
               
               {/* Science Section - Bigger Font */}
               {content['how-it-works'].scienceSection && (
-                <div className="bg-primary/5 border-2 border-primary/20 rounded-xl p-8 md:p-12">
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">{content['how-it-works'].scienceSection.title}</h3>
+                <div className="rounded-xl p-8 md:p-12" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center">{content['how-it-works'].scienceSection.title}</h3>
                   <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
                     <img 
                       src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/longer_lasting_deer_scent.jpg?v=1776353659" 
                       alt="Longer Lasting Deer Scent - 30+ Days of Performance"
                       className="w-48 h-auto rounded-lg shadow-md"
                     />
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: content['how-it-works'].scienceSection.description }} />
+                    <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: content['how-it-works'].scienceSection.description }} />
                   </div>
                   <div className="bg-primary/10 rounded-lg p-6 text-center">
                     <p className="text-xl md:text-2xl font-bold text-primary">{content['how-it-works'].scienceSection.highlight}</p>
@@ -2137,8 +2139,8 @@ function App() {
           </section>
         )}
         
-        {/* Benefits */}
-        {content['benefits'] && <BenefitsSection benefits={content['benefits']} />}
+        {/* Benefits (warm cream) */}
+        {content['benefits'] && <BenefitsSection benefits={content['benefits']} background="hsl(30, 20%, 95%)" />}
         
         {/* Wins Section (dark - citronella style) */}
         {content['wins'] && (
@@ -2196,9 +2198,9 @@ function App() {
           </section>
         )}
         
-        {/* Comparison */}
+        {/* Comparison (white) */}
         {content['comparison'] && (
-          <section id="comparison" className="py-20 bg-[#f8f6f3]">
+          <section id="comparison" className="py-20" style={{ background: 'hsl(var(--background))' }}>
             <div className="container mx-auto px-4">
               <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
               <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
@@ -2211,8 +2213,8 @@ function App() {
           </section>
         )}
         
-        {/* Stamped.io Reviews - Success Stories from the Field */}
-        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+        {/* Stamped.io Reviews */}
+        <section id="reviews" className="py-20" style={{ background: 'hsl(var(--background))' }}>
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'Success Stories from the Field'}</h2>
@@ -2233,9 +2235,9 @@ function App() {
           </div>
         </section>
         
-        {/* FAQ */}
+        {/* FAQ (warm cream) */}
         {content['faq'] && (
-          <section id="faq" className="bg-muted/30">
+          <section id="faq" style={{ background: 'hsl(30, 20%, 95%)' }}>
             <FAQSection faq={{ ...content['faq'], showContactSection: false }} />
             <div className="text-center pb-8">
               <a href={content['faq'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
@@ -2334,10 +2336,8 @@ function App() {
           body: content.howItWorks.body
         }} />
 
-        {/* Section 3: Products */}
-        <div style={{ background: '#1a1d29' }}>
-          {content.products && <ProductsSection content={content.products} />}
-        </div>
+        {/* Section 3: Products (warm cream) */}
+        {content.products && <ProductsSection content={content.products} background="hsl(30, 20%, 95%)" />}
 
         {/* Section 4: When To Use */}
         <WhenToUseSection content={{
@@ -2398,11 +2398,11 @@ function App() {
           </div>
         </section>
 
-        {/* Section 6: Why Odin's */}
+        {/* Section 6: Why Odin's (white) */}
         <WhyOdinsSection content={{
           headline: content.whyOdins.title,
           body: content.whyOdins.body
-        }} />
+        }} background="hsl(var(--background))" />
 
         {/* Section 7: Effectiveness */}
         <section id="effectiveness" className="section-padding" style={{ background: 'hsl(30, 20%, 95%)' }}>
@@ -2428,11 +2428,13 @@ function App() {
           </div>
         </section>
 
-        {/* Section 8: Comparison */}
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        {/* Section 8: Comparison (white) */}
+        <div style={{ background: 'hsl(var(--background))' }}>
+          {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        </div>
 
         {/* Section 9: Reviews */}
-        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+        <section id="reviews" className="py-20 section-alt">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
@@ -2448,8 +2450,8 @@ function App() {
           </div>
         </section>
 
-        {/* Section 10: FAQ */}
-        <FAQSection faq={content.faq} />
+        {/* Section 10: FAQ (warm cream) */}
+        <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
 
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
@@ -2846,11 +2848,11 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
       <HeroSection hero={content.hero} />
       {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
       <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
-      <ProductsSection content={content.products} />
+      <ProductsSection content={content.products} background="hsl(var(--background))" />
       <div style={{ background: 'hsl(30, 20%, 95%)' }}>
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
       </div>
-      <WhyOdinsSection content={content.outperforms} background="hsl(var(--muted))" />
+      <WhyOdinsSection content={content.outperforms} background="hsl(var(--background))" />
 
       {/* How to Deploy */}
       <section id="deployment" className="section-padding" style={{ background: '#1a1d29' }}>
@@ -2896,7 +2898,7 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
         </div>
       </section>
 
-      <DifferenceSection difference={content.environmental} background="hsl(var(--muted))" />
+      <DifferenceSection difference={content.environmental} background="hsl(var(--background))" />
 
       {/* Baiting Laws and Scent Attractants */}
       {content.baitingLaws && (
@@ -2944,7 +2946,7 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
       )}
 
       {/* Reviews */}
-      <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
+      <section id="reviews" className="py-20" style={{ background: 'hsl(var(--background))' }}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'What Hunters Are Saying'}</h2>
@@ -2960,8 +2962,443 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
         </div>
       </section>
 
-      <FAQSection faq={content.faq} />
+      <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
 
+      <SiteFooter config={config} />
+      {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
+    </BrandProvider>
+    </IKBProvider>
+  );
+}
+
+// Initialize React
+const root = createRoot(document.getElementById('root'));
+ root.render(<App />);
+`;
+}
+
+function generateHowToUseTemplate(config: SiteConfig, brandContext?: BrandContext, brandId?: string): string {
+  const { site } = config;
+  const brand = brandContext?.brand || {};
+  const contact = brandContext?.contact || {};
+  const social = brandContext?.social || {};
+  const ikb = config.ikb || brandContext?.ikb || {};
+
+  return `/**
+ * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
+ *
+ * Site:      ${site.slug}
+ * Brand:     ${brand.name || "Odin's Innovations"}
+ * Generated: ${new Date().toISOString()}
+ *
+ * EDIT THE SOURCE, NOT THE OUTPUT
+ * ─────────────────────────────
+ * Content:   config/sites/odins-innovations/${site.slug}.json
+ * Template:  scripts/generate-site.ts
+ *
+ * • To change content → edit the source JSON config, then regenerate
+ * • To change layout  → edit the template function in generate-site.ts
+ * • To add custom sections → create a new template function & add routing
+ * • To share components → add to common/themes/odins-innovations/components/shared/
+ *   Never create site-specific component files in the generated site directory
+ *
+ * DO NOT bypass the pre-commit hook with --no-verify
+ */
+
+import { createRoot } from 'react-dom/client';
+import { HeroSection, WhyOdinsSection, ProductsSection, ComparisonTable, FAQSection, SiteFooter, SiteNavigation, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
+import FloatingCTA from '@/components/shared/FloatingCTA';
+import { BrandProvider } from '@/contexts/BrandContext';
+import { IKBProvider } from '@/contexts/IKBContext';
+import '@/themes/odins-innovations/globals.css';
+import config from './config.json';
+
+const brandConfig = ${JSON.stringify(brand)};
+const contactConfig = ${JSON.stringify(contact)};
+const socialConfig = ${JSON.stringify(social)};
+const ikbConfig = ${JSON.stringify(ikb)};
+const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
+
+function App() {
+  const { content } = config;
+  const navCta = config.navigation?.cta;
+
+  return (
+    <IKBProvider ikb={ikbConfig}>
+    <BrandProvider
+      brand={brandConfig}
+      contact={contactConfig}
+      social={socialConfig}
+    >
+      <SiteNavigation config={config} />
+      <HeroSection hero={content.hero} />
+
+      {/* Section 1: Understanding the Two Formats — dark */}
+      <section id="understanding-formats" className="section-padding" style={{ background: '#1a1d29' }}>
+        <div className="section-container">
+          <div className="text-center mb-12">
+            <span 
+              className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+              style={{ 
+                background: 'hsl(var(--accent) / 0.2)',
+                color: 'hsl(var(--accent))',
+                clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+              }}
+            >
+              Format Guide
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
+              {content.benefits.title}
+            </h2>
+          </div>
+
+          {/* Two columns side by side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
+            {/* Scent Beads Column */}
+            {content.benefits.beads && (
+              <div>
+                {/* Headline with Odin's white icon */}
+                <div className="flex items-center gap-4 mb-6">
+                  <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="3" className="w-12 h-12 flex-shrink-0">
+                    <circle cx="60.82" cy="54.12" r="4.26" />
+                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28" />
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4" />
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84" />
+                  </svg>
+                  <h3 className="font-display text-2xl md:text-3xl uppercase text-white">
+                    {content.benefits.beads.headline}
+                  </h3>
+                </div>
+                {/* Numbered steps — HowToUseSection style */}
+                <div className="space-y-0 mb-8">
+                  {content.benefits.beads.bullets.map((bullet, idx) => (
+                    <div key={idx} className="flex gap-5 py-5" style={{ borderBottom: idx < content.benefits.beads.bullets.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display text-lg font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
+                        {idx + 1}
+                      </div>
+                      <p className="font-body text-sm text-gray-400 leading-relaxed pt-2">{bullet}</p>
+                    </div>
+                  ))}
+                </div>
+                {/* Video below steps */}
+                {content.benefits.beads.video && (
+                  <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <iframe
+                      src={(() => {
+                        const v = content.benefits.beads.video;
+                        if (v.includes('youtu.be/')) return 'https://www.youtube.com/embed/' + v.split('youtu.be/')[1]?.split('?')[0];
+                        if (v.includes('watch?v=')) return 'https://www.youtube.com/embed/' + v.split('watch?v=')[1]?.split('&')[0];
+                        return v;
+                      })()}
+                      title="Scent Beads"
+                      className="absolute inset-0 w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Liquid Scents Column */}
+            {content.benefits.liquids && (
+              <div>
+                {/* Headline with Odin's white icon */}
+                <div className="flex items-center gap-4 mb-6">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586" alt="Weatherproof" className="w-12 h-12 object-contain flex-shrink-0" loading="lazy" />
+                  <h3 className="font-display text-2xl md:text-3xl uppercase text-white">
+                    {content.benefits.liquids.headline}
+                  </h3>
+                </div>
+                {/* Numbered steps — HowToUseSection style */}
+                <div className="space-y-0 mb-8">
+                  {content.benefits.liquids.bullets.map((bullet, idx) => (
+                    <div key={idx} className="flex gap-5 py-5" style={{ borderBottom: idx < content.benefits.liquids.bullets.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display text-lg font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
+                        {idx + 1}
+                      </div>
+                      <p className="font-body text-sm text-gray-400 leading-relaxed pt-2">{bullet}</p>
+                    </div>
+                  ))}
+                </div>
+                {/* Video below steps */}
+                {content.benefits.liquids.video && (
+                  <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl" style={{ border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <iframe
+                      src={(() => {
+                        const v = content.benefits.liquids.video;
+                        if (v.includes('youtu.be/')) return 'https://www.youtube.com/embed/' + v.split('youtu.be/')[1]?.split('?')[0];
+                        if (v.includes('watch?v=')) return 'https://www.youtube.com/embed/' + v.split('watch?v=')[1]?.split('&')[0];
+                        return v;
+                      })()}
+                      title="Liquid Scents"
+                      className="absolute inset-0 w-full h-full"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
+          {/* Key Points strip — dark version with Odin's light icons */}
+          {content.benefits.keyPoints && content.benefits.keyPoints.length > 0 && (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16">
+              {content.benefits.keyPoints.map((point, idx) => (
+                <div key={idx} className="text-center p-4 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div className="mb-3 flex justify-center">
+                    {idx === 0 ? (
+                      /* 30+ Days — white stopwatch SVG */
+                      <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="3" className="w-14 h-14">
+                        <circle cx="60.82" cy="54.12" r="4.26" />
+                        <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28" />
+                        <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4" />
+                        <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84" />
+                      </svg>
+                    ) : idx === 1 ? (
+                      /* Waterproof — CDN light PNG */
+                      <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586" alt="Weatherproof" className="w-14 h-14 object-contain" loading="lazy" />
+                    ) : idx === 2 ? (
+                      /* Biodegradable — white beaker/molecule SVG */
+                      <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2" className="w-14 h-14">
+                        <circle cx="50" cy="30" r="12" />
+                        <circle cx="30" cy="70" r="10" />
+                        <circle cx="70" cy="70" r="10" />
+                        <line x1="44" y1="40" x2="36" y2="62" />
+                        <line x1="56" y1="40" x2="64" y2="62" />
+                        <line x1="40" y1="70" x2="60" y2="70" />
+                      </svg>
+                    ) : (
+                      /* Legal 50 States — white flag SVG */
+                      <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2" className="w-14 h-14">
+                        <rect x="10" y="20" width="80" height="55" rx="2" />
+                        <line x1="10" y1="31" x2="90" y2="31" />
+                        <line x1="10" y1="42" x2="90" y2="42" />
+                        <line x1="10" y1="53" x2="90" y2="53" />
+                        <line x1="10" y1="64" x2="90" y2="64" />
+                        <rect x="10" y="20" width="35" height="22" fill="white" fillOpacity="0.15" />
+                        <circle cx="19" cy="26" r="1.5" fill="white" />
+                        <circle cx="27" cy="26" r="1.5" fill="white" />
+                        <circle cx="35" cy="26" r="1.5" fill="white" />
+                        <circle cx="23" cy="31" r="1.5" fill="white" />
+                        <circle cx="31" cy="31" r="1.5" fill="white" />
+                        <circle cx="19" cy="36" r="1.5" fill="white" />
+                        <circle cx="27" cy="36" r="1.5" fill="white" />
+                        <circle cx="35" cy="36" r="1.5" fill="white" />
+                      </svg>
+                    )}
+                  </div>
+                  <p className="font-display text-xs uppercase font-bold text-white">
+                    {point.title || point}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Section 2: Why Odin's — white */}
+      <WhyOdinsSection content={content['why-odins']} background="hsl(var(--background))" />
+
+      {/* Section 3: Products — white */}
+      <ProductsSection content={content.products} background="hsl(var(--background))" />
+
+      {/* Section 4: Beads vs Liquids Comparison — warm cream */}
+      <div style={{ background: 'hsl(30, 20%, 95%)' }}>
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+      </div>
+
+      {/* Section 5: Deployment Scenarios — muted bg, WhenToUse-style cards */}
+      {content['deployment-scenarios'] && (
+        <section id="deployment-scenarios" className="section-padding" style={{ background: 'hsl(var(--muted))' }}>
+          <div className="section-container">
+            <div className="max-w-6xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-12">
+                <span 
+                  className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+                  style={{ 
+                    background: 'hsl(var(--accent) / 0.2)',
+                    color: 'hsl(var(--accent))',
+                    clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+                  }}
+                >
+                  Seasonal Guide
+                </span>
+                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
+                  {content['deployment-scenarios'].title}
+                </h2>
+              </div>
+
+              {/* Scenario Cards — WhenToUseSection style */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                {content['deployment-scenarios'].scenarios.map((scenario, idx) => {
+                  const colors = [
+                    'hsl(30, 70%, 50%)',
+                    'hsl(var(--secondary))',
+                    'hsl(var(--primary))',
+                    'hsl(35, 60%, 45%)',
+                    'hsl(20, 50%, 40%)'
+                  ];
+                  const color = colors[idx % colors.length];
+                  return (
+                    <div key={idx} className="relative overflow-hidden" style={{ 
+                      background: 'white',
+                      borderTop: '4px solid ' + color,
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                    }}>
+                      {/* Card Header */}
+                      <div className="py-6 px-5" style={{ background: color + '15' }}>
+                        <span className="font-display text-xl md:text-2xl font-bold uppercase leading-tight" style={{ color }}>
+                          {scenario.title}
+                        </span>
+                      </div>
+                      <div className="p-5">
+                        <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                          {scenario.text}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Section 6: Seasonal Calendar — dark */}
+      {content['seasonal-calendar'] && (
+        <section id="seasonal-calendar" className="section-padding" style={{ background: '#1a1d29' }}>
+          <div className="section-container">
+            <div className="text-center mb-12">
+              <span 
+                className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+                style={{ 
+                  background: 'hsl(var(--primary) / 0.15)',
+                  color: 'hsl(30, 80%, 55%)',
+                  clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+                }}
+              >
+                Seasonal Guide
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl uppercase" style={{ color: '#ffffff' }}>
+                {content['seasonal-calendar'].title}
+              </h2>
+              {content['seasonal-calendar'].description && (
+                <p className="font-body text-lg mt-4" style={{ color: 'rgba(255,255,255,0.7)' }}>
+                  {content['seasonal-calendar'].description}
+                </p>
+              )}
+            </div>
+            <div className="overflow-x-auto max-w-5xl mx-auto">
+              <table className="w-full text-left" style={{ borderCollapse: 'separate', borderSpacing: 0 }}>
+                <thead>
+                  <tr>
+                    <th className="px-4 py-3 text-xs font-bold uppercase tracking-wider" style={{ color: 'hsl(30, 80%, 55%)', borderBottom: '2px solid rgba(255,255,255,0.1)' }}>Month</th>
+                    <th className="px-4 py-3 text-xs font-bold uppercase tracking-wider" style={{ color: 'hsl(30, 80%, 55%)', borderBottom: '2px solid rgba(255,255,255,0.1)' }}>Primary Scent</th>
+                    <th className="px-4 py-3 text-xs font-bold uppercase tracking-wider hidden md:table-cell" style={{ color: 'hsl(30, 80%, 55%)', borderBottom: '2px solid rgba(255,255,255,0.1)' }}>Secondary</th>
+                    <th className="px-4 py-3 text-xs font-bold uppercase tracking-wider hidden lg:table-cell" style={{ color: 'hsl(30, 80%, 55%)', borderBottom: '2px solid rgba(255,255,255,0.1)' }}>Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {content['seasonal-calendar'].table.map((row, idx) => (
+                    <tr key={idx} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                      <td className="px-4 py-3 font-display text-sm uppercase font-bold" style={{ color: '#ffffff' }}>{row.month}</td>
+                      <td className="px-4 py-3 font-body text-sm" style={{ color: 'rgba(255,255,255,0.9)' }}>{row.primary}</td>
+                      <td className="px-4 py-3 font-body text-sm hidden md:table-cell" style={{ color: 'rgba(255,255,255,0.7)' }}>{row.secondary}</td>
+                      <td className="px-4 py-3 font-body text-sm hidden lg:table-cell" style={{ color: 'rgba(255,255,255,0.6)' }}>{row.notes}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Section 7: Advanced Tips — white */}
+      {content['advanced-tips'] && (
+        <section id="advanced-tips" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
+          <div className="section-container">
+            <div className="text-center mb-12">
+              <span 
+                className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+                style={{ 
+                  background: 'hsl(var(--primary) / 0.1)',
+                  color: 'hsl(var(--primary))',
+                  clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+                }}
+              >
+                Pro Tips
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl uppercase" style={{ color: 'hsl(var(--foreground))' }}>
+                {content['advanced-tips'].title}
+              </h2>
+            </div>
+            <div className="max-w-4xl mx-auto space-y-6">
+              {content['advanced-tips'].points.map((point, idx) => {
+                const iconName = point.icon || '';
+                const title = point.title || '';
+                const text = point.text || '';
+                return (
+                  <div key={idx} className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
+                    <div className="flex items-start gap-4">
+                      <div 
+                        className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+                        style={{ background: 'hsl(var(--primary) / 0.1)' }}
+                      >
+                        {iconName === 'layers' ? (
+                          <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg>
+                        ) : iconName === 'wind' ? (
+                          <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" /><path d="M9.6 4.6A2 2 0 1 1 11 8H2" /><path d="M12.6 19.4A2 2 0 1 0 14 16H2" /></svg>
+                        ) : iconName === 'refresh-cw' ? (
+                          <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><polyline points="1 4 1 10 7 10" /><polyline points="23 20 23 14 17 14" /><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15" /></svg>
+                        ) : (
+                          <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>
+                        )}
+                      </div>
+                      <div className="flex-1">
+                        {title && (
+                          <h3 className="font-display text-lg uppercase mb-2" style={{ color: 'hsl(var(--primary))' }}>
+                            {title}
+                          </h3>
+                        )}
+                        <p className="font-body text-muted-foreground leading-relaxed">
+                          {text}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Section 8: Reviews */}
+      <StampedReviewsSection 
+        title="What Hunters Are Saying" 
+        subtitle="Field Reports"
+        description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages."
+      />
+      
+      {/* Hide Stamped Product/Site Reviews tabs - inline style wins source order battle */}
+      <style dangerouslySetInnerHTML={{__html: \`
+        .stamped-widget-buttons,
+        .stamped-full-page-tabs {
+          display: none !important;
+        }
+      \`}} />
+      
+      {/* Section 9: FAQ — warm cream */}
+      <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
+      
       <SiteFooter config={config} />
       {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}
     </BrandProvider>
@@ -3031,16 +3468,18 @@ function App() {
       <SiteNavigation config={config} />
       <HeroSection hero={content.hero} />
       {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
-      <WhyOdinsSection content={content['why-odins']} />
-      <HowItWorksSection howItWorks={content['how-it-works']} />
+      <WhyOdinsSection content={content['why-odins']} background="hsl(var(--background))" />
+      <div style={{ background: '#1a1d29' }}>
+        <HowItWorksSection howItWorks={content['how-it-works']} />
+      </div>
       <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
       
       {/* How to Use Section */}
       {content['how-to-use'] && <DeploymentSection headline={content['how-to-use'].headline} methods={content['how-to-use'].methods} videos={content['how-to-use'].videos} />}
       
-      <ProductsSection content={content.products || content} />
+      <ProductsSection content={content.products || content} background="hsl(30, 20%, 95%)" />
       
-      <div style={{ background: 'hsl(30, 20%, 95%)' }}>
+      <div style={{ background: 'hsl(var(--background))' }}>
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
       </div>
       
@@ -3062,7 +3501,7 @@ function App() {
           }
         \`}} />
         
-        <FAQSection faq={content.faq} />
+        <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
       
       <SiteFooter config={config} />
       {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}

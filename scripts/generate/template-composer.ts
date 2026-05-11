@@ -145,20 +145,20 @@ export function composeSiteTemplate(config: SiteTemplateConfig): string {
       : '';
     const appInit = config.customAppInit ?? '';
 
-    const appCode = `
-function App() {
-${appInit}
-  return (
- ${providersOpen}
- ${bodyContent}
- ${providersClose}
-  );
-}
-
- // Initialize React
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
-`;
+    const appCode = [
+  'function App() {',
+  appInit,
+  '  return (',
+  providersOpen,
+  bodyContent,
+  providersClose,
+  '  );',
+  '}',
+  '',
+  '// Initialize React',
+  'const root = createRoot(document.getElementById(\'root\'));',
+  'root.render(<App />);',
+].filter(Boolean).join('\n');
 
     const parts = [header, imports, ikb, appCode].filter(Boolean);
     return parts.join('\n');
