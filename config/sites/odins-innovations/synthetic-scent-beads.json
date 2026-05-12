@@ -1,12 +1,12 @@
 {
-  "version": "Odin's Innovations Microsite Config — Synthetic Scent Beads",
+  "version": "Odin's Innovations Microsite Config — The Case for Synthetic Scents",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": { "default": "HUNT2026" }
   },
   "site": {
     "id": "synthetic-scent-beads",
-    "name": "Synthetic Scent Beads",
+    "name": "The Case for Synthetic Scents",
     "slug": "synthetic-scent-beads",
     "domain": "odinsinnovations.com",
     "basename": "/synthetic-scent-beads",
@@ -20,21 +20,21 @@
     "primary": { "h": 30, "s": 80, "l": 35 } 
   },
   "seo": {
-    "title": "Synthetic Scent Beads — 30+ Days of Legal, Weatherproof Attraction",
-    "description": "100% synthetic scent beads engineered for 30+ days of consistent release. Legal in every state, biodegradable, Made in USA. Reduce reapplication time with Odin's long lasting scent beads.",
-    "keywords": ["synthetic scent beads", "doe estrus scent beads", "long lasting scent beads", "scent beads deer attractant", "synthetic deer attractant beads"],
-    "ogTitle": "Synthetic Scent Beads — 30+ Days Attraction",
-    "ogDescription": "Consistent, weatherproof synthetic attractants for deer, hogs, bears & elk. Lab-stable formula with indefinite shelf life.",
+    "title": "The Case for Synthetic Scents — Why Hunters & Retailers Are Making the Switch",
+    "description": "CWD regulations may be driving the market shift, but performance is the real driver. Explore why synthetic scents outperform naturals in consistency, longevity, and innovation — and why retailers are shifting shelf space.",
+    "keywords": ["synthetic deer scent", "synthetic vs natural scent", "CWD regulations deer urine", "synthetic scent beads", "why synthetic scents work", "synthetic deer attractant"],
+    "ogTitle": "The Case for Synthetic Scents",
+    "ogDescription": "Beyond regulation: why synthetic scents outperform naturals in consistency, longevity, and innovation. The performance case for synthetics.",
     "ogImage": "/synthetic-scent-beads/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/synthetic-scent-beads"
   },
   "navigation": {
     "links": [
-      { "label": "Why Odin's", "href": "#why-odins" },
-      { "label": "How It Works", "href": "#how-it-works" },
-      { "label": "Products", "href": "#products" },
-      { "label": "Comparison", "href": "#comparison" },
+      { "label": "Beyond Regulation", "href": "#beyond-regulation" },
+      { "label": "Retail Shift", "href": "#retail-perspective" },
+      { "label": "Synthetic Spectrum", "href": "#synthetic-spectrum" },
+      { "label": "Natural Reality", "href": "#natural-reality" },
       { "label": "FAQ", "href": "#faq" }
     ],
     "cta": { 
@@ -45,32 +45,33 @@
   "content": {
     "hero": {
       "headline": { 
-        "main": "Synthetic Scent Beads", 
-        "highlightTerm": "30+ Days — Legal Everywhere", 
+        "main": "The Case for Synthetic Scents", 
+        "highlightTerm": "Beyond Regulation", 
         "alt": "Odin's synthetic scent beads in a deer scrape" 
       },
-      "subhead": "Synthetic attractants engineered for consistent, weatherproof results and reduced reapplication time.",
+      "subhead": "While CWD regulations have certainly influenced the market, the growth of synthetics is driven by factors that would exist regardless of regulatory pressure.",
       "background": { 
         "image": "/synthetic-scent-beads/images/synthetic-scent-beads-hero.jpg", 
         "overlay": true 
       },
       "ctas": [
         { 
-          "text": "Shop Now — Starting at $13.99", 
+          "text": "Shop Synthetic Scent Beads", 
           "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026", 
           "variant": "primary" 
         },
         { 
-          "text": "See How It Works", 
-          "href": "#how-it-works", 
+          "text": "Read the Full Case", 
+          "href": "#beyond-regulation", 
           "variant": "outline" 
         }
       ]
     },
     "why-odins": {
-      "headline": "Why Choose Odin's Synthetic Scent Beads",
+      "headline": "Why Odin's Leads in Synthetic Scent Innovation",
+      "body": "21 proprietary synthetic formulations. 8+ years of field-proven performance. Biodegradable polymer bead delivery engineered for 30+ days of consistent release. Odin's didn't enter the synthetic market to comply with regulations — we entered it because synthetics outperform.",
       "points": [
-        "100% synthetic formula delivers lab-consistent results",
+        "100% synthetic formula delivers lab-consistent results every batch",
         "30+ days of continuous scent release — even after rain",
         "Biodegradable polymer beads engineered for field durability",
         "Legal in all 50 states — no CWD restrictions",
@@ -151,7 +152,7 @@
         { "feature": "Legal Status", "Scent Beads": "All 50 states", "Natural Urine Beads": "Restricted in many states" },
         { "feature": "Weather Resistance", "Scent Beads": "Engineered for rain", "Natural Urine Beads": "Prone to washout" },
         { "feature": "Biodegradable", "Scent Beads": "Yes", "Natural Urine Beads": "Varies" },
-        { "feature": "Price (3 oz)", "Scent Beads": "From $13.99", "Natural Urine Beads": "Typically higher" }
+        { "feature": "Price (3 oz)", "Scent Beads": "From $17.95", "Natural Urine Beads": "Typically higher" }
       ],
       "summary": "Synthetic scent beads deliver longer duration, consistent quality, and full legal compliance — at a lower cost per day in the field."
     },
@@ -191,7 +192,7 @@
     "footer": {
       "finalCTA": { 
         "headline": "Ready for consistent results?", 
-        "buttonText": "Shop Scent Beads — Starting at $13.99", 
+        "buttonText": "Shop Synthetic Scent Beads", 
         "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" 
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."

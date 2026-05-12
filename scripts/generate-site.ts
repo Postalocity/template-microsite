@@ -3516,7 +3516,7 @@ function App() {
         </div>
       </section>
 
-      {/* Section 4: Beyond Regulation — dark, hard-coded editorial */}
+      {/* Section 4: Beyond Regulation — dark editorial with full text + Odin's white brand icons */}
       <section id="beyond-regulation" className="section-padding" style={{ background: '#1a1d29' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3534,74 +3534,80 @@ function App() {
               Beyond Regulation: The Performance Case for Synthetics
             </h2>
             <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
-              CWD regulations may be driving the market shift, but performance is the real driver. Synthetic scents don't just comply with regulations — they outperform naturals where it matters most: consistency, longevity, and innovation potential.
+              While Chronic Wasting Disease (CWD) regulations have certainly influenced the market—with numerous states and Canadian provinces restricting or banning natural deer urine products—the growth of synthetics is driven by factors that would exist regardless of regulatory pressure.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Card 1: Consistency and Reliability */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Consistency and Reliability — Odin's stopwatch (long-lasting) white icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-5 h-5" style={{ color: 'hsl(var(--accent))' }}>
-                    <circle cx="60.82" cy="54.12" r="4.26" />
-                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28" />
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4" />
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84" />
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-7 h-7" style={{ color: 'hsl(var(--accent))' }}>
+                    <circle cx="60.82" cy="54.12" r="4.26"/>
+                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
                   </svg>
                 </div>
-                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--accent))' }}>Consistency and Reliability</h3>
-              </div>
-              <ul className="space-y-2 font-body text-sm text-muted-foreground leading-relaxed">
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Natural doe estrus is available only 24–48 hours per 28-day cycle</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Peak rut window lasts just 10–14 days per season</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Hormone levels vary by individual diet, health, and age</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Synthetic formulations deliver consistent potency every batch</li>
-              </ul>
-            </div>
-
-            {/* Card 2: Extended Effectiveness */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586" alt="Extended Duration" className="w-5 h-5 object-contain" loading="lazy" />
+                <div className="flex-1">
+                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Consistency and Reliability</h3>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
+                    Natural deer urine is, by definition, a biological product subject to nature's variations. An individual doe's estrus—the period during which she is receptive to breeding—typically lasts approximately 24–48 hours, with many sources narrowing it to around 24–30 hours. If she is not bred during that cycle, she will recycle roughly 28 days later. A figure of 36 hours is a reasonable midpoint estimate for a single doe's receptive window. Add to that, hormone levels, diet, health status, and collection timing all affect potency and scent profile. A bottle collected during peak estrus from one doe will differ from another, even within the same operation.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed">
+                    Pheromone attractant scents are selected with consideration towards the rut. Because bucks are actively seeking receptive does across an entire 10–14-day peak, you need a product that will be effective over that entire period or reintroduce your human scent to apply more. Maintaining scent presence throughout that period maximizes the opportunity for encounters. Scents containing doe estrus scents need to be deployed consistently over days or weeks rather than trying to time a single "magic window." This distinction reinforces why synthetic doe estrus scents need to be deployed consistently over days or weeks.
+                  </p>
                 </div>
-                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--accent))' }}>Extended Effectiveness</h3>
               </div>
-              <ul className="space-y-2 font-body text-sm text-muted-foreground leading-relaxed">
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Natural urine degrades rapidly after collection</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Shelf life limits natural product distribution range</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Field potency loss accelerates with temperature exposure</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Synthetic stability means no refrigeration or special handling</li>
-              </ul>
             </div>
 
-            {/* Card 3: Innovation Potential */}
+            {/* Extended Effectiveness — Odin's rainproof/waterproof brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5" style={{ color: 'hsl(var(--accent))' }}>
-                    <circle cx="50" cy="30" r="12" />
-                    <circle cx="30" cy="70" r="10" />
-                    <circle cx="70" cy="70" r="10" />
-                    <line x1="44" y1="40" x2="36" y2="62" />
-                    <line x1="56" y1="40" x2="64" y2="62" />
-                    <line x1="40" y1="70" x2="60" y2="70" />
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586" alt="Weatherproof" className="w-7 h-7 object-contain" loading="lazy" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Extended Effectiveness</h3>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
+                    Traditional natural urine products face a fundamental challenge: they begin degrading immediately after collection. Even with refrigeration and proper handling, shelf life is limited. Once opened and exposed to field conditions, natural scents lose potency within hours.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed">
+                    Synthetic formulations can be engineered for stability. They don't spoil, don't require refrigeration, and maintain full potency from manufacturing through storage, transport, retail shelf, and field application. Many synthetic products continue attracting long after application, whereas natural scents dissipate or degrade rapidly.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Innovation Potential — Odin's chemistry/molecule brand icon */}
+            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-7 h-7" style={{ color: 'hsl(var(--accent))' }}>
+                    <circle cx="50" cy="35" r="8" fill="currentColor" fillOpacity="0.2"/>
+                    <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
+                    <circle cx="65" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
+                    <path d="M45 42L38 54"/>
+                    <path d="M55 42L62 54"/>
+                    <path d="M41 60H59"/>
                   </svg>
                 </div>
-                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--accent))' }}>Innovation Potential</h3>
+                <div className="flex-1">
+                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Innovation Potential</h3>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
+                    Perhaps the most compelling advantage of synthetic scents is the opportunity for innovation that simply isn't possible with natural products.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed">
+                    Advanced delivery systems—such as biodegradable bead infusion, time-release mechanisms, and optimized spray formulations—require the stability and consistency only synthetic products can provide. Manufacturers can fine-tune scent intensity, adjust volatility for different weather conditions, and even engineer multi-phase releases that change over time.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-2 font-body text-sm text-muted-foreground leading-relaxed">
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Biodegradable bead infusion technology</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Time-release mechanisms for sustained dispersal</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Multi-phase release profiles (pre-rut → rut → post-rut)</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Weather-specific formulations and scent intensity tuning</li>
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 5: Retail Perspective — light, hard-coded editorial */}
+      {/* Section 5: Retail Perspective — light editorial with full text + Odin's dark brand icons */}
       <section id="retail-perspective" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3618,72 +3624,41 @@ function App() {
             <h2 className="font-display text-4xl md:text-5xl uppercase" style={{ color: 'hsl(var(--foreground))' }}>
               The Retail Perspective: Why Stores Are Shifting Shelf Space
             </h2>
+            <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
+              For multi-location retailers and chains, the business case for expanding synthetic offerings extends beyond consumer demand:
+            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Card 1: Shelf Life */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Shelf Life — Odin's stopwatch (long-lasting) dark icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                </div>
-                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Shelf Life</h3>
-              </div>
-              <ul className="space-y-2 font-body text-sm text-muted-foreground leading-relaxed">
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Natural products spoil and require specific storage conditions</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Expiration dates drive returns and inventory write-downs</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Synthetic has indefinite shelf life — dramatically reduced shrink</li>
-              </ul>
-            </div>
-
-            {/* Card 2: Seasonal Carryover */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><polyline points="23 4 23 10 17 10" /><polyline points="1 20 1 14 7 14" /><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" /></svg>
-                </div>
-                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Seasonal Carryover</h3>
-              </div>
-              <ul className="space-y-2 font-body text-sm text-muted-foreground leading-relaxed">
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Unsold natural inventory at season's end is a total loss</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Synthetic rolls forward to next season without degradation</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> No end-of-season clearance pressure or disposal costs</li>
-              </ul>
-            </div>
-
-            {/* Card 3: Handling Requirements */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }}>
-                    <rect x="10" y="20" width="80" height="55" rx="2" />
-                    <line x1="10" y1="31" x2="90" y2="31" />
-                    <line x1="10" y1="42" x2="90" y2="42" />
-                    <line x1="10" y1="53" x2="90" y2="53" />
-                    <line x1="10" y1="64" x2="90" y2="64" />
-                    <rect x="10" y="20" width="35" height="22" fill="currentColor" fillOpacity="0.15" />
-                    <circle cx="19" cy="26" r="1.5" fill="currentColor" />
-                    <circle cx="27" cy="26" r="1.5" fill="currentColor" />
-                    <circle cx="35" cy="26" r="1.5" fill="currentColor" />
-                    <circle cx="23" cy="31" r="1.5" fill="currentColor" />
-                    <circle cx="31" cy="31" r="1.5" fill="currentColor" />
-                    <circle cx="19" cy="36" r="1.5" fill="currentColor" />
-                    <circle cx="27" cy="36" r="1.5" fill="currentColor" />
-                    <circle cx="35" cy="36" r="1.5" fill="currentColor" />
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-7 h-7" style={{ color: 'hsl(var(--primary))' }}>
+                    <circle cx="60.82" cy="54.12" r="4.26"/>
+                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
                   </svg>
                 </div>
-                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Handling Requirements</h3>
+                <div className="flex-1">
+                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>Inventory Management Advantages</h3>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-2">
+                    <strong>Shelf Life:</strong> Natural urine products spoil. They require specific storage conditions, have expiration dates that matter, and generate returns when customers receive degraded product. Synthetic scents have indefinite shelf life, reducing shrink and inventory risk.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-2">
+                    <strong>Seasonal Carryover:</strong> Unsold natural product inventory at season's end represents a loss—it cannot be reliably carried to the next season. Synthetic inventory rolls forward without degradation, improving capital efficiency.
+                  </p>
+                  <p className="font-body text-muted-foreground leading-relaxed">
+                    <strong>Handling Requirements:</strong> Natural products often require cold chain considerations and careful handling to prevent contamination or spoilage. Synthetics ship and store like any stable consumer product.
+                  </p>
+                </div>
               </div>
-              <ul className="space-y-2 font-body text-sm text-muted-foreground leading-relaxed">
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Natural products need cold-chain shipping and storage</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Increased logistics costs and handling complexity</li>
-                <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Synthetics ship like any stable consumer product</li>
-              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 6: Understanding the Synthetic Spectrum — dark, hard-coded editorial */}
+      {/* Section 6: Understanding the Synthetic Spectrum — dark editorial with full text + Odin's white brand icons */}
       <section id="synthetic-spectrum" className="section-padding" style={{ background: '#1a1d29' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3701,44 +3676,36 @@ function App() {
               Understanding the Synthetic Spectrum: Not All Products Are Equal
             </h2>
             <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
-              The market includes products marketed as "synthetic" that vary widely in sophistication. The upper end of the spectrum involves analytical chemistry and species-specific pheromone synthesis — not simply mixed fragrances. The difference shows in the field.
+              One critical point deserves attention: the market includes products marketed as "synthetic" that vary dramatically in sophistication and effectiveness.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* What separates the best — Odin's chemistry white icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5" style={{ color: 'hsl(var(--accent))' }}>
-                    <circle cx="50" cy="30" r="12" />
-                    <circle cx="30" cy="70" r="10" />
-                    <circle cx="70" cy="70" r="10" />
-                    <line x1="44" y1="40" x2="36" y2="62" />
-                    <line x1="56" y1="40" x2="64" y2="62" />
-                    <line x1="40" y1="70" x2="60" y2="70" />
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-7 h-7" style={{ color: 'hsl(var(--accent))' }}>
+                    <circle cx="50" cy="35" r="8" fill="currentColor" fillOpacity="0.2"/>
+                    <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
+                    <circle cx="65" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
+                    <path d="M45 42L38 54"/>
+                    <path d="M55 42L62 54"/>
+                    <path d="M41 60H59"/>
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-2" style={{ color: 'hsl(var(--accent))' }}>What Separates the Best</h3>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    Leading synthetic scents are built on analytical chemistry — identifying and replicating the specific compounds deer respond to. This means species-specific pheromone synthesis, rigorous formulation testing, and documented field validation. When evaluating a synthetic product, look for credibility signals: R&D investment, transparent ingredient programs, and real field performance data — not just marketing claims.
+                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>At the Upper End</h3>
+                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
+                    At the upper end, legitimate synthetic development involves:
                   </p>
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-5 h-5" style={{ color: 'hsl(var(--accent))' }}>
-                    <path d="M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z" />
-                    <path d="M50 10 L50 90" />
-                    <path d="M10 30 L90 70" />
-                    <path d="M90 30 L10 70" />
-                  </svg>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-2" style={{ color: 'hsl(var(--accent))' }}>Evaluate by Credibility</h3>
+                  <ul className="space-y-1 font-body text-sm text-muted-foreground leading-relaxed mb-3">
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Advanced analytical chemistry to identify active compounds</li>
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Species-specific pheromone synthesis</li>
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Formulation testing and refinement</li>
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Field validation of effectiveness</li>
+                  </ul>
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    Not every "synthetic" product on the shelf represents the same level of investment or performance. Evaluate based on three criteria: credibility of the manufacturer's scientific claims, verifiable R&D investment in pheromone research, and documented field performance from real hunters — not testimonials, but repeatable results across seasons and regions.
+                    This distinction matters. The growth in synthetic adoption reflects consumers finding products that actually work—not just products that comply with regulations. Retailers should evaluate synthetic offerings based on manufacturer credibility, R&D investment, and documented field performance (critical) rather than simply stocking any product labeled "synthetic."
                   </p>
                 </div>
               </div>
@@ -3747,7 +3714,7 @@ function App() {
         </div>
       </section>
 
-      {/* Section 7: Natural Product Reality — light, hard-coded editorial */}
+      {/* Section 7: Natural Product Reality — light editorial with full text + Odin's dark brand icons */}
       <section id="natural-reality" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3765,32 +3732,60 @@ function App() {
               The Natural Product Reality: Still a Market, But Evolving
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-              Natural products retain genuine advantages: decades of proven effectiveness, complex organic compounds that synthetics continue to study, traditional appeal to experienced hunters, and lower per-unit production costs. But the landscape is shifting.
+              This analysis should not be read as predicting the disappearance of natural attractants. In unrestricted markets, natural products retain advantages:
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-6">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* Natural advantages + regulatory costs — Odin's 50-states flag dark icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-7 h-7" style={{ color: 'hsl(var(--primary))' }}>
+                    <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1"/>
+                    <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
+                    <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2"/>
+                    <circle cx="22" cy="32" r="2" fill="currentColor"/>
+                    <circle cx="30" cy="32" r="2" fill="currentColor"/>
+                    <circle cx="38" cy="32" r="2" fill="currentColor"/>
+                    <circle cx="26" cy="38" r="2" fill="currentColor"/>
+                    <circle cx="34" cy="38" r="2" fill="currentColor"/>
+                    <circle cx="22" cy="44" r="2" fill="currentColor"/>
+                    <circle cx="30" cy="44" r="2" fill="currentColor"/>
+                    <circle cx="38" cy="44" r="2" fill="currentColor"/>
+                    <circle cx="26" cy="50" r="2" fill="currentColor"/>
+                    <circle cx="34" cy="50" r="2" fill="currentColor"/>
+                  </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-2" style={{ color: 'hsl(var(--primary))' }}>Regulatory Costs Are Rising</h3>
+                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>Advantages and Regulatory Costs</h3>
+                  <ul className="space-y-1 font-body text-sm text-muted-foreground leading-relaxed mb-3">
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Decades of field-proven effectiveness, particularly for mature bucks during rut</li>
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Complex biological compounds that remain difficult to fully replicate</li>
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Traditional appeal and brand loyalty among experienced hunters</li>
+                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Often lower per-unit costs for established operations with existing infrastructure</li>
+                  </ul>
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    The ATA Deer Protection Program (DPP) and USDA CWD Voluntary Herd Certification Program add compliance costs and operational overhead to natural urine collection. These programs, while important for disease management, increase the cost structure of natural products — further narrowing the price gap with synthetics. Meanwhile, CWD continues to spread, expanding the list of states where natural urine is restricted or banned.
+                    However, unpredictable regulatory changes have added to the cost of maintaining a healthy deer herd. Starting in 2016 with the ATA's DPP program and transferred to the Responsible Hunting Scent Association "was established to bring professional cervid urine producers and hunting scent manufacturers together to work for the common purpose of protecting, maintaining and growing the cervid urine and hunting scent industry..." Imbedded in the program is the USDA's Cervids: CWD Voluntary Herd Certification Program. Programs can predictably include additional costs.... especially when it is a program of the US Federal Government!
                   </p>
                 </div>
               </div>
             </div>
+
+            {/* Market moving — Odin's long-lasting dark icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg className="w-5 h-5" style={{ color: 'hsl(var(--primary))' }} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round"><path d="M18 20V10" /><path d="M12 20V4" /><path d="M6 20v-6" /></svg>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-7 h-7" style={{ color: 'hsl(var(--primary))' }}>
+                    <circle cx="60.82" cy="54.12" r="4.26"/>
+                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
+                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
+                  </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-2" style={{ color: 'hsl(var(--primary))' }}>The Market Is Moving</h3>
+                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>The Market Is Moving</h3>
                   <p className="font-body text-muted-foreground leading-relaxed">
-                    Natural products will always have a place — particularly among hunters who value tradition and the complexity of real urine. But as regulatory pressure increases and synthetic technology improves, the market share is shifting. According to <a href="https://www.odinsinnovations.com/blogs/in-the-field/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--accent))', textDecoration: 'underline' }}>The Evolution of Deer Attractants: Why Synthetic Scents Are Redefining the Category</a> from Archery Business, the category transformation is well underway.
+                    You can read more from Archery Business' article; <a href="https://www.odinsinnovations.com/blogs/in-the-field/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--accent))', textDecoration: 'underline' }}>"The Evolution of Deer Attractants: Why Synthetic Scents Are Redefining the Category."</a>
                   </p>
                 </div>
               </div>
