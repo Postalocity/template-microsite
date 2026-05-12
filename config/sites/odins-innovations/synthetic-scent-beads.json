@@ -134,18 +134,16 @@
     },
     "comparison": {
       "headline": "Synthetic vs Natural Scent Beads",
-      "table": {
-        "headers": ["Feature", "Odin's Synthetic", "Natural Urine Beads"],
-        "rows": [
-          ["Formula", "100% synthetic", "Natural urine infusion"],
-          ["Duration", "30+ days continuous", "Variable — degrades quickly"],
-          ["Shelf Life", "Indefinite", "Requires refrigeration"],
-          ["Legal Status", "All 50 states", "Restricted in many states"],
-          ["Weather Resistance", "Engineered for rain", "Prone to washout"],
-          ["Biodegradable", "Yes", "Varies"],
-          ["Price (3 oz)", "From $13.99", "Typically higher"]
-        ]
-      }
+      "table": [
+        { "feature": "Formula", "Scent Beads": "100% synthetic", "Natural Urine Beads": "Natural urine infusion" },
+        { "feature": "Duration", "Scent Beads": "30+ days continuous", "Natural Urine Beads": "Variable — degrades quickly" },
+        { "feature": "Shelf Life", "Scent Beads": "Indefinite", "Natural Urine Beads": "Requires refrigeration" },
+        { "feature": "Legal Status", "Scent Beads": "All 50 states", "Natural Urine Beads": "Restricted in many states" },
+        { "feature": "Weather Resistance", "Scent Beads": "Engineered for rain", "Natural Urine Beads": "Prone to washout" },
+        { "feature": "Biodegradable", "Scent Beads": "Yes", "Natural Urine Beads": "Varies" },
+        { "feature": "Price (3 oz)", "Scent Beads": "From $13.99", "Natural Urine Beads": "Typically higher" }
+      ],
+      "summary": "Synthetic scent beads deliver longer duration, consistent quality, and full legal compliance — at a lower cost per day in the field."
     },
     "faq": {
       "headline": "Frequently Asked Questions",
