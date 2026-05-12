@@ -3507,8 +3507,8 @@ function App() {
                   {idx + 1}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-lg uppercase text-white mb-1">{step.title}</h3>
-                  <p className="font-body text-sm text-gray-400 leading-relaxed">{step.description}</p>
+                  <h3 className="font-display text-lg uppercase text-white mb-1">{typeof step === 'string' ? step : step.title}</h3>
+                  {typeof step !== 'string' && step.description && <p className="font-body text-sm text-gray-400 leading-relaxed">{step.description}</p>}
                 </div>
               </div>
             ))}
@@ -3516,10 +3516,10 @@ function App() {
         </div>
       </section>
 
-      {/* Section 4: Beyond Regulation — dark editorial with full text + Odin's white brand icons */}
+      {/* Section 4: Beyond Regulation — editorial feature layout, NO white cards on dark */}
       <section id="beyond-regulation" className="section-padding" style={{ background: '#1a1d29' }}>
         <div className="section-container">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <span
               className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
               style={{
@@ -3531,71 +3531,113 @@ function App() {
               The Case for Synthetics
             </span>
             <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
-              Beyond Regulation: The Performance Case for Synthetics
+              Beyond Regulation
             </h2>
             <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
               While Chronic Wasting Disease (CWD) regulations have certainly influenced the market—with numerous states and Canadian provinces restricting or banning natural deer urine products—the growth of synthetics is driven by factors that would exist regardless of regulatory pressure.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-8">
-            {/* Consistency and Reliability — Odin's 30+ Days brand icon */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-14 h-14 object-contain" loading="lazy" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Consistency and Reliability</h3>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
-                    Natural deer urine is, by definition, a biological product subject to nature's variations. An individual doe's estrus—the period during which she is receptive to breeding—typically lasts approximately 24–48 hours, with many sources narrowing it to around 24–30 hours. If she is not bred during that cycle, she will recycle roughly 28 days later. A figure of 36 hours is a reasonable midpoint estimate for a single doe's receptive window. Add to that, hormone levels, diet, health status, and collection timing all affect potency and scent profile. A bottle collected during peak estrus from one doe will differ from another, even within the same operation.
+
+          {/* ARGUMENT 1: Stat + Pull Quote — text directly on dark bg */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="flex flex-col md:flex-row items-start gap-8 mb-8">
+              <div className="flex-shrink-0 text-center md:text-left">
+                <div className="font-display text-7xl md:text-8xl font-bold leading-none" style={{ color: 'hsl(45, 100%, 50%)' }}>36</div>
+                <div className="font-body text-sm uppercase tracking-wider text-gray-400 mt-2">Hours<br />Average Receptive Window</div>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-white mb-4">
+                  Consistency and Reliability
+                </h3>
+                <p className="font-body text-base text-gray-300 leading-relaxed mb-4">
+                  Natural deer urine is, by definition, a biological product subject to nature's variations. An individual doe's estrus—the period during which she is receptive to breeding—typically lasts approximately 24–48 hours, with many sources narrowing it to around 24–30 hours. If she is not bred during that cycle, she will recycle roughly 28 days later. A figure of 36 hours is a reasonable midpoint estimate for a single doe's receptive window. Add to that, hormone levels, diet, health status, and collection timing all affect potency and scent profile.
+                </p>
+                <blockquote className="border-l-4 pl-6 my-6" style={{ borderColor: 'hsl(45, 100%, 50%)' }}>
+                  <p className="font-body text-xl md:text-2xl italic leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                    "A bottle collected during peak estrus from one doe will differ from another, even within the same operation."
                   </p>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    Pheromone attractant scents are selected with consideration towards the rut. Because bucks are actively seeking receptive does across an entire 10–14-day peak, you need a product that will be effective over that entire period or reintroduce your human scent to apply more. Maintaining scent presence throughout that period maximizes the opportunity for encounters. Scents containing doe estrus scents need to be deployed consistently over days or weeks rather than trying to time a single "magic window." This distinction reinforces why synthetic doe estrus scents need to be deployed consistently over days or weeks.
-                  </p>
-                </div>
+                </blockquote>
+                <p className="font-body text-base text-gray-300 leading-relaxed">
+                  Pheromone attractant scents are selected with consideration towards the rut. Because bucks are actively seeking receptive does across an entire 10–14-day peak, you need a product that will be effective over that entire period or reintroduce your human scent to apply more. Scents containing doe estrus need to be deployed consistently over days or weeks rather than trying to time a single "magic window."
+                </p>
               </div>
             </div>
+            <div className="w-24 h-0.5 mx-auto" style={{ background: 'rgba(255,255,255,0.1)' }} />
+          </div>
 
-            {/* Extended Effectiveness — Odin's Waterproof brand icon */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404" alt="Weatherproof" className="w-14 h-14 object-contain" loading="lazy" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Extended Effectiveness</h3>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
-                    Traditional natural urine products face a fundamental challenge: they begin degrading immediately after collection. Even with refrigeration and proper handling, shelf life is limited. Once opened and exposed to field conditions, natural scents lose potency within hours.
-                  </p>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    Synthetic formulations can be engineered for stability. They don't spoil, don't require refrigeration, and maintain full potency from manufacturing through storage, transport, retail shelf, and field application. Many synthetic products continue attracting long after application, whereas natural scents dissipate or degrade rapidly.
-                  </p>
-                </div>
+          {/* ARGUMENT 2: Side-by-Side Comparison — Natural vs Synthetic */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-white mb-6 text-center">
+              Extended Effectiveness
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-lg p-6" style={{ background: 'rgba(220,38,38,0.08)', borderLeft: '4px solid #dc2626' }}>
+                <h4 className="font-display text-lg uppercase mb-4" style={{ color: '#f87171' }}>Natural Urine</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Degrades immediately after collection</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Shelf life limited even with refrigeration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Loses potency within hours in the field</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Cold chain shipping required</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="rounded-lg p-6" style={{ background: 'rgba(45,90,61,0.15)', borderLeft: '4px solid hsl(145, 45%, 38%)' }}>
+                <h4 className="font-display text-lg uppercase mb-4" style={{ color: '#4ade80' }}>Synthetic Scent Beads</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">Stable from manufacturing through field application</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">Indefinite shelf life — no refrigeration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">30+ days continuous scent release</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">Ships like any stable consumer product</span>
+                  </li>
+                </ul>
               </div>
             </div>
+            <div className="w-24 h-0.5 mx-auto mt-16" style={{ background: 'rgba(255,255,255,0.1)' }} />
+          </div>
 
-            {/* Innovation Potential — Odin's Biodegradable brand icon */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337" alt="Biodegradable" className="w-14 h-14 object-contain" loading="lazy" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Innovation Potential</h3>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
-                    Perhaps the most compelling advantage of synthetic scents is the opportunity for innovation that simply isn't possible with natural products.
-                  </p>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    Advanced delivery systems—such as biodegradable bead infusion, time-release mechanisms, and optimized spray formulations—require the stability and consistency only synthetic products can provide. Manufacturers can fine-tune scent intensity, adjust volatility for different weather conditions, and even engineer multi-phase releases that change over time.
-                  </p>
-                </div>
+          {/* ARGUMENT 3: Gradient Accent Bar — Innovation */}
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-lg p-8 md:p-10" style={{ background: 'linear-gradient(to right, hsl(30, 80%, 35%), hsl(45, 100%, 50%))' }}>
+              <h3 className="font-display text-2xl md:text-3xl uppercase text-white mb-6">
+                Innovation Potential
+              </h3>
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Biodegradable Bead Infusion</span>
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Time-Release Mechanisms</span>
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Multi-Phase Scent Profiles</span>
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Weather-Conditioned Volatility</span>
               </div>
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Perhaps the most compelling advantage of synthetic scents is the opportunity for innovation that simply isn't possible with natural products. Advanced delivery systems require the stability and consistency only synthetic products can provide. Manufacturers can fine-tune scent intensity, adjust volatility for different weather conditions, and even engineer multi-phase releases that change over time.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 5: Retail Perspective — light editorial with full text + Odin's dark brand icons */}
+      {/* Section 5: Retail Perspective — 3 stat cards on light bg */}
       <section id="retail-perspective" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3610,38 +3652,45 @@ function App() {
               For Retailers
             </span>
             <h2 className="font-display text-4xl md:text-5xl uppercase" style={{ color: 'hsl(var(--foreground))' }}>
-              The Retail Perspective: Why Stores Are Shifting Shelf Space
+              Why Stores Are Shifting Shelf Space
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-              For multi-location retailers and chains, the business case for expanding synthetic offerings extends beyond consumer demand:
+              For multi-location retailers and chains, the business case for expanding synthetic offerings extends beyond consumer demand.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-8">
-            {/* Shelf Life — Odin's 30+ Days brand icon */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-14 h-14 object-contain" loading="lazy" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>Inventory Management Advantages</h3>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-2">
-                    <strong>Shelf Life:</strong> Natural urine products spoil. They require specific storage conditions, have expiration dates that matter, and generate returns when customers receive degraded product. Synthetic scents have indefinite shelf life, reducing shrink and inventory risk.
-                  </p>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-2">
-                    <strong>Seasonal Carryover:</strong> Unsold natural product inventory at season's end represents a loss—it cannot be reliably carried to the next season. Synthetic inventory rolls forward without degradation, improving capital efficiency.
-                  </p>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    <strong>Handling Requirements:</strong> Natural products often require cold chain considerations and careful handling to prevent contamination or spoilage. Synthetics ship and store like any stable consumer product.
-                  </p>
-                </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderTop: '4px solid hsl(var(--primary))' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-12 h-12 object-contain" loading="lazy" />
+                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Shelf Life</h3>
               </div>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                Natural urine products spoil. They require specific storage conditions, have expiration dates that matter, and generate returns when customers receive degraded product. Synthetic scents have indefinite shelf life, reducing shrink and inventory risk.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderTop: '4px solid hsl(var(--primary))' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404" alt="Weatherproof" className="w-12 h-12 object-contain" loading="lazy" />
+                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Seasonal Carryover</h3>
+              </div>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                Unsold natural product inventory at season's end represents a loss—it cannot be reliably carried to the next season. Synthetic inventory rolls forward without degradation, improving capital efficiency. No end-of-season clearance pressure or disposal costs.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderTop: '4px solid hsl(var(--primary))' }}>
+              <div className="flex items-center gap-3 mb-4">
+                <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337" alt="Biodegradable" className="w-12 h-12 object-contain" loading="lazy" />
+                <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Handling Requirements</h3>
+              </div>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                Natural products often require cold chain considerations and careful handling to prevent contamination or spoilage. Synthetics ship and store like any stable consumer product.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 6: Understanding the Synthetic Spectrum — dark editorial with full text + Odin's white brand icons */}
+      {/* Section 6: Synthetic Spectrum — checklist + gold sidebar takeaway, dark bg */}
       <section id="synthetic-spectrum" className="section-padding" style={{ background: '#1a1d29' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3656,41 +3705,58 @@ function App() {
               Quality Matters
             </span>
             <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
-              Understanding the Synthetic Spectrum: Not All Products Are Equal
+              Not All Products Are Equal
             </h2>
             <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
-              One critical point deserves attention: the market includes products marketed as "synthetic" that vary dramatically in sophistication and effectiveness.
+              The market includes products marketed as "synthetic" that vary dramatically in sophistication and effectiveness.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-8">
-            {/* What separates the best — Odin's Field Tested brand icon */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png" alt="Field Tested" className="w-14 h-14 object-contain" loading="lazy" />
+          <div className="grid md:grid-cols-5 gap-8 max-w-5xl mx-auto">
+            {/* Checklist — 3 cols */}
+            <div className="md:col-span-3">
+              <h3 className="font-display text-xl uppercase text-white mb-6">
+                What Legitimate Development Involves
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 mt-0.5 font-bold text-lg" style={{ color: 'hsl(45, 100%, 50%)' }}>✓</span>
+                  <span className="font-body text-base text-gray-300 leading-relaxed">Advanced analytical chemistry to identify active compounds</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 mt-0.5 font-bold text-lg" style={{ color: 'hsl(45, 100%, 50%)' }}>✓</span>
+                  <span className="font-body text-base text-gray-300 leading-relaxed">Species-specific pheromone synthesis</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 mt-0.5 font-bold text-lg" style={{ color: 'hsl(45, 100%, 50%)' }}>✓</span>
+                  <span className="font-body text-base text-gray-300 leading-relaxed">Formulation testing and refinement</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 mt-0.5 font-bold text-lg" style={{ color: 'hsl(45, 100%, 50%)' }}>✓</span>
+                  <span className="font-body text-base text-gray-300 leading-relaxed">Field validation of effectiveness</span>
+                </li>
+              </ul>
+            </div>
+            {/* Gold Sidebar — 2 cols */}
+            <div className="md:col-span-2">
+              <div className="rounded-lg p-6" style={{ background: 'hsl(45, 100%, 50%)' }}>
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider" style={{ background: 'rgba(0,0,0,0.15)', color: '#1a1d29', clipPath: 'polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%)' }}>
+                    The Takeaway
+                  </span>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>At the Upper End</h3>
-                  <p className="font-body text-muted-foreground leading-relaxed mb-3">
-                    At the upper end, legitimate synthetic development involves:
-                  </p>
-                  <ul className="space-y-1 font-body text-sm text-muted-foreground leading-relaxed mb-3">
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Advanced analytical chemistry to identify active compounds</li>
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Species-specific pheromone synthesis</li>
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Formulation testing and refinement</li>
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--accent))' }}>•</span> Field validation of effectiveness</li>
-                  </ul>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    This distinction matters. The growth in synthetic adoption reflects consumers finding products that actually work—not just products that comply with regulations. Retailers should evaluate synthetic offerings based on manufacturer credibility, R&D investment, and documented field performance (critical) rather than simply stocking any product labeled "synthetic."
-                  </p>
-                </div>
+                <p className="font-display text-lg uppercase leading-tight mb-3" style={{ color: '#1a1d29' }}>
+                  Evaluate on Credibility, Not Labels
+                </p>
+                <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,29,41,0.8)' }}>
+                  The growth in synthetic adoption reflects consumers finding products that actually work—not just products that comply with regulations. Evaluate based on manufacturer credibility, R&D investment, and documented field performance—not just the "synthetic" label.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 7: Natural Product Reality — light editorial with full text + Odin's dark brand icons */}
+      {/* Section 7: Natural Reality — stat block + CTA banner, light bg */}
       <section id="natural-reality" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3705,57 +3771,54 @@ function App() {
               The Full Picture
             </span>
             <h2 className="font-display text-4xl md:text-5xl uppercase" style={{ color: 'hsl(var(--foreground))' }}>
-              The Natural Product Reality: Still a Market, But Evolving
+              Natural Product Reality
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
               This analysis should not be read as predicting the disappearance of natural attractants. In unrestricted markets, natural products retain advantages:
             </p>
           </div>
-          <div className="max-w-4xl mx-auto space-y-8">
-            {/* Natural advantages + regulatory costs — Odin's 50 States brand icon */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337" alt="Biodegradable & Legal" className="w-14 h-14 object-contain" loading="lazy" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>Advantages and Regulatory Costs</h3>
-                  <ul className="space-y-1 font-body text-sm text-muted-foreground leading-relaxed mb-3">
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Decades of field-proven effectiveness, particularly for mature bucks during rut</li>
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Complex biological compounds that remain difficult to fully replicate</li>
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Traditional appeal and brand loyalty among experienced hunters</li>
-                    <li className="flex gap-2"><span style={{ color: 'hsl(var(--primary))' }}>•</span> Often lower per-unit costs for established operations with existing infrastructure</li>
-                  </ul>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    However, unpredictable regulatory changes have added to the cost of maintaining a healthy deer herd. Starting in 2016 with the ATA's DPP program and transferred to the Responsible Hunting Scent Association "was established to bring professional cervid urine producers and hunting scent manufacturers together to work for the common purpose of protecting, maintaining and growing the cervid urine and hunting scent industry..." Imbedded in the program is the USDA's Cervids: CWD Voluntary Herd Certification Program. Programs can predictably include additional costs.... especially when it is a program of the US Federal Government!
-                  </p>
-                </div>
+          {/* Advantages Card with Stat Block */}
+          <div className="max-w-4xl mx-auto mb-8 bg-white rounded-lg p-6 shadow-sm" style={{ borderTop: '4px solid hsl(var(--primary))' }}>
+            <div className="flex flex-col md:flex-row items-start gap-6">
+              <div className="flex-shrink-0 text-center md:text-left w-24">
+                <div className="font-display text-5xl font-bold" style={{ color: 'hsl(var(--primary))' }}>4</div>
+                <div className="font-body text-xs uppercase tracking-wider text-muted-foreground mt-1">Key Advantages</div>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-display text-xl uppercase mb-4" style={{ color: 'hsl(var(--primary))' }}>
+                  Advantages & Regulatory Costs
+                </h3>
+                <ul className="space-y-3 mb-4">
+                  <li className="flex items-start gap-3"><span style={{ color: 'hsl(var(--primary))' }}>•</span><span className="font-body text-sm text-muted-foreground leading-relaxed">Decades of field-proven effectiveness, particularly for mature bucks during rut</span></li>
+                  <li className="flex items-start gap-3"><span style={{ color: 'hsl(var(--primary))' }}>•</span><span className="font-body text-sm text-muted-foreground leading-relaxed">Complex biological compounds that remain difficult to fully replicate</span></li>
+                  <li className="flex items-start gap-3"><span style={{ color: 'hsl(var(--primary))' }}>•</span><span className="font-body text-sm text-muted-foreground leading-relaxed">Traditional appeal and brand loyalty among experienced hunters</span></li>
+                  <li className="flex items-start gap-3"><span style={{ color: 'hsl(var(--primary))' }}>•</span><span className="font-body text-sm text-muted-foreground leading-relaxed">Often lower per-unit costs for established operations with existing infrastructure</span></li>
+                </ul>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed">
+                  However, unpredictable regulatory changes have added to the cost of maintaining a healthy deer herd. Starting in 2016 with the ATA's DPP program and transferred to the Responsible Hunting Scent Association "was established to bring professional cervid urine producers and hunting scent manufacturers together to work for the common purpose of protecting, maintaining and growing the cervid urine and hunting scent industry..." Imbedded in the program is the USDA's Cervids: CWD Voluntary Herd Certification Program. Programs can predictably include additional costs.... especially when it is a program of the US Federal Government!
+                </p>
               </div>
             </div>
-
-            {/* Market moving — Odin's 30+ Days brand icon */}
-            <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-14 h-14 object-contain" loading="lazy" />
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>The Market Is Moving</h3>
-                  <p className="font-body text-muted-foreground leading-relaxed">
-                    You can read more from Archery Business' article; <a href="https://www.odinsinnovations.com/blogs/in-the-field/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--accent))', textDecoration: 'underline' }}>"The Evolution of Deer Attractants: Why Synthetic Scents Are Redefining the Category."</a>
-                  </p>
-                </div>
-              </div>
+          </div>
+          {/* CTA Banner for Archery Business article */}
+          <div className="max-w-4xl mx-auto rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-4" style={{ background: 'hsl(30, 80%, 35%)' }}>
+            <div className="flex-1">
+              <h3 className="font-display text-lg uppercase text-white mb-2">The Market Is Moving</h3>
+              <p className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
+                Read more from Archery Business: "The Evolution of Deer Attractants: Why Synthetic Scents Are Redefining the Category."
+              </p>
             </div>
+            <a href="https://www.odinsinnovations.com/blogs/in-the-field/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" target="_blank" rel="noopener noreferrer"
+               className="inline-flex items-center gap-2 px-6 py-3 rounded font-display text-sm uppercase tracking-wider whitespace-nowrap transition-all duration-300 hover:opacity-90"
+               style={{ background: 'white', color: 'hsl(30, 80%, 35%)' }}>
+              Read the Article →
+            </a>
           </div>
         </div>
       </section>
 
       {/* Section 8: Products — light */}
       <ProductsSection content={content.products} background="hsl(30, 20%, 95%)" />
-
-      {/* Section 9: Benefits — warm cream */}
-      <BenefitsSection benefits={content.benefits} background="hsl(var(--background))" />
 
       {/* Section 10: Comparison */}
       <div style={{ background: 'hsl(30, 20%, 95%)' }}>
