@@ -3533,128 +3533,8 @@ function App() {
         </div>
       </section>
 
-      {/* Section 4: Beyond Regulation — editorial feature layout, NO white cards on dark */}
-      <section id="beyond-regulation" className="section-padding" style={{ background: '#1a1d29' }}>
-        <div className="section-container">
-          <div className="text-center mb-16">
-            <span
-              className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
-              style={{
-                background: 'hsl(var(--accent) / 0.2)',
-                color: 'hsl(var(--accent))',
-                clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
-              }}
-            >
-              The Case for Synthetics
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
-              Beyond Regulation
-            </h2>
-            <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
-              While Chronic Wasting Disease (CWD) regulations have certainly influenced the market—with numerous states and Canadian provinces restricting or banning natural deer urine products—the growth of synthetics is driven by factors that would exist regardless of regulatory pressure.
-            </p>
-          </div>
 
-          {/* ARGUMENT 1: Stat + Pull Quote — text directly on dark bg */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="flex flex-col md:flex-row items-start gap-8 mb-8">
-              <div className="flex-shrink-0 text-center md:text-left">
-                <div className="font-display text-7xl md:text-8xl font-bold leading-none" style={{ color: 'hsl(45, 100%, 50%)' }}>36</div>
-                <div className="font-body text-sm uppercase tracking-wider text-gray-400 mt-2">Hours<br />Average Receptive Window</div>
-              </div>
-              <div className="flex-1">
-                <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-white mb-4">
-                  Consistency and Reliability
-                </h3>
-                <p className="font-body text-base text-gray-300 leading-relaxed mb-4">
-                  Natural deer urine is, by definition, a biological product subject to nature's variations. An individual doe's estrus—the period during which she is receptive to breeding—typically lasts approximately 24–48 hours, with many sources narrowing it to around 24–30 hours. If she is not bred during that cycle, she will recycle roughly 28 days later. A figure of 36 hours is a reasonable midpoint estimate for a single doe's receptive window. Add to that, hormone levels, diet, health status, and collection timing all affect potency and scent profile.
-                </p>
-                <blockquote className="border-l-4 pl-6 my-6" style={{ borderColor: 'hsl(45, 100%, 50%)' }}>
-                  <p className="font-body text-xl md:text-2xl italic leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                    "A bottle collected during peak estrus from one doe will differ from another, even within the same operation."
-                  </p>
-                </blockquote>
-                <p className="font-body text-base text-gray-300 leading-relaxed">
-                  Pheromone attractant scents are selected with consideration towards the rut. Because bucks are actively seeking receptive does across an entire 10–14-day peak, you need a product that will be effective over that entire period or reintroduce your human scent to apply more. Scents containing doe estrus need to be deployed consistently over days or weeks rather than trying to time a single "magic window."
-                </p>
-              </div>
-            </div>
-            <div className="w-24 h-0.5 mx-auto" style={{ background: 'rgba(255,255,255,0.1)' }} />
-          </div>
-
-          {/* ARGUMENT 2: Side-by-Side Comparison — Natural vs Synthetic */}
-          <div className="max-w-4xl mx-auto mb-16">
-            <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-white mb-6 text-center">
-              Extended Effectiveness
-            </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="rounded-lg p-6" style={{ background: 'rgba(220,38,38,0.08)', borderLeft: '4px solid #dc2626' }}>
-                <h4 className="font-display text-lg uppercase mb-4" style={{ color: '#f87171' }}>Natural Urine</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
-                    <span className="font-body text-sm text-gray-300">Degrades immediately after collection</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
-                    <span className="font-body text-sm text-gray-300">Shelf life limited even with refrigeration</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
-                    <span className="font-body text-sm text-gray-300">Loses potency within hours in the field</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
-                    <span className="font-body text-sm text-gray-300">Cold chain shipping required</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="rounded-lg p-6" style={{ background: 'rgba(45,90,61,0.15)', borderLeft: '4px solid hsl(145, 45%, 38%)' }}>
-                <h4 className="font-display text-lg uppercase mb-4" style={{ color: '#4ade80' }}>Synthetic Scent Beads</h4>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
-                    <span className="font-body text-sm text-gray-300">Stable from manufacturing through field application</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
-                    <span className="font-body text-sm text-gray-300">Indefinite shelf life — no refrigeration</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
-                    <span className="font-body text-sm text-gray-300">30+ days continuous scent release</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
-                    <span className="font-body text-sm text-gray-300">Ships like any stable consumer product</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="w-24 h-0.5 mx-auto mt-16" style={{ background: 'rgba(255,255,255,0.1)' }} />
-          </div>
-
-          {/* ARGUMENT 3: Gradient Accent Bar — Innovation */}
-          <div className="max-w-4xl mx-auto">
-            <div className="rounded-lg p-8 md:p-10" style={{ background: 'linear-gradient(to right, hsl(30, 80%, 35%), hsl(45, 100%, 50%))' }}>
-              <h3 className="font-display text-2xl md:text-3xl uppercase text-white mb-6">
-                Innovation Potential
-              </h3>
-              <div className="flex flex-wrap gap-3 mb-6">
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Biodegradable Bead Infusion</span>
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Time-Release Mechanisms</span>
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Multi-Phase Scent Profiles</span>
-                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Weather-Conditioned Volatility</span>
-              </div>
-              <p className="font-body leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
-                Perhaps the most compelling advantage of synthetic scents is the opportunity for innovation that simply isn't possible with natural products. Advanced delivery systems require the stability and consistency only synthetic products can provide. Manufacturers can fine-tune scent intensity, adjust volatility for different weather conditions, and even engineer multi-phase releases that change over time.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5: Retail Perspective — 3 stat cards on light bg */}
+      {/* Section 4: Retail Perspective — 3 stat cards on light bg */}
       <section id="retail-perspective" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3837,6 +3717,127 @@ function App() {
                   <p className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>"Odin's Innovations: A Very Different Kind of Scent Company"</p>
                 </div>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 7b: Beyond Regulation — editorial feature layout, after Natural Reality */}
+      <section id="beyond-regulation" className="section-padding" style={{ background: '#1a1d29' }}>
+        <div className="section-container">
+          <div className="text-center mb-16">
+            <span
+              className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+              style={{
+                background: 'hsl(var(--accent) / 0.2)',
+                color: 'hsl(var(--accent))',
+                clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+              }}
+            >
+              The Case for Synthetics
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
+              Beyond Regulation
+            </h2>
+            <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
+              While Chronic Wasting Disease (CWD) regulations have certainly influenced the market—with numerous states and Canadian provinces restricting or banning natural deer urine products—the growth of synthetics is driven by factors that would exist regardless of regulatory pressure.
+            </p>
+          </div>
+
+          {/* ARGUMENT 1: Stat + Pull Quote — text directly on dark bg */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <div className="flex flex-col md:flex-row items-start gap-8 mb-8">
+              <div className="flex-shrink-0 text-center md:text-left">
+                <div className="font-display text-7xl md:text-8xl font-bold leading-none" style={{ color: 'hsl(45, 100%, 50%)' }}>36</div>
+                <div className="font-body text-sm uppercase tracking-wider text-gray-400 mt-2">Hours<br />Average Receptive Window</div>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-white mb-4">
+                  Consistency and Reliability
+                </h3>
+                <p className="font-body text-base text-gray-300 leading-relaxed mb-4">
+                  Natural deer urine is, by definition, a biological product subject to nature's variations. An individual doe's estrus—the period during which she is receptive to breeding—typically lasts approximately 24–48 hours, with many sources narrowing it to around 24–30 hours. If she is not bred during that cycle, she will recycle roughly 28 days later. A figure of 36 hours is a reasonable midpoint estimate for a single doe's receptive window. Add to that, hormone levels, diet, health status, and collection timing all affect potency and scent profile.
+                </p>
+                <blockquote className="border-l-4 pl-6 my-6" style={{ borderColor: 'hsl(45, 100%, 50%)' }}>
+                  <p className="font-body text-xl md:text-2xl italic leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                    "A bottle collected during peak estrus from one doe will differ from another, even within the same operation."
+                  </p>
+                </blockquote>
+                <p className="font-body text-base text-gray-300 leading-relaxed">
+                  Pheromone attractant scents are selected with consideration towards the rut. Because bucks are actively seeking receptive does across an entire 10–14-day peak, you need a product that will be effective over that entire period or reintroduce your human scent to apply more. Scents containing doe estrus need to be deployed consistently over days or weeks rather than trying to time a single "magic window."
+                </p>
+              </div>
+            </div>
+            <div className="w-24 h-0.5 mx-auto" style={{ background: 'rgba(255,255,255,0.1)' }} />
+          </div>
+
+          {/* ARGUMENT 2: Side-by-Side Comparison — Natural vs Synthetic */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <h3 className="font-display text-xl md:text-2xl uppercase tracking-wide text-white mb-6 text-center">
+              Extended Effectiveness
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="rounded-lg p-6" style={{ background: 'rgba(220,38,38,0.08)', borderLeft: '4px solid #dc2626' }}>
+                <h4 className="font-display text-lg uppercase mb-4" style={{ color: '#f87171' }}>Natural Urine</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Degrades immediately after collection</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Shelf life limited even with refrigeration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Loses potency within hours in the field</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Cold chain shipping required</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="rounded-lg p-6" style={{ background: 'rgba(45,90,61,0.15)', borderLeft: '4px solid hsl(145, 45%, 38%)' }}>
+                <h4 className="font-display text-lg uppercase mb-4" style={{ color: '#4ade80' }}>Synthetic Scent Beads</h4>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">Stable from manufacturing through field application</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">Indefinite shelf life — no refrigeration</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">30+ days continuous scent release</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">Ships like any stable consumer product</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div className="w-24 h-0.5 mx-auto mt-16" style={{ background: 'rgba(255,255,255,0.1)' }} />
+          </div>
+
+          {/* ARGUMENT 3: Gradient Accent Bar — Innovation */}
+          <div className="max-w-4xl mx-auto">
+            <div className="rounded-lg p-8 md:p-10" style={{ background: 'linear-gradient(to right, hsl(30, 80%, 35%), hsl(45, 100%, 50%))' }}>
+              <h3 className="font-display text-2xl md:text-3xl uppercase text-white mb-6">
+                Innovation Potential
+              </h3>
+              <div className="flex flex-wrap gap-3 mb-6">
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Biodegradable Bead Infusion</span>
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Time-Release Mechanisms</span>
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Multi-Phase Scent Profiles</span>
+                <span className="inline-flex items-center px-4 py-2 rounded-full text-white font-body text-sm" style={{ background: 'rgba(255,255,255,0.2)' }}>Weather-Conditioned Volatility</span>
+              </div>
+              <p className="font-body leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
+                Perhaps the most compelling advantage of synthetic scents is the opportunity for innovation that simply isn't possible with natural products. Advanced delivery systems require the stability and consistency only synthetic products can provide. Manufacturers can fine-tune scent intensity, adjust volatility for different weather conditions, and even engineer multi-phase releases that change over time.
+              </p>
             </div>
           </div>
         </div>
