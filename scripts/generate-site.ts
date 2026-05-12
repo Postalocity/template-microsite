@@ -3477,7 +3477,7 @@ function App() {
       {/* Section 2: Why Odin's — light */}
       <WhyOdinsSection content={content['why-odins']} background="hsl(var(--background))" />
 
-      {/* Section 3: How It Works — dark */}
+      {/* Section 3: How It Works — dark, steps left + video right */}
       <section id="how-it-works" className="section-padding" style={{ background: '#1a1d29' }}>
         <div className="section-container">
           <div className="text-center mb-12">
@@ -3500,18 +3500,35 @@ function App() {
               </p>
             )}
           </div>
-          <div className="max-w-3xl mx-auto space-y-0">
-            {content['how-it-works'].steps && content['how-it-works'].steps.map((step, idx) => (
-              <div key={idx} className="flex gap-5 py-6" style={{ borderBottom: idx < content['how-it-works'].steps.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-display text-xl font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
-                  {idx + 1}
+          <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
+            {/* Steps — left */}
+            <div className="flex-1 space-y-0">
+              {content['how-it-works'].steps && content['how-it-works'].steps.map((step, idx) => (
+                <div key={idx} className="flex gap-5 py-6" style={{ borderBottom: idx < content['how-it-works'].steps.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-display text-xl font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
+                    {idx + 1}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-display text-lg uppercase text-white mb-1">{typeof step === 'string' ? step : step.title}</h3>
+                    {typeof step !== 'string' && step.description && <p className="font-body text-sm text-gray-400 leading-relaxed">{step.description}</p>}
+                  </div>
                 </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className="font-display text-lg uppercase text-white mb-1">{typeof step === 'string' ? step : step.title}</h3>
-                  {typeof step !== 'string' && step.description && <p className="font-body text-sm text-gray-400 leading-relaxed">{step.description}</p>}
-                </div>
+              ))}
+            </div>
+            {/* Video — right */}
+            <div className="flex-shrink-0 w-full lg:w-[480px]">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/q9X9zGL8elM"
+                  title="How Odin's Synthetic Scent Beads Work"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full rounded-lg"
+                  style={{ border: 'none' }}
+                  loading="lazy"
+                />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -3795,24 +3812,32 @@ function App() {
                   <li className="flex items-start gap-3"><span style={{ color: 'hsl(var(--primary))' }}>•</span><span className="font-body text-sm text-muted-foreground leading-relaxed">Often lower per-unit costs for established operations with existing infrastructure</span></li>
                 </ul>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  However, unpredictable regulatory changes have added to the cost of maintaining a healthy deer herd. Starting in 2016 with the ATA's DPP program and transferred to the Responsible Hunting Scent Association "was established to bring professional cervid urine producers and hunting scent manufacturers together to work for the common purpose of protecting, maintaining and growing the cervid urine and hunting scent industry..." Imbedded in the program is the USDA's Cervids: CWD Voluntary Herd Certification Program. Programs can predictably include additional costs.... especially when it is a program of the US Federal Government!
+                  However, unpredictable regulatory changes have added to the cost of maintaining a healthy deer herd. Starting in 2016 with the ATA's DPP program and transferred to the <a href="https://responsiblescents.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>Responsible Hunting Scent Association</a> "was established to bring professional cervid urine producers and hunting scent manufacturers together to work for the common purpose of protecting, maintaining and growing the cervid urine and hunting scent industry..." Imbedded in the program is the <a href="https://www.aphis.usda.gov/livestock-poultry-disease/cervid/chronic-wasting/herd-certification" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>USDA's Cervids: CWD Voluntary Herd Certification Program</a>. Programs can predictably include additional costs.... especially when it is a program of the US Federal Government!
                 </p>
               </div>
             </div>
           </div>
-          {/* CTA Banner for Archery Business article */}
-          <div className="max-w-4xl mx-auto rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center gap-4" style={{ background: 'hsl(30, 80%, 35%)' }}>
-            <div className="flex-1">
-              <h3 className="font-display text-lg uppercase text-white mb-2">The Market Is Moving</h3>
-              <p className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.8)' }}>
-                Read more from Archery Business: "The Evolution of Deer Attractants: Why Synthetic Scents Are Redefining the Category."
-              </p>
+          {/* CTA Banner for articles */}
+          <div className="max-w-4xl mx-auto rounded-lg p-6 md:p-8" style={{ background: 'hsl(30, 80%, 35%)' }}>
+            <h3 className="font-display text-lg uppercase text-white mb-4">The Market Is Moving</h3>
+            <div className="flex flex-col md:flex-row gap-4">
+              <a href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" target="_blank" rel="noopener noreferrer"
+                 className="flex-1 rounded p-4 transition-all duration-300 hover:opacity-90 flex items-start gap-3" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                <span className="text-white text-2xl">📖</span>
+                <div>
+                  <p className="font-display text-sm uppercase text-white mb-1">Archery Business</p>
+                  <p className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>"The Evolution of Deer Attractants: Why Synthetic Scents Are Redefining the Category"</p>
+                </div>
+              </a>
+              <a href="https://www.odinsinnovations.com/blogs/in-the-field/inside-archery-odins-innovations-a-very-different-kind-of-scent-company" target="_blank" rel="noopener noreferrer"
+                 className="flex-1 rounded p-4 transition-all duration-300 hover:opacity-90 flex items-start gap-3" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                <span className="text-white text-2xl">📰</span>
+                <div>
+                  <p className="font-display text-sm uppercase text-white mb-1">Inside Archery</p>
+                  <p className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>"Odin's Innovations: A Very Different Kind of Scent Company"</p>
+                </div>
+              </a>
             </div>
-            <a href="https://www.odinsinnovations.com/blogs/in-the-field/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" target="_blank" rel="noopener noreferrer"
-               className="inline-flex items-center gap-2 px-6 py-3 rounded font-display text-sm uppercase tracking-wider whitespace-nowrap transition-all duration-300 hover:opacity-90"
-               style={{ background: 'white', color: 'hsl(30, 80%, 35%)' }}>
-              Read the Article →
-            </a>
           </div>
         </div>
       </section>

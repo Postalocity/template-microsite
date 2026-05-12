@@ -38,8 +38,8 @@
       { "label": "FAQ", "href": "#faq" }
     ],
     "cta": { 
-      "text": "Shop Scent Beads", 
-      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" 
+      "text": "SHOP ALL PRODUCTS", 
+      "href": "https://www.odinsinnovations.com/collections/all" 
     }
   },
   "content": {
@@ -57,7 +57,7 @@
       "ctas": [
         { 
           "text": "Shop Synthetic Scent Beads", 
-          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026", 
+          "href": "https://www.odinsinnovations.com/collections/all", 
           "variant": "primary" 
         },
         { 
@@ -144,7 +144,7 @@
           "url": "https://www.odinsinnovations.com/products/earth-cover-scent-beads?promo=HUNT2026"
         }
       ],
-      "cta": { "text": "Shop All Scent Beads", "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" }
+      "cta": { "text": "SHOP ALL PRODUCTS", "href": "https://www.odinsinnovations.com/collections/all" }
     },
     "benefits": {
       "headline": "Performance Benefits of Synthetic Scent Beads",
@@ -207,7 +207,7 @@
       "finalCTA": { 
         "headline": "Ready for consistent results?", 
         "buttonText": "Shop Synthetic Scent Beads", 
-        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" 
+        "href": "https://www.odinsinnovations.com/collections/all" 
       },
       "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
     }
