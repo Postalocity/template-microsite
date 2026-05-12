@@ -3538,16 +3538,11 @@ function App() {
             </p>
           </div>
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Consistency and Reliability — Odin's stopwatch (long-lasting) white icon */}
+            {/* Consistency and Reliability — Odin's 30+ Days brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-7 h-7" style={{ color: 'hsl(var(--accent))' }}>
-                    <circle cx="60.82" cy="54.12" r="4.26"/>
-                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
-                  </svg>
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-14 h-14 object-contain" loading="lazy" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Consistency and Reliability</h3>
@@ -3561,11 +3556,11 @@ function App() {
               </div>
             </div>
 
-            {/* Extended Effectiveness — Odin's rainproof/waterproof brand icon */}
+            {/* Extended Effectiveness — Odin's Waterproof brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586" alt="Weatherproof" className="w-7 h-7 object-contain" loading="lazy" />
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404" alt="Weatherproof" className="w-14 h-14 object-contain" loading="lazy" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Extended Effectiveness</h3>
@@ -3579,18 +3574,11 @@ function App() {
               </div>
             </div>
 
-            {/* Innovation Potential — Odin's chemistry/molecule brand icon */}
+            {/* Innovation Potential — Odin's Biodegradable brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-7 h-7" style={{ color: 'hsl(var(--accent))' }}>
-                    <circle cx="50" cy="35" r="8" fill="currentColor" fillOpacity="0.2"/>
-                    <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
-                    <circle cx="65" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
-                    <path d="M45 42L38 54"/>
-                    <path d="M55 42L62 54"/>
-                    <path d="M41 60H59"/>
-                  </svg>
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337" alt="Biodegradable" className="w-14 h-14 object-contain" loading="lazy" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>Innovation Potential</h3>
@@ -3629,16 +3617,11 @@ function App() {
             </p>
           </div>
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Shelf Life — Odin's stopwatch (long-lasting) dark icon */}
+            {/* Shelf Life — Odin's 30+ Days brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-7 h-7" style={{ color: 'hsl(var(--primary))' }}>
-                    <circle cx="60.82" cy="54.12" r="4.26"/>
-                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
-                  </svg>
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-14 h-14 object-contain" loading="lazy" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>Inventory Management Advantages</h3>
@@ -3680,18 +3663,11 @@ function App() {
             </p>
           </div>
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* What separates the best — Odin's chemistry white icon */}
+            {/* What separates the best — Odin's Field Tested brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--accent))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--accent) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-7 h-7" style={{ color: 'hsl(var(--accent))' }}>
-                    <circle cx="50" cy="35" r="8" fill="currentColor" fillOpacity="0.2"/>
-                    <circle cx="35" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
-                    <circle cx="65" cy="60" r="6" fill="currentColor" fillOpacity="0.2"/>
-                    <path d="M45 42L38 54"/>
-                    <path d="M55 42L62 54"/>
-                    <path d="M41 60H59"/>
-                  </svg>
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png" alt="Field Tested" className="w-14 h-14 object-contain" loading="lazy" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--accent))' }}>At the Upper End</h3>
@@ -3736,25 +3712,11 @@ function App() {
             </p>
           </div>
           <div className="max-w-4xl mx-auto space-y-8">
-            {/* Natural advantages + regulatory costs — Odin's 50-states flag dark icon */}
+            {/* Natural advantages + regulatory costs — Odin's 50 States brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-7 h-7" style={{ color: 'hsl(var(--primary))' }}>
-                    <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1"/>
-                    <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
-                    <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2"/>
-                    <circle cx="22" cy="32" r="2" fill="currentColor"/>
-                    <circle cx="30" cy="32" r="2" fill="currentColor"/>
-                    <circle cx="38" cy="32" r="2" fill="currentColor"/>
-                    <circle cx="26" cy="38" r="2" fill="currentColor"/>
-                    <circle cx="34" cy="38" r="2" fill="currentColor"/>
-                    <circle cx="22" cy="44" r="2" fill="currentColor"/>
-                    <circle cx="30" cy="44" r="2" fill="currentColor"/>
-                    <circle cx="38" cy="44" r="2" fill="currentColor"/>
-                    <circle cx="26" cy="50" r="2" fill="currentColor"/>
-                    <circle cx="34" cy="50" r="2" fill="currentColor"/>
-                  </svg>
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337" alt="Biodegradable & Legal" className="w-14 h-14 object-contain" loading="lazy" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>Advantages and Regulatory Costs</h3>
@@ -3771,16 +3733,11 @@ function App() {
               </div>
             </div>
 
-            {/* Market moving — Odin's long-lasting dark icon */}
+            {/* Market moving — Odin's 30+ Days brand icon */}
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderLeft: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style={{ background: 'hsl(var(--primary) / 0.1)' }}>
-                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-7 h-7" style={{ color: 'hsl(var(--primary))' }}>
-                    <circle cx="60.82" cy="54.12" r="4.26"/>
-                    <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
-                    <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
-                  </svg>
+                <div className="flex-shrink-0 w-14 h-14 flex items-center justify-center">
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-14 h-14 object-contain" loading="lazy" />
                 </div>
                 <div className="flex-1">
                   <h3 className="font-display text-lg uppercase mb-3" style={{ color: 'hsl(var(--primary))' }}>The Market Is Moving</h3>

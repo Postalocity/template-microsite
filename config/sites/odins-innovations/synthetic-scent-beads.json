@@ -71,12 +71,26 @@
       "headline": "Why Odin's Leads in Synthetic Scent Innovation",
       "body": "21 proprietary synthetic formulations. 8+ years of field-proven performance. Biodegradable polymer bead delivery engineered for 30+ days of consistent release. Odin's didn't enter the synthetic market to comply with regulations — we entered it because synthetics outperform.",
       "points": [
-        "100% synthetic formula delivers lab-consistent results every batch",
-        "30+ days of continuous scent release — even after rain",
-        "Biodegradable polymer beads engineered for field durability",
-        "Legal in all 50 states — no CWD restrictions",
-        "Indefinite shelf life with zero refrigeration required",
-        "Reduces reapplication time and human scent exposure"
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
+          "title": "30+ Days of Continuous Release",
+          "description": "100% synthetic formula delivers lab-consistent results every batch — even after rain."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404",
+          "title": "Weatherproof Performance",
+          "description": "Polymer bead system unaffected by rain, snow, or temperature swings."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337",
+          "title": "Biodegradable & Legal in All 50 States",
+          "description": "100% biodegradable polymer. No CWD restrictions — legal everywhere."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
+          "title": "Field-Tested & Indefinite Shelf Life",
+          "description": "8+ seasons of documented field results. No refrigeration ever required."
+        }
       ]
     },
     "how-it-works": {
