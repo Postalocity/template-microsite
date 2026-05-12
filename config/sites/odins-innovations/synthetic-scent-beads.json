@@ -90,36 +90,46 @@
     },
     "products": {
       "headline": "Available Synthetic Scent Bead Formulas",
+      "intro": "Four proven synthetic formulas for every phase of the season. All 100% synthetic, legal in all 50 states, biodegradable, and Made in USA.",
       "items": [
         {
-          "name": "Doe Estrus",
+          "name": "Doe Estrus Scent Beads",
           "description": "Synthetic doe estrus scent beads for pre-rut and rut periods",
-          "price": "Starting at $13.99",
-          "size": "3 oz bottle",
-          "link": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+          "price": "From $17.95",
+          "size": "3 oz / 12 oz",
+          "use": "Peak rut attraction",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png?v=1688151838",
+          "url": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads?promo=HUNT2026"
         },
         {
-          "name": "Scrape Blend",
+          "name": "Scrape Blend Scent Beads",
           "description": "Synthetic scrape scent beads engineered for mock scrapes",
-          "price": "Starting at $13.99",
-          "size": "3 oz bottle",
-          "link": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+          "price": "From $17.95",
+          "size": "3 oz / 12 oz",
+          "use": "Mock scrapes & pre-rut",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_ScrapeBlend_703616b9-6936-41c1-bc6b-6dc7136bc1ff.png?v=1688151848",
+          "url": "https://www.odinsinnovations.com/products/scrape-blend-scent-beads?promo=HUNT2026"
         },
         {
-          "name": "Dominant Buck",
+          "name": "Dominant Buck Scent Beads",
           "description": "Synthetic dominant buck scent beads for territorial response",
-          "price": "Starting at $13.99",
-          "size": "3 oz bottle",
-          "link": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+          "price": "From $17.95",
+          "size": "3 oz / 12 oz",
+          "use": "Territorial challenge & dominance",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DominantBuck_6b892f84-2d31-4f74-8ede-095bead9ebd8.png?v=1688151821",
+          "url": "https://www.odinsinnovations.com/products/dominant-buck-scent-beads?promo=HUNT2026"
         },
         {
-          "name": "Earth Cover",
+          "name": "Earth Cover Scent Beads",
           "description": "Synthetic cover scent beads to mask human odor",
-          "price": "Starting at $13.99",
-          "size": "3 oz bottle",
-          "link": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+          "price": "From $17.95",
+          "size": "3 oz",
+          "use": "Human odor masking",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_Earth_c55ebd6e-febe-492c-a1aa-9f8bafa25dda.png?v=1688151828",
+          "url": "https://www.odinsinnovations.com/products/earth-cover-scent-beads?promo=HUNT2026"
         }
-      ]
+      ],
+      "cta": { "text": "Shop All Scent Beads", "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026" }
     },
     "benefits": {
       "headline": "Performance Benefits of Synthetic Scent Beads",
