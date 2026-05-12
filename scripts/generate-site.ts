@@ -3653,8 +3653,8 @@ function App() {
         </div>
       </section>
 
-      {/* Section 7: Natural Reality — stat block + CTA banner, light bg */}
-      <section id="natural-reality" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
+      {/* Section 7: Natural Reality — stat block + CTA banner, warm sand bg */}
+      <section id="natural-reality" className="section-padding" style={{ background: 'hsl(30, 20%, 95%)' }}>
         <div className="section-container">
           <div className="text-center mb-12">
             <span
@@ -3699,23 +3699,18 @@ function App() {
           </div>
           {/* CTA Banner for articles */}
           <div className="max-w-4xl mx-auto rounded-lg p-6 md:p-8" style={{ background: 'hsl(30, 80%, 35%)' }}>
-            <h3 className="font-display text-lg uppercase text-white mb-4">The Market Is Moving</h3>
+            <h3 className="font-display text-lg uppercase text-white mb-2">The Market Is Moving</h3>
+            <p className="font-body text-sm mb-6" style={{ color: 'rgba(255,255,255,0.8)' }}>Read the coverage from industry publications:</p>
             <div className="flex flex-col md:flex-row gap-4">
               <a href="https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category" target="_blank" rel="noopener noreferrer"
-                 className="flex-1 rounded p-4 transition-all duration-300 hover:opacity-90 flex items-start gap-3" style={{ background: 'rgba(255,255,255,0.15)' }}>
-                <span className="text-white text-2xl">📖</span>
-                <div>
-                  <p className="font-display text-sm uppercase text-white mb-1">Archery Business</p>
-                  <p className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>"The Evolution of Deer Attractants: Why Synthetic Scents Are Redefining the Category"</p>
-                </div>
+                 className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 rounded font-display text-sm uppercase tracking-wider text-center transition-all duration-300 hover:brightness-110"
+                 style={{ background: 'white', color: 'hsl(30, 80%, 35%)' }}>
+                Read Archery Business →
               </a>
               <a href="https://www.odinsinnovations.com/blogs/in-the-field/inside-archery-odins-innovations-a-very-different-kind-of-scent-company" target="_blank" rel="noopener noreferrer"
-                 className="flex-1 rounded p-4 transition-all duration-300 hover:opacity-90 flex items-start gap-3" style={{ background: 'rgba(255,255,255,0.15)' }}>
-                <span className="text-white text-2xl">📰</span>
-                <div>
-                  <p className="font-display text-sm uppercase text-white mb-1">Inside Archery</p>
-                  <p className="font-body text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>"Odin's Innovations: A Very Different Kind of Scent Company"</p>
-                </div>
+                 className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-4 rounded font-display text-sm uppercase tracking-wider text-center transition-all duration-300 hover:brightness-110"
+                 style={{ background: 'white', color: 'hsl(30, 80%, 35%)' }}>
+                Read Inside Archery →
               </a>
             </div>
           </div>
@@ -3843,19 +3838,20 @@ function App() {
         </div>
       </section>
 
-      {/* Section 8: Products — light */}
-      <ProductsSection content={content.products} background="hsl(30, 20%, 95%)" />
-
-      {/* Section 10: Comparison */}
-      <div style={{ background: 'hsl(30, 20%, 95%)' }}>
+      {/* Section 8: Comparison — closes the editorial argument */}
+      <div style={{ background: 'hsl(var(--background))' }}>
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
       </div>
 
-      {/* Section 11: Reviews */}
+      {/* Section 9: Products — action */}
+      <ProductsSection content={content.products} background="hsl(30, 20%, 95%)" />
+
+      {/* Section 10: Reviews — dark bg for dramatic feel */}
       <StampedReviewsSection
         title="What Hunters Are Saying"
         subtitle="Field Reports"
         description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages."
+        background="#1a1d29"
       />
 
       {/* Hide Stamped Product/Site Reviews tabs - inline style wins source order battle */}

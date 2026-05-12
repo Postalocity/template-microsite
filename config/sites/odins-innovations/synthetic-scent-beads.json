@@ -31,11 +31,11 @@
   },
   "navigation": {
     "links": [
-      { "label": "Beyond Regulation", "href": "#beyond-regulation" },
-      { "label": "Retail Shift", "href": "#retail-perspective" },
+      { "label": "How It Works", "href": "#how-it-works" },
       { "label": "Synthetic Spectrum", "href": "#synthetic-spectrum" },
       { "label": "Natural Reality", "href": "#natural-reality" },
-      { "label": "FAQ", "href": "#faq" }
+      { "label": "Beyond Regulation", "href": "#beyond-regulation" },
+      { "label": "Products", "href": "#products" }
     ],
     "cta": { 
       "text": "SHOP ALL PRODUCTS", 
