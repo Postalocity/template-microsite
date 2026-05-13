@@ -68,7 +68,7 @@
     ],
     "cta": {
       "text": "Shop Bear & Hog Attractants",
-      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      "href": "https://www.odinsinnovations.com/collections/food-scents"
     }
   },
   "content": {
@@ -85,7 +85,7 @@
       },
       "ctas": [
         {
-          "text": "Shop Now — Starting at $13.99",
+          "text": "Shop Now — Starting at $14.95",
           "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
           "variant": "primary"
         },
@@ -124,7 +124,7 @@
     },
     "products": {
       "headline": "Bear & Hog Attractant Products",
-      "intro": "Odin's bear and hog attractants — proven sweet, fruit-forward, and calorie-dense synthetic scents in 30-day beads and 7-day liquids.",
+      "intro": "Odin's bear and hog attractants - aromas representing fruit, sweet foods that are particularly attractive & the high calorie foods they seek out in synthetic scents that last 30-days in the beads delivery and 7-day liquids that can be dispersed anywhere and that will stick to their paws and create a trail everywhere they go.",
       "items": [
         {
           "name": "Anise Bear Attractant - Liquid",
@@ -191,15 +191,15 @@
           "link": "https://www.odinsinnovations.com/products/persimmon-liquid?promo=HUNT2026"
         },
         {
-          "name": "Blackstrap Molasses Liquid",
-          "description": "Calorie-dense scent that produces aggressive investigation from hogs and bears alike. Rich, heavy scent that carries well and appeals to hogs' preference for calorie-dense food aromas. 7-day weatherproof release.",
-          "price": "$14.95",
-          "badge": "Bear & Hog",
-          "image": "https://www.odinsinnovations.com/cdn/shop/files/OdinsInnov_Package_2023_4oz_Bottle_Liquid_v__300ppi_10_BlackstrapMolasses_v01_2500.png?v=1685476946",
-          "link": "https://www.odinsinnovations.com/products/blackstrap-molasses-liquid?promo=HUNT2026"
+          "name": "Maple Bacon Scent Beads",
+          "description": "NEW — Sweet-and-savory combo that pulls deer from distance. Currently being field tested during a spring bear hunt in Canada. Highly effective in areas with agricultural food sources.",
+          "price": "$17.95 / $34.95",
+          "badge": "NEW — Field Testing",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_MapleBacon.png?v=1688151802",
+          "link": "https://www.odinsinnovations.com/products/maple-bacon-scent-beads?promo=HUNT2026"
         }
       ],
-      "cta": "Shop All Bear & Hog Attractants: https://www.odinsinnovations.com/collections/all?promo=HUNT2026",
+      "cta": "Shop All Products: https://www.odinsinnovations.com/collections/food-scents",
       "note": "Free shipping on orders over $79"
     },
     "how-to-use": {
@@ -237,7 +237,11 @@
     },
     "feral-hog": {
       "headline": "Feral Hog Attractants",
-      "crisisContent": "The feral hog problem in America is accelerating. Populations have expanded from approximately 17–21 states in the 1980s to 35+ states today. The <a href=\"https://www.invasivespeciesinfo.gov/terrestrial/vertebrates/wild-boar\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: hsl(var(--primary)); text-decoration: underline;\">USDA's National Invasive Species Information Center</a> estimates the nationwide feral hog population to be 6–9 million. County-level range has nearly tripled since the early 1980s. Hog populations can double in size within four months due to year-round breeding and average litter sizes of five to eight piglets. The <a href=\"https://www.fb.org/market-intel/feral-hogs-vs-farmers-the-damage-price-tag\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: hsl(var(--primary)); text-decoration: underline;\">American Farm Bureau Federation</a> estimates the annual damage to exceed $1.6 billion.\n\nThis explosive growth has created a massive and expanding market for hog control products. Most states with established populations allow year-round hunting with no bag limits — making hog hunting one of the few truly unrestricted hunting opportunities in America. Feral hogs are omnivores with a strong preference for sweet, calorie-dense foods — sweet aromas produce the most aggressive investigation behavior."
+      "crisisContent": "The feral hog problem in America is accelerating. Populations have expanded from approximately 17–21 states in the 1980s to 35+ states today. The <a href=\"https://www.invasivespeciesinfo.gov/terrestrial/vertebrates/wild-boar\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: hsl(var(--primary)); text-decoration: underline;\">USDA's National Invasive Species Information Center</a> estimates the nationwide feral hog population to be 6–9 million. County-level range has nearly tripled since the early 1980s. Hog populations can double in size within four months due to year-round breeding and average litter sizes of five to eight piglets. The <a href=\"https://www.fb.org/market-intel/feral-hogs-vs-farmers-the-damage-price-tag\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: hsl(var(--primary)); text-decoration: underline;\">American Farm Bureau Federation</a> estimates the annual damage to exceed $1.6 billion.\n\nThis explosive growth has created a massive and expanding market for hog control products. Most states with established populations allow year-round hunting with no bag limits — making hog hunting one of the few truly unrestricted hunting opportunities in America. Feral hogs are omnivores with a strong preference for sweet, calorie-dense foods — sweet aromas produce the most aggressive investigation behavior.",
+      "cta": {
+        "text": "Read our HOG SCENT FIELD TRIAL report",
+        "href": "https://www.odinsinnovations.com/blogs/field-test-reports/hog-scent-field-trials"
+      }
     },
     "comparison": {
       "headline": "Odin's Synthetic vs. Traditional Attractants",
