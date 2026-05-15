@@ -6,8 +6,11 @@ interface WhyOdinsSectionProps {
   content: {
     headline: string;
     body: string;
+    opener?: string;
+    bodyAfter?: string;
     image?: string;
     imageAlt?: string;
+    footnote?: string;
     points?: Array<{
       icon?: string;
       title: string;
@@ -56,14 +59,12 @@ const OdinsIconFlag = () => (
   </svg>
 );
 
-// Beaker/lab flask icon for "Lab-Tested" (replaces ribbon)
+// Conical flask (Erlenmeyer) icon for "Lab-Tested" — matches Lucide flask-conical
 const OdinsIconBeaker = () => (
-  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" style={{ color: '#2d5a3d' }}>
-    <path d="M30 15h40v5l-8 25v25c0 8-6 15-12 15s-12-7-12-15V45L30 20v-5z" />
-    <path d="M30 20h40" strokeOpacity="0.5" />
-    <path d="M42 55c0 4 3 8 8 8s8-4 8-8" strokeOpacity="0.6" />
-    <circle cx="45" cy="35" r="3" fill="currentColor" fillOpacity="0.3" />
-    <circle cx="55" cy="30" r="2" fill="currentColor" fillOpacity="0.3" />
+  <svg aria-hidden="true" focusable="false" role="presentation" className="w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: '#2d5a3d' }}>
+    <path d="M10 2v6.5l-6.5 9a1 1 0 0 0 .16 1.32l.96.78a1 1 0 0 0 .63.22h13.5a1 1 0 0 0 .63-.22l.96-.78a1 1 0 0 0 .16-1.32L14 8.5V2" />
+    <path d="M8.5 2h7" />
+    <path d="M7 16h10" />
   </svg>
 );
 
@@ -111,7 +112,7 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
     {
       icon: "flag",
       title: "Legal in All 50 States",
-      description: "100% synthetic formula — not subject to natural urine or CWD restrictions that ban traditional lures."
+      description: "100% synthetic formula — not subject to CWD restrictions that ban natural deer urine and other liquids."
     },
     {
       icon: "stopwatch",
@@ -124,13 +125,16 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
       description: "Polymer matrix breaks down naturally. No environmental residue or contamination."
     },
     {
-      icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
+      icon: "beaker",
       title: "Lab-Tested Formula",
-      description: "Third-party verified at Mississippi State University for consistent potency."
+      description: "After 27 days exposure in natural elements, the scent particles measured still at 52% of after the first day. Samples were collected and tested by a University Chemical Lab."
     }
   ];
 
   const points = content.points || defaultPoints;
+
+  // Detect if this is the combined cost comparison section (has opener/bodyAfter)
+  const isCostComparison = !!(content.opener || content.bodyAfter);
 
   return (
     <section
@@ -146,47 +150,93 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
           transition={{ duration: 0.6 }}
           className="max-w-6xl mx-auto"
         >
-{/* Section Header */}
+          {/* Section Header */}
           <div className="text-center mb-12">
-            <span 
-              className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
-              style={{ 
-                background: 'hsl(var(--primary) / 0.1)',
-                color: 'hsl(var(--primary))',
-                clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
-              }}
-            >
-              The Difference
-            </span>
-<h2 
-              className="font-display text-4xl md:text-5xl uppercase mb-6"
+            {isCostComparison && (
+              <span 
+                className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+                style={{ 
+                  background: 'hsl(var(--primary) / 0.1)',
+                  color: 'hsl(var(--primary))',
+                  clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+                }}
+              >
+                Cost Comparison
+              </span>
+            )}
+            <h2 
+              className="font-display text-4xl md:text-5xl uppercase mb-4"
               style={{ color: 'hsl(var(--foreground))' }}
               dangerouslySetInnerHTML={{ __html: content.headline.replace(/\n/g, '<br />') }}
             />
-            {content.image ? (
-                <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12">
-                  <div className="flex-1">
-                    <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
-                      <span dangerouslySetInnerHTML={{ __html: content.body }} />
-                    </p>
-                  </div>
-                  <div className="flex-shrink-0">
-                    <img
-                      src={content.image}
-                      alt={content.imageAlt || content.headline}
-                      className="rounded-lg shadow-lg w-full max-w-lg object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              ) : (
-                <div className="prose prose-lg max-w-3xl mx-auto">
-                  <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
-                    <span dangerouslySetInnerHTML={{ __html: content.body }} />
-                  </p>
-                </div>
-              )}
           </div>
+
+          {/* Opener paragraph (cost comparison style) */}
+          {content.opener && (
+            <div className="max-w-4xl mx-auto mb-8">
+              <p className="font-body text-lg md:text-xl leading-relaxed text-foreground">
+                <span dangerouslySetInnerHTML={{ __html: content.opener }} />
+              </p>
+            </div>
+          )}
+
+          {/* Image with footnote (cost comparison style) */}
+          {content.image && isCostComparison ? (
+            <div className="max-w-4xl mx-auto mb-12">
+              <img
+                src={content.image}
+                alt={content.imageAlt || content.headline}
+                className="rounded-xl shadow-lg w-full object-cover"
+                loading="lazy"
+              />
+              {content.footnote && (
+                <p className="mt-3 text-sm italic text-muted-foreground text-center">
+                  {content.footnote}
+                </p>
+              )}
+            </div>
+          ) : content.image ? (
+            /* Image layout for non-cost-comparison sections */
+            <div className="max-w-5xl mx-auto flex flex-col lg:flex-row items-center gap-12 mb-12">
+              <div className="flex-1">
+                <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
+                  <span dangerouslySetInnerHTML={{ __html: content.body }} />
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <img
+                  src={content.image}
+                  alt={content.imageAlt || content.headline}
+                  className="rounded-lg shadow-lg w-full max-w-lg object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          ) : !isCostComparison && content.body ? (
+            <div className="prose prose-lg max-w-3xl mx-auto">
+              <p className="font-body text-lg leading-relaxed text-muted-foreground whitespace-pre-wrap">
+                <span dangerouslySetInnerHTML={{ __html: content.body }} />
+              </p>
+            </div>
+          ) : null}
+
+          {/* Body text (cost comparison style) */}
+          {isCostComparison && content.body && (
+            <div className="max-w-4xl mx-auto mb-12">
+              <p className="font-body text-lg leading-[1.8] text-muted-foreground whitespace-pre-wrap">
+                <span dangerouslySetInnerHTML={{ __html: content.body }} />
+              </p>
+            </div>
+          )}
+
+          {/* bodyAfter callout box */}
+          {content.bodyAfter && (
+            <div className="mt-8 bg-primary/5 border-l-4 border-primary p-6 rounded-r-lg max-w-4xl mx-auto">
+              <p className="font-body text-lg leading-[1.8] text-foreground">
+                <span dangerouslySetInnerHTML={{ __html: content.bodyAfter.replace(/\n/g, '<br/>') }} />
+              </p>
+            </div>
+          )}
 
           {/* Points Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
@@ -198,13 +248,15 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="group p-6 transition-all duration-300 hover:-translate-y-1"
                 style={{ 
-                  background: 'white',
+                  background: 'hsl(220 8% 96%)',
+                  border: '1px solid hsl(220 10% 82%)',
                   borderLeft: '4px solid hsl(var(--secondary))',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+                  borderRadius: '8px',
+                  boxShadow: '0 1px 3px rgba(0,0,0,0.08)'
                 }}
               >
                 <div className="flex items-start gap-4">
-                  {/* Icon - No background, renders at full size */}
+                  {/* Icon */}
                   <div className="flex-shrink-0 flex items-center justify-center">
                     {point.icon && isImageUrl(point.icon) ? (
                       <img 
@@ -258,39 +310,6 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
               </motion.div>
             ))}
           </div>
-
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-12 text-center"
-          >
-            <div 
-              className="inline-block p-8"
-              style={{ 
-                background: 'hsl(var(--primary))',
-                clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%)'
-              }}
-            >
-              <p className="font-display text-xl uppercase text-white mb-2">
-                Ready to Hunt Smarter?
-              </p>
-              <p className="font-body text-white/80 text-sm mb-4 pr-6">
-                Join thousands of hunters who trust Odin's Innovations
-              </p>
-              <a
-                href="#products"
-                className="inline-block px-6 py-3 font-display font-bold uppercase tracking-wide text-sm transition-all duration-300 hover:opacity-90"
-                style={{ 
-                  background: 'hsl(var(--accent))',
-                  color: 'hsl(var(--foreground))'
-                }}
-              >
-                Shop Now
-              </a>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
