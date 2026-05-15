@@ -8,7 +8,8 @@ import { createRoot } from 'react-dom/client';
 import { 
   HeroSection, 
   BenefitsSection, 
-  FAQSection, 
+  FAQSection,
+  ComparisonTable,
   TrustBadgesSection,
   SiteNavigation,
   SiteFooter,
@@ -379,8 +380,18 @@ const BlindsSection = ({ content }: { content: any }) => {
           {content?.headline || "Citronella in Hunting Blinds"}
         </h2>
       </div>
+      {content?.body && (
+        <div className="max-w-3xl mx-auto mb-12">
+          <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+            <p className="font-body text-base text-center leading-relaxed" style={{ color: '#444' }}>
+              {content.body}
+            </p>
+          </div>
+        </div>
+      )}
+      {cards && cards.length > 0 && (
       <div className="grid md:grid-cols-3 gap-8">
-        {(cards || []).map((card: any, idx: number) => (
+        {cards.map((card: any, idx: number) => (
           <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center">
             <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
               {card.image ? (
@@ -396,6 +407,7 @@ const BlindsSection = ({ content }: { content: any }) => {
           </div>
         ))}
       </div>
+      )}
     </div>
   </section>
   );
@@ -411,12 +423,22 @@ const LayeredSection = ({ content }: { content: any }) => {
         <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
           {content?.headline || "Layered Strategy"}
         </h2>
-        <p className="font-body text-lg max-w-2xl mx-auto text-gray-400">
-          {content?.subtitle || "Maximum protection with liquid and beads combined"}
-        </p>
+        {content?.subtitle && (
+          <p className="font-display text-lg uppercase tracking-wider mb-4" style={{ color: 'hsl(var(--accent))' }}>
+            {content.subtitle}
+          </p>
+        )}
+        {content?.body && (
+          <div className="max-w-3xl mx-auto rounded-lg p-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+            <p className="font-body text-base leading-relaxed" style={{ color: '#ccc' }}>
+              {content.body}
+            </p>
+          </div>
+        )}
       </div>
+      {cards && cards.length > 0 && (
       <div className="grid md:grid-cols-3 gap-6">
-        {(cards || []).map((card: any, idx: number) => (
+        {cards.map((card: any, idx: number) => (
           <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
             <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
               {card.image ? (
@@ -432,6 +454,7 @@ const LayeredSection = ({ content }: { content: any }) => {
           </div>
         ))}
       </div>
+      )}
     </div>
   </section>
   );
@@ -471,6 +494,9 @@ function App() {
         
         {/* Section 6: Layered - DARK */}
         {content.layered && <LayeredSection content={content.layered} />}
+        
+        {/* Comparison Table */}
+        {content.comparison && <ComparisonTable comparison={content.comparison} />}
         
         {/* Trust Badges */}
         <TrustBadgesSection 
