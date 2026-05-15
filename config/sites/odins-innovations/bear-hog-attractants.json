@@ -6,7 +6,7 @@
     "domain": "odinsinnovations.com",
     "basename": "/bear-hog-attractants",
     "contact": {
-      "email": "paul@odinsinnovations.com",
+      "email": "support@odinsscents.com",
       "phone": "316-393-0440"
     }
   },
@@ -86,7 +86,7 @@
       "ctas": [
         {
           "text": "Shop Now — Starting at $14.95",
-          "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026",
+          "href": "https://www.odinsinnovations.com/collections/liquid-scents?promo=HUNT2026",
           "variant": "primary"
         },
         {
@@ -246,15 +246,14 @@
     "comparison": {
       "headline": "Odin's Synthetic vs. Traditional Attractants",
       "table": {
-        "headers": ["Feature", "Odin's Scent Beads", "Natural Urine/Bait", "Traditional Food Baits"],
+        "headers": ["Feature", "Odin's", "Traditional"],
         "rows": [
-          ["Duration", "30+ days continuous release", "2–5 days, degrades fast", "1–7 days, frequent refresh required"],
-          ["Weather Resistance", "Maintains output after rain", "Washes away, freezes solid", "Degrades quickly"],
-          ["Spoilage & Insects", "None — synthetic polymer", "Bacteria, mold, fly strike", "Common in heat and humidity"],
-          ["Maintenance", "One application per month", "Reapply every 2–3 days", "High replenishment effort"],
-          ["Regulatory Fit", "Non-consumable in restricted areas", "CWD-banned in many states", "Often classified as bait"],
-          ["Legal Status", "Legal in all 50 states", "Restricted or banned in CWD zones", "Varies by jurisdiction"],
-          ["Scent Accuracy", "Lab-consistent every bottle", "Varies by animal, diet, season", "Varies by freshness and source"]
+          ["Duration", "Up to 30+ days — releases scent constantly every day, gradual drop-off as it ages", "2–5 days, quickly consumed or degrades, frequent refresh required"],
+          ["Weather", "Maintains output after rain", "Degrades quickly under moisture, freezing locks in aroma"],
+          ["Spoilage", "None — synthetic polymer", "Attracts insects, deteriorates from mold and bacteria"],
+          ["Maintenance", "One application per month", "High replenishment effort"],
+          ["Regulatory", "In some areas, a non-consumed scent is legal. Check your local regs", "Check your local regulations"],
+          ["Scent", "The scent is strong and releases continually and consistently. Does not drop off as it gets older.", "Varies by freshness and source. Not predictable consistency."]
         ]
       }
     },
