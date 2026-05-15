@@ -1753,34 +1753,32 @@ function App() {
                 </p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {content['why-odins'].items?.map((item, idx) => (
+                {content['why-odins'].cards?.map((card, idx) => (
                   <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
-                      {item.toLowerCase().includes('rain') && (
+                      {card.image ? (
+                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
+                      ) : card.icon === 'droplets' || card.icon === 'rain' ? (
                         <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.69l.62-.62a9 9 0 1112.76 0l.62.62M12 22V12m0 0l-4-4m4 4l4-4" />
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('co2') || item.toLowerCase().includes('mask') && (
+                      ) : card.icon === 'wind' || card.icon === 'mask' ? (
                         <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-4a4 4 0 00-4-4H7a4 4 0 00-4 4v4z" />
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('duration') || item.toLowerCase().includes('30') && (
+                      ) : card.icon === 'clock' || card.icon === 'duration' || card.icon === '30' ? (
                         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-12 h-12">
                           <circle cx="60.82" cy="54.12" r="4.26"/>
                           <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
                           <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
                           <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('plant') && (
+                      ) : card.icon === 'leaf' || card.icon === 'plant' ? (
                         <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2 2 .9 2 2 2z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('legal') || item.toLowerCase().includes('state') && (
+                      ) : card.icon === '50-states' || card.icon === 'legal' || card.icon === 'state' ? (
                         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12">
                           <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1"/>
                           <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
@@ -1791,10 +1789,14 @@ function App() {
                           <circle cx="26" cy="38" r="2" fill="currentColor"/>
                           <circle cx="34" cy="38" r="2" fill="currentColor"/>
                         </svg>
+                      ) : (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
                       )}
                     </div>
-                    <h3 className="font-display text-xl uppercase mb-2 text-white">{item.split('—')[0]}</h3>
-                    <p className="font-body text-sm text-gray-400">{item.split('—').slice(1).join('—')}</p>
+                    <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
+                    <p className="font-body text-sm text-gray-400">{card.description}</p>
                   </div>
                 ))}
               </div>
@@ -1813,6 +1815,17 @@ function App() {
                 <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
                   {content.detection.body}
                 </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {content.detection.cards?.map((card, idx) => (
+                  <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center" style={{ borderTop: '4px solid #2d5a3d' }}>
+                    <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full" style={{ background: 'rgba(45,90,61,0.1)' }}>
+                      <span className="font-display text-lg font-bold" style={{ color: '#2d5a3d' }}>{card.stage}</span>
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{card.title}</h3>
+                    <p className="font-body text-sm" style={{ color: '#666' }}>{card.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -1853,10 +1866,39 @@ function App() {
                   {content.blinds.headline}
                 </h2>
               </div>
-              <div className="max-w-4xl mx-auto">
-                <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                  {content.blinds.body}
-                </p>
+              <div className="max-w-3xl mx-auto mb-12">
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <p className="font-body text-base text-center leading-relaxed" style={{ color: '#444' }}>
+                    {content.blinds.body}
+                  </p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {content.blinds.cards?.map((card, idx) => (
+                  <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center">
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                      {card.image ? (
+                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
+                      ) : card.icon === 'cloud' ? (
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-4a4 4 0 00-4-4H7a4 4 0 00-4 4v4z" />
+                        </svg>
+                      ) : card.icon === 'clock' ? (
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#2d5a3d" strokeWidth="3" className="w-12 h-12">
+                          <circle cx="60.82" cy="54.12" r="4.26"/>
+                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
+                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
+                        </svg>
+                      ) : (
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{card.title}</h3>
+                    <p className="font-body text-sm" style={{ color: '#666' }}>{card.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -1870,9 +1912,46 @@ function App() {
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
                   {content.layered.headline}
                 </h2>
-                <p className="font-body text-lg max-w-2xl mx-auto text-gray-400">
-                  {content.layered.body}
-                </p>
+                {content.layered.subtitle && (
+                  <p className="font-display text-lg uppercase tracking-wider mb-4" style={{ color: 'hsl(var(--accent))' }}>
+                    {content.layered.subtitle}
+                  </p>
+                )}
+                <div className="max-w-3xl mx-auto rounded-lg p-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <p className="font-body text-base leading-relaxed" style={{ color: '#ccc' }}>
+                    {content.layered.body}
+                  </p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {content.layered.cards?.map((card, idx) => (
+                  <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
+                      {card.image ? (
+                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
+                      ) : card.icon === 'droplets' || card.icon === 'rain' ? (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.69l.62-.62a9 9 0 1112.76 0l.62.62M12 22V12m0 0l-4-4m4 4l4-4" />
+                        </svg>
+                      ) : card.icon === 'leaf' ? (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2 2 .9 2 2 2z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
+                        </svg>
+                      ) : card.icon === 'package' ? (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                      ) : (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
+                    <p className="font-body text-sm text-gray-400">{card.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -2298,13 +2377,11 @@ function generateDominantBuckTemplate(config: SiteConfig, brandContext?: BrandCo
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, TestimonialsSection, HighlightSection } from '@/components/shared';
-import SiteNavigation from '@/components/shared/SiteNavigation';
-import SiteFooter from '@/components/shared/SiteFooter';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, HowItWorksSection, ProductsSection, WhyOdinsSection, WhenToUseSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
-import '@/globals.css';
+import '@/themes/odins-innovations/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
@@ -2316,7 +2393,7 @@ const socialConfig = ${JSON.stringify(social)};
 const ikbConfig = ${JSON.stringify(ikb)};
 
 // Get promo code from IKB for the service
-const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
+const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
 
 function App() {
   const { content } = config;
@@ -2503,7 +2580,7 @@ return `/**
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, WhyOdinsSection, ProductsSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, WhyOdinsSection, ProductsSection, SiteNavigation, SiteFooter, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -3100,9 +3177,21 @@ function App() {
       {content['how-to-use'] && (
         <section id="how-to-use" className="section-padding" style={{ background: '#1a1d29' }}>
           <div className="section-container">
-            <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-white text-center">
-              {content['how-to-use'].headline}
-            </h2>
+            <div className="text-center mb-8">
+              <span
+                className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+                style={{
+                  background: 'hsl(var(--accent) / 0.2)',
+                  color: 'hsl(var(--accent))',
+                  clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+                }}
+              >
+                Application Guide
+              </span>
+              <h2 className="font-display text-4xl md:text-5xl uppercase text-white">
+                {content['how-to-use'].headline}
+              </h2>
+            </div>
             {content['how-to-use'].subhead && (
               <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed text-center mb-10">
                 {content['how-to-use'].subhead}
@@ -3172,6 +3261,16 @@ function App() {
         <section id="bear-hunting" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
           <div className="section-container">
             <div className="text-center mb-8">
+              <span
+                className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
+                style={{
+                  background: 'hsl(var(--primary) / 0.1)',
+                  color: 'hsl(var(--primary))',
+                  clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
+                }}
+              >
+                Bear Hunting
+              </span>
               <h2 className="font-display text-4xl md:text-5xl uppercase" style={{ color: 'hsl(var(--foreground))' }}>
                 {content['bear-hunting'].headline}
               </h2>
@@ -3283,7 +3382,7 @@ function generateHowToUseTemplate(config: SiteConfig, brandContext?: BrandContex
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, WhyOdinsSection, ProductsSection, ComparisonTable, FAQSection, SiteFooter, SiteNavigation, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, WhyOdinsSection, ComparisonTable, FAQSection, SiteFooter, SiteNavigation, StampedReviewsSection, TrustBadgesSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -3346,14 +3445,14 @@ function App() {
                     {content.benefits.beads.headline}
                   </h3>
                 </div>
-                {/* Numbered steps — HowToUseSection style */}
+                {/* Numbered steps — bright on dark */}
                 <div className="space-y-0 mb-8">
                   {content.benefits.beads.bullets.map((bullet, idx) => (
                     <div key={idx} className="flex gap-5 py-5" style={{ borderBottom: idx < content.benefits.beads.bullets.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display text-lg font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display text-lg font-bold" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
                         {idx + 1}
                       </div>
-                      <p className="font-body text-sm text-gray-400 leading-relaxed pt-2">{bullet}</p>
+                      <p className="font-body text-base text-gray-300 leading-relaxed pt-2">{bullet}</p>
                     </div>
                   ))}
                 </div>
@@ -3383,19 +3482,19 @@ function App() {
               <div>
                 {/* Headline with Odin's white icon */}
                 <div className="flex items-center gap-4 mb-6">
-                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586" alt="Weatherproof" className="w-12 h-12 object-contain flex-shrink-0" loading="lazy" />
+                  <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsinnov2-02.png?v=1778702241" alt="Weatherproof" className="w-12 h-12 object-contain flex-shrink-0" loading="lazy" />
                   <h3 className="font-display text-2xl md:text-3xl uppercase text-white">
                     {content.benefits.liquids.headline}
                   </h3>
                 </div>
-                {/* Numbered steps — HowToUseSection style */}
+                {/* Numbered steps — bright on dark */}
                 <div className="space-y-0 mb-8">
                   {content.benefits.liquids.bullets.map((bullet, idx) => (
                     <div key={idx} className="flex gap-5 py-5" style={{ borderBottom: idx < content.benefits.liquids.bullets.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
-                      <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display text-lg font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
+                      <div className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-display text-lg font-bold" style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}>
                         {idx + 1}
                       </div>
-                      <p className="font-body text-sm text-gray-400 leading-relaxed pt-2">{bullet}</p>
+                      <p className="font-body text-base text-gray-300 leading-relaxed pt-2">{bullet}</p>
                     </div>
                   ))}
                 </div>
@@ -3420,135 +3519,28 @@ function App() {
               </div>
             )}
           </div>
-
-          {/* Key Points strip — dark version with Odin's light icons */}
-          {content.benefits.keyPoints && content.benefits.keyPoints.length > 0 && (
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mt-16">
-              {content.benefits.keyPoints.map((point, idx) => (
-                <div key={idx} className="text-center p-4 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                  <div className="mb-3 flex justify-center">
-                    {idx === 0 ? (
-                      /* 30+ Days — white stopwatch SVG */
-                      <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="3" className="w-14 h-14">
-                        <circle cx="60.82" cy="54.12" r="4.26" />
-                        <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28" />
-                        <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4" />
-                        <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84" />
-                      </svg>
-                    ) : idx === 1 ? (
-                      /* Waterproof — CDN light PNG */
-                      <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586" alt="Weatherproof" className="w-14 h-14 object-contain" loading="lazy" />
-                    ) : idx === 2 ? (
-                      /* Biodegradable — white beaker/molecule SVG */
-                      <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2" className="w-14 h-14">
-                        <circle cx="50" cy="30" r="12" />
-                        <circle cx="30" cy="70" r="10" />
-                        <circle cx="70" cy="70" r="10" />
-                        <line x1="44" y1="40" x2="36" y2="62" />
-                        <line x1="56" y1="40" x2="64" y2="62" />
-                        <line x1="40" y1="70" x2="60" y2="70" />
-                      </svg>
-                    ) : (
-                      /* Legal 50 States — white flag SVG */
-                      <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2" className="w-14 h-14">
-                        <rect x="10" y="20" width="80" height="55" rx="2" />
-                        <line x1="10" y1="31" x2="90" y2="31" />
-                        <line x1="10" y1="42" x2="90" y2="42" />
-                        <line x1="10" y1="53" x2="90" y2="53" />
-                        <line x1="10" y1="64" x2="90" y2="64" />
-                        <rect x="10" y="20" width="35" height="22" fill="white" fillOpacity="0.15" />
-                        <circle cx="19" cy="26" r="1.5" fill="white" />
-                        <circle cx="27" cy="26" r="1.5" fill="white" />
-                        <circle cx="35" cy="26" r="1.5" fill="white" />
-                        <circle cx="23" cy="31" r="1.5" fill="white" />
-                        <circle cx="31" cy="31" r="1.5" fill="white" />
-                        <circle cx="19" cy="36" r="1.5" fill="white" />
-                        <circle cx="27" cy="36" r="1.5" fill="white" />
-                        <circle cx="35" cy="36" r="1.5" fill="white" />
-                      </svg>
-                    )}
-                  </div>
-                  <p className="font-display text-xs uppercase font-bold text-white">
-                    {point.title || point}
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
       </section>
+
+      {/* Trust Badges — dark strip after format guide */}
+      <TrustBadgesSection trustSignals={{
+        signals: [
+          { name: "30+ Day Scent", icon: "30+ day scent" },
+          { name: "Weatherproof", icon: "weatherproof" },
+          { name: "Biodegradable", icon: "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsinnov2-04.png?v=1778702232" },
+          { name: "Legal in All 50 States", icon: "50 state legal" }
+        ]
+      }} />
 
       {/* Section 2: Why Odin's — white */}
       <WhyOdinsSection content={content['why-odins']} background="hsl(var(--background))" />
 
-      {/* Section 3: Products — white */}
-      <ProductsSection content={content.products} background="hsl(var(--background))" />
-
-      {/* Section 4: Beads vs Liquids Comparison — warm cream */}
-      <div style={{ background: 'hsl(30, 20%, 95%)' }}>
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+      {/* Section 3: Beads vs Liquids Comparison — light gray */}
+      <div style={{ background: 'hsl(220, 6%, 93%)' }}>
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} background="hsl(220, 6%, 93%)" />}
       </div>
 
-      {/* Section 5: Deployment Scenarios — muted bg, WhenToUse-style cards */}
-      {content['deployment-scenarios'] && (
-        <section id="deployment-scenarios" className="section-padding" style={{ background: 'hsl(var(--muted))' }}>
-          <div className="section-container">
-            <div className="max-w-6xl mx-auto">
-              {/* Section Header */}
-              <div className="text-center mb-12">
-                <span 
-                  className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
-                  style={{ 
-                    background: 'hsl(var(--accent) / 0.2)',
-                    color: 'hsl(var(--accent))',
-                    clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
-                  }}
-                >
-                  Seasonal Guide
-                </span>
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content['deployment-scenarios'].title}
-                </h2>
-              </div>
-
-              {/* Scenario Cards — WhenToUseSection style */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {content['deployment-scenarios'].scenarios.map((scenario, idx) => {
-                  const colors = [
-                    'hsl(30, 70%, 50%)',
-                    'hsl(var(--secondary))',
-                    'hsl(var(--primary))',
-                    'hsl(35, 60%, 45%)',
-                    'hsl(20, 50%, 40%)'
-                  ];
-                  const color = colors[idx % colors.length];
-                  return (
-                    <div key={idx} className="relative overflow-hidden" style={{ 
-                      background: 'white',
-                      borderTop: '4px solid ' + color,
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
-                    }}>
-                      {/* Card Header */}
-                      <div className="py-6 px-5" style={{ background: color + '15' }}>
-                        <span className="font-display text-xl md:text-2xl font-bold uppercase leading-tight" style={{ color }}>
-                          {scenario.title}
-                        </span>
-                      </div>
-                      <div className="p-5">
-                        <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                          {scenario.text}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Section 6: Seasonal Calendar — dark */}
+      {/* Section 5: Seasonal Calendar — dark */}
       {content['seasonal-calendar'] && (
         <section id="seasonal-calendar" className="section-padding" style={{ background: '#1a1d29' }}>
           <div className="section-container">
@@ -3776,17 +3768,32 @@ function App() {
           <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
             {/* Steps — left */}
             <div className="flex-1 space-y-0">
-              {content['how-it-works'].steps && content['how-it-works'].steps.map((step, idx) => (
-                <div key={idx} className="flex gap-5 py-6" style={{ borderBottom: idx < content['how-it-works'].steps.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-display text-xl font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
-                    {idx + 1}
+              {content['how-it-works'].steps && content['how-it-works'].steps.map((step, idx) => {
+                const text = typeof step === 'string' ? step : step.title;
+                const parts = text.split('\\n');
+                const mainText = parts[0];
+                const subItems = parts.slice(1).filter(p => p.trim());
+                return (
+                  <div key={idx} className="flex gap-5 py-6" style={{ borderBottom: idx < content['how-it-works'].steps.length - 1 ? '1px solid rgba(255,255,255,0.08)' : 'none' }}>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-display text-xl font-bold" style={{ background: 'hsl(var(--accent) / 0.15)', color: 'hsl(var(--accent))', border: '2px solid hsl(var(--accent) / 0.3)' }}>
+                      {idx + 1}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-body text-base text-gray-300 leading-relaxed">{mainText}</p>
+                      {subItems.length > 0 && (
+                        <ul className="mt-3 space-y-2">
+                          {subItems.map((item, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="flex-shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: 'hsl(var(--accent))' }} />
+                              <span className="font-body text-sm text-gray-400 leading-relaxed">{item.startsWith('- ') ? item.slice(2) : item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-display text-lg uppercase text-white mb-1">{typeof step === 'string' ? step : step.title}</h3>
-                    {typeof step !== 'string' && step.description && <p className="font-body text-sm text-gray-400 leading-relaxed">{step.description}</p>}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             {/* Video — right */}
             <div className="flex-shrink-0 w-full lg:w-[480px]">
@@ -3831,16 +3838,16 @@ function App() {
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderTop: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-center gap-3 mb-4">
-                <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png" alt="30+ Days" className="w-12 h-12 object-contain" loading="lazy" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Shelf Life</h3>
               </div>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                Natural urine products spoil. They require specific storage conditions, have expiration dates that matter, and generate returns when customers receive degraded product. Synthetic scents have indefinite shelf life, reducing shrink and inventory risk.
+                Natural urine products spoil. They require controlled storage, have real expiration dates, and generate returns when customers receive degraded product. Synthetic scents have indefinite shelf life, reducing shrink and inventory risk.
               </p>
             </div>
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderTop: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-center gap-3 mb-4">
-                <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404" alt="Weatherproof" className="w-12 h-12 object-contain" loading="lazy" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Seasonal Carryover</h3>
               </div>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
@@ -3849,7 +3856,7 @@ function App() {
             </div>
             <div className="bg-white rounded-lg p-6 shadow-sm" style={{ borderTop: '4px solid hsl(var(--primary))' }}>
               <div className="flex items-center gap-3 mb-4">
-                <img src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337" alt="Biodegradable" className="w-12 h-12 object-contain" loading="lazy" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="hsl(var(--primary))" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 <h3 className="font-display text-lg uppercase" style={{ color: 'hsl(var(--primary))' }}>Handling Requirements</h3>
               </div>
               <p className="font-body text-sm text-muted-foreground leading-relaxed">
@@ -3878,7 +3885,7 @@ function App() {
               Not All Products Are Equal
             </h2>
             <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
-              The market includes products marketed as "synthetic" that vary dramatically in sophistication and effectiveness.
+              We did not "react" to CWD regulations. We chose synthetics because it gives us a better tool kit to build better products. There were no existing bans when we started developing synthetic scents — the first came soon after. Getting ahead of the curve gave us 10+ years of development and 8 years of field-proven results. Strategic, not reactive.
             </p>
           </div>
           <div className="grid md:grid-cols-5 gap-8 max-w-5xl mx-auto">
@@ -3894,15 +3901,15 @@ function App() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 mt-0.5 font-bold text-lg" style={{ color: 'hsl(45, 100%, 50%)' }}>✓</span>
-                  <span className="font-body text-base text-gray-300 leading-relaxed">Species-specific pheromone synthesis</span>
+                  <span className="font-body text-base text-gray-300 leading-relaxed">Precise aroma profile engineering — pheromones and all scent lines</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 mt-0.5 font-bold text-lg" style={{ color: 'hsl(45, 100%, 50%)' }}>✓</span>
-                  <span className="font-body text-base text-gray-300 leading-relaxed">Formulation testing and refinement</span>
+                  <span className="font-body text-base text-gray-300 leading-relaxed">Formulation testing, field testing, refinement and final product.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="flex-shrink-0 mt-0.5 font-bold text-lg" style={{ color: 'hsl(45, 100%, 50%)' }}>✓</span>
-                  <span className="font-body text-base text-gray-300 leading-relaxed">Field validation of effectiveness</span>
+                  <span className="font-body text-base text-gray-300 leading-relaxed">Ongoing field validation and continuous capability refinement</span>
                 </li>
               </ul>
             </div>
@@ -3920,6 +3927,11 @@ function App() {
                 <p className="font-body text-sm leading-relaxed" style={{ color: 'rgba(26,29,41,0.8)' }}>
                   The growth in synthetic adoption reflects consumers finding products that actually work—not just products that comply with regulations. Evaluate based on manufacturer credibility, R&D investment, and documented field performance—not just the "synthetic" label.
                 </p>
+                <div className="mt-4 pt-4" style={{ borderTop: '1px solid rgba(26,29,41,0.2)' }}>
+                  <p className="font-display text-sm uppercase font-bold leading-snug" style={{ color: '#1a1d29' }}>
+                    Keep our eyes and ears open for new ways to better serve our customers — this is the really cool and fun part!
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -3944,7 +3956,7 @@ function App() {
               Natural Product Reality
             </h2>
             <p className="font-body text-lg text-muted-foreground max-w-3xl mx-auto mt-4">
-              This analysis should not be read as predicting the disappearance of natural attractants. In unrestricted markets, natural products retain advantages:
+              This analysis should not be read as predicting the disappearance of natural attractants. In unrestricted markets, natural products remain popular.
             </p>
           </div>
           {/* Advantages Card with Stat Block */}
@@ -3965,7 +3977,7 @@ function App() {
                   <li className="flex items-start gap-3"><span style={{ color: 'hsl(var(--primary))' }}>•</span><span className="font-body text-sm text-muted-foreground leading-relaxed">Often lower per-unit costs for established operations with existing infrastructure</span></li>
                 </ul>
                 <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                  However, unpredictable regulatory changes have added to the cost of maintaining a healthy deer herd. Starting in 2016 with the ATA's DPP program and transferred to the <a href="https://responsiblescents.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>Responsible Hunting Scent Association</a> "was established to bring professional cervid urine producers and hunting scent manufacturers together to work for the common purpose of protecting, maintaining and growing the cervid urine and hunting scent industry..." Imbedded in the program is the <a href="https://www.aphis.usda.gov/livestock-poultry-disease/cervid/chronic-wasting/herd-certification" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>USDA's Cervids: CWD Voluntary Herd Certification Program</a>. Programs can predictably include additional costs.... especially when it is a program of the US Federal Government!
+                  However, unpredictable regulatory changes have added cost pressure. Starting in 2016 with the ATA's DPP program (now under the <a href="https://responsiblescents.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>Responsible Hunting Scent Association</a>), the industry moved toward standardized production. Imbedded in the program is the <a href="https://www.aphis.usda.gov/livestock-poultry-disease/cervid/chronic-wasting/herd-certification" target="_blank" rel="noopener noreferrer" style={{ color: 'hsl(var(--primary))', textDecoration: 'underline' }}>USDA's CWD Voluntary Herd Certification Program</a>. Federal programs add predictable costs — a factor driving retailers toward synthetics.
                 </p>
               </div>
             </div>
@@ -4008,7 +4020,7 @@ function App() {
               Beyond Regulation
             </h2>
             <p className="font-body text-lg text-gray-400 max-w-3xl mx-auto mt-4">
-              While Chronic Wasting Disease (CWD) regulations have certainly influenced the market—with numerous states and Canadian provinces restricting or banning natural deer urine products—the growth of synthetics is driven by factors that would exist regardless of regulatory pressure.
+              Three reasons synthetic scents outperform natural products on every metric that matters to hunters and retailers alike.
             </p>
           </div>
 
@@ -4024,7 +4036,7 @@ function App() {
                   Consistency and Reliability
                 </h3>
                 <p className="font-body text-base text-gray-300 leading-relaxed mb-4">
-                  Natural deer urine is, by definition, a biological product subject to nature's variations. An individual doe's estrus—the period during which she is receptive to breeding—typically lasts approximately 24–48 hours, with many sources narrowing it to around 24–30 hours. If she is not bred during that cycle, she will recycle roughly 28 days later. A figure of 36 hours is a reasonable midpoint estimate for a single doe's receptive window. Add to that, hormone levels, diet, health status, and collection timing all affect potency and scent profile.
+                  Natural deer urine is a biological product subject to nature's variations. An individual doe's estrus window averages about 36 hours — and hormone levels, diet, health, and collection timing all affect potency. No two bottles are identical, even from the same operation.
                 </p>
                 <blockquote className="border-l-4 pl-6 my-6" style={{ borderColor: 'hsl(45, 100%, 50%)' }}>
                   <p className="font-body text-xl md:text-2xl italic leading-relaxed" style={{ color: 'rgba(255,255,255,0.9)' }}>
@@ -4032,7 +4044,7 @@ function App() {
                   </p>
                 </blockquote>
                 <p className="font-body text-base text-gray-300 leading-relaxed">
-                  Pheromone attractant scents are selected with consideration towards the rut. Because bucks are actively seeking receptive does across an entire 10–14-day peak, you need a product that will be effective over that entire period or reintroduce your human scent to apply more. Scents containing doe estrus need to be deployed consistently over days or weeks rather than trying to time a single "magic window."
+                  Bucks actively seek receptive does across a 10–14-day peak. You need a product that works the entire window — or you reintroduce human scent every time you reapply. Synthetic scents deployed once deliver consistent attraction for 30+ days. No timing a "magic window."
                 </p>
               </div>
             </div>
@@ -4062,7 +4074,11 @@ function App() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
-                    <span className="font-body text-sm text-gray-300">Cold chain shipping required</span>
+                    <span className="font-body text-sm text-gray-300">Many manufacturers recommend it remain refrigerated.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#f87171' }}>✕</span>
+                    <span className="font-body text-sm text-gray-300">Some brands offer a return-program to pick up what is left at the dealers at the end of the season. (We're not sure what happens to it?)</span>
                   </li>
                 </ul>
               </div>
@@ -4084,6 +4100,10 @@ function App() {
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
                     <span className="font-body text-sm text-gray-300">Ships like any stable consumer product</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="flex-shrink-0 mt-0.5" style={{ color: '#4ade80' }}>✓</span>
+                    <span className="font-body text-sm text-gray-300">Carries over to next season without any loss in potency.</span>
                   </li>
                 </ul>
               </div>
@@ -4115,6 +4135,44 @@ function App() {
       <div style={{ background: 'hsl(var(--background))' }}>
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
       </div>
+
+      {/* Collection Images — linked images only */}
+      <section className="section-padding" style={{ background: '#1a1d29' }}>
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="https://www.odinsinnovations.com/collections/food-scents" target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="rounded-lg overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Food_Scents.png?v=1762888380"
+                  alt="Food Scents collection"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+            <a href="https://www.odinsinnovations.com/collections/rut-scents" target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="rounded-lg overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Rut_Scents.png?v=1762888380"
+                  alt="Rut Scents collection"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+            <a href="https://www.odinsinnovations.com/collections/cover-scents" target="_blank" rel="noopener noreferrer" className="block group">
+              <div className="rounded-lg overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)' }}>
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Cover_Scents.png?v=1762888625"
+                  alt="Cover Scents collection"
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Section 9: Products — action */}
       <ProductsSection content={content.products} background="hsl(30, 20%, 95%)" />

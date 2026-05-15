@@ -16,6 +16,12 @@ interface WhyOdinsSectionProps {
       title: string;
       description: string;
     }>;
+    cta?: {
+      headline: string;
+      subhead?: string;
+      href: string;
+      text: string;
+    };
   };
 }
 
@@ -302,14 +308,40 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
                     >
                       {point.title}
                     </h3>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed">
-                      {point.description}
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed break-words [overflow-wrap:break-word]">
+                      <span dangerouslySetInnerHTML={{ __html: point.description }} />
                     </p>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Bottom CTA */}
+          {content.cta && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center mt-16"
+            >
+              <h3 className="font-display text-3xl md:text-4xl uppercase mb-3" style={{ color: 'hsl(var(--foreground))' }}>
+                {content.cta.headline}
+              </h3>
+              {content.cta.subhead && (
+                <p className="font-body text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+                  {content.cta.subhead}
+                </p>
+              )}
+              <a
+                href={content.cta.href}
+                className="inline-block px-10 py-4 font-display text-lg uppercase tracking-wider font-bold transition-all duration-300 hover:opacity-90"
+                style={{ background: 'hsl(var(--accent))', color: 'hsl(var(--foreground))' }}
+              >
+                {content.cta.text}
+              </a>
+            </motion.div>
+          )}
         </motion.div>
       </div>
     </section>
