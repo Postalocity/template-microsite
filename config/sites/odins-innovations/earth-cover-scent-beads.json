@@ -13,7 +13,7 @@
     "domain": "odinsinnovations.com",
     "basename": "/earth-cover-scent-beads",
     "contact": {
-      "email": "paul@odinsinnovations.com",
+      "email": "support@odinsscents.com",
       "phone": "316-393-0440"
     }
   },
@@ -100,8 +100,37 @@
       ]
     },
     "why-odins": {
+      "chip": "The Difference",
       "headline": "Earth Scents: One of Our Favorites",
-      "body": "When developing a deer cover scent, the R&D team at Odin's Innovations really nailed this one. Developing an earth cover scent was a passion project for a group that loved to hunt. It's personal. Extensive field testing confirmed the need for the 'Switzerland of aromas' \u2014 a scent common to all hunting spots: dirt. Every wooded area has unique elements from trees, flowers, or other contributors, but rich soil and forest floor remain universal."
+      "body": "When developing a deer cover scent, the R&D team at Odin's Innovations really nailed this one. Developing an earth cover scent was a passion project for a group that loved to hunt. It's personal. Extensive field testing confirmed the need for the 'Switzerland of aromas' \u2014 a scent common to all hunting spots: dirt. Every wooded area has unique elements from trees, flowers, or other contributors, but rich soil and forest floor remain universal.",
+      "points": [
+        {
+          "icon": "flag",
+          "title": "Legal in All 50 States",
+          "description": "100% synthetic formula \u2014 not subject to natural urine or CWD restrictions that ban traditional lures."
+        },
+        {
+          "icon": "stopwatch",
+          "title": "30+ Days of Attraction",
+          "description": "Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
+          "title": "Biodegradable & Safe",
+          "description": "Polymer matrix breaks down naturally. No environmental residue or contamination."
+        },
+        {
+          "icon": "beaker",
+          "title": "Lab-Tested Formula",
+          "description": "Third-party verified at Mississippi State University for consistent potency. Verified by a University Laboratory using <a href=\"https://en.wikipedia.org/wiki/Gas_chromatography%E2%80%93mass_spectrometry\" target=\"_blank\" rel=\"noopener\">Gas Chromatography-Mass Spectrometry</a>."
+        }
+      ],
+      "cta": {
+        "headline": "Ready to Hunt Smarter?",
+        "subhead": "Join thousands of hunters who trust Odin's Innovations",
+        "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026",
+        "text": "Shop Now"
+      }
     },
     "how-it-works": {
       "headline": "How Earth Cover Scent Works",

@@ -16,6 +16,7 @@ interface WhyOdinsSectionProps {
       title: string;
       description: string;
     }>;
+    chip?: string;
     cta?: {
       headline: string;
       subhead?: string;
@@ -158,7 +159,7 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
         >
           {/* Section Header */}
           <div className="text-center mb-12">
-            {isCostComparison && (
+            {(isCostComparison || content.chip) && (
               <span 
                 className="inline-block px-4 py-1.5 mb-4 text-sm font-bold uppercase tracking-wider"
                 style={{ 
@@ -167,7 +168,7 @@ const WhyOdinsSection = ({ content, background }: WhyOdinsSectionProps & { backg
                   clipPath: 'polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%)'
                 }}
               >
-                Cost Comparison
+                {content.chip || 'Cost Comparison'}
               </span>
             )}
             <h2 
