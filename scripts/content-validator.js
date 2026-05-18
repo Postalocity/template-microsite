@@ -1,29 +1,24 @@
 #!/usr/bin/env node
 
 /**
- * Content Quality Validator (Compatibility / Legacy Layer)
+ * Content Quality Validator (Thin Legacy Compatibility Layer)
  *
- * ⚠️  DEPRECATION NOTICE (Phase 2 – Deep Cleanup)
+ * Phase 2 FINAL LEGACY CLEANUP:
+ * - validateText() now delegates the vast majority of work to @microsite/validation.
+ * - The internal `rules` object has been aggressively pruned.
+ * - Most duplicated regex logic for hedging, fragments, blocklisted phrases, etc. has been removed.
  *
- * This file is now a **thin delegating compatibility wrapper**.
- * Most real logic has moved to `@microsite/validation`.
+ * This file exists primarily for:
+ *   1. The existing CLI (`node scripts/content-validator.js`)
+ *   2. A few generator-specific structural checks (comparison tables)
  *
- * Preferred imports:
- *   import {
- *     validateWritingQuality,
- *     validatePhrase,
- *     validateSiteContent,
- *     validateSection
- *   } from '@microsite/validation';
- *
- * Only generator-specific structural checks (comparison table row validation, etc.)
- * and the legacy CLI (`node scripts/content-validator.js`) remain here.
+ * New code MUST import from `@microsite/validation`.
  */
 
 import {
   validateWritingQuality as newValidateWritingQuality,
   validatePhrase,
-} from '@microsite/validation';
+} from '../packages/validation/src/index.js';
 
 import fs from 'fs';
 import path from 'path';
@@ -35,71 +30,14 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // VALIDATION RULES
 // =============================================================================
 
+// === LEGACY RULES (Phase 2 Final Cleanup) ===
+// This object is now minimal. Most rules have been removed because
+// validateText() delegates aggressively to @microsite/validation.
+// Only generator-specific structural checks and a few narrow IKB terminology
+// fallbacks remain. This object should shrink further or disappear.
 const rules = {
   /**
-   * FRAGMENTED_SENTENCES
-   * Detects incomplete sentences that start with conjunctions or gerunds
-   * without a proper subject/verb structure.
-   */
-  FRAGMENTED_SENTENCES: {
-    severity: 'error',
-    patterns: [
-      {
-        // Sentence starts with ", verb-ing" after a period
-        regex: /,\s+[A-Z][a-z]+(?:ing|en)\s+[^.!?]*[.!?]?$/gm,
-        message: 'Possible fragmented sentence: starts with conjunction or modifier without complete clause'
-      },
-      {
-        // Gerund (-ing) as sentence start after period
-        regex: /\.(\s+)[A-Z][a-z]+(?:ing)\s+[^.!?]+[.!?]?$/gm,
-        message: 'Sentence may be a fragment starting with gerund'
-      }
-    ]
-  },
-
-  /**
-   * HEDGING_PHRASES
-   * Detects vague language that undermines confidence.
-   * Should be replaced with specific explanations.
-   */
-  HEDGING_PHRASES: {
-    severity: 'error',
-    patterns: [
-      {
-        regex: /may meet|may help|may support|could meet|verify with your legal counsel/i,
-        message: 'Contains hedging language - replace with specific explanation of what the feature does'
-      },
-      {
-        regex: /verify with (your|the) (legal|attorney|counsel)/i,
-        message: 'Hedge phrase detected - explain what the feature provides instead'
-      }
-    ]
-  },
-
-  /**
-   * INCOMPLETE_SENTENCES
-   * Detects sentence fragments that lack proper verb structure.
-   */
-  INCOMPLETE_SENTENCES: {
-    severity: 'warning',
-    patterns: [
-      {
-        // Sentence that just ends with a noun phrase
-        regex: /^[A-Z][^.!?]*\s+(?:includes?|provides?|offers?|delivers?)\s+[^.!?]*[.!?]?\s*$/gim,
-        message: 'Sentence may lack complete verb structure'
-      },
-      {
-        // Starting with "for" as if continuing previous thought
-        regex: /\.(\s+For\s+[^.!?]+[.!?]?)$/gm,
-        message: 'Sentence appears to be a fragment starting with "For"'
-      }
-    ]
-  },
-
-  /**
-   * COMPARISON_TABLE_CHECKS
-   * Validates comparison table structure and content.
-   * Only applies to configs that use the rows format (not chart format).
+   * COMPARISON_TABLE_CHECKS (still local to generator)
    */
   COMPARISON_TABLE: {
     severity: 'error',
@@ -453,73 +391,37 @@ class ContentValidator {
    * New code should use validateWritingQuality + validatePhrase directly.
    */
   validateText(text, context = '') {
-    // Check hedging phrases
-    for (const pattern of rules.HEDGING_PHRASES.patterns) {
-      if (pattern.regex.test(text)) {
-        this.log('error', pattern.message, context);
-      }
-    }
+    // === Aggressive delegation (Phase 2 final legacy cleanup) ===
+    // The vast majority of text validation now lives in @microsite/validation.
+    // We call the canonical functions first.
+    const phraseResult = validatePhrase(text, 'postalocity');
+    const qualityResult = newValidateWritingQuality(text, context);
 
-    // Check for vague price language
-    for (const pattern of rules.PRICE_CLARITY.patterns) {
-      if (pattern.regex.test(text)) {
-        this.log('warning', pattern.message, context);
-      }
+    if (!phraseResult.valid) {
+      phraseResult.errors.forEach((msg) => this.log('error', msg, context));
     }
-
-    // Check Proof of Mailing terminology
-    for (const pattern of rules.IKB_PROOF_OF_MAILING.patterns) {
-      if (pattern.regex.test(text)) {
-        this.log('error', pattern.message, context);
-      }
+    if (!qualityResult.valid) {
+      qualityResult.errors.forEach((msg) => this.log('error', msg, context));
     }
+    qualityResult.warnings.forEach((msg) => this.log('warning', msg, context));
 
-    // Check tracking terminology
-    for (const pattern of rules.IKB_TRACKING_TERMINOLOGY.patterns) {
-      if (pattern.regex.test(text)) {
-        this.log('warning', pattern.message, context);
-      }
-    }
+    // === Minimal remaining local fallbacks ===
+    // Only a handful of very generator-specific Postalocity/Odins terminology
+    // rules that have not yet been moved into the validation package or IKB.
+    // Goal: these should disappear in the next cleanup pass.
+    const narrowRules = [
+      rules.IKB_PROOF_OF_MAILING,
+      rules.IKB_TRACKING_TERMINOLOGY,
+      rules.IKB_SELF_MAILER,
+    ];
 
-    // Check self-mailer terminology
-    for (const pattern of rules.IKB_SELF_MAILER.patterns) {
-      if (pattern.regex.test(text)) {
-        this.log('warning', pattern.message, context);
-      }
-    }
-
-    // Check blocklisted phrases
-    for (const pattern of rules.IKB_BLOCKLISTED_PHRASES.patterns) {
-      if (pattern.regex.test(text)) {
-        this.log('error', pattern.message, context);
-      }
-    }
-
-    // Check proof title format - only for titles (not descriptions/answers)
-    // Titles are: benefits, services, differences, services
-    const isProofTitle = context && !context.includes('FAQ:') && !context.includes('Every Letter') && !context.includes('tagline') && !context.includes('(detail)') && !context.includes('(description)');
-    // Only check text that appears to be a title (short text without many sentences)
-    if (isProofTitle && text.split(/[.!?]/).length <= 2) {
-      for (const pattern of rules.IKB_PROOF_TITLE.patterns) {
-        if (pattern.regex.test(text)) {
-          this.log('error', pattern.message, context);
-        }
-      }
-    }
-
-    // Check for potential fragmented sentences
-    // This is a simplified check - looks for sentences that end oddly
-    const sentences = text.split(/(?<=[.!?])\s+/);
-    for (const sentence of sentences) {
-      if (sentence.trim().length > 10) {
-        // Check for sentence starting with conjunction after comma (possible fragment)
-        if (/,\s+[A-Z][a-z]+(?:ing|en)\s+[^.!?]*$/i.test(sentence)) {
-          this.log('warning', 'Sentence may be a fragment starting with modifier', context);
-        }
-        
-        // Check for sentence that seems incomplete
-        if (/^\s*[A-Z][^.!?]*\s+(?:with|for|in|to|by)\s+[^.!?]*$/i.test(sentence.trim())) {
-          this.log('warning', 'Sentence may lack complete ending', context);
+    for (const rule of narrowRules) {
+      if (rule?.patterns) {
+        for (const pattern of rule.patterns) {
+          if (pattern.regex.test(text)) {
+            const sev = rule.severity === 'warning' ? 'warning' : 'error';
+            this.log(sev, pattern.message, context);
+          }
         }
       }
     }
@@ -628,17 +530,15 @@ if (isMainModule) {
   main();
 }
 
-// === Clean re-exports from the single source of truth ===
+// Re-exports from the canonical package
 export { newValidateWritingQuality as validateWritingQuality };
 export { validatePhrase, validateSiteContent, validateSection } from '@microsite/validation';
 
-// Legacy class kept only for the existing CLI (`node scripts/content-validator.js`)
-export { ContentValidator, rules };
+// The legacy ContentValidator class is kept **only** for the existing CLI.
+export { ContentValidator, rules as legacyRules }; // renamed to discourage use
 
-// Strong deprecation helper
-export function __deprecatedContentValidatorWarning() {
-  console.warn(
-    '[DEPRECATED] scripts/content-validator.js is now a thin compatibility layer.\n' +
-    'Migrate to: import { validateWritingQuality, validatePhrase, validateSiteContent } from "@microsite/validation"'
-  );
-}
+// Final deprecation notice
+console.warn(
+  '[DEPRECATED] scripts/content-validator.js is a thin legacy shell. ' +
+  'Use @microsite/validation for all new validation logic.'
+);
