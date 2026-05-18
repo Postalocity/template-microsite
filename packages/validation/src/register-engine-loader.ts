@@ -17,6 +17,13 @@ import type { IKBRules } from '../../../common/types/engine.js';
 
 let registered = false;
 
+/**
+ * Convenience alias. Call this once early in your app / generator / test bootstrap.
+ */
+export function initializeValidation(): void {
+  registerEngineLoader();
+}
+
 export function registerEngineLoader(): void {
   if (registered) return;
 

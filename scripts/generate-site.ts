@@ -28,6 +28,11 @@ import { processPricingPlaceholders } from '../common/utils/pricing';
 import { composeSiteTemplate, type SiteInfo } from './generate/template-composer.js';
 import { validateSiteConfig } from './generate/config-validator.js';
 
+// Phase 2: Initialize the single source of truth for IKB + content validation
+// This makes the generator use the same rules that the future CMS will use.
+import { initializeValidation } from '../packages/validation/src/index.js';
+initializeValidation();
+
 /**
  * Safely stringify an object for injection into a JavaScript template literal.
  * Escapes backticks and ${} to prevent parser breakage in generated code.
