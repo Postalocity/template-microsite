@@ -10,6 +10,7 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import {
   validatePhrase,
   validateContentType,
+  validateSection,
   getIKBRules,
   setIKBLoader
 } from '../src/index.js';
@@ -33,6 +34,17 @@ describe('@microsite/validation — ikb-validator (default rules)', () => {
   it('blocks "defensible proof" which only exists in real postalocity rules', async () => {
     const result = await validatePhrase('Defensible proof for your compliance needs', 'postalocity');
     expect(result.valid).toBe(false);
+  });
+
+  it('validateSection blocks testimonial and warns on non-approved sections', async () => {
+    const bad = await validateSection('testimonial', 'postalocity');
+    expect(bad.valid).toBe(false);
+    expect(bad.errors.some(e => e.includes('blocklisted'))).toBe(true);
+
+    const unknown = await validateSection('super-special-offer', 'postalocity');
+    // Should still be valid (no hard block) but produce a warning because it's not in approvedSections
+    expect(unknown.valid).toBe(true);
+    expect(unknown.warnings.length).toBeGreaterThan(0);
   });
 
   it('allows normal marketing language', async () => {

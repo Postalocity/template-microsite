@@ -124,18 +124,47 @@ export async function validateContentType(
 }
 
 /**
- * Validate an entire section object (placeholder for richer structural rules).
+ * Validate a section (by name or by object containing a name/type).
+ * Checks against the brand's approvedSections + blocklistedContent.
  */
 export async function validateSection(
-  section: unknown,
-  brandId: string,
-  sectionName?: string
+  section: string | { name?: string; type?: string; [key: string]: unknown },
+  brandId: string
 ): Promise<ValidationResult> {
-  // TODO: Implement deeper structural validation (e.g. required fields per section type)
+  const rules = await loadRulesForBrand(brandId);
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  let sectionName = '';
+  if (typeof section === 'string') {
+    sectionName = section;
+  } else if (section && typeof section === 'object') {
+    sectionName = (section.name as string) || (section.type as string) || '';
+  }
+
+  if (!sectionName) {
+    errors.push('Section is missing a name or type');
+    return { valid: false, errors, warnings };
+  }
+
+  const lower = sectionName.toLowerCase();
+
+  if (rules.blocklistedContent.some(b => b.toLowerCase() === lower)) {
+    errors.push(`Section type "${sectionName}" is blocklisted for brand "${brandId}"`);
+  }
+
+  // If approvedSections is non-empty, the section must be explicitly allowed
+  if (rules.approvedSections.length > 0) {
+    const isApproved = rules.approvedSections.some(s => s.toLowerCase() === lower);
+    if (!isApproved) {
+      warnings.push(`Section "${sectionName}" is not in the approvedSections list for brand "${brandId}"`);
+    }
+  }
+
   return {
-    valid: true,
-    errors: [],
-    warnings: []
+    valid: errors.length === 0,
+    errors,
+    warnings
   };
 }
 
@@ -160,4 +189,9 @@ export function isPhraseAllowed(phrase: string, rules: IKBRulesSnapshot): boolea
 export function isContentAllowed(contentType: string, rules: IKBRulesSnapshot): boolean {
   const lower = contentType.toLowerCase();
   return !rules.blocklistedContent.some((b) => b.toLowerCase() === lower);
+}
+
+export async function getApprovedSections(brandId: string): Promise<string[]> {
+  const rules = await loadRulesForBrand(brandId);
+  return [...rules.approvedSections];
 }

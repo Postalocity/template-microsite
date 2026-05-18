@@ -8,6 +8,11 @@
 import fs from 'fs';
 import path from 'path';
 
+// Phase 2: Unified validation layer (preferred path when brandId is known)
+import { validatePhrase } from '../packages/validation/src/index.js';
+import { initializeValidation } from '../packages/validation/src/index.js';
+initializeValidation();
+
 // =============================================================================
 // ALLOWLISTS
 // =============================================================================
@@ -239,9 +244,35 @@ export function validateHero(hero: { main?: string; highlightTerm?: string } | u
 }
 
 /**
- * Check content for blocklisted phrases
+ * Check content for blocklisted phrases.
+ * 
+ * Phase 2: When brandId is provided, delegates to the unified @microsite/validation layer
+ * which uses the live per-brand IKB rules. Falls back to the legacy hardcoded list otherwise.
  */
-export function validateContentBlocks(content: string, context: string = 'content'): ValidationResult {
+/**
+ * Check content for blocklisted phrases.
+ * 
+ * When brandId is provided → uses the live unified @microsite/validation layer (async).
+ * When brandId is omitted → uses the legacy hardcoded BLOCKLISTED_PHRASES list (sync for backward compat).
+ */
+export function validateContentBlocks(
+  content: string, 
+  context: string = 'content',
+  brandId?: string
+): ValidationResult | Promise<ValidationResult> {
+  if (brandId) {
+    // New path - must be awaited by caller
+    return (async () => {
+      const result = await validatePhrase(content, brandId);
+      return {
+        valid: result.valid,
+        errors: result.errors.map(e => `${e} in ${context}`),
+        warnings: result.warnings
+      };
+    })();
+  }
+
+  // Legacy sync path (preserves all existing call sites that don't pass brandId)
   const errors: string[] = [];
   const warnings: string[] = [];
   const lowerContent = content.toLowerCase();
