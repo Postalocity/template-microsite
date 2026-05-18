@@ -6,6 +6,7 @@
   "workspaces": [
     "packages/*"
   ],
+  // Phase 2 monorepo: @microsite/validation, @microsite/engine, future packages
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -19,7 +20,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "content-validate": "node scripts/content-validator.js",
-    "content-validate:strict": "node scripts/content-validator.js --strict"
+    "content-validate:strict": "node scripts/content-validator.js --strict",
+    "packages:build": "npm run build --workspace=@microsite/validation --workspace=@microsite/engine"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
