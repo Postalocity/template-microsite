@@ -6,7 +6,6 @@
   "workspaces": [
     "packages/*"
   ],
-  // Phase 2 monorepo: @microsite/validation, @microsite/engine, future packages
   "type": "module",
   "scripts": {
     "dev": "vite",
