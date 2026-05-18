@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "A multi-site generator platform for creating vertical-specific microsites with shared components and config-driven customization",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
