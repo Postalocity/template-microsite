@@ -36,6 +36,19 @@ Rules are loaded from `config/ikb/{brandId}/rules.json` (via the engine loader o
 
 See `docs/cms/VALIDATION_HOOKS.md` for ready-to-paste hook examples for Payload and Strapi.
 
+## Bootstrapping the Real Loader (Important)
+
+By default the package uses safe built-in rules. To use the live per-brand data from `config/ikb/` you must register the engine loader once at startup:
+
+```ts
+// In your generator entry point, CMS server, or test setup
+import { registerEngineLoader } from '@microsite/validation';
+
+registerEngineLoader();   // now validatePhrase etc. will use real IKB JSON
+```
+
+The React context (`useIKB().isPhraseAllowed`) has already been updated to use the same pure functions, so once the loader is registered the whole system is consistent.
+
 ## Development
 
 ```bash

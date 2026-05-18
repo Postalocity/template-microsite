@@ -5,3 +5,4 @@
  */
 
 export * from './config-loader';
+export type { IKBRules, IKBConfig } from '../common/types/engine';

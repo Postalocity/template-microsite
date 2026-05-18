@@ -92,6 +92,16 @@ export function loadIKB(brandId: string): IKBConfig {
 }
 
 /**
+ * Load only the IKBRules portion for a brand.
+ * This is the preferred function for the @microsite/validation layer
+ * and for CMS publish hooks.
+ */
+export function loadIKBRules(brandId: string): import('../common/types/engine').IKBRules {
+  const ikb = loadIKB(brandId);
+  return ikb.rules;
+}
+
+/**
  * Load the complete engine context for a brand
  */
 export function loadEngineContext(brandId: string): EngineContext {

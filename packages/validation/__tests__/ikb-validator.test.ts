@@ -6,7 +6,7 @@
  * the actual per-brand rules in config/ikb/.
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import {
   validatePhrase,
   validateContentType,
@@ -14,11 +14,25 @@ import {
   setIKBLoader
 } from '../src/index.js';
 
+// Register the real engine loader so tests run against live IKB data
+// This works because Vitest is executed from the project root.
+import { loadIKBRules } from '../../../engine/config-loader.js';
+
+beforeAll(() => {
+  setIKBLoader((brandId: string) => loadIKBRules(brandId));
+});
+
 describe('@microsite/validation — ikb-validator (default rules)', () => {
-  it('blocks well-known blocklisted phrases for any brand', async () => {
-    const result = await validatePhrase('Our service delivers guaranteed results', 'postalocity');
+  it('blocks real blocklisted phrases from postalocity IKB', async () => {
+    const result = await validatePhrase('We provide guaranteed results and 100% delivery', 'postalocity');
     expect(result.valid).toBe(false);
     expect(result.errors.some(e => e.includes('guaranteed results'))).toBe(true);
+    expect(result.errors.some(e => e.includes('100% delivery'))).toBe(true);
+  });
+
+  it('blocks "defensible proof" which only exists in real postalocity rules', async () => {
+    const result = await validatePhrase('Defensible proof for your compliance needs', 'postalocity');
+    expect(result.valid).toBe(false);
   });
 
   it('allows normal marketing language', async () => {

@@ -10,4 +10,6 @@
 
 export * from './types.js';
 export * from './ikb-validator.js';
+export { isPhraseAllowed, isContentAllowed } from './ikb-validator.js';
 export * from './content-quality.js';
+export * from './register-engine-loader.js';

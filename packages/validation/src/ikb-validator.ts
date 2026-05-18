@@ -145,3 +145,19 @@ export async function validateSection(
 export async function getIKBRules(brandId: string): Promise<IKBRulesSnapshot> {
   return loadRulesForBrand(brandId);
 }
+
+// -----------------------------------------------------------------------------
+// Pure synchronous checkers (ideal for React context and anywhere rules are already in memory)
+// -----------------------------------------------------------------------------
+
+export function isPhraseAllowed(phrase: string, rules: IKBRulesSnapshot): boolean {
+  const lower = phrase.toLowerCase();
+  return !rules.blocklistedPhrases.some((blocked) =>
+    lower.includes(blocked.toLowerCase())
+  );
+}
+
+export function isContentAllowed(contentType: string, rules: IKBRulesSnapshot): boolean {
+  const lower = contentType.toLowerCase();
+  return !rules.blocklistedContent.some((b) => b.toLowerCase() === lower);
+}

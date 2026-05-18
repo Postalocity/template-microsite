@@ -8,6 +8,9 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import type { IKBConfig, IKBRules } from '../types/engine';
 
+// Use the single source of truth for phrase/content checking
+import { isPhraseAllowed as isPhraseAllowedPure, isContentAllowed as isContentAllowedPure } from '../../packages/validation/src/index.js';
+
 // =============================================================================
 // DEFAULT IKB VALUES (Postalocity)
 // =============================================================================
@@ -190,14 +193,8 @@ export function IKBProvider({ ikb = defaultIKBConfig, children }: IKBProviderPro
     rules: ikb.rules,
     getPromoCode: (serviceSlug: string) => ikb.rules.promoCodes[serviceSlug],
     getTrustSignals: () => ikb.rules.trustSignals,
-    isContentAllowed: (contentType: string) => 
-      !ikb.rules.blocklistedContent.includes(contentType.toLowerCase()),
-    isPhraseAllowed: (phrase: string) => {
-      const lowerPhrase = phrase.toLowerCase();
-      return !ikb.rules.blocklistedPhrases.some(
-        (blocked) => lowerPhrase.includes(blocked.toLowerCase())
-      );
-    },
+    isContentAllowed: (contentType: string) => isContentAllowedPure(contentType, ikb.rules),
+    isPhraseAllowed: (phrase: string) => isPhraseAllowedPure(phrase, ikb.rules),
   }), [ikb]);
 
   return (
@@ -256,18 +253,13 @@ export function useIKBTerminology() {
 // =============================================================================
 
 export function getDefaultIKBContext(): IKBContextValue {
+  const rules = defaultIKBConfig.rules;
   return {
     ikb: defaultIKBConfig,
-    rules: defaultIKBConfig.rules,
-    getPromoCode: (serviceSlug: string) => defaultIKBConfig.rules.promoCodes[serviceSlug],
-    getTrustSignals: () => defaultIKBConfig.rules.trustSignals,
-    isContentAllowed: (contentType: string) =>
-      !defaultIKBConfig.rules.blocklistedContent.includes(contentType.toLowerCase()),
-    isPhraseAllowed: (phrase: string) => {
-      const lowerPhrase = phrase.toLowerCase();
-      return !defaultIKBConfig.rules.blocklistedPhrases.some(
-        (blocked) => lowerPhrase.includes(blocked.toLowerCase())
-      );
-    },
+    rules,
+    getPromoCode: (serviceSlug: string) => rules.promoCodes[serviceSlug],
+    getTrustSignals: () => rules.trustSignals,
+    isContentAllowed: (contentType: string) => isContentAllowedPure(contentType, rules),
+    isPhraseAllowed: (phrase: string) => isPhraseAllowedPure(phrase, rules),
   };
 }
