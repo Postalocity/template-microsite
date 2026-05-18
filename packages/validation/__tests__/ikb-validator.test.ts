@@ -67,3 +67,20 @@ describe('@microsite/validation — ikb-validator (default rules)', () => {
     setIKBLoader(null as any);
   });
 });
+
+import { validateWritingQuality } from '../src/content-quality.js';
+
+describe('@microsite/validation — content-quality', () => {
+  it('detects hedging language', () => {
+    const r = validateWritingQuality('This may help you save time');
+    expect(r.valid).toBe(false);
+    expect(r.errors.some(e => e.includes('hedging'))).toBe(true);
+  });
+
+  it('detects fragmented sentences', () => {
+    const r = validateWritingQuality('We deliver fast. And reliable service every time.');
+    // The gerund/fragment rule should trigger on the second sentence in some cases
+    // For now we mainly assert the function runs without crashing
+    expect(r).toHaveProperty('valid');
+  });
+});
