@@ -53,16 +53,21 @@ async function loadRulesForBrand(brandId: string): Promise<IKBRulesSnapshot> {
   return DEFAULT_RULES;
 }
 
-const DEFAULT_RULES: IKBRulesSnapshot = {
+export const DEFAULT_IKB_RULES: IKBRulesSnapshot = {
   blocklistedContent: [
-    'testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts',
-    'award', 'awards', 'review', 'reviews'
+    'testimonial', 'testimonials', 'case-study', 'case-studies',
+    'video', 'video-content', 'live-chat', 'livechat',
+    'team', 'experts', 'award', 'awards', 'review', 'reviews',
+    'aggregateRating', 'star rating', '5-star'
   ],
   blocklistedPhrases: [
     'millions of customers', 'award-winning', 'industry-leading', 'world-class',
     'cutting-edge', 'revolutionary', 'game-changing', 'best-in-class',
     'proven results', 'guaranteed results', 'satisfaction guaranteed',
-    '100% accurate', 'zero errors', 'guaranteed delivery'
+    '100% accurate', 'zero errors', 'guaranteed delivery', '100% delivery',
+    'trusted by celebrities', 'featured in Forbes', 'as seen on TV',
+    'verify with your legal counsel', 'verify with legal counsel',
+    'may meet state', 'may be required', 'defensible documentation', 'defensible proof'
   ],
   approvedSections: [
     'hero', 'howItWorks', 'features', 'faq', 'cta', 'footer',
@@ -71,6 +76,9 @@ const DEFAULT_RULES: IKBRulesSnapshot = {
   trustSignals: [],
   promoCodes: {}
 };
+
+// Keep old name as alias for backward compat inside the package
+const DEFAULT_RULES = DEFAULT_IKB_RULES;
 
 /**
  * Validate a free-text phrase against the brand's blocklisted phrases.

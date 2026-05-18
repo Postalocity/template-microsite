@@ -9,8 +9,12 @@ import fs from 'fs';
 import path from 'path';
 
 // Phase 2: Unified validation layer (preferred path when brandId is known)
-import { validatePhrase } from '../packages/validation/src/index.js';
-import { initializeValidation } from '../packages/validation/src/index.js';
+import {
+  validatePhrase,
+  initializeValidation,
+  DEFAULT_IKB_RULES
+} from '../packages/validation/src/index.js';
+
 initializeValidation();
 
 /**
@@ -70,48 +74,8 @@ export const MAIL_CLASSES = [
 // BLOCKLISTS
 // =============================================================================
 
-/** Content that CANNOT appear on any microsite */
-export const BLOCKLISTED_CONTENT = [
-  'testimonial',
-  'testimonials',
-  'case-study',
-  'case-studies',
-  'video',
-  'video-content',
-  'live-chat',
-  'livechat',
-  'team',
-  'experts',
-  'award',
-  'awards',
-  'review',
-  'reviews',
-  'aggregateRating',
-  'star rating',
-  '5-star',
-] as const;
-
-/** Blocklisted phrases that indicate hallucination or unverified claims */
-export const BLOCKLISTED_PHRASES = [
-  'millions of customers',
-  'award-winning',
-  'industry-leading',
-  'world-class',
-  'cutting-edge',
-  'revolutionary',
-  'game-changing',
-  'best-in-class',
-  'proven results',
-  'guaranteed results',
-  'satisfaction guaranteed',
-  '100% accurate',
-  'zero errors',
-  'trusted by celebrities',
-  'featured in Forbes',
-  'as seen on TV',
-  'guaranteed delivery',
-  '100% delivery',
-] as const;
+export const BLOCKLISTED_CONTENT = [...DEFAULT_IKB_RULES.blocklistedContent] as const;
+export const BLOCKLISTED_PHRASES = [...DEFAULT_IKB_RULES.blocklistedPhrases] as const;
 
 // =============================================================================
 // VALIDATORS
