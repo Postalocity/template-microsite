@@ -10,6 +10,7 @@
 
 export * from './types.js';
 export * from './ikb-validator.js';
+export { DEFAULT_IKB_RULES } from './ikb-validator.js';
 export { 
   isPhraseAllowed, 
   isContentAllowed,

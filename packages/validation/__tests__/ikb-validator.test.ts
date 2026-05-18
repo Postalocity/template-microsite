@@ -55,6 +55,17 @@ describe('@microsite/validation — ikb-validator (default rules)', () => {
     expect(badFaq.errors.some(e => e.includes('non-empty'))).toBe(true);
   });
 
+  it('validateSection warns on empty benefits/features and malformed comparison rows', async () => {
+    const emptyBenefits = await validateSection({ name: 'benefits', benefits: [] }, 'postalocity');
+    expect(emptyBenefits.errors.some(e => e.includes('empty list'))).toBe(true);
+
+    const badComparison = await validateSection({
+      name: 'comparison',
+      rows: [{ feature: '' }]
+    }, 'postalocity');
+    expect(badComparison.warnings.length).toBeGreaterThan(0);
+  });
+
   it('allows normal marketing language', async () => {
     const result = await validatePhrase('Fast, reliable mailing with real proof every time', 'odins-innovations');
     expect(result.valid).toBe(true);

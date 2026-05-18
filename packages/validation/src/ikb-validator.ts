@@ -205,6 +205,26 @@ export async function validateSection(
         warnings.push('Pricing section should include pricing tiers or reference IKB pricing');
       }
     }
+
+    // Comparison table basic structure
+    if (lower === 'comparison' || lower === 'comparisontable') {
+      const rows = sec.rows || sec.comparisons;
+      if (rows && Array.isArray(rows)) {
+        rows.forEach((row: any, i: number) => {
+          if (!row.feature) {
+            warnings.push(`Comparison row ${i + 1} is missing a "feature" label`);
+          }
+        });
+      }
+    }
+
+    // Benefits / features list should not be empty
+    if (lower === 'benefits' || lower === 'features') {
+      const items = sec.benefits || sec.features || sec.items;
+      if (items && Array.isArray(items) && items.length === 0) {
+        errors.push(`${sectionName} section has an empty list`);
+      }
+    }
   }
 
   return {
