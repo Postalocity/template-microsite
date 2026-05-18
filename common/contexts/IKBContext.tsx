@@ -9,7 +9,7 @@ import React, { createContext, useContext, useMemo } from 'react';
 import type { IKBConfig, IKBRules } from '../types/engine';
 
 // Use the single source of truth for phrase/content checking
-import { isPhraseAllowed as isPhraseAllowedPure, isContentAllowed as isContentAllowedPure } from '../../packages/validation/src/index.js';
+import { isPhraseAllowed as isPhraseAllowedPure, isContentAllowed as isContentAllowedPure } from '@microsite/validation';
 
 // =============================================================================
 // DEFAULT IKB VALUES (Postalocity)

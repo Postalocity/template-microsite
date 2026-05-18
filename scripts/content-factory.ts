@@ -13,7 +13,7 @@ import {
   validatePhrase,
   initializeValidation,
   DEFAULT_IKB_RULES
-} from '../packages/validation/src/index.js';
+} from '@microsite/validation';
 
 initializeValidation();
 

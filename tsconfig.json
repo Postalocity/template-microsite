@@ -28,7 +28,9 @@
       "@lib/*": ["./common/lib/*"],
       "@hooks/*": ["./common/hooks/*"],
       "@assets/*": ["./common/assets/*"],
-      "@types/*": ["./common/types/*"]
+      "@types/*": ["./common/types/*"],
+      "@microsite/validation": ["./packages/validation/src"],
+      "@microsite/validation/*": ["./packages/validation/src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
