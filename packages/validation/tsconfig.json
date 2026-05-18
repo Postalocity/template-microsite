@@ -8,15 +8,22 @@
     "declarationMap": true,
     "sourceMap": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": ".",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmitOnError": true
+    "noEmitOnError": false,
+    "composite": false
   },
-  "include": ["src/**/*"],
+  "include": [
+    "src/**/*",
+    "../common/types/engine.ts",
+    "../common/types/content.ts",
+    "../../engine/config-loader.ts",
+    "../../engine/index.ts"
+  ],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }
