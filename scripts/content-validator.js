@@ -1,21 +1,29 @@
 #!/usr/bin/env node
 
 /**
- * Content Quality Validator (Compatibility Layer)
- * 
- * ⚠️  DEPRECATION NOTICE (Phase 2)
- * This file is now a thin compatibility wrapper.
- * 
- * Preferred API: import from `@microsite/validation`
- *   - validateWritingQuality(text, context)
- *   - validatePhrase(phrase, brandId)
- *   - validateSiteContent(payload, brandId)
- * 
- * This file is kept for backward compatibility with existing scripts and CLI usage.
- * New code should import directly from the unified validation package.
+ * Content Quality Validator (Compatibility / Legacy Layer)
+ *
+ * ⚠️  DEPRECATION NOTICE (Phase 2 – Deep Cleanup)
+ *
+ * This file is now a **thin delegating compatibility wrapper**.
+ * Most real logic has moved to `@microsite/validation`.
+ *
+ * Preferred imports:
+ *   import {
+ *     validateWritingQuality,
+ *     validatePhrase,
+ *     validateSiteContent,
+ *     validateSection
+ *   } from '@microsite/validation';
+ *
+ * Only generator-specific structural checks (comparison table row validation, etc.)
+ * and the legacy CLI (`node scripts/content-validator.js`) remain here.
  */
 
-import { validateWritingQuality as newValidateWritingQuality } from '../packages/validation/src/index.js';
+import {
+  validateWritingQuality as newValidateWritingQuality,
+  validatePhrase,
+} from '@microsite/validation';
 
 import fs from 'fs';
 import path from 'path';
@@ -437,7 +445,12 @@ class ContentValidator {
   }
 
   /**
-   * Validate text content against rules
+   * Validate text content against rules.
+   *
+   * ⚠️  LEGACY METHOD (Phase 2 Deep Cleanup)
+   * Most real validation now lives in @microsite/validation.
+   * This method is kept only for the existing CLI/reporting behavior.
+   * New code should use validateWritingQuality + validatePhrase directly.
    */
   validateText(text, context = '') {
     // Check hedging phrases
@@ -615,16 +628,17 @@ if (isMainModule) {
   main();
 }
 
-// Re-export the new canonical implementation for consumers who still import from here
+// === Clean re-exports from the single source of truth ===
 export { newValidateWritingQuality as validateWritingQuality };
+export { validatePhrase, validateSiteContent, validateSection } from '@microsite/validation';
 
-// Legacy exports (will be removed in a future major version)
+// Legacy class kept only for the existing CLI (`node scripts/content-validator.js`)
 export { ContentValidator, rules };
 
-// Deprecation warning helper
+// Strong deprecation helper
 export function __deprecatedContentValidatorWarning() {
   console.warn(
-    '[DEPRECATED] scripts/content-validator.js is a legacy compatibility layer. ' +
-    'Please migrate to `import { validateWritingQuality, validatePhrase, validateSiteContent } from "@microsite/validation"`'
+    '[DEPRECATED] scripts/content-validator.js is now a thin compatibility layer.\n' +
+    'Migrate to: import { validateWritingQuality, validatePhrase, validateSiteContent } from "@microsite/validation"'
   );
 }
