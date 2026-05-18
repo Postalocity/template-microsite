@@ -1,0 +1,60 @@
+{
+  "name": "@microsite/validation",
+  "version": "0.1.0",
+  "description": "Pure, framework-agnostic IKB compliance validation and content quality checks for use by headless CMS (Payload/Strapi) and the generator.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./ikb-validator": {
+      "types": "./dist/ikb-validator.d.ts",
+      "import": "./dist/ikb-validator.js"
+    },
+    "./content-quality": {
+      "types": "./dist/content-quality.d.ts",
+      "import": "./dist/content-quality.js"
+    },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/types.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "echo 'add eslint later'",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "typescript": "^5.6.3",
+    "vitest": "^4.0.18"
+  },
+  "peerDependencies": {
+    "zod": "^3.24.1"
+  },
+  "peerDependenciesMeta": {
+    "zod": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/htafolla/template-microsite.git",
+    "directory": "packages/validation"
+  },
+  "license": "MIT"
+}

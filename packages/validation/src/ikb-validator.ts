@@ -1,0 +1,147 @@
+/**
+ * @microsite/validation/ikb-validator
+ *
+ * Pure, framework-agnostic IKB compliance validation functions.
+ * These are the core "validation hooks" that a headless CMS (Payload/Strapi)
+ * will call on every publish attempt.
+ *
+ * Reuses the existing IKB loading logic from engine/config-loader.ts
+ * (once Phase 1 monorepo layout is in place).
+ */
+
+import type { ValidationResult, IKBRulesSnapshot, ValidationContext } from './types.js';
+import type { IKBConfig } from '../../../common/types/engine.js'; // will resolve once monorepo paths are set
+
+// -----------------------------------------------------------------------------
+// Loader Injection (the key extensibility point for CMS + generator)
+// -----------------------------------------------------------------------------
+
+export type IKBLoader = (brandId: string) => Promise<IKBRulesSnapshot> | IKBRulesSnapshot;
+
+let _ikbLoader: IKBLoader | null = null;
+
+/**
+ * Allow the host application (generator, Payload hook, etc.) to provide
+ * the real IKB loader from engine/config-loader.ts.
+ */
+export function setIKBLoader(loader: IKBLoader) {
+  _ikbLoader = loader;
+}
+
+/**
+ * Internal loader that prefers the injected one, then tries a dynamic import
+ * of the real engine loader, then falls back to safe defaults.
+ */
+async function loadRulesForBrand(brandId: string): Promise<IKBRulesSnapshot> {
+  if (_ikbLoader) {
+    return _ikbLoader(brandId);
+  }
+
+  // Best-effort dynamic import (works after Phase 1 monorepo wiring)
+  try {
+    // @ts-ignore - path will be correct once packages are linked
+    const mod = await import('../../../engine/config-loader.js');
+    if (mod?.loadIKB) {
+      const ikb = await mod.loadIKB(brandId);
+      return ikb.rules as IKBRulesSnapshot;
+    }
+  } catch {
+    // fall through to default
+  }
+
+  console.warn(`[ikb-validator] Using built-in defaults for brand "${brandId}" (no loader registered)`);
+  return DEFAULT_RULES;
+}
+
+const DEFAULT_RULES: IKBRulesSnapshot = {
+  blocklistedContent: [
+    'testimonial', 'testimonials', 'video', 'live-chat', 'team', 'experts',
+    'award', 'awards', 'review', 'reviews'
+  ],
+  blocklistedPhrases: [
+    'millions of customers', 'award-winning', 'industry-leading', 'world-class',
+    'cutting-edge', 'revolutionary', 'game-changing', 'best-in-class',
+    'proven results', 'guaranteed results', 'satisfaction guaranteed',
+    '100% accurate', 'zero errors', 'guaranteed delivery'
+  ],
+  approvedSections: [
+    'hero', 'howItWorks', 'features', 'faq', 'cta', 'footer',
+    'trustSignals', 'difference', 'pricing'
+  ],
+  trustSignals: [],
+  promoCodes: {}
+};
+
+/**
+ * Validate a free-text phrase against the brand's blocklisted phrases.
+ * This is the primary function a CMS should call on rich text / headline fields.
+ */
+export async function validatePhrase(
+  phrase: string,
+  brandId: string,
+  context?: ValidationContext
+): Promise<ValidationResult> {
+  const rules = await loadRulesForBrand(brandId);
+  const lower = phrase.toLowerCase();
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const blocked of rules.blocklistedPhrases) {
+    if (lower.includes(blocked.toLowerCase())) {
+      errors.push(`Blocklisted phrase detected: "${blocked}" (brand: ${brandId})`);
+    }
+  }
+
+  return {
+    valid: errors.length === 0,
+    errors,
+    warnings
+  };
+}
+
+/**
+ * Validate a content/section type against the brand's allow/block list.
+ */
+export async function validateContentType(
+  type: string,
+  brandId: string,
+  context?: ValidationContext
+): Promise<ValidationResult> {
+  const rules = await loadRulesForBrand(brandId);
+  const lower = type.toLowerCase();
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  if (rules.blocklistedContent.some(b => b.toLowerCase() === lower)) {
+    errors.push(`Content type "${type}" is blocklisted for brand "${brandId}"`);
+  }
+
+  return {
+    valid: errors.length === 0,
+    errors,
+    warnings
+  };
+}
+
+/**
+ * Validate an entire section object (placeholder for richer structural rules).
+ */
+export async function validateSection(
+  section: unknown,
+  brandId: string,
+  sectionName?: string
+): Promise<ValidationResult> {
+  // TODO: Implement deeper structural validation (e.g. required fields per section type)
+  return {
+    valid: true,
+    errors: [],
+    warnings: []
+  };
+}
+
+/**
+ * Return the full rule snapshot for a brand (useful for admin UIs and debugging).
+ */
+export async function getIKBRules(brandId: string): Promise<IKBRulesSnapshot> {
+  return loadRulesForBrand(brandId);
+}
