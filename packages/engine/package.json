@@ -1,0 +1,30 @@
+{
+  "name": "@microsite/engine",
+  "version": "0.1.0",
+  "description": "Core engine utilities for the Microsite Platform (config loading, IKB, etc.)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./config-loader": {
+      "types": "./dist/config-loader.d.ts",
+      "import": "./dist/config-loader.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "test": "vitest run",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3",
+    "typescript": "^5.6.3",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {}
+}

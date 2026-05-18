@@ -27,10 +27,9 @@ export function initializeValidation(): void {
 export function registerEngineLoader(): void {
   if (registered) return;
 
-  // Dynamic import so this file can be imported even before full monorepo linking
-  // The consumer (running from project root) will have the correct module resolution.
-  // We use a relative path that works when the package is inside the monorepo.
-  import('../../../engine/config-loader.js')
+  // Dynamic import — try the new monorepo package first, then fall back to the legacy location
+  import('@microsite/engine/config-loader')
+    .catch(() => import('../../../engine/config-loader.js'))
     .then((mod) => {
       const { loadIKBRules } = mod;
 
