@@ -6,70 +6,128 @@
     "prune": true
   },
   "mcp": {
-    "context7": { "enabled": false },
-    "global-everything": { "enabled": false },
-    "global-filesystem": { "enabled": false },
-    "global-git": { "enabled": false }
+    "context7": {
+      "enabled": false
+    },
+    "global-everything": {
+      "enabled": false
+    },
+    "global-filesystem": {
+      "enabled": false
+    },
+    "global-git": {
+      "enabled": false
+    }
   },
   "agent": {
-    "orchestrator": {
-      "description": "Orchestrator agent for workflow coordination",
-      "temperature": 1.0,
-      "mode": "subagent"
-    },
-    "enforcer": {
-      "description": "Enforcer agent for codex compliance",
-      "temperature": 1.0,
+    "architect": {
+      "description": "Architect agent for system design - PRIMARY for design decisions",
+      "temperature": 1,
       "mode": "primary"
     },
-    "architect": {
-      "description": "Architect agent for system design",
-      "temperature": 1.0,
+    "strategist": {
+      "description": "Expert in system design, architecture decisions, and technical roadmaps",
+      "temperature": 1,
       "mode": "subagent"
     },
     "testing-lead": {
       "description": "Testing lead for testing strategy",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
     "bug-triage-specialist": {
       "description": "Bug triage specialist",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
     "code-reviewer": {
       "description": "Code reviewer for quality",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
     "security-auditor": {
       "description": "Security auditor",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
     "refactorer": {
       "description": "Refactorer for code improvement",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
     "researcher": {
       "description": "Researcher for codebase exploration",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
     "log-monitor": {
       "description": "Log monitor for diagnostics",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
-    "explore": {
-      "description": "Codebase exploration agent",
-      "temperature": 1.0,
+    "backend-engineer": {
+      "description": "Expert in REST/GraphQL APIs, microservices, authentication, server architecture, and backend performance",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "frontend-engineer": {
+      "description": "Expert in React, Vue, Angular, responsive design, and frontend performance",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "frontend-ui-ux-engineer": {
+      "description": "Expert in visual design, CSS systems, accessibility, and user experience",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "database-engineer": {
+      "description": "Expert in SQL/NoSQL databases, query optimization, data modeling, and database performance",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "devops-engineer": {
+      "description": "Expert in CI/CD pipelines, infrastructure as code, containerization, and deployment automation",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "mobile-developer": {
+      "description": "Expert in iOS, Android, React Native, and Flutter development",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "performance-engineer": {
+      "description": "Expert in profiling, benchmarking, load testing, and optimization",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "content-creator": {
+      "description": "Expert in creating marketing copy, technical documentation, blog posts, and social media content",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "growth-strategist": {
+      "description": "Expert in growth hacking, user acquisition, conversion optimization, and analytics",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "seo-consultant": {
+      "description": "Expert in search engine optimization, keyword research, and organic traffic growth",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "tech-writer": {
+      "description": "Expert in API documentation, README files, guides, and developer experience",
+      "temperature": 1,
+      "mode": "subagent"
+    },
+    "multimodal-looker": {
+      "description": "Media file analysis and interpretation specialist for images, diagrams, PDFs, and visual content",
+      "temperature": 1,
       "mode": "subagent"
     },
     "code-analyzer": {
       "description": "Code analyzer for metrics",
-      "temperature": 1.0,
+      "temperature": 1,
       "mode": "subagent"
     },
     "sisyphus": {
@@ -90,179 +148,6 @@
     },
     "plan": {
       "description": "Plan agent",
-      "disable": true
-    },
-    "strray-architect": {
-      "description": "StringRay architect",
-      "disable": true
-    },
-    "strray-orchestrator": {
-      "description": "StringRay orchestrator",
-      "disable": true
-    },
-    "strray-researcher": {
-      "description": "StringRay researcher",
-      "disable": true
-    },
-    "strray-refactorer": {
-      "description": "StringRay refactorer",
-      "disable": true
-    },
-    "strray-security-auditor": {
-      "description": "StringRay security auditor",
-      "disable": true
-    },
-    "strray-testing-lead": {
-      "description": "StringRay testing lead",
-      "disable": true
-    },
-    "strray-enforcer": {
-      "description": "StringRay enforcer",
-      "disable": true
-    },
-    "strray-code-reviewer": {
-      "description": "StringRay code reviewer",
-      "disable": true
-    },
-    "strray-bug-triage-specialist": {
-      "description": "StringRay bug triage",
-      "disable": true
-    },
-    "strray-state-manager": {
-      "description": "StringRay state manager",
-      "disable": true
-    },
-    "strray-security-scan": {
-      "description": "StringRay security scan",
-      "disable": true
-    },
-    "strray-processor-pipeline": {
-      "description": "StringRay processor pipeline",
-      "disable": true
-    },
-    "strray-performance-analysis": {
-      "description": "StringRay performance analysis",
-      "disable": true
-    },
-    "strray-model-health-check": {
-      "description": "StringRay model health check",
-      "disable": true
-    },
-    "strray-lint": {
-      "description": "StringRay lint",
-      "disable": true
-    },
-    "strray-framework-compliance-audit": {
-      "description": "StringRay compliance audit",
-      "disable": true
-    },
-    "strray-boot-orchestrator": {
-      "description": "StringRay boot orchestrator",
-      "disable": true
-    },
-    "strray-auto-format": {
-      "description": "StringRay auto format",
-      "disable": true
-    },
-    "strray-architect-tools": {
-      "description": "StringRay architect tools",
-      "disable": true
-    },
-    "strray-ui-ux-design": {
-      "description": "StringRay UI/UX design",
-      "disable": true
-    },
-    "strray-testing-strategy": {
-      "description": "StringRay testing strategy",
-      "disable": true
-    },
-    "strray-testing-best-practices": {
-      "description": "StringRay testing best practices",
-      "disable": true
-    },
-    "strray-project-analysis": {
-      "description": "StringRay project analysis",
-      "disable": true
-    },
-    "project-analysis": {
-      "description": "Project analysis (skill)",
-      "disable": true,
-      "note": "This is a skill/MCP, not an agent"
-    },
-    "strray-performance-optimization": {
-      "description": "StringRay performance optimization",
-      "disable": true
-    },
-    "strray-git-workflow": {
-      "description": "StringRay git workflow",
-      "disable": true
-    },
-    "strray-documentation-generation": {
-      "description": "StringRay documentation generation",
-      "disable": true
-    },
-    "strray-devops-deployment": {
-      "description": "StringRay devops deployment",
-      "disable": true
-    },
-    "strray-database-design": {
-      "description": "StringRay database design",
-      "disable": true
-    },
-    "strray-code-review": {
-      "description": "StringRay code review",
-      "disable": true
-    },
-    "strray-architecture-patterns": {
-      "description": "StringRay architecture patterns",
-      "disable": true
-    },
-    "strray-api-design": {
-      "description": "StringRay API design",
-      "disable": true
-    },
-    "strray-enforcer-tools": {
-      "description": "StringRay enforcer tools",
-      "disable": true
-    },
-    "testing-strategy": {
-      "description": "Testing strategy (skill)",
-      "disable": true
-    },
-    "performance-optimization": {
-      "description": "Performance optimization (skill)",
-      "disable": true
-    },
-    "code-review": {
-      "description": "Code review (skill)",
-      "disable": true
-    },
-    "security-audit": {
-      "description": "Security audit (skill)",
-      "disable": true
-    },
-    "architecture-patterns": {
-      "description": "Architecture patterns (skill)",
-      "disable": true
-    },
-    "git-workflow": {
-      "description": "Git workflow (skill)",
-      "disable": true
-    },
-    "api-design": {
-      "description": "API design (skill)",
-      "disable": true
-    },
-    "ui-ux-design": {
-      "description": "UI/UX design (skill)",
-      "disable": true
-    },
-    "documentation-generation": {
-      "description": "Documentation generation (skill)",
-      "disable": true
-    },
-    "refactoring-strategies": {
-      "description": "Refactoring strategies (skill)",
       "disable": true
     }
   }

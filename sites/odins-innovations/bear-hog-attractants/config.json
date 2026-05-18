@@ -1,0 +1,448 @@
+{
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/bear-hog-attractants.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service bear-hog-attractants",
+    "source": "config/sites/odins-innovations/bear-hog-attractants.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-18T14:06:14.654Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
+  "site": {
+    "id": "odins-innovations",
+    "name": "Bear & Hog Attractants",
+    "slug": "bear-hog-attractants",
+    "domain": "odinsinnovations.com",
+    "basename": "odins-innovations-bear-hog-attractants",
+    "contact": {
+      "email": "support@odinsscents.com",
+      "phone": "316-393-0440",
+      "address": ", ,  "
+    }
+  },
+  "branding": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "logo": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 30,
+      "s": 80,
+      "l": 35
+    }
+  },
+  "seo": {
+    "title": "Bear & Hog Attractants: Synthetic Scent Beads for America's Fastest-Growing Hunts",
+    "description": "Bear attractant and feral hog attractant beads engineered for 30+ days of consistent, weatherproof release. Synthetic bear bait, hog hunting lure, bear scent beads and hog attractant beads. Legal in all 50 states.",
+    "ogImage": "/bear-hog-attractants/images/og-image.png",
+    "keywords": [
+      "bear attractant",
+      "feral pig attractant",
+      "feral hog attractant",
+      "wild hog scent",
+      "bear hunting scent",
+      "hog hunting lure",
+      "synthetic bear bait",
+      "bear scent beads",
+      "hog attractant beads",
+      "long lasting scent beads"
+    ],
+    "ogTitle": "Bear & Hog Attractants — Synthetic Scent Beads That Last 30+ Days",
+    "ogDescription": "100% synthetic bear attractant and feral hog attractant beads with 30+ day release. Weatherproof, biodegradable, legal everywhere.",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://www.odinsinnovations.com/bear-hog-attractants",
+    "googleAnalyticsId": "G-XXXXXXXXXX"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "Why Odin's",
+        "href": "#why-odins"
+      },
+      {
+        "label": "How to Use",
+        "href": "#how-to-use"
+      },
+      {
+        "label": "Products",
+        "href": "#products"
+      },
+      {
+        "label": "Comparison",
+        "href": "#comparison"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "text": "Shop Bear & Hog Attractants",
+      "href": "https://www.odinsinnovations.com/collections/food-scents"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "Bear & Hog Attractants",
+        "highlightTerm": "Synthetic Scent Beads for America's Fastest-Growing Hunts",
+        "alt": "Odin's synthetic bear attractant and hog attractant beads at active bait site"
+      },
+      "subhead": "Bear attractant and feral hog attractant beads engineered for consistent, weatherproof results.",
+      "background": {
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Product_Page_8_Bears_vertical_cropped.png?v=1778258582",
+        "alt": "Odin's synthetic bear attractant and hog attractant beads at active bait site"
+      },
+      "ctas": [
+        {
+          "text": "Shop Now — Starting at $14.95",
+          "href": "https://www.odinsinnovations.com/collections/liquid-scents?promo=HUNT2026",
+          "variant": "primary"
+        },
+        {
+          "text": "See How to Use",
+          "href": "#how-to-use",
+          "variant": "outline"
+        }
+      ]
+    },
+    "benefits": {
+      "section": {
+        "title": "The Odin's Advantage",
+        "description": ""
+      },
+      "headline": "The Odin's Advantage",
+      "intro": "Bear hunting and feral hog hunting represent two of the fastest-growing segments in American hunting. Black bear populations have expanded in many eastern and western states, creating new hunting opportunities. Meanwhile, feral hog populations — now estimated at 6–9 million animals across 35+ states — have become an ecological and agricultural emergency that has tripled in geographic range since the 1980s. Both species respond powerfully to scent attractants, and Odin's synthetic formulations offer advantages that natural products cannot match.",
+      "items": [
+        {
+          "title": "30+ Day Extended Release",
+          "description": "Continuous scent output from polymer beads — maintain attraction with minimal site visits.",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png"
+        },
+        {
+          "title": "Weatherproof Formula",
+          "description": "Maintains consistent release even after rain. Lab-consistent synthetic construction.",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404"
+        },
+        {
+          "title": "Regulatory Flexibility",
+          "description": "Non-consumable synthetic bear attractant and hog attractant beads. Legal in all 50 states.",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png"
+        }
+      ]
+    },
+    "why-odins": {
+      "headline": "Why Bears and Hogs Respond to Scent Attractants",
+      "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/image2.jpg?v=1778268401",
+      "content": "Bears and feral hogs share a critical trait: an extraordinarily powerful sense of smell. A black bear's olfactory system is approximately seven times more powerful than a bloodhound's, capable of detecting food sources from over a mile away. Feral hogs rely heavily on scent to locate food, detect danger, and communicate with other hogs.\n\nThis olfactory sensitivity makes scent attractants extremely effective for both species. A strong food-based scent deployed in the right location can draw bears and hogs from significant distances, concentrate their activity at a specific site, and keep them returning over days and weeks. Odin's 30-day extended-release beads and the liquids are uniquely suited to this application because they maintain scent output continuously without requiring daily refreshment — a critical advantage when bait sites may be miles from road access."
+    },
+    "products": {
+      "headline": "Bear & Hog Attractant Products",
+      "intro": "Odin's bear and hog attractants - aromas representing fruit, sweet foods that are particularly attractive & the high calorie foods they seek out in synthetic scents that last 30-days in the beads delivery and 7-day liquids that can be dispersed anywhere and that will stick to their paws and create a trail everywhere they go.",
+      "items": [
+        {
+          "name": "Anise Bear Attractant - Liquid",
+          "description": "The classic bear attractant. Anise (black licorice) is the single most proven bear scent in North America. Odin's synthetic anise liquid delivers concentrated aroma in a weatherproof, oil-based formula with 7-day release per application.",
+          "price": "$14.95",
+          "badge": "Bear — Best Seller",
+          "image": "https://www.odinsinnovations.com/cdn/shop/files/OdinsInnov_Package_2023_4oz_Bottle_Liquid_v__300ppi_11_Anise_v01_2500.png?v=1685477576",
+          "link": "https://www.odinsinnovations.com/products/anise-liquid?promo=HUNT2026"
+        },
+        {
+          "name": "Blackstrap Molasses Scent Beads",
+          "description": "Sweet molasses scent in 30-day extended-release polymer beads. Labeled for deer, hog, and bear use. Ideal for establishing new bait sites where you want continuous attraction without frequent visits.",
+          "price": "From $17.95",
+          "badge": "Bear & Hog",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/OdinsInnov_Package_2023_4oz_Bottle_Liquid_v__300ppi_10_BlackstrapMolasses_v01_2500_9568b41e-937d-4ceb-bf82-9cba4c701ab4.png?v=1740437461",
+          "link": "https://www.odinsinnovations.com/products/blackstrap-molasses-scent-beads?promo=HUNT2026"
+        },
+        {
+          "name": "Jelly Donut Scent Beads",
+          "description": "Sweet bakery scent replicates donut aroma without mess or spoilage. Replicates the pastry/donut aroma that bear hunters have used for decades. 30-day continuous release.",
+          "price": "From $17.95",
+          "badge": "Bear & Hog",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_JellyDonut_c7bb84e8-2dc6-456d-b588-49a5e96edec7.png?v=1688151836",
+          "link": "https://www.odinsinnovations.com/products/jelly-donut-scent-beads?promo=HUNT2026"
+        },
+        {
+          "name": "Peanut Butter Scent Beads",
+          "description": "Rich, sweet, nutty scent. Bears are especially attracted to high-calorie food aromas as they prepare for hibernation. Also highly effective for hogs — the novelty factor draws aggressive investigation.",
+          "price": "From $17.95",
+          "badge": "Bear & Hog",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_PeanutButter_a541044b-9b1e-492a-99e4-bb83c06721b0.png?v=1688151844",
+          "link": "https://www.odinsinnovations.com/products/peanut-butter-scent-beads?promo=HUNT2026"
+        },
+        {
+          "name": "Pear Liquid Attractant",
+          "description": "Rare sweet fruit scent ranked #1 for feral pigs in field testing. Oily formula sticks to paws and hooves, creating return scent trails. 7-day weatherproof release.",
+          "price": "$14.95",
+          "badge": "Hog — #1 Field Tested",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_Pear.png?v=1688151802",
+          "link": "https://www.odinsinnovations.com/products/pear-liquid-scent?promo=HUNT2026"
+        },
+        {
+          "name": "Apple Scent Beads",
+          "description": "Sweet fruit scent with strong carry in warm weather. Excellent for southern states where hogs are active year-round. 30+ day continuous release for bear and hogs.",
+          "price": "From $17.95",
+          "badge": "Hog & Bear",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_Apple_02ab9536-2c51-4620-b252-f18c890f9db0.png?v=1688151798",
+          "link": "https://www.odinsinnovations.com/products/lure-scent-combo?promo=HUNT2026"
+        },
+        {
+          "name": "Sweet Corn Scent Beads",
+          "description": "Proven hog attractant beads for trap and feeding site deployment. 30-day continuous release. Irresistible sweet corn aroma that draws whitetail deer, hogs, and bear.",
+          "price": "$17.95",
+          "badge": "Hog",
+          "image": "https://www.odinsinnovations.com/cdn/shop/files/SweetCorn3oz.jpg?v=1688157990",
+          "link": "https://www.odinsinnovations.com/products/sweet-corn-scent-beads?promo=HUNT2026"
+        },
+        {
+          "name": "Persimmon Liquid",
+          "description": "Sweet persimmon aroma popular in southeastern states where wild persimmon is a primary food source. Fruit-forward scent that replicates natural food sources bears actively seek. 7-day weatherproof release.",
+          "price": "$14.95",
+          "badge": "Bear & Hog",
+          "image": "https://www.odinsinnovations.com/cdn/shop/files/OdinsInnov_Package_2023_4oz_Bottle_Liquid_v__300ppi_12_Persimmon_v01_2500.png?v=1685477514",
+          "link": "https://www.odinsinnovations.com/products/persimmon-liquid?promo=HUNT2026"
+        },
+        {
+          "name": "Maple Bacon Scent Beads",
+          "description": "NEW — Sweet-and-savory combo that pulls deer from distance. Currently being field tested during a spring bear hunt in Canada. Highly effective in areas with agricultural food sources.",
+          "price": "$17.95 / $34.95",
+          "badge": "NEW — Field Testing",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_MapleBacon.png?v=1688151802",
+          "link": "https://www.odinsinnovations.com/products/maple-bacon-scent-beads?promo=HUNT2026"
+        }
+      ],
+      "cta": "Shop All Products: https://www.odinsinnovations.com/collections/food-scents",
+      "note": "Free shipping on orders over $79"
+    },
+    "how-to-use": {
+      "headline": "How to Use\nBear & Hog Attractant Beads",
+      "subhead": "Simple deployment for bear bait sites, hog traps, and trail cameras — one application lasts 30+ days.",
+      "video": "https://www.youtube.com/watch?v=V3EcxZ2HbWQ",
+      "videoLabel": "See It In Action",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Choose Your Scent",
+          "description": "Select a scent matched to your target species. Anise and Jelly Donut for bear. Pear and Sweet Corn for hogs. Blackstrap Molasses and Peanut Butter work for both."
+        },
+        {
+          "number": 2,
+          "title": "Apply At Your Site",
+          "description": "Sprinkle beads at bait sites, wallows, rooting zones, or trail intersections. For hog traps, scatter beads inside and around the perimeter to draw hogs through the entrance. Apply liquid on the ground and surrounding trees — the oil-based formula sticks to feet and snouts, creating scent trails that lead the sounder back."
+        },
+        {
+          "number": 3,
+          "title": "Let the Beads Work",
+          "description": "Beads release scent continuously for 30+ days — even after rain. No daily refreshment needed. Field trials found that scent strength entices hogs to come out during daylight hours, too."
+        },
+        {
+          "number": 4,
+          "title": "Monitor & Reapply",
+          "description": "Check cameras and sites as needed. The 30-day release means scent is actively working when hogs arrive after dark — no need to revisit and leave fresh human scent. Reapply after 30+ days for sustained attraction."
+        }
+      ],
+      "fieldNote": "Field trials confirm strong daytime hog activity with consistent synthetic bead deployment."
+    },
+    "bear-hunting": {
+      "headline": "The Odin's Advantage for Bear Hunting",
+      "content": "In states where bear baiting is legal, hunters typically establish bait sites with food products — stale donuts, fryer grease, dog food, or commercial feeds. These require constant replenishment, attract insects and other nuisance animals, and create an unsanitary mess at the site.\n\nOdin's scent beads and liquids complement or replace traditional bait station maintenance. Sprinkle beads at your bait site to maintain attraction between food replenishment trips. Use the liquids as a trail and create an area through which they will walk, causing liquid scent to adhere to their paws and, then, creating a trail wherever they go.\n\nOr in states with minimal baiting allowances, use scent beads as a standalone attractant that produces aroma without providing consumable food — a critical regulatory distinction in many jurisdictions. The synthetic formula also means no spoilage in summer heat, no mold, and no refrigeration required for transport to remote sites."
+    },
+    "feral-hog": {
+      "headline": "Feral Hog Attractants",
+      "crisisContent": "The feral hog problem in America is accelerating. Populations have expanded from approximately 17–21 states in the 1980s to 35+ states today. The <a href=\"https://www.invasivespeciesinfo.gov/terrestrial/vertebrates/wild-boar\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: hsl(var(--primary)); text-decoration: underline;\">USDA's National Invasive Species Information Center</a> estimates the nationwide feral hog population to be 6–9 million. County-level range has nearly tripled since the early 1980s. Hog populations can double in size within four months due to year-round breeding and average litter sizes of five to eight piglets. The <a href=\"https://www.fb.org/market-intel/feral-hogs-vs-farmers-the-damage-price-tag\" target=\"_blank\" rel=\"noopener noreferrer\" style=\"color: hsl(var(--primary)); text-decoration: underline;\">American Farm Bureau Federation</a> estimates the annual damage to exceed $1.6 billion.\n\nThis explosive growth has created a massive and expanding market for hog control products. Most states with established populations allow year-round hunting with no bag limits — making hog hunting one of the few truly unrestricted hunting opportunities in America. Feral hogs are omnivores with a strong preference for sweet, calorie-dense foods — sweet aromas produce the most aggressive investigation behavior.",
+      "cta": {
+        "text": "Read our HOG SCENT FIELD TRIAL report",
+        "href": "https://www.odinsinnovations.com/blogs/field-test-reports/hog-scent-field-trials"
+      }
+    },
+    "comparison": {
+      "section": {
+        "title": "Odin's Synthetic vs. Traditional Attractants",
+        "description": ""
+      },
+      "headline": "Odin's Synthetic vs. Traditional Attractants",
+      "table": {
+        "headers": [
+          "Feature",
+          "Odin's",
+          "Traditional"
+        ],
+        "rows": [
+          [
+            "Duration",
+            "Up to 30+ days — releases scent constantly every day, gradual drop-off as it ages",
+            "2–5 days, quickly consumed or degrades, frequent refresh required"
+          ],
+          [
+            "Weather",
+            "Maintains output after rain",
+            "Degrades quickly under moisture, freezing locks in aroma"
+          ],
+          [
+            "Spoilage",
+            "None — synthetic polymer",
+            "Attracts insects, deteriorates from mold and bacteria"
+          ],
+          [
+            "Maintenance",
+            "One application per month",
+            "High replenishment effort"
+          ],
+          [
+            "Regulatory",
+            "In some areas, a non-consumed scent is legal. Check your local regs",
+            "Check your local regulations"
+          ],
+          [
+            "Scent",
+            "The scent is strong and releases continually and consistently. Does not drop off as it gets older.",
+            "Varies by freshness and source. Not predictable consistency."
+          ]
+        ]
+      }
+    },
+    "faq": {
+      "section": {
+        "title": "Frequently Asked Questions",
+        "description": ""
+      },
+      "headline": "Frequently Asked Questions",
+      "items": [
+        {
+          "q": "What is the best bear attractant?",
+          "a": "Anise (black licorice) is the most popular bear attractant in North America, but Jelly Donut, Molasses, Peanut Butter, and Apple have proven to be very successful, too. Odin's liquid scents deliver concentrated aroma in a weatherproof, oil-based formula. For extended-release attraction, pair with Peanut Butter or Jelly Donut scent beads, which maintain sweet aroma at your site for 30+ days."
+        },
+        {
+          "q": "Do scent attractants work on feral hogs?",
+          "a": "Yes. Feral hogs have a strong sense of smell and are attracted to sweet, calorie-dense food aromas. Odin's Sweet Corn, Apple, and Peanut Butter scent beads and liquids are all effective for drawing hogs to specific locations. The 30-day extended-release bead format is particularly effective because it maintains attraction at trap sites or hunting areas without daily maintenance."
+        },
+        {
+          "q": "Can I use the same scent beads for bears and hogs?",
+          "a": "Yes. There are a lot of crossovers between the species. Sweet, fruit-forward scents work best for both species. Jelly Donut and Peanut Butter are effective with both. Anise is particularly effective for bears but produces less response from hogs. Pear is most consistently effective with hogs."
+        },
+        {
+          "q": "What is the best way to use scents for bear hunting?",
+          "a": "We are hearing the best result by putting beads over a larger area – they are small and we have not seen the bear eat them. Apply liquid generously in an area; they will pick it up on their paws and distribute it on their path."
+        },
+        {
+          "q": "Have we field tested the scents for bear?",
+          "a": "Not a formal field test. A Canadian Outfitter used a variety of scents last year and his hunters went 13 for 13! This year he took 3 times as much – reports coming after the May/June hunt."
+        },
+        {
+          "q": "Have we field tested the scents for hogs?",
+          "a": "Yes. See the details on our website - HOG SCENT FIELD TRIALS. Pear was the most effective—and a bit of a surprise—for hogs."
+        },
+        {
+          "q": "Is scent attractant the same as bait?",
+          "a": "No. Odin's scent attractants are non-consumable synthetic products that produce aroma but provide no nutritional value. In most jurisdictions, they are not classified as bait. However, regulations vary by state — some states define bait broadly to include any attractant. Always verify your local regulations."
+        },
+        {
+          "q": "How do I know a synthetic scent is actually accurate?",
+          "a": "Field performance is the only proof that matters — and Odin's has more of it than anyone. Our synthetic formulations were first introduced in 2018, making them the longest field-proven synthetic scents on the market. Animals know when something's not quite right, and seven-plus seasons of documented results confirm our scents pass that test. The growth in synthetic adoption isn't driven by regulation alone — it's driven by hunters finding products that actually work."
+        }
+      ]
+    },
+    "reviews": {
+      "title": "What Hunters Are Saying",
+      "description": "Real results from hunters who put Odin's to the test in the field.",
+      "stamped": {
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's bear and hog attractants.",
+        "take": 6
+      }
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready to dominate your hunt?",
+        "buttonText": "Shop Bear & Hog Scents",
+        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      },
+      "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    },
+    "howToUse": {
+      "headline": "How to Use\nBear & Hog Attractant Beads",
+      "subhead": "Simple deployment for bear bait sites, hog traps, and trail cameras — one application lasts 30+ days.",
+      "video": "https://www.youtube.com/watch?v=V3EcxZ2HbWQ",
+      "videoLabel": "See It In Action",
+      "steps": [
+        {
+          "number": 1,
+          "title": "Choose Your Scent",
+          "description": "Select a scent matched to your target species. Anise and Jelly Donut for bear. Pear and Sweet Corn for hogs. Blackstrap Molasses and Peanut Butter work for both."
+        },
+        {
+          "number": 2,
+          "title": "Apply At Your Site",
+          "description": "Sprinkle beads at bait sites, wallows, rooting zones, or trail intersections. For hog traps, scatter beads inside and around the perimeter to draw hogs through the entrance. Apply liquid on the ground and surrounding trees — the oil-based formula sticks to feet and snouts, creating scent trails that lead the sounder back."
+        },
+        {
+          "number": 3,
+          "title": "Let the Beads Work",
+          "description": "Beads release scent continuously for 30+ days — even after rain. No daily refreshment needed. Field trials found that scent strength entices hogs to come out during daylight hours, too."
+        },
+        {
+          "number": 4,
+          "title": "Monitor & Reapply",
+          "description": "Check cameras and sites as needed. The 30-day release means scent is actively working when hogs arrive after dark — no need to revisit and leave fresh human scent. Reapply after 30+ days for sustained attraction."
+        }
+      ],
+      "fieldNote": "Field trials confirm strong daytime hog activity with consistent synthetic bead deployment."
+    }
+  },
+  "footer": {
+    "finalCTA": {
+      "headline": "Ready to dominate your hunt?",
+      "buttonText": "Shop Bear & Hog Scents",
+      "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+    },
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "Made in USA",
+        "50 State Legal",
+        "30+ Day Scent"
+      ],
+      "promoCodes": {
+        "bear-hog-attractants": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "live-chat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "guaranteed delivery",
+        "100% accurate"
+      ]
+    },
+    "pricing": {
+      "basePrice": 17.95,
+      "currency": "USD",
+      "units": "bottle"
+    }
+  }
+}

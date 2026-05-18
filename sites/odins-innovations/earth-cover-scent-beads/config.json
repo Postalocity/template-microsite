@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/earth-cover-scent-beads.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service earth-cover-scent-beads",
     "source": "config/sites/odins-innovations/earth-cover-scent-beads.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-08T15:14:14.376Z",
+    "generatedAt": "2026-05-18T14:06:14.215Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -14,7 +14,7 @@
     "domain": "odinsinnovations.com",
     "basename": "odins-innovations-earth-cover-scent-beads",
     "contact": {
-      "email": "paul@odinsinnovations.com",
+      "email": "support@odinsscents.com",
       "phone": "316-393-0440",
       "address": ", ,  "
     }
@@ -103,8 +103,37 @@
       ]
     },
     "why-odins": {
+      "chip": "The Difference",
       "headline": "Earth Scents: One of Our Favorites",
-      "body": "When developing a deer cover scent, the R&D team at Odin's Innovations really nailed this one. Developing an earth cover scent was a passion project for a group that loved to hunt. It's personal. Extensive field testing confirmed the need for the 'Switzerland of aromas' — a scent common to all hunting spots: dirt. Every wooded area has unique elements from trees, flowers, or other contributors, but rich soil and forest floor remain universal."
+      "body": "When developing a deer cover scent, the R&D team at Odin's Innovations really nailed this one. Developing an earth cover scent was a passion project for a group that loved to hunt. It's personal. Extensive field testing confirmed the need for the 'Switzerland of aromas' — a scent common to all hunting spots: dirt. Every wooded area has unique elements from trees, flowers, or other contributors, but rich soil and forest floor remain universal.",
+      "points": [
+        {
+          "icon": "flag",
+          "title": "Legal in All 50 States",
+          "description": "100% synthetic formula — not subject to natural urine or CWD restrictions that ban traditional lures."
+        },
+        {
+          "icon": "stopwatch",
+          "title": "30+ Days of Attraction",
+          "description": "Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
+          "title": "Biodegradable & Safe",
+          "description": "Polymer matrix breaks down naturally. No environmental residue or contamination."
+        },
+        {
+          "icon": "beaker",
+          "title": "Lab-Tested Formula",
+          "description": "Third-party verified at Mississippi State University for consistent potency. Verified by a University Laboratory using <a href=\"https://en.wikipedia.org/wiki/Gas_chromatography%E2%80%93mass_spectrometry\" target=\"_blank\" rel=\"noopener\">Gas Chromatography-Mass Spectrometry</a>."
+        }
+      ],
+      "cta": {
+        "headline": "Ready to Hunt Smarter?",
+        "subhead": "Join thousands of hunters who trust Odin's Innovations",
+        "href": "https://www.odinsinnovations.com/collections/cover-scents?promo=HUNT2026",
+        "text": "Shop Now"
+      }
     },
     "how-it-works": {
       "headline": "How Earth Cover Scent Works",
@@ -120,14 +149,17 @@
       "items": [
         {
           "title": "Consistent 30+ Day Release",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
           "description": "Maintain coverage without frequent reapplication."
         },
         {
           "title": "Weatherproof Performance",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404",
           "description": "Field-tested resistance to rain and temperature changes."
         },
         {
           "title": "Versatile Applications",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404",
           "description": "Gear storage, perimeter defense, and trail treatment."
         }
       ]
@@ -155,35 +187,35 @@
     },
     "comparison": {
       "section": {
-        "title": "Earth Scent vs. Food Scent Cover: When to Use Which",
+        "title": "Earth Scent vs. Citronella Cover: When to Use Which",
         "description": ""
       },
-      "headline": "Earth Scent vs. Food Scent Cover: When to Use Which",
-      "body": "Earth Cover Scent functions as a pure masking aroma. In heavily hunted areas, it helps reduce unusual scent alerts. Acorn Cover Scent provides dual cover and mild attraction in mast season. Switch based on season and terrain. All Odin's scents remain true to the label.",
+      "headline": "Earth Scent vs. Citronella Cover: When to Use Which",
+      "body": "Earth Cover Scent functions as a pure masking aroma. In heavily hunted areas, it helps reduce unusual scent alerts. Citronella Cover Scent provides dual cover and mosquito protection throughout the buggy seasons. Switch based on season and conditions. All Odin's scents remain true to the label.",
       "table": [
         [
           "Feature",
           "Odin's Earth Cover",
           "Traditional Sprays",
-          "Acorn Cover"
+          "Citronella Cover"
         ],
         [
           "Primary Role",
-          "Masking",
+          "Masking human scent",
           "Short-term masking",
-          "Masking + mild attractant"
+          "Hiding your scent from mosquitoes"
         ],
         [
           "Duration",
           "30+ days beads",
           "2–4 hours",
-          "30+ days beads"
+          "720 hours"
         ],
         [
           "Best Season",
           "Rut & late season",
           "Any",
-          "Early / mast season"
+          "Start during turkey season and throughout mosquito season"
         ],
         [
           "Weather Resistance",
@@ -260,6 +292,16 @@
           "answer": "Yes. All Odin's products are 100% synthetic, containing no animal-derived ingredients. They deliver consistent scent concentration batch after batch. The synthetic formula also means no spoilage, no refrigeration required, and a multi-year shelf life."
         }
       ]
+    },
+    "reviews": {
+      "title": "What Hunters Are Saying",
+      "description": "Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages.",
+      "stamped": {
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's Earth Cover Scent products.",
+        "take": 6
+      }
     },
     "footer": {
       "finalCTA": {

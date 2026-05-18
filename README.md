@@ -61,6 +61,18 @@ common/contexts/
 | **Fail-Fast Development** | Missing context throws errors in dev mode |
 | **Backward Compatible** | Default Postalocity values if no provider |
 
+### Generator Architecture
+
+The site generator uses a **flexible skeleton** approach:
+
+- `composeSiteTemplate(config)` — pure function that builds TSX from declarative `SiteTemplateConfig`
+- `SiteTemplateConfig` — brand, site metadata, sections array, optional `customImports`/`customBody`
+- Adding a site: edit JSON only (`config/sites/<brand>/<slug>.json`)
+- Adding a brand: create theme dir + one thin wrapper (~30 LOC) calling the composer
+- **Never edit generated output** — regenerate from source
+
+See `docs/superpowers/generator-refactor.md` for full API and workflows.
+
 ## Quick Start
 
 ### Prerequisites

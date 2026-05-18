@@ -3,7 +3,7 @@
  *
  * Site:      hunting-mosquito-repellent
  * Brand:     Odin's Innovations
- * Generated: 2026-05-08T15:14:12.605Z
+ * Generated: 2026-05-18T14:38:31.003Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -29,8 +29,8 @@ import '@/themes/odins-innovations/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
-const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":30,"s":80,"l":35},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"title":"How Citronella Liquid & Beads Work — Sustained Release Technology","description":""},"headline":"How Citronella Liquid & Beads Work — Sustained Release Technology","body":"The proprietary blend of citronellal, geraniol, and other plant-derived compounds masks chemical cues rather than relying on direct kill or rapid evaporation. The oil-based liquid adheres to foliage for immediate rainproof barrier performance. The complementary beads use the same biodegradable polymer technology as Odin's hunting scent products to encapsulate compounds for controlled diffusion. This delivers sustained, hands-free protection for the equivalent of 30 days of continuous exposure — not 30 minutes."},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to natural urine or CWD restrictions."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
-const contactConfig = {"phone":"316-393-0440","email":"paul@odinsinnovations.com","address":{"street":"","city":"","state":"","zip":""}};
+const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":30,"s":80,"l":35},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"title":"How Citronella Liquid & Beads Work — Sustained Release Technology","description":""},"headline":"How Citronella Liquid & Beads Work — Sustained Release Technology","body":"The proprietary blend of citronellal, geraniol, and other plant-derived compounds masks chemical cues rather than relying on direct kill or rapid evaporation. The oil-based liquid adheres to foliage for immediate rainproof barrier performance. The complementary beads use the same biodegradable polymer technology as Odin's hunting scent products to encapsulate compounds for controlled diffusion. This delivers sustained, hands-free protection for the equivalent of 30 days of continuous exposure — not 30 minutes."},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to CWD restrictions that ban natural deer urine and other liquids."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"testimonials":[{"quote":"I think that the final take away after using Odin's for the past six months is definitely going to be that the scent brings feral pigs in and way more frequently. Find the one that works for your area and with your pigs and you will be super successful way faster. There hasn't been one scent I've tried that hasn't worked. Pear, Orange, Peanut Butter, New Berry, and Blackstrap Molasses all have brought pigs in non-stop for me since September. Happy clients guided and full freezers. I'll forever be a customer.","attribution":"Justin Edwards","title":"Brings Feral Pigs In, Way More Frequently"},{"quote":"Odin's innovations is awesome and I really got to watch it work today just in case anyone is curious about it. They came in about 15 yards or so and one was right next to us and I dropped this big sow. Just an absolutely awesome experience and I can't wait to do it again.","attribution":"Carl Fox","title":"Dropped This Big Sow!"},{"quote":"I had the Jelly Donut oil with me on my hunt in Minnesota. Conditions were horrible with temps in the high 90s. I settled into my stand in the leafy canopy and sprayed the oil on the leaves and branches and bark of the tree. Sixty-five minutes later the bear came in swinging his head, aggressive. I had to move fast or it would have been in the tree with me.","attribution":"Gary Lewis","title":"The Bear Came In!"}],"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
+const contactConfig = {"phone":"316-393-0440","email":"support@odinsscents.com","address":{"street":"","city":"","state":"","zip":""}};
 const socialConfig = {"website":"https://www.odinsinnovations.com","instagram":"https://www.instagram.com/odinsinnovations","facebook":"https://www.facebook.com/theodinsinnovations/","youtube":"https://www.youtube.com/@odinsinnovations2589"};
 
 // IKB configuration
@@ -117,34 +117,32 @@ function App() {
                 </p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {content['why-odins'].items?.map((item, idx) => (
+                {content['why-odins'].cards?.map((card, idx) => (
                   <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
-                      {item.toLowerCase().includes('rain') && (
+                      {card.image ? (
+                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
+                      ) : card.icon === 'droplets' || card.icon === 'rain' ? (
                         <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.69l.62-.62a9 9 0 1112.76 0l.62.62M12 22V12m0 0l-4-4m4 4l4-4" />
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('co2') || item.toLowerCase().includes('mask') && (
+                      ) : card.icon === 'wind' || card.icon === 'mask' ? (
                         <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-4a4 4 0 00-4-4H7a4 4 0 00-4 4v4z" />
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('duration') || item.toLowerCase().includes('30') && (
+                      ) : card.icon === 'clock' || card.icon === 'duration' || card.icon === '30' ? (
                         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-12 h-12">
                           <circle cx="60.82" cy="54.12" r="4.26"/>
                           <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
                           <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
                           <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('plant') && (
+                      ) : card.icon === 'leaf' || card.icon === 'plant' ? (
                         <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2 2 .9 2 2 2z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
                         </svg>
-                      )}
-                      {item.toLowerCase().includes('legal') || item.toLowerCase().includes('state') && (
+                      ) : card.icon === '50-states' || card.icon === 'legal' || card.icon === 'state' ? (
                         <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12">
                           <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1"/>
                           <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
@@ -155,10 +153,14 @@ function App() {
                           <circle cx="26" cy="38" r="2" fill="currentColor"/>
                           <circle cx="34" cy="38" r="2" fill="currentColor"/>
                         </svg>
+                      ) : (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
                       )}
                     </div>
-                    <h3 className="font-display text-xl uppercase mb-2 text-white">{item.split('—')[0]}</h3>
-                    <p className="font-body text-sm text-gray-400">{item.split('—').slice(1).join('—')}</p>
+                    <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
+                    <p className="font-body text-sm text-gray-400">{card.description}</p>
                   </div>
                 ))}
               </div>
@@ -177,6 +179,17 @@ function App() {
                 <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
                   {content.detection.body}
                 </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {content.detection.cards?.map((card, idx) => (
+                  <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center" style={{ borderTop: '4px solid #2d5a3d' }}>
+                    <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full" style={{ background: 'rgba(45,90,61,0.1)' }}>
+                      <span className="font-display text-lg font-bold" style={{ color: '#2d5a3d' }}>{card.stage}</span>
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{card.title}</h3>
+                    <p className="font-body text-sm" style={{ color: '#666' }}>{card.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -217,10 +230,39 @@ function App() {
                   {content.blinds.headline}
                 </h2>
               </div>
-              <div className="max-w-4xl mx-auto">
-                <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                  {content.blinds.body}
-                </p>
+              <div className="max-w-3xl mx-auto mb-12">
+                <div className="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
+                  <p className="font-body text-base text-center leading-relaxed" style={{ color: '#444' }}>
+                    {content.blinds.body}
+                  </p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {content.blinds.cards?.map((card, idx) => (
+                  <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center">
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                      {card.image ? (
+                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
+                      ) : card.icon === 'cloud' ? (
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-4a4 4 0 00-4-4H7a4 4 0 00-4 4v4z" />
+                        </svg>
+                      ) : card.icon === 'clock' ? (
+                        <svg viewBox="0 0 100 100" fill="none" stroke="#2d5a3d" strokeWidth="3" className="w-12 h-12">
+                          <circle cx="60.82" cy="54.12" r="4.26"/>
+                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
+                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
+                        </svg>
+                      ) : (
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{card.title}</h3>
+                    <p className="font-body text-sm" style={{ color: '#666' }}>{card.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -234,9 +276,46 @@ function App() {
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
                   {content.layered.headline}
                 </h2>
-                <p className="font-body text-lg max-w-2xl mx-auto text-gray-400">
-                  {content.layered.body}
-                </p>
+                {content.layered.subtitle && (
+                  <p className="font-display text-lg uppercase tracking-wider mb-4" style={{ color: 'hsl(var(--accent))' }}>
+                    {content.layered.subtitle}
+                  </p>
+                )}
+                <div className="max-w-3xl mx-auto rounded-lg p-6" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <p className="font-body text-base leading-relaxed" style={{ color: '#ccc' }}>
+                    {content.layered.body}
+                  </p>
+                </div>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                {content.layered.cards?.map((card, idx) => (
+                  <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
+                      {card.image ? (
+                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
+                      ) : card.icon === 'droplets' || card.icon === 'rain' ? (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.69l.62-.62a9 9 0 1112.76 0l.62.62M12 22V12m0 0l-4-4m4 4l4-4" />
+                        </svg>
+                      ) : card.icon === 'leaf' ? (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2 2 .9 2 2 2z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
+                        </svg>
+                      ) : card.icon === 'package' ? (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                      ) : (
+                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                      )}
+                    </div>
+                    <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
+                    <p className="font-body text-sm text-gray-400">{card.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -251,11 +330,11 @@ function App() {
           ]}
         />
         
-        {/* Stamped.io Reviews */}
-        <StampedReviewsSection 
-          title={content.reviews?.title}
-          subtitle={content.reviews?.subtitle}
-          description={content.reviews?.description}
+        {/* Reviews */}
+        <StampedReviewsSection
+          title={content.reviews?.title || 'Mosquito Protection Reviews'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.description || "Real results from hunters and outdoors enthusiasts who trust Odin's citronella protection."}
         />
         
         {/* Comparison Table */}

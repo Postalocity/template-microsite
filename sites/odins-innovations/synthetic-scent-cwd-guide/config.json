@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/synthetic-scent-cwd-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service synthetic-scent-cwd-guide",
     "source": "config/sites/odins-innovations/synthetic-scent-cwd-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-08T15:14:14.814Z",
+    "generatedAt": "2026-05-18T14:06:16.847Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -14,7 +14,7 @@
     "domain": "odinsinnovations.com",
     "basename": "odins-innovations-synthetic-scent-cwd-guide",
     "contact": {
-      "email": "paul@odinsinnovations.com",
+      "email": "support@odinsscents.com",
       "phone": "316-393-0440",
       "address": ", ,  "
     }
@@ -304,6 +304,16 @@
           "answer": "Synthetic doe estrus scent is a hunting attractant that replicates the pheromone signature a whitetail doe releases during her estrus (breeding) cycle. It signals to mature bucks that a receptive doe is nearby, drawing them to your hunting location. Odin's uses 100% synthetic formulations—no natural deer urine—ensuring consistent potency and zero risk of CWD transmission."
         }
       ]
+    },
+    "reviews": {
+      "title": "Success Stories from the Field",
+      "description": "Real results from hunters who trust Odin's synthetic scents.",
+      "stamped": {
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's synthetic scent products.",
+        "take": 6
+      }
     },
     "footer": {
       "finalCTA": {

@@ -65,7 +65,7 @@
     "react-router-dom": "^7.13.1",
     "recharts": "^3.8.0",
     "sonner": "^2.0.7",
-    "strray-ai": "^1.22.12",
+    "strray-ai": "^1.22.53",
     "tailwind-merge": "^2.6.1",
     "vaul": "^1.1.2"
   },

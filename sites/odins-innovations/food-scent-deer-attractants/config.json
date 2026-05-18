@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/food-scent-deer-attractants.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service food-scent-deer-attractants",
     "source": "config/sites/odins-innovations/food-scent-deer-attractants.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-08T15:14:13.943Z",
+    "generatedAt": "2026-05-18T14:06:13.735Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -14,7 +14,7 @@
     "domain": "odinsinnovations.com",
     "basename": "odins-innovations-food-scent-deer-attractants",
     "contact": {
-      "email": "paul@odinsinnovations.com",
+      "email": "support@odinsscents.com",
       "phone": "316-393-0440",
       "address": ", ,  "
     }
@@ -48,7 +48,7 @@
       "best attractants with trail cameras",
       "legal bait alternatives"
     ],
-    "ogTitle": "Food Scent Attractants for Deer — 30+ Days Consistent Release",
+    "ogTitle": "Food Scent Attractants — 30+ Days Consistent Release",
     "ogDescription": "Synthetic apple, acorn, peanut butter, persimmon & more. Weatherproof 30+ day attraction. Lower cost and 80% fewer trips than corn. Legal in all 50 states.",
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/pages/food-scent-deer-attractants",
@@ -61,6 +61,10 @@
         "href": "#benefits"
       },
       {
+        "label": "Cost Comparison",
+        "href": "#why-odins"
+      },
+      {
         "label": "Products",
         "href": "#products"
       },
@@ -71,10 +75,6 @@
       {
         "label": "Baiting Laws",
         "href": "#baiting-laws"
-      },
-      {
-        "label": "FAQ",
-        "href": "#faq"
       }
     ],
     "cta": {
@@ -85,24 +85,24 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Food Scent<br/>Attractants<br/>for Deer",
-        "highlightTerm": "EFFECTIVE FOR 30+ DAYS<br/>WITHOUT CORN",
+        "main": "Food Scent<br/>Attractants",
+        "highlightTerm": "EFFECTIVE FOR 30+ DAYS<br/>WITHOUT CORN OR DONUTS",
         "alt": "Odin's synthetic food scent beads deployed in a deer scrape with trail camera"
       },
-      "subhead": "Synthetic scent beads that pull deer to your trail cameras and stand sites for over a month — no spoilage, no CWD risk, no feeder maintenance. 8 real food scents starting at $13.99.",
+      "subhead": "Synthetic scent beads that pull your prey to your trail cameras & target area for over a month! No spoilage. No 50lb bags to carry. No feeder to maintain. Just the strong aroma of real food! Starting at $14.95.",
       "background": {
         "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hero.jpg?v=1776346221",
         "overlay": true
       },
       "ctas": [
         {
-          "text": "Shop Now — Starting at $13.99",
+          "text": "Shop Now — Starting at $14.95",
           "href": "https://www.odinsinnovations.com/collections/food-scents",
           "variant": "primary"
         },
         {
           "text": "See Cost Comparison",
-          "href": "#comparison",
+          "href": "#why-odins",
           "variant": "outline"
         }
       ]
@@ -132,45 +132,17 @@
         },
         {
           "icon": "blend",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
           "title": "Zero Spoilage, Zero CWD Risk",
           "description": "Synthetic formula won't rot or attract raccoons. Legal in CWD-restricted states."
         },
         {
           "icon": "ban",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
           "title": "Legal Where Corn Isn't",
           "description": "Not classified as bait — no consumable food, no nutritional value, no salt."
         }
       ]
-    },
-    "comparison": {
-      "section": {
-        "title": "Cost and Visit Comparison: Odin's vs Traditional Corn",
-        "description": ""
-      },
-      "table": [
-        [
-          "Attractant Type",
-          "Seasonal Cost",
-          "Field Visits",
-          "Duration per Application",
-          "Notes"
-        ],
-        [
-          "Traditional Corn",
-          "~$330",
-          "20",
-          "3–5 days",
-          "Prone to spoilage, attracts non-target animals, may violate baiting laws in some states"
-        ],
-        [
-          "Odin's Food Scent Beads",
-          "~$225",
-          "4",
-          "30+ days",
-          "Weatherproof, biodegradable, no nutritional value, legal distinction"
-        ]
-      ],
-      "headline": "Cost and Visit Comparison: Odin's vs Traditional Corn"
     },
     "faq": {
       "title": "Food Scents and Baiting",
@@ -297,10 +269,41 @@
       "USDA BioPreferred"
     ],
     "outperforms": {
-      "headline": "Why Food Scent Beads Outperform Traditional Attractants",
-      "body": "Outperformance is a combination of attraction and cost. Synthetic scents in beads remain the same strength for the entire time. How long does the scent of an apple or a pile of corn remain — if it is not eaten within 24 hours? The cost comparison is stark. A season of corn-based baiting typically costs $330 and requires 20 field visits for replenishment. Odin's biodegradable food scent beads cost $225 for the same season coverage with only 4 field visits — 32% less cost and 80% fewer trips to your site. Every trip to your hunting location deposits human scent, disturbs the area, and educates deer. Fewer visits mean less pressure and more natural deer movement patterns.",
+      "headline": "ODIN'S LURE SCENTS VS<br/>TRADITIONAL CORN (or other foods)",
+      "opener": "Outperforming the competition comes down to two factors: effectiveness and total cost. Consider this: after hauling a 50lb bag of corn to your hunting site, how long does it actually last? In contrast, a single 3oz bottle of Odin's synthetic scents releases the same aroma for a full 30 days.",
+      "body": "Think about your timeline from pre-season through October—roughly four months. With natural food requiring replacement 5 times per month, that's 20 trips to your hunting location. Factor in the hours spent driving, gallons of gas burned, and most importantly, how long it takes for your human scent to dissipate after each visit.",
       "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/hunting_field_visiting_season_costs.png?v=1777567933",
-      "imageAlt": "Season cost comparison: Odin's food scent vs traditional corn"
+      "imageAlt": "Cost comparison: Odin's food scent vs traditional corn",
+      "footnote": "* Costs include corn at $6.00/bag, gasoline and time at $15/hr.",
+      "points": [
+        {
+          "icon": "flag",
+          "title": "Legal in All 50 States",
+          "description": "100% synthetic formula — not subject to natural urine or CWD restrictions that ban traditional lures."
+        },
+        {
+          "icon": "stopwatch",
+          "title": "30+ Days of Attraction",
+          "description": "Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads. Beats 3-4 days before your entire pile of food is gone!"
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png",
+          "title": "Biodegradable & Safe",
+          "description": "No harmful chemicals. 100% synthetic scents and biobased polymers, natural oils. Even our Citronella is DEET-free."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
+          "title": "Lab-Tested Formula",
+          "description": "Third-party verified at Mississippi State University for consistent potency. Verified by a University Laboratory using <a href=\"https://en.wikipedia.org/wiki/Gas_chromatography%E2%80%93mass_spectrometry\" target=\"_blank\" rel=\"noopener\">Gas Chromatography-Mass Spectrometry</a>."
+        }
+      ],
+      "bodyAfter": "Every trip deposits scent, disturbs the environment, and educates deer to your presence. Fewer visits mean less pressure and more natural deer movement patterns. Just watch the images roll in on your cellular trail camera!",
+      "cta": {
+        "headline": "Ready to Hunt Smarter?",
+        "subhead": "Join thousands of hunters who trust Odin's Innovations",
+        "href": "https://www.odinsinnovations.com/collections/food-scents",
+        "text": "Shop Now"
+      }
     },
     "deployment": {
       "title": "How to Use Odin's Food Scent Attractants",
@@ -329,19 +332,19 @@
       },
       "differences": [
         {
+          "icon": "ribbon",
+          "title": "USDA BioPreferred Certified",
+          "description": "Verified by a University Laboratory. Gas Chromatography-Mass Spectrometry — not just a marketing claim about being green."
+        },
+        {
           "icon": "milk-off",
           "title": "No Plastic Left Behind",
           "description": "The plant-based polymer biodegrades completely. Nothing is left behind in the woods."
         },
         {
           "icon": "biohazard",
-          "title": "No Unhealthy Chemicals",
-          "description": "Even our Citronella is DEET free. No harmful residues in the environment."
-        },
-        {
-          "icon": "ribbon",
-          "title": "USDA BioPreferred Certified",
-          "description": "Rigorous third-party verification of biobased content — not just a marketing claim about being green."
+          "title": "No Harmful Chemicals",
+          "description": "100% synthetic scents and biobased polymers, natural oils. Even our Citronella is DEET-free."
         },
         {
           "icon": "cloud",
@@ -354,22 +357,26 @@
       "title": "Baiting Laws & Scent Attractants",
       "subtitle": "Know the difference. Stay legal in every state.",
       "scentPoints": [
-        "No consumable food material — deer investigate but find nothing to eat",
+        "No consumable food — deer investigate repeatedly but find nothing to eat. The aroma is too strong to resist.",
         "Zero nutritional value — not classified as feed or bait in most states",
-        "No salt or mineral — eliminates the three most common baiting triggers",
-        "Synthetic formula — not subject to CWD or natural urine restrictions"
+        "No salt, minerals or nutritional value — eliminates the three most common baiting triggers"
       ],
       "baitPoints": [
         "Consumable food — deer eat it, providing nutritional value",
         "Classified as bait in most states — restricted or illegal in many areas",
-        "Spills, mold, and CWD contamination risks",
-        "Illegal in CWD-restricted zones and many public lands"
+        "Illegal entirely in many states or limited use in controlled areas"
       ],
       "disclaimer": "Regulations vary by state. Always check your state's specific baiting and attractant regulations before deployment. Odin's scent attractants are legal in most jurisdictions, but local laws may differ."
     },
     "reviews": {
       "title": "What Hunters Are Saying",
-      "description": "Real results from hunters who put Odin's food scent beads to the test in the field."
+      "description": "Real results from hunters who put Odin's food scent beads to the test in the field.",
+      "stamped": {
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's food scent products.",
+        "take": 6
+      }
     }
   },
   "footer": {

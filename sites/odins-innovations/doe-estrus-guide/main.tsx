@@ -3,7 +3,7 @@
  *
  * Site:      doe-estrus-guide
  * Brand:     Odin's Innovations
- * Generated: 2026-05-08T15:14:13.048Z
+ * Generated: 2026-05-18T14:06:15.096Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -20,7 +20,7 @@
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection, WhenToUseSection, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -30,8 +30,8 @@ import '@/themes/odins-innovations/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
-const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":0,"s":0,"l":10},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"title":"How SCENT BEADS WORK","description":""},"headline":"How SCENT BEADS WORK","body":"Plant-based beads absorb the synthetic scent and release it gradually when exposed to air. Set it once. Check your trail camera for weeks—no reapplication needed.","video":"https://youtu.be/mRcfYfploNg","videoHeadline":"See It In Action"},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to natural urine or CWD restrictions."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
-const contactConfig = {"phone":"316-393-0440","email":"paul@odinsinnovations.com","address":{"street":"","city":"","state":"","zip":""}};
+const brandConfig = {"id":"odins-innovations","name":"Odin's Innovations","slug":"odins-innovations","domain":"odinsinnovations.com","tagline":"Synthetic. Long-Lasting. Legal Everywhere.","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://www.odinsinnovations.com","website":"https://www.odinsinnovations.com","blog":"https://www.odinsinnovations.com/blog","shop":"https://www.odinsinnovations.com/collections/scent-beads","contact":"https://www.odinsinnovations.com/pages/contact-us"},"logo":{"url":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/logo_f2bf23b3-0442-4946-90cd-51755447e2d8.png","faviconUrl":"https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Odins_favicon.png?v=1618500553","filename":"odins-logo.png","alt":"Odin's Innovations - Synthetic Scent Beads"},"colors":{"primary":{"h":0,"s":0,"l":10},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"title":"How SCENT BEADS WORK","description":""},"headline":"How SCENT BEADS WORK","body":"Plant-based beads absorb the synthetic scent and release it gradually when exposed to air. Set it once. Check your trail camera for weeks—no reapplication needed.","video":"https://youtu.be/mRcfYfploNg","videoHeadline":"See It In Action"},"difference":{"section":{"title":"The Odin's Difference","description":"Synthetic scent beads engineered for performance where traditional lures fall short"},"differences":[{"icon":"50-states","title":"Legal in All 50 States","description":"100% synthetic formula — not subject to CWD restrictions that ban natural deer urine and other liquids."},{"icon":"clock","title":"30+ Days of Attraction","description":"Continuous scent release, even after rain or snow. Beats traditional 7-14 day beads."},{"icon":"leaf","title":"Biodegradable & Safe","description":"Polymer matrix breaks down naturally. No environmental residue or contamination."}]},"testimonials":[{"quote":"I think that the final take away after using Odin's for the past six months is definitely going to be that the scent brings feral pigs in and way more frequently. Find the one that works for your area and with your pigs and you will be super successful way faster. There hasn't been one scent I've tried that hasn't worked. Pear, Orange, Peanut Butter, New Berry, and Blackstrap Molasses all have brought pigs in non-stop for me since September. Happy clients guided and full freezers. I'll forever be a customer.","attribution":"Justin Edwards","title":"Brings Feral Pigs In, Way More Frequently"},{"quote":"Odin's innovations is awesome and I really got to watch it work today just in case anyone is curious about it. They came in about 15 yards or so and one was right next to us and I dropped this big sow. Just an absolutely awesome experience and I can't wait to do it again.","attribution":"Carl Fox","title":"Dropped This Big Sow!"},{"quote":"I had the Jelly Donut oil with me on my hunt in Minnesota. Conditions were horrible with temps in the high 90s. I settled into my stand in the leafy canopy and sprayed the oil on the leaves and branches and bark of the tree. Sixty-five minutes later the bear came in swinging his head, aggressive. I had to move fast or it would have been in the tree with me.","attribution":"Gary Lewis","title":"The Bear Came In!"}],"footer":{"tagline":"Synthetic. Long-Lasting. Legal Everywhere.","description":"100% synthetic scent beads engineered for 30+ days of consistent attraction. Legal in every state, biodegradable, Made in USA.","links":[{"label":"Scent Beads","href":"https://www.odinsinnovations.com/collections/scent-beads"},{"label":"Liquid Scents","href":"https://www.odinsinnovations.com/collections/liquid-scents"},{"label":"Hunter's Kloak","href":"https://www.odinsinnovations.com/collections/all-hunters-kloak"},{"label":"Find a Dealer","href":"https://www.odinsinnovations.com/pages/find-a-dealer"}],"companyLinks":[{"label":"About Us","href":"https://www.odinsinnovations.com/pages/about-us"},{"label":"Press Releases","href":"https://www.odinsinnovations.com/blogs/press-releases"},{"label":"Field Test Reports","href":"https://www.odinsinnovations.com/blogs/field-test-reports"},{"label":"Industry Publications","href":"https://www.odinsinnovations.com/blogs/in-the-field"}],"supportLinks":[{"label":"Odin's Instructions","href":"https://www.odinsinnovations.com/pages/odins-instructions"},{"label":"Kloak Mister Instructions","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-kloak-mister-instructions"},{"label":"Rut Rouser Instructions","href":"https://www.odinsinnovations.com/pages/rut-rouser%C2%AE-dual-mister-instructions"},{"label":"Hunter's Kloak FAQ","href":"https://www.odinsinnovations.com/pages/hunter-s-kloak%C2%AE-faqs"},{"label":"Contact Us","href":"https://www.odinsinnovations.com/pages/contact-us"},{"label":"Return/Exchange Policy","href":"https://www.odinsinnovations.com/pages/return-exchange-policy"}],"logoSize":"extra-large"}};
+const contactConfig = {"phone":"316-393-0440","email":"support@odinsscents.com","address":{"street":"","city":"","state":"","zip":""}};
 const socialConfig = {"website":"https://www.odinsinnovations.com","instagram":"https://www.instagram.com/odinsinnovations","facebook":"https://www.facebook.com/theodinsinnovations/","youtube":"https://www.youtube.com/@odinsinnovations2589"};
 
 // IKB configuration
@@ -63,7 +63,7 @@ function App() {
               seasons: content['when-to-use'].seasons
             }} />
           ) : (
-            <section id="when-to-use" className="py-20" style={{ background: '#f8f9fa' }}>
+            <section id="when-to-use" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
               <div className="section-container">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-8 text-center" style={{ color: 'hsl(var(--foreground))' }}>
                   {content['when-to-use'].headline}
@@ -76,16 +76,14 @@ function App() {
           )
         )}
         
-        {/* Section 2: Why Synthetic (light) */}
-        {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} />}
+        {/* Section 2: Why Synthetic (white) */}
+        {content['the-difference'] && <WhyOdinsSection content={content['the-difference']} background="hsl(var(--background))" />}
         
-        {/* Section 3: Products (dark) */}
-        <div style={{ background: '#1a1d29' }}>
-          {content.products && <ProductsSection content={content.products} />}
-        </div>
+        {/* Section 3: Products (warm cream) */}
+        {content.products && <ProductsSection content={content.products} background="hsl(30, 20%, 95%)" />}
         
-        {/* Section 4: Signature Scents (light) */}
-        <SignatureScentBeadsSection content={content.signatureScents} />
+        {/* Section 4: Signature Scents (white) */}
+        <SignatureScentBeadsSection content={content.signatureScents} background="hsl(var(--background))" />
         
         {/* Section 5: Benefits (warm sand) */}
         <BenefitsSection benefits={content.benefits} background="hsl(30, 20%, 95%)" />
@@ -142,7 +140,7 @@ function App() {
         )}
         
         {content.comparison && (
-          <section id="comparison" className="py-20" style={{ background: '#f8f9fa' }}>
+          <section id="comparison" className="py-20" style={{ background: 'hsl(var(--background))' }}>
             <ComparisonTable comparison={content.comparison} promoCode={promoCode} />
           </section>
         )}
@@ -248,7 +246,7 @@ function App() {
         {content['how-it-works'] ? <HowItWorksSection howItWorks={content['how-it-works']} /> : <HowItWorksSection />}
         
         {/* Section 9: The Odin's Difference + CTA */}
-        {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} /> : <DifferenceSection />}
+        {content['the-odins-difference'] ? <DifferenceSection difference={content['the-odins-difference']} background="hsl(30, 20%, 95%)" /> : <DifferenceSection background="hsl(30, 20%, 95%)" />}
         
         {/* CTA: See Why Hunters Choose Synthetic */}
         <div className="pb-8 text-center" style={{ background: '#333333' }}>
@@ -268,25 +266,15 @@ function App() {
         
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
-        {/* Section 10: Reviews - Success Stories from the Field */}
-        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
-            </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
-            <style dangerouslySetInnerHTML={{__html: `
-              .stamped-widget-buttons,
-              .stamped-full-page-tabs {
-                display: none !important;
-              }
-            `}} />
-          </div>
-        </section>
+        {/* Section 10: Reviews */}
+        <StampedReviewsSection
+          title={content.reviews?.title || 'Success Stories from the Field'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.description || "Real results from hunters who trust Odin's synthetic scents."}
+        />
 
         {/* Section 11: FAQ */}
-        <FAQSection faq={content.faq} />
+        <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
         
         <SiteFooter config={config} />
         {navCta && <FloatingCTA href={navCta.href} text={navCta.text} />}

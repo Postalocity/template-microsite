@@ -1,0 +1,282 @@
+{
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/synthetic-scent-beads.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service synthetic-scent-beads",
+    "source": "config/sites/odins-innovations/synthetic-scent-beads.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-14T15:30:07.918Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
+  "site": {
+    "id": "odins-innovations",
+    "name": "The Case for Synthetic Scents",
+    "slug": "synthetic-scent-beads",
+    "domain": "odinsinnovations.com",
+    "basename": "odins-innovations-synthetic-scent-beads",
+    "contact": {
+      "email": "support@odinsscents.com",
+      "phone": "316-393-0440",
+      "address": ", ,  "
+    }
+  },
+  "branding": {
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere.",
+    "logo": "/logo.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 30,
+      "s": 80,
+      "l": 35
+    }
+  },
+  "seo": {
+    "title": "The Case for Synthetic Scents — Why Hunters & Retailers Are Making the Switch",
+    "description": "CWD regulations may be driving the market shift, but performance is the real driver. Explore why synthetic scents outperform naturals in consistency, longevity, and innovation — and why retailers are shifting shelf space.",
+    "ogImage": "/synthetic-scent-beads/images/og-image.png",
+    "keywords": [
+      "synthetic deer scent",
+      "synthetic vs natural scent",
+      "CWD regulations deer urine",
+      "synthetic scent beads",
+      "why synthetic scents work",
+      "synthetic deer attractant"
+    ],
+    "ogTitle": "The Case for Synthetic Scents",
+    "ogDescription": "Beyond regulation: why synthetic scents outperform naturals in consistency, longevity, and innovation. The performance case for synthetics.",
+    "twitterCard": "summary_large_image",
+    "canonical": "https://www.odinsinnovations.com/synthetic-scent-beads",
+    "googleAnalyticsId": "G-XXXXXXXXXX"
+  },
+  "navigation": {
+    "links": [
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Synthetic Spectrum",
+        "href": "#synthetic-spectrum"
+      },
+      {
+        "label": "Natural Reality",
+        "href": "#natural-reality"
+      },
+      {
+        "label": "Beyond Regulation",
+        "href": "#beyond-regulation"
+      },
+      {
+        "label": "Products",
+        "href": "#products"
+      }
+    ],
+    "cta": {
+      "text": "SHOP PRODUCTS",
+      "href": "https://www.odinsinnovations.com/collections/all"
+    }
+  },
+  "content": {
+    "hero": {
+      "headline": {
+        "main": "The Case for Synthetic Scents",
+        "highlightTerm": "Beyond Regulation",
+        "alt": "Odin's synthetic scent beads in a deer scrape"
+      },
+      "subhead": "CWD regulations accelerated the shift, but synthetics win on performance — longer duration, consistent quality, and a product pipeline natural products can't match.",
+      "background": {
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsinnovations_muleyBuck_2020.jpg?v=1616790847",
+        "overlay": true
+      },
+      "ctas": [
+        {
+          "text": "Shop Synthetic Scent Beads",
+          "href": "https://www.odinsinnovations.com/collections/all",
+          "variant": "primary"
+        },
+        {
+          "text": "Read the Full Case",
+          "href": "#beyond-regulation",
+          "variant": "outline"
+        }
+      ]
+    },
+    "why-odins": {
+      "headline": "Why Odin's Leads in Synthetic Scent Innovation",
+      "body": "21 proprietary synthetic formulations. 8+ years field-proven performance. Biodegradable polymer bead delivery engineered for 30+ days of consistent release. Odin's didn't choose synthetics to comply with regulations — we committed to them because consistency matters. Nature makes it impossible to deliver a consistent product customers can rely on. Synthetics give us indefinite shelf life, a 30-day delivery method that natural products simply cannot support, and a growing family of scents: lures, cover scents for deer and mosquitoes, and species-specific formulations beyond whitetail. Our product development pipeline would not exist with natural scents.",
+      "points": [
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
+          "title": "30+ Days of Continuous Release",
+          "description": "100% synthetic formula delivers lab-consistent results every batch — even after rain."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png?v=1775508404",
+          "title": "Weatherproof Performance",
+          "description": "Polymer bead system unaffected by rain, snow, or temperature swings."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_100__biodegradable.png?v=1775508337",
+          "title": "Biodegradable & Legal in All 50 States",
+          "description": "100% biodegradable polymer. No CWD restrictions — legal everywhere."
+        },
+        {
+          "icon": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
+          "title": "Field-Tested & Indefinite Shelf Life",
+          "description": "8+ seasons of documented field results. No refrigeration ever required."
+        }
+      ]
+    },
+    "how-it-works": {
+      "headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER",
+      "description": "Every synthetic scent is developed to a specific aroma profile. Our pheromone scents deliver the exact same aroma every single time — doe estrus, dominant buck, scrape blend. Our food scents smell like apples, persimmons, acorns — on down the line. And then we get creative: Jelly Donut without going to the bakery. Maple Bacon tested in Canada for bear hunting. Pear and Peanut Butter to bring hogs out during the day. You can't do that with natural products. Then there's shelf life. Synthetic scents don't spoil. Our biodegradable polymer beads contain a precise amount of scent and release it evenly over 30 days. When a scent molecule hits the bead's surface, it releases into the air. Rain can't stop it. Natural liquid scents expire in 24–36 hours — unless rain gets there first.",
+      "steps": [
+        "Select the scent that will help you be successful; cover, lure or attractant scents.",
+        "Select the delivery system that best accomplishes what you need;\n- Beads that will last 30-days in front of your trail cameras or in your target area.\n- Liquid on foliage for a \"quicker hit\" up in the air, on the ground creating a trail and available to stick to paws so our prey can help us extend the range.\n- Or both in concert!",
+        "Sprinkle/squirt it on the ground, hang it in a mesh bag or pin it on your clothes in our small sheer bags.\n- When on the ground, it is consistently attracting your prey for 30-days.\n- If in one of the bags, put it in a zip-lock bag and 'capture' the scent in the beads until the next use.",
+        "When you're done, the beads biodegrade and leave your hunting area BETTER THAN YOU FOUND IT™"
+      ]
+    },
+    "products": {
+      "headline": "Available Synthetic Scent Bead Formulas",
+      "intro": "Four proven synthetic formulas for every phase of the season. All 100% synthetic, legal in all 50 states, biodegradable, and Made in USA.",
+      "items": [
+        {
+          "name": "Doe Estrus Scent Beads",
+          "description": "Synthetic doe estrus scent beads for pre-rut and rut periods",
+          "price": "From $17.95",
+          "size": "3 oz / 12 oz",
+          "use": "Peak rut attraction",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png?v=1688151838",
+          "url": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads?promo=HUNT2026"
+        },
+        {
+          "name": "Scrape Blend Scent Beads",
+          "description": "Synthetic scrape scent beads engineered for mock scrapes",
+          "price": "From $17.95",
+          "size": "3 oz / 12 oz",
+          "use": "Mock scrapes & pre-rut",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_ScrapeBlend_703616b9-6936-41c1-bc6b-6dc7136bc1ff.png?v=1688151848",
+          "url": "https://www.odinsinnovations.com/products/scrape-blend-scent-beads?promo=HUNT2026"
+        },
+        {
+          "name": "Dominant Buck Scent Beads",
+          "description": "Synthetic dominant buck scent beads for territorial response",
+          "price": "From $17.95",
+          "size": "3 oz / 12 oz",
+          "use": "Territorial challenge & dominance",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DominantBuck_6b892f84-2d31-4f74-8ede-095bead9ebd8.png?v=1688151821",
+          "url": "https://www.odinsinnovations.com/products/dominant-buck-scent-beads?promo=HUNT2026"
+        },
+        {
+          "name": "Earth Cover Scent Beads",
+          "description": "Synthetic cover scent beads to mask human odor",
+          "price": "From $17.95",
+          "size": "3 oz",
+          "use": "Human odor masking",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_Earth_c55ebd6e-febe-492c-a1aa-9f8bafa25dda.png?v=1688151828",
+          "url": "https://www.odinsinnovations.com/products/earth-cover-scent-beads?promo=HUNT2026"
+        }
+      ],
+      "cta": {
+        "text": "SHOP ALL PRODUCTS",
+        "href": "https://www.odinsinnovations.com/collections/all"
+      }
+    },
+    "benefits": {
+      "section": {
+        "title": "Performance Benefits of Synthetic Scent Beads",
+        "description": ""
+      },
+      "headline": "Performance Benefits of Synthetic Scent Beads",
+      "points": [
+        "Consistent release over 30+ days reduces field visits",
+        "Weatherproof formulation maintains potency after rain",
+        "No spoilage or refrigeration — indefinite shelf life",
+        "Biodegradable and environmentally responsible",
+        "Engineered for deer, hogs, bears, and elk",
+        "Made in USA with full regulatory compliance"
+      ]
+    },
+    "comparison": {
+      "section": {
+        "title": "Synthetic vs Natural Products",
+        "description": ""
+      },
+      "headline": "Synthetic vs Natural Products",
+      "table": [
+        {
+          "feature": "Formula",
+          "Synthetic": "Developed to specific aroma profiles",
+          "Natural Products": "What mother nature gave you that day"
+        },
+        {
+          "feature": "Efficacy",
+          "Synthetic": "Same each and every batch",
+          "Natural Products": "Varies by diet, weather and other conditions."
+        },
+        {
+          "feature": "Duration",
+          "Synthetic": "Controlled by the delivery method used",
+          "Natural Products": "Bacteria starts breaking down, susceptible to dilution."
+        },
+        {
+          "feature": "Shelf Life",
+          "Synthetic": "Indefinite when not exposed to air",
+          "Natural Products": "Subject to a multitude of variables."
+        },
+        {
+          "feature": "Legal Status",
+          "Synthetic": "Allowed in all 50 States and Canada",
+          "Natural Products": "Restrictions in many states and changing."
+        },
+        {
+          "feature": "Weather Resistance",
+          "Synthetic": "The delivery beads are impervious to the weather",
+          "Natural Products": "Natural dilution"
+        },
+        {
+          "feature": "Innovation",
+          "Synthetic": "Free to pursue and create new products",
+          "Natural Products": "Maybe what you want is out there somewhere"
+        },
+        {
+          "feature": "Cost",
+          "Synthetic": "Predictable, repeatable and controllable",
+          "Natural Products": "Rising costs from expanding regulations, labor, and herd maintenance."
+        }
+      ],
+      "summary": "Synthetic products deliver consistent quality, full legal compliance, and predictable costs — natural products are subject to variables outside the manufacturer's control."
+    },
+    "footer": {
+      "finalCTA": {
+        "headline": "Ready for consistent results?",
+        "buttonText": "Shop Synthetic Scent Beads",
+        "href": "https://www.odinsinnovations.com/collections/all"
+      },
+      "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+    },
+    "howItWorks": {
+      "section": {
+        "title": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER",
+        "description": "Every synthetic scent is developed to a specific aroma profile. Our pheromone scents deliver the exact same aroma every single time — doe estrus, dominant buck, scrape blend. Our food scents smell like apples, persimmons, acorns — on down the line. And then we get creative: Jelly Donut without going to the bakery. Maple Bacon tested in Canada for bear hunting. Pear and Peanut Butter to bring hogs out during the day. You can't do that with natural products. Then there's shelf life. Synthetic scents don't spoil. Our biodegradable polymer beads contain a precise amount of scent and release it evenly over 30 days. When a scent molecule hits the bead's surface, it releases into the air. Rain can't stop it. Natural liquid scents expire in 24–36 hours — unless rain gets there first."
+      },
+      "headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER",
+      "description": "Every synthetic scent is developed to a specific aroma profile. Our pheromone scents deliver the exact same aroma every single time — doe estrus, dominant buck, scrape blend. Our food scents smell like apples, persimmons, acorns — on down the line. And then we get creative: Jelly Donut without going to the bakery. Maple Bacon tested in Canada for bear hunting. Pear and Peanut Butter to bring hogs out during the day. You can't do that with natural products. Then there's shelf life. Synthetic scents don't spoil. Our biodegradable polymer beads contain a precise amount of scent and release it evenly over 30 days. When a scent molecule hits the bead's surface, it releases into the air. Rain can't stop it. Natural liquid scents expire in 24–36 hours — unless rain gets there first.",
+      "steps": [
+        "Select the scent that will help you be successful; cover, lure or attractant scents.",
+        "Select the delivery system that best accomplishes what you need;\n- Beads that will last 30-days in front of your trail cameras or in your target area.\n- Liquid on foliage for a \"quicker hit\" up in the air, on the ground creating a trail and available to stick to paws so our prey can help us extend the range.\n- Or both in concert!",
+        "Sprinkle/squirt it on the ground, hang it in a mesh bag or pin it on your clothes in our small sheer bags.\n- When on the ground, it is consistently attracting your prey for 30-days.\n- If in one of the bags, put it in a zip-lock bag and 'capture' the scent in the beads until the next use.",
+        "When you're done, the beads biodegrade and leave your hunting area BETTER THAN YOU FOUND IT™"
+      ]
+    }
+  },
+  "footer": {
+    "finalCTA": {
+      "headline": "Ready for consistent results?",
+      "buttonText": "Shop Synthetic Scent Beads",
+      "href": "https://www.odinsinnovations.com/collections/all"
+    },
+    "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  }
+}

@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/doe-estrus-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service doe-estrus-guide",
     "source": "config/sites/odins-innovations/doe-estrus-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-08T15:14:13.049Z",
+    "generatedAt": "2026-05-18T14:06:15.097Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -14,7 +14,7 @@
     "domain": "odinsinnovations.com",
     "basename": "odins-innovations-doe-estrus-guide",
     "contact": {
-      "email": "paul@odinsinnovations.com",
+      "email": "support@odinsscents.com",
       "phone": "316-393-0440",
       "address": ", ,  "
     }
@@ -388,6 +388,16 @@
           "answer": "Yes. Odin's scent beads are the only scent or attractant available that is made from a plant-based biodegradable polymer that breaks down completely when left on the ground. Exactly how long it takes to fully biodegrade depends on the elements.....a good point of reference is how long it might take for a banana peel to degrade."
         }
       ]
+    },
+    "reviews": {
+      "title": "Success Stories from the Field",
+      "description": "Real results from hunters who trust Odin's synthetic scents.",
+      "stamped": {
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's synthetic scent products.",
+        "take": 6
+      }
     },
     "footer": {
       "finalCTA": {

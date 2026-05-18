@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/dominant-buck-scent-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service dominant-buck-scent-guide",
     "source": "config/sites/odins-innovations/dominant-buck-scent-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-08T15:14:13.495Z",
+    "generatedAt": "2026-05-18T14:06:15.539Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -14,7 +14,7 @@
     "domain": "odinsinnovations.com",
     "basename": "odins-innovations-dominant-buck-scent-guide",
     "contact": {
-      "email": "paul@odinsinnovations.com",
+      "email": "support@odinsscents.com",
       "phone": "316-393-0440",
       "address": ", ,  "
     }
@@ -111,6 +111,7 @@
           "description": "Continuous release even after rain or heavy dew."
         },
         {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_field_tested_deer_lure.png",
           "title": "Legal in All 50 States",
           "description": "Free of CWD transmission risk. No biological material."
         },
@@ -130,6 +131,7 @@
           "description": "Reduces reapplication time compared with traditional liquids."
         },
         {
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
           "title": "Indefinite Shelf Life",
           "description": "No refrigeration or mold concerns."
         }
