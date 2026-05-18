@@ -73,7 +73,7 @@ const defaultBrand = {
 
 **After:**
 ```typescript
-import { loadBrandConfig } from '../engine/index.js';
+import { loadBrandConfig } from '@microsite/engine'; // Preferred import (see monorepo cleanup)
 
 const brand = loadBrandConfig(brandId);
 const brandDefaults = brand; // Use loaded config

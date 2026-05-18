@@ -1,8 +1,16 @@
 /**
  * Microsite Engine Types
  * 
- * Core types for multi-brand microsite generation.
+ * @deprecated
+ * This file is now a thin re-export layer.
+ * Please import from `@microsite/types` instead:
+ * 
+ *   import type { BrandConfig, IKBConfig, ... } from '@microsite/types';
+ * 
+ * This file will be removed in a future cleanup.
  */
+
+export * from '@microsite/types/engine';
 
 // =============================================================================
 // IMPORTS FROM CONTENT.TS (Shared Types)

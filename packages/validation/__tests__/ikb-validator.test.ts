@@ -17,7 +17,7 @@ import {
 
 // Register the real engine loader so tests run against live IKB data
 // This works because Vitest is executed from the project root.
-import { loadIKBRules } from '../../../engine/config-loader.js';
+import { loadIKBRules } from '@microsite/engine';
 
 beforeAll(() => {
   setIKBLoader((brandId: string) => loadIKBRules(brandId));

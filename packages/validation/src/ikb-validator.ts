@@ -10,7 +10,7 @@
  */
 
 import type { ValidationResult, IKBRulesSnapshot, ValidationContext } from './types.js';
-import type { IKBConfig } from '../../../common/types/engine.js'; // will resolve once monorepo paths are set
+import type { IKBConfig, HeroContent, FAQContent } from '@microsite/types';
 
 // -----------------------------------------------------------------------------
 // Loader Injection (the key extensibility point for CMS + generator)
@@ -177,21 +177,22 @@ export async function validateSection(
 
     // Hero section requirements
     if (lower === 'hero') {
-      if (!sec.headline && !sec.headline?.main) {
+      const hero = sec as Partial<HeroContent>;
+      if (!hero.headline?.main) {
         errors.push('Hero section is missing a headline');
       }
-      if (!sec.background && !sec.background?.image) {
+      if (!hero.background?.image) {
         warnings.push('Hero section should include a background image');
       }
     }
 
     // FAQ section requirements
     if (lower === 'faq' || lower === 'faqs') {
-      const faqs = sec.faqs || sec.faq;
-      if (!faqs || !Array.isArray(faqs) || faqs.length === 0) {
+      const faqsArray = (sec.faqs || sec.faq) as Array<{ q?: string; a?: string }> | undefined;
+      if (!faqsArray || !Array.isArray(faqsArray) || faqsArray.length === 0) {
         errors.push('FAQ section must contain a non-empty "faqs" array');
       } else {
-        faqs.forEach((faq: any, i: number) => {
+        faqsArray.forEach((faq, i) => {
           if (!faq.q || !faq.a) {
             errors.push(`FAQ item ${i + 1} is missing "q" or "a"`);
           }

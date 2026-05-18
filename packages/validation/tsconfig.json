@@ -3,14 +3,20 @@
   "compilerOptions": {
     "outDir": "./dist",
     "rootDir": ".",
-    "noEmitOnError": false
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "paths": {
+      "@microsite/types": ["../types/src"],
+      "@microsite/types/*": ["../types/src/*"],
+      "@microsite/engine": ["../engine/src"],
+      "@microsite/engine/*": ["../engine/src/*"]
+    }
   },
-  "include": [
-    "src/**/*",
-    "../common/types/engine.ts",
-    "../common/types/content.ts",
-    "../../engine/config-loader.ts",
-    "../../engine/index.ts"
+  "references": [
+    { "path": "../types" },
+    { "path": "../engine" }
   ],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

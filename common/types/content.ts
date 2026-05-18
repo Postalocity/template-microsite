@@ -1,6 +1,16 @@
 /**
  * Content Type Definitions
+ * 
+ * @deprecated
+ * This file is now a thin re-export layer.
+ * Please import from `@microsite/types` instead:
+ * 
+ *   import type { HeroContent, FAQContent, ... } from '@microsite/types';
+ * 
+ * This file will be removed in a future cleanup.
  */
+
+export * from '@microsite/types/content';
 
 export interface CTA {
   text: string;

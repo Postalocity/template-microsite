@@ -4,7 +4,8 @@
   "description": "A multi-site generator platform for creating vertical-specific microsites with shared components and config-driven customization",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ],
   "type": "module",
   "scripts": {
@@ -20,7 +21,7 @@
     "test:coverage": "vitest run --coverage",
     "content-validate": "node scripts/content-validator.js",
     "content-validate:strict": "node scripts/content-validator.js --strict",
-    "packages:build": "npm run build --workspace=@microsite/validation --workspace=@microsite/engine"
+    "packages:build": "npm run build --workspace=@microsite/types && npm run build --workspace=@microsite/engine && npm run build --workspace=@microsite/validation"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

@@ -12,7 +12,7 @@ import type {
   SocialLinks,
   IKBConfig,
   EngineContext,
-} from '../common/types/engine';
+} from '@microsite/types';
 
 const CONFIG_DIR = path.join(process.cwd(), 'config');
 const BRANDS_DIR = path.join(CONFIG_DIR, 'brands');
@@ -96,7 +96,7 @@ export function loadIKB(brandId: string): IKBConfig {
  * This is the preferred function for the @microsite/validation layer
  * and for CMS publish hooks.
  */
-export function loadIKBRules(brandId: string): import('../common/types/engine').IKBRules {
+export function loadIKBRules(brandId: string): import('@microsite/types').IKBRules {
   const ikb = loadIKB(brandId);
   return ikb.rules;
 }

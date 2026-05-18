@@ -4,7 +4,7 @@
  * This shows the exact pattern you would use in a real Payload beforeValidate hook.
  */
 
-import { validateSiteContent, initializeValidation } from '../../../packages/validation/src/index.js';
+import { validateSiteContent, initializeValidation } from '@microsite/validation';
 
 initializeValidation();
 

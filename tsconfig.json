@@ -29,11 +29,19 @@
       "@lib/*": ["./common/lib/*"],
       "@hooks/*": ["./common/hooks/*"],
       "@assets/*": ["./common/assets/*"],
-      "@types/*": ["./common/types/*"],
+      "@microsite/types": ["./packages/types/src"],
+      "@microsite/types/*": ["./packages/types/src/*"],
       "@microsite/validation": ["./packages/validation/src"],
-      "@microsite/validation/*": ["./packages/validation/src/*"]
+      "@microsite/validation/*": ["./packages/validation/src/*"],
+      "@microsite/engine": ["./packages/engine/src"],
+      "@microsite/engine/*": ["./packages/engine/src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist", "build"]
+  "exclude": ["node_modules", "dist", "build", "sites", ".worktrees"],
+  "references": [
+    { "path": "./packages/types" },
+    { "path": "./packages/engine" },
+    { "path": "./packages/validation" }
+  ]
 }

@@ -18,7 +18,7 @@
 import {
   validateWritingQuality as newValidateWritingQuality,
   validatePhrase,
-} from '../packages/validation/src/index.js';
+} from '@microsite/validation';
 
 import fs from 'fs';
 import path from 'path';
@@ -391,9 +391,10 @@ class ContentValidator {
    * New code should use validateWritingQuality + validatePhrase directly.
    */
   validateText(text, context = '') {
-    // === Aggressive delegation (Phase 2 final legacy cleanup) ===
-    // The vast majority of text validation now lives in @microsite/validation.
-    // We call the canonical functions first.
+    // === Final delegation (Phase 2 complete) ===
+    // All text-level validation now goes through @microsite/validation.
+    // The legacy ContentValidator class only exists for the old CLI and
+    // a few generator-specific structural checks (comparison tables).
     const phraseResult = validatePhrase(text, 'postalocity');
     const qualityResult = newValidateWritingQuality(text, context);
 
@@ -404,27 +405,6 @@ class ContentValidator {
       qualityResult.errors.forEach((msg) => this.log('error', msg, context));
     }
     qualityResult.warnings.forEach((msg) => this.log('warning', msg, context));
-
-    // === Minimal remaining local fallbacks ===
-    // Only a handful of very generator-specific Postalocity/Odins terminology
-    // rules that have not yet been moved into the validation package or IKB.
-    // Goal: these should disappear in the next cleanup pass.
-    const narrowRules = [
-      rules.IKB_PROOF_OF_MAILING,
-      rules.IKB_TRACKING_TERMINOLOGY,
-      rules.IKB_SELF_MAILER,
-    ];
-
-    for (const rule of narrowRules) {
-      if (rule?.patterns) {
-        for (const pattern of rule.patterns) {
-          if (pattern.regex.test(text)) {
-            const sev = rule.severity === 'warning' ? 'warning' : 'error';
-            this.log(sev, pattern.message, context);
-          }
-        }
-      }
-    }
   }
 
   /**

@@ -6,7 +6,7 @@
  */
 
 import React, { createContext, useContext, useMemo } from 'react';
-import type { IKBConfig, IKBRules } from '../types/engine';
+import type { IKBConfig, IKBRules } from '@microsite/types';
 
 // Use the single source of truth for phrase/content checking + defaults
 import {

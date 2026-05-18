@@ -12,7 +12,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { loadEngineContext, loadSiteConfig, listBrands, listServices } from '../engine/index.js';
+import { loadEngineContext, loadSiteConfig, listBrands, listServices } from '@microsite/engine';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

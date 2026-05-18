@@ -13,7 +13,7 @@
  * the live data from config/ikb/{brand}/rules.json.
  */
 
-import type { IKBRules } from '../../../common/types/engine.js';
+import type { IKBRules } from '@microsite/types';
 
 let registered = false;
 
@@ -27,9 +27,8 @@ export function initializeValidation(): void {
 export function registerEngineLoader(): void {
   if (registered) return;
 
-  // Dynamic import — try the new monorepo package first, then fall back to the legacy location
+  // Clean import from the new monorepo package
   import('@microsite/engine/config-loader')
-    .catch(() => import('../../../engine/config-loader.js'))
     .then((mod) => {
       const { loadIKBRules } = mod;
 
