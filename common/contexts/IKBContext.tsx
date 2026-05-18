@@ -8,8 +8,12 @@
 import React, { createContext, useContext, useMemo } from 'react';
 import type { IKBConfig, IKBRules } from '../types/engine';
 
-// Use the single source of truth for phrase/content checking
-import { isPhraseAllowed as isPhraseAllowedPure, isContentAllowed as isContentAllowedPure } from '@microsite/validation';
+// Use the single source of truth for phrase/content checking + defaults
+import {
+  isPhraseAllowed as isPhraseAllowedPure,
+  isContentAllowed as isContentAllowedPure,
+  DEFAULT_IKB_RULES,
+} from '@microsite/validation';
 
 // =============================================================================
 // DEFAULT IKB VALUES (Postalocity)
@@ -17,9 +21,13 @@ import { isPhraseAllowed as isPhraseAllowedPure, isContentAllowed as isContentAl
 
 export const defaultIKBConfig: IKBConfig = {
   rules: {
+    // Reuse the canonical lists from the validation layer
+    ...DEFAULT_IKB_RULES,
+
+    // Brand-specific data that lives outside the generic defaults
     trustSignals: [
       'NCOA Verified 2024',
-      'CASS Certified 2024', 
+      'CASS Certified 2024',
       'ISO 9001 Documented Processes 2023',
     ],
     promoCodes: {
@@ -30,56 +38,6 @@ export const defaultIKBConfig: IKBConfig = {
       'postcard': 'pc2026',
       'self-storage': 'pm2026',
     },
-    approvedSections: [
-      'hero',
-      'howItWorks',
-      'features',
-      'faq',
-      'cta',
-      'footer',
-      'trustSignals',
-      'difference',
-      'pricing',
-    ],
-    blocklistedContent: [
-      'testimonial',
-      'testimonials',
-      'case-study',
-      'case-studies',
-      'video',
-      'video-content',
-      'live-chat',
-      'livechat',
-      'team',
-      'experts',
-      'award',
-      'awards',
-      'review',
-      'reviews',
-      'aggregateRating',
-      'star rating',
-      '5-star',
-    ],
-    blocklistedPhrases: [
-      'millions of customers',
-      'award-winning',
-      'industry-leading',
-      'world-class',
-      'cutting-edge',
-      'revolutionary',
-      'game-changing',
-      'best-in-class',
-      'proven results',
-      'guaranteed results',
-      'satisfaction guaranteed',
-      '100% accurate',
-      'zero errors',
-      'trusted by celebrities',
-      'featured in Forbes',
-      'as seen on TV',
-      'guaranteed delivery',
-      '100% delivery',
-    ],
   },
   pricing: {
     basePrice: 0.69,
