@@ -56,7 +56,7 @@ const WhenToUseSection = ({ content }: WhenToUseSectionProps) => {
       id="when-to-use"
       ref={ref}
       className="section-padding"
-      style={{ background: 'hsl(var(--muted))' }}
+      style={{ background: '#f8f9fa' }}
     >
       <div className="section-container">
         <motion.div
@@ -185,20 +185,7 @@ const WhenToUseSection = ({ content }: WhenToUseSectionProps) => {
             </motion.div>
           )}
 
-          {/* Image Placeholder Notice */}
-          {!content.gallery && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-center p-8 border-2 border-dashed"
-              style={{ borderColor: 'hsl(var(--border))' }}
-            >
-              <p className="font-body text-muted-foreground">
-                <em>Gallery space reserved for customer-provided images of scent types, product in use, and field photos.</em>
-              </p>
-            </motion.div>
-          )}
+
         </motion.div>
       </div>
     </section>

@@ -1344,7 +1344,7 @@ function generateOdinsInnovationsTemplate(config: SiteConfig, brandContext?: Bra
 
   const customImports = `
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection, WhenToUseSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, ProductsSection, SignatureScentBeadsSection, WhyOdinsSection, WhenToUseSection, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import SiteNavigation from '@/themes/odins-innovations/components/shared/SiteNavigation';
 import SiteFooter from '@/themes/odins-innovations/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -1589,21 +1589,11 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || '2026';
         {content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}
         
         {/* Section 10: Reviews */}
-        <section id="reviews" className="py-20" style={{ background: 'hsl(var(--background))' }}>
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">Success Stories from the Field</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who trust Odin's synthetic scents.</p>
-            </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
-            <style dangerouslySetInnerHTML={{__html: \`
-              .stamped-widget-buttons,
-              .stamped-full-page-tabs {
-                display: none !important;
-              }
-            \`}} />
-          </div>
-        </section>
+        <StampedReviewsSection
+          title={content.reviews?.title || 'Success Stories from the Field'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.description || "Real results from hunters who trust Odin's synthetic scents."}
+        />
 
         {/* Section 11: FAQ */}
         <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
@@ -1966,11 +1956,11 @@ function App() {
           ]}
         />
         
-        {/* Stamped.io Reviews */}
-        <StampedReviewsSection 
-          title={content.reviews?.title}
-          subtitle={content.reviews?.subtitle}
-          description={content.reviews?.description}
+        {/* Reviews */}
+        <StampedReviewsSection
+          title={content.reviews?.title || 'Mosquito Protection Reviews'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.description || "Real results from hunters and outdoors enthusiasts who trust Odin's citronella protection."}
         />
         
         {/* Comparison Table */}
@@ -2029,7 +2019,7 @@ function generateCWDSiteTemplate(config: SiteConfig, brandContext?: BrandContext
 
 import { createRoot } from 'react-dom/client';
 import { useState } from 'react';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -2300,27 +2290,12 @@ function App() {
           </section>
         )}
         
-        {/* Stamped.io Reviews */}
-        <section id="reviews" className="py-20" style={{ background: 'hsl(var(--background))' }}>
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'Success Stories from the Field'}</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">{content.reviews?.subtitle || "Real results from hunters who trust Odin\\u2019s synthetic scents."}</p>
-            </div>
-            
-            {/* Stamped.io Reviews Widget - Rut Scents Products */}
-            {/* Loads automatically via Shopify's Stamped.io app integration */}
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
-            
-            {/* Hide Product/Site Reviews tabs since no site reviews */}
-            <style dangerouslySetInnerHTML={{__html: \`
-              .stamped-widget-buttons,
-              .stamped-full-page-tabs {
-                display: none !important;
-              }
-            \`}} />
-          </div>
-        </section>
+        {/* Reviews */}
+        <StampedReviewsSection
+          title={content.reviews?.title || 'Success Stories from the Field'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.description || "Real results from hunters who trust Odin's synthetic scents."}
+        />
         
         {/* FAQ (warm cream) */}
         {content['faq'] && (
@@ -2377,7 +2352,7 @@ function generateDominantBuckTemplate(config: SiteConfig, brandContext?: BrandCo
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, HowItWorksSection, ProductsSection, WhyOdinsSection, WhenToUseSection, SiteNavigation, SiteFooter } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, TrustBadgesSection, HowItWorksSection, ProductsSection, WhyOdinsSection, WhenToUseSection, SiteNavigation, SiteFooter, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -2518,22 +2493,12 @@ function App() {
           {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
         </div>
 
-        {/* Section 9: Reviews */}
-        <section id="reviews" className="py-20 section-alt">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who put Odin's to the test in the field.</p>
-            </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
-            <style dangerouslySetInnerHTML={{__html: \`
-              .stamped-widget-buttons,
-              .stamped-full-page-tabs {
-                display: none !important;
-              }
-            \`}} />
-          </div>
-        </section>
+        {/* Reviews */}
+        <StampedReviewsSection
+          title={content.reviews?.title || 'What Hunters Are Saying'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.description || "Real results from hunters who put Odin's to the test in the field."}
+        />
 
         {/* Section 10: FAQ (warm cream) */}
         <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
@@ -2843,22 +2808,12 @@ function App() {
         {/* Section 10: Comparison */}
         {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
 
-        {/* Section 10: Reviews */}
-        <section id="reviews" className="py-20" style={{ background: 'hsl(30, 20%, 95%)' }}>
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">What Hunters Are Saying</h2>
-              <p className="text-lg text-stone-600 max-w-2xl mx-auto">Real results from hunters who put Odin's to the test in the field.</p>
-            </div>
-            <div id="stamped-reviews-widget" data-widget-type="full-page" data-take="6" data-product-brand="Odin's Innovations"></div>
-            <style dangerouslySetInnerHTML={{__html: \`
-              .stamped-widget-buttons,
-              .stamped-full-page-tabs {
-                display: none !important;
-              }
-            \`}} />
-          </div>
-        </section>
+        {/* Reviews */}
+        <StampedReviewsSection
+          title={content.reviews?.title || 'What Hunters Are Saying'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.description || "Real results from hunters who put Odin's to the test in the field."}
+        />
 
         {/* Section 11: FAQ */}
         <FAQSection faq={content.faq} />
@@ -2905,7 +2860,7 @@ function generateFoodScentTemplate(config: SiteConfig, brandContext?: BrandConte
  */
 
 import { createRoot } from 'react-dom/client';
-import { HeroSection, BenefitsSection, WhyOdinsSection, DifferenceSection, ProductsSection, ComparisonTable, TrustBadgesSection, FAQSection, SiteFooter, SiteNavigation } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, WhyOdinsSection, DifferenceSection, ProductsSection, ComparisonTable, TrustBadgesSection, FAQSection, SiteFooter, SiteNavigation, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -3031,21 +2986,11 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || 'HUNT2026';
       )}
 
       {/* Reviews */}
-      <section id="reviews" className="py-20" style={{ background: 'hsl(var(--background))' }}>
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-stone-800 mb-4">{content.reviews?.title || 'What Hunters Are Saying'}</h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto">{content.reviews?.description || ''}</p>
-          </div>
-          <div id="stamped-reviews-widget" data-widget-type="full-page" data-product-brand="Odin's Innovations"></div>
-          <style dangerouslySetInnerHTML={{__html: \`
-            .stamped-widget-buttons,
-            .stamped-full-page-tabs {
-              display: none !important;
-            }
-          \`}} />
-        </div>
-      </section>
+      <StampedReviewsSection
+        title={content.reviews?.title || 'What Hunters Are Saying'}
+        subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+        description={content.reviews?.description || "Real results from hunters who put Odin's food scent beads to the test in the field."}
+      />
 
       <FAQSection faq={content.faq} background="hsl(30, 20%, 95%)" />
 
@@ -3333,8 +3278,9 @@ function App() {
 
       {/* Section 8: Reviews — light gray */}
       <StampedReviewsSection
-        title="Success Stories from the Field"
-        subtitle="Real results from hunters who trust Odin's synthetic scents."
+        title={content.reviews?.title || 'What Hunters Are Saying'}
+        subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+        description={content.reviews?.description || "Real results from hunters who put Odin's to the test in the field."}
       />
 
       {/* Section 9: FAQ — cream */}
@@ -4179,9 +4125,9 @@ function App() {
 
       {/* Section 10: Reviews — dark bg for dramatic feel */}
       <StampedReviewsSection
-        title="What Hunters Are Saying"
-        subtitle="Field Reports"
-        description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages."
+        title={content.reviews?.title || 'Success Stories from the Field'}
+        subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+        description={content.reviews?.description || "Real results from hunters who trust Odin's synthetic scents."}
         background="#1a1d29"
       />
 
@@ -4280,10 +4226,10 @@ function App() {
       {content.mosquito && <MosquitoSection headline={content.mosquito.headline} body={content.mosquito.body} />}
       
 {/* Reviews - Success Stories from the Field */}
-        <StampedReviewsSection 
-          title="What Hunters Are Saying" 
-          subtitle="Field Reports" 
-          description="Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages." 
+        <StampedReviewsSection
+          title={content.reviews?.title || 'What Hunters Are Saying'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Field Reports'}
+          description={content.reviews?.description || "Real results from hunters who put Odin's to the test in the field. For hundreds more reviews, visit our product pages."}
         />
         
         {/* Hide Stamped Product/Site Reviews tabs - inline style wins source order battle */}

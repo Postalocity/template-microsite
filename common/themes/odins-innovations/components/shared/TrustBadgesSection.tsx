@@ -120,8 +120,8 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
 
   return (
     <section className="section-sm" style={{ background: '#16181d' }}>
-      <div className="section-container">
-        <div className="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
+      <div className="section-container py-2">
+        <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-3">
           {signals.map((signal, index) => {
             const iconValue = badgeIconMap[signal.icon.toLowerCase()];
             const isImageUrl = typeof iconValue === 'string' && (iconValue.startsWith('http') || iconValue.startsWith('/'));
@@ -129,7 +129,7 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
             return (
               <div 
                 key={index}
-                className="flex items-center gap-2.5 px-4 py-2.5 lg:px-5 lg:py-3"
+                className="flex items-center gap-1.5 px-3 py-1 lg:px-4 lg:py-1.5"
                 style={{ 
                   border: '1px solid rgba(53, 141, 90, 0.2)',
                   background: 'rgba(53, 141, 90, 0.03)',
@@ -138,12 +138,12 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
                 {/* Odin's style SVG icon or image */}
                 <div style={{ color: 'white' }}>
                   {isImageUrl ? (
-                    <img src={iconValue as string} alt={signal.name} className="w-5 h-5 object-contain brightness-0 invert" />
+                    <img src={iconValue as string} alt={signal.name} className="w-4 h-4 object-contain brightness-0 invert" />
                   ) : (
                     <IconComponent />
                   )}
                 </div>
-                <span className="font-body text-xs lg:text-sm font-semibold uppercase-tracked" style={{ color: 'white' }}>
+                <span className="font-body text-[10px] lg:text-xs font-semibold uppercase-tracked" style={{ color: 'white' }}>
                   {signal.name}
                 </span>
               </div>

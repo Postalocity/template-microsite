@@ -205,7 +205,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                     3rd Party Verified
                   </div>
                   <div className="font-body text-xs" style={{ color: '#2d5a3d' }}>
-                    Mississippi State University Testing
+                    University Chemical Lab Testing
                   </div>
                 </div>
               </div>

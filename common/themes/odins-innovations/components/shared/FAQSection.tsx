@@ -166,7 +166,7 @@ const FAQSection = ({ faq, background, dark }: FAQSectionProps) => {
                 Still have questions? We're here to help.
               </p>
               <a
-                href="mailto:support@odinsinnovations.com"
+                href="mailto:support@odinsscents.com"
                 className="inline-flex items-center gap-2 px-6 py-3 font-display font-bold uppercase tracking-wide transition-all duration-300"
                 style={{ 
                   background: 'hsl(var(--secondary))',

@@ -18,7 +18,7 @@ interface TableComparisonProps {
   };
 }
 
-const ComparisonTable = ({ comparison }: TableComparisonProps) => {
+const ComparisonTable = ({ comparison, background }: TableComparisonProps & { background?: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -48,7 +48,14 @@ const ComparisonTable = ({ comparison }: TableComparisonProps) => {
     });
   }
   
-  const odinsColumn = headerRow.length - 1; // Last column is typically Odin's
+  // Find Odin's column by header text (not just "last column")
+  const odinsColumn = headerRow.findIndex(h =>
+    h.toLowerCase().includes("odin") ||
+    h.toLowerCase().includes("scent bead") ||
+    h.toLowerCase().includes("synthetic")
+  );
+  // Fallback: second column if no match, last column if only 2 cols, otherwise last
+  const highlightCol = odinsColumn >= 0 ? odinsColumn : (headerRow.length === 2 ? 1 : headerRow.length - 1);
 
   // Check if cell indicates a positive/negative value
   const renderCell = (cell: string, cellIndex: number, rowIndex: number) => {
@@ -93,7 +100,7 @@ const ComparisonTable = ({ comparison }: TableComparisonProps) => {
       id="comparison"
       ref={ref}
       className="section-padding"
-      style={{ background: 'hsl(var(--background))' }}
+      style={{ background: background || 'hsl(var(--background))' }}
     >
       <div className="section-container">
         <motion.div
@@ -132,9 +139,9 @@ const ComparisonTable = ({ comparison }: TableComparisonProps) => {
                       key={index}
                       className="py-4 px-4 md:px-6 text-left font-display uppercase text-sm"
                       style={{
-                        background: index === odinsColumn ? 'hsl(var(--primary))' : 'hsl(var(--muted))',
-                        color: index === odinsColumn ? 'white' : 'hsl(var(--foreground))',
-                        width: index === 0 ? '40%' : '30%',
+                        background: index === highlightCol ? 'hsl(var(--primary))' : 'hsl(var(--muted))',
+                        color: index === highlightCol ? 'white' : 'hsl(var(--foreground))',
+                        width: index === 0 ? '30%' : `${70 / (headerRow.length - 1)}%`,
                         borderBottom: '3px solid hsl(var(--accent))'
                       }}
                     >
@@ -159,8 +166,8 @@ const ComparisonTable = ({ comparison }: TableComparisonProps) => {
                         key={cellIndex}
                         className="py-4 px-4 md:px-6"
                         style={{
-                          borderLeft: cellIndex === odinsColumn ? '4px solid hsl(var(--primary))' : 'none',
-                          background: cellIndex === odinsColumn ? 'hsl(var(--primary) / 0.05)' : 'transparent'
+                          borderLeft: cellIndex === highlightCol ? '4px solid hsl(var(--primary))' : 'none',
+                          background: cellIndex === highlightCol ? 'hsl(var(--primary) / 0.05)' : 'transparent'
                         }}
                       >
                         {cellIndex === 0 ? (

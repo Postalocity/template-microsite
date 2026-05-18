@@ -115,21 +115,21 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
 
         {/* Benefits Grid with Images */}
         {hasImages ? (
-          <div className={`grid gap-8 justify-items-center ${parsedItems.length <= 3 ? 'grid-cols-1 md:grid-cols-3 max-w-4xl mx-auto' : 'grid-cols-2 md:grid-cols-4'}`}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {parsedItems.map((item, index) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="text-center"
+                className="bg-white rounded-lg p-6 shadow-md text-center"
               >
                 {item.image && (
                   <div className="mb-4 flex justify-center">
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-36 h-36 md:w-44 md:h-44 object-contain"
+                      className="w-20 h-20 md:w-24 md:h-24 object-contain"
                       loading="lazy"
                     />
                   </div>

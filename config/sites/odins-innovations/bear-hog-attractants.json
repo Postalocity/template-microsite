@@ -246,14 +246,42 @@
     "comparison": {
       "headline": "Odin's Synthetic vs. Traditional Attractants",
       "table": {
-        "headers": ["Feature", "Odin's", "Traditional"],
+        "headers": [
+          "Feature",
+          "Odin's",
+          "Traditional"
+        ],
         "rows": [
-          ["Duration", "Up to 30+ days — releases scent constantly every day, gradual drop-off as it ages", "2–5 days, quickly consumed or degrades, frequent refresh required"],
-          ["Weather", "Maintains output after rain", "Degrades quickly under moisture, freezing locks in aroma"],
-          ["Spoilage", "None — synthetic polymer", "Attracts insects, deteriorates from mold and bacteria"],
-          ["Maintenance", "One application per month", "High replenishment effort"],
-          ["Regulatory", "In some areas, a non-consumed scent is legal. Check your local regs", "Check your local regulations"],
-          ["Scent", "The scent is strong and releases continually and consistently. Does not drop off as it gets older.", "Varies by freshness and source. Not predictable consistency."]
+          [
+            "Duration",
+            "Up to 30+ days — releases scent constantly every day, gradual drop-off as it ages",
+            "2–5 days, quickly consumed or degrades, frequent refresh required"
+          ],
+          [
+            "Weather",
+            "Maintains output after rain",
+            "Degrades quickly under moisture, freezing locks in aroma"
+          ],
+          [
+            "Spoilage",
+            "None — synthetic polymer",
+            "Attracts insects, deteriorates from mold and bacteria"
+          ],
+          [
+            "Maintenance",
+            "One application per month",
+            "High replenishment effort"
+          ],
+          [
+            "Regulatory",
+            "In some areas, a non-consumed scent is legal. Check your local regs",
+            "Check your local regulations"
+          ],
+          [
+            "Scent",
+            "The scent is strong and releases continually and consistently. Does not drop off as it gets older.",
+            "Varies by freshness and source. Not predictable consistency."
+          ]
         ]
       }
     },
@@ -293,6 +321,16 @@
           "a": "Field performance is the only proof that matters — and Odin's has more of it than anyone. Our synthetic formulations were first introduced in 2018, making them the longest field-proven synthetic scents on the market. Animals know when something's not quite right, and seven-plus seasons of documented results confirm our scents pass that test. The growth in synthetic adoption isn't driven by regulation alone — it's driven by hunters finding products that actually work."
         }
       ]
+    },
+    "reviews": {
+      "title": "What Hunters Are Saying",
+      "description": "Real results from hunters who put Odin's to the test in the field.",
+      "stamped": {
+        "title": "Product Reviews",
+        "subtitle": "Verified Buyers",
+        "description": "See what verified buyers are saying about Odin's bear and hog attractants.",
+        "take": 6
+      }
     },
     "footer": {
       "finalCTA": {
