@@ -91,8 +91,24 @@ describe('@microsite/validation — content-quality', () => {
 
   it('detects fragmented sentences', () => {
     const r = validateWritingQuality('We deliver fast. And reliable service every time.');
-    // The gerund/fragment rule should trigger on the second sentence in some cases
-    // For now we mainly assert the function runs without crashing
     expect(r).toHaveProperty('valid');
+  });
+});
+
+import { validateSiteContent } from '../src/validate-site-content.js';
+
+describe('@microsite/validation — validateSiteContent (high-level CMS helper)', () => {
+  it('rejects a payload containing blocklisted phrases and bad section types', async () => {
+    const payload = {
+      headline: 'Revolutionary service with guaranteed results',
+      sections: [
+        { name: 'testimonial', title: 'What our clients say' }
+      ]
+    };
+
+    const result = await validateSiteContent(payload, 'postalocity');
+    expect(result.valid).toBe(false);
+    expect(result.fieldErrors.headline?.length).toBeGreaterThan(0);
+    expect(result.fieldErrors['sections[0]']?.length).toBeGreaterThan(0);
   });
 });

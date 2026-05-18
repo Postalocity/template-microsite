@@ -17,3 +17,4 @@ export {
 } from './ikb-validator.js';
 export * from './content-quality.js';
 export { initializeValidation, registerEngineLoader } from './register-engine-loader.js';
+export * from './validate-site-content.js';
