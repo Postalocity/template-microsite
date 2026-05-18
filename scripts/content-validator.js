@@ -1,11 +1,21 @@
 #!/usr/bin/env node
 
 /**
- * Content Quality Validator
+ * Content Quality Validator (Compatibility Layer)
  * 
- * Validates microsite content for clarity, completeness, and brand consistency.
- * Catches common issues like fragmented sentences, hedging phrases, and missing content.
+ * ⚠️  DEPRECATION NOTICE (Phase 2)
+ * This file is now a thin compatibility wrapper.
+ * 
+ * Preferred API: import from `@microsite/validation`
+ *   - validateWritingQuality(text, context)
+ *   - validatePhrase(phrase, brandId)
+ *   - validateSiteContent(payload, brandId)
+ * 
+ * This file is kept for backward compatibility with existing scripts and CLI usage.
+ * New code should import directly from the unified validation package.
  */
+
+import { validateWritingQuality as newValidateWritingQuality } from '../packages/validation/src/index.js';
 
 import fs from 'fs';
 import path from 'path';
@@ -605,4 +615,16 @@ if (isMainModule) {
   main();
 }
 
+// Re-export the new canonical implementation for consumers who still import from here
+export { newValidateWritingQuality as validateWritingQuality };
+
+// Legacy exports (will be removed in a future major version)
 export { ContentValidator, rules };
+
+// Deprecation warning helper
+export function __deprecatedContentValidatorWarning() {
+  console.warn(
+    '[DEPRECATED] scripts/content-validator.js is a legacy compatibility layer. ' +
+    'Please migrate to `import { validateWritingQuality, validatePhrase, validateSiteContent } from "@microsite/validation"`'
+  );
+}
