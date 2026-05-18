@@ -13,6 +13,13 @@ import { validatePhrase } from '../packages/validation/src/index.js';
 import { initializeValidation } from '../packages/validation/src/index.js';
 initializeValidation();
 
+/**
+ * @deprecated Prefer importing directly from `@microsite/validation`
+ */
+export function __deprecatedValidationWarning() {
+  console.warn('[DEPRECATED] content-factory.ts validation functions are legacy. Use @microsite/validation instead.');
+}
+
 // =============================================================================
 // ALLOWLISTS
 // =============================================================================
