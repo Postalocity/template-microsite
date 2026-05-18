@@ -47,6 +47,14 @@ describe('@microsite/validation — ikb-validator (default rules)', () => {
     expect(unknown.warnings.length).toBeGreaterThan(0);
   });
 
+  it('validateSection enforces structural rules for hero and faq', async () => {
+    const badHero = await validateSection({ name: 'hero' }, 'postalocity'); // missing headline
+    expect(badHero.errors.some(e => e.includes('headline'))).toBe(true);
+
+    const badFaq = await validateSection({ name: 'faq', faqs: [] }, 'postalocity');
+    expect(badFaq.errors.some(e => e.includes('non-empty'))).toBe(true);
+  });
+
   it('allows normal marketing language', async () => {
     const result = await validatePhrase('Fast, reliable mailing with real proof every time', 'odins-innovations');
     expect(result.valid).toBe(true);

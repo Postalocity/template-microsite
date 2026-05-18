@@ -161,6 +161,44 @@ export async function validateSection(
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // Deeper structural validation for well-known section types
+  // ---------------------------------------------------------------------------
+  if (typeof section === 'object' && section !== null) {
+    const sec = section as Record<string, unknown>;
+
+    // Hero section requirements
+    if (lower === 'hero') {
+      if (!sec.headline && !sec.headline?.main) {
+        errors.push('Hero section is missing a headline');
+      }
+      if (!sec.background && !sec.background?.image) {
+        warnings.push('Hero section should include a background image');
+      }
+    }
+
+    // FAQ section requirements
+    if (lower === 'faq' || lower === 'faqs') {
+      const faqs = sec.faqs || sec.faq;
+      if (!faqs || !Array.isArray(faqs) || faqs.length === 0) {
+        errors.push('FAQ section must contain a non-empty "faqs" array');
+      } else {
+        faqs.forEach((faq: any, i: number) => {
+          if (!faq.q || !faq.a) {
+            errors.push(`FAQ item ${i + 1} is missing "q" or "a"`);
+          }
+        });
+      }
+    }
+
+    // Pricing section should reference pricing data
+    if (lower === 'pricing') {
+      if (!sec.pricing && !sec.tiers) {
+        warnings.push('Pricing section should include pricing tiers or reference IKB pricing');
+      }
+    }
+  }
+
   return {
     valid: errors.length === 0,
     errors,
