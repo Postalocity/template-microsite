@@ -8,14 +8,14 @@
  * - Generator (via re-exports during migration)
  */
 
-export * from './types.js';
-export * from './ikb-validator.js';
-export { DEFAULT_IKB_RULES } from './ikb-validator.js';
+export * from './types';
+export * from './ikb-validator';
+export { DEFAULT_IKB_RULES } from './ikb-validator';
 export { 
   isPhraseAllowed, 
   isContentAllowed,
   getApprovedSections 
-} from './ikb-validator.js';
-export * from './content-quality.js';
-export { initializeValidation, registerEngineLoader } from './register-engine-loader.js';
-export * from './validate-site-content.js';
+} from './ikb-validator';
+export * from './content-quality';
+export { initializeValidation, registerEngineLoader } from './register-engine-loader';
+export * from './validate-site-content';

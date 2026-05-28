@@ -111,7 +111,7 @@ export default async function SitesPage() {
               <tr key={`${site.brand}-${site.slug}`} className="hover:bg-gray-50">
                 <td className="px-6 py-4 font-medium">
                   <Link 
-                    href={`/sites/${site.brand}/${site.slug}`} 
+                    href={`/sites/editor/${site.brand}/${site.slug}`} 
                     className="hover:underline text-blue-600"
                   >
                     {site.name}
@@ -140,7 +140,7 @@ export default async function SitesPage() {
                 </td>
                 <td className="px-6 py-4">
                   <Link 
-                    href={`/sites/${site.brand}/${site.slug}`}
+                    href={`/sites/editor/${site.brand}/${site.slug}`}
                     className="text-sm text-blue-600 hover:underline"
                   >
                     Edit

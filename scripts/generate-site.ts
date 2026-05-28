@@ -4576,7 +4576,10 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, '../../../common'),
-      '@/': path.resolve(__dirname, '../../../common') + '/',${themeAlias}
+      '@/': path.resolve(__dirname, '../../../common') + '/',
+      '@microsite/types': path.resolve(__dirname, '../../../packages/types/src'),
+      '@microsite/validation': path.resolve(__dirname, '../../../packages/validation/src'),
+      '@microsite/engine': path.resolve(__dirname, '../../../packages/engine/src'),${themeAlias}
     },
     dedupe: ['react', 'react-dom'],
   },
@@ -5009,20 +5012,24 @@ ${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png"
            },
            "serviceType": "${config.seo?.serviceSchema?.serviceType || site.id}"
          },
-        {
-          "@type": "FAQPage",
-          "mainEntity": [
-            ${(config.content?.faq?.faqs || []).map((faq: FAQ) => `
-              {
-                "@type": "Question",
-                "name": "${faq.q.replace(/"/g, '\\"')}",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "${faq.a.replace(/<[^>]*>/g, '').replace(/"/g, '\\"')}"
-                }
-              }`).join(',\n            ')}
-          ]
-        }
+         {
+           "@type": "FAQPage",
+           "mainEntity": [
+             ${((config.content?.faq?.items || config.content?.faq?.faqs || []) as Array<{q?: string; a?: string; question?: string; answer?: string}>).map((faq) => {
+               const question = (faq.q || faq.question || '').replace(/"/g, '\\"');
+               const answer = (faq.a || faq.answer || '').replace(/<[^>]*>/g, '').replace(/"/g, '\\"');
+               return `
+               {
+                 "@type": "Question",
+                 "name": "${question}",
+                 "acceptedAnswer": {
+                   "@type": "Answer",
+                   "text": "${answer}"
+                 }
+               }`;
+             }).join(',\n            ')}
+           ]
+         }
       ]
     }
     </script>
@@ -5111,6 +5118,31 @@ function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): s
   // Get logo from branding config - use full CDN URL if available
   const logoUrl = config.branding?.logo || "{{ 'logo.png' | asset_url }}";
 
+  // Build FAQPage JSON-LD items from config (computed before template literal to avoid nesting issues)
+  const rawFaqItems = (config.content as any)?.faq?.items || (config.content as any)?.faq?.faqs || [];
+  let faqPageJson = '';
+  if (rawFaqItems.length > 0) {
+    const entities = rawFaqItems.map((faq: any) => {
+      const question = (faq.q || faq.question || '').replace(/"/g, '\\"');
+      const answer = (faq.a || faq.answer || '').replace(/<[^>]*>/g, '').replace(/"/g, '\\"');
+      return '{\n' +
+        '              "@type": "Question",\n' +
+        '              "name": "' + question + '",\n' +
+        '              "acceptedAnswer": {\n' +
+        '                "@type": "Answer",\n' +
+        '                "text": "' + answer + '"\n' +
+        '              }\n' +
+        '            }';
+    });
+    faqPageJson = ',\n' +
+      '        {\n' +
+      '          "@type": "FAQPage",\n' +
+      '          "mainEntity": [\n' +
+      '            ' + entities.join(',\n            ') + '\n' +
+      '          ]\n' +
+      '        }';
+  }
+
   return `{% layout none %}
 
 <!DOCTYPE html>
@@ -5198,8 +5230,7 @@ ${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png"
             "contactType": "customer service",
             "email": "${site.contact?.email || ''}"
           }
-        },
-        { "@type": "FAQPage", "mainEntity": [] }
+        }${faqPageJson}
       ]
     }
     </script>

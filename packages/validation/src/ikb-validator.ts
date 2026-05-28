@@ -9,7 +9,7 @@
  * (once Phase 1 monorepo layout is in place).
  */
 
-import type { ValidationResult, IKBRulesSnapshot, ValidationContext } from './types.js';
+import type { ValidationResult, IKBRulesSnapshot, ValidationContext } from './types';
 import type { IKBConfig, HeroContent, FAQContent } from '@microsite/types';
 
 // -----------------------------------------------------------------------------
@@ -39,8 +39,7 @@ async function loadRulesForBrand(brandId: string): Promise<IKBRulesSnapshot> {
 
   // Best-effort dynamic import (works after Phase 1 monorepo wiring)
   try {
-    // @ts-ignore - path will be correct once packages are linked
-    const mod = await import('../../../engine/config-loader.js');
+    const mod = await import('@microsite/engine/config-loader');
     if (mod?.loadIKB) {
       const ikb = await mod.loadIKB(brandId);
       return ikb.rules as IKBRulesSnapshot;

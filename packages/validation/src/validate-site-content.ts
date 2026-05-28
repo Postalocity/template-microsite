@@ -10,8 +10,8 @@
  * Returns a consolidated result with field-level errors.
  */
 
-import type { ValidationResult } from './types.js';
-import { validatePhrase, validateSection, validateWritingQuality } from './index.js';
+import type { ValidationResult } from './types';
+import { validatePhrase, validateSection, validateWritingQuality } from './index';
 
 export interface SiteContentInput {
   headline?: string;

@@ -9,7 +9,7 @@
     "start": "payload start"
   },
   "dependencies": {
-    "@microsite/validation": "workspace:*",
+    "@microsite/validation": "file:../../packages/validation",
     "payload": "^3.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

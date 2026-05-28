@@ -17,9 +17,9 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "lucide-react": "^0.460.0",
-    "@microsite/types": "workspace:*",
-    "@microsite/validation": "workspace:*",
-    "@microsite/engine": "workspace:*"
+    "@microsite/types": "file:../../packages/types",
+    "@microsite/validation": "file:../../packages/validation",
+    "@microsite/engine": "file:../../packages/engine"
   },
   "devDependencies": {
     "@types/node": "^25.3.3",

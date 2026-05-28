@@ -23,7 +23,7 @@ export default function NewSitePage() {
       });
 
       if (res.ok) {
-        router.push(`/sites/${brand}/${service}`);
+        router.push(`/sites/editor/${brand}/${service}`);
       } else {
         alert('Failed to create site');
       }

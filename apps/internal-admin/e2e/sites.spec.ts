@@ -29,14 +29,14 @@ test.describe('Sites Management', () => {
 
     await page.getByRole('button', { name: /Create Site/i }).click();
 
-    await expect(page).toHaveURL(new RegExp(`/sites/postalocity/${uniqueSlug}`));
+    await expect(page).toHaveURL(new RegExp(`/sites/editor/postalocity/${uniqueSlug}`));
 
     await page.goto('/sites');
     await expect(page.getByText(uniqueSlug)).toBeVisible();
   });
 
   test('editing content shows live validation errors', async ({ page }) => {
-    await page.goto('/sites/postalocity/credit-repair');
+    await page.goto('/sites/editor/postalocity/credit-repair');
 
     const headlineInput = page.getByLabel('Headline Main');
     await headlineInput.fill('');
@@ -48,7 +48,7 @@ test.describe('Sites Management', () => {
   });
 
   test('can trigger generation and see logs in the modal', async ({ page }) => {
-    await page.goto('/sites/postalocity/credit-repair');
+    await page.goto('/sites/editor/postalocity/credit-repair');
 
     await page.getByRole('button', { name: /Generate Site/i }).click();
 
@@ -65,7 +65,7 @@ test.describe('Sites Management', () => {
   test('can edit content, save, and verify it persists', async ({ page }) => {
     const testHeadline = `Updated Headline ${Date.now()}`;
 
-    await page.goto('/sites/postalocity/credit-repair');
+    await page.goto('/sites/editor/postalocity/credit-repair');
 
     // Change the headline
     await page.getByLabel('Headline Main').fill(testHeadline);
@@ -94,7 +94,7 @@ test.describe('Sites Management', () => {
     await page.getByLabel('Service / Slug').fill(uniqueSlug);
     await page.getByRole('button', { name: /Create Site/i }).click();
 
-    await expect(page).toHaveURL(new RegExp(`/sites/postalocity/${uniqueSlug}`));
+    await expect(page).toHaveURL(new RegExp(`/sites/editor/postalocity/${uniqueSlug}`));
 
     // Trigger generation
     await page.getByRole('button', { name: /Generate Site/i }).click();

@@ -5,7 +5,7 @@
  * Ported from scripts/content-validator.js so the CMS and generator share the same checks.
  */
 
-import type { ValidationResult } from './types.js';
+import type { ValidationResult } from './types';
 
 interface QualityRule {
   regex: RegExp;

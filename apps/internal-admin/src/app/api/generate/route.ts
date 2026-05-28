@@ -36,12 +36,31 @@ export async function POST(request: NextRequest) {
 
     child.on('close', (code) => {
       fs.appendFileSync(logFile, `\n--- Generation finished with code ${code} ---\n`);
+
+      // Chain a production build so that dist/ (used by the real <iframe> preview) is up-to-date.
+      // This makes "Generate Site" produce a fully runnable real site preview.
+      const siteDir = path.join(rootDir, 'sites', brand, service);
+      if (fs.existsSync(siteDir)) {
+        fs.appendFileSync(logFile, `\n[build] Starting Vite production build in ${siteDir}...\n`);
+        const buildChild = spawn('npm', ['run', 'build'], {
+          cwd: siteDir,
+          stdio: ['ignore', 'pipe', 'pipe'],
+        });
+        buildChild.stdout.on('data', (d) => fs.appendFileSync(logFile, d.toString()));
+        buildChild.stderr.on('data', (d) => fs.appendFileSync(logFile, d.toString()));
+        buildChild.on('close', (bcode) => {
+          fs.appendFileSync(logFile, `\n--- Build finished with code ${bcode} ---\n`);
+          fs.appendFileSync(logFile, `✅ Real site preview ready at sites/${brand}/${service}/dist/index.html\n`);
+        });
+      } else {
+        fs.appendFileSync(logFile, `\n[build] Skipped (no site dir at ${siteDir}).\n`);
+      }
     });
 
     return NextResponse.json({ 
       success: true, 
       runId,
-      message: 'Generation started' 
+      message: 'Generation + build started (preview will update when complete)' 
     });
   } catch (error) {
     console.error(error);
