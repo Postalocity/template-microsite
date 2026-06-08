@@ -1,5 +1,6 @@
 {
   "version": "Odin's Innovations Microsite Config — Earth & Cover Scents",
+  "template": "earth-cover-scent-beads",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {
@@ -83,7 +84,7 @@
       },
       "subhead": "Synthetic cover scent engineered for reliable human scent control across gear storage, stand sites, and access trails.",
       "background": {
-        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/acton-crawford-NWcH4mbPRZg-unsplash.jpg?v=1778014873",
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/acton-crawford-NWcH4mbPRZg-unsplash.jpg?v=1778014873-odins021-mutated-hero",
         "overlay": true
       },
       "ctas": [
@@ -133,7 +134,7 @@
       }
     },
     "how-it-works": {
-      "headline": "How Earth Cover Scent Works",
+      "headline": "How Earth Cover Scent Works [ODINS021-EDITED]",
       "body": "Odin's Earth Cover Scent replicates the smell of forest floor — decaying leaves, rich soil, and organic matter. This baseline scent of a whitetail's natural environment creates an olfactory backdrop that blends into surroundings. The synthetic formulation uses proprietary biodegradable polymer beads that release scent molecules at a controlled rate for 30+ days, regardless of rain, dew, or temperature fluctuations. Unlike sprays that evaporate in 2–4 hours or carbon clothing that saturates quickly, Odin's beads maintain continuous coverage throughout the season."
     },
     "benefits": {
@@ -142,7 +143,7 @@
       "items": [
         {
           "title": "Consistent 30+ Day Release",
-          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png-odins021-mutated-card",
           "description": "Maintain coverage without frequent reapplication."
         },
         {

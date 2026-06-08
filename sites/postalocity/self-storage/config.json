@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/postalocity/self-storage.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand postalocity --service self-storage",
+    "source": "config/sites/postalocity/self-storage.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-29T15:41:35.395Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "postalocity",
     "name": "Self-Storage Mailing Service",
@@ -15,9 +23,17 @@
     "tagline": "Automate Your Direct Mail",
     "logo": "logo.png"
   },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 30
+    }
+  },
   "seo": {
     "title": "Self-Storage Mailing — Automated Lien Notices & Tenant Communications",
     "description": "Automate self-storage mailing for lien notices, late fee notices, rent reminders from $1.31/letter with address verification, proof of mailing, and real-time tracking.",
+    "ogImage": "/self-storage/images/og-image.png",
     "keywords": [
       "self-storage mailing service",
       "automated mailing for self-storage",
@@ -27,7 +43,6 @@
     ],
     "ogTitle": "Self-Storage Mailing Service — Proof Every Letter",
     "ogDescription": "Automate lien notices, late fee notices, and tenant communications with secure upload, address verification, proof of mailing, and real-time tracking.",
-    "ogImage": "/self-storage/images/og-image.png",
     "twitterCard": "summary_large_image",
     "canonical": "https://postalocity.com/self-storage",
     "googleAnalyticsId": "G-9HXQD6LYZ4"
@@ -91,7 +106,7 @@
           "icon": "clock",
           "title": "Reclaim Operational Hours",
           "description": "Eliminate manual envelope stuffing and post office runs. Upload tenant documents, approve, and we handle printing, folding, stuffing, sealing, and mailing.",
-          "detail": "Staff hours spent on mailings can be redirected to tenant relations and facility management."
+          "detail": "Staff previously spending hours on mailing can focus on tenant relations and facility management."
         },
         {
           "icon": "map-pin",
@@ -102,8 +117,7 @@
         {
           "icon": "shield",
           "title": "Affidavit of Mailing. Every Letter.",
-          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS.",
-          "detail": "Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "file-text",
@@ -201,9 +215,9 @@
           "description": "Automate delinquent tenant notifications with address verification. Upgrade to a Certificate of Mailing as documented proof of mailing for compliance."
         },
         {
-          "icon": "shield-check",
-          "title": "Proof of Mailing",
-          "description": "Meet state-specific lien requirements with a Certificate of Mailing as documented proof of mailing — essential for legal compliance."
+          "icon": "file",
+          "title": "Lien Notifications",
+          "description": "Meet state-specific lien requirements with documented Proof of Mailing (Affidavit) — essential for compliance."
         },
         {
           "icon": "calendar",
@@ -226,13 +240,12 @@
         {
           "icon": "shield",
           "title": "Affidavit of Mailing. Every Letter.",
-          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS.",
-          "detail": "Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+          "description": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
           "icon": "eye",
           "title": "Real-time Dashboard",
-          "description": "Trace mailing status instantly – know exactly when each letter mails via USPS scan confirmation."
+          "description": "Track mailing status instantly — know exactly when each letter mails via USPS scan confirmation."
         },
         {
           "icon": "map-pin",
@@ -261,8 +274,8 @@
           "a": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
         },
         {
-          "q": "What's the difference between Proof of Mailing (Affidavit), USPS scan tracing, and Certificate of Mailing?",
-          "a": "Three different levels of documentation: (1) Proof of Mailing (Affidavit) proves that Postalocity processed and mailed your items. (2) USPS scan tracing shows processing status through the postal system — included with First-Class Mail. (3) A Certificate of Mailing is an official USPS form showing the item was accepted at the post office. Some states require a Certificate of Mailing for lien compliance — check your state requirements."
+          "q": "What's the difference between Proof of Mailing, USPS scan tracing, and Certificate of Mailing?",
+          "a": "Three different things: (1) Proof of Mailing (Affidavit) documents that Postalocity processed and mailed your items. (2) USPS scan tracing shows where your letter is in the postal system — included with First-Class Mail. (3) Certificate of Mailing is an official USPS form with a post office postmark proving the EXACT DATE your letter was accepted by USPS — this is what some states require for lien deadlines. Some states require a Certificate of Mailing for lien compliance — verify with your legal counsel. The Certificate of Mailing meets legal requirements with official USPS documentation."
         },
         {
           "q": "What's the difference between USPS scanning and tracking?",
@@ -292,7 +305,7 @@
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026"
       },
       "description": "Streamline self-storage tenant communications with automated mailing — lien notices, rent reminders, and auction notices with proof of mailing.",
-      "tagline": "Proof of Mailing (Affidavit). Every Letter.",
+      "tagline": "Proof of Mailing. Every Letter.",
       "links": [
         {
           "label": "Privacy",
@@ -317,7 +330,7 @@
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=pm2026"
     },
     "description": "Streamline self-storage tenant communications with automated mailing — lien notices, rent reminders, and auction notices with proof of mailing.",
-    "tagline": "Proof of Mailing (Affidavit). Every Letter.",
+    "tagline": "Proof of Mailing. Every Letter.",
     "links": [
       {
         "label": "Privacy",
@@ -332,5 +345,382 @@
         "href": "https://prod.postalocity.com/login.html?promo=storage"
       }
     ]
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "NCOA Verified 2024",
+        "CASS Certified 2024",
+        "ISO 9001 Documented Processes 2023"
+      ],
+      "promoCodes": {
+        "credit-repair": "cr2026",
+        "debt-collection": "debt2026",
+        "healthcare-billing": "hb2026",
+        "healthcare-mailing-services": "hm2026",
+        "postcard": "pc2026",
+        "self-storage": "pm2026"
+      },
+      "standardizedCopy": {
+        "proofOfMailing": {
+          "title": "Proof of Mailing (Affidavit)",
+          "description": "Documents that Postalocity processed and mailed your items."
+        },
+        "certificateOfMailing": {
+          "title": "Certificate of Mailing",
+          "description": "An official USPS form with a postmark proving the item was accepted at the post office.",
+          "complianceNote": "Some states require this for lien compliance deadlines."
+        },
+        "uspsScanTracing": {
+          "title": "USPS Scan Tracing (First-Class)",
+          "description": "Shows processing status — when and where your item was handled in the postal system."
+        },
+        "fullTracking": {
+          "title": "Full Tracking (Certified Mail)",
+          "description": "Includes delivery confirmation and signature proof."
+        },
+        "envelope": {
+          "title": "Every Letter Includes an Envelope",
+          "description": "Professionally printed, folded, stuffed, sealed, and mailed. No self-mailers or stickers."
+        },
+        "addressVerification": {
+          "title": "Address Verification",
+          "description": "Addresses are verified against USPS databases before printing to reduce returned mail."
+        }
+      },
+      "comparisonDefaults": {
+        "envelope": {
+          "ourSolution": "Included — Color Optional",
+          "traditionalApproach": "Self-mailer — No envelope"
+        },
+        "price": {
+          "template": "As low as $1.31 to print, fold, stuff, seal, and apply postage — includes envelope"
+        }
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "case-study",
+        "case-studies",
+        "video",
+        "video-content",
+        "live-chat",
+        "livechat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews",
+        "aggregateRating",
+        "star rating",
+        "5-star"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "world-class",
+        "cutting-edge",
+        "revolutionary",
+        "game-changing",
+        "best-in-class",
+        "proven results",
+        "guaranteed results",
+        "satisfaction guaranteed",
+        "100% accurate",
+        "zero errors",
+        "trusted by celebrities",
+        "featured in Forbes",
+        "as seen on TV",
+        "guaranteed delivery",
+        "100% delivery",
+        "verify with your legal counsel",
+        "verify with legal counsel",
+        "may meet state",
+        "may be required",
+        "legal-grade",
+        "legal grade",
+        "defensible documentation",
+        "defensible proof",
+        "defensible for compliance",
+        "legally-compliant",
+        "legally compliant"
+      ]
+    },
+    "pricing": {
+      "basePrice": 1.31,
+      "currency": "USD",
+      "units": "per letter",
+      "tiers": [
+        {
+          "name": "Marketing Mail",
+          "price": 0.244,
+          "description": "Standard advertising mail",
+          "features": [
+            "No tracking",
+            "No personal data",
+            "Best for advertisements"
+          ]
+        },
+        {
+          "name": "First-Class Mail",
+          "price": 1.31,
+          "description": "Commercial mail with tracking",
+          "features": [
+            "Tracking scans",
+            "Certificate of mailing",
+            "Personalized data allowed",
+            "HIPAA compliant"
+          ]
+        },
+        {
+          "name": "Priority Mail",
+          "price": 11.5,
+          "description": "Fast delivery with full tracking",
+          "features": [
+            "Full tracking",
+            "Up to $100 insurance",
+            "Fast delivery"
+          ]
+        },
+        {
+          "name": "Certified Mail",
+          "price": 4.5,
+          "description": "First-Class with signature proof",
+          "features": [
+            "Full tracking",
+            "Signature proof",
+            "Legal compliance"
+          ]
+        }
+      ],
+      "addOns": {
+        "certifiedMail": 4.5,
+        "returnReceipt": 3.35,
+        "restrictedDelivery": 8.5
+      }
+    },
+    "proofOptions": {
+      "standard": [
+        {
+          "id": "affidavit",
+          "name": "Affidavit of Service",
+          "description": "Internal processing document proving Postalocity handled your mail",
+          "included": true,
+          "tier": "all"
+        },
+        {
+          "id": "scan",
+          "name": "USPS Scan Proof",
+          "description": "Scanned barcode showing your mail entered the postal system",
+          "included": true,
+          "tier": "first-class",
+          "note": "Available for First-Class and above"
+        }
+      ],
+      "upgrades": [
+        {
+          "id": "certificate",
+          "name": "Certificate of Mailing",
+          "description": "Official USPS form 3877 showing acceptance date",
+          "additionalCost": 1.75,
+          "tier": "first-class"
+        },
+        {
+          "id": "certified",
+          "name": "Certified Mail",
+          "description": "Full tracking with signature proof of delivery",
+          "additionalCost": 4.5,
+          "tier": "first-class"
+        },
+        {
+          "id": "restricted",
+          "name": "Restricted Delivery",
+          "description": "Delivery only to specified recipient",
+          "additionalCost": 8.5,
+          "tier": "certified"
+        }
+      ],
+      "comparison": {
+        "affidavit": "Postalocity processed & handed to USPS",
+        "scan": "Item entered postal system",
+        "certificate": "USPS accepted item (with date)",
+        "certified": "USPS delivered (with signature)"
+      }
+    },
+    "terminology": {
+      "mailClasses": {
+        "first-class": {
+          "name": "First-Class Mail",
+          "description": "Commercial mail service with tracking",
+          "hasTracking": true,
+          "hasCertificate": true,
+          "allowsPersonalData": true,
+          "hipaaCompliant": true,
+          "useCases": [
+            "Bills and statements",
+            "Legal notices",
+            "HIPAA documents",
+            "Account notifications",
+            "Compliance documentation"
+          ]
+        },
+        "priority": {
+          "name": "Priority Mail",
+          "description": "Expedited mail with full tracking",
+          "hasTracking": true,
+          "hasCertificate": true,
+          "hasInsurance": true,
+          "allowsPersonalData": true,
+          "insuranceAmount": 100,
+          "useCases": [
+            "Time-sensitive documents",
+            "Valuable items",
+            "Legal filings"
+          ]
+        },
+        "certified": {
+          "name": "Certified Mail",
+          "description": "First-Class with signature proof",
+          "hasTracking": true,
+          "hasCertificate": true,
+          "hasSignature": true,
+          "allowsPersonalData": true,
+          "hipaaCompliant": true,
+          "useCases": [
+            "Legal compliance",
+            "Contract notices",
+            "Evidence of delivery"
+          ]
+        },
+        "marketing": {
+          "name": "Marketing Mail",
+          "description": "Standard advertising mail",
+          "hasTracking": false,
+          "hasCertificate": false,
+          "allowsPersonalData": false,
+          "restrictions": [
+            "No account numbers",
+            "No balance information",
+            "No personal identifiers",
+            "No HIPAA data",
+            "Advertisements only"
+          ],
+          "useCases": [
+            "Promotional materials",
+            "Newsletters",
+            "Catalogs",
+            "Advertising"
+          ]
+        }
+      },
+      "certifications": {
+        "ncoa": {
+          "name": "NCOA",
+          "fullName": "National Change of Address",
+          "description": "USPS-maintained database of address changes"
+        },
+        "cass": {
+          "name": "CASS",
+          "fullName": "Coding Accuracy Support System",
+          "description": "Address standardization certification"
+        },
+        "iso9001": {
+          "name": "ISO 9001",
+          "fullName": "ISO 9001:2015 Quality Management",
+          "description": "International quality management standard"
+        }
+      },
+      "trackingScanEvents": {
+        "description": "USPS tracking scan events for mail piece visibility",
+        "stages": [
+          {
+            "stage": "received",
+            "displayName": "Accepted / Received",
+            "uspsStatuses": [
+              "Label Created, Not Yet In System",
+              "USPS Awaiting Item",
+              "Accepted at USPS Facility",
+              "Origin Acceptance",
+              "USPS In Possession of Item"
+            ],
+            "description": "Mail piece accepted into USPS system",
+            "proofProvided": "Affidavit of Service from Postalocity"
+          },
+          {
+            "stage": "processed",
+            "displayName": "Processed",
+            "uspsStatuses": [
+              "Processed at USPS Origin Facility",
+              "Arrived at USPS Facility",
+              "Departed USPS Facility",
+              "Processed at USPS Destination Facility"
+            ],
+            "description": "Mail piece processed at USPS facilities",
+            "proofProvided": "USPS scan tracing showing processing status"
+          },
+          {
+            "stage": "in_transit",
+            "displayName": "In Transit",
+            "uspsStatuses": [
+              "Departed USPS Facility",
+              "Arrived at USPS Facility",
+              "In Transit to Next Facility",
+              "Arriving Late"
+            ],
+            "description": "Mail piece moving through postal network",
+            "proofProvided": "USPS scan tracing showing facility transfers"
+          },
+          {
+            "stage": "out_for_delivery",
+            "displayName": "Out for Delivery",
+            "uspsStatuses": [
+              "Arrival at Unit",
+              "Out for Delivery",
+              "Awaiting Delivery Scan"
+            ],
+            "description": "Mail piece at local delivery office",
+            "proofProvided": "USPS scan confirmation of delivery attempt"
+          },
+          {
+            "stage": "delivered",
+            "displayName": "Delivered",
+            "uspsStatuses": [
+              "Delivered",
+              "Picked Up",
+              "Delivered to Agent"
+            ],
+            "description": "Mail piece delivered to recipient",
+            "proofProvided": "Delivery scan with date/time (upgrade to Certified Mail for signature)"
+          }
+        ],
+        "trackingNotes": [
+          "All barcoded mail includes scan tracing from acceptance to delivery",
+          "Tracking updates occur at each facility scan during transit",
+          "Multiple scans can occur at each stage depending on handling",
+          "Upgrade to Priority Mail or Certified Mail for full USPS tracking with delivery confirmation"
+        ]
+      },
+      "industryTerms": {
+        "mailPiece": "A single item sent through the mail",
+        "mailingList": "Collection of addresses for a mailing campaign",
+        "ndc": "Network Distribution Center",
+        "scf": "Sectional Center Facility",
+        "dsf": "Delivery Sequence File",
+        "presort": "Pre-sorted mail for discounted rates"
+      }
+    }
   }
 }

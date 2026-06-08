@@ -1,5 +1,6 @@
 {
   "version": "Broadstroke Microsite Config — Commercial Printing",
+  "template": "broadstroke",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {

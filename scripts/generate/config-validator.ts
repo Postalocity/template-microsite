@@ -6,7 +6,16 @@ export const SiteConfigSchema = z.object({
     id: z.string().min(1, 'site.id is required'),
     name: z.string(),
     slug: z.string(),
-  }),
+    domain: z.string().optional(),
+    basename: z.string().optional(),
+    contact: z
+      .object({
+        email: z.string().optional(),
+        phone: z.string().optional(),
+        address: z.string().optional(),
+      })
+      .optional(),
+  }).passthrough(),
   seo: z.object({
     title: z.string(),
     description: z.string(),

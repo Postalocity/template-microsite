@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/how-to-use.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service how-to-use",
     "source": "config/sites/odins-innovations/how-to-use.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:17.282Z",
+    "generatedAt": "2026-06-08T20:26:03.891Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "how-to-use",
   "site": {
-    "id": "odins-innovations",
+    "id": "how-to-use",
     "name": "How to Use Odin's Scent Beads & Liquids",
     "slug": "how-to-use",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-how-to-use",
+    "basename": "/how-to-use",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -415,5 +416,59 @@
       "href": "https://www.odinsinnovations.com/collections/all?promo=HUNT2026"
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "100% Synthetic Formula",
+        "Legal in All 50 States",
+        "30+ Days Scent Release",
+        "Biodegradable",
+        "Made in the USA",
+        "Weatherproof Performance"
+      ],
+      "promoCodes": {
+        "default": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "introduction",
+        "why-odins",
+        "detection",
+        "how-it-works",
+        "application",
+        "blinds",
+        "turkey",
+        "comparison",
+        "layered",
+        "faq",
+        "conclusion",
+        "footer",
+        "reviews",
+        "benefits",
+        "brand-story",
+        "services",
+        "cta"
+      ],
+      "blocklistedContent": [],
+      "blocklistedPhrases": []
+    },
+    "pricing": {
+      "basePrice": 17.95,
+      "currency": "USD",
+      "units": "per 3-oz bottle",
+      "freeShippingThreshold": 79
+    },
+    "proofOptions": {
+      "standard": [],
+      "upgrades": []
+    }
+  },
+  "shopifyAssets": {
+    "css": "index-Cx6IXLK-.css",
+    "js": "index-Dp2TvPen.js",
+    "cssUrl": "{{ 'index-Cx6IXLK-.css' | asset_url }}",
+    "jsUrl": "{{ 'index-Dp2TvPen.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

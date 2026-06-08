@@ -16,6 +16,7 @@ export { default as SignatureScentBeadsSection } from './SignatureScentBeadsSect
 export { default as StampedReviewsSection } from './StampedReviewsSection';
 export { default as DeploymentSection } from './DeploymentSection';
 export { default as MosquitoSection } from './MosquitoSection';
+export { default as OdinsIcon } from './OdinsIcon';
 
 // Brand configuration for consistent icons and styling across all Odin's sites
 export { odinsBrandConfig, odinsIcons, odinsColors } from '../../config/brand';

@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "post-build": "node ../../../scripts/update-shopify-assets.js"
+    "post-build": "node ../../../scripts/update-shopify-assets.js",
+    "prerender": "npx tsx ../../../scripts/prerender-heavy.ts",
+    "build:seo": "vite build && npm run prerender && npm run post-build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

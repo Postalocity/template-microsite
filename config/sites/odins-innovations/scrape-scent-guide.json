@@ -1,5 +1,6 @@
 {
   "version": "Odin's Innovations Microsite Config — Mock Scrape Scents",
+  "template": "scrape-scent-guide",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": {

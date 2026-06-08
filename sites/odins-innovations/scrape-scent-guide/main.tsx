@@ -3,7 +3,7 @@
  *
  * Site:      citronella-mosquito-repellent
  * Brand:     Odin's Innovations
- * Generated: 2026-05-18T14:06:17.719Z
+ * Generated: 2026-06-08T20:26:22.750Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

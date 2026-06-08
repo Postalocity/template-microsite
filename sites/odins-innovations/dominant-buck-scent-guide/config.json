@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/dominant-buck-scent-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service dominant-buck-scent-guide",
     "source": "config/sites/odins-innovations/dominant-buck-scent-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:15.539Z",
+    "generatedAt": "2026-06-08T20:25:43.830Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "dominant-buck-scent-guide",
   "site": {
-    "id": "odins-innovations",
+    "id": "dominant-buck-scent-guide",
     "name": "Dominant Buck Scent Guide",
     "slug": "dominant-buck-scent-guide",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-dominant-buck-scent-guide",
+    "basename": "/dominant-buck-scent-guide",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -382,5 +383,12 @@
       "currency": "USD",
       "units": "bottle"
     }
+  },
+  "shopifyAssets": {
+    "css": "index-B8LFc7Gv.css",
+    "js": "index-BH7l1K8O.js",
+    "cssUrl": "{{ 'index-B8LFc7Gv.css' | asset_url }}",
+    "jsUrl": "{{ 'index-BH7l1K8O.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/food-scent-deer-attractants.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service food-scent-deer-attractants",
     "source": "config/sites/odins-innovations/food-scent-deer-attractants.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:13.735Z",
+    "generatedAt": "2026-06-08T20:25:57.131Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "food-scent-deer-attractants",
   "site": {
-    "id": "odins-innovations",
+    "id": "food-scent-deer-attractants",
     "name": "Food Scent Attractants",
     "slug": "food-scent-deer-attractants",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-food-scent-deer-attractants",
+    "basename": "/pages/food-scent-deer-attractants",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -432,5 +433,12 @@
       "currency": "USD",
       "units": "bottle"
     }
+  },
+  "shopifyAssets": {
+    "css": "index-B8yX-PNT.css",
+    "js": "index-BSYeMMfE.js",
+    "cssUrl": "{{ 'index-B8yX-PNT.css' | asset_url }}",
+    "jsUrl": "{{ 'index-BSYeMMfE.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

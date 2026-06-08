@@ -13,6 +13,12 @@
     "build": "vite build",
     "preview": "vite preview",
     "generate": "tsx scripts/generate-site.ts",
+    "build:shopify": "npm run generate -- --brand odins-innovations --service citronella-mosquito-repellent && cd sites/odins-innovations/citronella-mosquito-repellent && npm run build:seo",
+    "build:shopify:cwd": "npm run generate -- --brand odins-innovations --service synthetic-scent-cwd-guide && cd sites/odins-innovations/synthetic-scent-cwd-guide && npm run build:seo",
+    "build:shopify:odins": "npx tsx scripts/build-shopify-odins.ts",
+    "audit:odins-live": "npx tsx scripts/audit-odins-live.ts",
+    "bundle:odins-deploy": "npx tsx scripts/bundle-odins-deploy.ts",
+    "merge:odins-content": "npx tsx scripts/merge-odins-content-live-assets.ts",
     "post-process": "tsx scripts/post-process.ts",
     "verify": "tsx scripts/launch-validate.ts",
     "launch-validate": "tsx scripts/launch-validate.ts",
@@ -29,6 +35,7 @@
     "@types/dompurify": "^3.0.5",
     "date-fns": "^4.1.0",
     "dompurify": "^3.3.3",
+    "framer-motion": "^12.40.0",
     "strray-ai": "^1.22.53"
   },
   "devDependencies": {

@@ -1,29 +1,16 @@
-# Odin's Innovations - Citronella Mosquito Repellent
-# robots.txt
-
 User-agent: *
 Allow: /
 
-# AI Crawlers - Allow for SEO
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-User-agent: Google-Extended
+User-agent: claude-ai
 Allow: /
 
-User-agent: AdsBot-Google
+User-agent: PerplexityBot
 Allow: /
 
-User-agent: Googlebot
-Allow: /
-
-# Sitemap
-Sitemap: https://www.odinsinnovations.com/hunting-mosquito-repellent/sitemap.xml
-
-# Disallow private or admin areas
-Disallow: /admin/
-Disallow: /api/
-Disallow: /*.json$
+Sitemap: https://odinsinnovations.com/citronella-mosquito-repellent/sitemap.xml

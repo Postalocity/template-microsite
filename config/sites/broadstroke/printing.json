@@ -1,5 +1,6 @@
 {
   "version": "Broadstroke Config — Professional Printing Services",
+  "template": "broadstroke",
   "site": {
     "id": "printing",
     "name": "Professional Printing Services",

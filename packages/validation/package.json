@@ -21,6 +21,10 @@
     "./types": {
       "types": "./dist/src/types.d.ts",
       "import": "./dist/src/types.js"
+    },
+    "./register-engine-loader": {
+      "types": "./dist/src/register-engine-loader.d.ts",
+      "import": "./dist/src/register-engine-loader.js"
     }
   },
   "files": [

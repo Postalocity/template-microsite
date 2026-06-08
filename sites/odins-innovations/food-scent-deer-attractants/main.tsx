@@ -3,7 +3,7 @@
  *
  * Site:      food-scent-deer-attractants
  * Brand:     Odin's Innovations
- * Generated: 2026-05-18T14:06:13.734Z
+ * Generated: 2026-06-08T20:25:57.130Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

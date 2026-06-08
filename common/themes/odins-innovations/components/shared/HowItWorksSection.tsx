@@ -155,6 +155,8 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
                     <img 
                       src={step.icon} 
                       alt={step.title}
+                      width={128}
+                      height={128}
                       className={`w-32 h-32 object-contain ${index === 2 ? 'hue-rotate-[70deg] saturate-[1.5]' : ''}`}
                       loading="lazy"
                     />

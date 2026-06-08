@@ -5,48 +5,104 @@ import { Check, X, Trophy } from 'lucide-react';
 
 interface TableRow {
   feature?: string;
+  Attribute?: string;
   odins?: string;
   traditional?: string;
+  traditionalApproach?: string;
+  ourSolution?: string;
+  icon?: string;
   [key: string]: string | undefined;
 }
 
-interface TableComparisonProps {
-  comparison: {
-    headline: string;
-    table: string[][] | TableRow[];
-    summary?: string;
-  };
+type ComparisonInput = {
+  headline?: string;
+  summary?: string;
+  section?: { title?: string; description?: string };
+  columns?: Record<string, string>;
+  rows?: TableRow[];
+  table?:
+    | string[][]
+    | TableRow[]
+    | { headers?: string[]; rows?: string[][] };
+};
+
+function normalizeComparison(comparison: ComparisonInput): {
+  headline: string;
+  summary?: string;
+  table: string[][];
+} | null {
+  const headline =
+    comparison.headline ||
+    comparison.section?.title ||
+    'Comparison';
+
+  // rows + columns (scent-beads CMS shape)
+  if (comparison.rows?.length) {
+    const columns = comparison.columns || {};
+    const colKeys = Object.keys(columns);
+    const headerRow = ['Feature', ...colKeys.map(k => columns[k] || k)];
+    const dataRows = comparison.rows.map(row => {
+      const cells: string[] = [row.feature || row.Attribute || ''];
+      colKeys.forEach(key => {
+        const altKey =
+          key === 'traditional'
+            ? 'traditionalApproach'
+            : key === 'ourSolution'
+              ? 'ourSolution'
+              : key;
+        cells.push(row[altKey] || row[key] || '');
+      });
+      return cells;
+    });
+    if (dataRows.length === 0) return null;
+    return { headline, summary: comparison.summary, table: [headerRow, ...dataRows] };
+  }
+
+  const table = comparison.table;
+  if (!table) return null;
+
+  // table: { headers, rows }
+  if (!Array.isArray(table) && table.headers && table.rows) {
+    const headerRow = table.headers;
+    const dataRows = table.rows;
+    if (headerRow.length < 2 || dataRows.length === 0) return null;
+    return { headline, summary: comparison.summary, table: [headerRow, ...dataRows] };
+  }
+
+  if (!Array.isArray(table) || table.length < 2) return null;
+
+  // string[][] or TableRow[]
+  if (Array.isArray(table[0])) {
+    return { headline, summary: comparison.summary, table: table as string[][] };
+  }
+
+  const objRows = table as TableRow[];
+  const keys = Object.keys(objRows[0]).filter(
+    k => k !== 'feature' && k !== 'Attribute' && k !== 'icon'
+  );
+  const headerRow = ['Attribute', ...keys.map(k => k.charAt(0).toUpperCase() + k.slice(1))];
+  const dataRows = objRows.map(row => {
+    const cells: string[] = [row.feature || row.Attribute || ''];
+    keys.forEach(k => cells.push(row[k] || ''));
+    return cells;
+  });
+  return { headline, summary: comparison.summary, table: [headerRow, ...dataRows] };
 }
 
-const ComparisonTable = ({ comparison, background }: TableComparisonProps & { background?: string }) => {
+const ComparisonTable = ({ comparison, background }: { comparison: ComparisonInput; background?: string }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  if (!comparison?.table || comparison.table.length < 2) {
+  const normalized = normalizeComparison(comparison);
+  if (!normalized || normalized.table.length < 2) {
     return null;
   }
 
-  // Normalize table to string[][] format
-  // Handle object format: { feature, odins, traditional } or { feature, [key]: value }
-  // Handle array format: [["header1", "header2"], ["row1-col1", "row1-col2"], ...]
+  const { headline, summary } = normalized;
   let headerRow: string[];
   let dataRows: string[][];
 
-  if (Array.isArray(comparison.table[0])) {
-    // Already in string[][] format
-    [headerRow, ...dataRows] = comparison.table as string[][];
-  } else {
-    // Object format - convert to string[][]
-    const objRows = comparison.table as TableRow[];
-    // Get keys from first row (excluding common feature names)
-    const keys = Object.keys(objRows[0]).filter(k => k !== 'feature' && k !== 'Attribute');
-    headerRow = ['Attribute', ...keys.map(k => k.charAt(0).toUpperCase() + k.slice(1))];
-    dataRows = objRows.map(row => {
-      const cells: string[] = [row.feature || row.Attribute || ''];
-      keys.forEach(k => cells.push(row[k] || ''));
-      return cells;
-    });
-  }
+  [headerRow, ...dataRows] = normalized.table;
   
   // Find Odin's column by header text (not just "last column")
   const odinsColumn = headerRow.findIndex(h =>
@@ -125,7 +181,7 @@ const ComparisonTable = ({ comparison, background }: TableComparisonProps & { ba
               className="font-display text-4xl md:text-5xl uppercase mb-4"
               style={{ color: 'hsl(var(--foreground))' }}
             >
-              {comparison.headline}
+              {headline}
             </h2>
           </div>
 
@@ -211,7 +267,7 @@ const ComparisonTable = ({ comparison, background }: TableComparisonProps & { ba
               </div>
               <div className="text-white text-center md:text-left">
                 <div className="font-display text-lg font-bold uppercase mb-1">
-                  {comparison.summary || "Odin's Innovations Wins On:"}
+                  {summary || "Odin's Innovations Wins On:"}
                 </div>
                 <div className="font-body text-sm opacity-90">
                   Longest-lasting scent release • Lab-tested effectiveness • All-weather performance • CWD-safe formula

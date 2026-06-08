@@ -3,7 +3,7 @@
  *
  * Site:      scent-beads
  * Brand:     Odin's Innovations
- * Generated: 2026-05-18T14:54:31.878Z
+ * Generated: 2026-06-08T20:26:16.276Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -35,7 +35,7 @@ const contactConfig = {"phone":"316-393-0440","email":"support@odinsscents.com",
 const socialConfig = {"website":"https://www.odinsinnovations.com","instagram":"https://www.instagram.com/odinsinnovations","facebook":"https://www.facebook.com/theodinsinnovations/","youtube":"https://www.youtube.com/@odinsinnovations2589"};
 
 // IKB configuration
-const ikbConfig = {};
+const ikbConfig = {"rules":{"trustSignals":["100% Synthetic Formula","Legal in All 50 States","30+ Days Scent Release","Biodegradable","Made in the USA","Weatherproof Performance"],"promoCodes":{"default":"HUNT2026"},"approvedSections":["hero","introduction","why-odins","detection","how-it-works","application","blinds","turkey","comparison","layered","faq","conclusion","footer","reviews","benefits","brand-story","services","cta"],"blocklistedContent":[],"blocklistedPhrases":[]},"pricing":{"basePrice":17.95,"currency":"USD","units":"per 3-oz bottle","freeShippingThreshold":79},"proofOptions":{"standard":[],"upgrades":[]}};
 
 // Get promo code from IKB for the service
 const promoCode = ikbConfig.rules?.promoCodes?.['scent-beads'] || '2026';

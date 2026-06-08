@@ -6,6 +6,7 @@
       "default": "HUNT2026"
     }
   },
+  "template": "food-scent-deer-attractants",
   "site": {
     "id": "food-scent-deer-attractants",
     "name": "Food Scent Attractants",

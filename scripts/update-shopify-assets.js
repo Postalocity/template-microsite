@@ -124,6 +124,18 @@ function replaceRootDiv(html, newInnerHtml) {
 }
 
 // --- Strip subfolder prefix from asset paths for Shopify theme Assets ---
+// Framer-motion hides icons/images with opacity:0 until scroll — strip for Shopify prerender body
+function stripHiddenMotionStyles(markup) {
+  if (!markup) return markup;
+  return markup.replace(/style="([^"]*)"/g, (match, style) => {
+    if (!/opacity:\s*0/.test(style)) return match;
+    const cleaned = style
+      .replace(/opacity:\s*0;?/g, 'opacity: 1;')
+      .replace(/transform:\s*translate[^(]*\([^)]*\)\s*;?/g, '');
+    return `style="${cleaned}"`;
+  });
+}
+
 function sanitizeBasePathsInMarkup(markup, basePath) {
   if (!markup || !basePath || basePath === '/') return markup;
 
@@ -186,7 +198,7 @@ if (fs.existsSync(distIndexPath)) {
   const rootInner = extractRootInnerHtml(distHtml);
 
   if (rootInner && rootInner.trim().length > 50) {
-    const sanitized = sanitizeBasePathsInMarkup(rootInner, basePath);
+    const sanitized = stripHiddenMotionStyles(sanitizeBasePathsInMarkup(rootInner, basePath));
     const markerBlock =
       /<!--\s*PRERENDERED_CONTENT[^>]*-->\s*<div\s+id=["']root["'][^>]*>\s*<\/div>/i;
 

@@ -1,4 +1,5 @@
 {
+  "template": "postalocity",
   "version": "Postalocity Microsite Config \u2014 Debt Collection Agencies",
   "planningSessionSummary": "Complete microsite for debt collection agencies. Emphasizes reclaiming operational hours through automation of notices, validation letters, and certified mail. Core differentiators: built-in address verification, proof of mailing included, Certified Mail upgrade for full tracking, simple PDF upload. No delivery claims, no specific hour savings, ISO 9001 documented processes.",
   "research": {

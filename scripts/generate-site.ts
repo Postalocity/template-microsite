@@ -1654,8 +1654,7 @@ return `/**
  */
 
 import { createRoot } from 'react-dom/client';
-import { useState } from 'react';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, FAQSection, ComparisonTable, OdinsIcon, SiteNavigation, SiteFooter, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -1676,7 +1675,6 @@ const promoCode = ikbConfig.rules?.promoCodes?.['citronella'] || ikbConfig.rules
 function App() {
   const { content } = config;
   const navCta = config.navigation?.cta;
-  const [zoomImage, setZoomImage] = useState<string | null>(null);
   return (
     <IKBProvider ikb={ikbConfig}>
       <BrandProvider
@@ -1688,9 +1686,9 @@ function App() {
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
         
-        {/* Section 1: Introduction - LIGHT BACKGROUND */}
+        {/* Section 1: Mosquito Control intro — matches live #how-it-works */}
         {content.introduction && (
-          <section className="section-padding" style={{ background: '#f8f9fa' }}>
+          <section id="how-it-works" className="section-padding" style={{ background: '#f8f9fa' }}>
             <div className="section-container">
               <div className="text-center mb-12">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
@@ -1704,30 +1702,7 @@ function App() {
                 {content.introduction.features?.map((feature, idx) => (
                   <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
                     <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-                      {feature.icon === 'bug' && (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2a4 4 0 014 4v2a4 4 0 00-2.22 3.58L8 12v6h8v2H8m4-14a1 1 0 11-2 0 1 1 0 012 0zm-4 18a2 2 0 104 0 2 2 0 00-4 0z" />
-                        </svg>
-                      )}
-                      {feature.icon === 'leaf' && (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2 2 .9 2 2 2z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
-                        </svg>
-                      )}
-                      {feature.icon === 'clock' && (
-                        <svg viewBox="0 0 100 100" fill="none" stroke="#2d5a3d" strokeWidth="3" className="w-12 h-12">
-                          <circle cx="60.82" cy="54.12" r="4.26"/>
-                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
-                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
-                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
-                        </svg>
-                      )}
-                      {feature.icon === 'shield-check' && (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      )}
+                      <OdinsIcon icon={feature.icon} alt={feature.title} variant="light" />
                     </div>
                     <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{feature.title}</h3>
                     <p className="font-body text-sm" style={{ color: '#666' }}>{feature.description}</p>
@@ -1738,9 +1713,9 @@ function App() {
           </section>
         )}
         
-        {/* Section 2: Why Odin's - DARK BACKGROUND */}
+        {/* Section 2: Why Odin's */}
         {content['why-odins'] && (
-          <section className="section-padding" style={{ background: '#1a1d29' }}>
+          <section id="why-odins" className="section-padding" style={{ background: '#1a1d29' }}>
             <div className="section-container">
               <div className="text-center mb-12">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -1754,44 +1729,7 @@ function App() {
                 {content['why-odins'].cards?.map((card, idx) => (
                   <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
-                      {card.image ? (
-                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
-                      ) : card.icon === 'droplets' || card.icon === 'rain' ? (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.69l.62-.62a9 9 0 1112.76 0l.62.62M12 22V12m0 0l-4-4m4 4l4-4" />
-                        </svg>
-                      ) : card.icon === 'wind' || card.icon === 'mask' ? (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-4a4 4 0 00-4-4H7a4 4 0 00-4 4v4z" />
-                        </svg>
-                      ) : card.icon === 'clock' || card.icon === 'duration' || card.icon === '30' ? (
-                        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3" className="w-12 h-12">
-                          <circle cx="60.82" cy="54.12" r="4.26"/>
-                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
-                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
-                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
-                        </svg>
-                      ) : card.icon === 'leaf' || card.icon === 'plant' ? (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2 2 .9 2 2 2z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
-                        </svg>
-                      ) : card.icon === '50-states' || card.icon === 'legal' || card.icon === 'state' ? (
-                        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" className="w-12 h-12">
-                          <path d="M15 25h70v50H15z" fill="currentColor" fillOpacity="0.1"/>
-                          <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
-                          <path d="M15 25h30v30H15z" fill="currentColor" fillOpacity="0.2"/>
-                          <circle cx="22" cy="32" r="2" fill="currentColor"/>
-                          <circle cx="30" cy="32" r="2" fill="currentColor"/>
-                          <circle cx="38" cy="32" r="2" fill="currentColor"/>
-                          <circle cx="26" cy="38" r="2" fill="currentColor"/>
-                          <circle cx="34" cy="38" r="2" fill="currentColor"/>
-                        </svg>
-                      ) : (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      )}
+                      <OdinsIcon icon={card.icon} image={card.image} alt={card.title} variant="dark" />
                     </div>
                     <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
                     <p className="font-body text-sm text-gray-400">{card.description}</p>
@@ -1802,23 +1740,26 @@ function App() {
           </section>
         )}
         
-        {/* Section 10: Detection Process - LIGHT BACKGROUND */}
+        {/* Section 3: Detection Process */}
         {content.detection && (
-          <section className="section-padding" style={{ background: '#fff' }}>
+          <section id="detection" className="section-padding" style={{ background: '#fff' }}>
             <div className="section-container">
               <div className="text-center mb-12">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
                   {content.detection.headline}
                 </h2>
                 <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                  {content.detection.body}
+                  {content.detection.subtitle || 'Understanding the three-stage targeting process'}
                 </p>
               </div>
-              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {content.detection.cards?.map((card, idx) => (
-                  <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center" style={{ borderTop: '4px solid #2d5a3d' }}>
-                    <div className="w-12 h-12 mx-auto mb-4 flex items-center justify-center rounded-full" style={{ background: 'rgba(45,90,61,0.1)' }}>
-                      <span className="font-display text-lg font-bold" style={{ color: '#2d5a3d' }}>{card.stage}</span>
+                  <div key={idx} className="text-center p-6" style={{ borderTop: '4px solid #2d5a3d' }}>
+                    {card.stage && (
+                      <div className="text-sm font-bold mb-2 text-green-700">STAGE {card.stage}</div>
+                    )}
+                    <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
+                      <OdinsIcon icon={card.icon} alt={card.title} variant="light" />
                     </div>
                     <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{card.title}</h3>
                     <p className="font-body text-sm" style={{ color: '#666' }}>{card.description}</p>
@@ -1829,9 +1770,9 @@ function App() {
           </section>
         )}
         
-        {/* Section 10: Application Guide - DARK BACKGROUND */}
+        {/* Section 5: Application Guide - DARK BACKGROUND */}
         {content.application && (
-          <section className="section-padding" style={{ background: '#242835' }}>
+          <section id="application" className="section-padding" style={{ background: '#242835' }}>
             <div className="section-container">
               <div className="text-center mb-12">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -1855,9 +1796,9 @@ function App() {
           </section>
         )}
         
-        {/* Section 10: Hunting Blinds - LIGHT BACKGROUND */}
+        {/* Section 6: Hunting Blinds - LIGHT BACKGROUND */}
         {content.blinds && (
-          <section className="section-padding" style={{ background: '#f5f5f5' }}>
+          <section id="blinds" className="section-padding" style={{ background: '#f5f5f5' }}>
             <div className="section-container">
               <div className="text-center mb-12">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
@@ -1875,23 +1816,7 @@ function App() {
                 {content.blinds.cards?.map((card, idx) => (
                   <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center">
                     <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center">
-                      {card.image ? (
-                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
-                      ) : card.icon === 'cloud' ? (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h10a4 4 0 004-4v-4a4 4 0 00-4-4H7a4 4 0 00-4 4v4z" />
-                        </svg>
-                      ) : card.icon === 'clock' ? (
-                        <svg viewBox="0 0 100 100" fill="none" stroke="#2d5a3d" strokeWidth="3" className="w-12 h-12">
-                          <circle cx="60.82" cy="54.12" r="4.26"/>
-                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
-                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
-                        </svg>
-                      ) : (
-                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#2d5a3d" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      )}
+                      <OdinsIcon icon={card.icon} image={card.image} alt={card.title} variant="light" />
                     </div>
                     <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>{card.title}</h3>
                     <p className="font-body text-sm" style={{ color: '#666' }}>{card.description}</p>
@@ -1902,9 +1827,9 @@ function App() {
           </section>
         )}
         
-        {/* Section 10: Layered Strategy - DARK BACKGROUND */}
+        {/* Section 6: Layered Strategy */}
         {content.layered && (
-          <section className="section-padding" style={{ background: '#1e212b' }}>
+          <section id="layered" className="section-padding" style={{ background: '#1e212b' }}>
             <div className="section-container">
               <div className="text-center mb-12">
                 <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
@@ -1925,26 +1850,7 @@ function App() {
                 {content.layered.cards?.map((card, idx) => (
                   <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
-                      {card.image ? (
-                        <img src={card.image} alt={card.title} className="w-12 h-12 object-contain" loading="lazy" />
-                      ) : card.icon === 'droplets' || card.icon === 'rain' ? (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.69l.62-.62a9 9 0 1112.76 0l.62.62M12 22V12m0 0l-4-4m4 4l4-4" />
-                        </svg>
-                      ) : card.icon === 'leaf' ? (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2 2 .9 2 2 2z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6z" />
-                        </svg>
-                      ) : card.icon === 'package' ? (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                        </svg>
-                      ) : (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                        </svg>
-                      )}
+                      <OdinsIcon icon={card.icon} image={card.image} alt={card.title} variant="dark" />
                     </div>
                     <h3 className="font-display text-xl uppercase mb-2 text-white">{card.title}</h3>
                     <p className="font-body text-sm text-gray-400">{card.description}</p>
@@ -1955,31 +1861,15 @@ function App() {
           </section>
         )}
         
-        {/* Trust Badges */}
-        <TrustBadgesSection 
-          trustSignals={[
-            { text: 'EPA-Registered Biopesticide', icon: 'shield-check' },
-            { text: 'Made in USA', icon: 'flag' },
-            { text: 'Legal in All 50 States', icon: '50-states' },
-          ]}
-        />
-        
-        {/* Reviews */}
-        <StampedReviewsSection
-          title={content.reviews?.title || 'Mosquito Protection Reviews'}
-          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
-          description={content.reviews?.description || "Real results from hunters and outdoors enthusiasts who trust Odin's citronella protection."}
-        />
-        
         {/* Comparison Table */}
-        {content.comparison && (
-          <section id="comparison" className="py-20" style={{ background: '#f8f9fa' }}>
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8" style={{ color: '#1a1a1a' }}>{content.comparison.headline}</h2>
-              <ComparisonTable comparison={content.comparison} promoCode={promoCode} />
-            </div>
-          </section>
-        )}
+        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
+        
+        {/* Stamped product reviews */}
+        <StampedReviewsSection
+          title={content.reviews?.stamped?.title || content.reviews?.title || 'What Hunters Are Saying'}
+          subtitle={content.reviews?.stamped?.subtitle || 'Verified Buyers'}
+          description={content.reviews?.stamped?.description || content.reviews?.description || "Real results from hunters and outdoors enthusiasts who trust Odin's citronella protection."}
+        />
         
         {/* FAQ */}
         {content.faq && <FAQSection faq={content.faq} />}
@@ -2026,8 +1916,7 @@ function generateCWDSiteTemplate(config: SiteConfig, brandContext?: BrandContext
  */
 
 import { createRoot } from 'react-dom/client';
-import { useState } from 'react';
-import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, DifferenceSection, TrustBadgesSection, HowItWorksSection, SiteNavigation, SiteFooter, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
+import { HeroSection, BenefitsSection, FAQSection, ComparisonTable, OdinsIcon, SiteNavigation, SiteFooter, StampedReviewsSection } from '@/themes/odins-innovations/components/shared';
 import FloatingCTA from '@/components/shared/FloatingCTA';
 import { BrandProvider } from '@/contexts/BrandContext';
 import { IKBProvider } from '@/contexts/IKBContext';
@@ -2048,7 +1937,6 @@ const promoCode = ikbConfig.rules?.promoCodes?.['${site.slug}'] || config.ikb?.r
 function App() {
   const { content } = config;
   const navCta = config.navigation?.cta;
-  const [zoomImage, setZoomImage] = useState<string | null>(null);
   return (
     <IKBProvider ikb={ikbConfig}>
       <BrandProvider
@@ -2078,26 +1966,7 @@ function App() {
                     <div key={idx} className="bg-background rounded-lg p-6 shadow-sm border border-border/50">
                       <div className="flex items-start gap-4">
                         <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
-                          {card.icon === 'warning-red' && (
-                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#dc2626" strokeWidth={1.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                            </svg>
-                          )}
-                          {card.icon === 'flask-amber' && (
-                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#d97706" strokeWidth={1.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                            </svg>
-                          )}
-                          {card.icon === 'clock-orange' && (
-                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#ea580c" strokeWidth={1.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                          )}
-                          {card.icon === 'ban-red' && (
-                            <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="#dc2626" strokeWidth={1.5}>
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
-                            </svg>
-                          )}
+                          <OdinsIcon icon={card.icon} alt={card.title} variant="light" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-foreground mb-1">{card.title}</h3>
@@ -2110,11 +1979,13 @@ function App() {
               )}
               
               {/* CTA */}
-              <div className="text-center">
-                <a href={content['what-is-cwd'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
-                  {content['what-is-cwd'].cta?.text || 'Learn More'}
-                </a>
-              </div>
+              {content['what-is-cwd'].cta && (
+                <div className="text-center">
+                  <a href={content['what-is-cwd'].cta.href} className="btn-accent text-base px-8 py-3 inline-block" target="_blank" rel="noopener noreferrer">
+                    {content['what-is-cwd'].cta.text}
+                  </a>
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -2157,11 +2028,13 @@ function App() {
                 </div>
               </div>
               
-              <div className="text-center">
-                <a href={content['why-odins'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
-                  {content['why-odins'].cta?.text || 'Shop Now'}
-                </a>
-              </div>
+              {content['why-odins'].cta && (
+                <div className="text-center">
+                  <a href={content['why-odins'].cta.href} className="btn-accent text-base px-8 py-3 inline-block">
+                    {content['why-odins'].cta.text}
+                  </a>
+                </div>
+              )}
             </div>
           </section>
         )}
@@ -2238,41 +2111,7 @@ function App() {
                 {content['wins'].items.map((item, idx) => (
                   <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center text-green-400">
-                      {item.icon === 'long-lasting' && (
-                        <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2.5" className="w-12 h-12">
-                          <circle cx="60.82" cy="54.12" r="4.26"/>
-                          <path d="M46.92 78.41a28 28 0 1 0-14.08-24.28"/>
-                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m-12.78-9.04H11.19m27.51-6.72H23.4m15.3 13.44H23.4"/>
-                          <path d="M32.84 54.13a28 28 0 1 1 14.08 24.28m13.9-61.47v14.24m-17.98 1.51 3.08 3.99M33.27 49.27l4.96.87m13.02 30.28 1.72-4.73m17.42 4.73-1.72-4.73m16.39-7.57L80.7 65.6m7.68-16.33-4.88 1.31m-4.69-17.89-3.08 4.03M60.82 49.87V39.6M54.4 16.94h12.84"/>
-                        </svg>
-                      )}
-                      {item.icon === 'flask' && (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                        </svg>
-                      )}
-                      {item.icon === '50-states' && (
-                        <svg viewBox="0 0 100 100" fill="none" stroke="white" strokeWidth="2" className="w-12 h-12">
-                          <path d="M15 25h70v50H15z" fill="white" fillOpacity="0.1"/>
-                          <path d="M15 35h70M15 45h70M15 55h70M15 65h70"/>
-                          <path d="M15 25h30v30H15z" fill="white" fillOpacity="0.2"/>
-                          <circle cx="22" cy="32" r="2" fill="white"/>
-                          <circle cx="30" cy="32" r="2" fill="white"/>
-                          <circle cx="38" cy="32" r="2" fill="white"/>
-                          <circle cx="26" cy="38" r="2" fill="white"/>
-                          <circle cx="34" cy="38" r="2" fill="white"/>
-                          <circle cx="22" cy="44" r="2" fill="white"/>
-                          <circle cx="30" cy="44" r="2" fill="white"/>
-                          <circle cx="38" cy="44" r="2" fill="white"/>
-                          <circle cx="26" cy="50" r="2" fill="white"/>
-                          <circle cx="34" cy="50" r="2" fill="white"/>
-                        </svg>
-                      )}
-                      {item.icon === 'shield' && (
-                        <svg className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
-                      )}
+                      <OdinsIcon icon={item.icon} alt={item.title} variant="dark" />
                     </div>
                     <h3 className="font-display text-xl uppercase mb-2 text-white">{item.title}</h3>
                     <p className="font-body text-sm text-gray-400">{item.description}</p>
@@ -2283,19 +2122,18 @@ function App() {
           </section>
         )}
         
-        {/* Comparison (white) */}
+        {/* Comparison (white) — ComparisonTable owns #comparison */}
         {content['comparison'] && (
-          <section id="comparison" className="py-20" style={{ background: 'hsl(var(--background))' }}>
-            <div className="container mx-auto px-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">{content['comparison'].headline}</h2>
-              <ComparisonTable comparison={content['comparison']} promoCode={promoCode} />
-              <div className="text-center mt-8">
-                <a href={content['comparison'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
-                  {content['comparison'].cta?.text || 'See Why Hunters Choose Synthetic'}
+          <>
+            <ComparisonTable comparison={content['comparison']} background="hsl(var(--background))" />
+            {content['comparison'].cta && (
+              <div className="text-center pb-20" style={{ background: 'hsl(var(--background))' }}>
+                <a href={content['comparison'].cta.href} className="btn-accent text-base px-8 py-3 inline-block">
+                  {content['comparison'].cta.text}
                 </a>
               </div>
-            </div>
-          </section>
+            )}
+          </>
         )}
         
         {/* Reviews */}
@@ -2305,16 +2143,18 @@ function App() {
           description={content.reviews?.description || "Real results from hunters who trust Odin's synthetic scents."}
         />
         
-        {/* FAQ (warm cream) */}
+        {/* FAQ (warm cream) — FAQSection owns #faq */}
         {content['faq'] && (
-          <section id="faq" style={{ background: 'hsl(30, 20%, 95%)' }}>
-            <FAQSection faq={{ ...content['faq'], showContactSection: false }} />
-            <div className="text-center pb-8">
-              <a href={content['faq'].cta?.href || '#'} className="btn-accent text-base px-8 py-3 inline-block">
-                {content['faq'].cta?.text || 'Shop Now'}
-              </a>
-            </div>
-          </section>
+          <>
+            <FAQSection faq={{ ...content['faq'], showContactSection: false }} background="hsl(30, 20%, 95%)" />
+            {content['faq'].cta && (
+              <div className="text-center pb-8" style={{ background: 'hsl(30, 20%, 95%)' }}>
+                <a href={content['faq'].cta.href} className="btn-accent text-base px-8 py-3 inline-block">
+                  {content['faq'].cta.text}
+                </a>
+              </div>
+            )}
+          </>
         )}
         
         <SiteFooter config={config} />
@@ -5099,6 +4939,14 @@ function generateSitemapXml(config: SiteConfig): string {
 }
 
 // Generate Shopify Liquid page template
+function resolveShopifyAssetUrl(raw: string | undefined, brandWebsite: string): string {
+  if (!raw) return "{{ 'og-image.png' | asset_url }}";
+  if (raw.startsWith('http://') || raw.startsWith('https://')) return raw;
+  if (raw.startsWith('./')) return `{{ '${raw.slice(2)}' | asset_url }}`;
+  if (raw.startsWith('/')) return `${brandWebsite}${raw}`;
+  return `{{ '${raw}' | asset_url }}`;
+}
+
 function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): string {
   const { site, seo } = config;
   
@@ -5113,19 +4961,40 @@ function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): s
 
   // Get brand website URL
   const domainParts = site.domain?.split('.') || [];
+  const brandName = brandContext?.brand?.name || (domainParts[0] ? domainParts[0].charAt(0).toUpperCase() + domainParts[0].slice(1) : site.name);
   const brandWebsite = brandContext?.brand?.urls?.website || (site.domain ? `https://www.${site.domain}` : '');
   const brandGoogleAnalyticsId = brandContext?.brand?.googleAnalyticsId || 'G-XXXXXXXXXX';
   const canonicalUrl = config.canonicalDomain || (seo as any)?.canonical || `https://${site.domain}${site.basename}`;
   const gaId = (seo as any)?.googleAnalyticsId || brandGoogleAnalyticsId;
+  const sitemapUrl = (seo as any)?.shopifySitemapUrl || `${brandWebsite}${site.basename || `/${site.slug}`}/sitemap.xml`;
+  const themeColor = (seo as any)?.themeColor || '#8B4513';
+  const webSiteDescription =
+    (seo as any)?.webSiteDescription ||
+    (config.content as any)?.hero?.subhead ||
+    seo?.description ||
+    '';
 
-  // Get ogImage from config - use full CDN URL if available, otherwise fallback to asset_url
-  const ogImageUrl = (seo as any)?.ogImage || "{{ 'og-image.png' | asset_url }}";
+  // og:image — absolute CDN URL, Shopify asset_url, or site-relative path
+  const ogImageUrl = resolveShopifyAssetUrl((seo as any)?.ogImage, brandWebsite);
+  const twitterDescription =
+    (seo as any)?.twitterDescription || seo?.ogDescription || (config.content as any)?.hero?.subhead || '';
   
-  // Get logo from branding config - use full CDN URL if available
-  const logoUrl = config.branding?.logo || "{{ 'logo.png' | asset_url }}";
+  // Organization logo — prefer brand CDN logo over local /logo.png
+  const logoUrl =
+    brandContext?.brand?.logo?.url ||
+    (typeof config.branding?.logo === 'string' && config.branding.logo.startsWith('http')
+      ? config.branding.logo
+      : resolveShopifyAssetUrl(
+          typeof config.branding?.logo === 'string' ? config.branding.logo.replace(/^\//, '') : 'logo.png',
+          brandWebsite
+        ));
 
-  // Build FAQPage JSON-LD items from config (computed before template literal to avoid nesting issues)
-  const rawFaqItems = (config.content as any)?.faq?.items || (config.content as any)?.faq?.faqs || [];
+  // Build FAQPage JSON-LD — seo.faqSchema overrides on-page FAQ when provided (richer SEO copy)
+  const rawFaqItems =
+    (seo as any)?.faqSchema ||
+    (config.content as any)?.faq?.items ||
+    (config.content as any)?.faq?.faqs ||
+    [];
   let faqPageJson = '';
   if (rawFaqItems.length > 0) {
     const entities = rawFaqItems.map((faq: any) => {
@@ -5165,7 +5034,7 @@ function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): s
 
     <!-- Canonical + Sitemap -->
     <link rel="canonical" href="{{ canonical_url }}" />
-    <link rel="sitemap" type="application/xml" href="${canonicalUrl}/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="${sitemapUrl}" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -5178,14 +5047,14 @@ function generateShopifyHtml(config: SiteConfig, brandContext?: BrandContext): s
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ canonical_url }}" />
     <meta property="twitter:title" content="${(seo as any)?.twitterTitle || site.name}" />
-    <meta property="twitter:description" content="${(seo as any)?.twitterDescription || ''}" />
+    <meta property="twitter:description" content="${twitterDescription}" />
     <meta property="twitter:image" content="${ogImageUrl}" />
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="${keywords}" />
-    <meta name="author" content="${site.name}" />
+    <meta name="author" content="${brandName}" />
     <meta name="robots" content="${seo?.robots || 'index, follow'}" />
-    <meta name="theme-color" content="#664400" />
+    <meta name="theme-color" content="${themeColor}" />
 
     <!-- Favicon -->
 ${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png" href="${brandContext.brand.logo.faviconUrl}" />` : `    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />`}
@@ -5211,11 +5080,11 @@ ${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png"
           "@type": "WebSite",
           "name": "${site.name}",
           "url": "{{ canonical_url }}",
-          "description": "${(config.content as any)?.hero?.subhead || ''}",
+          "description": "${webSiteDescription.replace(/"/g, '\\"')}",
           "publisher": {
             "@type": "Organization",
-            "name": "${site.name}",
-            "url": "{{ canonical_url }}"
+            "name": "${brandName}",
+            "url": "${brandWebsite}"
           }
         },
         {
@@ -5227,8 +5096,8 @@ ${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png"
         },
         {
           "@type": "Organization",
-          "name": "Odin's Innovations",
-          "url": "{{ canonical_url }}",
+          "name": "${brandName}",
+          "url": "${brandWebsite}",
           "logo": "${logoUrl}",
           "contactPoint": {
             "@type": "ContactPoint",
@@ -5314,8 +5183,9 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   const validatedConfig = validateSiteConfig(rawConfig);
   const siteConfig = validatedConfig as Record<string, unknown>;
   
-  // Extract site info from site config
-  const siteInfo = (siteConfig.site || {}) as { name?: string; slug?: string };
+  // Extract site info from site config (preserve per-site basename, contact, id)
+  const siteFromConfig = (siteConfig.site || {}) as SiteConfig['site'];
+  const siteInfo = siteFromConfig as { name?: string; slug?: string };
   const seoInfo = (siteConfig.seo || {}) as { title?: string; description?: string };
   const contentInfo = (siteConfig.content || {}) as Record<string, unknown>;
   
@@ -5324,22 +5194,28 @@ async function generateSiteMultiBrand(brandId: string, serviceId: string): Promi
   
   // Use the site slug for output
   const siteSlug = siteInfo.slug || serviceId;
-  const siteBasename = `${brandId}-${siteSlug}`;
+  const siteBasename = siteFromConfig.basename || `/${siteSlug}`;
+  const brandAddress = ctx.contact.address || {};
+  const brandAddressLine = [brandAddress.street, brandAddress.city, brandAddress.state, brandAddress.zip]
+    .filter(Boolean)
+    .join(', ');
   
   // Create unified config that matches legacy SiteConfig structure
   const siteTheme = (siteConfig as Record<string, unknown>)?.theme as SiteConfig['theme'];
   
   const unifiedConfig = {
+    // Declarative template routing (e.g. "citronella") — required for TEMPLATE_REGISTRY resolver
+    template: (siteConfig as Record<string, unknown>).template as string | undefined,
     site: {
-      id: brandId,
+      id: siteFromConfig.id || siteSlug,
       name: siteInfo.name || ctx.brand.name,
       slug: siteSlug,
-      domain: ctx.brand.domain,
+      domain: siteFromConfig.domain || ctx.brand.domain,
       basename: siteBasename,
       contact: {
-        email: ctx.contact.email,
-        phone: ctx.contact.phone,
-        address: `${ctx.contact.address.street}, ${ctx.contact.address.city}, ${ctx.contact.address.state} ${ctx.contact.address.zip}`,
+        email: siteFromConfig.contact?.email || ctx.contact.email,
+        phone: siteFromConfig.contact?.phone || ctx.contact.phone,
+        address: siteFromConfig.contact?.address || brandAddressLine,
       },
     },
     branding: {

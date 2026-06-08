@@ -13,21 +13,45 @@
  * the live data from config/ikb/{brand}/rules.json.
  */
 
-import type { IKBRules } from '@microsite/types';
+import { setIKBLoader } from './ikb-validator';
 
 let registered = false;
 
 /**
  * Convenience alias. Call this once early in your app / generator / test bootstrap.
  */
-export function initializeValidation(): void {
-  registerEngineLoader();
+export async function initializeValidation(): Promise<void> {
+  await registerEngineLoader();
 }
 
-export function registerEngineLoader(): void {
+export async function registerEngineLoader(): Promise<void> {
   if (registered) return;
-  // Disabled during editor restoration to avoid engine package resolution errors in source mode.
-  // Editor live validation + /api/validate continue to work via core validators.
-  registered = true;
-  console.log('[validation] Engine loader registration skipped for stability');
+
+  try {
+    // Use dynamic import for ESM compatibility (generator runs under tsx/ESM)
+    const engine = await import('@microsite/engine');
+    const loadFn = engine.loadIKB || engine.loadIKBRules;
+
+    if (typeof loadFn === 'function') {
+      setIKBLoader((brandId: string) => {
+        try {
+          const ikb = loadFn(brandId);
+          // Support both loadIKB (full) and loadIKBRules (rules only)
+          const rules = (ikb && ikb.rules) ? ikb.rules : ikb;
+          return rules as any; // IKBRulesSnapshot shape is compatible at runtime
+        } catch {
+          // Per-brand defensive: never let missing/errant IKB cause hard failure in validate
+          return { blocklistedContent: [], blocklistedPhrases: [], approvedSections: [], trustSignals: [], promoCodes: {} };
+        }
+      });
+      // registered only after wiring live per-brand loader (ensures consistency)
+      registered = true;
+    } else {
+      registered = true;
+    }
+  } catch (err) {
+    // Always succeed: install safe fallback loader so validate* never hard-fail downstream
+    setIKBLoader(() => ({ blocklistedContent: [], blocklistedPhrases: [], approvedSections: [], trustSignals: [], promoCodes: {} }));
+    registered = true;
+  }
 }

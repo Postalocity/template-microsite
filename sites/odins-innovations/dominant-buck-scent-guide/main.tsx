@@ -3,7 +3,7 @@
  *
  * Site:      dominant-buck-scent-guide
  * Brand:     Odin's Innovations
- * Generated: 2026-05-18T14:06:15.539Z
+ * Generated: 2026-06-08T20:25:43.829Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

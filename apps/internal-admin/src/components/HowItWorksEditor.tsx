@@ -1,18 +1,21 @@
 'use client';
 
 export default function HowItWorksEditor({ content, updateContent }: any) {
-  const howItWorks = content.content?.howItWorks || { steps: [] };
+  // Support both camelCase (generic) and kebab (citronella custom template) keys for compatibility
+  const howItWorks = content.content?.howItWorks || content.content?.['how-it-works'] || { steps: [] };
   const steps = howItWorks.steps || [];
+  // Choose correct update key based on which exists (prefer kebab for citronella site)
+  const updateKey = content.content?.['how-it-works'] ? 'how-it-works' : 'howItWorks';
 
   const updateStep = (index: number, field: string, value: string) => {
     const newSteps = [...steps];
     newSteps[index] = { ...newSteps[index], [field]: value };
-    updateContent('howItWorks', { steps: newSteps });
+    updateContent(updateKey, { steps: newSteps });
   };
 
   const addStep = () => {
     const newSteps = [...steps, { title: 'New Step', description: 'Description here' }];
-    updateContent('howItWorks', { steps: newSteps });
+    updateContent(updateKey, { steps: newSteps });
   };
 
   return (

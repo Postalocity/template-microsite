@@ -1,0 +1,54 @@
+{
+  "brand": "odins-innovations",
+  "baseUrl": "https://odinsinnovations.com",
+  "sites": {
+    "bear-hog-attractants": {
+      "liveUrl": "https://odinsinnovations.com/pages/bear",
+      "notes": "Shopify handle: bear"
+    },
+    "citronella-mosquito-repellent": {
+      "liveUrl": "https://odinsinnovations.com/pages/citronella",
+      "notes": "Shopify handle: citronella"
+    },
+    "doe-estrus-guide": {
+      "liveUrl": "https://odinsinnovations.com/pages/doe-estrus",
+      "notes": "Shopify handle: doe-estrus"
+    },
+    "dominant-buck-scent-guide": {
+      "liveUrl": "https://odinsinnovations.com/pages/dominant-buck",
+      "notes": "Shopify handle: dominant-buck"
+    },
+    "earth-cover-scent-beads": {
+      "liveUrl": "https://odinsinnovations.com/pages/cover-scents",
+      "notes": "Shopify handle: cover-scents"
+    },
+    "food-scent-deer-attractants": {
+      "liveUrl": "https://odinsinnovations.com/pages/lure-scents",
+      "notes": "Shopify handle: lure-scents"
+    },
+    "how-to-use": {
+      "liveUrl": "https://odinsinnovations.com/pages/how-to",
+      "notes": "Shopify handle: how-to"
+    },
+    "hunting-mosquito-repellent": {
+      "liveUrl": "https://odinsinnovations.com/pages/hunting-mosquito-repellent",
+      "notes": "Separate page from citronella; shares citronella JS bundle"
+    },
+    "scent-beads": {
+      "liveUrl": null,
+      "notes": "No dedicated React microsite on live sitemap; content may be legacy Shopify page"
+    },
+    "scrape-scent-guide": {
+      "liveUrl": "https://odinsinnovations.com/pages/scrapes",
+      "notes": "Shopify handle: scrapes"
+    },
+    "synthetic-scent-beads": {
+      "liveUrl": "https://odinsinnovations.com/pages/benefits",
+      "notes": "Shopify handle: benefits — The Case for Synthetic Scents"
+    },
+    "synthetic-scent-cwd-guide": {
+      "liveUrl": "https://odinsinnovations.com/pages/cwd",
+      "notes": "Shopify handle: cwd"
+    }
+  }
+}

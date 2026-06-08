@@ -12,14 +12,23 @@
   },
   "approvedSections": [
     "hero",
+    "introduction",
+    "why-odins",
+    "detection",
+    "how-it-works",
+    "application",
+    "blinds",
+    "turkey",
+    "comparison",
+    "layered",
+    "faq",
+    "conclusion",
+    "footer",
+    "reviews",
     "benefits",
     "brand-story",
-    "how-it-works",
     "services",
-    "comparison",
-    "faq",
-    "cta",
-    "footer"
+    "cta"
   ],
   "blocklistedContent": [],
   "blocklistedPhrases": []

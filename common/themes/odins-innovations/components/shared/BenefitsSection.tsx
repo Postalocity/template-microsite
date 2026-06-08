@@ -84,6 +84,12 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
   // Only use image-only grid when ALL items have images (like doe-estrus/CWD)
   // Mixed items with some images use the card grid with boxes
   const hasImages = parsedItems.every(item => item.image) && parsedItems.length > 0;
+  const imageGridClass =
+    hasImages && parsedItems.length === 4
+      ? 'grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto'
+      : 'grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto';
+  const imageSizeClass =
+    hasImages && parsedItems.length === 4 ? 'w-32 h-32' : 'w-20 h-20 md:w-24 md:h-24';
 
   return (
     <section 
@@ -115,7 +121,7 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
 
         {/* Benefits Grid with Images */}
         {hasImages ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className={imageGridClass}>
             {parsedItems.map((item, index) => (
               <motion.div
                 key={item.title}
@@ -129,7 +135,7 @@ const BenefitsSection = ({ benefits, background }: BenefitsSectionProps) => {
                     <img 
                       src={item.image} 
                       alt={item.title}
-                      className="w-20 h-20 md:w-24 md:h-24 object-contain"
+                      className={`${imageSizeClass} object-contain`}
                       loading="lazy"
                     />
                   </div>

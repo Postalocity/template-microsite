@@ -3,7 +3,7 @@
  *
  * Site:      mail-pickup
  * Brand:     Broadstroke
- * Generated: 2026-05-08T15:13:45.193Z
+ * Generated: 2026-05-29T15:27:56.503Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

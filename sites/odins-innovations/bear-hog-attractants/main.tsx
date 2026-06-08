@@ -3,7 +3,7 @@
  *
  * Site:      bear-hog-attractants
  * Brand:     Odin's Innovations
- * Generated: 2026-05-18T14:06:14.653Z
+ * Generated: 2026-06-08T20:25:24.313Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

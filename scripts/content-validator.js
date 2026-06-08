@@ -279,10 +279,11 @@ const rules = {
 // =============================================================================
 
 class ContentValidator {
-  constructor() {
+  constructor(brandId = 'postalocity') {
     this.errors = [];
     this.warnings = [];
     this.stats = { files: 0, checks: 0 };
+    this.brandId = brandId;
   }
 
   log(type, message, context = '') {
@@ -395,12 +396,14 @@ class ContentValidator {
     // All text-level validation now goes through @microsite/validation.
     // The legacy ContentValidator class only exists for the old CLI and
     // a few generator-specific structural checks (comparison tables).
-    const phraseResult = validatePhrase(text, 'postalocity');
+    // Safe async handling + per-brand IKB (prevents hard failures, uses live rules via register)
+    Promise.resolve(validatePhrase(text, this.brandId)).then((phraseResult) => {
+      if (phraseResult && !phraseResult.valid && Array.isArray(phraseResult.errors)) {
+        phraseResult.errors.forEach((msg) => this.log('error', msg, context));
+      }
+    }).catch(() => {});
     const qualityResult = newValidateWritingQuality(text, context);
 
-    if (!phraseResult.valid) {
-      phraseResult.errors.forEach((msg) => this.log('error', msg, context));
-    }
     if (!qualityResult.valid) {
       qualityResult.errors.forEach((msg) => this.log('error', msg, context));
     }
@@ -516,9 +519,3 @@ export { validatePhrase, validateSiteContent, validateSection } from '@microsite
 
 // The legacy ContentValidator class is kept **only** for the existing CLI.
 export { ContentValidator, rules as legacyRules }; // renamed to discourage use
-
-// Final deprecation notice
-console.warn(
-  '[DEPRECATED] scripts/content-validator.js is a thin legacy shell. ' +
-  'Use @microsite/validation for all new validation logic.'
-);

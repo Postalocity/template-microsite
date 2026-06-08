@@ -109,7 +109,7 @@ const FAQSection = ({ faq, background, dark }: FAQSectionProps) => {
                           color: openIndex === index ? 'white' : 'hsl(var(--primary))'
                         }}
                       >
-                        <HelpCircle className="w-4 h-4" />
+                        <HelpCircle className="w-4 h-4" size={16} strokeWidth={2} />
                       </div>
                       <span 
                         className="font-body text-base font-semibold pr-8 text-left leading-relaxed"

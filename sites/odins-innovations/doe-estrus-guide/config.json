@@ -3,7 +3,7 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/doe-estrus-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service doe-estrus-guide",
     "source": "config/sites/odins-innovations/doe-estrus-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:15.097Z",
+    "generatedAt": "2026-06-08T20:25:36.969Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
@@ -544,5 +544,12 @@
       "currency": "USD",
       "units": "bottle"
     }
+  },
+  "shopifyAssets": {
+    "css": "index-d9k2kpki.css",
+    "js": "index-CLKkrRqO.js",
+    "cssUrl": "{{ 'index-d9k2kpki.css' | asset_url }}",
+    "jsUrl": "{{ 'index-CLKkrRqO.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

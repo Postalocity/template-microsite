@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/scent-beads.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service scent-beads",
     "source": "config/sites/odins-innovations/scent-beads.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:54:31.879Z",
+    "generatedAt": "2026-06-08T20:26:16.277Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "scent-beads",
   "site": {
-    "id": "odins-innovations",
+    "id": "odins-innovations-scent-beads",
     "name": "Odin's Innovations Synthetic Scent Beads",
     "slug": "scent-beads",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-scent-beads",
+    "basename": "/scent-beads",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -573,5 +574,59 @@
       "href": "https://www.odinsinnovations.com/collections/scent-beads"
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "100% Synthetic Formula",
+        "Legal in All 50 States",
+        "30+ Days Scent Release",
+        "Biodegradable",
+        "Made in the USA",
+        "Weatherproof Performance"
+      ],
+      "promoCodes": {
+        "default": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "introduction",
+        "why-odins",
+        "detection",
+        "how-it-works",
+        "application",
+        "blinds",
+        "turkey",
+        "comparison",
+        "layered",
+        "faq",
+        "conclusion",
+        "footer",
+        "reviews",
+        "benefits",
+        "brand-story",
+        "services",
+        "cta"
+      ],
+      "blocklistedContent": [],
+      "blocklistedPhrases": []
+    },
+    "pricing": {
+      "basePrice": 17.95,
+      "currency": "USD",
+      "units": "per 3-oz bottle",
+      "freeShippingThreshold": 79
+    },
+    "proofOptions": {
+      "standard": [],
+      "upgrades": []
+    }
+  },
+  "shopifyAssets": {
+    "css": "index-d9k2kpki.css",
+    "js": "index-CRzQAbMm.js",
+    "cssUrl": "{{ 'index-d9k2kpki.css' | asset_url }}",
+    "jsUrl": "{{ 'index-CRzQAbMm.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

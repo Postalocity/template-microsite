@@ -1,4 +1,5 @@
 {
+  "template": "postalocity",
   "version": "Postalocity Microsite Config \u2014 Self-Storage Facility Mailing Service",
   "site": {
     "id": "self-storage",

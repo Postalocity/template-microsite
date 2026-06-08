@@ -467,6 +467,13 @@
     stroke-linecap: round !important;
     stroke-linejoin: round !important;
   }
+
+  /* Tailwind size classes must win over Lucide's default 24px width/height attributes (Shopify prerender / slow CSS) */
+  svg.lucide.w-4 { width: 1rem !important; height: 1rem !important; }
+  svg.lucide.w-10 { width: 2.5rem !important; height: 2.5rem !important; }
+  svg.lucide.w-12 { width: 3rem !important; height: 3rem !important; }
+  svg.lucide.w-14 { width: 3.5rem !important; height: 3.5rem !important; }
+  svg.lucide.w-16 { width: 4rem !important; height: 4rem !important; }
   
   /* Comparison table */
   .comparison-table {

@@ -133,8 +133,29 @@ async function main() {
       await page.waitForTimeout(2500);
     }
 
-    // Give a bit more time for any async widgets (Stamped reviews, etc.) if they are present
-    await page.waitForTimeout(600);
+    // Scroll through the page so useInView / framer-motion sections (icons, images, FAQ) animate in
+    await page.evaluate(() => {
+      const height = document.body.scrollHeight;
+      for (let y = 0; y < height; y += 500) {
+        window.scrollTo(0, y);
+      }
+      window.scrollTo(0, 0);
+    });
+
+    // Give framer-motion + async widgets time to finish animating in
+    await page.waitForTimeout(2000);
+
+    // Framer-motion leaves opacity:0 on off-screen sections during snapshot — force visible for SEO/Shopify no-JS fallback
+    await page.evaluate(() => {
+      document.querySelectorAll('[style]').forEach((el) => {
+        const style = el.getAttribute('style') || '';
+        if (!/opacity:\s*0/.test(style)) return;
+        const cleaned = style
+          .replace(/opacity:\s*0;?/g, 'opacity: 1;')
+          .replace(/transform:\s*translate[^(]*\([^)]*\)\s*;?/g, '');
+        el.setAttribute('style', cleaned);
+      });
+    });
 
     // Capture the fully rendered document
     const fullHtml = await page.content();

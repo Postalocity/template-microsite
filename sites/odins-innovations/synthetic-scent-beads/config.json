@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/synthetic-scent-beads.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service synthetic-scent-beads",
     "source": "config/sites/odins-innovations/synthetic-scent-beads.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-14T15:30:07.918Z",
+    "generatedAt": "2026-06-08T20:26:29.224Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "synthetic-scent-beads",
   "site": {
-    "id": "odins-innovations",
+    "id": "synthetic-scent-beads",
     "name": "The Case for Synthetic Scents",
     "slug": "synthetic-scent-beads",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-synthetic-scent-beads",
+    "basename": "/synthetic-scent-beads",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -85,7 +86,7 @@
       },
       "subhead": "CWD regulations accelerated the shift, but synthetics win on performance — longer duration, consistent quality, and a product pipeline natural products can't match.",
       "background": {
-        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsinnovations_muleyBuck_2020.jpg?v=1616790847",
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsinnovations_muleyBuck_2020.jpg?v=1616790847-odins021-mutated-hero",
         "overlay": true
       },
       "ctas": [
@@ -128,7 +129,7 @@
       ]
     },
     "how-it-works": {
-      "headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER",
+      "headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER [ODINS021-EDITED]",
       "description": "Every synthetic scent is developed to a specific aroma profile. Our pheromone scents deliver the exact same aroma every single time — doe estrus, dominant buck, scrape blend. Our food scents smell like apples, persimmons, acorns — on down the line. And then we get creative: Jelly Donut without going to the bakery. Maple Bacon tested in Canada for bear hunting. Pear and Peanut Butter to bring hogs out during the day. You can't do that with natural products. Then there's shelf life. Synthetic scents don't spoil. Our biodegradable polymer beads contain a precise amount of scent and release it evenly over 30 days. When a scent molecule hits the bead's surface, it releases into the air. Rain can't stop it. Natural liquid scents expire in 24–36 hours — unless rain gets there first.",
       "steps": [
         "Select the scent that will help you be successful; cover, lure or attractant scents.",
@@ -147,7 +148,7 @@
           "price": "From $17.95",
           "size": "3 oz / 12 oz",
           "use": "Peak rut attraction",
-          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png?v=1688151838",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png?v=1688151838-odins021-mutated-card",
           "url": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads?promo=HUNT2026"
         },
         {
@@ -258,10 +259,10 @@
     },
     "howItWorks": {
       "section": {
-        "title": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER",
+        "title": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER [ODINS021-EDITED]",
         "description": "Every synthetic scent is developed to a specific aroma profile. Our pheromone scents deliver the exact same aroma every single time — doe estrus, dominant buck, scrape blend. Our food scents smell like apples, persimmons, acorns — on down the line. And then we get creative: Jelly Donut without going to the bakery. Maple Bacon tested in Canada for bear hunting. Pear and Peanut Butter to bring hogs out during the day. You can't do that with natural products. Then there's shelf life. Synthetic scents don't spoil. Our biodegradable polymer beads contain a precise amount of scent and release it evenly over 30 days. When a scent molecule hits the bead's surface, it releases into the air. Rain can't stop it. Natural liquid scents expire in 24–36 hours — unless rain gets there first."
       },
-      "headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER",
+      "headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER [ODINS021-EDITED]",
       "description": "Every synthetic scent is developed to a specific aroma profile. Our pheromone scents deliver the exact same aroma every single time — doe estrus, dominant buck, scrape blend. Our food scents smell like apples, persimmons, acorns — on down the line. And then we get creative: Jelly Donut without going to the bakery. Maple Bacon tested in Canada for bear hunting. Pear and Peanut Butter to bring hogs out during the day. You can't do that with natural products. Then there's shelf life. Synthetic scents don't spoil. Our biodegradable polymer beads contain a precise amount of scent and release it evenly over 30 days. When a scent molecule hits the bead's surface, it releases into the air. Rain can't stop it. Natural liquid scents expire in 24–36 hours — unless rain gets there first.",
       "steps": [
         "Select the scent that will help you be successful; cover, lure or attractant scents.",
@@ -278,5 +279,59 @@
       "href": "https://www.odinsinnovations.com/collections/all"
     },
     "tagline": "Synthetic. Long-Lasting. Legal Everywhere."
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "100% Synthetic Formula",
+        "Legal in All 50 States",
+        "30+ Days Scent Release",
+        "Biodegradable",
+        "Made in the USA",
+        "Weatherproof Performance"
+      ],
+      "promoCodes": {
+        "default": "HUNT2026"
+      },
+      "approvedSections": [
+        "hero",
+        "introduction",
+        "why-odins",
+        "detection",
+        "how-it-works",
+        "application",
+        "blinds",
+        "turkey",
+        "comparison",
+        "layered",
+        "faq",
+        "conclusion",
+        "footer",
+        "reviews",
+        "benefits",
+        "brand-story",
+        "services",
+        "cta"
+      ],
+      "blocklistedContent": [],
+      "blocklistedPhrases": []
+    },
+    "pricing": {
+      "basePrice": 17.95,
+      "currency": "USD",
+      "units": "per 3-oz bottle",
+      "freeShippingThreshold": 79
+    },
+    "proofOptions": {
+      "standard": [],
+      "upgrades": []
+    }
+  },
+  "shopifyAssets": {
+    "css": "index-DEJ9a25I.css",
+    "js": "index-B2_3b5wu.js",
+    "cssUrl": "{{ 'index-DEJ9a25I.css' | asset_url }}",
+    "jsUrl": "{{ 'index-B2_3b5wu.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

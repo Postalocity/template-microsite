@@ -22,13 +22,22 @@ interface ValidationResult {
 }
 
 // Known rich editor components mapped by section key (from content)
+// Extended for citronella custom template: how-it-works + image card sections reuse BenefitsEditor (now supports .cards + ImageField)
 const EDITOR_COMPONENTS: Record<string, React.ComponentType<any>> = {
   hero: HeroEditor,
   benefits: BenefitsEditor,
   difference: DifferenceEditor,
   howItWorks: HowItWorksEditor,
+  'how-it-works': HowItWorksEditor,
   pricing: PricingEditor,
   testimonials: TestimonialsEditor,
+  // Image-bearing custom sections (why-odins, layered, blinds) now get ImageField via enhanced BenefitsEditor
+  'why-odins': BenefitsEditor,
+  layered: BenefitsEditor,
+  blinds: BenefitsEditor,
+  reviews: TestimonialsEditor,
+  // Broadstroke promo (odins-023): services section has image-bearing cards similar to Odins customs; reuse BenefitsEditor + ImageField
+  services: BenefitsEditor,
 };
 
 // Nice labels for common section keys (fallback uses title-casing)
@@ -47,6 +56,7 @@ const SECTION_LABELS: Record<string, string> = {
   features: 'Features',
   trustSignals: 'Trust Signals',
   'how-to-use': 'How To Use',
+  'how-it-works': 'How It Works',
   'why-odins': 'Why Odins',
   products: 'Products',
   'bear-hunting': 'Bear Hunting',
@@ -91,8 +101,16 @@ export default function SiteEditorClient({ brand, slug }: Props) {
               benefits: { section: { title: 'Benefits', description: '' }, benefits: [] },
               difference: { section: { title: 'The Difference', description: '' }, differences: [] },
               howItWorks: { steps: [] },
+              'how-it-works': { headline: '', body: '', video: '' },
               pricing: { tiers: [] },
               testimonials: { section: { title: 'Testimonials' }, testimonials: [] },
+              'why-odins': { headline: '', subtitle: '', cards: [] },
+              layered: { headline: '', subtitle: '', cards: [] },
+              blinds: { headline: '', body: '', cards: [] },
+              introduction: { headline: '', subtitle: '', features: [] },
+              detection: { headline: '', body: '', cards: [] },
+              application: { headline: '', steps: [], note: '' },
+              reviews: { title: '', videos: [] },
             },
           };
           setSiteConfig(initial);
@@ -119,8 +137,16 @@ export default function SiteEditorClient({ brand, slug }: Props) {
           benefits: { section: { title: 'Benefits' }, benefits: [] },
           difference: { differences: [] },
           howItWorks: { steps: [] },
+          'how-it-works': { headline: '', body: '', video: '' },
           pricing: { tiers: [] },
           testimonials: { testimonials: [] },
+          'why-odins': { headline: '', subtitle: '', cards: [] },
+          layered: { headline: '', subtitle: '', cards: [] },
+          blinds: { headline: '', body: '', cards: [] },
+          introduction: { headline: '', subtitle: '', features: [] },
+          detection: { headline: '', body: '', cards: [] },
+          application: { headline: '', steps: [], note: '' },
+          reviews: { title: '', videos: [] },
         },
       });
     } finally {
@@ -229,9 +255,24 @@ export default function SiteEditorClient({ brand, slug }: Props) {
   }, [runId]);
 
   // Auto-refresh real preview iframe when generation+build logs indicate completion
+  // Robust: prefer structured status from GENERATION_COMPLETE marker (improved status reporting)
   useEffect(() => {
     if (!generationLogs) return;
-    if (generationLogs.includes('Real site preview ready') || generationLogs.includes('Build finished with code 0')) {
+    let shouldRefresh = false;
+    // Use marker JSON for reliable status (fallback to legacy strings for compat)
+    const markerMatch = generationLogs.match(/=== GENERATION_COMPLETE ===\s*([\s\S]*?)(?=\n(?:===|ACTIONABLE|✅|❌|$))/);
+    if (markerMatch) {
+      try {
+        const statusJson = JSON.parse(markerMatch[1].trim());
+        if (statusJson?.status === 'success' || statusJson?.buildExitCode === 0) {
+          shouldRefresh = true;
+        }
+      } catch {}
+    }
+    if (!shouldRefresh && (generationLogs.includes('Real site preview ready') || generationLogs.includes('Build finished with code 0'))) {
+      shouldRefresh = true;
+    }
+    if (shouldRefresh) {
       // Small delay so final assets are flushed to disk
       const t = setTimeout(() => setPreviewKey((k) => k + 1), 800);
       return () => clearTimeout(t);
@@ -449,7 +490,7 @@ export default function SiteEditorClient({ brand, slug }: Props) {
             ) : siteConfig && activeTab ? (
               <div className="text-sm text-gray-600 space-y-2">
                 <p>No dedicated rich editor for section <code className="bg-gray-100 px-1 rounded">{activeTab}</code> yet.</p>
-                <p className="text-gray-500">This section is still fully editable via the Raw JSON view (toggle above). Dedicated editors for approved sections (FAQ, services, comparison, etc.) can be added in the future.</p>
+                <p className="text-gray-500">This section is still fully editable via the Raw JSON view (toggle above). For Odins Citronella image sections (why-odins etc) and how-it-works, rich editors with ImageField are now mapped.</p>
               </div>
             ) : (
               <div className="text-gray-500">Select a section to edit.</div>

@@ -7,11 +7,19 @@ export default defineConfig({
   root: __dirname,
   base: '/dominant-buck-scent-guide',
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, '../../../common'),
-      '@/': path.resolve(__dirname, '../../../common') + '/',
-      '@/themes/odins-innovations': path.resolve(__dirname, '../../../common/themes/odins-innovations'),
-    },
+    alias: [
+      { find: '@', replacement: path.resolve(__dirname, '../../../common') },
+      { find: '@/', replacement: path.resolve(__dirname, '../../../common') + '/' },
+      { find: '@microsite/types', replacement: path.resolve(__dirname, '../../../packages/types/src') },
+      { find: '@microsite/validation', replacement: path.resolve(__dirname, '../../../packages/validation/src') },
+      { find: '@microsite/engine', replacement: path.resolve(__dirname, '../../../packages/engine/src') },
+      { find: '@/themes/odins-innovations', replacement: path.resolve(__dirname, '../../../common/themes/odins-innovations') },
+      // Fix resolution for packages only declared in generated site's package.json (pulled by common/ UI components via alias from outside site tree)
+      { find: new RegExp('^@radix-ui/(.*)$'), replacement: path.resolve(__dirname, 'node_modules/@radix-ui/$1') },
+      { find: 'class-variance-authority', replacement: path.resolve(__dirname, 'node_modules/class-variance-authority') },
+      { find: 'clsx', replacement: path.resolve(__dirname, 'node_modules/clsx') },
+      { find: 'tailwind-merge', replacement: path.resolve(__dirname, 'node_modules/tailwind-merge') },
+    ],
     dedupe: ['react', 'react-dom'],
   },
   server: {

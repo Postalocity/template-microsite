@@ -90,6 +90,11 @@ export const odinsIcons = {
       size: 'w-12 h-12'
     },
     // PNG brand assets
+    'icon-waterproof-light': {
+      url: 'https://cdn.shopify.com/s/files/1/0555/8049/1971/files/icon-waterproof-light_73e527c3-413c-4882-bb80-556cc1c563eb.png?v=1777392586',
+      description: 'Light waterproof icon for dark sections',
+      size: 'w-14 h-14'
+    },
     'waterproof': {
       url: 'https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_water_proof.png',
       description: 'Waterproof/rainproof icon',

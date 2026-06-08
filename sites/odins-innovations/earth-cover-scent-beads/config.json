@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/earth-cover-scent-beads.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service earth-cover-scent-beads",
     "source": "config/sites/odins-innovations/earth-cover-scent-beads.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:14.215Z",
+    "generatedAt": "2026-06-08T20:25:50.257Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "earth-cover-scent-beads",
   "site": {
-    "id": "odins-innovations",
+    "id": "earth-cover-scent-beads",
     "name": "Earth Cover Scent Beads",
     "slug": "earth-cover-scent-beads",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-earth-cover-scent-beads",
+    "basename": "/earth-cover-scent-beads",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -86,7 +87,7 @@
       },
       "subhead": "Synthetic cover scent engineered for reliable human scent control across gear storage, stand sites, and access trails.",
       "background": {
-        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/acton-crawford-NWcH4mbPRZg-unsplash.jpg?v=1778014873",
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/acton-crawford-NWcH4mbPRZg-unsplash.jpg?v=1778014873-odins021-mutated-hero",
         "overlay": true
       },
       "ctas": [
@@ -136,7 +137,7 @@
       }
     },
     "how-it-works": {
-      "headline": "How Earth Cover Scent Works",
+      "headline": "How Earth Cover Scent Works [ODINS021-EDITED]",
       "body": "Odin's Earth Cover Scent replicates the smell of forest floor — decaying leaves, rich soil, and organic matter. This baseline scent of a whitetail's natural environment creates an olfactory backdrop that blends into surroundings. The synthetic formulation uses proprietary biodegradable polymer beads that release scent molecules at a controlled rate for 30+ days, regardless of rain, dew, or temperature fluctuations. Unlike sprays that evaporate in 2–4 hours or carbon clothing that saturates quickly, Odin's beads maintain continuous coverage throughout the season."
     },
     "benefits": {
@@ -149,7 +150,7 @@
       "items": [
         {
           "title": "Consistent 30+ Day Release",
-          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png",
+          "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsInnov_lasts_30days.png-odins021-mutated-card",
           "description": "Maintain coverage without frequent reapplication."
         },
         {
@@ -317,10 +318,10 @@
     },
     "howItWorks": {
       "section": {
-        "title": "How Earth Cover Scent Works",
+        "title": "How Earth Cover Scent Works [ODINS021-EDITED]",
         "description": ""
       },
-      "headline": "How Earth Cover Scent Works",
+      "headline": "How Earth Cover Scent Works [ODINS021-EDITED]",
       "body": "Odin's Earth Cover Scent replicates the smell of forest floor — decaying leaves, rich soil, and organic matter. This baseline scent of a whitetail's natural environment creates an olfactory backdrop that blends into surroundings. The synthetic formulation uses proprietary biodegradable polymer beads that release scent molecules at a controlled rate for 30+ days, regardless of rain, dew, or temperature fluctuations. Unlike sprays that evaporate in 2–4 hours or carbon clothing that saturates quickly, Odin's beads maintain continuous coverage throughout the season."
     },
     "howToUse": {
@@ -402,5 +403,12 @@
       "currency": "USD",
       "units": "bottle"
     }
+  },
+  "shopifyAssets": {
+    "css": "index-BOwM7mzs.css",
+    "js": "index-aVkbUShp.js",
+    "cssUrl": "{{ 'index-BOwM7mzs.css' | asset_url }}",
+    "jsUrl": "{{ 'index-aVkbUShp.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

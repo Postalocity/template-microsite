@@ -1,4 +1,5 @@
 {
+  "template": "postalocity",
   "version": "Postalocity Microsite Config — Real Estate",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",

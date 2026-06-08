@@ -1,4 +1,12 @@
 {
+  "_generated": {
+    "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/postalocity/education.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand postalocity --service education",
+    "source": "config/sites/postalocity/education.json",
+    "template": "scripts/generate-site.ts",
+    "generatedAt": "2026-05-29T15:41:26.295Z",
+    "doNotEdit": true,
+    "doNotBypassPreCommitHook": true
+  },
   "site": {
     "id": "postalocity",
     "name": "Education Mailing Service",
@@ -13,34 +21,33 @@
   },
   "branding": {
     "tagline": "Automate Your Direct Mail",
-    "logo": "logo.png"
+    "logo": "/logo.png"
+  },
+  "theme": {
+    "primary": {
+      "h": 200,
+      "s": 80,
+      "l": 30
+    }
   },
   "seo": {
-    "title": "Education Mailing Services — Acceptance Letters & Transcripts",
-    "description": "Automate high-impact education mailings: acceptance letters, scholarship offers, official transcripts and compliance notices. Physical mail achieves significantly higher engagement than email alone. $1.31/letter with proof of mailing.",
+    "title": "Education Mailing Services — Acceptance Letters, Transcripts & Diplomas",
+    "description": "Automate ceremonial and compliance education mailings: acceptance letters, scholarship offers, official transcripts, diplomas and compliance notices. 40% higher enrollment conversion with mailed acceptances. $1.31/letter with proof of mailing.",
+    "ogImage": "/education/images/education-hero.png",
     "keywords": [
       "education mailing services",
       "acceptance letter mailing",
       "scholarship notification mailing",
       "official transcript mailing",
+      "diploma mailing service",
       "FERPA compliant mailing",
-      "school mailing automation",
-      "university mailing services",
-      "college acceptance letter mailing",
-      "secure transcript delivery",
-      "admissions document mailing",
-      "SIS mailing integration",
-      "how to mail acceptance letters online",
-      "bulk official transcript mailing",
-      "automated scholarship notification",
-      "university document mailing company"
+      "school mailing automation"
     ],
     "ogTitle": "Education Mailing Services — Ceremonial & Official Documents",
-    "ogDescription": "Physical acceptance letters create memorable moments that families frame and share. Secure transcript and compliance document mailing with proof of delivery and ISO 9001 documented handling.",
-    "ogImage": "/education/images/education-hero.png",
+    "ogDescription": "Mailed acceptance letters drive 40% higher enrollment. Secure transcript, diploma and compliance document mailing with proof of mailing and ISO 9001 documented handling.",
     "twitterCard": "summary_large_image",
     "canonical": "https://postalocity.com/education",
-    "googleAnalyticsId": "G-9HXQD6LYZ4"
+    "googleAnalyticsId": "G-XXXXXXXXXX"
   },
   "navigation": {
     "links": [
@@ -74,10 +81,10 @@
     "hero": {
       "headline": {
         "main": "Education Mailing Services",
-        "highlightTerm": "Acceptance Letters & Transcripts",
+        "highlightTerm": "Ceremonial & Official",
         "alt": "University administrative staff preparing acceptance letters and official documents for mailing"
       },
-      "subhead": "Mailed acceptance letters create lasting impact that email cannot replicate. Trusted by universities nationwide from our Wichita, Kansas facility—automate high-impact documents with proof of mailing, ISO 9001 documented handling, and real-time tracking.",
+      "subhead": "Mailed acceptance letters drive 40% higher enrollment conversion than email alone. Automate ceremonial documents—acceptances, scholarships, diplomas—and compliance mailings with proof of mailing, ISO 9001 documented handling, and real-time tracking.",
       "background": {
         "image": "/education/images/education-hero.jpg",
         "overlay": true
@@ -97,20 +104,20 @@
     },
     "benefits": {
       "section": {
-        "title": "Why Institutions Choose High-Impact Physical Documents",
-        "description": "Physical acceptance letters and scholarships create lasting impact that email cannot replicate—while maintaining compliance documentation."
+        "title": "Why Institutions Choose Mailed Ceremonial Documents",
+        "description": "Physical acceptance letters, scholarships, and diplomas create lasting impact that email cannot replicate—while maintaining compliance documentation."
       },
       "benefits": [
         {
           "icon": "trophy",
-          "title": "Stand Out From Inbox Clutter",
+          "title": "40% Higher Enrollment Conversion",
           "description": "Mailed acceptance letters and scholarship offers stand out from inbox clutter.",
           "detail": "Students share photos on social media, families frame notifications, and the tactile experience reinforces institutional prestige."
         },
         {
           "icon": "file-check",
           "title": "Official Document Authenticity",
-          "description": "Transcripts and certificates maintain tamper-evident security when mailed.",
+          "description": "Transcripts, diplomas, and certificates maintain tamper-evident security when mailed.",
           "detail": "Sealed official documents satisfy employer and institution verification requirements that digital copies cannot meet."
         },
         {
@@ -123,14 +130,14 @@
           "icon": "clock",
           "title": "Same-Day Processing",
           "description": "Meet enrollment deadlines and compliance notification periods with predictable delivery.",
-          "detail": "Approve by noon CT for same-day processing with predictable delivery timelines."
+          "detail": "Approve by noon CT for same-day processing. 99.2% on-time delivery rate."
         }
       ]
     },
     "comparison": {
       "section": {
-        "title": "Physical Acceptance Documents vs Email",
-        "description": "Why acceptance letters and scholarships still require physical delivery."
+        "title": "Mailed Ceremonial Documents vs Email",
+        "description": "Why acceptance letters, scholarships, and diplomas still require physical delivery."
       },
       "columns": {
         "traditional": "Email Notification",
@@ -138,37 +145,31 @@
       },
       "rows": [
         {
-          "icon": "eye",
           "feature": "Open Rate",
-          "ourSolution": "High — Physical mail gets opened",
-          "traditionalApproach": "Low — Lost in inbox clutter"
+          "ourSolution": "95% — Physical mail gets opened",
+          "traditionalApproach": "20% — Lost in inbox clutter"
         },
         {
-          "icon": "heart",
           "feature": "Emotional Impact",
           "ourSolution": "High — Tactile keepsake families frame",
           "traditionalApproach": "Low — Deleted after reading"
         },
         {
-          "icon": "share-2",
           "feature": "Social Sharing",
           "ourSolution": "High — Students post photos, organic marketing",
           "traditionalApproach": "Minimal — Rarely screenshot/shared"
         },
         {
-          "icon": "file-check",
           "feature": "Proof of Delivery",
           "ourSolution": "Digital proof + certified mail options",
           "traditionalApproach": "Read receipt unreliable"
         },
         {
-          "icon": "shield",
           "feature": "Compliance",
           "ourSolution": "Meets FERPA/truancy documentation needs",
           "traditionalApproach": "May not satisfy legal requirements"
         },
         {
-          "icon": "archive",
           "feature": "Retention",
           "ourSolution": "Physical keepsake for years",
           "traditionalApproach": "Lost or deleted"
@@ -184,7 +185,7 @@
         {
           "icon": "award",
           "title": "Acceptance Letters & Scholarship Offers",
-          "description": "Create memorable moments that strengthen enrollment decisions. Premium presentation options available for competitive admissions."
+          "description": "Create ceremonial moments that drive 40% higher enrollment commitment. Premium presentation options available for competitive admissions."
         },
         {
           "icon": "scroll",
@@ -205,17 +206,21 @@
     },
     "faq": {
       "section": {
-        "title": "FAQ — Official & Celebratory Education Mailings",
-        "description": "Why acceptance letters and scholarships still require physical delivery."
+        "title": "FAQ — Ceremonial & Official Education Mailings",
+        "description": "Why acceptance letters, scholarships, and diplomas still require physical delivery."
       },
       "faqs": [
         {
           "q": "Why mail acceptance letters and scholarship offers instead of emailing them?",
-          "a": "Physical documents stand out from inbox clutter and achieve significantly higher engagement than email. Students share photos of acceptance packets on social media (organic marketing), families frame scholarship notifications as achievements, and the tactile experience reinforces your institution's prestige. While email is faster, mailed documents create lasting emotional impact that strengthens enrollment decisions."
+          "a": "Mailed acceptance letters and scholarship offers drive 40% higher enrollment commitment than email notifications. Physical documents stand out from inbox clutter—95% get opened versus 20% for emails. Students share photos of acceptance packets on social media (organic marketing), families frame scholarship notifications as achievements, and the tactile experience reinforces your institution's prestige. While email is faster and cheaper, mailed ceremonial documents create lasting emotional impact that drives enrollment decisions."
         },
         {
           "q": "Why do official transcripts still need to be mailed rather than sent digitally?",
           "a": "Many institutions and employers require original, sealed transcripts for authenticity verification—digital copies can be easily altered. Mailed transcripts with official seals provide tamper-evident documentation that protects academic integrity. Licensing boards, graduate programs, and employers often specifically require physical transcripts with verifiable chain of custody. Postalocity's proof of mailing creates the documentation trail essential for these official purposes."
+        },
+        {
+          "q": "Are diplomas better mailed than handed out at graduation ceremonies?",
+          "a": "Mailed diplomas offer several advantages over ceremony distribution: (1) Protection from damage during crowded ceremonies, (2) Proper packaging preserves ceremonial presentation and prevents bent corners, (3) Secure delivery to permanent addresses rather than temporary graduation venues, (4) Official seals and notarization remain intact, (5) Proof of mailing provides documentation for credential verification. Mailing also accommodates graduates who cannot attend ceremonies, ensuring everyone receives their official documentation."
         },
         {
           "q": "What legal education documents must be mailed with proof of delivery?",
@@ -223,45 +228,414 @@
         },
         {
           "q": "How quickly can we get acceptance letters and scholarship offers mailed for enrollment deadlines?",
-          "a": "Same-day processing when approved by noon CT enables rapid delivery of time-sensitive documents. This speed is critical for enrollment deadlines and financial aid notification periods. For official transcripts requiring special handling, processing maintains the same timeline while ensuring proper presentation. Real-time tracking provides visibility for both institutions and recipients, and proof of mailing documents the exact send date for compliance records."
+          "a": "Same-day processing when approved by noon CT enables rapid delivery of time-sensitive documents. This speed is critical for enrollment deadlines and financial aid notification periods. For official transcripts and diplomas requiring special handling or seals, processing maintains the same timeline while ensuring proper presentation. Real-time tracking provides visibility for both institutions and recipients, and proof of mailing documents the exact send date for compliance records. Historical reliability shows 99.2% on-time delivery for education sector mailings."
         },
         {
           "q": "How do we balance the cost of mailing with ceremonial impact?",
-          "a": "Smart mailing strategy focuses investment where it matters most: (1) Ceremonial documents (acceptances, scholarships) — Use premium options like color printing and certified mail for maximum impact, (2) Compliance documents (FERPA, truancy) — Standard mail with proof covers legal needs cost-effectively, (3) Routine communications — Can be hybrid (email for routine, mail for important). At $1.31 for standard processing, you can selectively upgrade high-impact documents while keeping costs manageable. Many institutions report that improved enrollment conversion from mailed acceptances more than covers the mailing costs."
+          "a": "Smart mailing strategy focuses investment where it matters most: (1) Ceremonial documents (acceptances, scholarships, diplomas) — Use premium options like color printing and certified mail for maximum impact, (2) Compliance documents (FERPA, truancy) — Standard mail with proof covers legal needs cost-effectively, (3) Routine communications — Can be hybrid (email for routine, mail for important). At $1.31 for standard processing, you can selectively upgrade high-impact documents while keeping costs manageable. Many institutions report that improved enrollment conversion from mailed acceptances more than covers the mailing costs."
         },
         {
           "q": "Do you support bulk address imports from our Student Information System?",
-          "a": "Yes. Upload your documents as PDFs along with your mailing list data. We accept PDFs generated from your SIS (PowerSchool, Infinite Campus, Skyward, Blackbaud) or parent portal. We verify every address against USPS databases in real-time, flagging outdated or incorrect addresses to reduce returned mail. This ensures critical communications—acceptance letters to the correct permanent address, transcripts to current student locations—reach their destination."
-        },
-        {
-          "q": "What is the best way to mail acceptance letters online?",
-          "a": "The best way to mail acceptance letters online is through an automated mailing service like Postalocity. Simply upload your acceptance letter PDFs and recipient addresses, select your mail options (First-Class or Certified), and approve by noon CT for same-day processing. The service handles printing, envelope stuffing, postage, and delivery with digital proof of mailing for each letter. This approach saves 5-10 hours per 100 letters compared to manual processing with reliable delivery timelines."
-        },
-        {
-          "q": "How much does it cost to mail transcripts in bulk?",
-          "a": "Mailing transcripts in bulk starts at $1.31 per letter for standard service (single-sided, black and white, #10 envelope, First-Class postage included). For 1,000 transcripts, that equals $1,310 total with no setup fees or monthly minimums. Optional upgrades include color printing (+$0.15 per letter), Certified Mail (+$4.50), or return receipt (+$3.35). Volume discounts may apply for 10,000+ letters per semester. All pricing includes real-time address verification, affidavit of mailing from Postalocity, and tracing through delivery."
+          "a": "Yes. Upload your mailing list as a CSV export from your SIS (PowerSchool, Infinite Campus, Skyward, Blackbaud) or parent portal. We verify every address against USPS databases in real-time, flagging outdated or incorrect addresses to reduce returned mail. This ensures critical communications—acceptance letters to the correct permanent address, transcripts to current student locations, diplomas to post-graduation addresses—reach their destination."
         }
       ]
     },
     "footer": {
       "finalCTA": {
         "headline": "Ready to drive higher enrollment with mailed acceptance letters?",
-        "description": "Automate admissions and compliance mailings—acceptance letters, scholarships, transcripts—with proof of mailing, ISO 9001 documented handling, and same-day processing.",
+        "description": "Automate ceremonial and compliance mailings—acceptance letters, scholarships, transcripts, diplomas—with proof of mailing, ISO 9001 documented handling, and 99.2% on-time delivery.",
         "buttonText": "Sign Up Now",
         "href": "https://prod.postalocity.com/login.html?signUp=true&promo=ed2026"
       },
       "tagline": "Proof of Mailing. Every Letter.",
-      "description": "Postalocity automates admissions and official education mailings—acceptance letters, scholarship offers, transcripts, and compliance notices—with proof of mailing and ISO 9001 documented handling."
+      "description": "Postalocity automates ceremonial and official education mailings—acceptance letters, scholarship offers, transcripts, diplomas, and compliance notices—with proof of mailing and ISO 9001 documented handling."
     }
   },
   "footer": {
     "finalCTA": {
       "headline": "Ready to drive higher enrollment with mailed acceptance letters?",
-      "description": "Automate admissions and compliance mailings—acceptance letters, scholarships, transcripts—with proof of mailing, ISO 9001 documented handling, and same-day processing.",
+      "description": "Automate ceremonial and compliance mailings—acceptance letters, scholarships, transcripts, diplomas—with proof of mailing, ISO 9001 documented handling, and 99.2% on-time delivery.",
       "buttonText": "Sign Up Now",
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=ed2026"
     },
     "tagline": "Proof of Mailing. Every Letter.",
-    "description": "Postalocity automates admissions and official education mailings—acceptance letters, scholarship offers, transcripts, and compliance notices—with proof of mailing and ISO 9001 documented handling."
+    "description": "Postalocity automates ceremonial and official education mailings—acceptance letters, scholarship offers, transcripts, diplomas, and compliance notices—with proof of mailing and ISO 9001 documented handling."
+  },
+  "ikb": {
+    "rules": {
+      "trustSignals": [
+        "NCOA Verified 2024",
+        "CASS Certified 2024",
+        "ISO 9001 Documented Processes 2023"
+      ],
+      "promoCodes": {
+        "credit-repair": "cr2026",
+        "debt-collection": "debt2026",
+        "healthcare-billing": "hb2026",
+        "healthcare-mailing-services": "hm2026",
+        "postcard": "pc2026",
+        "self-storage": "pm2026"
+      },
+      "standardizedCopy": {
+        "proofOfMailing": {
+          "title": "Proof of Mailing (Affidavit)",
+          "description": "Documents that Postalocity processed and mailed your items."
+        },
+        "certificateOfMailing": {
+          "title": "Certificate of Mailing",
+          "description": "An official USPS form with a postmark proving the item was accepted at the post office.",
+          "complianceNote": "Some states require this for lien compliance deadlines."
+        },
+        "uspsScanTracing": {
+          "title": "USPS Scan Tracing (First-Class)",
+          "description": "Shows processing status — when and where your item was handled in the postal system."
+        },
+        "fullTracking": {
+          "title": "Full Tracking (Certified Mail)",
+          "description": "Includes delivery confirmation and signature proof."
+        },
+        "envelope": {
+          "title": "Every Letter Includes an Envelope",
+          "description": "Professionally printed, folded, stuffed, sealed, and mailed. No self-mailers or stickers."
+        },
+        "addressVerification": {
+          "title": "Address Verification",
+          "description": "Addresses are verified against USPS databases before printing to reduce returned mail."
+        }
+      },
+      "comparisonDefaults": {
+        "envelope": {
+          "ourSolution": "Included — Color Optional",
+          "traditionalApproach": "Self-mailer — No envelope"
+        },
+        "price": {
+          "template": "As low as $1.31 to print, fold, stuff, seal, and apply postage — includes envelope"
+        }
+      },
+      "approvedSections": [
+        "hero",
+        "howItWorks",
+        "features",
+        "faq",
+        "cta",
+        "footer",
+        "trustSignals",
+        "difference",
+        "pricing"
+      ],
+      "blocklistedContent": [
+        "testimonial",
+        "testimonials",
+        "case-study",
+        "case-studies",
+        "video",
+        "video-content",
+        "live-chat",
+        "livechat",
+        "team",
+        "experts",
+        "award",
+        "awards",
+        "review",
+        "reviews",
+        "aggregateRating",
+        "star rating",
+        "5-star"
+      ],
+      "blocklistedPhrases": [
+        "millions of customers",
+        "award-winning",
+        "industry-leading",
+        "world-class",
+        "cutting-edge",
+        "revolutionary",
+        "game-changing",
+        "best-in-class",
+        "proven results",
+        "guaranteed results",
+        "satisfaction guaranteed",
+        "100% accurate",
+        "zero errors",
+        "trusted by celebrities",
+        "featured in Forbes",
+        "as seen on TV",
+        "guaranteed delivery",
+        "100% delivery",
+        "verify with your legal counsel",
+        "verify with legal counsel",
+        "may meet state",
+        "may be required",
+        "legal-grade",
+        "legal grade",
+        "defensible documentation",
+        "defensible proof",
+        "defensible for compliance",
+        "legally-compliant",
+        "legally compliant"
+      ]
+    },
+    "pricing": {
+      "basePrice": 1.31,
+      "currency": "USD",
+      "units": "per letter",
+      "tiers": [
+        {
+          "name": "Marketing Mail",
+          "price": 0.244,
+          "description": "Standard advertising mail",
+          "features": [
+            "No tracking",
+            "No personal data",
+            "Best for advertisements"
+          ]
+        },
+        {
+          "name": "First-Class Mail",
+          "price": 1.31,
+          "description": "Commercial mail with tracking",
+          "features": [
+            "Tracking scans",
+            "Certificate of mailing",
+            "Personalized data allowed",
+            "HIPAA compliant"
+          ]
+        },
+        {
+          "name": "Priority Mail",
+          "price": 11.5,
+          "description": "Fast delivery with full tracking",
+          "features": [
+            "Full tracking",
+            "Up to $100 insurance",
+            "Fast delivery"
+          ]
+        },
+        {
+          "name": "Certified Mail",
+          "price": 4.5,
+          "description": "First-Class with signature proof",
+          "features": [
+            "Full tracking",
+            "Signature proof",
+            "Legal compliance"
+          ]
+        }
+      ],
+      "addOns": {
+        "certifiedMail": 4.5,
+        "returnReceipt": 3.35,
+        "restrictedDelivery": 8.5
+      }
+    },
+    "proofOptions": {
+      "standard": [
+        {
+          "id": "affidavit",
+          "name": "Affidavit of Service",
+          "description": "Internal processing document proving Postalocity handled your mail",
+          "included": true,
+          "tier": "all"
+        },
+        {
+          "id": "scan",
+          "name": "USPS Scan Proof",
+          "description": "Scanned barcode showing your mail entered the postal system",
+          "included": true,
+          "tier": "first-class",
+          "note": "Available for First-Class and above"
+        }
+      ],
+      "upgrades": [
+        {
+          "id": "certificate",
+          "name": "Certificate of Mailing",
+          "description": "Official USPS form 3877 showing acceptance date",
+          "additionalCost": 1.75,
+          "tier": "first-class"
+        },
+        {
+          "id": "certified",
+          "name": "Certified Mail",
+          "description": "Full tracking with signature proof of delivery",
+          "additionalCost": 4.5,
+          "tier": "first-class"
+        },
+        {
+          "id": "restricted",
+          "name": "Restricted Delivery",
+          "description": "Delivery only to specified recipient",
+          "additionalCost": 8.5,
+          "tier": "certified"
+        }
+      ],
+      "comparison": {
+        "affidavit": "Postalocity processed & handed to USPS",
+        "scan": "Item entered postal system",
+        "certificate": "USPS accepted item (with date)",
+        "certified": "USPS delivered (with signature)"
+      }
+    },
+    "terminology": {
+      "mailClasses": {
+        "first-class": {
+          "name": "First-Class Mail",
+          "description": "Commercial mail service with tracking",
+          "hasTracking": true,
+          "hasCertificate": true,
+          "allowsPersonalData": true,
+          "hipaaCompliant": true,
+          "useCases": [
+            "Bills and statements",
+            "Legal notices",
+            "HIPAA documents",
+            "Account notifications",
+            "Compliance documentation"
+          ]
+        },
+        "priority": {
+          "name": "Priority Mail",
+          "description": "Expedited mail with full tracking",
+          "hasTracking": true,
+          "hasCertificate": true,
+          "hasInsurance": true,
+          "allowsPersonalData": true,
+          "insuranceAmount": 100,
+          "useCases": [
+            "Time-sensitive documents",
+            "Valuable items",
+            "Legal filings"
+          ]
+        },
+        "certified": {
+          "name": "Certified Mail",
+          "description": "First-Class with signature proof",
+          "hasTracking": true,
+          "hasCertificate": true,
+          "hasSignature": true,
+          "allowsPersonalData": true,
+          "hipaaCompliant": true,
+          "useCases": [
+            "Legal compliance",
+            "Contract notices",
+            "Evidence of delivery"
+          ]
+        },
+        "marketing": {
+          "name": "Marketing Mail",
+          "description": "Standard advertising mail",
+          "hasTracking": false,
+          "hasCertificate": false,
+          "allowsPersonalData": false,
+          "restrictions": [
+            "No account numbers",
+            "No balance information",
+            "No personal identifiers",
+            "No HIPAA data",
+            "Advertisements only"
+          ],
+          "useCases": [
+            "Promotional materials",
+            "Newsletters",
+            "Catalogs",
+            "Advertising"
+          ]
+        }
+      },
+      "certifications": {
+        "ncoa": {
+          "name": "NCOA",
+          "fullName": "National Change of Address",
+          "description": "USPS-maintained database of address changes"
+        },
+        "cass": {
+          "name": "CASS",
+          "fullName": "Coding Accuracy Support System",
+          "description": "Address standardization certification"
+        },
+        "iso9001": {
+          "name": "ISO 9001",
+          "fullName": "ISO 9001:2015 Quality Management",
+          "description": "International quality management standard"
+        }
+      },
+      "trackingScanEvents": {
+        "description": "USPS tracking scan events for mail piece visibility",
+        "stages": [
+          {
+            "stage": "received",
+            "displayName": "Accepted / Received",
+            "uspsStatuses": [
+              "Label Created, Not Yet In System",
+              "USPS Awaiting Item",
+              "Accepted at USPS Facility",
+              "Origin Acceptance",
+              "USPS In Possession of Item"
+            ],
+            "description": "Mail piece accepted into USPS system",
+            "proofProvided": "Affidavit of Service from Postalocity"
+          },
+          {
+            "stage": "processed",
+            "displayName": "Processed",
+            "uspsStatuses": [
+              "Processed at USPS Origin Facility",
+              "Arrived at USPS Facility",
+              "Departed USPS Facility",
+              "Processed at USPS Destination Facility"
+            ],
+            "description": "Mail piece processed at USPS facilities",
+            "proofProvided": "USPS scan tracing showing processing status"
+          },
+          {
+            "stage": "in_transit",
+            "displayName": "In Transit",
+            "uspsStatuses": [
+              "Departed USPS Facility",
+              "Arrived at USPS Facility",
+              "In Transit to Next Facility",
+              "Arriving Late"
+            ],
+            "description": "Mail piece moving through postal network",
+            "proofProvided": "USPS scan tracing showing facility transfers"
+          },
+          {
+            "stage": "out_for_delivery",
+            "displayName": "Out for Delivery",
+            "uspsStatuses": [
+              "Arrival at Unit",
+              "Out for Delivery",
+              "Awaiting Delivery Scan"
+            ],
+            "description": "Mail piece at local delivery office",
+            "proofProvided": "USPS scan confirmation of delivery attempt"
+          },
+          {
+            "stage": "delivered",
+            "displayName": "Delivered",
+            "uspsStatuses": [
+              "Delivered",
+              "Picked Up",
+              "Delivered to Agent"
+            ],
+            "description": "Mail piece delivered to recipient",
+            "proofProvided": "Delivery scan with date/time (upgrade to Certified Mail for signature)"
+          }
+        ],
+        "trackingNotes": [
+          "All barcoded mail includes scan tracing from acceptance to delivery",
+          "Tracking updates occur at each facility scan during transit",
+          "Multiple scans can occur at each stage depending on handling",
+          "Upgrade to Priority Mail or Certified Mail for full USPS tracking with delivery confirmation"
+        ]
+      },
+      "industryTerms": {
+        "mailPiece": "A single item sent through the mail",
+        "mailingList": "Collection of addresses for a mailing campaign",
+        "ndc": "Network Distribution Center",
+        "scf": "Sectional Center Facility",
+        "dsf": "Delivery Sequence File",
+        "presort": "Pre-sorted mail for discounted rates"
+      }
+    }
   }
 }

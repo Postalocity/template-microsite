@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/scrape-scent-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service scrape-scent-guide",
     "source": "config/sites/odins-innovations/scrape-scent-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:17.720Z",
+    "generatedAt": "2026-06-08T20:26:22.750Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "scrape-scent-guide",
   "site": {
-    "id": "odins-innovations",
+    "id": "scrape-scent-guide",
     "name": "Mock Scrape Scent Beads",
     "slug": "scrape-scent-guide",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-scrape-scent-guide",
+    "basename": "/scrape-scent-guide",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -415,5 +416,12 @@
       "currency": "USD",
       "units": "bottle"
     }
+  },
+  "shopifyAssets": {
+    "css": "index-Ciq5LvP5.css",
+    "js": "index-DAMyIYrc.js",
+    "cssUrl": "{{ 'index-Ciq5LvP5.css' | asset_url }}",
+    "jsUrl": "{{ 'index-DAMyIYrc.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

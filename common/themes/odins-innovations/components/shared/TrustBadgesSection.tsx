@@ -79,35 +79,54 @@ interface TrustSignal {
   icon: string;
 }
 
+type TrustSignalInput = TrustSignal | string | { name?: string; text?: string; icon?: string };
+
 interface TrustSignalsProps {
-  trustSignals?: {
-    section?: {
-      title?: string;
-      description?: string;
-    };
-    signals?: (TrustSignal | string)[];
+  section?: {
+    title?: string;
+    description?: string;
   };
+  signals?: TrustSignalInput[];
 }
 
-const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
+type TrustBadgesInput = TrustSignalsProps | TrustSignalInput[] | undefined;
+
+function resolveIcon(name: string, explicitIcon?: string): string {
+  if (explicitIcon) return explicitIcon;
+  const lowerName = name.toLowerCase();
+  return Object.keys(badgeIconMap).find(k => lowerName.includes(k)) || 'check-circle';
+}
+
+function normalizeToSignals(raw: TrustSignalInput[]): TrustSignal[] {
+  return raw
+    .map(s => {
+      if (typeof s === 'string') {
+        return { name: s, icon: resolveIcon(s) };
+      }
+      const name = s.name || s.text || '';
+      return { name, icon: resolveIcon(name, s.icon) };
+    })
+    .filter(s => s.name.length > 0);
+}
+
+function extractRawSignals(input: TrustBadgesInput): TrustSignalInput[] | undefined {
+  if (!input) return undefined;
+  if (Array.isArray(input)) return input;
+  return input.signals;
+}
+
+const TrustBadgesSection = ({ trustSignals }: { trustSignals?: TrustBadgesInput }) => {
   const ctx = useBrand();
-  const brandTrustSignals = ctx.brand.trustSignals;
+  const brandTrustSignals = ctx.brand.trustSignals as TrustSignalInput[] | undefined;
   
-  const rawSignals = trustSignals?.signals;
+  const rawSignals = extractRawSignals(trustSignals);
   
   let signals: TrustSignal[];
   
   if (rawSignals?.length) {
-    signals = rawSignals.map(s => typeof s === 'string' 
-      ? { name: s, icon: Object.keys(badgeIconMap).find(k => s.toLowerCase().includes(k)) || 'check-circle' } 
-      : { name: s.name, icon: (s as any).icon || 'check-circle' }
-    );
+    signals = normalizeToSignals(rawSignals);
   } else if (brandTrustSignals?.length) {
-    signals = brandTrustSignals.map(s => {
-      const lowerName = s.toLowerCase();
-      const iconKey = Object.keys(badgeIconMap).find(k => lowerName.includes(k));
-      return { name: s, icon: iconKey || 'check-circle' };
-    });
+    signals = normalizeToSignals(brandTrustSignals);
   } else {
     // Default - 4 key badges with Odin's style icons
     signals = [
@@ -123,7 +142,7 @@ const TrustBadgesSection = ({ trustSignals }: TrustSignalsProps) => {
       <div className="section-container py-2">
         <div className="flex flex-wrap items-center justify-center gap-2 lg:gap-3">
           {signals.map((signal, index) => {
-            const iconValue = badgeIconMap[signal.icon.toLowerCase()];
+            const iconValue = badgeIconMap[(signal.icon || 'check-circle').toLowerCase()];
             const isImageUrl = typeof iconValue === 'string' && (iconValue.startsWith('http') || iconValue.startsWith('/'));
             const IconComponent = !isImageUrl ? (iconValue as React.FC || OdinsIconCheckCircle) : null;
             return (

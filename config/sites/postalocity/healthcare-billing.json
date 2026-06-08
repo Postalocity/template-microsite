@@ -1,4 +1,5 @@
 {
+  "template": "postalocity",
   "site": {
     "id": "healthcare-billing",
     "name": "Healthcare Billing Solutions",

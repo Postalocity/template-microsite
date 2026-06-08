@@ -1,5 +1,6 @@
 {
   "version": "Odin's Innovations Microsite Config — The Case for Synthetic Scents",
+  "template": "synthetic-scent-beads",
   "instructions": {
     "requiredFields": "Only fill in the [bracketed] placeholders below. Everything else is handled by the template.",
     "promoCodes": { "default": "HUNT2026" }
@@ -51,7 +52,7 @@
       },
       "subhead": "CWD regulations accelerated the shift, but synthetics win on performance — longer duration, consistent quality, and a product pipeline natural products can't match.",
       "background": { 
-        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsinnovations_muleyBuck_2020.jpg?v=1616790847",
+        "image": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/odinsinnovations_muleyBuck_2020.jpg?v=1616790847-odins021-mutated-hero",
         "overlay": true 
       },
       "ctas": [
@@ -94,7 +95,7 @@
       ]
     },
     "how-it-works": {
-"headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER",
+"headline": "HOW ODIN'S SYNTHETIC TECHNOLOGIES WORK TOGETHER [ODINS021-EDITED]",
   "description": "Every synthetic scent is developed to a specific aroma profile. Our pheromone scents deliver the exact same aroma every single time — doe estrus, dominant buck, scrape blend. Our food scents smell like apples, persimmons, acorns — on down the line. And then we get creative: Jelly Donut without going to the bakery. Maple Bacon tested in Canada for bear hunting. Pear and Peanut Butter to bring hogs out during the day. You can't do that with natural products. Then there's shelf life. Synthetic scents don't spoil. Our biodegradable polymer beads contain a precise amount of scent and release it evenly over 30 days. When a scent molecule hits the bead's surface, it releases into the air. Rain can't stop it. Natural liquid scents expire in 24–36 hours — unless rain gets there first.",
   "steps": [
     "Select the scent that will help you be successful; cover, lure or attractant scents.",
@@ -113,7 +114,7 @@
           "price": "From $17.95",
           "size": "3 oz / 12 oz",
           "use": "Peak rut attraction",
-          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png?v=1688151838",
+          "image": "https://www.odinsinnovations.com/cdn/shop/products/OdinsInnov_Package_2021_3oz_Bottle_DoeEstrous_7f5d4d43-71ab-4baf-950e-7f16e8151bbe.png?v=1688151838-odins021-mutated-card",
           "url": "https://www.odinsinnovations.com/products/doe-estrus-scent-beads?promo=HUNT2026"
         },
         {

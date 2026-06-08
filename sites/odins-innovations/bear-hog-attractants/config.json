@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/bear-hog-attractants.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service bear-hog-attractants",
     "source": "config/sites/odins-innovations/bear-hog-attractants.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:14.654Z",
+    "generatedAt": "2026-06-08T20:25:24.314Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "bear-hog-attractants",
   "site": {
-    "id": "odins-innovations",
+    "id": "bear-hog-attractants",
     "name": "Bear & Hog Attractants",
     "slug": "bear-hog-attractants",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-bear-hog-attractants",
+    "basename": "/bear-hog-attractants",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -444,5 +445,12 @@
       "currency": "USD",
       "units": "bottle"
     }
+  },
+  "shopifyAssets": {
+    "css": "index-Bk_D9la9.css",
+    "js": "index-Dq1bM3qm.js",
+    "cssUrl": "{{ 'index-Bk_D9la9.css' | asset_url }}",
+    "jsUrl": "{{ 'index-Dq1bM3qm.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

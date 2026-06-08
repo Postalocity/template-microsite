@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/odins-innovations/synthetic-scent-cwd-guide.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand odins-innovations --service synthetic-scent-cwd-guide",
     "source": "config/sites/odins-innovations/synthetic-scent-cwd-guide.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-18T14:06:16.847Z",
+    "generatedAt": "2026-06-08T20:26:35.967Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "synthetic-scent-cwd-guide",
   "site": {
-    "id": "odins-innovations",
+    "id": "synthetic-scent-cwd-guide",
     "name": "CWD & Synthetic Scent Guide",
     "slug": "synthetic-scent-cwd-guide",
     "domain": "odinsinnovations.com",
-    "basename": "odins-innovations-synthetic-scent-cwd-guide",
+    "basename": "/pages/synthetic-scent-cwd-guide",
     "contact": {
       "email": "support@odinsscents.com",
       "phone": "316-393-0440",
-      "address": ", ,  "
+      "address": ""
     }
   },
   "branding": {
@@ -33,7 +34,7 @@
   "seo": {
     "title": "Synthetic Deer Scent vs Natural Urine | CWD Regulations by State | Odin's Innovations",
     "description": "CWD has been detected in 36 states. Multiple states restrict or ban natural deer urine. Odin's 100% synthetic deer scent delivers consistent 30+ day release, zero CWD risk, and full legality everywhere. Biodegradable and weatherproof.",
-    "ogImage": "./og-image.png",
+    "ogImage": "https://www.odinsinnovations.com/cdn/shop/files/hero1.jpg",
     "keywords": [
       "synthetic deer scent",
       "synthetic doe estrus",
@@ -51,6 +52,52 @@
     "twitterCard": "summary_large_image",
     "canonical": "https://www.odinsinnovations.com/synthetic-scent-cwd-guide",
     "twitterTitle": "Synthetic Deer Scent and CWD — Legal Everywhere",
+    "twitterDescription": "Compliant synthetic attractants engineered for 30+ days of weather-resistant performance with zero biological risk.",
+    "themeColor": "#8B4513",
+    "webSiteDescription": "100% synthetic deer scent - legal everywhere, CWD-safe, 30+ day release.",
+    "shopifySitemapUrl": "https://www.odinsinnovations.com/pages/synthetic-scent-cwd-guide/sitemap.xml",
+    "faqSchema": [
+      {
+        "question": "What is CWD and why does it threaten natural deer urine products?",
+        "answer": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. It is always fatal in cervids — deer, elk, and moose — with no vaccine, treatment, or cure. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. Odin's Innovations manufactures CWD safe scents with zero animal-derived material — eliminating prion risk entirely."
+      },
+      {
+        "question": "Which states restrict or ban natural deer urine?",
+        "answer": "As of 2026, CWD has been detected in 36 states. Multiple states restrict natural cervid urine: Virginia prohibits possession or use of natural deer urine attractants; New Jersey bans natural deer-derived lures; South Carolina maintains strict limits. Some states apply restrictions only within designated zones (Minnesota, Pennsylvania, North Carolina surveillance zones). Other jurisdictions allow natural urine only if certified under the Responsible Hunting Scent Association (RHSA) Deer Protection Program. Synthetic deer scent remains fully legal in all 50 states."
+      },
+      {
+        "question": "Why choose synthetic hunting scent over natural?",
+        "answer": "Odin's 100% synthetic scents deliver: zero CWD prion risk (no animal-derived ingredients), identical molecular profile every batch (no batch variability), 30+ days continuous release (vs. short-term natural), weatherproof formula (unaffected by rain, snow, dew), indefinite shelf life (no refrigeration needed), and legality in all 50 states (no RHSA/ATA certification required)."
+      },
+      {
+        "question": "Are synthetic scents actually effective?",
+        "answer": "Yes. Odin's synthetic formulations are engineered to precise molecular specifications and refined over 10+ years of field use. University laboratory testing confirmed 52% of original scent output still releasing after 27 days of continuous air exposure. The polymer releases scent molecule-by-molecule and pauses when submerged, resuming without dilution when dry."
+      },
+      {
+        "question": "Are Odin's products biodegradable and safe for the environment?",
+        "answer": "Yes. Odin's synthetic scent beads use a plant-based polymer that biodegrades naturally — comparable to organic material like a banana peel — with no plastic residue. Products hold USDA BioPreferred certification through independent laboratory verification of biobased content."
+      },
+      {
+        "question": "Is synthetic deer scent as good as real urine?",
+        "answer": "Odin's synthetic formulations replicate natural pheromone and aromatic profiles at the molecular level and have been field-validated over 10 hunting seasons. They deliver identical concentration every time with no batch variability — something natural urine cannot guarantee."
+      },
+      {
+        "question": "Do I need RHSA or ATA certification for synthetic deer scent?",
+        "answer": "No. Certification programs apply only to natural cervid urine. Odin's products contain no animal-derived ingredients and require no such testing. This is a key advantage over natural urine products which must comply with state-specific regulations."
+      },
+      {
+        "question": "How long does Odin's synthetic scent last?",
+        "answer": "Scent beads provide continuous release for 30+ days. University testing showed 52% original concentration still releasing after 27 days. The polymer is unaffected by rain or snow — moisture simply pauses release without diluting the remaining scent."
+      },
+      {
+        "question": "Are there special storage requirements?",
+        "answer": "None. No refrigeration is needed. The synthetic formula prevents bacterial growth or spoilage. Beads release scent only when exposed to air and retain full strength otherwise. This gives Odin's products indefinite shelf life compared to natural urine which can spoil."
+      },
+      {
+        "question": "What scent options does Odin offer?",
+        "answer": "Odin's synthetic platform enables multiple profiles including doe estrus, dominant buck, scrape blend, food scents (acorn, persimmon, apple, peanut butter, cherry), cover scents, earth, and species-specific options for hogs and bears."
+      }
+    ],
     "googleAnalyticsId": "G-XXXXXXXXXX"
   },
   "navigation": {
@@ -109,11 +156,50 @@
     "what-is-cwd": {
       "headline": "What is CWD and why does it compromise natural deer urine?",
       "intro": "CWD is a fatal, contagious neurodegenerative disorder affecting cervids (deer, elk, moose, reindeer). It is 100% fatal with no vaccine, treatment or cure.",
-      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents with zero animal-derived material — eliminating prion risk entirely. Odin's is legal for use in every state and in Canada."
+      "body": "Chronic Wasting Disease is a transmissible spongiform encephalopathy caused by misfolded proteins known as prions. Prions spread through direct contact and environmental contamination via bodily fluids such as urine, saliva, and feces. Natural deer urine is collected from captive herds. Because CWD can incubate for 18+ months without symptoms, urine from an apparently healthy herd may contain infectious prions. Distributing such products in the field risks introducing prions to new areas. State wildlife agencies therefore impose restrictions on natural cervid urine. Odin's Innovations manufactures CWD safe scents with zero animal-derived material — eliminating prion risk entirely. Odin's is legal for use in every state and in Canada.",
+      "cards": [
+        {
+          "icon": "warning-red",
+          "title": "100% Fatal",
+          "description": "Caused by misfolded proteins (prions) that attack the nervous system. No treatment or cure exists."
+        },
+        {
+          "icon": "flask-amber",
+          "title": "Spreads Through Bodily Fluids",
+          "description": "Prions transmit via urine, saliva, feces, and contaminated environments. Even trace amounts can infect healthy deer."
+        },
+        {
+          "icon": "clock-orange",
+          "title": "18+ Month Incubation",
+          "description": "CWD can incubate for over 18 months without symptoms. Urine from seemingly healthy herds may contain infectious prions."
+        },
+        {
+          "icon": "ban-red",
+          "title": "State Restrictions",
+          "description": "Multiple states restrict or ban natural cervid urine products. Odin's synthetic scents contain zero animal-derived materials and is legal for use in any state and Canada."
+        }
+      ],
+      "cta": {
+        "text": "CWD-Safe Synthetic Scents",
+        "href": "https://www.archerybusiness.com/the-evolution-of-deer-attractants-why-synthetic-scents-are-redefining-the-category"
+      }
     },
     "why-odins": {
       "headline": "Why Odin's Synthetic Deer Scent Outperforms Natural Urine",
-      "body": "Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified.\n\nOdin's is legal for use in every state and in Canada."
+      "body": "Natural urine varies by batch, dilutes rapidly with moisture, and carries potential biological risk. Odin's 100% synthetic formulations replicate targeted aromatic profiles with identical results every time. A USDA BioPreferred certified biodegradable polymer provides 30+ days of continuous release — reducing reapplication time and site disturbance. Both the beaded and liquid products are USDA BioPreferred Certified.\n\nOdin's is legal for use in every state and in Canada.",
+      "usdaBioPreferred": {
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/usda_certified_biobased_product.png?v=1776353558",
+        "imageAlt": "USDA Certified Biobased Product - 42%",
+        "title": "USDA BioPreferred® Certified",
+        "description": "Our biodegradable polymer contains 42% certified biobased content. Both beaded and liquid products are USDA BioPreferred Certified.",
+        "certifiedUnder": "LC BioPlastics LLC",
+        "detailsUrl": "https://www.odinsinnovations.com/blogs/press-releases/odin-s-scent-beads-earn-usda-certified-biobased-product-label",
+        "detailsLinkText": "View Details →"
+      },
+      "cta": {
+        "text": "Shop Rut Scents",
+        "href": "https://www.odinsinnovations.com/collections/rut-scents?promo=HUNT2026"
+      }
     },
     "how-it-works": {
       "headline": "The Science Behind Scent Bead Technology",
@@ -143,7 +229,7 @@
       ],
       "scienceSection": {
         "title": "University Testing Confirms Performance",
-        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using Gas Chromatography-Mass Spectrometry). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
+        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using <a href=\"https://en.wikipedia.org/wiki/Gas_chromatography%E2%80%93mass_spectrometry\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary underline underline-offset-2 hover:opacity-80\">Gas Chromatography-Mass Spectrometry</a>). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
         "highlight": "52% original scent concentration still releasing after 27 days",
         "chartImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Scent_Chart_with_Description_full_size.jpg"
       }
@@ -208,6 +294,10 @@
         "description": ""
       },
       "headline": "Synthetic vs Natural Deer Scent — Direct Comparison",
+      "cta": {
+        "text": "See Why Hunters Choose Synthetic",
+        "href": "https://www.odinsinnovations.com/pages/testimonials"
+      },
       "table": [
         [
           "Attribute",
@@ -262,30 +352,26 @@
         "description": ""
       },
       "headline": "Regulatory Compliance concerning CWD",
+      "cta": {
+        "text": "Synthetic Scent Beads",
+        "href": "https://www.odinsinnovations.com/collections/scent-beads?promo=HUNT2026"
+      },
       "items": [
         {
-          "question": "Is synthetic deer scent legal in all 50 states?",
-          "answer": "Yes. Odin's synthetic scents are legal in all 50 states and Canada. Because our products contain zero animal-derived ingredients, they are not subject to natural urine importation or usage bans, and do not require ATA certification or RT-QuIC testing."
+          "question": "What is CWD and why does it matter for deer scent products?",
+          "answer": "Chronic Wasting Disease is a fatal neurological disease affecting deer, elk, and moose. CWD prions can be transmitted through bodily fluids, including urine. As CWD continues to spread, state wildlife agencies are increasingly restricting or banning natural cervid urine for hunting. Synthetic scents like Odin's eliminate this transmission pathway. Learn more about the <a href=\"https://www.aphis.usda.gov/livestock-poultry-disease/cervid/chronic-wasting\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2\">USDA's efforts to provide a national approach to control CWD</a> or check within your own <a href=\"https://www.fws.gov/office/hunting-sport-fishing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2\">State's Hunting and Fishing Regulatory units</a>."
         },
         {
           "question": "Which states ban natural deer urine?",
-          "answer": "As of 2026, at least 14 states restrict or ban natural cervid urine due to CWD concerns, up from 4 states in 2015. Regulations vary—some states ban possession, others ban importation, and some require certification. Check your state's wildlife agency for current rules."
+          "answer": "As of 2026, at least 14 states restrict or ban natural cervid urine due to CWD concerns, up from 4 states in 2015. Regulations vary—some states ban possession, others ban importation, and some require certification. Check your <a href=\"https://www.fws.gov/office/hunting-sport-fishing\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-[#8B4513] hover:text-[#6b3410] underline underline-offset-2\">state's wildlife agency</a> for current rules."
         },
         {
           "question": "Is deer urine legal to use in my state for hunting?",
           "answer": "There is no single federal standard—regulations are a state-by-state patchwork. Check your state's Department of Natural Resources for current rules. You may find outright bans, ATA/RHSA certification requirements, RT-QuIC testing mandates, or county-level restrictions in CWD management zones. The simplest path to guaranteed compliance: use synthetic scents, which are legal everywhere."
         },
         {
-          "question": "What is CWD and why does it matter for deer scent products?",
-          "answer": "Chronic Wasting Disease is a fatal neurological disease affecting deer, elk, and moose. CWD prions can be transmitted through bodily fluids, including urine. As CWD continues to spread, state wildlife agencies are increasingly restricting or banning natural cervid urine for hunting. Synthetic scents like Odin's eliminate this transmission pathway."
-        },
-        {
           "question": "Can deer urine spread chronic wasting disease (CWD)?",
           "answer": "Research on this question is ongoing, with different studies producing different conclusions. Odin's uses 100% synthetic formulations specifically to eliminate any possibility of CWD transmission through our products. If you'd like to learn more, contact your state's Wildlife Disease Ecologist."
-        },
-        {
-          "question": "Do I need ATA/RHSA certification to use synthetic deer scent?",
-          "answer": "No. These are testing protocols established by the industry to mitigate the risks from the spread of CWD. It only applies to products made from natural cervid urine collected from captive herds. Because synthetic scents contain no animal-derived ingredients, they do not pose any risk so certification is not required."
         },
         {
           "question": "Can CWD prions be present but not detected?",
@@ -300,8 +386,16 @@
           "answer": "Natural urine breaks down rapidly into ammonia and other off odors that can actually alarm deer. Natural scents vary from batch to batch, requires refrigeration, and has a short effective life. Synthetic scents avoid spoilage, maintain a consistent aroma profile, last 30+ days, and carry zero CWD risk."
         },
         {
-          "question": "What is synthetic doe in estrus scent?",
-          "answer": "Synthetic doe estrus scent is a hunting attractant that replicates the pheromone signature a whitetail doe releases during her estrus (breeding) cycle. It signals to mature bucks that a receptive doe is nearby, drawing them to your hunting location. Odin's uses 100% synthetic formulations—no natural deer urine—ensuring consistent potency and zero risk of CWD transmission."
+          "question": "Is synthetic deer scent legal in all 50 states?",
+          "answer": "Yes. Odin's synthetic scents are legal in all 50 states and Canada. Because our products contain zero animal-derived ingredients, they are not subject to natural urine importation or usage bans, and do not require ATA certification or RT-QuIC testing."
+        },
+        {
+          "question": "Do I need any certifications to use synthetic deer scent?",
+          "answer": "No. These are testing protocols established by the industry to mitigate the risks from the spread of CWD. It only applies to products made from natural cervid urine collected from captive herds. Because synthetic scents contain no animal-derived ingredients, they do not pose any risk, so certification is not required."
+        },
+        {
+          "question": "What makes Odin's different from other synthetic scents?",
+          "answer": "Two major differences: our proven history and our extensive library.<br><br>We developed 21 unique, proprietary synthetic formulations acquired through the Hunter's Kloak acquisition in 2021 and manufactured by an international specialty fragrance laboratory. We are proud to have 10-years of field experience demonstrating the scents work as they are intended. You can't rush to 10-years - and you can't fake it!<br><br>Add to that, our innovative biodegradable polymer delivery system and you have a solution better than any other on the market! The scents are infused into our patented biodegradable polymer bead that releases scent continuously for 30+ days and is impervious to rain and moisture. No other product combines synthetic accuracy, extended release, and full biodegradability."
         }
       ]
     },
@@ -355,7 +449,7 @@
       ],
       "scienceSection": {
         "title": "University Testing Confirms Performance",
-        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using Gas Chromatography-Mass Spectrometry). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
+        "description": "We needed proof that the performance was at least as good as we said. Scent beads were left outside in the natural elements, collecting a small portion every 3 days. Each sample was then tested at a University Chemical Laboratory to compare the volume of scent molecules present over time (using <a href=\"https://en.wikipedia.org/wiki/Gas_chromatography%E2%80%93mass_spectrometry\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary underline underline-offset-2 hover:opacity-80\">Gas Chromatography-Mass Spectrometry</a>). Moisture does not dilute the remaining scent; the beads could be submerged in water and performance resumes when the bead is exposed to the air. This technology supports 30+ days of continuous release of scent without any maintenance or re-introduction of human scent.",
         "highlight": "52% original scent concentration still releasing after 27 days",
         "chartImage": "https://cdn.shopify.com/s/files/1/0555/8049/1971/files/Scent_Chart_with_Description_full_size.jpg"
       }
@@ -414,5 +508,12 @@
       "currency": "USD",
       "units": "bottle"
     }
+  },
+  "shopifyAssets": {
+    "css": "index-DPedAeP-.css",
+    "js": "index-aRNts0W4.js",
+    "cssUrl": "{{ 'index-DPedAeP-.css' | asset_url }}",
+    "jsUrl": "{{ 'index-aRNts0W4.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }
