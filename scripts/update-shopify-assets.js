@@ -2,14 +2,16 @@
 
 /**
  * Update Shopify Assets Script
- * 
- * After Vite build, this script:
- * 1. Scans the dist folder for CSS and JS files
- * 2. Updates shopify.html with the actual hashed filenames
- * 3. Updates the config's shopifyAssets with the mappings
- * 
- * Run after: npm run build
- * Usage: node scripts/update-shopify-assets.js
+ *
+ * After Vite build (+ optional prerender), this script:
+ * 1. Scans dist/assets for hashed CSS and JS filenames
+ * 2. Updates shopify.html liquid asset references with real filenames
+ * 3. Injects prerendered #root innerHTML from dist/index.html (when present)
+ * 4. Sanitizes subfolder base paths in injected markup for Shopify asset_url
+ * 5. Updates config.json shopifyAssets mappings
+ *
+ * Run after: npm run build:seo  (or: npm run build && npm run prerender && npm run post-build)
+ * Usage: node scripts/update-shopify-assets.js  (from a generated site directory)
  */
 
 import fs from 'fs';
@@ -19,34 +21,114 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Navigate from scripts/ to root, then to site directory
-const ROOT_DIR = path.join(__dirname, '..');
 const SITE_DIR = process.cwd();
 
-// Check if we're in a site directory
-const isSiteDir = fs.existsSync(path.join(SITE_DIR, 'package.json')) && 
-                  fs.existsSync(path.join(SITE_DIR, 'dist'));
+const isSiteDir =
+  fs.existsSync(path.join(SITE_DIR, 'package.json')) &&
+  fs.existsSync(path.join(SITE_DIR, 'dist'));
 
 if (!isSiteDir) {
   console.error('❌ Error: This script must be run from a generated site directory after building.');
-  console.error('   Usage: cd sites/odins-innovations/doe-estrus-guide && npm run build');
+  console.error('   Usage: cd sites/<brand>/<slug> && npm run build:seo && npm run post-build');
   process.exit(1);
 }
 
 const distDir = path.join(SITE_DIR, 'dist');
 const shopifyHtmlPath = path.join(SITE_DIR, 'shopify.html');
 const configPath = path.join(SITE_DIR, 'config.json');
+const distIndexPath = path.join(distDir, 'index.html');
 
-// Find CSS and JS files in dist/assets
+// --- Resolve Vite base path (subfolder deploy) ---
+function resolveBasePath() {
+  const viteConfigPath = path.join(SITE_DIR, 'vite.config.ts');
+  if (fs.existsSync(viteConfigPath)) {
+    const viteConfig = fs.readFileSync(viteConfigPath, 'utf-8');
+    const match = viteConfig.match(/base:\s*['"]([^'"]+)['"]/);
+    if (match?.[1]) {
+      let base = match[1];
+      if (!base.startsWith('/')) base = '/' + base;
+      return base.replace(/\/$/, '') || '/';
+    }
+  }
+
+  if (fs.existsSync(configPath)) {
+    try {
+      const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+      const basename = config.site?.basename || config.basename;
+      if (basename) {
+        let base = basename.startsWith('/') ? basename : `/${basename}`;
+        return base.replace(/\/$/, '') || '/';
+      }
+      const slug = config.site?.slug;
+      if (slug) return `/${slug}`;
+    } catch {
+      /* fall through */
+    }
+  }
+
+  return '/';
+}
+
+// --- Extract innerHTML of #root from prerendered dist/index.html ---
+function extractRootInnerHtml(html) {
+  const openMatch = html.match(/<div\s+id=["']root["'][^>]*>/i);
+  if (!openMatch || openMatch.index === undefined) return null;
+
+  const startIdx = openMatch.index + openMatch[0].length;
+  let depth = 1;
+  let i = startIdx;
+
+  while (i < html.length && depth > 0) {
+    const nextOpen = html.indexOf('<div', i);
+    const nextClose = html.indexOf('</div>', i);
+    if (nextClose === -1) break;
+
+    if (nextOpen !== -1 && nextOpen < nextClose) {
+      depth += 1;
+      i = nextOpen + 4;
+    } else {
+      depth -= 1;
+      if (depth === 0) {
+        return html.slice(startIdx, nextClose);
+      }
+      i = nextClose + 6;
+    }
+  }
+
+  return null;
+}
+
+// --- Strip subfolder prefix from asset paths for Shopify theme Assets ---
+function sanitizeBasePathsInMarkup(markup, basePath) {
+  if (!markup || !basePath || basePath === '/') return markup;
+
+  const escaped = basePath.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&');
+  const assetPathRegex = new RegExp(
+    `((?:href|src)=["'])(${escaped})?(/assets/|/_astro/|assets/|_astro/)`,
+    'g'
+  );
+  let result = markup.replace(assetPathRegex, '$1$3');
+  const broadBaseAsset = new RegExp(`${escaped}/(assets|_astro)/`, 'g');
+  result = result.replace(broadBaseAsset, '/$1/');
+  return result;
+}
+
+// --- Find built CSS/JS in dist/assets ---
 const assetsDir = path.join(distDir, 'assets');
-const assetFiles = fs.readdirSync(assetsDir);
+if (!fs.existsSync(assetsDir)) {
+  console.error('❌ Error: dist/assets not found. Run npm run build first.');
+  process.exit(1);
+}
 
-const cssFile = assetFiles.find(f => f.endsWith('.css') && !f.endsWith('.css.map'));
-const jsFile = assetFiles.find(f => f.endsWith('.js') && !f.endsWith('.js.map') && f !== 'index.js');
+const assetFiles = fs.readdirSync(assetsDir);
+const cssFile = assetFiles.find((f) => f.endsWith('.css') && !f.endsWith('.css.map'));
+const jsFile = assetFiles.find(
+  (f) => f.endsWith('.js') && !f.endsWith('.js.map') && f !== 'index.js'
+);
 
 if (!cssFile || !jsFile) {
-  console.error('❌ Error: Could not find CSS or JS files in dist folder');
-  console.error('   Found:', distFiles);
+  console.error('❌ Error: Could not find CSS or JS files in dist/assets');
+  console.error('   Found:', assetFiles);
   process.exit(1);
 }
 
@@ -54,35 +136,85 @@ console.log('📦 Found built assets:');
 console.log(`   CSS: ${cssFile}`);
 console.log(`   JS:  ${jsFile}`);
 
-// Read current shopify.html
 let shopifyHtml = fs.readFileSync(shopifyHtmlPath, 'utf-8');
 
-// Update CSS reference - replace any index-*.css with the new hashed filename
-const cssRegex = /\{\{ 'index-[a-zA-Z0-9_-]*\.css' \| asset_url \| stylesheet_tag \}\}/;
-const newCssRef = `{{ '${cssFile}' | asset_url | stylesheet_tag }}`;
-shopifyHtml = shopifyHtml.replace(cssRegex, newCssRef);
+// Patch liquid CSS ref (index.css, index-*.css, or any prior hash)
+shopifyHtml = shopifyHtml.replace(
+  /\{\{\s*'index[^']*\.css'\s*\|\s*asset_url\s*\|\s*stylesheet_tag\s*\}\}/g,
+  `{{ '${cssFile}' | asset_url | stylesheet_tag }}`
+);
 
-// Update JS reference - replace any index-*.js with the new hashed filename  
-const jsRegex = /<script type="module" src="\{\{ 'index-[a-zA-Z0-9_-]*\.js' \| asset_url \}\}"><\/script>/;
-const newJsRef = `<script type="module" src="{{ '${jsFile}' | asset_url }}"></script>`;
-shopifyHtml = shopifyHtml.replace(jsRegex, newJsRef);
+// Patch liquid JS ref
+shopifyHtml = shopifyHtml.replace(
+  /<script\s+type="module"\s+src="\{\{\s*'index[^']*\.js'\s*\|\s*asset_url\s*\}\}"><\/script>/g,
+  `<script type="module" src="{{ '${jsFile}' | asset_url }}"></script>`
+);
 
-// Write updated shopify.html
-fs.writeFileSync(shopifyHtmlPath, shopifyHtml);
 console.log('✅ Updated shopify.html with correct asset filenames');
 
-// Also update config.json with the asset mappings for reference
-const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
-config.shopifyAssets = {
-  css: cssFile,
-  js: jsFile,
-  cssUrl: `{{ '${cssFile}' | asset_url }}`,
-  jsUrl: `{{ '${jsFile}' | asset_url }}`
-};
-fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
-console.log('✅ Updated config.json with asset mappings');
+// --- Inject prerendered body into #root ---
+const basePath = resolveBasePath();
+console.log(`   Base path (for asset sanitization): ${basePath}`);
+
+if (fs.existsSync(distIndexPath)) {
+  const distHtml = fs.readFileSync(distIndexPath, 'utf-8');
+  const rootInner = extractRootInnerHtml(distHtml);
+
+  if (rootInner && rootInner.trim().length > 50) {
+    const sanitized = sanitizeBasePathsInMarkup(rootInner, basePath);
+    const injectedRoot = `<div id="root">${sanitized}</div>`;
+
+    const markerBlock =
+      /<!--\s*PRERENDERED_CONTENT[^>]*-->\s*<div\s+id=["']root["'][^>]*>\s*<\/div>/i;
+    if (markerBlock.test(shopifyHtml)) {
+      shopifyHtml = shopifyHtml.replace(
+        markerBlock,
+        `<!-- PRERENDERED_CONTENT (injected from dist/index.html) -->\n    ${injectedRoot}`
+      );
+      console.log('✅ Injected prerendered content via PRERENDERED_CONTENT marker + #root');
+    } else if (/<div\s+id=["']root["'][^>]*>\s*<\/div>/i.test(shopifyHtml)) {
+      shopifyHtml = shopifyHtml.replace(
+        /<div\s+id=["']root["'][^>]*>\s*<\/div>/i,
+        injectedRoot
+      );
+      console.log('✅ Injected prerendered #root content from dist/index.html');
+    } else if (/<div\s+id=["']root["'][^>]*>[\s\S]*?<\/div>/i.test(shopifyHtml)) {
+      shopifyHtml = shopifyHtml.replace(
+        /<div\s+id=["']root["'][^>]*>[\s\S]*?<\/div>/i,
+        injectedRoot
+      );
+      console.log('✅ Replaced existing #root with fresh prerendered content');
+    } else {
+      console.warn('⚠️  Could not find #root in shopify.html; skipping body injection');
+    }
+  } else {
+    console.warn(
+      '⚠️  dist/index.html has empty #root — run npm run prerender before post-build for Shopify SEO body'
+    );
+  }
+} else {
+  console.warn('⚠️  dist/index.html not found; skipping body injection');
+}
+
+fs.writeFileSync(shopifyHtmlPath, shopifyHtml);
+
+// Update config.json with asset mappings
+if (fs.existsSync(configPath)) {
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf-8'));
+  config.shopifyAssets = {
+    css: cssFile,
+    js: jsFile,
+    cssUrl: `{{ '${cssFile}' | asset_url }}`,
+    jsUrl: `{{ '${jsFile}' | asset_url }}`,
+    prerenderedBodyInjected: Boolean(
+      extractRootInnerHtml(fs.readFileSync(distIndexPath, 'utf-8'))?.trim().length > 50
+    ),
+  };
+  fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+  console.log('✅ Updated config.json with asset mappings');
+}
 
 console.log('\n📝 Next steps:');
-console.log('   1. Upload dist/*.css and dist/*.js to Shopify Assets (not Files)');
-console.log('   2. Upload shopify.html as page.doe-estrus-guide.liquid');
-console.log('   3. The asset URLs in shopify.html will resolve to your uploaded files');
+console.log('   1. Upload dist/assets/*.css and *.js to Shopify Theme Assets');
+console.log('   2. Upload shopify.html as your page liquid template (e.g. page.<slug>.liquid)');
+console.log('   3. Liquid asset_url tags + prerendered body will serve styled static HTML; React hydrates for interactivity');

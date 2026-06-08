@@ -763,9 +763,9 @@ async function generateSite(siteDir: string, config: SiteConfig, brandContext?: 
     console.log(`   cd ${siteDir}`);
     console.log(`   npm install`);
     console.log(`   npm run build`);
-    console.log(`   # For best SEO (prerender the React app to static HTML + keep hydration):`);
-    console.log(`   npm run build:seo     # runs build + prerender-heavy.ts (uses Playwright snapshot)`);
-    console.log(`   # Or just: npm run prerender   (after a normal build)`);
+    console.log(`   # For best SEO (prerender + Shopify body injection):`);
+    console.log(`   npm run build:seo     # build + prerender snapshot + patch shopify.html`);
+    console.log(`   # Or: npm run build && npm run prerender && npm run post-build`);
 
   } catch (error) {
     console.error('Error generating site:', error);
@@ -4739,7 +4739,7 @@ function generatePackageJson(site: SiteInfo): string {
       preview: 'vite preview',
       'post-build': 'node ../../../scripts/update-shopify-assets.js',
       'prerender': 'npx tsx ../../../scripts/prerender-heavy.ts',
-      'build:seo': 'vite build && npm run prerender'
+      'build:seo': 'vite build && npm run prerender && npm run post-build'
     },
     dependencies: {
       '@radix-ui/react-accordion': '^1.2.11',
@@ -5253,6 +5253,7 @@ ${brandContext?.brand?.logo?.faviconUrl ? `    <link rel="icon" type="image/png"
     <script type="module" src="{{ 'index.js' | asset_url }}"></script>
   </head>
   <body>
+    <!-- PRERENDERED_CONTENT: post-build injects dist/index.html #root innerHTML here -->
     <div id="root"></div>
 
     {{ content_for_footer }}
