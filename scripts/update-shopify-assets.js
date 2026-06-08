@@ -69,14 +69,15 @@ function resolveBasePath() {
   return '/';
 }
 
-// --- Extract innerHTML of #root from prerendered dist/index.html ---
-function extractRootInnerHtml(html) {
+// --- Depth-aware #root parsing (handles deeply nested markup) ---
+function findRootBounds(html) {
   const openMatch = html.match(/<div\s+id=["']root["'][^>]*>/i);
   if (!openMatch || openMatch.index === undefined) return null;
 
   const startIdx = openMatch.index + openMatch[0].length;
   let depth = 1;
   let i = startIdx;
+  let endCloseIdx = -1;
 
   while (i < html.length && depth > 0) {
     const nextOpen = html.indexOf('<div', i);
@@ -89,13 +90,37 @@ function extractRootInnerHtml(html) {
     } else {
       depth -= 1;
       if (depth === 0) {
-        return html.slice(startIdx, nextClose);
+        endCloseIdx = nextClose;
+        break;
       }
       i = nextClose + 6;
     }
   }
 
-  return null;
+  if (endCloseIdx === -1) return null;
+
+  return {
+    openIndex: openMatch.index,
+    innerStart: startIdx,
+    closeIndex: endCloseIdx,
+    closeEnd: endCloseIdx + 6,
+  };
+}
+
+function extractRootInnerHtml(html) {
+  const bounds = findRootBounds(html);
+  if (!bounds) return null;
+  return html.slice(bounds.innerStart, bounds.closeIndex);
+}
+
+function replaceRootDiv(html, newInnerHtml) {
+  const bounds = findRootBounds(html);
+  if (!bounds) return null;
+  return (
+    html.slice(0, bounds.openIndex) +
+    `<div id="root">${newInnerHtml}</div>` +
+    html.slice(bounds.closeEnd)
+  );
 }
 
 // --- Strip subfolder prefix from asset paths for Shopify theme Assets ---
@@ -162,30 +187,24 @@ if (fs.existsSync(distIndexPath)) {
 
   if (rootInner && rootInner.trim().length > 50) {
     const sanitized = sanitizeBasePathsInMarkup(rootInner, basePath);
-    const injectedRoot = `<div id="root">${sanitized}</div>`;
-
     const markerBlock =
       /<!--\s*PRERENDERED_CONTENT[^>]*-->\s*<div\s+id=["']root["'][^>]*>\s*<\/div>/i;
+
     if (markerBlock.test(shopifyHtml)) {
+      const injectedRoot = `<div id="root">${sanitized}</div>`;
       shopifyHtml = shopifyHtml.replace(
         markerBlock,
         `<!-- PRERENDERED_CONTENT (injected from dist/index.html) -->\n    ${injectedRoot}`
       );
       console.log('✅ Injected prerendered content via PRERENDERED_CONTENT marker + #root');
-    } else if (/<div\s+id=["']root["'][^>]*>\s*<\/div>/i.test(shopifyHtml)) {
-      shopifyHtml = shopifyHtml.replace(
-        /<div\s+id=["']root["'][^>]*>\s*<\/div>/i,
-        injectedRoot
-      );
-      console.log('✅ Injected prerendered #root content from dist/index.html');
-    } else if (/<div\s+id=["']root["'][^>]*>[\s\S]*?<\/div>/i.test(shopifyHtml)) {
-      shopifyHtml = shopifyHtml.replace(
-        /<div\s+id=["']root["'][^>]*>[\s\S]*?<\/div>/i,
-        injectedRoot
-      );
-      console.log('✅ Replaced existing #root with fresh prerendered content');
     } else {
-      console.warn('⚠️  Could not find #root in shopify.html; skipping body injection');
+      const replaced = replaceRootDiv(shopifyHtml, sanitized);
+      if (replaced) {
+        shopifyHtml = replaced;
+        console.log('✅ Replaced #root with fresh prerendered content (depth-aware)');
+      } else {
+        console.warn('⚠️  Could not find #root in shopify.html; skipping body injection');
+      }
     }
   } else {
     console.warn(
