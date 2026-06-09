@@ -1,0 +1,165 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="https://www.postalocity.com/" />
+
+    <meta charset="UTF-8" />
+    <title>Debt Collection Mailing Service — Automated Mailing Services for Debt Collection Agencies</title>
+    <meta name="description" content="Debt collection mailing service for agencies — automate notices, certified letters & compliance docs. Address verification, USPS tracking & secure PDF upload from $1.31/letter." />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="https://postalocity.com/debt-collection/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="Debt Collection Mailing Service — Proof of Mailing" />
+    <meta property="og:description" content="Collection agencies streamline high-volume notices and certified mailings with Postalocity's automated platform." />
+    <meta property="og:image" content="/debt-collection/images/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="Debt Collection Mailing Service — Proof of Mailing" />
+    <meta property="twitter:description" content="Automate debt collection mailing — notices, certified letters & compliance docs. Address verification & tracking from $1.31/letter." />
+    <meta property="twitter:image" content="/debt-collection/images/og-image.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="debt collection mailing service, automated mailing for collection agencies, certified mail for debt collection agencies, debt collection letter printing and mailing, collection notices mailing services" />
+    <meta name="author" content="Debt Collection Mailing Service" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HXQD6LYZ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9HXQD6LYZ4', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Debt Collection Mailing Service",
+          "url": "{{ canonical_url }}",
+          "description": "Upload today, mailed tomorrow. Know exactly when every letter goes out with real-time status updates in your dashboard. Address verification included.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Debt Collection Mailing Service",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.postalocity.com" },
+            { "@type": "ListItem", "position": 2, "name": "Debt Collection Mailing Service", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "316-260-2220",
+            "contactType": "customer service",
+            "email": "contact@postalocity.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What types of debt collection letters can be processed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The platform handles collection notices, validation letters, payment reminders, cease communications, and certified mail where proof of mailing is required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What proof of mailing do I get with First-Class Mail?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "First-Class Mail includes our mailing affidavit (proving Postalocity processed your items) and USPS scan tracing (showing processing status). Certificate of Mailing — an official USPS form with postmark proving the EXACT acceptance date — is available as an upgrade if you need documented proof of the mailing date."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is address verification included?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — address verification is built-in and included with every mailing to help reduce returned mail and associated rework."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does every letter include tracking?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every mail piece includes USPS scan tracing that will show its processing status. Upgrade to Priority Mail or Certified Mail for full USPS tracking with delivery confirmation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does this support audit documentation needs?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mailing records provide verifiable proof of submission (ISO 9001 documented processes). Precise PDF templates help maintain consistent notice content. Certified Mail adds full tracking with delivery confirmation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the starting price?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Processing starts at {{PRICING}} Upgrade to Certified Mail for full USPS tracking with proof of delivery."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Debt Collection Mailing Service" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>

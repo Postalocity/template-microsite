@@ -1,0 +1,173 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="https://www.postalocity.com/" />
+
+    <meta charset="UTF-8" />
+    <title>Education Mailing Services — Acceptance Letters, Transcripts & Diplomas</title>
+    <meta name="description" content="Automate ceremonial and compliance education mailings: acceptance letters, scholarship offers, official transcripts, diplomas and compliance notices. 40% higher enrollment conversion with mailed acceptances. $1.31/letter with proof of mailing." />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="https://postalocity.com/education/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="Education Mailing Services — Ceremonial & Official Documents" />
+    <meta property="og:description" content="Mailed acceptance letters drive 40% higher enrollment. Secure transcript, diploma and compliance document mailing with proof of mailing and ISO 9001 documented handling." />
+    <meta property="og:image" content="/education/images/education-hero.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="Education Mailing Service" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="/education/images/education-hero.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="education mailing services, acceptance letter mailing, scholarship notification mailing, official transcript mailing, diploma mailing service, FERPA compliant mailing, school mailing automation" />
+    <meta name="author" content="Education Mailing Service" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Education Mailing Service",
+          "url": "{{ canonical_url }}",
+          "description": "Mailed acceptance letters drive 40% higher enrollment conversion than email alone. Automate ceremonial documents—acceptances, scholarships, diplomas—and compliance mailings with proof of mailing, ISO 9001 documented handling, and real-time tracking.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Education Mailing Service",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.postalocity.com" },
+            { "@type": "ListItem", "position": 2, "name": "Education Mailing Service", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "/logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "316-260-2220",
+            "contactType": "customer service",
+            "email": "contact@postalocity.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Why mail acceptance letters and scholarship offers instead of emailing them?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mailed acceptance letters and scholarship offers drive 40% higher enrollment commitment than email notifications. Physical documents stand out from inbox clutter—95% get opened versus 20% for emails. Students share photos of acceptance packets on social media (organic marketing), families frame scholarship notifications as achievements, and the tactile experience reinforces your institution's prestige. While email is faster and cheaper, mailed ceremonial documents create lasting emotional impact that drives enrollment decisions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why do official transcripts still need to be mailed rather than sent digitally?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Many institutions and employers require original, sealed transcripts for authenticity verification—digital copies can be easily altered. Mailed transcripts with official seals provide tamper-evident documentation that protects academic integrity. Licensing boards, graduate programs, and employers often specifically require physical transcripts with verifiable chain of custody. Postalocity's proof of mailing creates the documentation trail essential for these official purposes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are diplomas better mailed than handed out at graduation ceremonies?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Mailed diplomas offer several advantages over ceremony distribution: (1) Protection from damage during crowded ceremonies, (2) Proper packaging preserves ceremonial presentation and prevents bent corners, (3) Secure delivery to permanent addresses rather than temporary graduation venues, (4) Official seals and notarization remain intact, (5) Proof of mailing provides documentation for credential verification. Mailing also accommodates graduates who cannot attend ceremonies, ensuring everyone receives their official documentation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What legal education documents must be mailed with proof of delivery?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Several education documents require physical mail with verifiable delivery for legal compliance: (1) FERPA notices — Must provide proof of delivery for privacy compliance, (2) Truancy notifications — Legal requirements often mandate certified mail with proof of mailing, (3) Special education IEP notices — Due process requires documented delivery, (4) Disciplinary actions — Suspension/expulsion notices need verifiable receipt, (5) Financial aid appeals — Disputed aid often requires documented delivery. Postalocity's proof of mailing and certified mail options satisfy these legal requirements, protecting institutions from compliance violations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How quickly can we get acceptance letters and scholarship offers mailed for enrollment deadlines?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Same-day processing when approved by noon CT enables rapid delivery of time-sensitive documents. This speed is critical for enrollment deadlines and financial aid notification periods. For official transcripts and diplomas requiring special handling or seals, processing maintains the same timeline while ensuring proper presentation. Real-time tracking provides visibility for both institutions and recipients, and proof of mailing documents the exact send date for compliance records. Historical reliability shows 99.2% on-time delivery for education sector mailings."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do we balance the cost of mailing with ceremonial impact?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Smart mailing strategy focuses investment where it matters most: (1) Ceremonial documents (acceptances, scholarships, diplomas) — Use premium options like color printing and certified mail for maximum impact, (2) Compliance documents (FERPA, truancy) — Standard mail with proof covers legal needs cost-effectively, (3) Routine communications — Can be hybrid (email for routine, mail for important). At $1.31 for standard processing, you can selectively upgrade high-impact documents while keeping costs manageable. Many institutions report that improved enrollment conversion from mailed acceptances more than covers the mailing costs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you support bulk address imports from our Student Information System?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Upload your mailing list as a CSV export from your SIS (PowerSchool, Infinite Campus, Skyward, Blackbaud) or parent portal. We verify every address against USPS databases in real-time, flagging outdated or incorrect addresses to reduce returned mail. This ensures critical communications—acceptance letters to the correct permanent address, transcripts to current student locations, diplomas to post-graduation addresses—reach their destination."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Education Mailing Service" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>

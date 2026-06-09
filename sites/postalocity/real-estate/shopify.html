@@ -1,0 +1,157 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="https://www.postalocity.com/" />
+
+    <meta charset="UTF-8" />
+    <title>Real Estate Mailing Service — Automated Tenant Notices & Property Management Mailing</title>
+    <meta name="description" content="The reliable real estate mailing service that automates tenant notice mailing, property management mailing, and compliance letters. Get proof, verification & tracking from {{PRICING_SHORT}}." />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="https://postalocity.com/real-estate/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="Real Estate Mailing Service" />
+    <meta property="og:description" content="Automate tenant notices, marketing postcards, and compliance letters for property managers, landlords, and real estate professionals. Proof included with every mailing." />
+    <meta property="og:image" content="/real-estate/images/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="Real Estate Mailing Service" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="/real-estate/images/og-image.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="real estate mailing service, property management mailing, tenant notice mailing" />
+    <meta name="author" content="Real Estate Mailing Service" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HXQD6LYZ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9HXQD6LYZ4', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Real Estate Mailing Service",
+          "url": "{{ canonical_url }}",
+          "description": "Automate tenant notice mailing, landlord mailing, and property management mailing at scale. Upload PDFs, reduce returned mail with verified addresses, and trace every piece. Easily add a Certificate of Mailing as proof of mailing on your tenant notices.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Real Estate Mailing Service",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.postalocity.com" },
+            { "@type": "ListItem", "position": 2, "name": "Real Estate Mailing Service", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "316-260-2220",
+            "contactType": "customer service",
+            "email": "contact@postalocity.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is proof of mailing included with tenant notice mailing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the property management mailing service include address verification?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Every address is validated through USPS CASS-certified verification before printing. This catches inaccurate addresses and reduces returned mail, ensuring your tenant communications reach the right mailbox."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's included in landlord mailing pricing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Starts at $1.31 per letter. All pricing includes printing, folding, stuffing into #10 envelopes, sealing, postage, and mailing affidavit. No hidden fees for standard real estate mailing service operations."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How fast can I get tenant notices mailed?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Same-day production when approved by noon CT. For standard property management mailing, expect 1-3 business days for USPS delivery after approval. Expedited options available for urgent landlord mailing needs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I mail to multiple properties at once?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. Our platform supports batch uploads for portfolio-scale landlord mailing. Upload addresses across your entire property portfolio and process all tenant notice mailing in a single workflow."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Real Estate Mailing Service" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>

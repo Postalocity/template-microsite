@@ -1,0 +1,149 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="https://www.postalocity.com/" />
+
+    <meta charset="UTF-8" />
+    <title>Professional Postcard Mailing | Postalocity</title>
+    <meta name="description" content="High-quality postcard printing and mailing services. Perfect for conference follow-ups, marketing campaigns, and direct mail. Get started today." />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="https://postalocity.compostalocity-postcard/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="Professional Postcard Mailing Services | Postalocity" />
+    <meta property="og:description" content="Make your conference connections count. Professional postcard mailing with print and mail services." />
+    <meta property="og:image" content="{{ 'og-image.png' | asset_url }}" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="Postalocity Postcard" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="{{ 'og-image.png' | asset_url }}" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="postcard mailing, direct mail marketing, conference follow up, postcard printing, postalocity" />
+    <meta name="author" content="Postalocity Postcard" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HXQD6LYZ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9HXQD6LYZ4', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Postalocity Postcard",
+          "url": "{{ canonical_url }}",
+          "description": "Follow up with your new contacts using professional, high-quality postcards. We handle printing, addressing, and mailing so you can focus on closing deals.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Postalocity Postcard",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.postalocity.com" },
+            { "@type": "ListItem", "position": 2, "name": "Postalocity Postcard", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "316-260-2220",
+            "contactType": "customer service",
+            "email": "contact@postalocity.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What sizes do you offer?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We offer standard 4x6 and large 5x7 postcards. Both include standard bleed for professional printing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does it take?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Standard turnaround is 3-5 business days from approval to delivery. Rush options available."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you provide design services?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We can connect you with design partners, or you can provide your own print-ready artwork."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the minimum order?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No minimums! Send as few as 1 postcard or as many as 100,000+."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Postalocity Postcard" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>

@@ -1,0 +1,157 @@
+{% layout none %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ content_for_header }}
+
+    <!-- Base path so the React app finds images in Assets -->
+    <base href="https://www.postalocity.com/" />
+
+    <meta charset="UTF-8" />
+    <title>Self-Storage Mailing — Automated Lien Notices & Tenant Communications</title>
+    <meta name="description" content="Automate self-storage mailing for lien notices, late fee notices, rent reminders from $1.31/letter with address verification, proof of mailing, and real-time tracking." />
+
+    <!-- Canonical + Sitemap -->
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <link rel="sitemap" type="application/xml" href="https://postalocity.com/self-storage/sitemap.xml" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
+    <meta property="og:title" content="Self-Storage Mailing Service — Proof Every Letter" />
+    <meta property="og:description" content="Automate lien notices, late fee notices, and tenant communications with secure upload, address verification, proof of mailing, and real-time tracking." />
+    <meta property="og:image" content="/self-storage/images/og-image.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ canonical_url }}" />
+    <meta property="twitter:title" content="Self-Storage Mailing Service" />
+    <meta property="twitter:description" content="" />
+    <meta property="twitter:image" content="/self-storage/images/og-image.png" />
+
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="self-storage mailing service, automated mailing for self-storage, self-storage lien notice mailing, self-storage certified mail, storage facility tenant notices" />
+    <meta name="author" content="Self-Storage Mailing Service" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#664400" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
+
+    <!-- Fonts -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agency+FB:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9HXQD6LYZ4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-9HXQD6LYZ4', { page_path: window.location.pathname });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "Self-Storage Mailing Service",
+          "url": "{{ canonical_url }}",
+          "description": "Automate tenant communications for your self-storage facility — from late fee notices and lien notifications to rent reminders and auction announcements. Upload PDFs, verify addresses in real-time, and trace every piece. Easily add a Certificate of Mailing as proof of mailing on your lien notices.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Self-Storage Mailing Service",
+            "url": "{{ canonical_url }}"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.postalocity.com" },
+            { "@type": "ListItem", "position": 2, "name": "Self-Storage Mailing Service", "item": "{{ canonical_url }}" }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "name": "Odin's Innovations",
+          "url": "{{ canonical_url }}",
+          "logo": "logo.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "316-260-2220",
+            "contactType": "customer service",
+            "email": "contact@postalocity.com"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What mail class do you use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "First-Class Mail. Marketing Mail (formerly Standard Mail) is not suitable for lien notices because it cannot include the account/personal information required for legal compliance. First-Class includes proof of mailing and is the industry standard for legal correspondence."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What proof of mailing do I get?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the difference between Proof of Mailing, USPS scan tracing, and Certificate of Mailing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three different things: (1) Proof of Mailing (Affidavit) documents that Postalocity processed and mailed your items. (2) USPS scan tracing shows where your letter is in the postal system — included with First-Class Mail. (3) Certificate of Mailing is an official USPS form with a post office postmark proving the EXACT DATE your letter was accepted by USPS — this is what some states require for lien deadlines. Some states require a Certificate of Mailing for lien compliance — verify with your legal counsel. The Certificate of Mailing meets legal requirements with official USPS documentation."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the difference between USPS scanning and tracking?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "USPS scan tracing shows processing status for all mail types. For full tracking and delivery confirmation with signature, upgrade to Priority Mail or Certified Mail."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the starting price?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "{{PRICING}} Certificate of Mailing upgrade available for additional fee."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <!-- Mobile-Optimized Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Self-Storage Mailing Service" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Your built CSS + JS - Filenames must match uploaded assets -->
+    {{ 'index.css' | asset_url | stylesheet_tag }}
+    <script type="module" src="{{ 'index.js' | asset_url }}"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    {{ content_for_footer }}
+  </body>
+</html>
