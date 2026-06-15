@@ -1,0 +1,46 @@
+{
+  "brand": "postalocity",
+  "baseUrl": "https://postalocity.com",
+  "sites": {
+    "credit-repair": {
+      "liveUrl": "https://postalocity.com/credit-repair",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "debt-collection": {
+      "liveUrl": "https://postalocity.com/debt-collection",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "education": {
+      "liveUrl": "https://postalocity.com/education",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "healthcare-billing": {
+      "liveUrl": "https://www.postalocity.com/healthcare/",
+      "notes": "Alias — live SSOT is /healthcare/ (same as healthcare-mailing-services)"
+    },
+    "healthcare-mailing-services": {
+      "liveUrl": "https://www.postalocity.com/healthcare/",
+      "notes": "Live microsite at /healthcare/ (not /healthcare-mailing-services)"
+    },
+    "postcard": {
+      "liveUrl": null,
+      "notes": "No live microsite at /postcard (404). Excluded from content compare until hosting path confirmed."
+    },
+    "real-estate": {
+      "liveUrl": "https://postalocity.com/real-estate",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "self-storage": {
+      "liveUrl": "https://postalocity.com/self-storage",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "education-final": {
+      "liveUrl": null,
+      "notes": "Draft config — use education.json for live /education"
+    },
+    "self-storage-backup": {
+      "liveUrl": null,
+      "notes": "Backup config — not deployed"
+    }
+  }
+}

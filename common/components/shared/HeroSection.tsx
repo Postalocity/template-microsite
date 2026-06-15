@@ -109,8 +109,17 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
           )}
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-hero-foreground mb-6">
-            {hero.headline.main}{' '}
-            <span className="gradient-text" dangerouslySetInnerHTML={{ __html: hero.headline.highlightTerm?.replace(/\n/g, '<br />') || '' }} />
+            {hero.headline.gradientOn === 'main' ? (
+              <>
+                <span className="gradient-text">{hero.headline.main}</span>
+                {hero.headline.highlightTerm ? ` ${hero.headline.highlightTerm}` : ''}
+              </>
+            ) : (
+              <>
+                {hero.headline.main}{' '}
+                <span className="gradient-text" dangerouslySetInnerHTML={{ __html: hero.headline.highlightTerm?.replace(/\n/g, '<br />') || '' }} />
+              </>
+            )}
           </h1>
 
           <p className="text-lg sm:text-xl text-hero-subtitle leading-relaxed mb-10 max-w-2xl">
@@ -123,14 +132,24 @@ const HeroSection = ({ hero }: HeroSectionProps) => {
                 key={idx}
                 href={cta.href}
                 className={
-                  cta.variant === 'primary'
+                  cta.variant === 'pricing'
+                    ? 'inline-flex flex-col items-center bg-primary/10 border-2 border-primary rounded-xl px-8 py-4 hover:bg-primary/20 transition-all'
+                    : cta.variant === 'primary'
                     ? 'inline-flex flex-col items-center bg-primary text-primary-foreground rounded-xl px-8 py-4 hover:opacity-90 transition-all font-bold text-lg sm:text-xl'
                     : 'inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl btn-cta-outline text-lg'
                 }
               >
-                {processText(cta.text)}
+                <span className={cta.variant === 'pricing' ? 'text-xl sm:text-2xl font-black text-primary' : undefined}>
+                  {processText(cta.text)}
+                </span>
                 {cta.subtext && (
-                  <span className={`${cta.variant === 'primary' ? 'text-primary-foreground/70' : 'text-muted-foreground'} text-sm font-normal mt-1`}>
+                  <span className={`${
+                    cta.variant === 'pricing'
+                      ? 'text-xs text-hero-subtitle'
+                      : cta.variant === 'primary'
+                      ? 'text-primary-foreground/70'
+                      : 'text-muted-foreground'
+                  } text-sm font-normal mt-1`}>
                     {processText(cta.subtext)}
                   </span>
                 )}

@@ -3,7 +3,7 @@
  *
  * Site:      wide-format
  * Brand:     Broadstroke
- * Generated: 2026-05-29T15:27:59.714Z
+ * Generated: 2026-06-09T13:30:06.836Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

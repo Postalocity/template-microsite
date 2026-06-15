@@ -14,27 +14,27 @@
 
     <!-- Canonical + Sitemap -->
     <link rel="canonical" href="{{ canonical_url }}" />
-    <link rel="sitemap" type="application/xml" href="https://broadstrokeinc.com/promo/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://www.broadstrokeinc.combroadstroke-promo/sitemap.xml" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:title" content="Promotional Products & Apparel — Broadstroke, Inc." />
     <meta property="og:description" content="Print, mail, promo & fulfillment made simple." />
-    <meta property="og:image" content="/promo/images/og-image.png" />
+    <meta property="og:image" content="https://www.broadstrokeinc.com/promo/images/og-image.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ canonical_url }}" />
     <meta property="twitter:title" content="Promotional Products & Apparel — Broadstroke, Inc." />
-    <meta property="twitter:description" content="" />
-    <meta property="twitter:image" content="/promo/images/og-image.png" />
+    <meta property="twitter:description" content="Print, mail, promo & fulfillment made simple." />
+    <meta property="twitter:image" content="https://www.broadstrokeinc.com/promo/images/og-image.png" />
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="promotional products Wichita, promo products Kansas, custom promotional products Wichita KS, branded merchandise Wichita, promotional apparel Wichita, promotional products near me Wichita, custom t-shirts Wichita, screen printing Wichita, embroidery Wichita KS, corporate gifts Wichita, trade show giveaways Wichita, promotional items Kansas" />
-    <meta name="author" content="Promotional Products & Apparel — Broadstroke, Inc." />
+    <meta name="author" content="Broadstroke" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#664400" />
+    <meta name="theme-color" content="#8B4513" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
@@ -66,8 +66,8 @@
           "description": "Looking for a specific item or just browsing for ideas? Your one-stop shop for promotional products and business gifts. With thousands of selections, we offer branded merchandise to fulfill all of your needs.",
           "publisher": {
             "@type": "Organization",
-            "name": "Promotional Products & Apparel — Broadstroke, Inc.",
-            "url": "{{ canonical_url }}"
+            "name": "Broadstroke",
+            "url": "https://www.broadstrokeinc.com"
           }
         },
         {
@@ -79,9 +79,9 @@
         },
         {
           "@type": "Organization",
-          "name": "Odin's Innovations",
-          "url": "{{ canonical_url }}",
-          "logo": "/logo.png",
+          "name": "Broadstroke",
+          "url": "https://www.broadstrokeinc.com",
+          "logo": "{{ 'logo.png' | asset_url }}",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "316-262-3333",
@@ -158,6 +158,7 @@
     <script type="module" src="{{ 'index.js' | asset_url }}"></script>
   </head>
   <body>
+    <!-- PRERENDERED_CONTENT: post-build injects dist/index.html #root innerHTML here -->
     <div id="root"></div>
 
     {{ content_for_footer }}

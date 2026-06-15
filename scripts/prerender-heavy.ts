@@ -48,6 +48,7 @@ import { preview } from 'vite';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { measureRootPrerender } from './lib/html-root.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -159,12 +160,25 @@ async function main() {
 
     // Capture the fully rendered document
     const fullHtml = await page.content();
+    const prerenderBytes = measureRootPrerender(fullHtml);
+
+    if (prerenderBytes < 500) {
+      const consoleErrors: string[] = [];
+      page.on('console', (msg) => {
+        if (msg.type() === 'error') consoleErrors.push(msg.text());
+      });
+      throw new Error(
+        `Prerender #root too small (${prerenderBytes} bytes) — React likely crashed during render` +
+          (consoleErrors.length ? `\n   Console: ${consoleErrors.slice(0, 3).join('; ')}` : '')
+      );
+    }
 
     // Write the prerendered HTML (this is what crawlers will see)
     // We keep the original script references so the client bundle still hydrates for users.
     fs.writeFileSync(indexPath, fullHtml, 'utf8');
 
     console.log('✅ Prerender complete!');
+    console.log(`   #root prerender: ${prerenderBytes.toLocaleString()} bytes`);
     console.log(`   Wrote full rendered content to ${indexPath}`);
     console.log('   Crawlers will now see the real section text, headings, etc. in the initial HTML.');
     console.log('   The React app will still hydrate for interactive features (accordions, mobile nav, etc.).');

@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/wide-format.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service wide-format",
     "source": "config/sites/broadstroke/wide-format.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-29T15:27:59.715Z",
+    "generatedAt": "2026-06-09T13:30:06.837Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "broadstroke",
   "site": {
-    "id": "broadstroke",
+    "id": "wide-format",
     "name": "Wide Format Printing Services — Broadstroke, Inc.",
     "slug": "wide-format",
     "domain": "broadstrokeinc.com",
-    "basename": "broadstroke-wide-format",
+    "basename": "/wide-format",
     "contact": {
-      "email": "info@broadstrokeinc.com",
+      "email": "orders@broadstrokeinc.com",
       "phone": "316-262-3333",
-      "address": "820 W 2nd St N, Wichita, KS 67203"
+      "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
   "branding": {
@@ -774,5 +775,12 @@
         "presort": "Pre-sorted mail for discounted rates"
       }
     }
+  },
+  "shopifyAssets": {
+    "css": "index-T47WJiGZ.css",
+    "js": "index-Bts5ima7.js",
+    "cssUrl": "{{ 'index-T47WJiGZ.css' | asset_url }}",
+    "jsUrl": "{{ 'index-Bts5ima7.js' | asset_url }}",
+    "prerenderedBodyInjected": true
   }
 }

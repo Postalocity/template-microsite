@@ -887,6 +887,44 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
   
   // Check if brand has theme-specific components
   const usesBrandTheme = brandId && fs.existsSync(path.join(TEMPLATE_DIR, 'common/themes', brandId, 'globals.css'));
+
+  const siteContent = (config as SiteConfig).content ?? {};
+  const useHealthcareLayout = !!(siteContent.challenges || siteContent.scale || siteContent.businessContinuity);
+
+  const comparisonJsx = `{content.comparison && (
+          'chart' in content.comparison && content.comparison.chart
+            ? <ComparisonChartSection comparison={content.comparison} />
+            : <ComparisonTable comparison={content.comparison} promoCode={promoCode} />
+        )}`;
+  const servicesJsx = `{content.services && <ServicesSection services={content.services} />}`;
+  const differenceJsx = `{content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}`;
+  const scaleJsx = `{content.scale && (
+          <ScaleSection
+            headline={content.scale.headline}
+            subheadline={content.scale.subheadline}
+            ctaText={content.scale.ctaText}
+            ctaHeadline={content.scale.ctaHeadline}
+            ctaDescription={content.scale.ctaDescription}
+            features={content.scale.features}
+          />
+        )}`;
+  const businessContinuityJsx = `{content.businessContinuity && <BusinessContinuitySection businessContinuity={content.businessContinuity} />}`;
+
+  const trustSignalsJsx = useHealthcareLayout
+    ? `{content.trustSignals && <TrustBadgesSection trustSignals={content.trustSignals} />}`
+    : `{content.trustSignals ? <TrustBadgesSection trustSignals={content.trustSignals} /> : <TrustBadgesSection />}`;
+
+  const postalocityMidSections = useHealthcareLayout
+    ? `${servicesJsx}
+        ${differenceJsx}
+        ${comparisonJsx}
+        ${scaleJsx}
+        ${businessContinuityJsx}`
+    : `${comparisonJsx}
+        ${servicesJsx}
+        ${differenceJsx}
+        ${scaleJsx}
+        ${businessContinuityJsx}`;
   
   return `/**
  * ⚠️  AUTO-GENERATED FILE — DO NOT EDIT MANUALLY
@@ -910,10 +948,9 @@ function generateIndexFile(config: SiteConfig, brandContext?: BrandContext, bran
  */
 
 import { createRoot } from 'react-dom/client';
-import { Bug, Leaf, Clock, Check } from 'lucide-react';
 ${usesBrandTheme ? `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/themes/${brandId}/components/shared';
 import SiteNavigation from '@/themes/${brandId}/components/shared/SiteNavigation';
-import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/components/shared';
+import SiteFooter from '@/themes/${brandId}/components/shared/SiteFooter';` : `import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, ComparisonChartSection, DifferenceSection, TrustBadgesSection, TrustStripSection, HowItWorksSection, ChallengesSection, ScaleSection, BusinessContinuitySection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';`}
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -946,196 +983,12 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
-        
-        {/* Features Section */}
-        {content.features && (
-          <section id="features" className="section-padding" style={{ background: '#f8f9fa' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
-                  {content.features.headline}
-                </h2>
-                <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                  {content.features.subtitle}
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {content.features.features?.map((feature: {title: string; description: string; icon?: string}, idx: number) => {
-                  // Map feature titles to Lucide icons (matching live site)
-                  const iconMap: Record<string, React.ElementType> = {
-                    'Peak Season Protection': Bug,  // Uses bug icon, not shield
-                    'Scent-Safe Formula': Leaf,
-                    'Long-Lasting Barrier': Clock,
-                    'EPA-Registered': Check,
-                  };
-                  const IconComponent = iconMap[feature.title] || Check;
-                  return (
-                    <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
-                      <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center" style={{ color: '#2d5a3d' }}>
-                        <IconComponent className="w-10 h-10" strokeWidth={1.5} />
-                      </div>
-                      <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>
-                        {feature.title}
-                      </h3>
-                      <p className="font-body text-sm" style={{ color: '#666' }}>
-                        {feature.description}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {/* Dynamic content sections - only render if data exists */}
-        {content.introduction && (
-          <section id="introduction" className="section-padding" style={{ background: '#f8f9fa' }}>
-            <div className="section-container">
-              <div className="text-center max-w-3xl mx-auto">
-                <p className="font-body text-lg sm:text-xl leading-relaxed" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.introduction.body}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content['why-odins'] && (
-          <section id="why-odins" className="section-padding" style={{ background: '#1a1d29' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
-                  {content['why-odins'].headline}
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {content['why-odins'].items?.map((item: string, idx: number) => (
-                  <div key={idx} className="p-6 rounded-lg text-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    <p className="font-body text-white">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.detection && (
-          <section id="detection" className="section-padding" style={{ background: '#f5f5f5' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.detection.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Understanding the three-stage targeting process
-                </p>
-              </div>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                {['CO₂ Detection', 'Skin Chemistry', 'Body Heat'].map((stage, idx) => (
-                  <div key={idx} className="text-center p-6">
-                    <div className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: 'hsl(var(--primary))' }}>
-                      STAGE {String(idx + 1).padStart(2, '0')}
-                    </div>
-                    <h3 className="font-display text-xl uppercase mb-2">{stage}</h3>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.application && (
-          <section id="application" className="section-padding" style={{ background: '#1a1d29' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
-                  {content.application.headline}
-                </h2>
-                {content.application.note && (
-                  <p className="font-body text-sm text-gray-400 italic">{content.application.note}</p>
-                )}
-              </div>
-              <div className="max-w-3xl mx-auto space-y-6">
-                {content.application.steps?.map((step: string, idx: number) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg flex-shrink-0" style={{ background: 'hsl(var(--primary))', color: 'white' }}>
-                      {idx + 1}
-                    </div>
-                    <p className="font-body text-white text-lg">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.blinds && (
-          <section id="blinds" className="section-padding" style={{ background: '#f5f5f5' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.blinds.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  {content.blinds.body}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.layered && (
-          <section id="layered" className="section-padding" style={{ background: '#1e212b' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
-                  {content.layered.headline}
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {['Weatherproof Formula', 'Polymer Technology', 'Easy Storage'].map((item, idx) => (
-                  <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                    <h3 className="font-display text-xl uppercase mb-2 text-white">{item}</h3>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.turkey && (
-          <section id="turkey" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
-            <div className="section-container">
-              <div className="text-center">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.turkey.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  {content.turkey.body}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
-        
-        {content.howItWorks && (
-          <section id="how-it-works" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.howItWorks.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  {content.howItWorks.body}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-        
+        {content.trustStrip && <TrustStripSection label={content.trustStrip.label} badges={content.trustStrip.badges} />}
+        {content.benefits && <BenefitsSection benefits={content.benefits} />}
+        {content.challenges && <ChallengesSection challenges={content.challenges} />}
+        {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
+        ${postalocityMidSections}
+        ${trustSignalsJsx}
         {content.faq && <FAQSection faq={content.faq} />}
         
         <SiteFooter config={config} />
@@ -4420,10 +4273,10 @@ export default defineConfig({
       { find: '@microsite/validation', replacement: path.resolve(__dirname, '../../../packages/validation/src') },
       { find: '@microsite/engine', replacement: path.resolve(__dirname, '../../../packages/engine/src') },${themeAlias ? `\n      { find: '@/themes/${brandId}', replacement: path.resolve(__dirname, '../../../common/themes/${brandId}') },` : ''}
       // Fix resolution for packages only declared in generated site's package.json (pulled by common/ UI components via alias from outside site tree)
-      { find: new RegExp('^@radix-ui/(.*)$'), replacement: path.resolve(__dirname, 'node_modules/@radix-ui/$1') },
-      { find: 'class-variance-authority', replacement: path.resolve(__dirname, 'node_modules/class-variance-authority') },
-      { find: 'clsx', replacement: path.resolve(__dirname, 'node_modules/clsx') },
-      { find: 'tailwind-merge', replacement: path.resolve(__dirname, 'node_modules/tailwind-merge') },
+      { find: new RegExp('^@radix-ui/(.*)$'), replacement: path.resolve(__dirname, '../../../node_modules/@radix-ui/$1') },
+      { find: 'class-variance-authority', replacement: path.resolve(__dirname, '../../../node_modules/class-variance-authority') },
+      { find: 'clsx', replacement: path.resolve(__dirname, '../../../node_modules/clsx') },
+      { find: 'tailwind-merge', replacement: path.resolve(__dirname, '../../../node_modules/tailwind-merge') },
     ],
     dedupe: ['react', 'react-dom'],
   },

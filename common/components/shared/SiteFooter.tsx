@@ -1,4 +1,4 @@
-import { ArrowUp, Mail, Phone, MapPin, Instagram } from 'lucide-react';
+import { ArrowUp, Mail, Phone, MapPin } from 'lucide-react';
 import { useBrand, useBrandName } from '@/contexts';
 
 interface SiteFooterProps {
@@ -19,6 +19,7 @@ interface SiteFooterProps {
         disclaimer?: string;
         links?: Array<{ label: string; href: string }>;
         quickLinks?: Array<{ label: string; href: string }>;
+        resourceLinks?: Array<{ label: string; href: string }>;
         companyLinks?: Array<{ label: string; href: string }>;
       };
     };
@@ -66,7 +67,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
 
   // Format phone for tel: link
   const phoneLink = ctx.contact.phone.replace(/[^0-9]/g, '');
-  const formattedAddress = `${ctx.contact.address.street}, ${ctx.contact.address.city}, ${ctx.contact.address.state} ${ctx.contact.address.zip}`;
+  const legalLinks = content?.links || config?.footer?.links;
 
   // Quick links - from config, brand config, or defaults
   const quickLinks = content?.quickLinks || brandFooter?.links || [
@@ -76,6 +77,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
   ];
 
   // Company links - from config, brand config, or defaults
+  const resourceLinks = content?.resourceLinks || brandFooter?.resourceLinks;
   const companyLinks = content?.companyLinks || brandFooter?.companyLinks || [
     { label: 'About', href: ctx.brand.urls.whoWeServe || ctx.brand.urls.website },
     { label: 'Contact', href: ctx.brand.urls.contact || ctx.brand.urls.website },
@@ -144,11 +146,13 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Resources or Company */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">Company</h3>
+            <h3 className="text-sm font-semibold uppercase tracking-wider mb-3 text-background/60">
+              {resourceLinks ? 'Resources' : 'Company'}
+            </h3>
             <ul className="space-y-2 text-sm">
-              {companyLinks.map((link) => (
+              {(resourceLinks || companyLinks).map((link) => (
                 <li key={link.href}>
                   <a href={link.href} rel="noopener noreferrer" className="text-background/70 hover:text-background transition-colors">
                     {link.label}
@@ -157,6 +161,8 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
               ))}
             </ul>
           </div>
+
+
 
           {/* Support or Contact */}
           <div>
@@ -187,7 +193,11 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
                   </li>
                   <li className="flex items-start gap-2 text-background/70 mt-2">
                     <MapPin className="w-4 h-4 mt-0.5" />
-                    <span>{formattedAddress}</span>
+                    <span>
+                      {ctx.contact.address.street}
+                      <br />
+                      {ctx.contact.address.city}, {ctx.contact.address.state} {ctx.contact.address.zip}
+                    </span>
                   </li>
                 </ul>
               </>
@@ -200,7 +210,7 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
             <div className="flex gap-4">
               {ctx.social.instagram && (
                 <a href={ctx.social.instagram} target="_blank" rel="noopener noreferrer" className="text-background/60 hover:text-background transition-colors" aria-label="Instagram">
-                  <Instagram className="w-5 h-5" />
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.775.132 4.602.402 3.585 1.42 2.568 2.437 2.298 3.61 2.238 4.888 2.18 6.168 2.166 6.577 2.166 12c0 5.423.014 5.832.072 7.112.06 1.278.33 2.451 1.347 3.468.986.986 2.159 1.256 3.437 1.316 1.28.058 1.689.072 7.112.072s5.832-.014 7.112-.072c1.278-.06 2.451-.33 3.437-1.316.986-.986 1.256-2.159 1.316-3.437.058-1.28.072-1.689.072-7.112S23.986 8.332 23.928 7.052c-.06-1.278-.33-2.451-1.316-3.437C21.626 2.602 20.453 2.332 19.175 2.272 17.895 2.214 17.486 2.2 12 2.2z"/><path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
                 </a>
               )}
               {ctx.social.facebook && (
@@ -228,9 +238,25 @@ const SiteFooter = ({ config }: SiteFooterProps) => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-between pt-8 border-t border-background/10 gap-4">
-          <p className="text-background/50 text-sm">
-            © {new Date().getFullYear()} {brandName}. All rights reserved.
-          </p>
+          <div className="text-center sm:text-left">
+            <p className="text-background/50 text-sm">
+              © {new Date().getFullYear()} {brandName}. All rights reserved.
+            </p>
+            {legalLinks && legalLinks.length > 0 && (
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-4 gap-y-1 mt-2 text-sm">
+                {legalLinks.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    rel="noopener noreferrer"
+                    className="text-background/60 hover:text-background transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
           <button
             onClick={scrollToTop}
             className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"

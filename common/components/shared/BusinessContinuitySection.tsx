@@ -54,6 +54,15 @@ const BusinessContinuitySection = ({ businessContinuity }: BusinessContinuitySec
             )}
           </motion.div>
 
+          {(!businessContinuity?.features || businessContinuity.features.length === 0) && businessContinuity?.badge && (
+            <div className="text-center">
+              <div className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-primary/10 text-primary font-semibold">
+                <Shield className="w-5 h-5" />
+                {businessContinuity.badge}
+              </div>
+            </div>
+          )}
+
           {businessContinuity?.features && businessContinuity.features.length > 0 && (
             <div className="grid md:grid-cols-2 gap-6">
               {businessContinuity.features.map((feature, idx) => {

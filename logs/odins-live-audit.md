@@ -1,22 +1,22 @@
 # Odin's Innovations — Live vs Repo Audit
 
-Generated: 2026-06-08T21:00:07.991Z
+Generated: 2026-06-10T18:08:49.114Z
 
 **12 of 12 sites need Shopify deploy** (asset hash mismatch, missing prerender, and/or email drift).
 
 | Site | Live | Assets | Prerender (local/live) | Email | Deploy? |
 |------|------|--------|-------------------------|-------|--------|
-| bear-hog-attractants | [200](https://odinsinnovations.com/pages/bear) | ❌ local `index-Dq1bM3qm.js` vs live `index-B-ZN8sLC.js` | 61819 / 0 | ❌ support@odinsscents.com vs paul@odinsinnovations.com | **YES** |
-| citronella-mosquito-repellent | [200](https://odinsinnovations.com/pages/citronella) | ❌ local `index-hlXE50g0.js` vs live `index-C3MNUWXp.js` | 61788 / 0 | ❌ support@odinsscents.com vs paul@odinsinnovations.com | **YES** |
+| bear-hog-attractants | [200](https://odinsinnovations.com/pages/bear) | ❌ local `index-Dq1bM3qm.js` vs live `index-B-ZN8sLC.js` | 61819 / 717 | ✅ | **YES** |
+| citronella-mosquito-repellent | [200](https://odinsinnovations.com/pages/citronella) | ❌ local `index-hlXE50g0.js` vs live `index-C3MNUWXp.js` | 61788 / 717 | ✅ | **YES** |
 | doe-estrus-guide | [200](https://odinsinnovations.com/pages/doe-estrus) | ❌ local `index-CLKkrRqO.js` vs live `index-Cu0hOMnE.js` | 86147 / 717 | ✅ | **YES** |
-| dominant-buck-scent-guide | [200](https://odinsinnovations.com/pages/dominant-buck) | ❌ local `index-BH7l1K8O.js` vs live `index-Ce0KDrIn.js` | 68903 / 0 | ❌ support@odinsscents.com vs paul@odinsinnovations.com | **YES** |
+| dominant-buck-scent-guide | [200](https://odinsinnovations.com/pages/dominant-buck) | ❌ local `index-BH7l1K8O.js` vs live `index-Ce0KDrIn.js` | 68903 / 717 | ✅ | **YES** |
 | earth-cover-scent-beads | [200](https://odinsinnovations.com/pages/cover-scents) | ❌ local `index-aVkbUShp.js` vs live `index-ChUE3fMP.js` | 60297 / 717 | ✅ | **YES** |
 | food-scent-deer-attractants | [200](https://odinsinnovations.com/pages/lure-scents) | ❌ local `index-BSYeMMfE.js` vs live `index-tDsgQ0Uo.js` | 68535 / 717 | ✅ | **YES** |
-| how-to-use | [200](https://odinsinnovations.com/pages/how-to) | ❌ local `index-Dp2TvPen.js` vs live `index-pMjApfGf.js` | 66980 / 0 | ❌ support@odinsscents.com vs paul@odinsinnovations.com | **YES** |
+| how-to-use | [200](https://odinsinnovations.com/pages/how-to) | ❌ local `index-Dp2TvPen.js` vs live `index-pMjApfGf.js` | 66980 / 717 | ✅ | **YES** |
 | hunting-mosquito-repellent | [200](https://odinsinnovations.com/pages/hunting-mosquito-repellent) | ❌ local `index-DvLbGzaf.js` vs live `index-C3MNUWXp.js` | 63530 / 717 | ✅ | **YES** |
 | scent-beads | — | — | 70920 / 0 | — | **YES** |
-| scrape-scent-guide | [200](https://odinsinnovations.com/pages/scrapes) | ❌ local `index-DAMyIYrc.js` vs live `index-DNQL-fLb.js` | 68390 / 0 | ❌ support@odinsscents.com vs paul@odinsinnovations.com | **YES** |
-| synthetic-scent-beads | [200](https://odinsinnovations.com/pages/benefits) | ❌ local `index-B2_3b5wu.js` vs live `index-CY0YKftt.js` | 60030 / 717 | ❌ support@odinsscents.com vs paul@odinsinnovations.com | **YES** |
+| scrape-scent-guide | [200](https://odinsinnovations.com/pages/scrapes) | ❌ local `index-DAMyIYrc.js` vs live `index-DNQL-fLb.js` | 68390 / 717 | ✅ | **YES** |
+| synthetic-scent-beads | [200](https://odinsinnovations.com/pages/benefits) | ❌ local `index-B2_3b5wu.js` vs live `index-CY0YKftt.js` | 60030 / 717 | ✅ | **YES** |
 | synthetic-scent-cwd-guide | [200](https://odinsinnovations.com/pages/cwd) | ❌ local `index-aRNts0W4.js` vs live `index-BM67g0to.js` | 54503 / 717 | ❌ support@odinsscents.com vs paul@odinsinnovations.com | **YES** |
 
 ## Details
@@ -36,9 +36,10 @@ Generated: 2026-06-08T21:00:07.991Z
 - Notes: Shopify handle: citronella
 - Local CSS: `index-CtKgHobz.css`
 - Local JS: `index-hlXE50g0.js`
-- Live CSS: `n/a`
+- Live CSS: `index-Bi66iP-a.css`
 - Live JS: `index-C3MNUWXp.js`
 - FAQ items (local config): 14
+- Live FAQ signal: "Is citronella safe"
 
 ### doe-estrus-guide
 - Live URL: https://odinsinnovations.com/pages/doe-estrus

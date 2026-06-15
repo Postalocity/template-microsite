@@ -106,13 +106,13 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "TEST E2E EDIT: Dispute Letter Mailing — Automated Credit Repair (Internal Admin loop-006 validated)",
-        "highlightTerm": "Automated Credit Repair Mailing (E2E-Validated)"
+        "main": "Dispute Letter Mailing Service",
+        "highlightTerm": "Automated Credit Repair Mailing"
       },
       "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning—reclaiming hours weekly for client strategy.",
       "background": {
-        "image": "/credit-repair/images/credit-repair-hero-test.jpg",
-        "alt": "Credit repair professionals managing automated dispute letter mailing (edited via ImageField simulation)"
+        "image": "/credit-repair/images/hero-bg.jpg",
+        "alt": "Credit repair professionals managing automated dispute letter mailing"
       },
       "ctas": [
         {

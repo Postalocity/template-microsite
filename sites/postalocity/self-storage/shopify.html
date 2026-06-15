@@ -14,27 +14,27 @@
 
     <!-- Canonical + Sitemap -->
     <link rel="canonical" href="{{ canonical_url }}" />
-    <link rel="sitemap" type="application/xml" href="https://postalocity.com/self-storage/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://www.postalocity.com/self-storage/sitemap.xml" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:title" content="Self-Storage Mailing Service — Proof Every Letter" />
     <meta property="og:description" content="Automate lien notices, late fee notices, and tenant communications with secure upload, address verification, proof of mailing, and real-time tracking." />
-    <meta property="og:image" content="/self-storage/images/og-image.png" />
+    <meta property="og:image" content="https://www.postalocity.com/self-storage/images/og-image.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ canonical_url }}" />
     <meta property="twitter:title" content="Self-Storage Mailing Service" />
-    <meta property="twitter:description" content="" />
-    <meta property="twitter:image" content="/self-storage/images/og-image.png" />
+    <meta property="twitter:description" content="Automate lien notices, late fee notices, and tenant communications with secure upload, address verification, proof of mailing, and real-time tracking." />
+    <meta property="twitter:image" content="https://www.postalocity.com/self-storage/images/og-image.png" />
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="self-storage mailing service, automated mailing for self-storage, self-storage lien notice mailing, self-storage certified mail, storage facility tenant notices" />
-    <meta name="author" content="Self-Storage Mailing Service" />
+    <meta name="author" content="Postalocity" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#664400" />
+    <meta name="theme-color" content="#8B4513" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
@@ -66,8 +66,8 @@
           "description": "Automate tenant communications for your self-storage facility — from late fee notices and lien notifications to rent reminders and auction announcements. Upload PDFs, verify addresses in real-time, and trace every piece. Easily add a Certificate of Mailing as proof of mailing on your lien notices.",
           "publisher": {
             "@type": "Organization",
-            "name": "Self-Storage Mailing Service",
-            "url": "{{ canonical_url }}"
+            "name": "Postalocity",
+            "url": "https://www.postalocity.com"
           }
         },
         {
@@ -79,9 +79,9 @@
         },
         {
           "@type": "Organization",
-          "name": "Odin's Innovations",
-          "url": "{{ canonical_url }}",
-          "logo": "logo.png",
+          "name": "Postalocity",
+          "url": "https://www.postalocity.com",
+          "logo": "{{ 'logo.png' | asset_url }}",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "316-260-2220",
@@ -110,10 +110,10 @@
             },
             {
               "@type": "Question",
-              "name": "What's the difference between Proof of Mailing, USPS scan tracing, and Certificate of Mailing?",
+              "name": "What's the difference between Proof of Mailing (Affidavit), USPS scan tracing, and Certificate of Mailing?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Three different things: (1) Proof of Mailing (Affidavit) documents that Postalocity processed and mailed your items. (2) USPS scan tracing shows where your letter is in the postal system — included with First-Class Mail. (3) Certificate of Mailing is an official USPS form with a post office postmark proving the EXACT DATE your letter was accepted by USPS — this is what some states require for lien deadlines. Some states require a Certificate of Mailing for lien compliance — verify with your legal counsel. The Certificate of Mailing meets legal requirements with official USPS documentation."
+                "text": "Three different levels of documentation: (1) Proof of Mailing (Affidavit) proves that Postalocity processed and mailed your items. (2) USPS scan tracing shows processing status through the postal system — included with First-Class Mail. (3) A Certificate of Mailing is an official USPS form showing the item was accepted at the post office. Some states require a Certificate of Mailing for lien compliance — check your state requirements."
               }
             },
             {
@@ -150,6 +150,7 @@
     <script type="module" src="{{ 'index.js' | asset_url }}"></script>
   </head>
   <body>
+    <!-- PRERENDERED_CONTENT: post-build injects dist/index.html #root innerHTML here -->
     <div id="root"></div>
 
     {{ content_for_footer }}

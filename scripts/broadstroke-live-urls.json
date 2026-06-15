@@ -1,0 +1,34 @@
+{
+  "brand": "broadstroke",
+  "baseUrl": "https://broadstrokeinc.com",
+  "sites": {
+    "carbonless-forms": {
+      "liveUrl": "https://broadstrokeinc.com/carbonless-forms",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "commercial-printing": {
+      "liveUrl": "https://broadstrokeinc.com/commercial-printing",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "mail-pickup": {
+      "liveUrl": "https://broadstrokeinc.com/mail-pickup",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "mailing": {
+      "liveUrl": "https://broadstrokeinc.com/mailing",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "printing": {
+      "liveUrl": "https://broadstrokeinc.com/commercial-printing",
+      "notes": "Alias — live microsite SSOT is /commercial-printing (repo sites/broadstroke/printing)"
+    },
+    "promo": {
+      "liveUrl": "https://broadstrokeinc.com/promo",
+      "notes": "Live microsite — index.html deploy"
+    },
+    "wide-format": {
+      "liveUrl": "https://broadstrokeinc.com/wide-format",
+      "notes": "Live microsite — index.html deploy"
+    }
+  }
+}

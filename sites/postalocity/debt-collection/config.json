@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/postalocity/debt-collection.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand postalocity --service debt-collection",
     "source": "config/sites/postalocity/debt-collection.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-29T15:42:02.170Z",
+    "generatedAt": "2026-06-09T14:15:05.454Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "postalocity",
   "site": {
-    "id": "postalocity",
+    "id": "debt-collection",
     "name": "Debt Collection Mailing Service",
     "slug": "debt-collection",
     "domain": "postalocity.com",
-    "basename": "postalocity-debt-collection",
+    "basename": "/debt-collection",
     "contact": {
       "email": "contact@postalocity.com",
       "phone": "316-260-2220",
-      "address": "820 W 2nd St N, Wichita, KS 67203"
+      "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
   "branding": {

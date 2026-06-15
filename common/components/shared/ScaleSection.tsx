@@ -21,6 +21,8 @@ interface ScaleSectionProps {
   headline?: string;
   subheadline?: string;
   ctaText?: string;
+  ctaHeadline?: string;
+  ctaDescription?: string;
 }
 
 const defaultFeatures = [
@@ -48,7 +50,9 @@ const ScaleSection = ({
   features, 
   headline = "Pay-as-You-Go Dispute Letter Mailing: Scale Without Commitment",
   subheadline = "From small practices to large operations, automate dispute letters and pay-as-you-go dispute letter mailing with no monthly fees, no contracts, and no minimums.",
-  ctaText = "Start Automating Today"
+  ctaText = "Start Automating Today",
+  ctaHeadline = "Pay-as-You-Go Mailing Service",
+  ctaDescription = "Start automating today. No monthly fees, no setup fees, no contracts. Pay-as-you-go mailing service for any practice size.",
 }: ScaleSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -104,18 +108,28 @@ const ScaleSection = ({
           transition={{ duration: 0.5, delay: 0.4 }}
           className="w-full max-w-4xl mx-auto text-center"
         >
-          <div className="bg-card rounded-2xl p-10 shadow-card border border-primary/10">
-            <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
-              <Zap className="w-10 h-10 text-primary" />
+          {ctaHeadline ? (
+            <div className="bg-card rounded-2xl p-10 shadow-card border border-primary/10">
+              <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                <Zap className="w-10 h-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-6">
+                {ctaHeadline}
+              </h3>
+              <p className="text-muted-foreground text-xl leading-relaxed mb-8 font-medium">
+                {ctaDescription}
+              </p>
+              <a
+                href={appUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-5 rounded-xl btn-cta-gold shadow-cta text-lg font-semibold"
+              >
+                {ctaText}
+                <ArrowRight size={24} />
+              </a>
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Pay-as-You-Go Credit Repair Mailing Service
-            </h3>
-            <p className="text-muted-foreground text-xl leading-relaxed mb-8 font-medium">
-              Start automating dispute letters today. No monthly fees, no
-              setup fees, no contracts. Pay-as-you-go credit repair mailing service
-              for any practice size.
-            </p>
+          ) : (
             <a
               href={appUrl}
               target="_blank"
@@ -125,7 +139,7 @@ const ScaleSection = ({
               {ctaText}
               <ArrowRight size={24} />
             </a>
-          </div>
+          )}
         </motion.div>
       </div>
     </section>

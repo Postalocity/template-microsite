@@ -14,27 +14,27 @@
 
     <!-- Canonical + Sitemap -->
     <link rel="canonical" href="{{ canonical_url }}" />
-    <link rel="sitemap" type="application/xml" href="https://broadstrokeinc.com/mailing/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://www.broadstrokeinc.com/mailing/sitemap.xml" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:title" content="Mailing Services — EDDM, Presort, Certified Mail & Postalocity Automation" />
     <meta property="og:description" content="Print, mail, promo & fulfillment made simple." />
-    <meta property="og:image" content="/mailing/images/og-image.png" />
+    <meta property="og:image" content="https://www.broadstrokeinc.com/mailing/images/og-image.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ canonical_url }}" />
     <meta property="twitter:title" content="Mailing Services — Broadstroke, Inc. | Your One-Stop-Shop for Print, Mail & Promo" />
     <meta property="twitter:description" content="Professional mailing services — EDDM, presort, certified mail, list management, and the Postalocity automated platform — all handled with concierge service from Broadstroke. Expert print-to-mail solutions that save you time and ensure accuracy." />
-    <meta property="twitter:image" content="/mailing/images/og-image.png" />
+    <meta property="twitter:image" content="https://www.broadstrokeinc.com/mailing/images/og-image.png" />
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="mailing services Wichita, EDDM mailing Kansas, bulk mailing services, presort mailing, certified mail Wichita, Postalocity automated mailing, direct mail list management, government utility mail services, address verification NCOA" />
-    <meta name="author" content="Mailing Services — Broadstroke, Inc." />
+    <meta name="author" content="Broadstroke" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#664400" />
+    <meta name="theme-color" content="#8B4513" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
@@ -66,8 +66,8 @@
           "description": "Professional mailing services — EDDM, presort, certified mail, list management, and the Postalocity automated platform — all handled with concierge service from Broadstroke. Expert print-to-mail solutions that save you time and ensure accuracy.",
           "publisher": {
             "@type": "Organization",
-            "name": "Mailing Services — Broadstroke, Inc.",
-            "url": "{{ canonical_url }}"
+            "name": "Broadstroke",
+            "url": "https://www.broadstrokeinc.com"
           }
         },
         {
@@ -79,14 +79,14 @@
         },
         {
           "@type": "Organization",
-          "name": "Odin's Innovations",
-          "url": "{{ canonical_url }}",
-          "logo": "/logo.png",
+          "name": "Broadstroke",
+          "url": "https://www.broadstrokeinc.com",
+          "logo": "{{ 'logo.png' | asset_url }}",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "316-262-3333",
             "contactType": "customer service",
-            "email": "info@broadstrokeinc.com"
+            "email": "orders@broadstrokeinc.com"
           }
         },
         {
@@ -174,6 +174,7 @@
     <script type="module" src="{{ 'index.js' | asset_url }}"></script>
   </head>
   <body>
+    <!-- PRERENDERED_CONTENT: post-build injects dist/index.html #root innerHTML here -->
     <div id="root"></div>
 
     {{ content_for_footer }}

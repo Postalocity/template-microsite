@@ -7,6 +7,7 @@ export { default as ComparisonTable } from './ComparisonTable';
 export { default as SiteNavigation } from './SiteNavigation';
 export { default as SiteFooter } from './SiteFooter';
 export { default as TrustBadgesSection } from './TrustBadgesSection';
+export { default as TrustStripSection } from './TrustStripSection';
 export { default as TestimonialsSection } from './TestimonialsSection';
 export { default as QuantifiableBenefitsSection } from './QuantifiableBenefitsSection';
 export { default as DifferenceSection } from './DifferenceSection';
@@ -21,7 +22,8 @@ export { default as CaseStudiesSection } from './CaseStudiesSection';
 
 // Phase 2: P1 High Priority Sections (Optional)
 export { default as PricingSection } from './PricingSection';
-// ChallengesSection already exported below
+export { default as ChallengesSection } from './ChallengesSection';
+export { default as ScaleSection } from './ScaleSection';
 export { default as BusinessContinuitySection } from './BusinessContinuitySection';
 
 // Phase 3: P2 Medium Priority Sections (Optional)

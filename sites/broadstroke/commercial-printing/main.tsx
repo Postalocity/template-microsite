@@ -3,7 +3,7 @@
  *
  * Site:      commercial-printing
  * Brand:     Broadstroke
- * Generated: 2026-05-29T15:24:56.259Z
+ * Generated: 2026-06-09T13:29:37.319Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────

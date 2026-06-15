@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/commercial-printing.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service commercial-printing",
     "source": "config/sites/broadstroke/commercial-printing.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-29T15:24:56.260Z",
+    "generatedAt": "2026-06-09T13:29:37.319Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "broadstroke",
   "site": {
-    "id": "broadstroke",
+    "id": "commercial-printing",
     "name": "Commercial Printing — Broadstroke, Inc.",
     "slug": "commercial-printing",
     "domain": "broadstrokeinc.com",
-    "basename": "broadstroke-commercial-printing",
+    "basename": "/commercial-printing",
     "contact": {
-      "email": "info@broadstrokeinc.com",
+      "email": "orders@broadstrokeinc.com",
       "phone": "316-262-3333",
-      "address": "820 W 2nd St N, Wichita, KS 67203"
+      "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
   "branding": {

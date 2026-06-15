@@ -3,10 +3,11 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/promo.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service promo",
     "source": "config/sites/broadstroke/promo.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-29T15:31:29.145Z",
+    "generatedAt": "2026-06-15T13:45:36.007Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "promo",
   "site": {
     "id": "broadstroke",
     "name": "Promotional Products & Apparel — Broadstroke, Inc.",
@@ -349,7 +350,7 @@
           "title": "Trade Show & Signage",
           "description": "Tablecloths, pop-up banners, tabletop banners, backdrops, wall kits, tents, and displays. Make a statement at events with coordinated materials.",
           "image": "/promo/images/categories/tradeshow-materials.jpg",
-          "href": "https://www.broadstrokepromos.com/office-tradeshows-events.htm"
+          "href": "https://www.broadstrokepromos.com/tradeshows-events.html"
         },
         {
           "icon": "smartphone",

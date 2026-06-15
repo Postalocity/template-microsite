@@ -14,7 +14,7 @@
 
     <!-- Canonical + Sitemap -->
     <link rel="canonical" href="{{ canonical_url }}" />
-    <link rel="sitemap" type="application/xml" href="https://postalocity.compostalocity-healthcare-mailing-services/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://www.postalocity.com/healthcare/sitemap.xml" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -32,9 +32,9 @@
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="patient statement mailing, healthcare mailing services, automated patient statements, healthcare statement processing, medical billing mailing, patient statement processing, bulk patient statement mailing, automate patient statements, Healthcare Mailing Services, Secure Healthcare Mailing Service" />
-    <meta name="author" content="Healthcare Mail Services" />
+    <meta name="author" content="Postalocity" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#664400" />
+    <meta name="theme-color" content="#8B4513" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
@@ -66,8 +66,8 @@
           "description": "Secure Healthcare Mailing Service – Automate Patient Statements & Billing Mail with accuracy and reliability. Focus on patient care while we handle your mail processing efficiently.",
           "publisher": {
             "@type": "Organization",
-            "name": "Healthcare Mail Services",
-            "url": "{{ canonical_url }}"
+            "name": "Postalocity",
+            "url": "https://www.postalocity.com"
           }
         },
         {
@@ -79,9 +79,9 @@
         },
         {
           "@type": "Organization",
-          "name": "Odin's Innovations",
-          "url": "{{ canonical_url }}",
-          "logo": "logo.png",
+          "name": "Postalocity",
+          "url": "https://www.postalocity.com",
+          "logo": "{{ 'logo.png' | asset_url }}",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "316-260-2220",
@@ -94,10 +94,18 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "How fast do patient statements get delivered?",
+              "name": "How fast can I get patient statements mailed?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Most patient statements arrive within 2-5 business days, with next-day pickup available for urgent communications."
+                "text": "Same-day or next-day mailing is available when you upload and approve by the daily cutoff. First-Class Mail typically delivers in 2-5 business days."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Postalocity integrate with my EMR system?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Postalocity integrates with major EMR systems so you can automate patient statement mailing without manual exports."
               }
             },
             {
@@ -105,23 +113,15 @@
               "name": "How much does patient statement mailing cost?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Our price starts at {{PRICING}} with no contracts or minimum volume requirements."
+                "text": "Pricing starts at {{PRICING}} per piece with full color envelope and postage included. No monthly fees, no contracts, and no minimums."
               }
             },
             {
               "@type": "Question",
-              "name": "Can I track patient statements?",
+              "name": "Can I track patient statements through the mail?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes, patient statements include tracking features that allow you to monitor delivery status through USPS, but does include tracing that will show mail status up through being out for delivery."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Do I need to install software?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No, our web-based system works with any browser and integrates with major EMR systems for seamless automation without software installation."
+                "text": "Tracking is available on Priority Mail and Certified Mail. First-Class Mail does not include tracking, but processing status is visible in your dashboard."
               }
             },
             {
@@ -129,7 +129,15 @@
               "name": "Is the mailing process for patient statements secure?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "All patient statement uploads and downloads are completed securely using encrypted connections."
+                "text": "All patient statement uploads and downloads use encrypted connections with secure handling throughout printing and mailing."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need technical expertise to use Postalocity?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No technical expertise is required. Upload PDFs through the secure dashboard and we handle printing, folding, stuffing, and USPS delivery."
               }
             }
           ]
@@ -150,6 +158,7 @@
     <script type="module" src="{{ 'index.js' | asset_url }}"></script>
   </head>
   <body>
+    <!-- PRERENDERED_CONTENT: post-build injects dist/index.html #root innerHTML here -->
     <div id="root"></div>
 
     {{ content_for_footer }}

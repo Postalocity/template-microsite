@@ -14,27 +14,27 @@
 
     <!-- Canonical + Sitemap -->
     <link rel="canonical" href="{{ canonical_url }}" />
-    <link rel="sitemap" type="application/xml" href="https://broadstrokeinc.com/mail-pickup/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://www.broadstrokeinc.com/mail-pickup/sitemap.xml" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ canonical_url }}" />
     <meta property="og:title" content="Mail Pickup Services — Broadstroke, Inc." />
     <meta property="og:description" content="Convenient daily mail collection with expert presort processing, print and promo delivery — all handled by one Wichita team." />
-    <meta property="og:image" content="/mail-pickup/images/og-image.png" />
+    <meta property="og:image" content="https://www.broadstrokeinc.com/mail-pickup/images/og-image.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="{{ canonical_url }}" />
     <meta property="twitter:title" content="Mail Pickup Services — Broadstroke, Inc." />
-    <meta property="twitter:description" content="" />
-    <meta property="twitter:image" content="/mail-pickup/images/og-image.png" />
+    <meta property="twitter:description" content="Convenient daily mail collection with expert presort processing, print and promo delivery — all handled by one Wichita team." />
+    <meta property="twitter:image" content="https://www.broadstrokeinc.com/mail-pickup/images/og-image.png" />
 
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="mail pickup services, mail pickup Wichita, daily mail pickup, presort mail pickup, certified mail pickup, EDDM pickup Wichita, bulk mail services Kansas, mailroom pickup service" />
-    <meta name="author" content="Mail Pickup Services — Broadstroke, Inc." />
+    <meta name="author" content="Broadstroke" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#664400" />
+    <meta name="theme-color" content="#8B4513" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ 'favicon.ico' | asset_url }}" />
@@ -66,8 +66,8 @@
           "description": "Eliminate trips to the post office and save costs with presort postage when you have Broadstroke pick up your mail. Have a print or promo job you ordered through Broadstroke? We'll deliver your print or promo order when we swing by to pick up your mail.",
           "publisher": {
             "@type": "Organization",
-            "name": "Mail Pickup Services — Broadstroke, Inc.",
-            "url": "{{ canonical_url }}"
+            "name": "Broadstroke",
+            "url": "https://www.broadstrokeinc.com"
           }
         },
         {
@@ -79,14 +79,14 @@
         },
         {
           "@type": "Organization",
-          "name": "Odin's Innovations",
-          "url": "{{ canonical_url }}",
-          "logo": "/logo.png",
+          "name": "Broadstroke",
+          "url": "https://www.broadstrokeinc.com",
+          "logo": "{{ 'logo.png' | asset_url }}",
           "contactPoint": {
             "@type": "ContactPoint",
             "telephone": "316-262-3333",
             "contactType": "customer service",
-            "email": "info@broadstrokeinc.com"
+            "email": "orders@broadstrokeinc.com"
           }
         },
         {
@@ -150,6 +150,7 @@
     <script type="module" src="{{ 'index.js' | asset_url }}"></script>
   </head>
   <body>
+    <!-- PRERENDERED_CONTENT: post-build injects dist/index.html #root innerHTML here -->
     <div id="root"></div>
 
     {{ content_for_footer }}

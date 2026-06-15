@@ -3,10 +3,11 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/broadstroke/carbonless-forms.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand broadstroke --service carbonless-forms",
     "source": "config/sites/broadstroke/carbonless-forms.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-29T15:30:54.858Z",
+    "generatedAt": "2026-06-09T13:29:31.681Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "broadstroke",
   "site": {
     "id": "broadstroke",
     "name": "Custom Carbonless Forms — Broadstroke, Inc.",

@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/postalocity/credit-repair.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand postalocity --service credit-repair",
     "source": "config/sites/postalocity/credit-repair.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-29T15:41:52.520Z",
+    "generatedAt": "2026-06-09T14:14:59.856Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "postalocity",
   "site": {
-    "id": "postalocity",
+    "id": "credit-repair",
     "name": "Credit Repair Mailing Service",
     "slug": "credit-repair",
     "domain": "postalocity.com",
-    "basename": "postalocity-credit-repair",
+    "basename": "/credit-repair",
     "contact": {
       "email": "contact@postalocity.com",
       "phone": "316-260-2220",
-      "address": "820 W 2nd St N, Wichita, KS 67203"
+      "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
   "branding": {
@@ -88,13 +89,13 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "TEST E2E EDIT: Dispute Letter Mailing — Automated Credit Repair (Internal Admin loop-006 validated)",
-        "highlightTerm": "Automated Credit Repair Mailing (E2E-Validated)"
+        "main": "Dispute Letter Mailing Service",
+        "highlightTerm": "Automated Credit Repair Mailing"
       },
       "subhead": "Credit repair professionals handle high volumes of dispute letters to Equifax, Experian, TransUnion, and creditors. Postalocity's automated mailing platform streamlines processing with address verification, Certified Mail options, and USPS scanning—reclaiming hours weekly for client strategy.",
       "background": {
-        "image": "/credit-repair/images/credit-repair-hero-test.jpg",
-        "alt": "Credit repair professionals managing automated dispute letter mailing (edited via ImageField simulation)"
+        "image": "/credit-repair/images/hero-bg.jpg",
+        "alt": "Credit repair professionals managing automated dispute letter mailing"
       },
       "ctas": [
         {

@@ -3,20 +3,21 @@
     "warning": "AUTO-GENERATED FILE — DO NOT EDIT MANUALLY. Edit config/sites/postalocity/healthcare-mailing-services.json instead. Then regenerate: npx tsx scripts/generate-site.ts --brand postalocity --service healthcare-mailing-services",
     "source": "config/sites/postalocity/healthcare-mailing-services.json",
     "template": "scripts/generate-site.ts",
-    "generatedAt": "2026-05-29T15:42:03.116Z",
+    "generatedAt": "2026-06-09T14:15:22.373Z",
     "doNotEdit": true,
     "doNotBypassPreCommitHook": true
   },
+  "template": "postalocity",
   "site": {
-    "id": "postalocity",
+    "id": "healthcare-mailing-services",
     "name": "Healthcare Mail Services",
     "slug": "healthcare-mailing-services",
     "domain": "postalocity.com",
-    "basename": "postalocity-healthcare-mailing-services",
+    "basename": "/healthcare",
     "contact": {
       "email": "contact@postalocity.com",
       "phone": "316-260-2220",
-      "address": "820 W 2nd St N, Wichita, KS 67203"
+      "address": "820 W 2nd St N, Wichita KS 67203"
     }
   },
   "branding": {
@@ -65,12 +66,20 @@
         "href": "#benefits"
       },
       {
+        "label": "Challenges",
+        "href": "#challenges"
+      },
+      {
         "label": "How It Works",
         "href": "#how-it-works"
       },
       {
         "label": "Services",
         "href": "#services"
+      },
+      {
+        "label": "Pricing",
+        "href": "#comparison"
       },
       {
         "label": "FAQ",
@@ -86,128 +95,144 @@
   "content": {
     "hero": {
       "headline": {
-        "main": "Healthcare Mailing Service — Save Significant Time Weekly",
-        "highlightTerm": "Automate Patient Statements & Billing Mail"
+        "main": "Healthcare Mailing Service",
+        "highlightTerm": "– Automate Patient Statements & Billing Mail",
+        "gradientOn": "main"
       },
       "subhead": "Secure Healthcare Mailing Service – Automate Patient Statements & Billing Mail with accuracy and reliability. Focus on patient care while we handle your mail processing efficiently.",
       "background": {
         "image": "/images/healthcare-workspace.svg",
-        "alt": "Healthcare professional managing patient statements and billing mail efficiently"
-      },
-      "professionalLabel": {
-        "text": "PROFESSIONAL HEALTHCARE MAILING",
-        "largeFont": true
+        "alt": "Healthcare mailing automation process with Postalocity"
       },
       "ctas": [
         {
-          "text": "Free Audit",
-          "subtext": "45-minute session",
-          "href": "https://prod.postalocity.com/login.html?signUp=true&promo=hm2026",
-          "variant": "primary"
+          "text": "Starting at $1.31",
+          "subtext": "Full color envelope and postage included",
+          "href": "#comparison",
+          "variant": "pricing"
         },
         {
-          "text": "Case Study",
-          "subtext": "290-hour savings",
-          "href": "#case-studies",
+          "text": "See How It Works",
+          "href": "#how-it-works",
           "variant": "outline"
+        }
+      ]
+    },
+    "trustStrip": {
+      "label": "PROFESSIONAL HEALTHCARE MAILING",
+      "badges": [
+        {
+          "label": "USPS",
+          "status": "Verified"
+        },
+        {
+          "label": "NCOA",
+          "status": "Verified"
+        },
+        {
+          "label": "CASS",
+          "status": "Certified"
         }
       ]
     },
     "benefits": {
       "section": {
-        "title": "What Healthcare Organizations Gain",
-        "description": "Our proven automation has delivered consistent time savings across multiple healthcare providers."
+        "title": "The Benefits of Healthcare Billing Automation and Mailing",
+        "description": "Streamline patient statements and automated medical billing mail.",
+        "highlights": {
+          "title": "Pay-as-You-Go Healthcare Mailing Service",
+          "items": [
+            "No monthly fees",
+            "No setup fees",
+            "No minimums",
+            "Scale freely",
+            "Secure PDF upload",
+            "No contracts"
+          ]
+        }
       },
       "benefits": [
         {
+          "icon": "📬",
+          "title": "Reduce Returned Patient Mail Up to 40%",
+          "detail": "Automated address verification catches bad addresses before printing, minimizing re-sends and patient frustration."
+        },
+        {
+          "icon": "⚡",
+          "title": "Same-Day or Next-Day Mailing",
+          "detail": "Streamline patient statements and automated medical billing mail."
+        },
+        {
           "icon": "⏰",
-          "title": "Streamline Patient Statements",
-          "detail": "Automated patient statement processing reduces manual data entry errors and accelerates printing by completing statements three times faster than manual processing.",
-          "metrics": "Reduce processing 70-80%"
-        },
-        {
-          "icon": "📊",
-          "title": "Address Verification",
-          "detail": "Streamlined workflows improve address accuracy by validating addresses before printing, ensuring reliable delivery to patients.",
-          "metrics": "Improve accuracy 95-98%"
-        },
-        {
-          "icon": "💬",
-          "title": "Automated Billing Mail Processing",
-          "detail": "Automated payment posting and follow-up reduces administrative overhead while improving cash flow by processing billing mail immediately upon receipt.",
-          "metrics": "Save significant time"
+          "title": "Reclaim 40-70 Hours Weekly",
+          "detail": "Eliminate in-house printing, folding, stuffing, and mailing tasks. Your entire team saves hours daily on manual paperwork."
         },
         {
           "icon": "🎯",
           "title": "Free Up Staff for Patient Care",
-          "detail": "Intelligent error detection identifies common mailing patterns before processing, reducing rework by 50% and administrative costs by 40%, allowing your team to focus on patient interactions.",
-          "metrics": "Reclaim significant time"
+          "detail": "Automate printing, folding, stuffing, and mailing. Your clinical and administrative teams focus on patients, not paperwork."
         }
       ]
     },
     "challenges": {
       "section": {
-        "title": "Common Challenges",
-        "description": "Healthcare organizations struggle with manual patient statement and billing mail processing that hurts efficiency and patient satisfaction."
+        "title": "Common Challenges with In-House Patient Statement Mailing",
+        "description": "Manual entry causes address errors and costly returns. Peak periods overload staff, leading to delays in patient statement mailing."
       },
       "challenges": [
         {
-          "title": "Time-Consuming Manual Processing",
-          "description": "Healthcare staff spend significant time on manual patient statement preparation, address verification, folding, stuffing, and mailing tasks.",
-          "metrics": "Users report significant time wasted"
+          "title": "Address Errors and Costly Returns",
+          "description": "Manual entry causes address errors and costly returns. Peak periods overload staff, leading to delays in patient statement mailing.",
+          "metrics": "Returned statements delay revenue"
         },
         {
-          "title": "Error-Prone Address Handling",
-          "description": "Manual address validation leads to undeliverable mail, delayed patient communications, and increased administrative corrections.",
-          "metrics": "30-40% undeliverable rate common"
+          "title": "Rising USPS Rates",
+          "description": "Rising USPS rates erode budgets without optimization. Returned statements due to address errors delay care coordination and revenue cycles while wasting postage.",
+          "metrics": "Budget pressure without optimization"
         },
         {
-          "title": "Comprehensive Data Security Risks",
-          "description": "High-risk, high-value patient data demands secure handling throughout the mailing process.",
-          "metrics": "Breaches cost healthcare providers $7M average"
+          "title": "Secure Patient Data Handling",
+          "description": "High-risk, high-value patient data demands secure handling. Deadline pressures for urgent notices and statement mailing create operational challenges.",
+          "metrics": "Compliance and security risk"
         },
         {
-          "title": "Revenue Cycle Delays",
+          "title": "Manual Process Bottlenecks",
           "description": "Postalocity automates the entire process—secure PDF upload, address verification, printing, folding, stuffing, and USPS delivery—eliminating manual errors and delays.",
-          "metrics": "15-25 business days faster processing"
+          "metrics": "End-to-end automation"
         }
       ]
     },
     "services": {
       "section": {
         "title": "Automate Patient Statements and Revenue-Cycle Notices",
-        "description": "End-to-end solutions designed to streamline your healthcare mailing operations and maximize communication reliability."
+        "description": "Streamline patient statement mailing across all healthcare communications. From patient statements to billing invoices to medical notices, automate with accurate, reliable processing.",
+        "finishingNote": "Result: Faster payments, better patient engagement, zero added overhead. Automate patient statements, billing, and notices—accurate, reliable healthcare mailing service."
       },
       "services": [
         {
           "icon": "📋",
           "title": "Patient Statements",
-          "description": "Automate patient statement generation and delivery with accurate, reliable processing that ensures timely patient communication."
+          "description": "Automate patient statement mailing with accurate, reliable processing. Professional printing on full-color envelopes. Address verification reduces returned mail by up to 40%."
         },
         {
           "icon": "📈",
           "title": "Billing Invoices",
-          "description": "Secure billing invoice processing with integrated address verification and tracking for reliable delivery to payers."
+          "description": "Streamline medical billing communications. Automate patient billing invoices, and notices for healthcare providers with accurate, reliable processing."
         },
         {
-          "icon": "🔍",
-          "title": "Address Verification",
-          "description": "Comprehensive address validation identifies undeliverable addresses before printing, ensuring reliable delivery and reducing returned mail."
+          "icon": "📄",
+          "title": "Medical Notices",
+          "description": "Automate compliance letters, care coordination notices, and regulatory mailings. Accurate processing with address verification."
         },
         {
-          "icon": "💰",
-          "title": "Revenue Cycle Notices",
-          "description": "Automated revenue cycle notices with processing automation reducing manual entry and accelerating delivery cycles."
+          "icon": "📅",
+          "title": "Appointment Reminders",
+          "description": "Reduce no-shows by automating appointment reminders."
         },
         {
-          "icon": "📞",
-          "title": "Patient Communication",
-          "description": "Patient inquiry resolution improving patient satisfaction and payment collection rates through reliable mailing systems."
-        },
-        {
-          "icon": "🔒",
-          "title": "Compliance Support",
-          "description": "Reliable processing ensuring your operations align with healthcare mailing requirements without disruption."
+          "icon": "🧪",
+          "title": "Lab Results and Follow-Up",
+          "description": "Mail lab results notifications accurately. Automate follow-up care letters, medical notices, and patient communications for healthcare providers."
         }
       ]
     },
@@ -238,64 +263,110 @@
     },
     "comparison": {
       "section": {
-        "title": "In-House vs. Postalocity Automation",
-        "description": "Compare manual processing to our efficient automated healthcare mailing solution."
+        "title": "In-House vs Postalocity Automation",
+        "description": "See why leading healthcare providers trust Postalocity over manual processing."
       },
-      "chart": {
-        "totalTimeInHouse": 97,
-        "totalTimePostalocity": 14,
-        "redBarPercentage": 85,
-        "sections": [
-          {
-            "title": "Address Validation",
-            "inHouse": 15,
-            "postalocity": 1,
-            "note": "Automated"
-          },
-          {
-            "title": "Print, Fold, Stuff",
-            "inHouse": 22,
-            "postalocity": 2,
-            "note": "Processing"
-          },
-          {
-            "title": "USPS Delivery",
-            "inHouse": 60,
-            "postalocity": 11,
-            "note": "Shipping"
-          }
-        ]
+      "columns": {
+        "ourSolution": "Postalocity Automation",
+        "traditional": "In-House / Manual"
+      },
+      "rows": [
+        {
+          "icon": "dollar-sign",
+          "feature": "Cost per statement",
+          "ourSolution": "$1.31 full color envelope and postage included",
+          "traditionalApproach": "$1.20 - $3.50"
+        },
+        {
+          "icon": "clock",
+          "feature": "Turnaround time",
+          "ourSolution": "Overnight",
+          "traditionalApproach": "3 - 5 days"
+        },
+        {
+          "icon": "map-pin",
+          "feature": "Address accuracy",
+          "ourSolution": "NCOA/CASS auto-verify",
+          "traditionalApproach": "Manual errors"
+        },
+        {
+          "icon": "users",
+          "feature": "Staff time",
+          "ourSolution": "Zero - upload and done",
+          "traditionalApproach": "Full team"
+        },
+        {
+          "icon": "eye",
+          "feature": "USPS tracking",
+          "ourSolution": "Real-time USPS",
+          "traditionalApproach": "—"
+        },
+        {
+          "icon": "palette",
+          "feature": "Color envelope",
+          "ourSolution": "Color envelope option",
+          "traditionalApproach": "Make your statements stand out in the mail"
+        }
+      ],
+      "cta": {
+        "text": "Get Started Today!",
+        "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
       }
     },
     "howItWorks": {
       "section": {
         "title": "How It Works",
-        "description": "Three simple steps to automate your healthcare mailing operations."
+        "description": "Four simple steps from upload to mailing",
+        "closing": "Patient statements reach recipients reliably, accuracy is maintained, and your team gains hours back weekly."
       },
       "steps": [
         {
           "step": 1,
-          "title": "Upload Secure PDF",
-          "description": "Upload patient statements and billing documents through our secure portal or integrate with your EMR system.",
+          "title": "Upload Your PDFs",
+          "description": "Drag-and-drop your patient statements into our secure dashboard. Same-day or next-day mailing available.",
           "icon": "📄"
         },
         {
           "step": 2,
           "title": "Address Verification",
-          "description": "Automated address verification validates addresses before printing, ensuring reliable delivery and reducing returned mail.",
+          "description": "NCOA/CASS verification updates addresses before printing, reducing returned statements by 40%.",
           "icon": "🔍"
         },
         {
           "step": 3,
-          "title": "We Print & Process",
-          "description": "Professional printing, folding, and stuffing with 98% accuracy and next-day USPS pickup for faster delivery.",
+          "title": "We Print and Process",
+          "description": "Professional printing, folding, stuffing into full-color envelopes, and sealing—all automated.",
           "icon": "🖨️"
         },
         {
           "step": 4,
-          "title": "USPS Delivery",
-          "description": "Reliable USPS delivery with Certified Mail and tracking options for patient statements and revenue-cycle notices.",
+          "title": "USPS Mailing and Tracking",
+          "description": "Same-day or next-day mailing. Track Priority and Certified statements—see when it was mailed and when it arrived. First-Class Mail delivers with standard USPS confirmation.",
           "icon": "📦"
+        }
+      ]
+    },
+    "scale": {
+      "headline": "Pay-as-You-Go Patient Statement Mailings: Scale Without Commitment",
+      "subheadline": "From small clinics to large healthcare systems, automate patient statements and pay-as-you-go patient statement mailing with no monthly fees, no contracts, and no minimums.",
+      "ctaText": "Start Automating Patient Statement Mailing",
+      "ctaHeadline": "Pay-as-You-Go Healthcare Mailing Service",
+      "ctaDescription": "Start automating patient statement mailing today. No monthly fees, no setup fees, no contracts. Pay-as-you-go healthcare mailing service for any practice size.",
+      "features": [
+        {
+          "icon": "users",
+          "title": "Scale Without Commitment",
+          "description": "Process 10 or 10,000+ patient statements monthly. Pay-as-you-go healthcare mailing service for any practice size."
+        },
+        {
+          "icon": "zap",
+          "title": "Automate Effortlessly",
+          "description": "Upload PDF statements to automate healthcare mailing. No monthly fees, no minimums, no contracts."
+        },
+        {
+          "icon": "barChart3",
+          "title": "Streamlined Onboarding",
+          "description": "Start automating patient statements quickly. Secure PDF upload."
         }
       ]
     },
@@ -323,77 +394,65 @@
     },
     "businessContinuity": {
       "section": {
-        "title": "Business Continuity & Disaster Recovery",
-        "description": "Reliable healthcare mailing operations during disruptions and outages."
+        "title": "Business Continuity and Disaster Recovery",
+        "description": "Your critical mailings never stop. Our redundant dual-location infrastructure with mirrored hot-site facilities ensures 99.9% uptime—keeping statements, compliance notices, and time-sensitive communications flowing even during unexpected disruptions."
       },
-      "features": [
-        {
-          "title": "Uninterrupted Delivery",
-          "description": "Patient statements and billing mail continue processing even during system outages or disruptions."
-        },
-        {
-          "title": "Secure Document Handling",
-          "description": "Sensitive healthcare documents remain protected throughout processing, ensuring patient data security during disruptions."
-        },
-        {
-          "title": "Reliable Processing",
-          "description": "Processing continues with reliability even when your internal systems experience outages or disruptions."
-        },
-        {
-          "title": "Automatic Fallback",
-          "description": "Redundant systems ensure patient statements and billing mail continue processing without manual intervention."
-        }
-      ]
+      "features": [],
+      "badge": "99.9% Uptime Guarantee"
     },
     "difference": {
       "section": {
         "title": "The Postalocity Difference",
-        "description": "What sets our healthcare mailing services apart from traditional in-house operations."
+        "description": "Discover why 500+ healthcare providers trust our mailing service for patient communications"
       },
       "background": "dark",
       "differences": [
         {
-          "icon": "shield",
-          "title": "HIPAA-Compliant Processing",
-          "description": "Secure handling of protected health information with documented compliance processes and encrypted data transmission."
+          "icon": "mail",
+          "title": "Every Mailer Includes an Envelope",
+          "description": "We use real envelopes—not loose paper sealed with a sticker. Every statement is professionally printed, folded, stuffed into an envelope, sealed, and mailed."
         },
         {
-          "icon": "map-pin",
-          "title": "Address Verification Included",
-          "description": "Pre-production address verification catches inaccuracies before printing—reducing returned statements and ensuring critical communications reach patients."
+          "icon": "eye",
+          "title": "Mail Visibility",
+          "description": "Tracking available on Priority Mail and Certified Mail. First-Class Mail (standard) does not include tracking. Signature tracking on Certified Mail available for additional fee."
         },
         {
           "icon": "clock",
-          "title": "Same-Day Processing",
-          "description": "Upload and approve by noon CT for same-day processing—bypass slow in-house printing and daily post office trips. *Restrictions apply."
+          "title": "Skip USPS Drop Boxes and Cutoffs",
+          "description": "Bypass post office drop-off times and waiting in line. We automate the process—eliminating missed cutoffs and potentially days in delivery time."
         }
       ]
     },
     "faq": {
       "section": {
-        "title": "Common Questions",
-        "description": "Answers to frequently asked questions about our healthcare mailing services."
+        "title": "Frequently Asked Questions",
+        "description": ""
       },
       "faqs": [
         {
-          "q": "How fast do patient statements get delivered?",
-          "a": "Most patient statements arrive within 2-5 business days, with next-day pickup available for urgent communications."
+          "q": "How fast can I get patient statements mailed?",
+          "a": "Same-day or next-day mailing is available when you upload and approve by the daily cutoff. First-Class Mail typically delivers in 2-5 business days."
+        },
+        {
+          "q": "Does Postalocity integrate with my EMR system?",
+          "a": "Yes. Postalocity integrates with major EMR systems so you can automate patient statement mailing without manual exports."
         },
         {
           "q": "How much does patient statement mailing cost?",
-          "a": "Our price starts at {{PRICING}} with no contracts or minimum volume requirements."
+          "a": "Pricing starts at {{PRICING}} per piece with full color envelope and postage included. No monthly fees, no contracts, and no minimums."
         },
         {
-          "q": "Can I track patient statements?",
-          "a": "Yes, patient statements include tracking features that allow you to monitor delivery status through USPS, but does include tracing that will show mail status up through being out for delivery."
-        },
-        {
-          "q": "Do I need to install software?",
-          "a": "No, our web-based system works with any browser and integrates with major EMR systems for seamless automation without software installation."
+          "q": "Can I track patient statements through the mail?",
+          "a": "Tracking is available on Priority Mail and Certified Mail. First-Class Mail does not include tracking, but processing status is visible in your dashboard."
         },
         {
           "q": "Is the mailing process for patient statements secure?",
-          "a": "All patient statement uploads and downloads are completed securely using encrypted connections."
+          "a": "All patient statement uploads and downloads use encrypted connections with secure handling throughout printing and mailing."
+        },
+        {
+          "q": "Do I need technical expertise to use Postalocity?",
+          "a": "No technical expertise is required. Upload PDFs through the secure dashboard and we handle printing, folding, stuffing, and USPS delivery."
         }
       ]
     },
@@ -464,16 +523,6 @@
           "year": "2023",
           "verified": true
         }
-      ]
-    },
-    "trustSignals": {
-      "section": {
-        "title": "Trusted by businesses nationwide"
-      },
-      "signals": [
-        "NCOA Verified 2024",
-        "CASS Certified 2024",
-        "ISO 9001 Documented Processes 2023"
       ]
     },
     "reviews": {
@@ -609,12 +658,12 @@
   },
   "footer": {
     "finalCTA": {
-      "headline": "Optimize Your Healthcare Mailing Today",
-      "description": "Streamline patient statements and billing mail, reduce manual processing, and accelerate delivery—no contracts, pay-as-you-go pricing.",
-      "buttonText": "Get Started Now",
+      "headline": "Ready to Automate Your Patient Statements?",
+      "description": "No contracts, no setup fees—just effortless automation.",
+      "buttonText": "Sign Up Now - Pay-as-You-Go",
       "href": "https://prod.postalocity.com/login.html?signUp=true&promo=health2026"
     },
-    "description": "Postalocity helps healthcare organizations reclaim significant time through automated patient statement mailing and billing communication services.",
+    "description": "Patient statement mailing service. Upload PDFs, we print and mail. $1.31 per piece. No monthly fees, no contracts.",
     "tagline": "Proof of Mailing. Every Letter.",
     "links": [
       {
@@ -628,6 +677,20 @@
       {
         "label": "Login",
         "href": "https://prod.postalocity.com/login.html?promo=health"
+      }
+    ],
+    "resourceLinks": [
+      {
+        "label": "Blog",
+        "href": "https://www.postalocity.com/resources/blog/"
+      },
+      {
+        "label": "FAQ",
+        "href": "https://www.postalocity.com/resources/faq/"
+      },
+      {
+        "label": "Contact",
+        "href": "https://www.postalocity.com/contact/"
       }
     ]
   },

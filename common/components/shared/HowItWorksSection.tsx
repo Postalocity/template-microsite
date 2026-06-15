@@ -71,6 +71,7 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
 
   const sectionTitle = howItWorks?.section?.title || brandHowItWorks?.section?.title || "How It Works";
   const sectionDesc = howItWorks?.section?.description || brandHowItWorks?.section?.description || "Four simple steps from upload to mailing";
+  const sectionClosing = howItWorks?.section?.closing;
   const sectionId = howItWorks?.section?.id || brandHowItWorks?.section?.id || "how-it-works";
   const numSteps = steps.length;
   
@@ -124,15 +125,23 @@ const HowItWorksSection = ({ howItWorks }: HowItWorksSectionProps) => {
           })}
         </div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.5 }}
-          className="text-center mt-10 text-lg font-semibold text-foreground"
-        >
-          <Check className="inline w-5 h-5 text-secondary mr-2" />
-          {sectionDesc}
-        </motion.p>
+        {(sectionClosing || sectionDesc) && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.5 }}
+            className="text-center mt-10 text-lg font-semibold text-foreground"
+          >
+            {sectionClosing ? (
+              sectionClosing
+            ) : (
+              <>
+                <Check className="inline w-5 h-5 text-secondary mr-2" />
+                {sectionDesc}
+              </>
+            )}
+          </motion.p>
+        )}
       </div>
     </section>
   );

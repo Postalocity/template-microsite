@@ -3,7 +3,7 @@
  *
  * Site:      self-storage
  * Brand:     Postalocity
- * Generated: 2026-05-29T15:41:35.394Z
+ * Generated: 2026-06-09T14:15:39.177Z
  *
  * EDIT THE SOURCE, NOT THE OUTPUT
  * ─────────────────────────────
@@ -20,8 +20,7 @@
  */
 
 import { createRoot } from 'react-dom/client';
-import { Bug, Leaf, Clock, Check } from 'lucide-react';
-import { HeroSection, FAQSection, ComparisonTable, TrustBadgesSection } from '@/components/shared';
+import { HeroSection, BenefitsSection, ServicesSection, FAQSection, ComparisonTable, ComparisonChartSection, DifferenceSection, TrustBadgesSection, TrustStripSection, HowItWorksSection, ChallengesSection, ScaleSection, BusinessContinuitySection } from '@/components/shared';
 import SiteNavigation from '@/components/shared/SiteNavigation';
 import SiteFooter from '@/components/shared/SiteFooter';
 import FloatingCTA from '@/components/shared/FloatingCTA';
@@ -31,7 +30,7 @@ import '@/globals.css';
 import config from './config.json';
 
 // Brand configuration (from BrandContext defaults)
-const brandConfig = {"id":"postalocity","name":"Postalocity","slug":"postalocity","domain":"postalocity.com","tagline":"Automate Your Direct Mail","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://prod.postalocity.com/login.html","website":"https://www.postalocity.com","blog":"https://www.postalocity.com/resources/blog/","howWeHelp":"https://www.postalocity.com/how-we-help/","whoWeServe":"https://www.postalocity.com/who-we-serve/","contact":"https://www.postalocity.com/contact/","faq":"https://www.postalocity.com/resources/faq/"},"logo":{"filename":"postalocity-logo.png","alt":"Postalocity - Direct Mail Automation"},"colors":{"primary":{"h":200,"s":80,"l":30},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"id":"how-it-works","title":"How It Works","description":"Three simple steps to streamline your self-storage mailing."},"steps":[{"number":"1","title":"Upload Your Documents","description":"Upload your tenant notices, lien documents, or rent reminders as PDFs. Our system accepts standard file formats."},{"number":"2","title":"We Verify Addresses","description":"We run every address through USPS verification — catching errors before printing and reducing returned mail."},{"number":"3","title":"We Print, Stuff & Mail","description":"We professionally print, fold, stuff into envelopes, seal, and mail. You receive a mailing affidavit for every letter. Upgrade to a Certificate of Mailing for proof of mailing."}]},"difference":{"section":{"title":"Postalocity Difference","description":"What sets us apart for self-storage operators."},"differences":[{"icon":"shield","title":"Affidavit of Mailing. Every Letter.","description":"Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS. Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."},{"icon":"eye","title":"Real-time Dashboard","description":"Track mailing status instantly — know exactly when each letter mails via USPS scan confirmation."},{"icon":"map-pin","title":"Address Verification","description":"Built-in USPS verification reduces returns by catching inaccurate addresses before mailing."},{"icon":"clock","title":"Same-Day Processing","description":"Approve by noon CT for same-day processing. *Restrictions apply."}]},"trustSignals":{"section":{"title":"Trusted by Businesses Nationwide"},"signals":["NCOA Verified 2024","CASS Certified 2024","ISO 9001 Documented Processes 2023"]},"footer":{"tagline":"Automate Your Direct Mail","links":[{"label":"Services","href":"https://www.postalocity.com/how-we-help/"},{"label":"Pricing","href":"https://www.postalocity.com/pricing/"},{"label":"Resources","href":"https://www.postalocity.com/resources/"},{"label":"Contact","href":"https://www.postalocity.com/contact/"}]}};
+const brandConfig = {"id":"postalocity","name":"Postalocity","slug":"postalocity","domain":"postalocity.com","tagline":"Automate Your Direct Mail","googleAnalyticsId":"G-XXXXXXXXXX","urls":{"app":"https://prod.postalocity.com/login.html","website":"https://www.postalocity.com","blog":"https://www.postalocity.com/resources/blog/","howWeHelp":"https://www.postalocity.com/how-we-help/","whoWeServe":"https://www.postalocity.com/who-we-serve/","contact":"https://www.postalocity.com/contact/","faq":"https://www.postalocity.com/resources/faq/"},"logo":{"filename":"postalocity-logo.png","alt":"Postalocity - Direct Mail Automation"},"colors":{"primary":{"h":200,"s":80,"l":30},"accent":{"h":45,"s":100,"l":50}},"howItWorks":{"section":{"id":"how-it-works","title":"How It Works","description":"Three simple steps to streamline your self-storage mailing."},"steps":[{"number":"1","title":"Upload Your Documents","description":"Upload your tenant notices, lien documents, or rent reminders as PDFs. Our system accepts standard file formats."},{"number":"2","title":"We Verify Addresses","description":"We run every address through USPS verification — catching errors before printing and reducing returned mail."},{"number":"3","title":"We Print, Stuff & Mail","description":"We professionally print, fold, stuff into envelopes, seal, and mail. You receive a mailing affidavit for every letter. Upgrade to a Certificate of Mailing for proof of mailing."}]},"difference":{"section":{"title":"Postalocity Difference","description":"What sets us apart for self-storage operators."},"differences":[{"icon":"shield","title":"Affidavit of Mailing. Every Letter.","description":"Every letter includes affidavit of mailing from Postalocity proving items were processed and handed to USPS.","detail":"Upgrade to a Certificate of Mailing for official USPS documentation or Certified Mail for full USPS tracking with delivery confirmation."},{"icon":"eye","title":"Real-time Dashboard","description":"Trace mailing status instantly – know exactly when each letter mails via USPS scan confirmation."},{"icon":"map-pin","title":"Address Verification","description":"Built-in USPS verification reduces returns by catching inaccurate addresses before mailing."},{"icon":"clock","title":"Same-Day Processing","description":"Approve by noon CT for same-day processing. *Restrictions apply."}]},"trustSignals":{"section":{"title":"Trusted by Businesses Nationwide"},"signals":["NCOA Verified 2024","CASS Certified 2024","ISO 9001 Documented Processes 2023"]},"footer":{"tagline":"Automate Your Direct Mail","links":[{"label":"How We Help","href":"https://www.postalocity.com/how-we-help/"},{"label":"Who We Serve","href":"https://www.postalocity.com/who-we-serve/"},{"label":"Sign Up","href":"https://prod.postalocity.com/login.html?signUp=true"}],"resourceLinks":[{"label":"Blog","href":"https://www.postalocity.com/resources/blog/"},{"label":"FAQ","href":"https://www.postalocity.com/resources/faq/"},{"label":"Contact","href":"https://www.postalocity.com/contact/"}]}};
 const contactConfig = {"phone":"316-260-2220","email":"contact@postalocity.com","address":{"street":"820 W 2nd St N","city":"Wichita","state":"KS","zip":"67203"},"hours":{"weekdays":"8:00 AM - 5:00 PM CST","support":"contact@postalocity.com"}};
 const socialConfig = {"twitter":"https://twitter.com/postalocity","linkedin":"https://linkedin.com/company/postalocity","facebook":"https://facebook.com/postalocity"};
 
@@ -54,196 +53,29 @@ function App() {
       >
         <SiteNavigation config={config} />
         <HeroSection hero={content.hero} />
-        
-        {/* Features Section */}
-        {content.features && (
-          <section id="features" className="section-padding" style={{ background: '#f8f9fa' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: '#1a1a1a' }}>
-                  {content.features.headline}
-                </h2>
-                <p className="font-body text-lg max-w-2xl mx-auto" style={{ color: '#555' }}>
-                  {content.features.subtitle}
-                </p>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-                {content.features.features?.map((feature: {title: string; description: string; icon?: string}, idx: number) => {
-                  // Map feature titles to Lucide icons (matching live site)
-                  const iconMap: Record<string, React.ElementType> = {
-                    'Peak Season Protection': Bug,  // Uses bug icon, not shield
-                    'Scent-Safe Formula': Leaf,
-                    'Long-Lasting Barrier': Clock,
-                    'EPA-Registered': Check,
-                  };
-                  const IconComponent = iconMap[feature.title] || Check;
-                  return (
-                    <div key={idx} className="bg-white rounded-lg p-6 shadow-md text-center border border-gray-200">
-                      <div className="w-14 h-14 mx-auto mb-4 flex items-center justify-center" style={{ color: '#2d5a3d' }}>
-                        <IconComponent className="w-10 h-10" strokeWidth={1.5} />
-                      </div>
-                      <h3 className="font-display text-xl uppercase mb-2" style={{ color: '#1a1a1a' }}>
-                        {feature.title}
-                      </h3>
-                      <p className="font-body text-sm" style={{ color: '#666' }}>
-                        {feature.description}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </section>
+        {content.trustStrip && <TrustStripSection label={content.trustStrip.label} badges={content.trustStrip.badges} />}
+        {content.benefits && <BenefitsSection benefits={content.benefits} />}
+        {content.challenges && <ChallengesSection challenges={content.challenges} />}
+        {content.howItWorks ? <HowItWorksSection howItWorks={content.howItWorks} /> : <HowItWorksSection />}
+        {content.comparison && (
+          'chart' in content.comparison && content.comparison.chart
+            ? <ComparisonChartSection comparison={content.comparison} />
+            : <ComparisonTable comparison={content.comparison} promoCode={promoCode} />
         )}
-        
-        {/* Dynamic content sections - only render if data exists */}
-        {content.introduction && (
-          <section id="introduction" className="section-padding" style={{ background: '#f8f9fa' }}>
-            <div className="section-container">
-              <div className="text-center max-w-3xl mx-auto">
-                <p className="font-body text-lg sm:text-xl leading-relaxed" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.introduction.body}
-                </p>
-              </div>
-            </div>
-          </section>
+        {content.services && <ServicesSection services={content.services} />}
+        {content.difference ? <DifferenceSection difference={content.difference} /> : <DifferenceSection />}
+        {content.scale && (
+          <ScaleSection
+            headline={content.scale.headline}
+            subheadline={content.scale.subheadline}
+            ctaText={content.scale.ctaText}
+            ctaHeadline={content.scale.ctaHeadline}
+            ctaDescription={content.scale.ctaDescription}
+            features={content.scale.features}
+          />
         )}
-        
-        {content['why-odins'] && (
-          <section id="why-odins" className="section-padding" style={{ background: '#1a1d29' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
-                  {content['why-odins'].headline}
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                {content['why-odins'].items?.map((item: string, idx: number) => (
-                  <div key={idx} className="p-6 rounded-lg text-center" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
-                    <p className="font-body text-white">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.detection && (
-          <section id="detection" className="section-padding" style={{ background: '#f5f5f5' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.detection.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Understanding the three-stage targeting process
-                </p>
-              </div>
-              <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                {['CO₂ Detection', 'Skin Chemistry', 'Body Heat'].map((stage, idx) => (
-                  <div key={idx} className="text-center p-6">
-                    <div className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: 'hsl(var(--primary))' }}>
-                      STAGE {String(idx + 1).padStart(2, '0')}
-                    </div>
-                    <h3 className="font-display text-xl uppercase mb-2">{stage}</h3>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.application && (
-          <section id="application" className="section-padding" style={{ background: '#1a1d29' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
-                  {content.application.headline}
-                </h2>
-                {content.application.note && (
-                  <p className="font-body text-sm text-gray-400 italic">{content.application.note}</p>
-                )}
-              </div>
-              <div className="max-w-3xl mx-auto space-y-6">
-                {content.application.steps?.map((step: string, idx: number) => (
-                  <div key={idx} className="flex items-start gap-4 p-4 rounded-lg" style={{ background: 'rgba(255,255,255,0.05)' }}>
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-display text-lg flex-shrink-0" style={{ background: 'hsl(var(--primary))', color: 'white' }}>
-                      {idx + 1}
-                    </div>
-                    <p className="font-body text-white text-lg">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.blinds && (
-          <section id="blinds" className="section-padding" style={{ background: '#f5f5f5' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.blinds.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  {content.blinds.body}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.layered && (
-          <section id="layered" className="section-padding" style={{ background: '#1e212b' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4 text-white">
-                  {content.layered.headline}
-                </h2>
-              </div>
-              <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-                {['Weatherproof Formula', 'Polymer Technology', 'Easy Storage'].map((item, idx) => (
-                  <div key={idx} className="p-6 text-center rounded-lg" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
-                    <h3 className="font-display text-xl uppercase mb-2 text-white">{item}</h3>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.turkey && (
-          <section id="turkey" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
-            <div className="section-container">
-              <div className="text-center">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.turkey.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  {content.turkey.body}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-        
-        {content.comparison && <ComparisonTable comparison={content.comparison} promoCode={promoCode} />}
-        
-        {content.howItWorks && (
-          <section id="how-it-works" className="section-padding" style={{ background: 'hsl(var(--background))' }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <h2 className="font-display text-4xl md:text-5xl uppercase mb-4" style={{ color: 'hsl(var(--foreground))' }}>
-                  {content.howItWorks.headline}
-                </h2>
-                <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-                  {content.howItWorks.body}
-                </p>
-              </div>
-            </div>
-          </section>
-        )}
-        
+        {content.businessContinuity && <BusinessContinuitySection businessContinuity={content.businessContinuity} />}
+        {content.trustSignals && <TrustBadgesSection trustSignals={content.trustSignals} />}
         {content.faq && <FAQSection faq={content.faq} />}
         
         <SiteFooter config={config} />

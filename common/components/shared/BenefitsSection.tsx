@@ -153,6 +153,29 @@ const BenefitsSection = ({ benefits }: BenefitsSectionProps) => {
           })}
         </div>
 
+        {benefits.section.highlights && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="max-w-3xl mx-auto mt-10"
+          >
+            <div className="bg-primary/10 rounded-2xl p-8 border border-primary/20">
+              <h3 className="text-xl font-bold text-foreground mb-4 text-center">
+                {benefits.section.highlights.title}
+              </h3>
+              <div className="grid sm:grid-cols-2 gap-4 text-sm">
+                {benefits.section.highlights.items.map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary" aria-hidden="true" />
+                    <span className="text-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+
         {/* CTAs - rendered within section */}
         {(benefits.section.ctas && benefits.section.ctas.length > 0 || benefits.section.cta) && (
           <motion.div

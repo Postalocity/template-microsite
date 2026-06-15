@@ -86,16 +86,26 @@
     "tagline": "Automate Your Direct Mail",
     "links": [
       {
-        "label": "Services",
+        "label": "How We Help",
         "href": "https://www.postalocity.com/how-we-help/"
       },
       {
-        "label": "Pricing",
-        "href": "https://www.postalocity.com/pricing/"
+        "label": "Who We Serve",
+        "href": "https://www.postalocity.com/who-we-serve/"
       },
       {
-        "label": "Resources",
-        "href": "https://www.postalocity.com/resources/"
+        "label": "Sign Up",
+        "href": "https://prod.postalocity.com/login.html?signUp=true"
+      }
+    ],
+    "resourceLinks": [
+      {
+        "label": "Blog",
+        "href": "https://www.postalocity.com/resources/blog/"
+      },
+      {
+        "label": "FAQ",
+        "href": "https://www.postalocity.com/resources/faq/"
       },
       {
         "label": "Contact",

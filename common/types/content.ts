@@ -43,6 +43,7 @@ export interface HeroContent {
     text: string;
     largeFont?: boolean;
   };
+  gradientOn?: 'main' | 'highlight';
   // Logo to display above headline
   logo?: {
     src: string;
@@ -122,6 +123,10 @@ export interface BenefitsContent {
       href: string;
       variant?: string;
     }>;
+    highlights?: {
+      title: string;
+      items: string[];
+    };
   };
   benefits: Benefit[];
 }
@@ -368,6 +373,7 @@ export interface HowItWorksContent {
     id?: string;
     title?: string;
     description?: string;
+    closing?: string;
   };
   steps?: {
     number?: string;
@@ -464,8 +470,9 @@ export interface BusinessContinuityContent {
     title: string;
     description?: string;
   };
-  features: BusinessContinuityFeature[];
+  features?: BusinessContinuityFeature[];
   disasterRecovery?: string;
+  badge?: string;
 }
 
 // Phase 3: P2 Medium Priority - Products with Categories (Odin's scent beads)
